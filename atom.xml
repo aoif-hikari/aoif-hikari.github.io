@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>aoif-hikari</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2021-07-06T10:36:38.923Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>fu</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Leetcode-链表</title>
+    <link href="http://example.com/2021/07/01/list/"/>
+    <id>http://example.com/2021/07/01/list/</id>
+    <published>2021-07-01T09:05:58.763Z</published>
+    <updated>2021-07-06T10:36:38.923Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 常用操作</span></span><br><span class="line"><span class="keyword">if</span>(head == <span class="keyword">null</span> || head.next == <span class="keyword">null</span>) <span class="keyword">return</span> head;</span><br><span class="line"><span class="comment">// 设预指针pre的下一个节点指向head，防止空节点</span></span><br><span class="line">ListNode pre = <span class="keyword">new</span> ListNode(); </span><br><span class="line">pre.next = head;</span><br><span class="line"><span class="comment">// 设置动态当前指针cur</span></span><br><span class="line">ListNode cur = head; </span><br></pre></td></tr></table></figure><p>19/剑指 Offer 22 删除链表的倒数第 N 个结点（快慢指针）</p><p>61 旋转链表（快慢指针）</p><p>剑指 Offer 06. 从尾到头打印链表（栈）</p><p>21/ 剑指 Offer 25 合并两个有序链表</p><p>24 两两交换链表中的结点</p><p>剑指 Offer 18. 删除链表的节点</p><p>83 删除排序链表中的重复元素(相同节点保留一个)</p><p><strong>82 删除排序链表中的重复元素 II(相同节点全部删除)</strong></p><p>86 分隔链表</p><p>206/剑指 Offer 24. 反转链表</p><p>92 反转链表 II</p><p><strong>138/剑指 Offer 35. 复杂链表的复制</strong></p><ul><li><strong>hashmap</strong></li></ul><p><strong>剑指 Offer 52. 两个链表的第一个公共节点</strong></p><ul><li><strong>集合set</strong></li><li><strong>快慢指针（先统计两个链表的长度，如果长度不一样，让链表长的先走，直到两个链表长度一样，这此时两个链表同时每次后移一步，看节点是否一样）</strong></li><li><strong>双指针</strong></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://example.com/2021/06/28/hello-world/"/>
+    <id>http://example.com/2021/06/28/hello-world/</id>
+    <published>2021-06-28T06:14:25.105Z</published>
+    <updated>2021-06-28T06:14:25.105Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
