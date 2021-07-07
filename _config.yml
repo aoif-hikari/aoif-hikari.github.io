@@ -97,8 +97,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 #RSS订阅
-plugin:
-- hexo-generator-feed
+plugins: hexo-generate-feed
 #Feed Atom
 feed:
   type: atom

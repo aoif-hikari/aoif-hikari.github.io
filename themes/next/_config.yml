@@ -186,8 +186,9 @@ social:
   #FB Page: https://www.facebook.com/yourname || facebook
   #StackOverflow: https://stackoverflow.com/yourname || stack-overflow
   #YouTube: https://youtube.com/yourname || youtube
-  #Instagram: https://instagram.com/yourname || instagram
+  Instagram: https://www.instagram.com/fall_ivan || instagram
   #Skype: skype:yourname?call|chat || skype
+  #Music: https://music.163.com/#/playlist?id=327924141 || headphones
 
 social_icons:
   enable: true
@@ -863,8 +864,8 @@ pace:
 # JavaScript 3D library.
 # Dependencies: https://github.com/theme-next/theme-next-three
 three:
-  enable: true
-  three_waves: true
+  enable: false
+  three_waves: false
   canvas_lines: true
   canvas_sphere: true
 
