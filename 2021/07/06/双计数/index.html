@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="双计数狭义上讲，对于一个集合运用两种不同的方式（行 &#x2F; 列），得到等式结果或者不等式的结果。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="双计数(Double Counting)">
+<meta property="og:url" content="http://example.com/2021/07/06/%E5%8F%8C%E8%AE%A1%E6%95%B0/index.html">
+<meta property="og:site_name" content="aoif">
+<meta property="og:description" content="双计数狭义上讲，对于一个集合运用两种不同的方式（行 &#x2F; 列），得到等式结果或者不等式的结果。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/0607-1.png">
+<meta property="og:image" content="http://example.com/img/0607-1.png">
+<meta property="og:image" content="https://img.it610.com/image/info8/b4c6f817626645db87ab41f3c50e6db6.gif">
+<meta property="og:image" content="https://img.it610.com/image/info8/6c2312ce2e05495e97d5747bbe31da48.png">
+<meta property="og:image" content="https://img.it610.com/image/info8/4426e1615e654866886858fc5e4d4aed.jpg">
+<meta property="article:published_time" content="2021-07-06T10:38:00.000Z">
+<meta property="article:modified_time" content="2021-07-06T11:39:16.157Z">
+<meta property="article:author" content="fu">
+<meta property="article:tag" content="图与网络">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/0607-1.png">
+
+<link rel="canonical" href="http://example.com/2021/07/06/%E5%8F%8C%E8%AE%A1%E6%95%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>双计数(Double Counting) | aoif</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="aoif" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">aoif</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-fw fa-calendar"></i>Schedule</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>Sitemap</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/06/%E5%8F%8C%E8%AE%A1%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cat.jpg">
+      <meta itemprop="name" content="fu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="aoif">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          双计数(Double Counting)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-07-06 18:38:00 / Modified: 19:39:16" itemprop="dateCreated datePublished" datetime="2021-07-06T18:38:00+08:00">2021-07-06</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              <span>293</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>双计数狭义上讲，对于一个集合运用两种不同的方式（行 / 列），得到等式结果或者不等式的结果。</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="1-握手定理"><a href="#1-握手定理" class="headerlink" title="1. 握手定理"></a>1. 握手定理</h2><blockquote>
+<p>对于图$G=(V, E)$，有</p>
+<script type="math/tex; mode=display">
+\sum_{v\in V}d(v) = 2|E|</script></blockquote>
+<p>证明：对图G的邻接矩阵中1的个数分别从行（左），列（右）进行计数。即对二元组$\{(v,e)|v\in e\}$进行计数。</p>
+<blockquote>
+<p>推论：图中奇度点数目为偶数。</p>
+<p>超图握手定理：对于超图$G=(V, B)$</p>
+</blockquote>
+<script type="math/tex; mode=display">
+\sum_{v\in V}d(v) = \sum_{\beta\in B}|\beta|</script><h2 id="2-完全图边的双计数"><a href="#2-完全图边的双计数" class="headerlink" title="2. 完全图边的双计数"></a>2. 完全图边的双计数</h2><script type="math/tex; mode=display">
+\sum_{i=1}^S{n_i} = n</script><script type="math/tex; mode=display">
+{n\choose 2} = \sum_{i = 1}^S {n_i \choose 2}+\sum_{i<j}n_in_j</script><p>对于一个完全图，共有$n\choose 2$条边；</p>
+<p>将完全图划分为$S$部分，每部分有$n_i$个点，${n_i \choose 2}$条边；</p>
+<p>每部分之间有$n_in_j$条边。</p>
+<h2 id="3-等式证明"><a href="#3-等式证明" class="headerlink" title="3. 等式证明"></a>3. 等式证明</h2><script type="math/tex; mode=display">
+{n\choose k } = \frac{n}{k}{n-1 \choose k-1}</script><p>证明：设$A$为$k$元子集，对二元组$\{(x,A)|x\in A, |A| = k\}$进行计数。</p>
+<script type="math/tex; mode=display">
+\sum_{k = 1}^n k{n\choose k} = n \sum_{k = 1}^n { {n-1}\choose {k-1} } = n2^{n-1}</script><p>证明：设$A$为$k$元子集，$k=1,2,…,n$，对二元组$\{(x,A)|x\in A, |A| = k\}$进行计数。</p>
+<script type="math/tex; mode=display">
+{n \choose k}{k \choose l} = {n \choose l} { {n-1}\choose {k-l} }</script><p>证明：设$A$为$l$元子集，$B$为$k$元子集，对二元组$\{(A,B)||A|=l,|B|=k,A\subseteq B\}$进行计数。</p>
+<h2 id="4-Turan-Number"><a href="#4-Turan-Number" class="headerlink" title="4. Turan Number"></a>4. Turan Number</h2><script type="math/tex; mode=display">
+T(n,k,l)\geq \frac{n\choose l}{k \choose l}</script><blockquote>
+<p>图兰数$T(n,k,l) (l\leq k \leq n)$是$n$元集合$X$的$l$元子集的最小值(下界)，使得$X$的每个$k$元子集至少包含一个这样的l元子集。</p>
+</blockquote>
+<p>证明：设$F$为满足条件的l元子集，记$F=\{A_1，A_2，…\}$，此时可用关联矩阵表示，$A_i$为满足条件的$l$元集合，$B_i$为$ k$元子集，若$A_i$在$B_i$上，则为$1$，就可以得到一个$0-1$矩阵。对矩阵中$1$的个数计数。</p>
+<p>行计数：对于某一个$l$元集合，有$\binom{n-l}{k-l}]$个$k$元集合包含它，共有$|F|$个，行计数$1$的个数为$|F|\binom{n-l}{k-l}$</p>
+<p>列计数：每个$B_i$必包含一个$A_i$，则每一列至少有一个$1$，可以得到$|F|\binom{n-l}{k-l} \geq {n\choose k}$</p>
+<h2 id="5-Zarankiewicz’s-problem"><a href="#5-Zarankiewicz’s-problem" class="headerlink" title="5. Zarankiewicz’s problem"></a>5. Zarankiewicz’s problem</h2><blockquote>
+<p>对于一个$n\times n$的$0-1$矩阵，如果不存在$a\times a$的全$1$子矩阵，那么这个$nxn$的矩阵最多有多少个1？</p>
+<p>等价于：用二部图重新表述这个问题。一个部分大小为$n$的二部图$G=(V_1,V_2,E)$，其中$V_1,V_2$是顶点的不相交$n$元集合，$E\in V_1\times V_2$是边的集合。令$K_a(n)$为最小整数$k$边，使得任意大小为$n$且边数大于k的二部图至少包含一个$a\times a-clique$。对于任意的自然数$n$和$a$，</p>
+</blockquote>
+<script type="math/tex; mode=display">
+K_a(n) \leq (a-1)^{\frac{1}{a} }n^{2-\frac{1}{a} }+(a-1)n</script><p>对$S= \{(x,A)|x\in V_1,A \in V_2,|A|=a,且x与A中所有点都有边相连\}$计数, 即对下图中的结构进行计数。</p>
+<p><img src="/img/0607-1.png" style="zoom:33%;" /></p>
+<p>固定$x$：从与$x$相连的元素中取$A$，设$x$的neighbor为$d(x)$，那么A有$\sum_{x\in V_1}\binom{d(x)}{a}$种选法，且$|S|=\sum_{x\in V_1}\binom{d(x)}{a}$</p>
+<p>固定$A$：从$n$中选出$a$元集合，与之对应相连的$x$最多有$(a-1)$个，否则就会出现$a\times a-clique$，即$|S| \leq \binom{n}{a}(a-1)$</p>
+<p>即$\sum_{x\in V_1}\binom{d(x)}{a}\leq \binom{n}{a}(a-1)$</p>
+<blockquote>
+<p>Jensen不等式，对凸函数有：</p>
+<script type="math/tex; mode=display">
+s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
+\sum_{i=1}^n\lambda_if(x_i)\geq f(\sum_{i=1}^n\lambda_ix_i),</script><p>Jensen不等式可由数学归纳法证明，略。</p>
+</blockquote>
+<p>令$f(x)=\binom{x}{a}$,$x_i=d(x_i)$;</p>
+<p>根据Jensen不等式，有</p>
+<p>$\frac{1}{n}\sum_{x\in V_1}\binom{d(x)}{a}\geq \binom{\frac{1}{n}\sum_{x\in V_1}d(x)}{a}$</p>
+<p>$\sum_{x\in V_1}\binom{d(x)}{a}\geq n\binom{\frac{1}{n}\sum_{x\in V_1}d(x)}{a}=n\binom{\frac{|E|}{n} }{a}$(因为为二部图，则degree为一倍边数)</p>
+<p>即$n\binom{\frac{|E|}{n} }{a}\leq \binom{n}{a}(a-1)$</p>
+<p>经过放缩有$n(\frac{|E|}{n}-(a-1))^a&lt;\frac{n(|E|/n)(|E|/n-1)…(|E|/n-(a-1))}{a!}=n\binom{\frac{|E|}{n} }{a}$</p>
+<p>$\binom{n}{a}(a-1)=\frac{n(n-1)…(n-(a-1))}{a!}(a-1)&lt;\frac{n^a}{a!}(a-1)$，两边同时开a次方即可解。</p>
+<ul>
+<li>$K_a(n)$的下界可以用概率方法求得</li>
+</ul>
+<h2 id="6-H-free图"><a href="#6-H-free图" class="headerlink" title="6. H-free图"></a>6. H-free图</h2><blockquote>
+<p>一个有$n$个顶点的无$H$图可以最多有多少条边?</p>
+<p>定理：如果图$G=(V，E)$中不包含4个点的圈, 即$C_4-free$，那么有$|E|\leq \left \lfloor n/4(1+\sqrt{4n-3}) \right \rfloor$</p>
+</blockquote>
+<p>令点集$V={1，2，…，n}$，用于双计数的集合为$S=\{(u,\{v,w\})|u与v,w都邻接，且v≠w\}$，即对下图中的结构进行计数。</p>
+<p><img src="/img/0607-1.png" style="zoom:33%;" /></p>
+<p>固定$u$,那么$v$和$w$只能在度为$d(u)$的点中选取，即$\binom{d(u)}{2}$，有$\sum _{u\in V}\binom{d(u)}{2}=|S|$；</p>
+<p>固定$v$和$w$，最多只有一个点可以和它们都关联，那么有$\binom{n}{2}\geq |S|$，</p>
+<p>那么，$\sum _{u\in V}d^2(u)\leq \sum _{u\in V}d(u)+n(n-1)$,</p>
+<blockquote>
+<p>柯西—施瓦茨不等式，$|(\alpha ,\beta )|\leq ||\alpha ||*||\beta ||$</p>
+<p>上述不等式中对应的分别是$[d(u_1),d(u_2)….d(u_n)]$，$(1,1,…1)$。</p>
+</blockquote>
+<p>由柯西—施瓦茨不等式得，$n\sum_{u\in V}d^2(n)\geq (\sum_{u\in V}d(n)*1)^2$，代入上式，$\frac{(\sum_{u\in V} d(u))^2}{n}\leq \sum_{u\in V}d(u)+n)n-1$，</p>
+<p>由握手定理得$4|E|^2\leq n2|E|+n^2(n-1)$，求解n可得上述结论。</p>
+<h2 id="7-三计数"><a href="#7-三计数" class="headerlink" title="7. 三计数"></a>7. 三计数</h2><blockquote>
+<p>在超图中，有</p>
+<script type="math/tex; mode=display">
+\sum_{x\in X}d^2(x)=\sum_{A\in F} \sum_{x\in A}d(x)=\sum_{A\in F} \sum_{B\in F}|A\cap B|</script></blockquote>
+<p>对于集合$(X,F)$，$X$为点集合，$F$为超边集合，对三元组${(x,A,B)|A,B∈F,x∈A，x∈B}$计数。</p>
+<p>左：$x$在全集$X$上，$A，B$集合均包含点$x$；</p>
+<p>中：先选出在$A$的$x$，再使得$x$在$B$中；</p>
+<p>右：先选出$A$和$B$集合，使得$x$在$A$和$B$上，即在$A\cap B$上。</p>
+<h2 id="8-整除关系"><a href="#8-整除关系" class="headerlink" title="8. 整除关系"></a>8. 整除关系</h2><blockquote>
+<p>假设两个有限集$R$和$C$和一个子集$S\subseteq R\times C$。无论何时$(p，g)∈s $那么认为$p$和$q$是关联的。</p>
+<p>设<img src="https://img.it610.com/image/info8/b4c6f817626645db87ab41f3c50e6db6.gif" alt="r_p">表示$p$固定，与$p$关联的元素数目；$c_p$表示$q$固定，与$q$关联的元素数目。有</p>
+<script type="math/tex; mode=display">
+\sum_{p\in R}r_p=|S|=\sum_{q\in C}c_q</script></blockquote>
+<p>假设$M_{|p|\times |q|}$的关联矩阵使用双计数进行证明，矩阵中若$p_i$和$q_j$相关联，$a_{ij}$则置为$1$，否则为$0$，那么$|S|$就是矩阵$M$中全部$1$的个数，等式的第一项可从行计数，最后一项可从列计数角度统计矩阵中1的个数。</p>
+<p>例：</p>
+<p>$R=C={1，2，…，n}$，集合$S=\{(i,j)|i可以整除j\}$，</p>
+<p>$t(j)$表示$j$的因子的数目，如$j=4$，因子有$1,2,4$，那么$t(4)=3$。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">i/j</th>
+<th style="text-align:center">1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center"></td>
+<td>1</td>
+<td></td>
+<td>1</td>
+<td></td>
+<td>1</td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center"></td>
+<td></td>
+<td>1</td>
+<td></td>
+<td></td>
+<td>1</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center"></td>
+<td></td>
+<td></td>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center"></td>
+<td></td>
+<td></td>
+<td></td>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:center"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>1</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td style="text-align:center"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<script type="math/tex; mode=display">
+\overline{t(j)}=\frac{1}{n}\sum_{j=1}^{n}t(j)=\frac{1}{n}\sum_{i=1}^{n}\left \lfloor n/i \right \rfloor</script><script type="math/tex; mode=display">
+\frac{1}{n}\sum_{i=1}^{n}(\frac{n}{j}-1)<\frac{1}{n}\sum_{i=1}^{n}\left \lfloor n/i \right \rfloor\leq \frac{1}{n}\sum_{i=1}^{n}\frac{n}{i}=\sum_{i=1}^{n}\frac{1}{i}</script><script type="math/tex; mode=display">
+\sum_{i=1}^{n}\frac{1}{i}-1 < t(j) \leq lnn</script><script type="math/tex; mode=display">
+|\overline{t(j)}-lnn|<1</script><h2 id="9-Sperner-Lemma"><a href="#9-Sperner-Lemma" class="headerlink" title="9. Sperner Lemma"></a>9. Sperner Lemma</h2><blockquote>
+<p>假设某个顶点为$V1、V2、V3$的“大”三角形被三角化了(也就是说，被分解成有限数量的“小”三角形，这些“小”三角形每条边都能拼接在一起)。</p>
+<p>假设三角化中的顶点从集合$\{1,2,3\}$中获取颜色，使得$V_i$接收颜色$i$(对于每个$i$)，并且沿着$V_i$到$V_i$的边的顶点只用$i$和$j$的颜色，而内部顶点用1、2或3的颜色任意着色。那么在三角测量中一定有一个小的“三色”三角形。</p>
+</blockquote>
+<p><img src="https://img.it610.com/image/info8/6c2312ce2e05495e97d5747bbe31da48.png" alt="【图论学习笔记二】双计数(Double Counting)_第2张图片"></p>
+<p><strong>证明：</strong></p>
+<p>假定大三角形外部有一点$A$，每一个小三角形中心都有一个顶点$O$，若小三角形含有1，2顶点，则从$O$经过1，2点构成的边形成一条边(即出度)，如下图</p>
+<p><img src="https://img.it610.com/image/info8/4426e1615e654866886858fc5e4d4aed.jpg" alt="img"></p>
+<p>根据握手定理可知，度之和必为偶数， 在$V_1$和$V_2$构成的边上，观察可得出度必为奇数，即边上(1,2).(2,1)的线段必有奇数个，那么在小三角形必存在奇数度的三角形，即必存在1度的三角形，得证。</p>
+<p>参考：<a target="_blank" rel="noopener" href="https://www.it610.com/article/1295411404924329984.htm">【图论学习笔记二】双计数(Double Counting) - it610.com</a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%9B%BE%E4%B8%8E%E7%BD%91%E7%BB%9C/" rel="tag"># 图与网络</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/07/01/Leetcode-%E9%93%BE%E8%A1%A8/" rel="prev" title="Leetcode-链表">
+      <i class="fa fa-chevron-left"></i> Leetcode-链表
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%8F%A1%E6%89%8B%E5%AE%9A%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">1. 握手定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%AE%8C%E5%85%A8%E5%9B%BE%E8%BE%B9%E7%9A%84%E5%8F%8C%E8%AE%A1%E6%95%B0"><span class="nav-number">2.</span> <span class="nav-text">2. 完全图边的双计数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E7%AD%89%E5%BC%8F%E8%AF%81%E6%98%8E"><span class="nav-number">3.</span> <span class="nav-text">3. 等式证明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Turan-Number"><span class="nav-number">4.</span> <span class="nav-text">4. Turan Number</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Zarankiewicz%E2%80%99s-problem"><span class="nav-number">5.</span> <span class="nav-text">5. Zarankiewicz’s problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-H-free%E5%9B%BE"><span class="nav-number">6.</span> <span class="nav-text">6. H-free图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E4%B8%89%E8%AE%A1%E6%95%B0"><span class="nav-number">7.</span> <span class="nav-text">7. 三计数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E6%95%B4%E9%99%A4%E5%85%B3%E7%B3%BB"><span class="nav-number">8.</span> <span class="nav-text">8. 整除关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-Sperner-Lemma"><span class="nav-number">9.</span> <span class="nav-text">9. Sperner Lemma</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="fu"
+      src="/images/cat.jpg">
+  <p class="site-author-name" itemprop="name">fu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">fu</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="Symbols count total">1k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">1 mins.</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+    <script defer src="/lib/three/canvas_sphere.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>
