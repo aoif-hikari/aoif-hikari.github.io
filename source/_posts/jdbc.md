@@ -9,13 +9,11 @@ tags: java
 
 <!-- more -->
 
-## 使用JDBC：
-
 从官网下载对应的驱动jar包，将其配置到环境变量classpath。
 
 classpath=.;D:\course\06-JDBC\resources\MySql Connector Java 5.1.23\mysql-connector-java-5.1.23-bin.jar
 
-### 编程
+## 编程
 
 ```java
 public static void main(String[] args) {
@@ -84,7 +82,7 @@ public static void main(String[] args) {
 	}
 ```
 
-### 处理返回结果
+## 处理返回结果
 
 executeUpdate：insert/update/delete, 返回结果对表文件操作时，受影响行数
 
@@ -119,7 +117,7 @@ while(rs.next()){
 }
 ```
 
-### 使用动态资源绑定器传参
+## 使用动态资源绑定器传参
 
 ```java
 ResourceBundle bundle = ResourceBundle.getBundle("jdbc"); //.properties后缀不用写
@@ -139,7 +137,7 @@ user=root
 password=146
 ```
 
-### sql注入
+## sql注入
 
 问题：用户输入语句含有sql语句关键字，完成了sql语句的拼接，参与编译，导致原sql语句含义被扭曲。
 
@@ -267,7 +265,7 @@ try {
 }
 ```
 
-### JDBC事务自动提交
+## JDBC事务自动提交
 
 即执行任一条DML语句，则自动提交一次。
 
@@ -348,12 +346,12 @@ public static void main(String[] args) {
 }
 ```
 
-### 锁
+## 锁
 
 行级锁（悲观锁）:for update 当前事务结束之前，行结果被锁住，无法修改。事务排队进行，不允许并发
 乐观锁：多线程并发，事务不需要排队，都可以修改，需要版本号。
 
-### DAO与Entity
+## DAO与Entity
 
 DAO(Data Access Object) 数据访问对象，将数据库操作都封装起来。包括：
 
