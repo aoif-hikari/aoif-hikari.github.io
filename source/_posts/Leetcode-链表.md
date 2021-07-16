@@ -1,5 +1,5 @@
 ---
-title: Leetcode-链表
+title: Leetcode/链表
 ---
 
 > 常用数据结构--链表

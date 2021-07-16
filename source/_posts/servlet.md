@@ -1,7 +1,7 @@
 ---
 tags: java
 
-title: Servlet规范
+title: JAVA/Servlet规范
 ---
 
 > Servlet规范，来自于JAVAEE规范中的一种。

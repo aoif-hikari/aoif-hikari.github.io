@@ -71,6 +71,16 @@ title: hexo博客 //标题
 >
 > 解决方法：中间加空格，变为`{ {` `} }` `{ %` `% }`
 
+- 图片居中(md支持html语法)
+
+```
+<div align="center">
+    <img src="/img/..."/>
+</div>
+```
+
+
+
 ## 多分支管理
 
 同时管理了两个分支：
@@ -81,6 +91,40 @@ title: hexo博客 //标题
 执行`hexo d`时，自动更新master分支（config文件中deploy配置）
 
 add, commit, pull更新hexo分支需要备份的源文件
+
+## 中文目录无法跳转
+
+[fix: Chinese TOC cannot jump by jiangtj · Pull Request #1540 · theme-next/hexo-theme-next (github.com)](https://github.com/theme-next/hexo-theme-next/pull/1540/files)
+
+解决方法：在 `themes/next/source/js/util.js` 中增加两行代码，删除两行代码。保存后`hexo clean & hexo g & hexo s` 即可解决。
+
+```javascript
+	const navItems = document.querySelectorAll('.post-toc li');
+    const sections = [...navItems].map(element => {
+      var link = element.querySelector('a.nav-link');
+      //增加该行
+      var target = document.getElementById(decodeURI(link.getAttribute('href')).replace('#', ''));
+      // TOC item animation navigate.
+      link.addEventListener('click', event => {
+        event.preventDefault();
+        //删除该行
+        //var target = document.getElementById(event.currentTarget.getAttribute('href').replace('#', ''));
+        var offset = target.getBoundingClientRect().top + window.scrollY;
+        window.anime({
+          targets  : document.scrollingElement,
+          duration : 500,
+          easing   : 'linear',
+          scrollTop: offset + 10
+        });
+      });
+      // 删除该行 
+      //return document.getElementById(link.getAttribute('href').replace('#', ''));
+      // 增加该行
+      return target;
+    });
+```
+
+
 
 ## 其他
 

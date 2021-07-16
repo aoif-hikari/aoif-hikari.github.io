@@ -1,5 +1,5 @@
 ---
-title: JDBC
+title: JAVA/JDBC
 tags: java
 ---
 
