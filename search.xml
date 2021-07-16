@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Leetcode-链表</title>
+    <title>Hello World</title>
+    <url>/2021/07/06/hello-world/</url>
+    <content><![CDATA[<blockquote>
+<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a></p>
+</blockquote>
+<span id="more"></span>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Leetcode/链表</title>
     <url>/2021/07/07/Leetcode-%E9%93%BE%E8%A1%A8/</url>
     <content><![CDATA[<blockquote>
 <p>常用数据结构—链表</p>
@@ -32,24 +49,113 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/07/06/hello-world/</url>
+    <title>hexo配置</title>
+    <url>/2021/07/07/hexo/</url>
     <content><![CDATA[<blockquote>
-<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a></p>
+<p>hexo，快速、简洁且高效的博客框架</p>
 </blockquote>
 <span id="more"></span>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">hexo clean <span class="regexp">//</span> 清除缓存</span><br><span class="line">hexo g <span class="regexp">//</span> 创建静态文件</span><br><span class="line">hexo s <span class="regexp">//</span> 本地运行</span><br><span class="line">hexo d <span class="regexp">//</span> 部署到远程</span><br></pre></td></tr></table></figure>
+<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>主题文件夹放在<code>./theme/</code> 下，<code>_config.yml</code> 中<code>theme:</code> 改成主题文件夹名</p>
+<h2 id="文章"><a href="#文章" class="headerlink" title="文章"></a>文章</h2><p>文章存放路径<code>/source/_posts/*.md</code></p>
+<ul>
+<li>文章头部</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2017</span><span class="string">/8/3</span> <span class="number">18</span><span class="string">:20:00</span> <span class="string">//发布时间</span></span><br><span class="line"><span class="attr">tags:</span> <span class="string">hexo</span> <span class="string">//分类</span></span><br><span class="line"><span class="attr">mathjax:</span> <span class="literal">true</span> <span class="string">//使用mathjax渲染公式</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">hexo博客</span> <span class="string">//标题</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>文章折叠</li>
+</ul>
+<p>需要折叠的部分之前加</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- more --&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>公式</li>
+</ul>
+<p>卸载原有公式渲染引擎 <code>npm uninstall hexo-renderer-marked --save</code> </p>
+<p>安装kramed <code>npm install hexo-renderer-kramed --save</code></p>
+<blockquote>
+<p>问题1：kramed对<code>\,&#123;,&#125;</code>有转义，无法正常显示</p>
+<p>解决方法：</p>
+<p>定位到博客根目录，找到<code>/node_modules/kramed/lib/rules/inline.js</code>文件，进行部分修改：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,      第11行，将其修改为</span></span><br><span class="line"><span class="attr">escape</span>: <span class="regexp">/^\\([`*\[\]()#$+\-.!_&gt;])/</span>,</span><br><span class="line"><span class="comment">//em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,    第20行，将其修改为</span></span><br><span class="line">em: <span class="regexp">/^\*((?:\*\*|[\s\S])+?)\*(?!\*)/</span>,</span><br></pre></td></tr></table></figure>
+<p>问题2：公式中以下符号会解析错误<code>&#123;&#123;` `&#125;&#125;</code> <code>&#123;%` `%&#125;</code></p>
+<p>解决方法：中间加空格，变为<code>&#123; &#123;</code> <code>&#125; &#125;</code> <code>&#123; %</code> <code>% &#125;</code></p>
+</blockquote>
+<ul>
+<li>图片居中(md支持html语法)</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">align</span>=<span class="string">&quot;center&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;/img/...&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="多分支管理"><a href="#多分支管理" class="headerlink" title="多分支管理"></a>多分支管理</h2><p>同时管理了两个分支：</p>
+<ul>
+<li>master -负责展示静态网页</li>
+<li>hexo -备份本地hexo文件（默认分支）</li>
+</ul>
+<p>执行<code>hexo d</code>时，自动更新master分支（config文件中deploy配置）</p>
+<p>add, commit, pull更新hexo分支需要备份的源文件</p>
+<h2 id="中文目录无法跳转"><a href="#中文目录无法跳转" class="headerlink" title="中文目录无法跳转"></a>中文目录无法跳转</h2><p><a href="https://github.com/theme-next/hexo-theme-next/pull/1540/files">fix: Chinese TOC cannot jump by jiangtj · Pull Request #1540 · theme-next/hexo-theme-next (github.com)</a></p>
+<p>解决方法：在 <code>themes/next/source/js/util.js</code> 中增加两行代码，删除两行代码。保存后<code>hexo clean &amp; hexo g &amp; hexo s</code> 即可解决。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> navItems = <span class="built_in">document</span>.querySelectorAll(<span class="string">&#x27;.post-toc li&#x27;</span>);</span><br><span class="line">   <span class="keyword">const</span> sections = [...navItems].map(<span class="function"><span class="params">element</span> =&gt;</span> &#123;</span><br><span class="line">     <span class="keyword">var</span> link = element.querySelector(<span class="string">&#x27;a.nav-link&#x27;</span>);</span><br><span class="line">     <span class="comment">//增加该行</span></span><br><span class="line">     <span class="keyword">var</span> target = <span class="built_in">document</span>.getElementById(<span class="built_in">decodeURI</span>(link.getAttribute(<span class="string">&#x27;href&#x27;</span>)).replace(<span class="string">&#x27;#&#x27;</span>, <span class="string">&#x27;&#x27;</span>));</span><br><span class="line">     <span class="comment">// TOC item animation navigate.</span></span><br><span class="line">     link.addEventListener(<span class="string">&#x27;click&#x27;</span>, <span class="function"><span class="params">event</span> =&gt;</span> &#123;</span><br><span class="line">       event.preventDefault();</span><br><span class="line">       <span class="comment">//删除该行</span></span><br><span class="line">       <span class="comment">//var target = document.getElementById(event.currentTarget.getAttribute(&#x27;href&#x27;).replace(&#x27;#&#x27;, &#x27;&#x27;));</span></span><br><span class="line">       <span class="keyword">var</span> offset = target.getBoundingClientRect().top + <span class="built_in">window</span>.scrollY;</span><br><span class="line">       <span class="built_in">window</span>.anime(&#123;</span><br><span class="line">         <span class="attr">targets</span>  : <span class="built_in">document</span>.scrollingElement,</span><br><span class="line">         <span class="attr">duration</span> : <span class="number">500</span>,</span><br><span class="line">         <span class="attr">easing</span>   : <span class="string">&#x27;linear&#x27;</span>,</span><br><span class="line">         <span class="attr">scrollTop</span>: offset + <span class="number">10</span></span><br><span class="line">       &#125;);</span><br><span class="line">     &#125;);</span><br><span class="line">     <span class="comment">// 删除该行 </span></span><br><span class="line">     <span class="comment">//return document.getElementById(link.getAttribute(&#x27;href&#x27;).replace(&#x27;#&#x27;, &#x27;&#x27;));</span></span><br><span class="line">     <span class="comment">// 增加该行</span></span><br><span class="line">     <span class="keyword">return</span> target;</span><br><span class="line">   &#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>无法解决的问题尝试清除缓存<code>hexo clean</code>后重新生成</p>
 ]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
   </entry>
   <entry>
-    <title>双计数(Double Counting)</title>
+    <title>JAVA/代理模式</title>
+    <url>/2021/07/09/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/</url>
+    <content><![CDATA[<blockquote>
+<p>代理模式的一个典型应用：AOP(面向切面编程)</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h2><p>a类本来需要调用c类（目标类）的方法完成某个功能， 但是c不让a调用。 </p>
+<p>a —&gt;不能直接调用 c的方法。<br>在a 和 c 直接创建一个 b 代理，c让b访问。 c，b实现相同的功能（接口）。<br>a —&gt;访问b—&gt;访问c</p>
+<p>作用：</p>
+<ul>
+<li><p>功能增强： 在原有的功能上，增加了额外的功能。 新增加的功能，叫做功能增强</p>
+</li>
+<li><p>控制访问： 代理类不让你访问目标，例如商家不让用户访问厂家。 </p>
+</li>
+</ul>
+<h2 id="静态代理"><a href="#静态代理" class="headerlink" title="静态代理"></a>静态代理</h2><p>代理类需要手工实现。即自己创建一个java类，表示代理类。所要代理的目标类是确定的。</p>
+<ul>
+<li>缺点：当目标类和代理类很多时候，<ul>
+<li>当目标类增加， 代理类可能也需要成倍的增加。 代理类数量过多。</li>
+<li>当接口中功能增加或修改，会影响众多的实现类，厂家类，代理类都需要修改。影响较大。</li>
+</ul>
+</li>
+</ul>
+<h2 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h2><p>在程序执行过程中，使用jdk的<strong>反射</strong>机制，创建<strong>代理类对象</strong>， 并动态的指定要代理目标类。</p>
+<p>即使目标类很多，代理类数量可以很少；当修改了接口中的方法时，不影响代理类。</p>
+<p>动态代理是一种创建java对象的能力，不用创建代理类，就能创建代理类对象。</p>
+<p>两种实现方式：jdk动态代理；cglib动态代理</p>
+<h3 id="jdk动态代理"><a href="#jdk动态代理" class="headerlink" title="jdk动态代理"></a>jdk动态代理</h3><ul>
+<li>使用java反射包中的类和接口实现动态代理的功能。</li>
+<li>反射包 java.lang.reflect , 里面有三个类 ： InvocationHandler , Method, Proxy.</li>
+<li>要求目标类实现接口</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 不使用反射调用方法</span></span><br><span class="line">HelloService service = <span class="keyword">new</span> HelloServiceImpl(); <span class="comment">//创建类对象service</span></span><br><span class="line">service.sayHello(<span class="string">&quot;张三&quot;</span>); <span class="comment">// 通过对象调用sayHello()方法</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用反射调用方法</span></span><br><span class="line">Method method =  HelloService.class.getMethod(<span class="string">&quot;sayHello&quot;</span>, String.class); <span class="comment">// 获取method对象（sayHello()方法）</span></span><br><span class="line">HelloService service2 = <span class="keyword">new</span> HelloServiceImpl2();</span><br><span class="line">Object ret = method.invoke(service2, <span class="string">&quot;李四&quot;</span>); <span class="comment">// invoke()方法调用对象service2的方法</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>InvocationHandler接口，只有一个方法invoke()，代理对象要完成的功能。（目标方法/功能增强）</li>
+<li>Method类：表示目标类中的方法。通过Method可以执行某个目标类的方法，method.invoke(目标对象，方法的参数)</li>
+<li>Proxy类：创建代理对象。之前创建对象是 new ，现在使用Proxy类的静态方法 newProxyInstance() 。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//实现InvocationHandler接口，完成代理类要做的功能（1.调用目标方法，2.功能增强）</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MySellHandler</span> <span class="keyword">implements</span> <span class="title">InvocationHandler</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Object target = <span class="keyword">null</span>; <span class="comment">// 为目标类创建对象（活动的，不是固定的，需要传入进来）</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MySellHandler</span><span class="params">(Object target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.target = target;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">	<span class="comment">// 实现invoke方法，完成代理类要做的功能</span></span><br><span class="line">    <span class="comment">// Object proxy: jdk创建的代理对象，无需赋值。</span></span><br><span class="line">	<span class="comment">// Method method: 目标类中的方法，jdk提供</span></span><br><span class="line">    <span class="comment">// Object[] args：目标类中方法的参数， jdk提供。</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">        Object res  = <span class="keyword">null</span>;</span><br><span class="line">        res =  method.invoke(target,args); <span class="comment">// 反射，执行目标对象target的method方法</span></span><br><span class="line">		<span class="comment">//功能增强，加价</span></span><br><span class="line">        <span class="keyword">if</span>( res != <span class="keyword">null</span> )&#123;</span><br><span class="line">            Float price = (Float)res;</span><br><span class="line">            price = price + <span class="number">25</span>;</span><br><span class="line">            res = price;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(res);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//创建代理对象，使用Proxy</span></span><br><span class="line"><span class="comment">//1. 创建目标对象</span></span><br><span class="line">UsbSell factory = <span class="keyword">new</span> UsbKingFactory();</span><br><span class="line"><span class="comment">//2.创建InvocationHandler对象</span></span><br><span class="line">InvocationHandler handler = <span class="keyword">new</span> MySellHandler(factory);</span><br><span class="line"><span class="comment">//3.创建代理对象</span></span><br><span class="line">UsbSell proxy = (UsbSell) Proxy.newProxyInstance(</span><br><span class="line">    factory.getClass().getClassLoader(),</span><br><span class="line">    factory.getClass().getInterfaces(),</span><br><span class="line">    handler</span><br><span class="line">	);</span><br><span class="line"><span class="comment">//4.通过代理执行方法</span></span><br><span class="line"><span class="keyword">float</span> price = proxy.sell(<span class="number">1</span>); <span class="comment">// 代理对象proxy调用目标类factory中的sell方法</span></span><br></pre></td></tr></table></figure>
+<h3 id="cglib动态代理"><a href="#cglib动态代理" class="headerlink" title="cglib动态代理"></a>cglib动态代理</h3><ul>
+<li><p>cglib是第三方的工具库， 创建代理对象。</p>
+</li>
+<li><p>原理是继承， cglib通过继承目标类，创建它的子类，在子类中重写父类中同名的方法， 实现功能的修改。要求目标类不能是final的， 方法也不能是final的。</p>
+</li>
+<li><p>cglib的要求目标类比较宽松， 只要能继承即可。</p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图与网络/双计数(Double Counting)</title>
     <url>/2021/07/06/%E5%8F%8C%E8%AE%A1%E6%95%B0/</url>
     <content><![CDATA[<blockquote>
 <p>双计数狭义上讲，对于一个集合运用两种不同的方式（行 / 列），得到等式结果或者不等式的结果。</p>
@@ -89,7 +195,10 @@ T(n,k,l)\geq \frac{n\choose l}{k \choose l}</script><blockquote>
 </blockquote>
 <script type="math/tex; mode=display">
 K_a(n) \leq (a-1)^{\frac{1}{a} }n^{2-\frac{1}{a} }+(a-1)n</script><p>对$S= \{(x,A)|x\in V_1,A \in V_2,|A|=a,且x与A中所有点都有边相连\}$计数, 即对下图中的结构进行计数。</p>
-<p><img src="/img/0607-1.png" style="zoom:33%;" /></p>
+<div align="center">
+    <img src="/img/0607-1.png" style="zoom:33%;">
+</div>
+
 <p>固定$x$：从与$x$相连的元素中取$A$，设$x$的neighbor为$d(x)$，那么A有$\sum_{x\in V_1}\binom{d(x)}{a}$种选法，且$|S|=\sum_{x\in V_1}\binom{d(x)}{a}$</p>
 <p>固定$A$：从$n$中选出$a$元集合，与之对应相连的$x$最多有$(a-1)$个，否则就会出现$a\times a-clique$，即$|S| \leq \binom{n}{a}(a-1)$</p>
 <p>即$\sum_{x\in V_1}\binom{d(x)}{a}\leq \binom{n}{a}(a-1)$</p>
@@ -114,7 +223,10 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 <p>定理：如果图$G=(V，E)$中不包含4个点的圈, 即$C_4-free$，那么有$|E|\leq \left \lfloor n/4(1+\sqrt{4n-3}) \right \rfloor$</p>
 </blockquote>
 <p>令点集$V={1，2，…，n}$，用于双计数的集合为$S=\{(u,\{v,w\})|u与v,w都邻接，且v≠w\}$，即对下图中的结构进行计数。</p>
-<p><img src="/img/0607-1.png" style="zoom:33%;" /></p>
+<div align="center">
+    <img src="/img/0607-1.png" style="zoom:33%;">
+</div>
+
 <p>固定$u$,那么$v$和$w$只能在度为$d(u)$的点中选取，即$\binom{d(u)}{2}$，有$\sum _{u\in V}\binom{d(u)}{2}=|S|$；</p>
 <p>固定$v$和$w$，最多只有一个点可以和它们都关联，那么有$\binom{n}{2}\geq |S|$，</p>
 <p>那么，$\sum _{u\in V}d^2(u)\leq \sum _{u\in V}d(u)+n(n-1)$,</p>
@@ -134,7 +246,7 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 <p>右：先选出$A$和$B$集合，使得$x$在$A$和$B$上，即在$A\cap B$上。</p>
 <h2 id="整除关系"><a href="#整除关系" class="headerlink" title="整除关系"></a>整除关系</h2><blockquote>
 <p>假设两个有限集$R$和$C$和一个子集$S\subseteq R\times C$。无论何时$(p，g)∈s $那么认为$p$和$q$是关联的。</p>
-<p>设<img src="https://img.it610.com/image/info8/b4c6f817626645db87ab41f3c50e6db6.gif" alt="r_p">表示$p$固定，与$p$关联的元素数目；$c_p$表示$q$固定，与$q$关联的元素数目。有</p>
+<p>设$r_p$表示$p$固定，与$p$关联的元素数目；$c_p$表示$q$固定，与$q$关联的元素数目。有</p>
 <script type="math/tex; mode=display">
 \sum_{p\in R}r_p=|S|=\sum_{q\in C}c_q</script></blockquote>
 <p>假设$M_{|p|\times |q|}$的关联矩阵使用双计数进行证明，矩阵中若$p_i$和$q_j$相关联，$a_{ij}$则置为$1$，否则为$0$，那么$|S|$就是矩阵$M$中全部$1$的个数，等式的第一项可从行计数，最后一项可从列计数角度统计矩阵中1的个数。</p>
@@ -252,14 +364,22 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 \overline{t(j)}=\frac{1}{n}\sum_{j=1}^{n}t(j)=\frac{1}{n}\sum_{i=1}^{n}\left \lfloor n/i \right \rfloor</script><script type="math/tex; mode=display">
 \frac{1}{n}\sum_{i=1}^{n}(\frac{n}{j}-1)<\frac{1}{n}\sum_{i=1}^{n}\left \lfloor n/i \right \rfloor\leq \frac{1}{n}\sum_{i=1}^{n}\frac{n}{i}=\sum_{i=1}^{n}\frac{1}{i}</script><script type="math/tex; mode=display">
 \sum_{i=1}^{n}\frac{1}{i}-1 < t(j) \leq lnn</script><script type="math/tex; mode=display">
-|\overline{t(j)}-lnn|<1</script><h2 id="9-Sperner-Lemma"><a href="#9-Sperner-Lemma" class="headerlink" title="9. Sperner Lemma"></a>9. Sperner Lemma</h2><blockquote>
+|\overline{t(j)}-lnn|<1</script><h2 id="Sperner-Lemma"><a href="#Sperner-Lemma" class="headerlink" title="Sperner Lemma"></a>Sperner Lemma</h2><blockquote>
 <p>假设某个顶点为$V1、V2、V3$的“大”三角形被三角化了(也就是说，被分解成有限数量的“小”三角形，这些“小”三角形每条边都能拼接在一起)。</p>
 <p>假设三角化中的顶点从集合$\{1,2,3\}$中获取颜色，使得$V_i$接收颜色$i$(对于每个$i$)，并且沿着$V_i$到$V_i$的边的顶点只用$i$和$j$的颜色，而内部顶点用1、2或3的颜色任意着色。那么在三角测量中一定有一个小的“三色”三角形。</p>
 </blockquote>
-<p><img src="/img/0607-3.png" /></p>
+<div align="center">
+    <img src="/img/0607-3.png">
+</div>
+
+
 <p><strong>证明：</strong></p>
 <p>假定大三角形外部有一点$A$，每一个小三角形中心都有一个顶点$O$，若小三角形含有1，2顶点，则从$O$经过1，2点构成的边形成一条边(即出度)，如下图</p>
-<p><img src="/img/0607-4.png" /></p>
+<div align="center">
+    <img src="/img/0607-4.png">
+</div>
+
+
 <p>根据握手定理可知，度之和必为偶数， 在$V_1$和$V_2$构成的边上，观察可得出度必为奇数，即边上(1,2).(2,1)的线段必有奇数个，那么在小三角形必存在奇数度的三角形，即必存在1度的三角形，得证。</p>
 <p>参考：<a href="https://www.it610.com/article/1295411404924329984.htm">【图论学习笔记二】双计数(Double Counting) - it610.com</a></p>
 ]]></content>
@@ -268,7 +388,7 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
       </tags>
   </entry>
   <entry>
-    <title>JDBC</title>
+    <title>JAVA/JDBC</title>
     <url>/2021/07/07/jdbc/</url>
     <content><![CDATA[<blockquote>
 <p>Java DataBase Connectivity, Java连接数据库，是SUN公司制定的一套接口, java.sql.*;</p>
@@ -306,106 +426,7 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
       </tags>
   </entry>
   <entry>
-    <title>hexo配置</title>
-    <url>/2021/07/07/hexo/</url>
-    <content><![CDATA[<blockquote>
-<p>hexo，快速、简洁且高效的博客框架</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">hexo clean <span class="regexp">//</span> 清除缓存</span><br><span class="line">hexo g <span class="regexp">//</span> 创建静态文件</span><br><span class="line">hexo s <span class="regexp">//</span> 本地运行</span><br><span class="line">hexo d <span class="regexp">//</span> 部署到远程</span><br></pre></td></tr></table></figure>
-<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>主题文件夹放在<code>./theme/</code> 下，<code>_config.yml</code> 中<code>theme:</code> 改成主题文件夹名</p>
-<h2 id="文章"><a href="#文章" class="headerlink" title="文章"></a>文章</h2><p>文章存放路径<code>/source/_posts/*.md</code></p>
-<ul>
-<li>文章头部</li>
-</ul>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2017</span><span class="string">/8/3</span> <span class="number">18</span><span class="string">:20:00</span> <span class="string">//发布时间</span></span><br><span class="line"><span class="attr">tags:</span> <span class="string">hexo</span> <span class="string">//分类</span></span><br><span class="line"><span class="attr">mathjax:</span> <span class="literal">true</span> <span class="string">//使用mathjax渲染公式</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">hexo博客</span> <span class="string">//标题</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>文章折叠</li>
-</ul>
-<p>需要折叠的部分之前加</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- more --&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>公式</li>
-</ul>
-<p>卸载原有公式渲染引擎 <code>npm uninstall hexo-renderer-marked --save</code> </p>
-<p>安装kramed <code>npm install hexo-renderer-kramed --save</code></p>
-<blockquote>
-<p>问题1：kramed对<code>\,&#123;,&#125;</code>有转义，无法正常显示</p>
-<p>解决方法：</p>
-<p>定位到博客根目录，找到<code>/node_modules/kramed/lib/rules/inline.js</code>文件，进行部分修改：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,      第11行，将其修改为</span></span><br><span class="line"><span class="attr">escape</span>: <span class="regexp">/^\\([`*\[\]()#$+\-.!_&gt;])/</span>,</span><br><span class="line"><span class="comment">//em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,    第20行，将其修改为</span></span><br><span class="line">em: <span class="regexp">/^\*((?:\*\*|[\s\S])+?)\*(?!\*)/</span>,</span><br></pre></td></tr></table></figure>
-<p>问题2：公式中以下符号会解析错误<code>&#123;&#123;` `&#125;&#125;</code> <code>&#123;%` `%&#125;</code></p>
-<p>解决方法：中间加空格，变为<code>&#123; &#123;</code> <code>&#125; &#125;</code> <code>&#123; %</code> <code>% &#125;</code></p>
-</blockquote>
-<h2 id="多分支管理"><a href="#多分支管理" class="headerlink" title="多分支管理"></a>多分支管理</h2><p>同时管理了两个分支：</p>
-<ul>
-<li>master -负责展示静态网页</li>
-<li>hexo -备份本地hexo文件（默认分支）</li>
-</ul>
-<p>执行<code>hexo d</code>时，自动更新master分支（config文件中deploy配置）</p>
-<p>add, commit, pull更新hexo分支需要备份的源文件</p>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>无法解决的问题尝试清除缓存<code>hexo clean</code>后重新生成</p>
-]]></content>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JAVA代理模式</title>
-    <url>/2021/07/09/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/</url>
-    <content><![CDATA[<blockquote>
-<p>代理模式的一个典型应用：AOP(面向切面编程)</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h2><p>a类本来需要调用c类（目标类）的方法完成某个功能， 但是c不让a调用。 </p>
-<p>a —&gt;不能直接调用 c的方法。<br>在a 和 c 直接创建一个 b 代理，c让b访问。 c，b实现相同的功能（接口）。<br>a —&gt;访问b—&gt;访问c</p>
-<p>作用：</p>
-<ul>
-<li><p>功能增强： 在原有的功能上，增加了额外的功能。 新增加的功能，叫做功能增强</p>
-</li>
-<li><p>控制访问： 代理类不让你访问目标，例如商家不让用户访问厂家。 </p>
-</li>
-</ul>
-<h2 id="静态代理"><a href="#静态代理" class="headerlink" title="静态代理"></a>静态代理</h2><p>代理类需要手工实现。即自己创建一个java类，表示代理类。所要代理的目标类是确定的。</p>
-<ul>
-<li>缺点：当目标类和代理类很多时候，<ul>
-<li>当目标类增加， 代理类可能也需要成倍的增加。 代理类数量过多。</li>
-<li>当接口中功能增加或修改，会影响众多的实现类，厂家类，代理类都需要修改。影响较大。</li>
-</ul>
-</li>
-</ul>
-<h2 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h2><p>在程序执行过程中，使用jdk的<strong>反射</strong>机制，创建<strong>代理类对象</strong>， 并动态的指定要代理目标类。</p>
-<p>即使目标类很多，代理类数量可以很少；当修改了接口中的方法时，不影响代理类。</p>
-<p>动态代理是一种创建java对象的能力，不用创建代理类，就能创建代理类对象。</p>
-<p>两种实现方式：jdk动态代理；cglib动态代理</p>
-<h3 id="jdk动态代理"><a href="#jdk动态代理" class="headerlink" title="jdk动态代理"></a>jdk动态代理</h3><ul>
-<li>使用java反射包中的类和接口实现动态代理的功能。</li>
-<li>反射包 java.lang.reflect , 里面有三个类 ： InvocationHandler , Method, Proxy.</li>
-<li>要求目标类实现接口</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 不使用反射调用方法</span></span><br><span class="line">HelloService service = <span class="keyword">new</span> HelloServiceImpl(); <span class="comment">//创建类对象service</span></span><br><span class="line">service.sayHello(<span class="string">&quot;张三&quot;</span>); <span class="comment">// 通过对象调用sayHello()方法</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用反射调用方法</span></span><br><span class="line">Method method =  HelloService.class.getMethod(<span class="string">&quot;sayHello&quot;</span>, String.class); <span class="comment">// 获取method对象（sayHello()方法）</span></span><br><span class="line">HelloService service2 = <span class="keyword">new</span> HelloServiceImpl2();</span><br><span class="line">Object ret = method.invoke(service2, <span class="string">&quot;李四&quot;</span>); <span class="comment">// invoke()方法调用对象service2的方法</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>InvocationHandler接口，只有一个方法invoke()，代理对象要完成的功能。（目标方法/功能增强）</li>
-<li>Method类：表示目标类中的方法。通过Method可以执行某个目标类的方法，method.invoke(目标对象，方法的参数)</li>
-<li>Proxy类：创建代理对象。之前创建对象是 new ，现在使用Proxy类的静态方法 newProxyInstance() 。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//实现InvocationHandler接口，完成代理类要做的功能（1.调用目标方法，2.功能增强）</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MySellHandler</span> <span class="keyword">implements</span> <span class="title">InvocationHandler</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Object target = <span class="keyword">null</span>; <span class="comment">// 为目标类创建对象（活动的，不是固定的，需要传入进来）</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MySellHandler</span><span class="params">(Object target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.target = target;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">	<span class="comment">// 实现invoke方法，完成代理类要做的功能</span></span><br><span class="line">    <span class="comment">// Object proxy: jdk创建的代理对象，无需赋值。</span></span><br><span class="line">	<span class="comment">// Method method: 目标类中的方法，jdk提供</span></span><br><span class="line">    <span class="comment">// Object[] args：目标类中方法的参数， jdk提供。</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">        Object res  = <span class="keyword">null</span>;</span><br><span class="line">        res =  method.invoke(target,args); <span class="comment">// 反射，执行目标对象target的method方法</span></span><br><span class="line">		<span class="comment">//功能增强，加价</span></span><br><span class="line">        <span class="keyword">if</span>( res != <span class="keyword">null</span> )&#123;</span><br><span class="line">            Float price = (Float)res;</span><br><span class="line">            price = price + <span class="number">25</span>;</span><br><span class="line">            res = price;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(res);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//创建代理对象，使用Proxy</span></span><br><span class="line"><span class="comment">//1. 创建目标对象</span></span><br><span class="line">UsbSell factory = <span class="keyword">new</span> UsbKingFactory();</span><br><span class="line"><span class="comment">//2.创建InvocationHandler对象</span></span><br><span class="line">InvocationHandler handler = <span class="keyword">new</span> MySellHandler(factory);</span><br><span class="line"><span class="comment">//3.创建代理对象</span></span><br><span class="line">UsbSell proxy = (UsbSell) Proxy.newProxyInstance(</span><br><span class="line">    factory.getClass().getClassLoader(),</span><br><span class="line">    factory.getClass().getInterfaces(),</span><br><span class="line">    handler</span><br><span class="line">	);</span><br><span class="line"><span class="comment">//4.通过代理执行方法</span></span><br><span class="line"><span class="keyword">float</span> price = proxy.sell(<span class="number">1</span>); <span class="comment">// 代理对象proxy调用目标类factory中的sell方法</span></span><br></pre></td></tr></table></figure>
-<h3 id="cglib动态代理"><a href="#cglib动态代理" class="headerlink" title="cglib动态代理"></a>cglib动态代理</h3><ul>
-<li><p>cglib是第三方的工具库， 创建代理对象。</p>
-</li>
-<li><p>原理是继承， cglib通过继承目标类，创建它的子类，在子类中重写父类中同名的方法， 实现功能的修改。要求目标类不能是final的， 方法也不能是final的。</p>
-</li>
-<li><p>cglib的要求目标类比较宽松， 只要能继承即可。</p>
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Servlet规范</title>
+    <title>JAVA/Servlet规范</title>
     <url>/2021/07/09/servlet/</url>
     <content><![CDATA[<blockquote>
 <p>Servlet规范，来自于JAVAEE规范中的一种。</p>
@@ -606,7 +627,7 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
       </tags>
   </entry>
   <entry>
-    <title>图与网络--贪心算法</title>
+    <title>图与网络/贪心算法</title>
     <url>/2021/07/12/%E8%B4%AA%E5%BF%83/</url>
     <content><![CDATA[<blockquote>
 <p>贪心算法在对问题求解时，总是做出在当前看来是最好的选择。</p>
@@ -644,15 +665,26 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 <ul>
 <li><strong>kruaskal算法</strong>找到安全边的方法是，在所有连接森林中两颗不同树的边里面，找到权重最小的边$(u,v)$。</li>
 </ul>
-<p><img src="/img/greedy/2.jpg"/></p>
+<div align="center">
+    <img src="/img/greedy/2.jpg"/>
+</div>
+
 <ul>
 <li><strong>Prim算法</strong>所具有的一个性质是集合$A$中边总是构成一棵树。这颗树从一个任意的根节点r开始，一直长大到覆盖$V$中的所有结点时为止。算法每一步在连接集合$A$和$A$之外的节点所有边中，选择一条轻边加入到$A$中。</li>
 </ul>
-<p><img src="/img/greedy/3.jpg"/></p>
+<div align="center">
+    <img src="/img/greedy/3.jpg"/>
+</div>
+
+
+
 <h2 id="最大独立集-Maximum-independent-set"><a href="#最大独立集-Maximum-independent-set" class="headerlink" title="最大独立集(Maximum independent set)"></a>最大独立集(Maximum independent set)</h2><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">Greedy independent <span class="keyword">set</span></span><br><span class="line"><span class="keyword">input</span> Graph G=(V,E);</span><br><span class="line">output independent <span class="keyword">set</span> V<span class="string">&#x27; in G;</span></span><br><span class="line"><span class="string">begin</span></span><br><span class="line"><span class="string">    V&#x27;</span>:=ф</span><br><span class="line">    U:=V</span><br><span class="line">    <span class="keyword">while</span> U <span class="keyword">is</span> <span class="keyword">not</span> empty <span class="keyword">do</span></span><br><span class="line">    <span class="keyword">begin</span></span><br><span class="line">        x: vertex <span class="keyword">of</span> minimum degree <span class="keyword">in</span> graph induced <span class="keyword">by</span> U</span><br><span class="line">        V<span class="string">&#x27;:=V&#x27;</span>U(x);</span><br><span class="line">        eliminate x <span class="keyword">and</span> <span class="keyword">all</span> its neighbors <span class="keyword">from</span> U</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">return</span> V<span class="string">&#x27;</span></span><br><span class="line"><span class="string">end</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>贪心算法找不到最大独立集的例子：</p>
-<p><img src="/img/greedy/1.png"/></p>
+<div align="center">
+    <img src="/img/greedy/1.png"/>
+</div>
+
 <p>贪心结果：${a, e}$</p>
 <p>实际结果：${b, c, d}$</p>
 </blockquote>
@@ -714,13 +746,15 @@ m_{Gr}(G)\geq m^*(G)\frac{\frac{n}{m^*(G)}+\frac{m^*(G)}{n}}{2\delta +1+\frac{m^
 <p>假设$(0,1)$矩阵$A$的大小是$N×M$ ,矩阵$A$的特征是每行至少具有$v$个$1$，每列最多$a$个$1$。假设现在从其中抽取一个子矩阵$C⊂A$,大小是$N×K$，使得子矩阵的每行元素都不是全零行，证明$K$存在一个上界，<br>$K≤\frac{N}{a}+(\frac{M}{v})lna≤(\frac{M}{v})(1+lna)$</p>
 <p>分析：能不能使用一种抽取列数尽可能少的方案，如果使用的列数目比给定的边界条件$\frac{N}{a}+(\frac{M}{v})lna$小，那么原来的问题就自然获得证明。</p>
 </blockquote>
-<h6 id="贪心算法思路描述如下"><a href="#贪心算法思路描述如下" class="headerlink" title="贪心算法思路描述如下"></a><strong>贪心算法思路描述如下</strong></h6><ol>
+<p><strong>贪心算法思路描述如下</strong></p>
+<ol>
 <li>初始化矩阵$(0,1)$矩阵$A$，每列的$1$权重值$c_i∈\{1,2,3,……,a\}$,然后按照列权重按照 $a,a-1,a-2,…,1$ 执行降序排序，此时的矩阵命名为$A_a$;</li>
 <li>从最左边权重最高为$a$的第一列开始，删除这一列，并且这列对应的$1$所在相应的$a$个行也统一删掉。在删除$1$列和$a$行后的矩阵$A$，重新划定权重，继续寻找左边最高权重为$a$的列，继续删除。在删除$2$列和$2∗a$行后的矩阵$A$，重新划定权重，继续寻找左边最高权重为$a$的列，继续删除。重复$K_a$次后，把最高权重为$a$的列及对应的$a∗K_a$行都删掉了，此时的矩阵变成了$A_{a−1}$;</li>
 <li>以矩阵$A_{a−1}$开始，从左边权重最高为$a-1$的第一列开始，删除这一列，并且这列所对应的$a−1$行也统一删掉。删完后，重新划定权重，继续寻找左边最高权重为$a-1$的列，继续删除。重复$K_{a−1}$次后，把最高权重为$a-1$的列及其对应的$(a−1)∗K_{a−1}$行都删掉了，此时的矩阵变成了$A_{a−2}$.</li>
 <li>重复步骤3，删除权重为$a-2,a-3,…,1$的列，直到矩阵$A_1$变成了空。<br>将之前删除的所有列元集中起来重新组合成$N×K$矩阵，$K=\sum_{i=1}^a K_i$</li>
 </ol>
-<h6 id="证明"><a href="#证明" class="headerlink" title="证明"></a><strong>证明</strong></h6><p>假设$A_a=A_{N*M}$表示由$a$个1且每列的1互不重合的列组成的矩阵</p>
+<p><strong>证明</strong>：</p>
+<p>假设$A_a=A_{N*M}$表示由$a$个1且每列的1互不重合的列组成的矩阵</p>
 <p>$A_{a-1}’$表示由a-1个1且每列的1互不重合的列组成的矩阵。$|A_a’|=K_a$，那么删除覆盖的$K_a\cdot a$行得到新的矩阵$A_{a-1}=A_{(N-aK_a)\times (M-K_a)}$，那么每一列至多有$a-1$个$1$，</p>
 <p>$|A_{a-1}’|=K_{a-1}$，那么删除覆盖的$K_{a-1}\cdot (a-1)$行得到新的矩阵$A_{a-2}$。</p>
 <p>以此类推，$A_{i-1}$，每行至少$v$个1，每列至多$i-1$个$1$，那么有$N-aK_a-(a-1)K_{a-1}-…-iK_i$行，记为$k_i$行，有$M-K_a-…-K_i$列。</p>
@@ -736,7 +770,10 @@ k_i\times v\leq (M-K_a-...-K_i)\times (i-1)\leq M\times (i-1) \frac{k_i}{i-1}\le
 <p>$f:Y\rightarrow X$对于$F$中的每一个$f$，对于任何$C\subseteq \{1,2,…,n\}$使得$|C|=w$，$C$是$Y$的$w$元子集合，并且至少存在一个$F$中的$f$使得$f|C$是一一对应的。如果$|F|=N$那么完美哈希族可以记作$PHF(N;n,m,w)$。</p>
 <p>求满足条件的函数数目的一个上界。</p>
 </blockquote>
-<p><img src="/img/greedy/3.png"/></p>
+<div align="center">
+    <img src="/img/greedy/3.png"/>
+</div>
+
 <p>$|F|=N$，如上图，假设$w=3$，那么任选$Y$中的三列，有$\binom{n}{3}$种选择，要求其中存在一行使得三个函数值各不同，例如取$1，2，3$列，$f_{11}$，$f_{12}$，$f_{13}$互不相同就满足要求一一映射。</p>
 <p>$f:Y\rightarrow X$，$n$个$Y$对应到$m$个$X$，每一个$Y$有$m$种选择，那么有$m^n$个函数。从中挑出最少的函数(即N越小越好)使得对于任何的$C$可以满足一一对应要求。</p>
 <ul>
@@ -769,7 +806,12 @@ N\leq \frac{m}{w!\binom{m}{w}}(1+log\binom{n}{w})</script><ul>
 <p>接下来确定$v$，那么对于某一行有多少$\frac{n}{2}$元子集合可以分割$t_i$，$t$个位置中一半放$1$，剩余一半放$0$，问题是一个$n$元集合，此时还剩$n-t$个位置没有放数，且还缺少$\frac{n-t}{2}$个1，那么得到子集合个数$\binom{t}{ \frac{t}{2} }\cdot \binom{n-t}{\frac{n-t}{2}}$；</p>
 <p>确定$a$，对于固定的$\frac{n}{2}$元子集合可以分割多少$t$，$\binom{\frac{n}{2}}{\frac{t}{2}}\binom{\frac{n}{2}}{\frac{t}{2}}$，套用S-T定理，</p>
 <script type="math/tex; mode=display">
-N\leq \frac{\binom{n}{\frac{n}{2}}}{\binom{t}{\frac{t}{2}}\binom{n-t}{\frac{n-t}{2}}}(1+2ln\binom{\frac{n}{2}}{\frac{t}{2}})</script><p><img src="/img/greedy/2.png"/></p>
+N\leq \frac{\binom{n}{\frac{n}{2}}}{\binom{t}{\frac{t}{2}}\binom{n-t}{\frac{n-t}{2}}}(1+2ln\binom{\frac{n}{2}}{\frac{t}{2}})</script><div align="center">
+    <img src="/img/greedy/2.png"/>
+</div>
+
+
+
 <ul>
 <li>使用概率方法：</li>
 </ul>
@@ -780,6 +822,7 @@ N\leq \frac{\binom{n}{\frac{n}{2}}}{\binom{t}{\frac{t}{2}}\binom{n-t}{\frac{n-t}
 (1-\frac{\binom{t}{\frac{t}{2}}\binom{n-t}{\frac{n-t}{2}}}{\binom{n}{\frac{n}{2} }})^N=P(A_i)</script><p>那么至少有一个$t$元集合未被分割的概率为</p>
 <script type="math/tex; mode=display">
 P(\cup A_i)\leq \sum P(A_i)=\binom{n}{t}P(A_i)<1</script><p>令其小于$1$，那么没有未被分割的情况概率大于$0$。</p>
+<p>参考：<a href="https://www.codenong.com/cs106200371/">图论学习笔记五贪心算法 | 码农家园 (codenong.com)</a></p>
 ]]></content>
       <tags>
         <tag>图与网络</tag>

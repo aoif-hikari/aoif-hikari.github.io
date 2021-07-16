@@ -22,7 +22,7 @@
 
   <meta name="description" content="贪心算法在对问题求解时，总是做出在当前看来是最好的选择。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="图与网络--贪心算法">
+<meta property="og:title" content="图与网络&#x2F;贪心算法">
 <meta property="og:url" content="http://example.com/2021/07/12/%E8%B4%AA%E5%BF%83/index.html">
 <meta property="og:site_name" content="aoif-hikari">
 <meta property="og:description" content="贪心算法在对问题求解时，总是做出在当前看来是最好的选择。">
@@ -33,7 +33,7 @@
 <meta property="og:image" content="http://example.com/img/greedy/3.png">
 <meta property="og:image" content="http://example.com/img/greedy/2.png">
 <meta property="article:published_time" content="2021-07-12T11:14:36.923Z">
-<meta property="article:modified_time" content="2021-07-12T11:37:58.659Z">
+<meta property="article:modified_time" content="2021-07-16T08:56:06.190Z">
 <meta property="article:author" content="fu">
 <meta property="article:tag" content="图与网络">
 <meta name="twitter:card" content="summary">
@@ -52,7 +52,7 @@
   };
 </script>
 
-  <title>图与网络--贪心算法 | aoif-hikari</title>
+  <title>图与网络/贪心算法 | aoif-hikari</title>
   
 
 
@@ -131,19 +131,19 @@
     <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
-
-  </li>
-        <li class="menu-item menu-item-schedule">
-
-    <a href="/schedule/" rel="section"><i class="fa fa-fw fa-calendar"></i>Schedule</a>
-
-  </li>
-        <li class="menu-item menu-item-sitemap">
-
-    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>Sitemap</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -210,7 +210,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          图与网络--贪心算法
+          图与网络/贪心算法
         </h1>
 
         <div class="post-meta">
@@ -219,13 +219,19 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-07-12 19:14:36 / Modified: 19:37:58" itemprop="dateCreated datePublished" datetime="2021-07-12T19:14:36+08:00">2021-07-12</time>
+              <time title="Created: 2021-07-12 19:14:36" itemprop="dateCreated datePublished" datetime="2021-07-12T19:14:36+08:00">2021-07-12</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-07-16 16:56:06" itemprop="dateModified" datetime="2021-07-16T16:56:06+08:00">2021-07-16</time>
+              </span>
 
           
-            <span id="/2021/07/12/%E8%B4%AA%E5%BF%83/" class="post-meta-item leancloud_visitors" data-flag-title="图与网络--贪心算法" title="Views">
+            <span id="/2021/07/12/%E8%B4%AA%E5%BF%83/" class="post-meta-item leancloud_visitors" data-flag-title="图与网络/贪心算法" title="Views">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -304,15 +310,26 @@
 <ul>
 <li><strong>kruaskal算法</strong>找到安全边的方法是，在所有连接森林中两颗不同树的边里面，找到权重最小的边$(u,v)$。</li>
 </ul>
-<p><img src="/img/greedy/2.jpg"/></p>
+<div align="center">
+    <img src="/img/greedy/2.jpg"/>
+</div>
+
 <ul>
 <li><strong>Prim算法</strong>所具有的一个性质是集合$A$中边总是构成一棵树。这颗树从一个任意的根节点r开始，一直长大到覆盖$V$中的所有结点时为止。算法每一步在连接集合$A$和$A$之外的节点所有边中，选择一条轻边加入到$A$中。</li>
 </ul>
-<p><img src="/img/greedy/3.jpg"/></p>
+<div align="center">
+    <img src="/img/greedy/3.jpg"/>
+</div>
+
+
+
 <h2 id="最大独立集-Maximum-independent-set"><a href="#最大独立集-Maximum-independent-set" class="headerlink" title="最大独立集(Maximum independent set)"></a>最大独立集(Maximum independent set)</h2><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Greedy independent <span class="keyword">set</span></span><br><span class="line"><span class="keyword">input</span> Graph G=(V,E);</span><br><span class="line">output independent <span class="keyword">set</span> V<span class="string">&#x27; in G;</span></span><br><span class="line"><span class="string">begin</span></span><br><span class="line"><span class="string">    V&#x27;</span>:=ф</span><br><span class="line">    U:=V</span><br><span class="line">    <span class="keyword">while</span> U <span class="keyword">is</span> <span class="keyword">not</span> empty <span class="keyword">do</span></span><br><span class="line">    <span class="keyword">begin</span></span><br><span class="line">        x: vertex <span class="keyword">of</span> minimum degree <span class="keyword">in</span> graph induced <span class="keyword">by</span> U</span><br><span class="line">        V<span class="string">&#x27;:=V&#x27;</span>U(x);</span><br><span class="line">        eliminate x <span class="keyword">and</span> <span class="keyword">all</span> its neighbors <span class="keyword">from</span> U</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">return</span> V<span class="string">&#x27;</span></span><br><span class="line"><span class="string">end</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>贪心算法找不到最大独立集的例子：</p>
-<p><img src="/img/greedy/1.png"/></p>
+<div align="center">
+    <img src="/img/greedy/1.png"/>
+</div>
+
 <p>贪心结果：${a, e}$</p>
 <p>实际结果：${b, c, d}$</p>
 </blockquote>
@@ -374,13 +391,15 @@ m_{Gr}(G)\geq m^*(G)\frac{\frac{n}{m^*(G)}+\frac{m^*(G)}{n}}{2\delta +1+\frac{m^
 <p>假设$(0,1)$矩阵$A$的大小是$N×M$ ,矩阵$A$的特征是每行至少具有$v$个$1$，每列最多$a$个$1$。假设现在从其中抽取一个子矩阵$C⊂A$,大小是$N×K$，使得子矩阵的每行元素都不是全零行，证明$K$存在一个上界，<br>$K≤\frac{N}{a}+(\frac{M}{v})lna≤(\frac{M}{v})(1+lna)$</p>
 <p>分析：能不能使用一种抽取列数尽可能少的方案，如果使用的列数目比给定的边界条件$\frac{N}{a}+(\frac{M}{v})lna$小，那么原来的问题就自然获得证明。</p>
 </blockquote>
-<h6 id="贪心算法思路描述如下"><a href="#贪心算法思路描述如下" class="headerlink" title="贪心算法思路描述如下"></a><strong>贪心算法思路描述如下</strong></h6><ol>
+<p><strong>贪心算法思路描述如下</strong></p>
+<ol>
 <li>初始化矩阵$(0,1)$矩阵$A$，每列的$1$权重值$c_i∈\{1,2,3,……,a\}$,然后按照列权重按照 $a,a-1,a-2,…,1$ 执行降序排序，此时的矩阵命名为$A_a$;</li>
 <li>从最左边权重最高为$a$的第一列开始，删除这一列，并且这列对应的$1$所在相应的$a$个行也统一删掉。在删除$1$列和$a$行后的矩阵$A$，重新划定权重，继续寻找左边最高权重为$a$的列，继续删除。在删除$2$列和$2∗a$行后的矩阵$A$，重新划定权重，继续寻找左边最高权重为$a$的列，继续删除。重复$K_a$次后，把最高权重为$a$的列及对应的$a∗K_a$行都删掉了，此时的矩阵变成了$A_{a−1}$;</li>
 <li>以矩阵$A_{a−1}$开始，从左边权重最高为$a-1$的第一列开始，删除这一列，并且这列所对应的$a−1$行也统一删掉。删完后，重新划定权重，继续寻找左边最高权重为$a-1$的列，继续删除。重复$K_{a−1}$次后，把最高权重为$a-1$的列及其对应的$(a−1)∗K_{a−1}$行都删掉了，此时的矩阵变成了$A_{a−2}$.</li>
 <li>重复步骤3，删除权重为$a-2,a-3,…,1$的列，直到矩阵$A_1$变成了空。<br>将之前删除的所有列元集中起来重新组合成$N×K$矩阵，$K=\sum_{i=1}^a K_i$</li>
 </ol>
-<h6 id="证明"><a href="#证明" class="headerlink" title="证明"></a><strong>证明</strong></h6><p>假设$A_a=A_{N*M}$表示由$a$个1且每列的1互不重合的列组成的矩阵</p>
+<p><strong>证明</strong>：</p>
+<p>假设$A_a=A_{N*M}$表示由$a$个1且每列的1互不重合的列组成的矩阵</p>
 <p>$A_{a-1}’$表示由a-1个1且每列的1互不重合的列组成的矩阵。$|A_a’|=K_a$，那么删除覆盖的$K_a\cdot a$行得到新的矩阵$A_{a-1}=A_{(N-aK_a)\times (M-K_a)}$，那么每一列至多有$a-1$个$1$，</p>
 <p>$|A_{a-1}’|=K_{a-1}$，那么删除覆盖的$K_{a-1}\cdot (a-1)$行得到新的矩阵$A_{a-2}$。</p>
 <p>以此类推，$A_{i-1}$，每行至少$v$个1，每列至多$i-1$个$1$，那么有$N-aK_a-(a-1)K_{a-1}-…-iK_i$行，记为$k_i$行，有$M-K_a-…-K_i$列。</p>
@@ -396,7 +415,10 @@ k_i\times v\leq (M-K_a-...-K_i)\times (i-1)\leq M\times (i-1) \frac{k_i}{i-1}\le
 <p>$f:Y\rightarrow X$对于$F$中的每一个$f$，对于任何$C\subseteq \{1,2,…,n\}$使得$|C|=w$，$C$是$Y$的$w$元子集合，并且至少存在一个$F$中的$f$使得$f|C$是一一对应的。如果$|F|=N$那么完美哈希族可以记作$PHF(N;n,m,w)$。</p>
 <p>求满足条件的函数数目的一个上界。</p>
 </blockquote>
-<p><img src="/img/greedy/3.png"/></p>
+<div align="center">
+    <img src="/img/greedy/3.png"/>
+</div>
+
 <p>$|F|=N$，如上图，假设$w=3$，那么任选$Y$中的三列，有$\binom{n}{3}$种选择，要求其中存在一行使得三个函数值各不同，例如取$1，2，3$列，$f_{11}$，$f_{12}$，$f_{13}$互不相同就满足要求一一映射。</p>
 <p>$f:Y\rightarrow X$，$n$个$Y$对应到$m$个$X$，每一个$Y$有$m$种选择，那么有$m^n$个函数。从中挑出最少的函数(即N越小越好)使得对于任何的$C$可以满足一一对应要求。</p>
 <ul>
@@ -429,7 +451,12 @@ N\leq \frac{m}{w!\binom{m}{w}}(1+log\binom{n}{w})</script><ul>
 <p>接下来确定$v$，那么对于某一行有多少$\frac{n}{2}$元子集合可以分割$t_i$，$t$个位置中一半放$1$，剩余一半放$0$，问题是一个$n$元集合，此时还剩$n-t$个位置没有放数，且还缺少$\frac{n-t}{2}$个1，那么得到子集合个数$\binom{t}{ \frac{t}{2} }\cdot \binom{n-t}{\frac{n-t}{2}}$；</p>
 <p>确定$a$，对于固定的$\frac{n}{2}$元子集合可以分割多少$t$，$\binom{\frac{n}{2}}{\frac{t}{2}}\binom{\frac{n}{2}}{\frac{t}{2}}$，套用S-T定理，</p>
 <script type="math/tex; mode=display">
-N\leq \frac{\binom{n}{\frac{n}{2}}}{\binom{t}{\frac{t}{2}}\binom{n-t}{\frac{n-t}{2}}}(1+2ln\binom{\frac{n}{2}}{\frac{t}{2}})</script><p><img src="/img/greedy/2.png"/></p>
+N\leq \frac{\binom{n}{\frac{n}{2}}}{\binom{t}{\frac{t}{2}}\binom{n-t}{\frac{n-t}{2}}}(1+2ln\binom{\frac{n}{2}}{\frac{t}{2}})</script><div align="center">
+    <img src="/img/greedy/2.png"/>
+</div>
+
+
+
 <ul>
 <li>使用概率方法：</li>
 </ul>
@@ -440,6 +467,7 @@ N\leq \frac{\binom{n}{\frac{n}{2}}}{\binom{t}{\frac{t}{2}}\binom{n-t}{\frac{n-t}
 (1-\frac{\binom{t}{\frac{t}{2}}\binom{n-t}{\frac{n-t}{2}}}{\binom{n}{\frac{n}{2} }})^N=P(A_i)</script><p>那么至少有一个$t$元集合未被分割的概率为</p>
 <script type="math/tex; mode=display">
 P(\cup A_i)\leq \sum P(A_i)=\binom{n}{t}P(A_i)<1</script><p>令其小于$1$，那么没有未被分割的情况概率大于$0$。</p>
+<p>参考：<a target="_blank" rel="noopener" href="https://www.codenong.com/cs106200371/">图论学习笔记五贪心算法 | 码农家园 (codenong.com)</a></p>
 
     </div>
 
@@ -477,8 +505,8 @@ P(\cup A_i)\leq \sum P(A_i)=\binom{n}{t}P(A_i)<1</script><p>令其小于$1$，�
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/07/09/servlet/" rel="prev" title="Servlet规范">
-      <i class="fa fa-chevron-left"></i> Servlet规范
+    <a href="/2021/07/09/servlet/" rel="prev" title="JAVA/Servlet规范">
+      <i class="fa fa-chevron-left"></i> JAVA/Servlet规范
     </a></div>
       <div class="post-nav-item"></div>
     </div>
@@ -540,7 +568,7 @@ P(\cup A_i)\leq \sum P(A_i)=\binom{n}{t}P(A_i)<1</script><p>令其小于$1$，�
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E9%97%AE%E9%A2%98-Minimum-spanning-trees-MST"><span class="nav-number">1.</span> <span class="nav-text">最小生成树问题(Minimum spanning trees,MST)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%A4%A7%E7%8B%AC%E7%AB%8B%E9%9B%86-Maximum-independent-set"><span class="nav-number">2.</span> <span class="nav-text">最大独立集(Maximum independent set)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98-Greedy-knapsack"><span class="nav-number">3.</span> <span class="nav-text">背包问题(Greedy knapsack)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Stein-Lovasz-Theorem"><span class="nav-number">4.</span> <span class="nav-text">The Stein-Lovasz Theorem</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95%E6%80%9D%E8%B7%AF%E6%8F%8F%E8%BF%B0%E5%A6%82%E4%B8%8B"><span class="nav-number">4.0.0.0.1.</span> <span class="nav-text">贪心算法思路描述如下</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%AF%81%E6%98%8E"><span class="nav-number">4.0.0.0.2.</span> <span class="nav-text">证明</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A81%EF%BC%9A%E5%AE%8C%E7%BE%8E%E5%93%88%E5%B8%8C%E6%97%8F%E5%87%BD%E6%95%B0%EF%BC%88Perfect-Hash-Function%EF%BC%89"><span class="nav-number">4.1.</span> <span class="nav-text">应用1：完美哈希族函数（Perfect Hash Function）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A82%EF%BC%9A%E5%88%86%E5%89%B2%E7%B3%BB%E7%BB%9F-Splitting-Systems"><span class="nav-number">4.2.</span> <span class="nav-text">应用2：分割系统(Splitting Systems)</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E9%97%AE%E9%A2%98-Minimum-spanning-trees-MST"><span class="nav-number">1.</span> <span class="nav-text">最小生成树问题(Minimum spanning trees,MST)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%A4%A7%E7%8B%AC%E7%AB%8B%E9%9B%86-Maximum-independent-set"><span class="nav-number">2.</span> <span class="nav-text">最大独立集(Maximum independent set)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98-Greedy-knapsack"><span class="nav-number">3.</span> <span class="nav-text">背包问题(Greedy knapsack)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Stein-Lovasz-Theorem"><span class="nav-number">4.</span> <span class="nav-text">The Stein-Lovasz Theorem</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A81%EF%BC%9A%E5%AE%8C%E7%BE%8E%E5%93%88%E5%B8%8C%E6%97%8F%E5%87%BD%E6%95%B0%EF%BC%88Perfect-Hash-Function%EF%BC%89"><span class="nav-number">4.1.</span> <span class="nav-text">应用1：完美哈希族函数（Perfect Hash Function）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A82%EF%BC%9A%E5%88%86%E5%89%B2%E7%B3%BB%E7%BB%9F-Splitting-Systems"><span class="nav-number">4.2.</span> <span class="nav-text">应用2：分割系统(Splitting Systems)</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -561,8 +589,10 @@ P(\cup A_i)\leq \sum P(A_i)=\binom{n}{t}P(A_i)<1</script><p>令其小于$1$，�
         </a>
       </div>
       <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
         <span class="site-state-item-count">3</span>
-        <span class="site-state-item-name">tags</span>
+        <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>
@@ -606,12 +636,12 @@ P(\cup A_i)\leq \sum P(A_i)=\binom{n}{t}P(A_i)<1</script><p>令其小于$1$，�
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">42k</span>
+    <span title="Symbols count total">43k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">38 mins.</span>
+    <span title="Reading time total">39 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
   </div>
