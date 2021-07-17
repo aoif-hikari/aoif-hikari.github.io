@@ -40,7 +40,7 @@ Servlet规范任务中，Http服务器能调用的【动态资源文件】必须
     </servlet-mapping>
 ```
 
-## Servlet对象生命周期:
+## Servlet对象生命周期
 
 - 网站中所有的Servlet接口实现类的实例对象，只能由Http服务器(如Tomcat，相当于servlet的容器)负责额创建。 开发人员不能手动创建。
 
@@ -186,7 +186,7 @@ response.sendRedirect("资源文件地址") //写入到响应头中location
 
 500:通知浏览器，在服务端已经定位到被访问的资源文件（Servlet）这个Servlet可以接收浏览器采用请求方式，但是Servlet在处理请求期间，由于Java异常导致处理失败
 
-## 多个Servlet之间调用规则：
+## 多个Servlet之间调用规则
 
 多个Servlet:
 
@@ -195,7 +195,7 @@ response.sendRedirect("资源文件地址") //写入到响应头中location
 
 - 提高用户使用感受规则：无论本次请求涉及到多少个Servlet,用户只需要【手动】通知浏览器发起一次请求即可
 
-> 重定向解决方案
+### 重定向解决方案
 
 用户第一次通过【手动方式】通知浏览器访问OneServlet。OneServlet工作完毕后，将TwoServlet地址写入到响应头location属性中，导致Tomcat将302状态码写入到状态行。浏览器接收到响应包之后，读取到302状态。此时浏览器自动根据响应头中location属性地址【自动】发起第二次请求，访问TwoServlet去完成请求中剩余任务。
 
@@ -208,7 +208,7 @@ response.sendRedirect("请求地址") //将地址写入到响应包中响应头�
 - 请求方式：通过地址栏通知浏览器发起下一次请求，因此通过重定向解决方案调用的资源文件接收的请求方式一定是【GET】
 - 缺点:重定向解决方案需要在浏览器与服务器之间进行多次往返，大量时间消耗在往返次数上，增加用户等待服务时间
 
-> 请求转发解决方案
+### 请求转发解决方案
 
  用户第一次通过手动方式要求浏览器访问OneServlet。OneServlet工作完毕后，通过当前的请求对象代替浏览器向Tomcat发送请求，申请调用TwoServlet。Tomcat接收到这个请求之后，自动调用TwoServlet完成剩余任务。
 
@@ -232,13 +232,13 @@ report.forward(request, response)
 
 请求方式：在请求转发过程中，浏览器只发送一个了个Http请求协议包。参与本次请求的所有Servlet共享同一个请求协议包，因此这些Servlet接收的请求方式与浏览器发送的请求方式保持一致
 
-## 多个Servlet之间数据共享实现方案：
+## 多个Servlet之间数据共享实现方案
 
 数据共享：OneServlet工作完毕后，将产生数据交给TwoServlet来使用
 
 Servlet规范中提供四种数据共享方案
 
-- **ServletContext接口**
+### ServletContext接口
 
 来自于Servlet规范中一个接口。在Tomcat中存在servlet-api.jar，在Tomcat中负责提供这个接口实现类。
 
@@ -284,7 +284,7 @@ public class TwoServlet extends HttpServlet {
 }
 ```
 
-- **Cookie类**
+### Cookie类
 
 来自于Servlet规范中一个工具类，存在于Tomcat提供servlet-api.jar中。如果两个Servlet来自于同一个网站，并且为同一个浏览器/用户提供服务，此时借助于Cookie对象进行数据共享
 
@@ -333,7 +333,7 @@ cookie.setMaxAge(60); //cookie在硬盘上存活1分钟
 
 Cookie域保存在自己浏览器内部，与别人互不干扰，但因为是客户端技术，所以安全性不高。
 
-- **HttpSession接口**
+### HttpSession接口
 
 来自于Servlet规范下一个接口。存在于Tomcat中servlet-api.jar，其实现类由Http服务器提供。Tomcat提供实现类存在于servlet-api.jar。如果两个Servlet来自于同一个网站，并且为同一个浏览器/用户提供服务，此时借助于HttpSession对象进行数据共享。习惯于将HttpSession接口修饰对象称为【会话作用域对象】
 
@@ -380,7 +380,7 @@ HttpSession销毁时机:
 
 用户与HttpSession关联时使用的Cookie只能存放在浏览器缓存中，在浏览器关闭时，意味着用户与他的HttpSession关系被切断。由于Tomcat无法检测浏览器何时关闭，因此在浏览器关闭时并不会让Tomcat将浏览器关联的HttpSession进行销毁。为了解决这个问题，Tomcat为每一个HttpSession对象设置【空闲时间】，空闲时间默认30分钟，如果当前HttpSession对象空闲时间达到30分钟，此时Tomcat认为用户已经放弃了自己的HttpSession，Tomcat就会销毁这个HttpSession
 
-- **HttpServletRequest接口**
+### HttpServletRequest接口
 
 在同一个网站中，如果两个Servlet之间通过【请求转发】方式进行调用，彼此之间共享同一个请求协议包。而一个请求协议包只对应一个请求对象。因此servlet之间共享同一个请求对象，此时可以利用这个**请求对象**在两个Servlet之间实现数据共享。
 
@@ -468,7 +468,7 @@ application.setAttribute("key1",200); //更新共享数据
 application.removeAttribute("key1");  //删除共享数据
 ```
 
-### 过滤器接口
+## 过滤器接口
 
 来自于Servlet规范下接口，在Tomcat中存在于servlet-api.jar包。Filter接口实现类由开发人员负责提供，Http服务器不负责提供。Filter接口在Http服务器调用资源文件之前，对Http服务器进行拦截。
 
