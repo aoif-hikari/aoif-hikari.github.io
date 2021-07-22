@@ -1,5 +1,4 @@
 <meta charset="UTF-8">
-<meta name="google-site-verification" content="JSt260h9ZipxDe9fDWuLLwbMKW6KZ1gPsQ2V68XJlTA" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="{{ theme.android_chrome_color }}">
 <meta name="generator" content="Hexo {{ hexo_version }}">
@@ -28,7 +27,7 @@
   <meta http-equiv="Cache-Control" content="no-siteapp">
 {%- endif %}
 {%- if theme.google_site_verification %}
-  <meta name="google-site-verification" content="{{ theme.google_site_verification }}">
+  <meta name="google-site-verification" content="JSt260h9ZipxDe9fDWuLLwbMKW6KZ1gPsQ2V68XJlTA">
 {%- endif %}
 {%- if theme.bing_site_verification %}
   <meta name="msvalidate.01" content="{{ theme.bing_site_verification }}">
