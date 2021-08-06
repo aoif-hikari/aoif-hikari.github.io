@@ -1,6 +1,6 @@
 ---
 tags: java
-title: JAVA/html与css
+title: Java/HTML与CSS
 ---
 
 > HTML，超文本标记式编程语言，是一种专门在浏览器编译与执行的编程语言。用于通知浏览器将接收的数据以指定方式在窗口展示；控制浏览器请求行为。CSS则用于定位浏览器中HTML标签并对定位的HTML标签中【样式属性】进行统一管理。

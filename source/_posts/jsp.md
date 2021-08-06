@@ -1,6 +1,6 @@
 ---
 tags: java
-title: JAVA/JSP
+title: Java/JSP
 ---
 
 > JSP规范来自于JAVAEE规范中一种，制定了如何开发JSP文件**代替响应对象将处理结果写入到响应体**的开发流程制，Http服务器应该如何调用管理JSP文件。放在`/web/*.jsp`下
