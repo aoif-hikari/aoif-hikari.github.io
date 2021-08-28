@@ -2231,4 +2231,188 @@ P(\cup A_i)\leq \sum P(A_i)=\binom{n}{t}P(A_i)<1</script><p>令其小于$1$，�
         <tag>算法</tag>
       </tags>
   </entry>
+  <entry>
+    <title>VVC环路滤波/Deblocking Filter</title>
+    <url>/2021/08/28/dbk/</url>
+    <content><![CDATA[<blockquote>
+<p>VVC环路滤波：去块滤波器</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
+<li>主要用于去除因为基于块的运动预测和变换导致的块状伪影<ul>
+<li>在 VVC 中，变换尺寸最大到 64×64 </li>
+<li>DBF 主要用来提升主观质量，因此 BD-rate 数值并不是很有意义。</li>
+</ul>
+</li>
+<li>在去块滤波方面，VVC 相比于 HEVC 的主要变化是：<ul>
+<li>亮度和色度都有更强（更多抽头）的去块滤波器，<ul>
+<li>主要原因是 VVC 有大到 64×64 的变换块，CTU 尺寸是 128×128</li>
+</ul>
+</li>
+<li>亮度 4×4 网格去块滤波</li>
+<li>子块边界去块滤波（仿射和 STMVP）<ul>
+<li>运动矢量不同，也会有一点块效应</li>
+</ul>
+</li>
+<li>去块决策适用于运动中更小的差异<ul>
+<li>HEVC 中亮度整像素，VVC 中半像素</li>
+</ul>
+</li>
+<li>亮度自适应去块滤波</li>
+<li>Tc 表扩展到 10 bit 视频<ul>
+<li>HEVC 中只对 8 bit 视频</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>下图是一个典型的块效应，在靠近块边界的地方存在一个很大的阶越，图中的 p0 和 q0 之间，这会使主观质量下降。</p>
+<p><img src="/img/VVC/blk.png"  /></p>
+<p>去方块滤波的基本原理是对平滑区域的不连续边界做强滤波，对纹理丰富区域不滤波或弱滤波。处理顺序是先对整帧图像的垂直边界进行水平滤波，然 后对水平边界进行垂直滤波。这种架构使得多个水平滤波或垂直滤波可以并行进行，也可以逐 CTB 处理。</p>
+<p>对于亮度，VVC 可以对 CU 边界、TU 子块边界的 4x4 块边界进行滤波，以及对 PU 子 块边界的 8x8 块边界进行滤波。对于色度可以对CU和TU进行8x8的边界滤波。</p>
+<blockquote>
+<p>PU 子块包括 SbTMVP 和仿射模式产生的子块， TU 子块包括SBT 和 ISP 模式产生的子块。对于采用矩形变换核的亮度块，也可以对 4x4 的块边界进行去方块滤波。</p>
+</blockquote>
+<p>需要注意的是如果去方块滤波处理的是 8x8 的块边界，实际上是将 8x8 的块分成两部分单独处理，垂直边界以 8x4 为基本单位，水平边界以 4x8 为基本 单位。</p>
+<h2 id="滤波过程"><a href="#滤波过程" class="headerlink" title="滤波过程"></a>滤波过程</h2><h3 id="1-确定滤波长度"><a href="#1-确定滤波长度" class="headerlink" title="1. 确定滤波长度"></a>1. 确定滤波长度</h3><p>滤波长度$S_P$,$ S_Q$：$P\ Q$块中滤波的像素个数，取决于块大小。</p>
+<p>用于决策滤波的样本：$p_{x,i}…q_{x,i}\ with\ x=0..N\ and\ i=0,3$，共$S_P+1$, $S_Q+1$个</p>
+<p>滤波样本：$p_{x,i}…q_{x,i} with\ x=0..N−1\ and\ i=0..3$</p>
+<p><img src="/img/VVC/pq.png" style="zoom: 50%;" /></p>
+<h4 id="luma"><a href="#luma" class="headerlink" title="luma"></a>luma</h4><p>CU/TU的$ S_P$/$S_Q$初始化为：</p>
+<ul>
+<li><p>CU/TU block side size &gt;= 32, SP and SQ = 7.</p>
+</li>
+<li><p>CU/TU block side size&lt;= 4, SP and SQ = 1.  </p>
+</li>
+<li>Otherwise, remaining uninitialized SP/SQ = 3.</li>
+</ul>
+<p>If a CU uses PUs, SP/SQ of the CU/TU boundary is set as follows: </p>
+<ul>
+<li>If  CU/TU  boundary  is  8  samples  distant  from  a  PU boundary, corresponding SP or SQ &lt;= 5. </li>
+</ul>
+<p>SP/SQ of the PU boundary: </p>
+<ul>
+<li><p>If the PU boundary is 8 samples distant from a CU/TU boundary, SP and SQ &lt;= 2. </p>
+</li>
+<li><p>if the PU boundary is 4 samples distant from a CU/TU boundary, SP and SQ = 1. </p>
+</li>
+<li><p>Otherwise, SP and SQ = 3. </p>
+</li>
+</ul>
+<p>SP  on  the  upper  side  of  a  horizontal  CTU  boundary,  is restricted to be &lt;= 3. （减少行缓冲区）</p>
+<blockquote>
+<p>for CU/TU boundaries, SP+SQ, can be 7+7, 7+5, 5+7, 5+5, 7+3, 3+7, 5+3, 3+5, 3+3 or 1+1</p>
+<p>for PU boundaries  inside  a  CU， 3+3, 2+2 or 1+1 </p>
+</blockquote>
+<p>这些滤波长度可以在随后的过滤决策步骤中进一步减少。</p>
+<h4 id="chroma"><a href="#chroma" class="headerlink" title="chroma"></a>chroma</h4><ul>
+<li>the CU/TU block side sizes orthogonal to the block boundary are both &gt;= 8 in chroma samples, $S_P $and$ S_Q $=3</li>
+<li>Otherwise, $S_P$ and $S_Q$ = 1.</li>
+</ul>
+<p>The deblocking length for the upper side of a horizontal CTU boundary, SP, is restricted to be 1</p>
+<blockquote>
+<p> $S_P+S_Q$, can thus be 3+3, 1+3 or 1+1.  </p>
+</blockquote>
+<h3 id="2-根据边界两侧的编码模式和编码参数确定边界强度BS"><a href="#2-根据边界两侧的编码模式和编码参数确定边界强度BS" class="headerlink" title="2. 根据边界两侧的编码模式和编码参数确定边界强度BS"></a>2. 根据边界两侧的编码模式和编码参数确定边界强度BS</h3><p>边界强度值在一 定程度上反映了两个相邻块编码参数的一致性，相邻块采用的编码参数越一致， 其边界强度越小。</p>
+<p><img src="/img/VVC/bs.png" style="zoom:80%;" /></p>
+<ul>
+<li>对于luma，BS=2 或 1 表示需要进行滤波，BS=0 表示不需要进行滤波。</li>
+</ul>
+<ul>
+<li>对于色度，BS=2 或1且为大块边界表示需要进行滤波，其余情况不需要进行滤波。“大块”即边界长度大于等于32的块。<ul>
+<li>If both $S_P$ and$ S_Q $=1 and bS != 2,$ S_P$ and$S_Q $= 0. </li>
+<li>When$ S_Q$ = 3 and bS is non-zero, an additional decision based on spatial activity is made.  </li>
+</ul>
+</li>
+</ul>
+<h3 id="3-根据空间活动性确定滤波强度"><a href="#3-根据空间活动性确定滤波强度" class="headerlink" title="3.根据空间活动性确定滤波强度"></a>3.根据空间活动性确定滤波强度</h3><p>根据边界两侧像素的变化程度判断块的内容特性，确定该边界是否需要滤波处理。滤波强度由阈值$\beta$和$t_c$决定。</p>
+<p><img src="/img/VVC/eq.png" style="zoom: 25%;" /> $i=0，3$</p>
+<h4 id="luma-1"><a href="#luma-1" class="headerlink" title="luma"></a>luma</h4><h5 id="滤波长度-lt-3，判断是否应用short-tap-deblocking-filter，同HEVC。"><a href="#滤波长度-lt-3，判断是否应用short-tap-deblocking-filter，同HEVC。" class="headerlink" title="滤波长度&lt;=3，判断是否应用short-tap deblocking filter，同HEVC。"></a>滤波长度&lt;=3，判断是否应用short-tap deblocking filter，同HEVC。</h5><p>首先判断方程中的1式，即边界两遍的信号变化低于指定的阈值。</p>
+<p><img src="/img/VVC/eq1.png" style="zoom: 50%;" /></p>
+<p>即</p>
+<p>$\begin{array}{l}<br>\left|p_{2,0}-2 p_{1,0}+p_{0,0}\right|+\left|q_{2,0}-2 q_{1,0}+q_{0,0}\right|+\left|p_{2,3}-2 p_{1,3}+p_{0,3}\right|+\left|q_{2,3}-2 q_{1,3}+q_{0,3}\right|&lt;\beta<br>\end{array}$</p>
+<p>其次判断应用strong or normal。通过下式选择强滤波还是普通滤波，其中$i=0,3$<img src="/img/VVC/sw.png" style="zoom:67%;" /></p>
+<p>如果(2)、(3)和(4)式都成立，则进行强滤波，否则进行普通滤波。</p>
+<blockquote>
+<p>(2)保证了边缘两边满足更小的局部自适应，<br>(3)保证了边缘两边的信号的平稳，<br>(4)保证边缘两遍的像素值跳变小于一个阈值。</p>
+</blockquote>
+<h5 id="至少一边滤波长度-gt-3，判断是否应用long-tap-deblocking-filter，为VVC新增。"><a href="#至少一边滤波长度-gt-3，判断是否应用long-tap-deblocking-filter，为VVC新增。" class="headerlink" title="至少一边滤波长度&gt;3，判断是否应用long-tap deblocking filter，为VVC新增。"></a>至少一边滤波长度&gt;3，判断是否应用long-tap deblocking filter，为VVC新增。</h5><p>为了去除平坦区域大尺寸块的方块效应，VVC 采用更长抽头的滤波器。设$S_P$&gt;3。方程中的每一项增加以下项：</p>
+<ul>
+<li><p>对$dPQ_i$：增加$\left|p_{3, i}-2 p_{4, i}+p_{5, i}\right|$</p>
+</li>
+<li><p>对$sP_i$</p>
+<ul>
+<li>若$S_P=5$，增加$|p_{3, i} - p_{s_p,i}|$</li>
+<li>若$S_P=7$，增加$\left|p_{4, i}-p_{5, i}-p_{6, i}+p_{7, i}\right|$</li>
+</ul>
+</li>
+</ul>
+<p>避免过平滑，相应$thr$也要修改。</p>
+<ul>
+<li><p>$thr1$改为$\beta$&gt;&gt;4</p>
+</li>
+<li><p>$thr2$ 改为3$\beta$&gt;&gt;5</p>
+</li>
+</ul>
+<p>若不满足使用long-tap deblocking filter的条件，转为判断是否使用short-tap deblocking filter。</p>
+<h4 id="chroma-1"><a href="#chroma-1" class="headerlink" title="chroma"></a>chroma</h4><p>滤波长度大于3，判断四个条件，如果是420格式改为判断第0行和第1行的像素，否则还是1，3行。满足用强滤波，不满足滤波长度减到1判断是否使用弱滤波。</p>
+<h3 id="4-滤波处理"><a href="#4-滤波处理" class="headerlink" title="4. 滤波处理"></a>4. 滤波处理</h3><h4 id="luma-2"><a href="#luma-2" class="headerlink" title="luma"></a>luma</h4><h5 id="更强滤波（long-tap-deblocking-filter），为双线性滤波器。"><a href="#更强滤波（long-tap-deblocking-filter），为双线性滤波器。" class="headerlink" title="更强滤波（long-tap deblocking filter），为双线性滤波器。"></a>更强滤波（long-tap deblocking filter），为双线性滤波器。</h5><p>$i = 0\ to\ 3$,  $k = 0\ to$ $S_P−1$,$ l = 0\ to$ $S_Q−1$</p>
+<script type="math/tex; mode=display">
+\begin{align*} &p\hbox{"}_{k,i}=Clip3\left(p_{k,i}-t_{CPk},p_{k,i}+t_{CPk},p\hbox{'}_{k,i}\right),\\ &q\hbox{"}_{l,i}=Clip3\left(q_{l,i}-t_{CQl},q_{l,i}+t_{CQl},q_{l,i}\right),\\ &p\hbox{'}_{k,i}=(f_{k}\cdot refM_{i}+(64-f_{k})\cdot refP_{i}+32) >> 6,\\ &q\hbox{'}_{l,i}=(g_{l}\cdot refM_{i}+(64-g_{l})\cdot refQ_{i}+32) >> 6,\\ &refP_{i}=(p_{Sp,i}+p_{Sp+1_{r}i}+1) >> 1,\tag{1}\\ &refQ_{i}=(q_{Sq,i}+q_{Sq+1,i}+1) >> 1,\\ &refM_{i}=\left(\sum_{m=1}^{6}(p_{m,i}+q_{m,i})+2\cdot(p_{0,i}+q_{0,i})+8\right) >> 4,\\ &\pmb{f}=\pmb{g}=\{59,50,41,32,23,14,5\},\\ &\pmb{t}_{\pmb{CP}}=\pmb{t}_{\pmb{CQ}}=(t_{C}\cdot\{6,5,4,3,2,1,1\}) >> 1, \end{align*}</script><h5 id="强滤波（short-tap-strong-deblocking-filter）-，对每块的每行-3-个像素进行修正"><a href="#强滤波（short-tap-strong-deblocking-filter）-，对每块的每行-3-个像素进行修正" class="headerlink" title="强滤波（short-tap strong deblocking filter） ，对每块的每行 3 个像素进行修正"></a><strong>强</strong>滤波（short-tap strong deblocking filter） ，对每块的每行 3 个像素进行修正</h5><p>$\delta_{0 s}=\left(p_{2}+2 p_{1}+2 p_{0}+2 q_{0}+q_{1}+4\right)&gt;&gt;3$</p>
+<p>$\delta_{1 s}=\left(p_{2}+ p_{1}+p_{0}+q_{0}+2\right)&gt;&gt;2$</p>
+<p>$\delta_{2 s}=\left(2 p_{3}+3 p_{2}+p_{1}+p_{0}+q_{0}+4\right)&gt;&gt;3 .$</p>
+<p>$\delta$进行$clip$操作得到滤波后像素。相当于分别进行了$(1, 2, 2, 2, 1)/8$、$(1, 1, 1, 1)/4$和$(2, 3, 1, 1, 1)/8$的滤波操作。对$\delta$的$0，1，2$，$clip$的区间分别为$[p0-3tc, p0+3tc],[p1-2tc, p1+2tc],[p2-tc, p2+tc]$</p>
+<h5 id="弱滤波（short-tap-normal-deblocking-filter）"><a href="#弱滤波（short-tap-normal-deblocking-filter）" class="headerlink" title="弱滤波（short-tap normal deblocking filter）"></a><strong>弱</strong>滤波（short-tap normal deblocking filter）</h5><p>通过下式判断修改几个像素值，满足式子则改变两个，否则改变一个。块越平坦也就意味着$P$和$Q$的边界越明显，即需要改变的像素也就越多</p>
+<p><img src="/img/VVC/weak.png" style="zoom: 67%;" /></p>
+<p>对于$i=0,1,2,3$的每一行，进行滤波前还需要单独进行下式条件判断，只有满足，该行才能够进行滤波。避免对正常存在的块边界进行不必要的滤波，因为当$\delta$绝对的大于10倍tc时，一般不太可能是由于块效应导致的。</p>
+<p><img src="/img/VVC/weak2.png" style="zoom: 80%;" /></p>
+<p>满足上式时，无论哪种情况，都需要对p0和q0进行滤波，</p>
+<p><img src="/img/VVC/p0q0.png" style="zoom: 80%;" /></p>
+<p>$\delta_{0}$的clip区间为$[-tc, tc]$。</p>
+<p>当条件(5)满足时，则需要对p1进行滤波；当条件(6)满足时，需要对q1进行滤波。对p1/q1滤波操作如下：   </p>
+<p><img src="/img/VVC/p1q1.png" style="zoom: 80%;" /></p>
+<p>$\delta_{p1}$和$\delta_{q1}$的clip区间为$[-\frac{tc}{2}, \frac{tc}{2}]$,</p>
+<blockquote>
+<p>clip操作是将$\delta$的值限定到$[-c, c]$的区间,</p>
+<p><img src="/img/VVC/clip.png" style="zoom: 70%;" /></p>
+</blockquote>
+<h4 id="chroma-2"><a href="#chroma-2" class="headerlink" title="chroma"></a>chroma</h4><h5 id="强滤波（long-tap-chroma-deblocking-filter）"><a href="#强滤波（long-tap-chroma-deblocking-filter）" class="headerlink" title="强滤波（long-tap  chroma deblocking filter）"></a>强滤波（long-tap  chroma deblocking filter）</h5><p>$S_P$  and $ S_Q$ = 3</p>
+<p><img src="/img/VVC/chroma-strong.png" style="zoom: 40%;" /></p>
+<p>$S_P$= 1 and $S_Q$ = 3</p>
+<p><img src="/img/VVC/13.png" style="zoom: 40%;" /></p>
+<p>$clip$到$[p-tc, p+tc]$或$[q-tc, q+tc]$</p>
+<h5 id="弱滤波（-short-tap-chroma-deblocking-filter）"><a href="#弱滤波（-short-tap-chroma-deblocking-filter）" class="headerlink" title="弱滤波（ short-tap chroma deblocking filter）"></a>弱滤波（ short-tap chroma deblocking filter）</h5><p>both $S_P$ and $S_Q$ = 1</p>
+<p><img src="/img/VVC/chroma-weak.png" style="zoom: 67%;" /></p>
+<p>clip到$[-tc, tc]$后分别加/减到p0/q0上。</p>
+<h2 id="luma-adaptive-deblocking-filter"><a href="#luma-adaptive-deblocking-filter" class="headerlink" title="luma adaptive deblocking filter"></a>luma adaptive deblocking filter</h2><ul>
+<li>基本思想：块失真在更亮的区域更明显<ul>
+<li>特别为 HDR 格式调优</li>
+<li>通过增加tc和 $\beta$ 获取的 qpOffset 增加了去块强度</li>
+</ul>
+</li>
+</ul>
+<p>在HEVC中滤波强度由$\beta$和tc决定，而$\beta$和tc是由平均量化参数$qPL$生成。</p>
+<p>在VVC中为$qPL$增加一个偏移值，偏移量由重建像素的平均亮度级$LL$决定。</p>
+<p><img src="/img/VVC/ll.png" style="zoom: 50%;" /></p>
+<p><img src="/img/VVC/mapping.png" style="zoom: 67%;" /></p>
+<p>$LL$的范围在SPS中传输。</p>
+<p><img src="/img/VVC/qpl.png" style="zoom: 50%;" /></p>
+<p>$Q_{beta} = clip3(0.63, qPL+(sh_beta_offset_div2&lt;&lt;1))$</p>
+<p>$Q_{tc} = clip3(0.65, qPL+ 2*(bS-1)+(sh_tc_offset_div2&lt;&lt;1))$</p>
+<p><img src="/img/VVC/beta.png" style="zoom: 67%;" /></p>
+<p><img src="/img/VVC/beta1.png" style="zoom: 50%;" /></p>
+<p>$t_{C}=\left\{\begin{array}{cl}\left(t_{C}^{\prime}+(1&lt;&lt;(9-\text { BitDepth }))&gt;&gt;(10-\text { BitDepth }),\right. &amp; \text { BitDepth }&lt;10 \\ t_{C}^{\prime} *(1&lt;&lt;(\text { BitDepth }-10)), &amp; \text { BitDepth } \geq 10\end{array}\right.$</p>
+<p>在slice级中有相应的语法元素：tc_offset_div2 和 beta_offset_div2。tc和$\beta$计算时，相应地把tc−offset−div2 和beta−offset−div2的2倍加到当前的QP上，从而调整tc和$\beta$的值，实现对滤波的自适应控制。</p>
+<p><img src="/img/VVC/dbk.png" style="zoom: 80%;" /></p>
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p>anchor为相应的工具关闭。</p>
+<p><img src="/img/VVC/dbfres.png" style="zoom: 50%;" /></p>
+<p><img src="/img/VVC/dbfres2.png" style="zoom: 33%;" /></p>
+<p><img src="/img/VVC/dbkres1.png" style="zoom:;" /></p>
+<p><img src="/img/VVC/dbkres.png" style="zoom:;" /></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><img src="/img/VVC/codedbk.png" style="zoom:;" /></p>
+]]></content>
+      <tags>
+        <tag>VVC</tag>
+      </tags>
+  </entry>
 </search>
