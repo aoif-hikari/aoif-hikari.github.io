@@ -21,25 +21,30 @@
     var CONFIG = {"hostname":"aoif-hikari.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="双计数狭义上讲，对于一个集合运用两种不同的方式（行 &#x2F; 列），得到等式结果或者不等式的结果。">
+  <meta name="description" content="VVC环路滤波：自适应样点补偿滤波器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="图与网络&#x2F;双计数">
-<meta property="og:url" content="https://aoif-hikari.github.io/2021/07/06/%E5%8F%8C%E8%AE%A1%E6%95%B0/index.html">
+<meta property="og:title" content="VVC环路滤波&#x2F;SAO">
+<meta property="og:url" content="https://aoif-hikari.github.io/2021/08/28/sao/index.html">
 <meta property="og:site_name" content="aoif-hikari">
-<meta property="og:description" content="双计数狭义上讲，对于一个集合运用两种不同的方式（行 &#x2F; 列），得到等式结果或者不等式的结果。">
+<meta property="og:description" content="VVC环路滤波：自适应样点补偿滤波器">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://aoif-hikari.github.io/img/0607-1.png">
-<meta property="og:image" content="https://aoif-hikari.github.io/img/0607-1.png">
-<meta property="og:image" content="https://aoif-hikari.github.io/img/0607-3.png">
-<meta property="og:image" content="https://aoif-hikari.github.io/img/0607-4.png">
-<meta property="article:published_time" content="2021-07-06T10:38:00.000Z">
-<meta property="article:modified_time" content="2021-07-19T05:35:28.735Z">
+<meta property="og:image" content="https://aoif-hikari.github.io/img/VVC/zhenling.png">
+<meta property="og:image" content="https://aoif-hikari.github.io/img/VVC/eo-g.png">
+<meta property="og:image" content="https://aoif-hikari.github.io/img/VVC/eo-classify.png">
+<meta property="og:image" content="https://aoif-hikari.github.io/img/VVC/BO.png">
+<meta property="og:image" content="https://aoif-hikari.github.io/img/VVC/sao-syntax.png">
+<meta property="og:image" content="https://aoif-hikari.github.io/img/VVC/VQSAO.png">
+<meta property="og:image" content="https://aoif-hikari.github.io/img/VVC/sao.png">
+<meta property="og:image" content="https://aoif-hikari.github.io/img/VVC/sao2.png">
+<meta property="og:image" content="https://aoif-hikari.github.io/img/VVC/codesao.png">
+<meta property="article:published_time" content="2021-08-28T11:15:22.716Z">
+<meta property="article:modified_time" content="2021-08-28T11:34:41.823Z">
 <meta property="article:author" content="fu">
-<meta property="article:tag" content="图与网络">
+<meta property="article:tag" content="VVC">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://aoif-hikari.github.io/img/0607-1.png">
+<meta name="twitter:image" content="https://aoif-hikari.github.io/img/VVC/zhenling.png">
 
-<link rel="canonical" href="https://aoif-hikari.github.io/2021/07/06/%E5%8F%8C%E8%AE%A1%E6%95%B0/">
+<link rel="canonical" href="https://aoif-hikari.github.io/2021/08/28/sao/">
 
 
 <script id="page-configurations">
@@ -52,7 +57,7 @@
   };
 </script>
 
-  <title>图与网络/双计数 | aoif-hikari</title>
+  <title>VVC环路滤波/SAO | aoif-hikari</title>
   
 
 
@@ -197,7 +202,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://aoif-hikari.github.io/2021/07/06/%E5%8F%8C%E8%AE%A1%E6%95%B0/">
+    <link itemprop="mainEntityOfPage" href="https://aoif-hikari.github.io/2021/08/28/sao/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/cat.jpg">
@@ -210,7 +215,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          图与网络/双计数
+          VVC环路滤波/SAO
         </h1>
 
         <div class="post-meta">
@@ -219,19 +224,13 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2021-07-06 18:38:00" itemprop="dateCreated datePublished" datetime="2021-07-06T18:38:00+08:00">2021-07-06</time>
+              <time title="Created: 2021-08-28 19:15:22 / Modified: 19:34:41" itemprop="dateCreated datePublished" datetime="2021-08-28T19:15:22+08:00">2021-08-28</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-07-19 13:35:28" itemprop="dateModified" datetime="2021-07-19T13:35:28+08:00">2021-07-19</time>
-              </span>
 
           
-            <span id="/2021/07/06/%E5%8F%8C%E8%AE%A1%E6%95%B0/" class="post-meta-item leancloud_visitors" data-flag-title="图与网络/双计数" title="Views">
+            <span id="/2021/08/28/sao/" class="post-meta-item leancloud_visitors" data-flag-title="VVC环路滤波/SAO" title="Views">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -246,8 +245,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2021/07/06/%E5%8F%8C%E8%AE%A1%E6%95%B0/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/07/06/%E5%8F%8C%E8%AE%A1%E6%95%B0/" itemprop="commentCount"></span>
+    <a title="valine" href="/2021/08/28/sao/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/08/28/sao/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -256,7 +255,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
               </span>
-              <span>289</span>
+              <span>1.3k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -275,230 +274,66 @@
 
       
         <blockquote>
-<p>双计数狭义上讲，对于一个集合运用两种不同的方式（行 / 列），得到等式结果或者不等式的结果。</p>
+<p>VVC环路滤波：自适应样点补偿滤波器</p>
 </blockquote>
 <span id="more"></span>
-<h2 id="握手定理"><a href="#握手定理" class="headerlink" title="握手定理"></a>握手定理</h2><blockquote>
-<p>对于图$G=(V, E)$，有</p>
-<script type="math/tex; mode=display">
-\sum_{v\in V}d(v) = 2|E|</script></blockquote>
-<p>证明：对图G的邻接矩阵中1的个数分别从行（左），列（右）进行计数。即对二元组$\{(v,e)|v\in e\}$进行计数。</p>
-<blockquote>
-<p>推论：图中奇度点数目为偶数。</p>
-<p>超图握手定理：对于超图$G=(V, B)$</p>
-</blockquote>
-<script type="math/tex; mode=display">
-\sum_{v\in V}d(v) = \sum_{\beta\in B}|\beta|</script><h2 id="完全图边的双计数"><a href="#完全图边的双计数" class="headerlink" title="完全图边的双计数"></a>完全图边的双计数</h2><script type="math/tex; mode=display">
-\sum_{i=1}^S{n_i} = n</script><script type="math/tex; mode=display">
-{n\choose 2} = \sum_{i = 1}^S {n_i \choose 2}+\sum_{i<j}n_in_j</script><p>对于一个完全图，共有$n\choose 2$条边；</p>
-<p>将完全图划分为$S$部分，每部分有$n_i$个点，${n_i \choose 2}$条边；</p>
-<p>每部分之间有$n_in_j$条边。</p>
-<h2 id="等式证明"><a href="#等式证明" class="headerlink" title="等式证明"></a>等式证明</h2><script type="math/tex; mode=display">
-{n\choose k } = \frac{n}{k}{n-1 \choose k-1}</script><p>证明：设$A$为$k$元子集，对二元组$\{(x,A)|x\in A, |A| = k\}$进行计数。</p>
-<script type="math/tex; mode=display">
-\sum_{k = 1}^n k{n\choose k} = n \sum_{k = 1}^n { {n-1}\choose {k-1} } = n2^{n-1}</script><p>证明：设$A$为$k$元子集，$k=1,2,…,n$，对二元组$\{(x,A)|x\in A, |A| = k\}$进行计数。</p>
-<script type="math/tex; mode=display">
-{n \choose k}{k \choose l} = {n \choose l} { {n-1}\choose {k-l} }</script><p>证明：设$A$为$l$元子集，$B$为$k$元子集，对二元组$\{(A,B)||A|=l,|B|=k,A\subseteq B\}$进行计数。</p>
-<h2 id="Turan-Number"><a href="#Turan-Number" class="headerlink" title="Turan Number"></a>Turan Number</h2><script type="math/tex; mode=display">
-T(n,k,l)\geq \frac{n\choose l}{k \choose l}</script><blockquote>
-<p>图兰数$T(n,k,l) (l\leq k \leq n)$是$n$元集合$X$的$l$元子集的最小值(下界)，使得$X$的每个$k$元子集至少包含一个这样的l元子集。</p>
-</blockquote>
-<p>证明：设$F$为满足条件的l元子集，记$F=\{A_1，A_2，…\}$，此时可用关联矩阵表示，$A_i$为满足条件的$l$元集合，$B_i$为$ k$元子集，若$A_i$在$B_i$上，则为$1$，就可以得到一个$0-1$矩阵。对矩阵中$1$的个数计数。</p>
-<p>行计数：对于某一个$l$元集合，有$\binom{n-l}{k-l}]$个$k$元集合包含它，共有$|F|$个，行计数$1$的个数为$|F|\binom{n-l}{k-l}$</p>
-<p>列计数：每个$B_i$必包含一个$A_i$，则每一列至少有一个$1$，可以得到$|F|\binom{n-l}{k-l} \geq {n\choose k}$</p>
-<h2 id="Zarankiewicz’s-problem"><a href="#Zarankiewicz’s-problem" class="headerlink" title="Zarankiewicz’s problem"></a>Zarankiewicz’s problem</h2><blockquote>
-<p>对于一个$n\times n$的$0-1$矩阵，如果不存在$a\times a$的全$1$子矩阵，那么这个$nxn$的矩阵最多有多少个1？</p>
-<p>等价于：用二部图重新表述这个问题。一个部分大小为$n$的二部图$G=(V_1,V_2,E)$，其中$V_1,V_2$是顶点的不相交$n$元集合，$E\in V_1\times V_2$是边的集合。令$K_a(n)$为最小整数$k$边，使得任意大小为$n$且边数大于k的二部图至少包含一个$a\times a-clique$。对于任意的自然数$n$和$a$，</p>
-</blockquote>
-<script type="math/tex; mode=display">
-K_a(n) \leq (a-1)^{\frac{1}{a} }n^{2-\frac{1}{a} }+(a-1)n</script><p>对$S= \{(x,A)|x\in V_1,A \in V_2,|A|=a,且x与A中所有点都有边相连\}$计数, 即对下图中的结构进行计数。</p>
-<div align="center">
-    <img src="/img/0607-1.png" style="zoom:33%;">
-</div>
-
-<p>固定$x$：从与$x$相连的元素中取$A$，设$x$的neighbor为$d(x)$，那么A有$\sum_{x\in V_1}\binom{d(x)}{a}$种选法，且$|S|=\sum_{x\in V_1}\binom{d(x)}{a}$</p>
-<p>固定$A$：从$n$中选出$a$元集合，与之对应相连的$x$最多有$(a-1)$个，否则就会出现$a\times a-clique$，即$|S| \leq \binom{n}{a}(a-1)$</p>
-<p>即$\sum_{x\in V_1}\binom{d(x)}{a}\leq \binom{n}{a}(a-1)$</p>
-<blockquote>
-<p>Jensen不等式，对凸函数有：</p>
-<script type="math/tex; mode=display">
-s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
-\sum_{i=1}^n\lambda_if(x_i)\geq f(\sum_{i=1}^n\lambda_ix_i),</script><p>Jensen不等式可由数学归纳法证明，略。</p>
-</blockquote>
-<p>令$f(x)=\binom{x}{a}$,$x_i=d(x_i)$;</p>
-<p>根据Jensen不等式，有</p>
-<p>$\frac{1}{n}\sum_{x\in V_1}\binom{d(x)}{a}\geq \binom{\frac{1}{n}\sum_{x\in V_1}d(x)}{a}$</p>
-<p>$\sum_{x\in V_1}\binom{d(x)}{a}\geq n\binom{\frac{1}{n}\sum_{x\in V_1}d(x)}{a}=n\binom{\frac{|E|}{n} }{a}$(因为为二部图，则degree为一倍边数)</p>
-<p>即$n\binom{\frac{|E|}{n} }{a}\leq \binom{n}{a}(a-1)$</p>
-<p>经过放缩有$n(\frac{|E|}{n}-(a-1))^a&lt;\frac{n(|E|/n)(|E|/n-1)…(|E|/n-(a-1))}{a!}=n\binom{\frac{|E|}{n} }{a}$</p>
-<p>$\binom{n}{a}(a-1)=\frac{n(n-1)…(n-(a-1))}{a!}(a-1)&lt;\frac{n^a}{a!}(a-1)$，两边同时开a次方即可解。</p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>由于量化是在频域进行，而高频系数的量化失真往往更大，图像边缘一般都是高频部分，所有边缘部分的失真会更大，解码后边缘部分会出现上下波动，这就是振铃效应。重建值在原始值上下波动。</p>
+<p><img src="/img/VVC/zhenling.png"  /></p>
+<p>将重建值进行分类，对波峰补偿一个负值，对波谷补偿一个正值。所以 SAO 的关键部分在于对重建像素进行分类。</p>
+<p>VVC 中的 SAO与HEVC中基本一致，以CTB为单位对样本分group，分别对不同的group进行补偿。group index和offset被写入码流。包括两种补偿方式，边界补偿（Edge Offset,EO）和边带补偿（Band Offset,BO）。其中EO是根据样点值与周围样点值的关系来分类，而BO是根据样点本身的值来分类。</p>
 <ul>
-<li>$K_a(n)$的下界可以用概率方法求得</li>
+<li>和 HEVC 中的 SAO 基本一致</li>
+<li>BD-rate 增益只有 0.1%<ul>
+<li>如果没有 ALF 的话增益会高很多，能达到 0.8% 或 1%</li>
+<li>在主观质量上提升挺多</li>
+<li>复杂度低，可以适用于低延迟场景</li>
 </ul>
-<h2 id="H-free图"><a href="#H-free图" class="headerlink" title="H-free图"></a>H-free图</h2><blockquote>
-<p>一个有$n$个顶点的无$H$图可以最多有多少条边?</p>
-<p>定理：如果图$G=(V，E)$中不包含4个点的圈, 即$C_4-free$，那么有$|E|\leq \left \lfloor n/4(1+\sqrt{4n-3}) \right \rfloor$</p>
-</blockquote>
-<p>令点集$V={1，2，…，n}$，用于双计数的集合为$S=\{(u,\{v,w\})|u与v,w都邻接，且v≠w\}$，即对下图中的结构进行计数。</p>
-<div align="center">
-    <img src="/img/0607-1.png" style="zoom:33%;">
-</div>
-
-<p>固定$u$,那么$v$和$w$只能在度为$d(u)$的点中选取，即$\binom{d(u)}{2}$，有$\sum _{u\in V}\binom{d(u)}{2}=|S|$；</p>
-<p>固定$v$和$w$，最多只有一个点可以和它们都关联，那么有$\binom{n}{2}\geq |S|$，</p>
-<p>那么，$\sum _{u\in V}d^2(u)\leq \sum _{u\in V}d(u)+n(n-1)$,</p>
-<blockquote>
-<p>柯西—施瓦茨不等式，$|(\alpha ,\beta )|\leq ||\alpha ||*||\beta ||$</p>
-<p>上述不等式中对应的分别是$[d(u_1),d(u_2)….d(u_n)]$，$(1,1,…1)$。</p>
-</blockquote>
-<p>由柯西—施瓦茨不等式得，$n\sum_{u\in V}d^2(n)\geq (\sum_{u\in V}d(n)*1)^2$，代入上式，$\frac{(\sum_{u\in V} d(u))^2}{n}\leq \sum_{u\in V}d(u)+n)n-1$，</p>
-<p>由握手定理得$4|E|^2\leq n2|E|+n^2(n-1)$，求解n可得上述结论。</p>
-<h2 id="三计数"><a href="#三计数" class="headerlink" title="三计数"></a>三计数</h2><blockquote>
-<p>在超图中，有</p>
-<script type="math/tex; mode=display">
-\sum_{x\in X}d^2(x)=\sum_{A\in F} \sum_{x\in A}d(x)=\sum_{A\in F} \sum_{B\in F}|A\cap B|</script></blockquote>
-<p>对于集合$(X,F)$，$X$为点集合，$F$为超边集合，对三元组${(x,A,B)|A,B∈F,x∈A，x∈B}$计数。</p>
-<p>左：$x$在全集$X$上，$A，B$集合均包含点$x$；</p>
-<p>中：先选出在$A$的$x$，再使得$x$在$B$中；</p>
-<p>右：先选出$A$和$B$集合，使得$x$在$A$和$B$上，即在$A\cap B$上。</p>
-<h2 id="整除关系"><a href="#整除关系" class="headerlink" title="整除关系"></a>整除关系</h2><blockquote>
-<p>假设两个有限集$R$和$C$和一个子集$S\subseteq R\times C$。无论何时$(p，g)∈s $那么认为$p$和$q$是关联的。</p>
-<p>设$r_p$表示$p$固定，与$p$关联的元素数目；$c_p$表示$q$固定，与$q$关联的元素数目。有</p>
-<script type="math/tex; mode=display">
-\sum_{p\in R}r_p=|S|=\sum_{q\in C}c_q</script></blockquote>
-<p>假设$M_{|p|\times |q|}$的关联矩阵使用双计数进行证明，矩阵中若$p_i$和$q_j$相关联，$a_{ij}$则置为$1$，否则为$0$，那么$|S|$就是矩阵$M$中全部$1$的个数，等式的第一项可从行计数，最后一项可从列计数角度统计矩阵中1的个数。</p>
-<p>例：</p>
-<p>$R=C={1，2，…，n}$，集合$S=\{(i,j)|i可以整除j\}$，</p>
-<p>$t(j)$表示$j$的因子的数目，如$j=4$，因子有$1,2,4$，那么$t(4)=3$。</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">i/j</th>
-<th style="text-align:center">1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>5</th>
-<th>6</th>
-<th>7</th>
-<th>8</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-</tr>
-<tr>
-<td style="text-align:center">2</td>
-<td style="text-align:center"></td>
-<td>1</td>
-<td></td>
-<td>1</td>
-<td></td>
-<td>1</td>
-<td></td>
-<td>1</td>
-</tr>
-<tr>
-<td style="text-align:center">3</td>
-<td style="text-align:center"></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:center">4</td>
-<td style="text-align:center"></td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td></td>
-<td>1</td>
-</tr>
-<tr>
-<td style="text-align:center">5</td>
-<td style="text-align:center"></td>
-<td></td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:center">6</td>
-<td style="text-align:center"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:center">7</td>
-<td style="text-align:center"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>1</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:center">8</td>
-<td style="text-align:center"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>1</td>
-</tr>
-</tbody>
-</table>
-</div>
-<script type="math/tex; mode=display">
-\overline{t(j)}=\frac{1}{n}\sum_{j=1}^{n}t(j)=\frac{1}{n}\sum_{i=1}^{n}\left \lfloor n/i \right \rfloor</script><script type="math/tex; mode=display">
-\frac{1}{n}\sum_{i=1}^{n}(\frac{n}{j}-1)<\frac{1}{n}\sum_{i=1}^{n}\left \lfloor n/i \right \rfloor\leq \frac{1}{n}\sum_{i=1}^{n}\frac{n}{i}=\sum_{i=1}^{n}\frac{1}{i}</script><script type="math/tex; mode=display">
-\sum_{i=1}^{n}\frac{1}{i}-1 < t(j) \leq lnn</script><script type="math/tex; mode=display">
-|\overline{t(j)}-lnn|<1</script><h2 id="Sperner-Lemma"><a href="#Sperner-Lemma" class="headerlink" title="Sperner Lemma"></a>Sperner Lemma</h2><blockquote>
-<p>假设某个顶点为$V1、V2、V3$的“大”三角形被三角化了(也就是说，被分解成有限数量的“小”三角形，这些“小”三角形每条边都能拼接在一起)。</p>
-<p>假设三角化中的顶点从集合$\{1,2,3\}$中获取颜色，使得$V_i$接收颜色$i$(对于每个$i$)，并且沿着$V_i$到$V_i$的边的顶点只用$i$和$j$的颜色，而内部顶点用1、2或3的颜色任意着色。那么在三角测量中一定有一个小的“三色”三角形。</p>
-</blockquote>
-<div align="center">
-    <img src="/img/0607-3.png">
-</div>
-
-
-<p><strong>证明：</strong></p>
-<p>假定大三角形外部有一点$A$，每一个小三角形中心都有一个顶点$O$，若小三角形含有1，2顶点，则从$O$经过1，2点构成的边形成一条边(即出度)，如下图</p>
-<div align="center">
-    <img src="/img/0607-4.png">
-</div>
-
-
-<p>根据握手定理可知，度之和必为偶数， 在$V_1$和$V_2$构成的边上，观察可得出度必为奇数，即边上(1,2).(2,1)的线段必有奇数个，那么在小三角形必存在奇数度的三角形，即必存在1度的三角形，得证。</p>
-<p>参考：<a target="_blank" rel="noopener" href="https://www.it610.com/article/1295411404924329984.htm">【图论学习笔记二】双计数(Double Counting) - it610.com</a></p>
+</li>
+<li>主要减小了振铃效应</li>
+<li>可以使用 EO（边界补偿）和 BO（边带补偿）<ul>
+<li>对每个 CTB，当使用EO时：<ul>
+<li>一个 CTB 只能使用一种 EO 类型</li>
+<li>4 种类的偏置会传输</li>
+</ul>
+</li>
+<li>对边带补偿，整个样值范围被分成不同的边带<ul>
+<li>样值被分类为某种边带</li>
+<li>对每种边带，传输偏置</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="补偿模式"><a href="#补偿模式" class="headerlink" title="补偿模式"></a>补偿模式</h2><p>RDO选出用EO,BO或merge。</p>
+<h3 id="EO"><a href="#EO" class="headerlink" title="EO"></a>EO</h3><ul>
+<li>通过RDO为该CTB选择使用一种梯度模式</li>
+</ul>
+<p><img src="/img/VVC/eo-g.png"  /></p>
+<ul>
+<li>确定梯度模式后，计算该CTB中的当前像素c和相邻2个像素ab之间的关系，分为4类，每类分配一个offset，offset由RDO过程产生。规定1,2时，offset值必须是正数；对于3,4时，offset必须是负数。对于不属于以上四个类别的像素值不进行补偿。</li>
+</ul>
+<p><img src="/img/VVC/eo-classify.png" style="zoom: 67%;" /></p>
+<h3 id="BO"><a href="#BO" class="headerlink" title="BO"></a>BO</h3><p>根据样点值分为32个等间距的band（每一个band的范围是8），每个样点都会属于一个特定的区间。选择4个连续的band里的像素值进行补偿。需要补偿的边带起点和补偿值通过RDO选择。</p>
+<p><img src="/img/VVC/BO.png"  /></p>
+<p>为什么4个连续的band？</p>
+<ul>
+<li>一个CTU中大部分的pixel的取值应该会集中在很少的几个band中，使用连续的4个band能够覆盖大部分的pixel。</li>
+<li>因为EO模式使用了4个offset值，为了不增加码率，BO复用了这4个offset值的syntax，这样不需要另外再增加syntax来专门表示。</li>
+</ul>
+<h3 id="参数融合（merge）"><a href="#参数融合（merge）" class="headerlink" title="参数融合（merge）"></a>参数融合（merge）</h3><p>某一个CTB的SAO的参数可以直接使用相邻CTB的参数（色度亮度同时），只需指定是哪个相邻块（左方或上方）</p>
+<h2 id="syntax"><a href="#syntax" class="headerlink" title="syntax"></a>syntax</h2><p><img src="/img/VVC/sao-syntax.png"  /></p>
+<p><img src="/img/VVC/VQSAO.png"  /></p>
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p>下表显示了在有/无ALF和CC-ALF的VTM-9.0中启用SAO对SDR内容的BD-rate改进。anchor为SAO禁用。</p>
+<ul>
+<li><p>当ALF和CC-ALF被启用时，在四个测试条件下，启用SAO的平均YUV BD-速率增益为0.2%。</p>
+</li>
+<li><p>当ALF和CC-ALF被禁用时，SAO不仅平均实现了1.3%的YUV BD-速率增益，而且还提供了主观的好处，如图所示。</p>
+</li>
+</ul>
+<p>启用SAO的BD-rate改进与ALF部分重合。然而，考虑到SAO在HEVC中得到了很好的部署，而且所需的计算复杂度很低，SAO被保留在VVC中，以允许使用SAO来进一步提高客观和主观质量，特别是当ALF被禁用时。</p>
+<p><img src="/img/VVC/sao.png" style="zoom: 50%;" /></p>
+<p><img src="/img/VVC/sao2.png" style="zoom:;" /></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><img src="/img/VVC/codesao.png"  /></p>
 
     </div>
 
@@ -527,7 +362,7 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E5%9B%BE%E4%B8%8E%E7%BD%91%E7%BB%9C/" rel="tag"># 图与网络</a>
+              <a href="/tags/VVC/" rel="tag"># VVC</a>
           </div>
 
         
@@ -536,13 +371,10 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/07/06/hello-world/" rel="prev" title="Hello World">
-      <i class="fa fa-chevron-left"></i> Hello World
+    <a href="/2021/08/28/dbk/" rel="prev" title="VVC环路滤波/Deblocking Filter">
+      <i class="fa fa-chevron-left"></i> VVC环路滤波/Deblocking Filter
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/07/07/Leetcode-%E9%93%BE%E8%A1%A8/" rel="next" title="Leetcode/链表">
-      Leetcode/链表 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -602,7 +434,7 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%A1%E6%89%8B%E5%AE%9A%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">握手定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E5%85%A8%E5%9B%BE%E8%BE%B9%E7%9A%84%E5%8F%8C%E8%AE%A1%E6%95%B0"><span class="nav-number">2.</span> <span class="nav-text">完全图边的双计数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AD%89%E5%BC%8F%E8%AF%81%E6%98%8E"><span class="nav-number">3.</span> <span class="nav-text">等式证明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Turan-Number"><span class="nav-number">4.</span> <span class="nav-text">Turan Number</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Zarankiewicz%E2%80%99s-problem"><span class="nav-number">5.</span> <span class="nav-text">Zarankiewicz’s problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#H-free%E5%9B%BE"><span class="nav-number">6.</span> <span class="nav-text">H-free图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E8%AE%A1%E6%95%B0"><span class="nav-number">7.</span> <span class="nav-text">三计数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B4%E9%99%A4%E5%85%B3%E7%B3%BB"><span class="nav-number">8.</span> <span class="nav-text">整除关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sperner-Lemma"><span class="nav-number">9.</span> <span class="nav-text">Sperner Lemma</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A5%E5%81%BF%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">补偿模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#EO"><span class="nav-number">2.1.</span> <span class="nav-text">EO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BO"><span class="nav-number">2.2.</span> <span class="nav-text">BO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E8%9E%8D%E5%90%88%EF%BC%88merge%EF%BC%89"><span class="nav-number">2.3.</span> <span class="nav-text">参数融合（merge）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#syntax"><span class="nav-number">3.</span> <span class="nav-text">syntax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9E%9C"><span class="nav-number">4.</span> <span class="nav-text">结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">5.</span> <span class="nav-text">代码</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
