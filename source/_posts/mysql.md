@@ -12,6 +12,7 @@ title: 数据库/MySQL
 
 ```mysql
 show database;  #查看现有的数据库
+create database bjpowernode; #创建数据库
 use bjpowernode;  #指定当前缺省数据库
 select database;  #查看当前使用的库
 drop database bjpowernode; #删除数据库
