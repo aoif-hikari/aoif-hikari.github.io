@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://aoif-hikari.github.io/2021/10/09/DVC/</loc>
+    <lastmod>2021-10-09</lastmod>
+  </url>
+  <url>
+    <loc>https://aoif-hikari.github.io/2021/09/29/Optical%20Flow/</loc>
+    <lastmod>2021-10-09</lastmod>
+  </url>
+  <url>
+    <loc>https://aoif-hikari.github.io/2021/08/06/mysql/</loc>
+    <lastmod>2021-09-09</lastmod>
+  </url>
+  <url>
     <loc>https://aoif-hikari.github.io/2021/09/01/lmcs/</loc>
     <lastmod>2021-09-01</lastmod>
   </url>
@@ -42,10 +54,6 @@
   </url>
   <url>
     <loc>https://aoif-hikari.github.io/2021/08/05/hash/</loc>
-    <lastmod>2021-08-06</lastmod>
-  </url>
-  <url>
-    <loc>https://aoif-hikari.github.io/2021/08/06/mysql/</loc>
     <lastmod>2021-08-06</lastmod>
   </url>
   <url>

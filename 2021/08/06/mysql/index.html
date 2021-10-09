@@ -29,7 +29,7 @@
 <meta property="og:description" content="MySQL，最流行的关系型数据库管理系统。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-08-06T10:01:54.773Z">
-<meta property="article:modified_time" content="2021-08-06T10:05:48.923Z">
+<meta property="article:modified_time" content="2021-09-09T10:14:14.013Z">
 <meta property="article:author" content="fu">
 <meta property="article:tag" content="数据库">
 <meta name="twitter:card" content="summary">
@@ -214,10 +214,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-08-06 18:01:54 / Modified: 18:05:48" itemprop="dateCreated datePublished" datetime="2021-08-06T18:01:54+08:00">2021-08-06</time>
+              <time title="Created: 2021-08-06 18:01:54" itemprop="dateCreated datePublished" datetime="2021-08-06T18:01:54+08:00">2021-08-06</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-09-09 18:14:14" itemprop="dateModified" datetime="2021-09-09T18:14:14+08:00">2021-09-09</time>
+              </span>
 
           
             <span id="/2021/08/06/mysql/" class="post-meta-item leancloud_visitors" data-flag-title="数据库/MySQL" title="Views">
@@ -267,7 +273,7 @@
 <p>MySQL，最流行的关系型数据库管理系统。</p>
 </blockquote>
 <span id="more"></span>
-<h2 id="数据库基本操作"><a href="#数据库基本操作" class="headerlink" title="数据库基本操作"></a>数据库基本操作</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">show database;  #查看现有的数据库</span><br><span class="line">use bjpowernode;  #指定当前缺省数据库</span><br><span class="line">select database;  #查看当前使用的库</span><br><span class="line">drop database bjpowernode; #删除数据库</span><br></pre></td></tr></table></figure>
+<h2 id="数据库基本操作"><a href="#数据库基本操作" class="headerlink" title="数据库基本操作"></a>数据库基本操作</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">show database;  #查看现有的数据库</span><br><span class="line">create database bjpowernode; #创建数据库</span><br><span class="line">use bjpowernode;  #指定当前缺省数据库</span><br><span class="line">select database;  #查看当前使用的库</span><br><span class="line">drop database bjpowernode; #删除数据库</span><br></pre></td></tr></table></figure>
 <h2 id="数据表基本操作"><a href="#数据表基本操作" class="headerlink" title="数据表基本操作"></a>数据表基本操作</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">show tables;  #查看当前库中的表</span><br><span class="line">show tables from &lt;database name&gt;;  #查看其他库中的表</span><br><span class="line">desc &lt;table name&gt;;  #查看表的结构</span><br><span class="line"></span><br><span class="line">#创建表,create table,表名在数据库当中一般建议以t_或者tbl_开始。</span><br><span class="line">create table t_student(</span><br><span class="line">    no bigint,</span><br><span class="line">    name varchar(255),</span><br><span class="line">    sex char(1),</span><br><span class="line">    classno varchar(255),</span><br><span class="line">    birth char(10)</span><br><span class="line">);</span><br><span class="line"># 将查询结果当做表创建出来。		</span><br><span class="line">create table 表名 as select语句;</span><br><span class="line">		</span><br><span class="line">#删除数据表 DROP TABLE		</span><br><span class="line">DROP TABLE if exists t_student; </span><br><span class="line"></span><br><span class="line">#插入数据 insert into</span><br><span class="line">insert into t_student</span><br><span class="line">	(no,name,sex,classno,birth) </span><br><span class="line">values</span><br><span class="line">	(3,&#x27;rose&#x27;,&#x27;1&#x27;,&#x27;gaosi2ban&#x27;,&#x27;1952-12-14&#x27;),</span><br><span class="line">	(4,&#x27;laotie&#x27;,&#x27;1&#x27;,&#x27;gaosi2ban&#x27;,&#x27;1955-12-14&#x27;);</span><br><span class="line"># 除name字段之外，剩下的所有字段自动插入NULL	</span><br><span class="line">insert into t_student(name) values(&#x27;wangwu&#x27;); </span><br><span class="line"># 字段可以省略不写，但是后面的value对数量和顺序都有要求。</span><br><span class="line">insert into t_student values(1,&#x27;jack&#x27;,&#x27;0&#x27;,&#x27;gaosan2ban&#x27;,&#x27;1986-10-23&#x27;);</span><br><span class="line"># 将查询结果插入到一张表中</span><br><span class="line">insert into dept1 select...</span><br><span class="line"></span><br><span class="line">#修改数据，update...set...，没有条件整张表数据全部更新。</span><br><span class="line">update 表名 set 字段名1=值1,字段名2=值2... where 条件;</span><br><span class="line">update dept1 set loc = &#x27;SHANGHAI&#x27;, dname = &#x27;RENSHIBU&#x27; where deptno = 10;</span><br><span class="line"></span><br><span class="line">#删除数据，delete from，没有条件全部删除。</span><br><span class="line">delete from 表名;</span><br><span class="line">delete from 表名 where 条件;</span><br><span class="line">delete from dept1 where deptno = 10;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>MySQL当中字段的常见数据类型：<br>        int        整数型(java中的int)<br>        bigint    长整型(java中的long)<br>        float        浮点型(java中的float double)<br>        char        定长字符串(String)<br>        varchar    可变长字符串(StringBuffer/StringBuilder)<br>        date        日期类型 （对应Java中的java.sql.Date类型）<br>        BLOB        二进制大对象（存储图片、视频等流媒体信息） Binary Large OBject （对应java中的Object）<br>        CLOB        字符大对象（存储较大文本，比如，可以存储4G的字符串。） Character Large OBject（对应java中的Object）</p>
@@ -513,14 +519,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -565,12 +571,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">119k</span>
+    <span title="Symbols count total">124k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:48</span>
+    <span title="Reading time total">1:53</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
   </div>
