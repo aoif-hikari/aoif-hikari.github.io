@@ -21,36 +21,20 @@
     var CONFIG = {"hostname":"aoif-hikari.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="DVC: An End-to-end Deep Video Compression FrameworkM-LVC: Multiple Frames Prediction for Learned VideoCompression">
+  <meta name="description" content="合理的运用位运算能显著提高代码在机器上的执行效率。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="End-to-end 视频编码框架： DVC 与 M-LVC">
-<meta property="og:url" content="https://aoif-hikari.github.io/2021/10/09/DVC/index.html">
+<meta property="og:title" content="Leetcode &#x2F; 位运算">
+<meta property="og:url" content="https://aoif-hikari.github.io/2021/10/13/Leetcode-%E4%BD%8D%E8%BF%90%E7%AE%97/index.html">
 <meta property="og:site_name" content="aoif-hikari">
-<meta property="og:description" content="DVC: An End-to-end Deep Video Compression FrameworkM-LVC: Multiple Frames Prediction for Learned VideoCompression">
+<meta property="og:description" content="合理的运用位运算能显著提高代码在机器上的执行效率。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_46ff30fd95be45de8b030b6e04d8a96f.png">
-<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_9c0468d02e7397d0e6f3dc09871ecd26.png">
-<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_2de6cc62a832d95b26953a9d25a9c1d1.png">
-<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_9344269049815a0ddc301862bc90b6bc.png">
-<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_9bfec99932d669a2230dedf4d4fbf20e.png">
-<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_33abb0c4538dfa3a60b30c3ed4200fd9.png">
-<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_086a9f9ef0f9f6e3cd6cecfa2d486ba1.png">
-<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_63e81feb7ecf9972b1a543962cddbb62.png">
-<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_d50ec3ca86a40a4252def91730390001.png">
-<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_988f0dfe898c62afb33b944e3a430dd4.png">
-<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_2b161a3a6260e3c4c4db1eac99068a7c.png">
-<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_e276dfa8ed49aa9ed1055da91e0f9bc7.png">
-<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_b1d75a450aed0ed8e9cc32f087df4f50.png">
-<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_229eb93048d2fae3843cde7a28df12c1.png">
-<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_b771cb5e9d315bc82af335dc4b7c0874.png">
-<meta property="article:published_time" content="2021-10-09T11:08:49.152Z">
-<meta property="article:modified_time" content="2021-10-09T11:26:59.082Z">
+<meta property="article:published_time" content="2021-10-13T09:19:09.580Z">
+<meta property="article:modified_time" content="2021-10-13T09:28:48.377Z">
 <meta property="article:author" content="fu">
-<meta property="article:tag" content="end-to-end">
+<meta property="article:tag" content="leetcode">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://notes.sjtu.edu.cn/uploads/upload_46ff30fd95be45de8b030b6e04d8a96f.png">
 
-<link rel="canonical" href="https://aoif-hikari.github.io/2021/10/09/DVC/">
+<link rel="canonical" href="https://aoif-hikari.github.io/2021/10/13/Leetcode-%E4%BD%8D%E8%BF%90%E7%AE%97/">
 
 
 <script id="page-configurations">
@@ -63,7 +47,7 @@
   };
 </script>
 
-  <title>End-to-end 视频编码框架： DVC 与 M-LVC | aoif-hikari</title>
+  <title>Leetcode / 位运算 | aoif-hikari</title>
   
 
 
@@ -208,7 +192,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://aoif-hikari.github.io/2021/10/09/DVC/">
+    <link itemprop="mainEntityOfPage" href="https://aoif-hikari.github.io/2021/10/13/Leetcode-%E4%BD%8D%E8%BF%90%E7%AE%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/cat.jpg">
@@ -221,7 +205,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          End-to-end 视频编码框架： DVC 与 M-LVC
+          Leetcode / 位运算
         </h1>
 
         <div class="post-meta">
@@ -232,11 +216,11 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-10-09 19:08:49 / Modified: 19:26:59" itemprop="dateCreated datePublished" datetime="2021-10-09T19:08:49+08:00">2021-10-09</time>
+              <time title="Created: 2021-10-13 17:19:09 / Modified: 17:28:48" itemprop="dateCreated datePublished" datetime="2021-10-13T17:19:09+08:00">2021-10-13</time>
             </span>
 
           
-            <span id="/2021/10/09/DVC/" class="post-meta-item leancloud_visitors" data-flag-title="End-to-end 视频编码框架： DVC 与 M-LVC" title="Views">
+            <span id="/2021/10/13/Leetcode-%E4%BD%8D%E8%BF%90%E7%AE%97/" class="post-meta-item leancloud_visitors" data-flag-title="Leetcode / 位运算" title="Views">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -251,8 +235,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2021/10/09/DVC/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/10/09/DVC/" itemprop="commentCount"></span>
+    <a title="valine" href="/2021/10/13/Leetcode-%E4%BD%8D%E8%BF%90%E7%AE%97/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/10/13/Leetcode-%E4%BD%8D%E8%BF%90%E7%AE%97/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -261,13 +245,13 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
               </span>
-              <span>3k</span>
+              <span>1.8k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
-              <span>3 mins.</span>
+              <span>2 mins.</span>
             </span>
 
         </div>
@@ -279,115 +263,69 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>DVC: An End-to-end Deep Video Compression Framework<br>M-LVC: Multiple Frames Prediction for Learned VideoCompression</p>
-<span id="more"></span>
-<h2 id="DVC"><a href="#DVC" class="headerlink" title="DVC"></a>DVC</h2><ul>
-<li>单参考帧</li>
-</ul>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_46ff30fd95be45de8b030b6e04d8a96f.png" alt=""></p>
-<h3 id="运动估计"><a href="#运动估计" class="headerlink" title="运动估计"></a>运动估计</h3><ul>
-<li>使用CNN模型估计光流(运动信息)</li>
-</ul>
-<p>spynet</p>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_9c0468d02e7397d0e6f3dc09871ecd26.png" alt=""></p>
+        <p>合理的运用位运算能显著提高代码在机器上的执行效率。<br><span id="more"></span></p>
+<h2 id="右移运算符：-gt-gt"><a href="#右移运算符：-gt-gt" class="headerlink" title="右移运算符：&gt;&gt;"></a>右移运算符：&gt;&gt;</h2><p>将一个数a向右移动n位记为：a&gt;&gt;n。</p>
 <ul>
-<li>运动编码网络，auto-encoder结构，压缩光流，量化</li>
-</ul>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_2de6cc62a832d95b26953a9d25a9c1d1.png" alt=""></p>
-<blockquote>
-<p>End-to-end Optimized Image Compression (google iclr_17)<br><img src="https://notes.sjtu.edu.cn/uploads/upload_9344269049815a0ddc301862bc90b6bc.png" alt=""><br><img src="https://notes.sjtu.edu.cn/uploads/upload_9bfec99932d669a2230dedf4d4fbf20e.png" alt=""><br>使用了GDN(generalized divisive normalization)进行归一化处理。类似一般CNN网络中的Batch Normalization作用，可以捕捉图像的统计特性，并将其转换为高斯分布。</p>
-<p>量化：假设量化区间为1，即为将y量化为它最近的整数</p>
-<script type="math/tex; mode=display">
-\hat{y}_{i}=q_{i}=\operatorname{round}\left(y_{i}\right)</script><p>$\hat y$ 的边缘密度(离散概率分布)可以表示为</p>
-<script type="math/tex; mode=display">
-P_{q_{i} }(n)=\int_{n-\frac{1}{2} }^{n+\frac{1}{2} } p_{y_{i} }(t) \mathrm{d} t, \quad \text { for all } n \in \mathbb{Z}</script><p>即 $p_{y_i}(t)$ 是 $y$ 的概率密度函数，由于四舍五入，在某一整数的（-0.5，0.5）区间内都会量化为该整数，则通过积分的形式计算这一区间内的数值的出现概率，得到量化后的整数的出现概率。</p>
-<p>优化目标是网络的率失真性能 $R+\lambda D$，损失函数设计为</p>
-<script type="math/tex; mode=display">
-L\left(g_{a}, g_{s}, P_{q}\right)=-E\left[\log _{2} P_{q}\right]+\lambda E[d(z, \tilde{z})]</script><p>R, is lower-bounded by the entropy of the discrete probability distribution of the quantized vector, $H [P_q]$</p>
-<p>涉及到量化问题，但是量化会导致不可微分，阻断反向传播优化。在训练过程中添加（-0.5，0.5）范围的均匀噪声$\tilde{\boldsymbol{y} }=\boldsymbol{y}+\Delta \boldsymbol{y}$<br>即采用这种形式近似可微以用于反向传播的优化。在推理过程中，则依旧使用round 函数进行四舍五入（因为不用进行优化了）。</p>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_33abb0c4538dfa3a60b30c3ed4200fd9.png" alt=""></p>
-</blockquote>
-<h3 id="运动补偿"><a href="#运动补偿" class="headerlink" title="运动补偿"></a>运动补偿</h3><p><img src="https://notes.sjtu.edu.cn/uploads/upload_086a9f9ef0f9f6e3cd6cecfa2d486ba1.png" alt=""></p>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_63e81feb7ecf9972b1a543962cddbb62.png" alt=""></p>
-<p>给定前一重建帧 $\hat x_{t-1}$ 和解码的运动矢量 $\hat v_t$，运动补偿网络将获得预测帧 $\bar x_t$。</p>
-<p>首先基于运动信息 $\hat v_t$ 将 $\hat x_{t-1}$ warp到当前帧，warp的帧有伪影，所以将warped frame 和 $\hat v_t$，$\hat x_{t-1}$共同作为运动补偿网络输入。</p>
-<p>该方法是像素级的运动补偿方法，避免了传统的基于块的运动补偿方法中的块效应，不需要环路滤波模块。</p>
-<h3 id="变换、量化"><a href="#变换、量化" class="headerlink" title="变换、量化"></a>变换、量化</h3><ul>
-<li>残差编码网络</li>
-</ul>
-<p>原始帧 $x_t$ 和预测帧 $\bar x_t$ 之间的残差信息 $r_t$ 由残差网络编码</p>
-<blockquote>
-<p>Variational image compression with a scale hyperprior (google iclr_18)<br><img src="https://notes.sjtu.edu.cn/uploads/upload_d50ec3ca86a40a4252def91730390001.png" alt=""></p>
-</blockquote>
-<ul>
-<li>量化</li>
+<li>逻辑右移/无符号右移（java: &gt;&gt;&gt;），在移动过程中，空位都以0补齐。</li>
+<li>算术右移(java: &gt;&gt;): 符号位不变，剩下位右移，空位补上符号位。 </li>
 </ul>
 <blockquote>
-<p>End-to-end Optimized Image Compression (google iclr_17)</p>
-<p>训练阶段通过加入均匀噪声来代替量化运算，推理阶段运动信息和残差直接四舍五入取整量化</p>
+<p>如：a  =  00110111，则a&gt;&gt;2    = 00001101，b=11010011，则b&gt;&gt;2   =  11110100<br>如：a  =  00110111，则a&gt;&gt;&gt;2  = 00001101，b=11010011，则b&gt;&gt;&gt;2 =  00110100。</p>
 </blockquote>
-<h3 id="熵编码"><a href="#熵编码" class="headerlink" title="熵编码"></a>熵编码</h3><ul>
-<li>量化运动信息和量化残差编码为比特</li>
-<li>使用比特率估算网络获得中每个符号的概率分布，估算比特数成本</li>
+<h2 id="左移运算符：-lt-lt"><a href="#左移运算符：-lt-lt" class="headerlink" title="左移运算符：&lt;&lt;"></a>左移运算符：&lt;&lt;</h2><p>将一个数a向左移动n位记为：a&lt;&lt;n。<br>在左移的过程中，右边一律用0去填充。左边的二进制丢弃。</p>
+<blockquote>
+<p>比如，将10左移2位，由于10的二进制为：00001010，那么左移2位，右边用零填充的结果为：00101000。<br> 将一个数左移N位相当于将一个数乘以$2^N$，将一个数算数右移（&gt;&gt;）N位相当于将这个数除以$2^N$。 </p>
+</blockquote>
+<h2 id="异或"><a href="#异或" class="headerlink" title="异或"></a>异或</h2><p>性质：</p>
+<ul>
+<li>n^n = 0</li>
+<li>n^0 = n</li>
+<li>异或操作满足交换律和结合律</li>
 </ul>
 <blockquote>
-<p>Variational image compression with a scale hyperprior (google iclr_18)</p>
+<p>136 / 剑指56-1 唯一出现奇数次的数字 / 389 找不同 / 540. 有序数组中的单一元素<br>找出数组中唯二出现次数为奇数的数<br>268 丢失的数字<br>318 最大单词长度乘积</p>
 </blockquote>
-<h2 id="M-LVC"><a href="#M-LVC" class="headerlink" title="M-LVC"></a>M-LVC</h2><ul>
-<li>多参考帧</li>
-</ul>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_988f0dfe898c62afb33b944e3a430dd4.png" alt=""></p>
-<h3 id="运动估计与预测"><a href="#运动估计与预测" class="headerlink" title="运动估计与预测"></a>运动估计与预测</h3><ul>
-<li>运动估计网络（ME-Net）使用 FlowNet2.0 生成光流MV （$v_t$）</li>
-</ul>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_2b161a3a6260e3c4c4db1eac99068a7c.png" alt=""></p>
-<ul>
-<li>采用MV预测网络（MAMVP-Net）来预测当前的MV($\bar v_t$)</li>
-</ul>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_e276dfa8ed49aa9ed1055da91e0f9bc7.png" alt=""></p>
-<p>采用先前多个重构的MV对当前MV进行预测，上面网络图中采用先前三个重构MV进行预测。首先，对先前每个MV进行金字塔特征提取，见（a）</p>
-<script type="math/tex; mode=display">
-\left\{f_{\hat{v}_{t-i} }^{l} \mid l=0,1,2,3\right\}=H_{m f}\left(\hat{v}_{t-i}\right), i=1,2,3</script><p>其次，考虑到先前重构MV有错误，对抽取的金字塔特征进行warp</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-f_{\hat{v}_{t-3} }^{l, w} &=\operatorname{Warp}\left(f_{\hat{v}_{t-3} }^{l}, \hat{v}_{t-1}^{l}+\operatorname{Warp}\left(\hat{v}_{t-2}^{l}, \hat{v}_{t-1}^{l}\right)\right) \\
-f_{\hat{v}_{t-2} }^{l, w} &=\operatorname{Warp}\left(f_{\hat{v}_{t-2} }^{l}, \hat{v}_{t-1}^{l}\right), l=0,1,2,3
-\end{aligned}</script><p>再次，利用金字塔网络从粗到细预测当前MV，见(b)。</p>
-<ul>
-<li><p>使用MVD编码器/解码器网络（google iclr_17）对$v_t$和$\bar v_t$之差$d_t$进行编码</p>
-<ul>
-<li>$d_t$ -&gt; $m_t$ -&gt; $\hat m_t$</li>
-<li>使用google iclr_17中的CNN估计$\hat m_t$的分布，熵编码为比特流</li>
+<p>异或运算交换2个数： </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">10</span>; </span><br><span class="line"><span class="keyword">int</span> b=<span class="number">20</span>; </span><br><span class="line">a=a^b; </span><br><span class="line">b=a^b; </span><br><span class="line">a=a^b; </span><br></pre></td></tr></table></figure>
+<h2 id="二进制位"><a href="#二进制位" class="headerlink" title="二进制位"></a>二进制位</h2><ul>
+<li>a的二进制末位为1，那么a &amp; 1 =1。如果a的二进制末位为0，那么a &amp; 1=0。<ul>
+<li>判断a的二进制第i位是否是1： <code>(a &gt;&gt; i &amp; 1) == 1 ? true : false</code></li>
 </ul>
 </li>
-<li><p>由于解码后的$\hat{d}_t$包含量化误差，使用MV优化网络（MV Refine-Net）来减少量化误差并提高质量。将优化后的MV存在解码的MV缓冲器中，用于下一帧编码。</p>
+<li>n &amp; (n−1)，其运算结果为把 n 的二进制位中的<strong>最低位</strong>的 1 变为 0 。</li>
+<li>一个整数如果是 2 的整数次方，则其二进制表示中仅有1位1。<ul>
+<li>判断整数是否为2的次方：n &amp; (n−1) == 0 ? true : false</li>
+</ul>
 </li>
 </ul>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_b1d75a450aed0ed8e9cc32f087df4f50.png" alt=""></p>
-<h3 id="运动补偿-1"><a href="#运动补偿-1" class="headerlink" title="运动补偿"></a>运动补偿</h3><ul>
-<li>重构MV后，使用运动补偿网络（MMC-Net）获得预测帧$\bar x_t$，MMC-Net可以通过使用多个参考帧来生成更准确的预测帧</li>
-</ul>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_229eb93048d2fae3843cde7a28df12c1.png" alt=""></p>
-<h3 id="残差"><a href="#残差" class="headerlink" title="残差"></a>残差</h3><ul>
-<li><p>运动补偿后，残差编码网络（google 18_iclr，同DVC）对原始帧$x_t$和预测帧$\bar{x}_t$之间的残差$r_t$进行编码。</p>
+<blockquote>
+<p>191 / 剑指 Offer 15 二进制中1的个数（无符号数）<br>（对有符号数：不断左移flag，和整数进行与运算。）<br>（两个整数 m 和 n，需要改变m中的多少位得到n：首先 m ^ n，然后求结果中1的位数）<br>338 比特位计数(dp + 位运算)</p>
+</blockquote>
+<h2 id="补码"><a href="#补码" class="headerlink" title="补码"></a>补码</h2><p>计算机系统主要原因：使用补码，可以将符号位和其它位统一处理；同时，减法也可按加法来处理。另外，两个用补码表示的数相加时，如果最高位（符号位）有进位，则进位被舍弃。</p>
+<h4 id="求补码"><a href="#求补码" class="headerlink" title="求补码"></a>求补码</h4><p>最高位是符号位，0表示正，1为负</p>
 <ul>
-<li>$r_t$ -&gt; $y_t$ -&gt; $\hat y_t$</li>
-<li>使用google 18_iclr中的CNN估计$\hat y_t$的分布，熵编码为比特流</li>
+<li>正数的补码：与原码相同。<br>例如，+9的补码 00001001。</li>
+<li>负数的补码：符号位为1，其余位为该数绝对值的原码按位取反；然后整个数加1。</li>
 </ul>
-</li>
-<li><p>解码的$\hat{r}’_t$包含量化误差，因此使用残差优化网络（Residual Refine-Net）来减少量化误差并提高质量。</p>
-</li>
+<blockquote>
+<p>例如，-7的补码：因为是负数，则符号位为“1；-7的绝对值+7的原码0000111按位取反为1111000；再加1，所以-7的补码是11111001。</p>
+</blockquote>
+<h4 id="已知补码求原码"><a href="#已知补码求原码" class="headerlink" title="已知补码求原码"></a>已知补码求原码</h4><ul>
+<li>如果补码的符号位为“0”，表示是一个正数，所以补码就是该数的原码。</li>
+<li>如果补码的符号位为“1”，表示是一个负数，求原码：符号位为1，其余各位取反，然后再整个数加1。</li>
 </ul>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_b771cb5e9d315bc82af335dc4b7c0874.png" alt=""></p>
-<h3 id="重建帧"><a href="#重建帧" class="headerlink" title="重建帧"></a>重建帧</h3><ul>
-<li>在优化残差后，将加到预测帧上来获得重构帧。然后将重构帧缓存在解码的帧缓冲器中以用于下一帧编码。</li>
+<h4 id="补码的表示范围"><a href="#补码的表示范围" class="headerlink" title="补码的表示范围"></a>补码的表示范围</h4><p>$-2^{n-1} —2^{n-1} -1$</p>
+<ul>
+<li>8位二进制带符号数表示范围：-128—127</li>
 </ul>
-<h3 id="Training-Strategy"><a href="#Training-Strategy" class="headerlink" title="Training Strategy"></a>Training Strategy</h3><h4 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function."></a>Loss Function.</h4><script type="math/tex; mode=display">
-J=D+\lambda R=d\left(x_{t}, \hat{x}_{t}\right)+\lambda\left(R_{m v d}+R_{r e s}\right)</script><ul>
-<li>$d(x_{t}, \hat{x}_{t})$ 使用 MSE</li>
-<li>$R_{m v d}, R_{r e s}$ 别表示用于编码MVD和残差的比特率。在训练过程中，不进行实际编码，而是根据相应的$\hat{m}_t$和$\hat{y}_t$的熵来估计比特率。分别使用google 17_iclr和google 18_iclr中的CNNs来估计$\hat{m}_t$和$\hat{y}_t$的概率分布，然后得到相应的熵。</li>
-<li>训练过程中通过添加均匀噪声来代替量化运算(google 17_iclr)。</li>
-</ul>
+<h4 id="补码加减法运算"><a href="#补码加减法运算" class="headerlink" title="补码加减法运算"></a>补码加减法运算</h4><p>计算机中，符号数一律用补码表示，运算时符号位和数字位一起参加运算。运算结果也用补码表示。</p>
+<p>X, Y表示原数值</p>
+<p>两符号数相加公式：[X+Y]补＝［X］补＋［Y］补<br>两符号数相减公式：[X-Y]补=[X]补+［-Y］补</p>
+<h2 id="java"><a href="#java" class="headerlink" title="java"></a>java</h2><p>Integer.MAX_VALUE，（2147483647），2^31 - 1, 0x7FFFFFFF<br>Integer. MIN_VALUE，（-2147483648），-2^31， </p>
+<blockquote>
+<p>Integer.MAX_VALUE + 1 = Integer. MIN_VALUE<br>Math.abs(Integer.MIN_VALUE) = Integer.MIN_VALUE<br>-Integer.MIN_VALUE == Integer.MIN_VALUE</p>
+</blockquote>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Integer.MAX_VALUE:  <span class="number">01111111</span> <span class="number">11111111</span> <span class="number">11111111</span> <span class="number">11111111</span></span><br><span class="line">			    <span class="number">1</span>:  <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000001</span></span><br><span class="line">		      相加:  <span class="number">10000000</span> <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000000</span></span><br><span class="line">Integer.MIN_VALUE:  <span class="number">10000000</span> <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000000</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -416,7 +354,7 @@ J=D+\lambda R=d\left(x_{t}, \hat{x}_{t}\right)+\lambda\left(R_{m v d}+R_{r e s}\
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/end-to-end/" rel="tag"># end-to-end</a>
+              <a href="/tags/leetcode/" rel="tag"># leetcode</a>
           </div>
 
         
@@ -425,13 +363,10 @@ J=D+\lambda R=d\left(x_{t}, \hat{x}_{t}\right)+\lambda\left(R_{m v d}+R_{r e s}\
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/09/29/Optical%20Flow/" rel="prev" title="Optical Flow / 光流">
-      <i class="fa fa-chevron-left"></i> Optical Flow / 光流
+    <a href="/2021/10/09/DVC/" rel="prev" title="End-to-end 视频编码框架： DVC 与 M-LVC">
+      <i class="fa fa-chevron-left"></i> End-to-end 视频编码框架： DVC 与 M-LVC
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/10/13/Leetcode-%E4%BD%8D%E8%BF%90%E7%AE%97/" rel="next" title="Leetcode / 位运算">
-      Leetcode / 位运算 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -491,7 +426,7 @@ J=D+\lambda R=d\left(x_{t}, \hat{x}_{t}\right)+\lambda\left(R_{m v d}+R_{r e s}\
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#DVC"><span class="nav-number">1.</span> <span class="nav-text">DVC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E5%8A%A8%E4%BC%B0%E8%AE%A1"><span class="nav-number">1.1.</span> <span class="nav-text">运动估计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E5%8A%A8%E8%A1%A5%E5%81%BF"><span class="nav-number">1.2.</span> <span class="nav-text">运动补偿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E6%8D%A2%E3%80%81%E9%87%8F%E5%8C%96"><span class="nav-number">1.3.</span> <span class="nav-text">变换、量化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%86%B5%E7%BC%96%E7%A0%81"><span class="nav-number">1.4.</span> <span class="nav-text">熵编码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#M-LVC"><span class="nav-number">2.</span> <span class="nav-text">M-LVC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E5%8A%A8%E4%BC%B0%E8%AE%A1%E4%B8%8E%E9%A2%84%E6%B5%8B"><span class="nav-number">2.1.</span> <span class="nav-text">运动估计与预测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E5%8A%A8%E8%A1%A5%E5%81%BF-1"><span class="nav-number">2.2.</span> <span class="nav-text">运动补偿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AE%8B%E5%B7%AE"><span class="nav-number">2.3.</span> <span class="nav-text">残差</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%BB%BA%E5%B8%A7"><span class="nav-number">2.4.</span> <span class="nav-text">重建帧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Training-Strategy"><span class="nav-number">2.5.</span> <span class="nav-text">Training Strategy</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Loss-Function"><span class="nav-number">2.5.1.</span> <span class="nav-text">Loss Function.</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%B3%E7%A7%BB%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%9A-gt-gt"><span class="nav-number">1.</span> <span class="nav-text">右移运算符：&gt;&gt;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A6%E7%A7%BB%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%9A-lt-lt"><span class="nav-number">2.</span> <span class="nav-text">左移运算符：&lt;&lt;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%82%E6%88%96"><span class="nav-number">3.</span> <span class="nav-text">异或</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BD%8D"><span class="nav-number">4.</span> <span class="nav-text">二进制位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A5%E7%A0%81"><span class="nav-number">5.</span> <span class="nav-text">补码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B1%82%E8%A1%A5%E7%A0%81"><span class="nav-number">5.0.1.</span> <span class="nav-text">求补码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B7%B2%E7%9F%A5%E8%A1%A5%E7%A0%81%E6%B1%82%E5%8E%9F%E7%A0%81"><span class="nav-number">5.0.2.</span> <span class="nav-text">已知补码求原码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A5%E7%A0%81%E7%9A%84%E8%A1%A8%E7%A4%BA%E8%8C%83%E5%9B%B4"><span class="nav-number">5.0.3.</span> <span class="nav-text">补码的表示范围</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A5%E7%A0%81%E5%8A%A0%E5%87%8F%E6%B3%95%E8%BF%90%E7%AE%97"><span class="nav-number">5.0.4.</span> <span class="nav-text">补码加减法运算</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java"><span class="nav-number">6.</span> <span class="nav-text">java</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

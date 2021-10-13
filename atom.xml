@@ -6,7 +6,7 @@
   <link href="https://aoif-hikari.github.io/atom.xml" rel="self"/>
   
   <link href="https://aoif-hikari.github.io/"/>
-  <updated>2021-10-09T11:26:59.082Z</updated>
+  <updated>2021-10-13T09:28:48.377Z</updated>
   <id>https://aoif-hikari.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Leetcode / 位运算</title>
+    <link href="https://aoif-hikari.github.io/2021/10/13/Leetcode-%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
+    <id>https://aoif-hikari.github.io/2021/10/13/Leetcode-%E4%BD%8D%E8%BF%90%E7%AE%97/</id>
+    <published>2021-10-13T09:19:09.580Z</published>
+    <updated>2021-10-13T09:28:48.377Z</updated>
+    
+    <content type="html"><![CDATA[<p>合理的运用位运算能显著提高代码在机器上的执行效率。<br><span id="more"></span></p><h2 id="右移运算符：-gt-gt"><a href="#右移运算符：-gt-gt" class="headerlink" title="右移运算符：&gt;&gt;"></a>右移运算符：&gt;&gt;</h2><p>将一个数a向右移动n位记为：a&gt;&gt;n。</p><ul><li>逻辑右移/无符号右移（java: &gt;&gt;&gt;），在移动过程中，空位都以0补齐。</li><li>算术右移(java: &gt;&gt;): 符号位不变，剩下位右移，空位补上符号位。 </li></ul><blockquote><p>如：a  =  00110111，则a&gt;&gt;2    = 00001101，b=11010011，则b&gt;&gt;2   =  11110100<br>如：a  =  00110111，则a&gt;&gt;&gt;2  = 00001101，b=11010011，则b&gt;&gt;&gt;2 =  00110100。</p></blockquote><h2 id="左移运算符：-lt-lt"><a href="#左移运算符：-lt-lt" class="headerlink" title="左移运算符：&lt;&lt;"></a>左移运算符：&lt;&lt;</h2><p>将一个数a向左移动n位记为：a&lt;&lt;n。<br>在左移的过程中，右边一律用0去填充。左边的二进制丢弃。</p><blockquote><p>比如，将10左移2位，由于10的二进制为：00001010，那么左移2位，右边用零填充的结果为：00101000。<br> 将一个数左移N位相当于将一个数乘以$2^N$，将一个数算数右移（&gt;&gt;）N位相当于将这个数除以$2^N$。 </p></blockquote><h2 id="异或"><a href="#异或" class="headerlink" title="异或"></a>异或</h2><p>性质：</p><ul><li>n^n = 0</li><li>n^0 = n</li><li>异或操作满足交换律和结合律</li></ul><blockquote><p>136 / 剑指56-1 唯一出现奇数次的数字 / 389 找不同 / 540. 有序数组中的单一元素<br>找出数组中唯二出现次数为奇数的数<br>268 丢失的数字<br>318 最大单词长度乘积</p></blockquote><p>异或运算交换2个数： </p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">10</span>; </span><br><span class="line"><span class="keyword">int</span> b=<span class="number">20</span>; </span><br><span class="line">a=a^b; </span><br><span class="line">b=a^b; </span><br><span class="line">a=a^b; </span><br></pre></td></tr></table></figure><h2 id="二进制位"><a href="#二进制位" class="headerlink" title="二进制位"></a>二进制位</h2><ul><li>a的二进制末位为1，那么a &amp; 1 =1。如果a的二进制末位为0，那么a &amp; 1=0。<ul><li>判断a的二进制第i位是否是1： <code>(a &gt;&gt; i &amp; 1) == 1 ? true : false</code></li></ul></li><li>n &amp; (n−1)，其运算结果为把 n 的二进制位中的<strong>最低位</strong>的 1 变为 0 。</li><li>一个整数如果是 2 的整数次方，则其二进制表示中仅有1位1。<ul><li>判断整数是否为2的次方：n &amp; (n−1) == 0 ? true : false</li></ul></li></ul><blockquote><p>191 / 剑指 Offer 15 二进制中1的个数（无符号数）<br>（对有符号数：不断左移flag，和整数进行与运算。）<br>（两个整数 m 和 n，需要改变m中的多少位得到n：首先 m ^ n，然后求结果中1的位数）<br>338 比特位计数(dp + 位运算)</p></blockquote><h2 id="补码"><a href="#补码" class="headerlink" title="补码"></a>补码</h2><p>计算机系统主要原因：使用补码，可以将符号位和其它位统一处理；同时，减法也可按加法来处理。另外，两个用补码表示的数相加时，如果最高位（符号位）有进位，则进位被舍弃。</p><h4 id="求补码"><a href="#求补码" class="headerlink" title="求补码"></a>求补码</h4><p>最高位是符号位，0表示正，1为负</p><ul><li>正数的补码：与原码相同。<br>例如，+9的补码 00001001。</li><li>负数的补码：符号位为1，其余位为该数绝对值的原码按位取反；然后整个数加1。</li></ul><blockquote><p>例如，-7的补码：因为是负数，则符号位为“1；-7的绝对值+7的原码0000111按位取反为1111000；再加1，所以-7的补码是11111001。</p></blockquote><h4 id="已知补码求原码"><a href="#已知补码求原码" class="headerlink" title="已知补码求原码"></a>已知补码求原码</h4><ul><li>如果补码的符号位为“0”，表示是一个正数，所以补码就是该数的原码。</li><li>如果补码的符号位为“1”，表示是一个负数，求原码：符号位为1，其余各位取反，然后再整个数加1。</li></ul><h4 id="补码的表示范围"><a href="#补码的表示范围" class="headerlink" title="补码的表示范围"></a>补码的表示范围</h4><p>$-2^{n-1} —2^{n-1} -1$</p><ul><li>8位二进制带符号数表示范围：-128—127</li></ul><h4 id="补码加减法运算"><a href="#补码加减法运算" class="headerlink" title="补码加减法运算"></a>补码加减法运算</h4><p>计算机中，符号数一律用补码表示，运算时符号位和数字位一起参加运算。运算结果也用补码表示。</p><p>X, Y表示原数值</p><p>两符号数相加公式：[X+Y]补＝［X］补＋［Y］补<br>两符号数相减公式：[X-Y]补=[X]补+［-Y］补</p><h2 id="java"><a href="#java" class="headerlink" title="java"></a>java</h2><p>Integer.MAX_VALUE，（2147483647），2^31 - 1, 0x7FFFFFFF<br>Integer. MIN_VALUE，（-2147483648），-2^31， </p><blockquote><p>Integer.MAX_VALUE + 1 = Integer. MIN_VALUE<br>Math.abs(Integer.MIN_VALUE) = Integer.MIN_VALUE<br>-Integer.MIN_VALUE == Integer.MIN_VALUE</p></blockquote><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Integer.MAX_VALUE:  <span class="number">01111111</span> <span class="number">11111111</span> <span class="number">11111111</span> <span class="number">11111111</span></span><br><span class="line">    <span class="number">1</span>:  <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000001</span></span><br><span class="line">      相加:  <span class="number">10000000</span> <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000000</span></span><br><span class="line">Integer.MIN_VALUE:  <span class="number">10000000</span> <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000000</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;合理的运用位运算能显著提高代码在机器上的执行效率。&lt;br&gt;</summary>
+    
+    
+    
+    
+    <category term="leetcode" scheme="https://aoif-hikari.github.io/tags/leetcode/"/>
+    
+  </entry>
   
   <entry>
     <title>End-to-end 视频编码框架： DVC 与 M-LVC</title>
@@ -412,27 +431,6 @@
     
     
     <category term="java" scheme="https://aoif-hikari.github.io/tags/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Leetcode/链表</title>
-    <link href="https://aoif-hikari.github.io/2021/07/07/Leetcode-%E9%93%BE%E8%A1%A8/"/>
-    <id>https://aoif-hikari.github.io/2021/07/07/Leetcode-%E9%93%BE%E8%A1%A8/</id>
-    <published>2021-07-07T08:14:25.468Z</published>
-    <updated>2021-07-22T03:03:35.967Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>常用数据结构—链表</p></blockquote><span id="more"></span><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 常用操作</span></span><br><span class="line"><span class="keyword">if</span>(head == <span class="keyword">null</span> || head.next == <span class="keyword">null</span>) <span class="keyword">return</span> head;</span><br><span class="line"><span class="comment">// 设预指针pre的下一个节点指向head，防止空节点</span></span><br><span class="line">ListNode pre = <span class="keyword">new</span> ListNode(); </span><br><span class="line">pre.next = head;</span><br><span class="line"><span class="comment">// 设置动态当前指针cur</span></span><br><span class="line">ListNode cur = head; </span><br></pre></td></tr></table></figure><h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><p>707 设计链表</p><p>剑指 Offer 06. 从尾到头打印链表（栈）</p><ul><li>删</li></ul><p>剑指 Offer 18. 删除链表的节点</p><p>83 删除排序链表中的重复元素(相同节点保留一个)</p><p><strong>82 删除排序链表中的重复元素 II(相同节点全部删除)</strong></p><ul><li>翻转</li></ul><p>24 两两交换链表中的结点</p><p>206/剑指 Offer 24. 反转链表</p><p>92 反转链表 II</p><p>25 k个一组翻转链表</p><ul><li>合并</li></ul><p>21/ 剑指 Offer 25 合并两个有序链表</p><p>23 合并K个升序链表</p><p>2 两数相加</p><p>445 两数相加 II（栈）</p><ul><li>快慢指针</li></ul><p>19/剑指 Offer 22 删除链表的倒数第 N 个结点</p><p>61 旋转链表</p><p>876 链表的中间结点</p><p>234 回文链表(中点+反转)</p><p>143 重排链表(中点+反转+合并)</p><ul><li>拆分</li></ul><p>86 分隔链表</p><p>328 奇偶链表</p><p><strong>138/剑指 Offer 35. 复杂链表的复制</strong>（hashmap）</p><ul><li>其他</li></ul><p><strong>160/剑指 Offer 52. 两个链表的第一个公共节点</strong></p><blockquote><ul><li><p><strong>集合set</strong></p></li><li><p><strong>快慢指针（先统计两个链表的长度，如果长度不一样，让链表长的先走，直到两个链表长度一样，这此时两个链表同时每次后移一步，看节点是否一样）</strong></p></li><li><p><strong>双指针</strong></p></li></ul></blockquote>]]></content>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;常用数据结构—链表&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    
-    <category term="leetcode" scheme="https://aoif-hikari.github.io/tags/leetcode/"/>
     
   </entry>
   
