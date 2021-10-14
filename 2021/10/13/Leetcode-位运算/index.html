@@ -29,7 +29,7 @@
 <meta property="og:description" content="合理的运用位运算能显著提高代码在机器上的执行效率。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-10-13T09:19:09.580Z">
-<meta property="article:modified_time" content="2021-10-13T09:28:48.377Z">
+<meta property="article:modified_time" content="2021-10-14T02:30:08.747Z">
 <meta property="article:author" content="fu">
 <meta property="article:tag" content="leetcode">
 <meta name="twitter:card" content="summary">
@@ -214,10 +214,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-10-13 17:19:09 / Modified: 17:28:48" itemprop="dateCreated datePublished" datetime="2021-10-13T17:19:09+08:00">2021-10-13</time>
+              <time title="Created: 2021-10-13 17:19:09" itemprop="dateCreated datePublished" datetime="2021-10-13T17:19:09+08:00">2021-10-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-10-14 10:30:08" itemprop="dateModified" datetime="2021-10-14T10:30:08+08:00">2021-10-14</time>
+              </span>
 
           
             <span id="/2021/10/13/Leetcode-%E4%BD%8D%E8%BF%90%E7%AE%97/" class="post-meta-item leancloud_visitors" data-flag-title="Leetcode / 位运算" title="Views">
@@ -245,7 +251,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
               </span>
-              <span>1.8k</span>
+              <span>1.9k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -278,12 +284,12 @@
 </blockquote>
 <h2 id="异或"><a href="#异或" class="headerlink" title="异或"></a>异或</h2><p>性质：</p>
 <ul>
-<li>n^n = 0</li>
-<li>n^0 = n</li>
+<li><code>n^n = 0</code></li>
+<li><code>n^0 = n</code></li>
 <li>异或操作满足交换律和结合律</li>
 </ul>
 <blockquote>
-<p>136 / 剑指56-1 唯一出现奇数次的数字 / 389 找不同 / 540. 有序数组中的单一元素<br>找出数组中唯二出现次数为奇数的数<br>268 丢失的数字<br>318 最大单词长度乘积</p>
+<p>136  唯一出现奇数次的数字 / 389 找不同 / 540. 有序数组中的单一元素<br>剑指56-1 唯二出现次数为奇数的数（分组异或）<br>剑指56-2 出现一次的数（除了一个数字以外，其余数字都出现 m 次 的通用问题：记录<strong>数组中所有数字</strong> 的 <strong>每一位的和</strong>，对m取余）<br>268 丢失的数字<br>318 最大单词长度乘积</p>
 </blockquote>
 <p>异或运算交换2个数： </p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">10</span>; </span><br><span class="line"><span class="keyword">int</span> b=<span class="number">20</span>; </span><br><span class="line">a=a^b; </span><br><span class="line">b=a^b; </span><br><span class="line">a=a^b; </span><br></pre></td></tr></table></figure>
@@ -294,7 +300,7 @@
 </li>
 <li>n &amp; (n−1)，其运算结果为把 n 的二进制位中的<strong>最低位</strong>的 1 变为 0 。</li>
 <li>一个整数如果是 2 的整数次方，则其二进制表示中仅有1位1。<ul>
-<li>判断整数是否为2的次方：n &amp; (n−1) == 0 ? true : false</li>
+<li>判断整数是否为2的次方：<code>n &amp; (n−1) == 0 ? true : false</code></li>
 </ul>
 </li>
 </ul>

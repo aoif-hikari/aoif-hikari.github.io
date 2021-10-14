@@ -3000,12 +3000,12 @@ J=D+\lambda R=d\left(x_{t}, \hat{x}_{t}\right)+\lambda\left(R_{m v d}+R_{r e s}\
 </blockquote>
 <h2 id="异或"><a href="#异或" class="headerlink" title="异或"></a>异或</h2><p>性质：</p>
 <ul>
-<li>n^n = 0</li>
-<li>n^0 = n</li>
+<li><code>n^n = 0</code></li>
+<li><code>n^0 = n</code></li>
 <li>异或操作满足交换律和结合律</li>
 </ul>
 <blockquote>
-<p>136 / 剑指56-1 唯一出现奇数次的数字 / 389 找不同 / 540. 有序数组中的单一元素<br>找出数组中唯二出现次数为奇数的数<br>268 丢失的数字<br>318 最大单词长度乘积</p>
+<p>136  唯一出现奇数次的数字 / 389 找不同 / 540. 有序数组中的单一元素<br>剑指56-1 唯二出现次数为奇数的数（分组异或）<br>剑指56-2 出现一次的数（除了一个数字以外，其余数字都出现 m 次 的通用问题：记录<strong>数组中所有数字</strong> 的 <strong>每一位的和</strong>，对m取余）<br>268 丢失的数字<br>318 最大单词长度乘积</p>
 </blockquote>
 <p>异或运算交换2个数： </p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">10</span>; </span><br><span class="line"><span class="keyword">int</span> b=<span class="number">20</span>; </span><br><span class="line">a=a^b; </span><br><span class="line">b=a^b; </span><br><span class="line">a=a^b; </span><br></pre></td></tr></table></figure>
@@ -3016,7 +3016,7 @@ J=D+\lambda R=d\left(x_{t}, \hat{x}_{t}\right)+\lambda\left(R_{m v d}+R_{r e s}\
 </li>
 <li>n &amp; (n−1)，其运算结果为把 n 的二进制位中的<strong>最低位</strong>的 1 变为 0 。</li>
 <li>一个整数如果是 2 的整数次方，则其二进制表示中仅有1位1。<ul>
-<li>判断整数是否为2的次方：n &amp; (n−1) == 0 ? true : false</li>
+<li>判断整数是否为2的次方：<code>n &amp; (n−1) == 0 ? true : false</code></li>
 </ul>
 </li>
 </ul>
