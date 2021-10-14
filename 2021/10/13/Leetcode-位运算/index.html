@@ -29,7 +29,7 @@
 <meta property="og:description" content="合理的运用位运算能显著提高代码在机器上的执行效率。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-10-13T09:19:09.580Z">
-<meta property="article:modified_time" content="2021-10-14T02:30:08.747Z">
+<meta property="article:modified_time" content="2021-10-14T02:33:58.458Z">
 <meta property="article:author" content="fu">
 <meta property="article:tag" content="leetcode">
 <meta name="twitter:card" content="summary">
@@ -222,7 +222,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-10-14 10:30:08" itemprop="dateModified" datetime="2021-10-14T10:30:08+08:00">2021-10-14</time>
+                <time title="Modified: 2021-10-14 10:33:58" itemprop="dateModified" datetime="2021-10-14T10:33:58+08:00">2021-10-14</time>
               </span>
 
           
@@ -308,7 +308,7 @@
 <p>191 / 剑指 Offer 15 二进制中1的个数（无符号数）<br>（对有符号数：不断左移flag，和整数进行与运算。）<br>（两个整数 m 和 n，需要改变m中的多少位得到n：首先 m ^ n，然后求结果中1的位数）<br>338 比特位计数(dp + 位运算)</p>
 </blockquote>
 <h2 id="补码"><a href="#补码" class="headerlink" title="补码"></a>补码</h2><p>计算机系统主要原因：使用补码，可以将符号位和其它位统一处理；同时，减法也可按加法来处理。另外，两个用补码表示的数相加时，如果最高位（符号位）有进位，则进位被舍弃。</p>
-<h4 id="求补码"><a href="#求补码" class="headerlink" title="求补码"></a>求补码</h4><p>最高位是符号位，0表示正，1为负</p>
+<h3 id="求补码"><a href="#求补码" class="headerlink" title="求补码"></a>求补码</h3><p>最高位是符号位，0表示正，1为负</p>
 <ul>
 <li>正数的补码：与原码相同。<br>例如，+9的补码 00001001。</li>
 <li>负数的补码：符号位为1，其余位为该数绝对值的原码按位取反；然后整个数加1。</li>
@@ -316,22 +316,22 @@
 <blockquote>
 <p>例如，-7的补码：因为是负数，则符号位为“1；-7的绝对值+7的原码0000111按位取反为1111000；再加1，所以-7的补码是11111001。</p>
 </blockquote>
-<h4 id="已知补码求原码"><a href="#已知补码求原码" class="headerlink" title="已知补码求原码"></a>已知补码求原码</h4><ul>
+<h3 id="已知补码求原码"><a href="#已知补码求原码" class="headerlink" title="已知补码求原码"></a>已知补码求原码</h3><ul>
 <li>如果补码的符号位为“0”，表示是一个正数，所以补码就是该数的原码。</li>
 <li>如果补码的符号位为“1”，表示是一个负数，求原码：符号位为1，其余各位取反，然后再整个数加1。</li>
 </ul>
-<h4 id="补码的表示范围"><a href="#补码的表示范围" class="headerlink" title="补码的表示范围"></a>补码的表示范围</h4><p>$-2^{n-1} —2^{n-1} -1$</p>
+<h3 id="补码的表示范围"><a href="#补码的表示范围" class="headerlink" title="补码的表示范围"></a>补码的表示范围</h3><p>$-2^{n-1} —2^{n-1} -1$</p>
 <ul>
 <li>8位二进制带符号数表示范围：-128—127</li>
 </ul>
-<h4 id="补码加减法运算"><a href="#补码加减法运算" class="headerlink" title="补码加减法运算"></a>补码加减法运算</h4><p>计算机中，符号数一律用补码表示，运算时符号位和数字位一起参加运算。运算结果也用补码表示。</p>
+<h3 id="补码加减法运算"><a href="#补码加减法运算" class="headerlink" title="补码加减法运算"></a>补码加减法运算</h3><p>计算机中，符号数一律用补码表示，运算时符号位和数字位一起参加运算。运算结果也用补码表示。</p>
 <p>X, Y表示原数值</p>
 <p>两符号数相加公式：[X+Y]补＝［X］补＋［Y］补<br>两符号数相减公式：[X-Y]补=[X]补+［-Y］补</p>
 <h2 id="java"><a href="#java" class="headerlink" title="java"></a>java</h2><p>Integer.MAX_VALUE，（2147483647），2^31 - 1, 0x7FFFFFFF<br>Integer. MIN_VALUE，（-2147483648），-2^31， </p>
 <blockquote>
 <p>Integer.MAX_VALUE + 1 = Integer. MIN_VALUE<br>Math.abs(Integer.MIN_VALUE) = Integer.MIN_VALUE<br>-Integer.MIN_VALUE == Integer.MIN_VALUE</p>
 </blockquote>
-<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Integer.MAX_VALUE:  <span class="number">01111111</span> <span class="number">11111111</span> <span class="number">11111111</span> <span class="number">11111111</span></span><br><span class="line">			    <span class="number">1</span>:  <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000001</span></span><br><span class="line">		      相加:  <span class="number">10000000</span> <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000000</span></span><br><span class="line">Integer.MIN_VALUE:  <span class="number">10000000</span> <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000000</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Integer.MAX_VALUE:  <span class="number">01111111</span> <span class="number">11111111</span> <span class="number">11111111</span> <span class="number">11111111</span></span><br><span class="line">				<span class="number">1</span>:  <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000001</span></span><br><span class="line">				相加:<span class="number">10000000</span> <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000000</span></span><br><span class="line">Integer.MIN_VALUE:  <span class="number">10000000</span> <span class="number">00000000</span> <span class="number">00000000</span> <span class="number">00000000</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -432,7 +432,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%B3%E7%A7%BB%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%9A-gt-gt"><span class="nav-number">1.</span> <span class="nav-text">右移运算符：&gt;&gt;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A6%E7%A7%BB%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%9A-lt-lt"><span class="nav-number">2.</span> <span class="nav-text">左移运算符：&lt;&lt;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%82%E6%88%96"><span class="nav-number">3.</span> <span class="nav-text">异或</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BD%8D"><span class="nav-number">4.</span> <span class="nav-text">二进制位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A5%E7%A0%81"><span class="nav-number">5.</span> <span class="nav-text">补码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B1%82%E8%A1%A5%E7%A0%81"><span class="nav-number">5.0.1.</span> <span class="nav-text">求补码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B7%B2%E7%9F%A5%E8%A1%A5%E7%A0%81%E6%B1%82%E5%8E%9F%E7%A0%81"><span class="nav-number">5.0.2.</span> <span class="nav-text">已知补码求原码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A5%E7%A0%81%E7%9A%84%E8%A1%A8%E7%A4%BA%E8%8C%83%E5%9B%B4"><span class="nav-number">5.0.3.</span> <span class="nav-text">补码的表示范围</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A5%E7%A0%81%E5%8A%A0%E5%87%8F%E6%B3%95%E8%BF%90%E7%AE%97"><span class="nav-number">5.0.4.</span> <span class="nav-text">补码加减法运算</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java"><span class="nav-number">6.</span> <span class="nav-text">java</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%B3%E7%A7%BB%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%9A-gt-gt"><span class="nav-number">1.</span> <span class="nav-text">右移运算符：&gt;&gt;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A6%E7%A7%BB%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%9A-lt-lt"><span class="nav-number">2.</span> <span class="nav-text">左移运算符：&lt;&lt;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%82%E6%88%96"><span class="nav-number">3.</span> <span class="nav-text">异或</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BD%8D"><span class="nav-number">4.</span> <span class="nav-text">二进制位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A5%E7%A0%81"><span class="nav-number">5.</span> <span class="nav-text">补码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E8%A1%A5%E7%A0%81"><span class="nav-number">5.1.</span> <span class="nav-text">求补码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%B2%E7%9F%A5%E8%A1%A5%E7%A0%81%E6%B1%82%E5%8E%9F%E7%A0%81"><span class="nav-number">5.2.</span> <span class="nav-text">已知补码求原码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A5%E7%A0%81%E7%9A%84%E8%A1%A8%E7%A4%BA%E8%8C%83%E5%9B%B4"><span class="nav-number">5.3.</span> <span class="nav-text">补码的表示范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A5%E7%A0%81%E5%8A%A0%E5%87%8F%E6%B3%95%E8%BF%90%E7%AE%97"><span class="nav-number">5.4.</span> <span class="nav-text">补码加减法运算</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java"><span class="nav-number">6.</span> <span class="nav-text">java</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
