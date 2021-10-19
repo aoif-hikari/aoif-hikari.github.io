@@ -935,19 +935,12 @@ P(\cup A_i)\leq \sum P(A_i)=\binom{n}{t}P(A_i)<1</script><p>令其小于$1$，�
 </ul>
 <p>提供 1 个出度可以理解为提供一个挂载点，提供 1 个入度为消耗一个挂载点。入度 &gt;= 出度，意味着当前已遍历的节点，消耗的挂载点已经大于等于提供的挂载点。说明已经没法挂载接下来遍历的节点了，还有要挂的，但挂满了，是不合法的。</p>
 </blockquote>
-<h3 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h3><p>94 基本的中序遍历</p>
-<p>173 二叉搜索树迭代器</p>
+<h3 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h3><p>94 基本的中序遍历<br>173 二叉搜索树迭代器</p>
 <p>中序遍历一般会和BST（二叉搜索树）结合使用，这样访问的顺序是升序</p>
-<h3 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h3><p>145 基本的二叉树的后序遍历</p>
-<p>590 N 叉树的后序遍历</p>
-<h3 id="层序遍历"><a href="#层序遍历" class="headerlink" title="层序遍历"></a>层序遍历</h3><p>102 二叉树的层序遍历</p>
-<p>103 二叉树的锯齿形层序遍历（每层加flag或用双端队列）</p>
-<p>107  二叉树的层序遍历 II（自底向上）</p>
-<p>429 N 叉树的层序遍历</p>
+<h3 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h3><p>145 基本的二叉树的后序遍历<br>590 N 叉树的后序遍历</p>
+<h3 id="层序遍历"><a href="#层序遍历" class="headerlink" title="层序遍历"></a>层序遍历</h3><p>102 二叉树的层序遍历<br>103 二叉树的锯齿形层序遍历（每层加flag或用双端队列）<br>107  二叉树的层序遍历 II（自底向上）<br>429 N 叉树的层序遍历</p>
 <h3 id="树的基本操作"><a href="#树的基本操作" class="headerlink" title="树的基本操作"></a>树的基本操作</h3><p>递归三步：确定递归函数的参数和返回值；确定终止条件（if(root == null) return;）；确定单层递归逻辑（对哪个节点进行什么递归操作）；</p>
-<p>226 翻转二叉树（对于每个节点，交换其左右子树，递归其左右子树）</p>
-<p>100 相同的树（对于每个节点，判断其值是否相等，递归其左右子树）</p>
-<p>572 另一个树的子树(一个树是另一个树的子树，要么这两个树相等；要么这个树是左树的子树；要么是右树的子树。)</p>
+<p>226 翻转二叉树（对于每个节点，交换其左右子树，递归其左右子树）<br>100 相同的树（对于每个节点，判断其值是否相等，递归其左右子树）<br>572 另一个树的子树(一个树是另一个树的子树，要么这两个树相等；要么这个树是左树的子树；要么是右树的子树。)</p>
 <blockquote>
 <p><strong>剑指 Offer 26 树的子结构</strong></p>
 <ul>
@@ -963,10 +956,7 @@ P(\cup A_i)\leq \sum P(A_i)=\binom{n}{t}P(A_i)<1</script><p>令其小于$1$，�
 </li>
 </ul>
 </blockquote>
-<p>101 对称二叉树/剑指 Offer 28（添加辅助函数，对于每个节点的左右孩子，判断其左的右和右的左，左的左和右的右是否相等，递归其左的右和右的左，左的左和右的右）</p>
-<p>617 合并二叉树</p>
-<p>965 单值二叉树</p>
-<p>104 二叉树的最大深度/559 N 叉树的最大深度/111 二叉树的最小深度/110 平衡二叉树(一个二叉树每个节点的左右两个子树的高度差的绝对值不超过 1 )</p>
+<p>101 对称二叉树/剑指 Offer 28（添加辅助函数，对于每个节点的左右孩子，判断其左的右和右的左，左的左和右的右是否相等，递归其左的右和右的左，左的左和右的右）<br>617 合并二叉树<br>965 单值二叉树<br>104 二叉树的最大深度/559 N 叉树的最大深度/111 二叉树的最小深度/110 平衡二叉树(一个二叉树每个节点的左右两个子树的高度差的绝对值不超过 1 )</p>
 <p>257 二叉树的所有路径</p>
 <h2 id="二叉搜索树（BST）"><a href="#二叉搜索树（BST）" class="headerlink" title="二叉搜索树（BST）"></a>二叉搜索树（BST）</h2><blockquote>
 <p>基础操作：创建，判断 BST 的合法性、增、删、查。删较复杂</p>
@@ -974,13 +964,11 @@ P(\cup A_i)\leq \sum P(A_i)=\binom{n}{t}P(A_i)<1</script><p>令其小于$1$，�
 <p><img src="/img/tree/x.png"/></p>
 </blockquote>
 <p><strong>创建</strong></p>
-<p>95 不同的二叉搜索树 II</p>
-<p>108 将有序数组转换为二叉搜索树</p>
-<p>109 有序链表转换二叉搜索树</p>
+<p>95 不同的二叉搜索树 II<br>108 将有序数组转换为二叉搜索树<br>109 有序链表转换二叉搜索树</p>
 <p><strong>合法性</strong></p>
-<p>98.验证二叉搜索树（<strong>中序遍历为升序</strong>/左子树不空，左子树上所有节点的值均小于根节点的值； 若右子树不空，则右子树上所有节点的值均大于根节点的值；左右子树也为二叉搜索树。）</p>
+<p>98 验证二叉搜索树（<strong>中序遍历为升序</strong>/左子树不空，左子树上所有节点的值均小于根节点的值； 若右子树不空，则右子树上所有节点的值均大于根节点的值；左右子树也为二叉搜索树。）<br>剑指33  判断数组是不是某二叉搜索树的后序遍历结果</p>
 <p><strong>查</strong></p>
-<p>700.二叉搜索树中的搜索</p>
+<p>700 二叉搜索树中的搜索</p>
 <p><strong>增</strong></p>
 <p>701 二叉搜索树中的插入操作</p>
 <p><strong>删（合并删除/排序删除）</strong></p>
@@ -3005,7 +2993,7 @@ J=D+\lambda R=d\left(x_{t}, \hat{x}_{t}\right)+\lambda\left(R_{m v d}+R_{r e s}\
 <li>异或操作满足交换律和结合律</li>
 </ul>
 <blockquote>
-<p>136  唯一出现奇数次的数字 / 389 找不同 / 540. 有序数组中的单一元素<br>剑指56-1 唯二出现次数为奇数的数（分组异或）<br>剑指56-2 出现一次的数（除了一个数字以外，其余数字都出现 m 次 的通用问题：记录<strong>数组中所有数字</strong> 的 <strong>每一位的和</strong>，对m取余）<br>268 丢失的数字<br>318 最大单词长度乘积</p>
+<p>136  唯一出现奇数次的数字 / 389 找不同 / 540. 有序数组中的单一元素<br>剑指56-1 唯二出现次数为奇数的数（分组异或）<br>剑指56-2 出现一次的数（除了一个数字以外，其余数字都出现 m 次 的通用问题：记录<strong>数组中所有数字</strong> 的 <strong>每一位的和</strong>，对m取余）<br>268 丢失的数字<br>剑指53 - II  0～n-1中缺失的数字<br>318 最大单词长度乘积</p>
 </blockquote>
 <p>异或运算交换2个数： </p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">10</span>; </span><br><span class="line"><span class="keyword">int</span> b=<span class="number">20</span>; </span><br><span class="line">a=a^b; </span><br><span class="line">b=a^b; </span><br><span class="line">a=a^b; </span><br></pre></td></tr></table></figure>
@@ -3051,6 +3039,211 @@ J=D+\lambda R=d\left(x_{t}, \hat{x}_{t}\right)+\lambda\left(R_{m v d}+R_{r e s}\
 ]]></content>
       <tags>
         <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>In-Loop Filter / 融入QP信息的网络</title>
+    <url>/2021/10/19/In-Loop_Filter%20_%20%E8%9E%8D%E5%85%A5QP%E4%BF%A1%E6%81%AF%E7%9A%84%E7%BD%91%E7%BB%9C/</url>
+    <content><![CDATA[<blockquote>
+<p>两篇paper<br>A QP-ADAPTIVE MECHANISM FOR CNN-BASED FILTER IN VIDEO CODING<br>One-for-all: An Efﬁcient Variable Convolution Neural Network for In-loop Filter of VVC</p>
+</blockquote>
+<span id="more"></span>
+<ul>
+<li>不同量化参数（QP）压缩的视频，其压缩噪声水平不同</li>
+<li>不同的帧类型（FT），压缩噪声水平不同。</li>
+<li>为单个QP/QP段或FT训练模型，消耗大量的资源训练大量模型，增加了视频编解码器的内存负担</li>
+<li>A practical convolutional neural network as loop filter for intra frame: QPmap</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_23b54651e201bcbc4be324893286ff33.png" alt=""></p>
+<ul>
+<li>$\hat{\boldsymbol{y} }=\boldsymbol{w} *\{\boldsymbol{y} ; Q P\}+\boldsymbol{b}$</li>
+</ul>
+<ul>
+<li><script type="math/tex; mode=display">
+  \begin{aligned} \hat{\boldsymbol{y} } &=\boldsymbol{w}_{1} * \boldsymbol{y}+\boldsymbol{w}_{2} * Q P+\boldsymbol{b} \\ &=\boldsymbol{w}_{1} * \boldsymbol{y}+\left(\Sigma \boldsymbol{w}_{2} \cdot Q P+\boldsymbol{b}\right) \\ &=\boldsymbol{w}_{1} * \boldsymbol{y}+\boldsymbol{b}^{\prime}(Q P) \end{aligned}</script></li>
+<li><p>$\boldsymbol{b}^{\prime}(Q P)=\Sigma \boldsymbol{w}_{2} \cdot Q P+\boldsymbol{b}$</p>
+</li>
+<li>QP被添加到线性函数的偏置上，没有反应出QP和滤波强度(权重)的关系，且只有第一层引入了QP信息</li>
+<li>QPmap不如QP-Separate/QP-Band models</li>
+</ul>
+<h2 id="A-QP-ADAPTIVE-MECHANISM-FOR-CNN-BASED-FILTER-IN-VIDEO-CODING"><a href="#A-QP-ADAPTIVE-MECHANISM-FOR-CNN-BASED-FILTER-IN-VIDEO-CODING" class="headerlink" title="A QP-ADAPTIVE MECHANISM FOR CNN-BASED FILTER IN VIDEO CODING"></a>A QP-ADAPTIVE MECHANISM FOR CNN-BASED FILTER IN VIDEO CODING</h2><h3 id="问题建模"><a href="#问题建模" class="headerlink" title="问题建模"></a>问题建模</h3><p>（忽略偏置bias）<br>时域卷积：$\boldsymbol{w} * \boldsymbol{y}=\hat{\boldsymbol{x } }$<br>频域乘积：$\mathcal{F}(\boldsymbol{w}) \mathcal{F}(\boldsymbol{y})=\mathcal{F}(\hat{\boldsymbol{x} })$<br>$\mathcal{F}(\hat{\boldsymbol{x} }) \approx \mathcal{F}(\boldsymbol{x})$</p>
+<p>QP增加导致Qstep增加，引入噪声$\epsilon$</p>
+<p>$\boldsymbol{w}^{\prime} *(\boldsymbol{y}+\boldsymbol{\epsilon})=\hat{\boldsymbol{x} }^{\prime}$</p>
+<p>$\mathcal{F}\left(\boldsymbol{w}^{\prime}\right)(\mathcal{F}(\boldsymbol{y})+\mathcal{F}(\boldsymbol{\epsilon}))=\mathcal{F}\left(\hat{\boldsymbol{x} }^{\prime}\right)$</p>
+<p>loss fuc：MSE</p>
+<p>$\mathcal{L}=\mathbb{E}\left|\boldsymbol{x}-\hat{\boldsymbol{x} }^{\prime}\right|^{2}$</p>
+<p>Parseval’s theorem</p>
+<p>$\begin{aligned} \mathcal{L} &amp;=\mathbb{E}\left|\mathcal{F}(\boldsymbol{x})-\mathcal{F}\left(\hat{\boldsymbol{x} }^{\prime}\right)\right|^{2} \\ &amp;=\mathbb{E}\left|\mathcal{F}(\boldsymbol{x})-\mathcal{F}\left(\boldsymbol{w}^{\prime}\right)(\mathcal{F}(\boldsymbol{y})+\mathcal{F}(\boldsymbol{\epsilon}))\right|^{2} \\ &amp; \approx \mathbb{E}\left|\mathcal{F}(\boldsymbol{x})-\mathcal{F}\left(\boldsymbol{w}^{\prime}\right)[\mathcal{F}(\boldsymbol{x}) / \mathcal{F}(\boldsymbol{w})+\mathcal{F}(\boldsymbol{\epsilon})]\right|^{2} \end{aligned}$</p>
+<script type="math/tex; mode=display">
+\mathcal{F}\left(\boldsymbol{w}^{\prime}\right)=\underbrace{\mathcal{F}(\boldsymbol{w})}_{\text {org. filter } } \underbrace{\left[\frac{1}{1+|\mathcal{F}(\boldsymbol{w})|^{2} \mathcal{F}(\boldsymbol{n}) / \mathcal{F}(\boldsymbol{s})}\right]}_{\text {influence factor } }</script><script type="math/tex; mode=display">
+\mathcal{F}(\boldsymbol{n})=\mathbb{E}|\mathcal{F}(\boldsymbol{\epsilon})|^{2} \text { and } \mathcal{F}(\boldsymbol{s})=\mathbb{E}|\mathcal{F}(\boldsymbol{x})|^{2}</script><p>similar to Wiener deconvolution</p>
+<ul>
+<li>Wiener deconvolution：recover the original signal from the distorted signal by using the priors of the input signal, noise, and degradation function</li>
+<li>this solution：aims at making a speciﬁc ﬁlter adaptive to the changing quantization noise.</li>
+</ul>
+<h3 id="应用于CNN"><a href="#应用于CNN" class="headerlink" title="应用于CNN"></a>应用于CNN</h3><p>从频域的角度来看，从CNN中提取的特征对应于输入图像在不同频率上的选择<br>作用在整个频带上的 $\boldsymbol{w}^{\prime}$ 可以被分解成作用在特定频带上的子滤波器 $w_{i}^{\prime}$ </p>
+<p>上式可写为</p>
+<p>$\begin{aligned} \mathcal{F}\left(\boldsymbol{w}^{\prime}\right) &amp;=\sum_{i} \mathcal{F}\left(w_{i}^{\prime}\right) \\ &amp;=\sum_{i} \mathcal{F}\left(w_{i}\right)\left[\frac{1}{1+\left|\mathcal{F}\left(w_{i}\right)\right|^{2} \mathcal{F}\left(n_{i}\right) / \mathcal{F}\left(s_{i}\right)}\right] \end{aligned}$</p>
+<p>第一项 $\mathcal{F}\left(w_{i}\right)$ 等价于CNN中的卷积核<br>第二项表示每个卷积核的 influence factor ，可以看作作用在特定子频带上</p>
+<p>$\left|\mathcal{F}\left(w_{i}\right)\right|^{2} / \mathcal{F}\left(s_{i}\right)$ : 假设子带中$\left|\mathcal{F}\left(w_{i}\right)\right|^{2}$ 是常数，原始信号强度$\mathcal{F}\left(s_{i}\right)$ is also invariable in the task of adapting to different quantization noises，整体是常数 $k_i$</p>
+<p>量化噪声强度 $\mathcal{F}(\boldsymbol{n})$ ：默认编码配置下，在所有频率上都与量化步长Qstep的平方成正比<br>分解子噪声 $\mathcal{F}\left(n_{i}\right)$载特定频率上与量化步长Qstep的平方成正比</p>
+<script type="math/tex; mode=display">
+\frac{\left|\mathcal{F}\left(w_{i}\right)\right|^{2} }{\mathcal{F}\left(s_{i}\right)} \mathcal{F}\left(n_{i}\right) \approx k_{i} \mathcal{F}\left(n_{i}\right) \propto Q_{s t e p}^{2}</script><p>trainable parameters θ  to represent the proportional relation- ship，then</p>
+<script type="math/tex; mode=display">
+\mathcal{F}\left(\boldsymbol{w}^{\prime}\right) \approx \sum_{i} \mathcal{F}\left(w_{i}\right)\left[\frac{1}{1+\theta_{i} Q_{\text {step } }^{2} }\right]</script><p>N ： the number of feature maps of CNN<br>number of parameters introduced by this method: $O\left(N^{2}\right)$, the same order as the number of the kernels</p>
+<p>Inspired by DSC (depthwise convolution instead of standard con- volution), we apply the inﬂuence factor to the feature maps instead of the convolution kernels.</p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_325bde70ed8996168a743bc8d95c7486.png" alt=""></p>
+<p>parameter quantity becomes $O\left(N\right)$, same order as the number of the biases (the QP map method).</p>
+<ul>
+<li>Qstep 的调整</li>
+</ul>
+<p>VVC/HEVC: </p>
+<p>$Q_{s t e p}=2^{(Q P-4) / 6}$，$Q_{s t e p}^{2}=2^{(Q P-4) / 3}$</p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_18abe3cdcfd7d251d18cd079de1c589f.png" alt=""></p>
+<ul>
+<li>$\theta_{i}$ 不能小于等于 0</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_e196c8ad1d5122ceeaac174effc64d46.png" alt=""></p>
+<p>选择第二种直接截断的方法</p>
+<h3 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h3><ul>
+<li>把这种方法应用到已经提出的这4个CNN上</li>
+<li>网络加在DB和SAO之间，因为经过CNN增强后SAO ALF可能能节省一些比特</li>
+<li>CNN-被集成到 VTM-6.3</li>
+<li>DIV2K数据集，四个QPs包括22、27、32和37，测试用HEVC测试序列的第1帧</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_ed4a0a5646ca0cd4756c91f010e60835.png" alt="只用luma训练模型，同时也能提升色度分量"></p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_305e44ab52fc39a81220ffd583e71115.png" alt="解码复杂度"></p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_15537338f437af0ddd716b8eda252373.png" alt="与QPmap方法的对比"></p>
+<h2 id="One-for-all-An-Efﬁcient-Variable-Convolution-Neural-Network-for-In-loop-Filter-of-VVC"><a href="#One-for-all-An-Efﬁcient-Variable-Convolution-Neural-Network-for-In-loop-Filter-of-VVC" class="headerlink" title="One-for-all:  An  Efﬁcient  Variable  Convolution Neural  Network  for  In-loop  Filter  of  VVC"></a>One-for-all:  An  Efﬁcient  Variable  Convolution Neural  Network  for  In-loop  Filter  of  VVC</h2><ul>
+<li>注意力模块 </li>
+</ul>
+<p>给定离散值$x$，$x∈ Ω = [a, b]$, one-hot encoding 得向量</p>
+<p>$\mathbf{v}_{\Omega}(x) \in \mathbb{R}^{m \times 1}$</p>
+<p>$U \in \mathbb{R}^{C \times m}$ is a weight matrix</p>
+<p>$\mathbf{M}=\sigma\left(U \mathbf{v}_{\Omega}(x)\right)$</p>
+<p>$\sigma(x)=\log \left(1+e^{x}\right)$</p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_19cb97506db4a38e75b34b4ead57da6a.png" alt=""></p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_1ba48a0e32c2c84df6564fba3d7bae0b.png" alt=""></p>
+<p>$I(x)=\left\{\begin{array}{l}0, \quad x \in[0, L] \\ 1+\left\lfloor\frac{x-L}{r}\right\rfloor, \quad x \in[L+1, R-1] \\ 1+\left\lfloor\frac{R-L}{r}\right\rfloor, \quad x \in[R, 63]\end{array}\right.$</p>
+<p>x is QP value<br>I (x) is the index of the single high 1 bit<br>L = 20, R = 45 and r = 3. </p>
+<p>the shape of U is changed from (64, C ) to (10, C )</p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_9ef4aa964eb4b2d8e738dd4efb6acfce.png" alt=""></p>
+<h3 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h3><p><img src="https://notes.sjtu.edu.cn/uploads/upload_ed6f1b8343f0262e86f409df04379a20.png" alt=""></p>
+<ul>
+<li>CTU and frame-level RDO</li>
+<li>N = 1, D = 6,  3 × 3 convolutions C = 64</li>
+<li>DIV2K, All-intra conﬁguration with QP randomly selected from [21, 41]</li>
+<li>40 videos of various resolutions (3840 × 2160, 1920 × 1080, 1280 × 720, 640 × 360), encoded under Low-delay P and Random-Access conﬁg- urations at QP=22, 27, 32, and 37. select one frame per ﬁve </li>
+<li>64 × 64 non-overlapping, remove the sub-images whose PSNR are more than 50.0 or less than 20.0</li>
+<li>Only use the Y-channel for training</li>
+</ul>
+<ul>
+<li><p>训练 patch 分布不均匀，修改 loss func 为 focal MSE</p>
+<blockquote>
+<p>疑问：为何不直接构造分布均匀的数据集？</p>
+</blockquote>
+<p>  <img src="https://notes.sjtu.edu.cn/uploads/upload_143d74670a6ed6c8f5e87a0abcd55450.png" alt=""></p>
+<ul>
+<li>首先用MSE训练一个VCNN，验证集计算增益率R<ul>
+<li>$R=1-\frac{l_{\text {rec } } }{l_{\text {init } } }$</li>
+<li>$l_{\text {init } }=|\mathbf{Y}-\mathbf{X}|^{2}$ and $l_{r e c}=|\hat{\mathbf{Y} }-\mathbf{Y}|^{2}$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_e6838d51215601199e4c4b24c1221660.png" alt=""></p>
+<p>有以下结论：</p>
+<ul>
+<li>该网络在相对小QP上表现较好，而在较大QP上，如QP∈[42,44]，表现并不理想。</li>
+<li>该网络在I帧上取得了最佳性能，在P和B帧上表现类似。</li>
+<li>大多数有效数据的增益率低于10%，也就是说，增益率低的数据占了很大比例。所以期望网络能更多地关注具有低增益率的数据。</li>
+</ul>
+<h4 id="focal-MSE"><a href="#focal-MSE" class="headerlink" title="focal MSE"></a>focal MSE</h4><p>$\begin{aligned} L &amp;=\frac{1}{N} \sum_{i=1}^{N}\left(\alpha_{q}^{(i)}+\alpha_{f}^{(i)}\right)\left(1-R^{(i)}\right)^{\gamma} l_{r e c}^{(i)} \\ &amp;=\frac{1}{N} \sum_{i=1}^{N}\left(\alpha_{q}^{(i)}+\alpha_{f}^{(i)}\right) \frac{l_{\text {rec } }^{(i)^{1+\gamma} } }{l_{\text {init } }^{(i) } } \end{aligned}$</p>
+<p>$\alpha_q$ : weighting factor over QP band<br>$\alpha_f$ : weighting factor over FT<br>$\gamma$ : focusing parameter</p>
+<ul>
+<li>ﬁrst utilize the following formula to adjust $\alpha_q$ $\alpha_f$ for each QP band and FT: $\alpha(t)=\frac{n \times(1-p(t))}{n-1}$<ul>
+<li>$n$ : the number of total types, i.e. n = 10 for QP and n = 3 for FT, </li>
+<li>$p(t)$ : the proportion of the data with type t. </li>
+</ul>
+</li>
+<li>then increase α(t) of type t where the network performs poorly.</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_9b8235398f6d52404211def555c08153.png" alt=""></p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_57666646d6769dbb18f9715cd57159a1.png" alt=""></p>
+<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><ul>
+<li>BD-rate</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_2c88d6044b40b0ec1dddcbde15b5539e.png" alt=""></p>
+<p>VCNN-S: separate qp model, without attention<br>VCNN-M: QPmap method</p>
+<ul>
+<li>Quality ﬂuctuation</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_6462317026173b9ea3376d51739f28ad.png" alt=""></p>
+<ul>
+<li>消融实验<ul>
+<li>网络结构：复杂度和性能可以进一步权衡</li>
+<li>1）VCN-C32：C=32，D=6，N=1。</li>
+<li>2）VCN-D3：C=32，D=3，N=1。</li>
+<li>3）VCN-N3：C=64，D=6，N=3。</li>
+<li>4）VCNN：C=64，D=6，N=1</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_c21fba20db9589b896b735b543afb452.png" alt=""></p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_29ca327de24ba74d082f4c45e5780c40.png" alt=""></p>
+<ul>
+<li>注意力模块</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_494e75bd6f31305c6cd665d6873d3150.png" alt=""></p>
+<p>1) separate：网络结构与VCN-S相同，为每个QP段和FT分别训练，共4×3=12个<br>2) FT：为每个QP段单独训练模型，共4个<br>3) QP：为每个FT单独训练，共3<br>4) FT + QP：VCNN，1个模型</p>
+<p>从数据集中随机选择1/5的数据来训练</p>
+<blockquote>
+<p>疑问：为何 separate 表现最差？理论上separate应该表现最好</p>
+</blockquote>
+<ul>
+<li>focal MSE</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_b7a6d06a0bcf37593311c8d8b71c8616.png" alt=""></p>
+<ul>
+<li>RFA</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_38c0eb28bff9b9b66dffa31886851389.png" alt=""></p>
+<ul>
+<li><p>以下实验都用来说明模型泛化性强</p>
+<ul>
+<li><p>chroma</p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_b3f11be27e97b704f3cfa80121b40cbc.png" alt=""></p>
+</li>
+<li><p>Performance on other QPs</p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_de6a347d017bbd7ea3efd10ddef4cf1d.png" alt=""></p>
+</li>
+<li><p>HEVC</p>
+<p>apply our model trained on the VTM- 6.0 dataset directly to HM-16.9 without any ﬁne-tuning.</p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_7b42f1242eda5a0b29e9df5cd228a589.png" alt=""></p>
+</li>
+<li><p>补充测试序列</p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_f925d0880e543aad122b64d6d0f15522.png" alt=""></p>
+</li>
+</ul>
+</li>
+<li><p>计算复杂度</p>
+</li>
+</ul>
+<p>每种编码算法的计算复杂度是在RA配置下评估的。编码复杂度∆T的计算方法是</p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_bbb38e8af88f9c91b4c6b4b1303eb197.png" alt=""></p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_f84d929bc41d46cc80cde6c74f4cfc0e.png" alt=""></p>
+<h3 id="后续方向"><a href="#后续方向" class="headerlink" title="后续方向"></a>后续方向</h3><ul>
+<li>解码复杂，无法在实时应用中实现。<ul>
+<li>利用整数量化优化的网络。可以加快滤波的速度，避免在不同的硬件或软件平台上由于浮点运算而产生的不同的舍入误差</li>
+<li>训练一组简单和浅层的网络，编码器根据情况选择最优的，并将索引传送到解码端</li>
+<li>模型的推理依赖于第三方的深度学习框架，减少VVC编解码器和深度学习框架之间的互动造成的开销。</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>视频编码</tag>
       </tags>
   </entry>
 </search>
