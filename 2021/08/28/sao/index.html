@@ -277,8 +277,8 @@
 <p>VVC环路滤波：自适应样点补偿滤波器</p>
 </blockquote>
 <span id="more"></span>
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>由于量化是在频域进行，而高频系数的量化失真往往更大，图像边缘一般都是高频部分，所有边缘部分的失真会更大，解码后边缘部分会出现上下波动，这就是振铃效应。重建值在原始值上下波动。</p>
-<p><img src="/img/VVC/zhenling.png"  /></p>
+<h2><span id="概述">概述</span></h2><p>由于量化是在频域进行，而高频系数的量化失真往往更大，图像边缘一般都是高频部分，所有边缘部分的失真会更大，解码后边缘部分会出现上下波动，这就是振铃效应。重建值在原始值上下波动。</p>
+<p><img src="/img/VVC/zhenling.png"></p>
 <p>将重建值进行分类，对波峰补偿一个负值，对波谷补偿一个正值。所以 SAO 的关键部分在于对重建像素进行分类。</p>
 <p>VVC 中的 SAO与HEVC中基本一致，以CTB为单位对样本分group，分别对不同的group进行补偿。group index和offset被写入码流。包括两种补偿方式，边界补偿（Edge Offset,EO）和边带补偿（Band Offset,BO）。其中EO是根据样点值与周围样点值的关系来分类，而BO是根据样点本身的值来分类。</p>
 <ul>
@@ -304,26 +304,26 @@
 </ul>
 </li>
 </ul>
-<h2 id="补偿模式"><a href="#补偿模式" class="headerlink" title="补偿模式"></a>补偿模式</h2><p>RDO选出用EO,BO或merge。</p>
-<h3 id="EO"><a href="#EO" class="headerlink" title="EO"></a>EO</h3><ul>
+<h2><span id="补偿模式">补偿模式</span></h2><p>RDO选出用EO,BO或merge。</p>
+<h3><span id="eo">EO</span></h3><ul>
 <li>通过RDO为该CTB选择使用一种梯度模式</li>
 </ul>
-<p><img src="/img/VVC/eo-g.png"  /></p>
+<p><img src="/img/VVC/eo-g.png"></p>
 <ul>
 <li>确定梯度模式后，计算该CTB中的当前像素c和相邻2个像素ab之间的关系，分为4类，每类分配一个offset，offset由RDO过程产生。规定1,2时，offset值必须是正数；对于3,4时，offset必须是负数。对于不属于以上四个类别的像素值不进行补偿。</li>
 </ul>
-<p><img src="/img/VVC/eo-classify.png" style="zoom: 67%;" /></p>
-<h3 id="BO"><a href="#BO" class="headerlink" title="BO"></a>BO</h3><p>根据样点值分为32个等间距的band（每一个band的范围是8），每个样点都会属于一个特定的区间。选择4个连续的band里的像素值进行补偿。需要补偿的边带起点和补偿值通过RDO选择。</p>
-<p><img src="/img/VVC/BO.png"  /></p>
+<p><img src="/img/VVC/eo-classify.png" style="zoom: 67%;"></p>
+<h3><span id="bo">BO</span></h3><p>根据样点值分为32个等间距的band（每一个band的范围是8），每个样点都会属于一个特定的区间。选择4个连续的band里的像素值进行补偿。需要补偿的边带起点和补偿值通过RDO选择。</p>
+<p><img src="/img/VVC/BO.png"></p>
 <p>为什么4个连续的band？</p>
 <ul>
 <li>一个CTU中大部分的pixel的取值应该会集中在很少的几个band中，使用连续的4个band能够覆盖大部分的pixel。</li>
 <li>因为EO模式使用了4个offset值，为了不增加码率，BO复用了这4个offset值的syntax，这样不需要另外再增加syntax来专门表示。</li>
 </ul>
-<h3 id="参数融合（merge）"><a href="#参数融合（merge）" class="headerlink" title="参数融合（merge）"></a>参数融合（merge）</h3><p>某一个CTB的SAO的参数可以直接使用相邻CTB的参数（色度亮度同时），只需指定是哪个相邻块（左方或上方）</p>
-<h2 id="syntax"><a href="#syntax" class="headerlink" title="syntax"></a>syntax</h2><p><img src="/img/VVC/sao-syntax.png"  /></p>
-<p><img src="/img/VVC/VQSAO.png"  /></p>
-<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p>下表显示了在有/无ALF和CC-ALF的VTM-9.0中启用SAO对SDR内容的BD-rate改进。anchor为SAO禁用。</p>
+<h3><span id="参数融合merge">参数融合（merge）</span></h3><p>某一个CTB的SAO的参数可以直接使用相邻CTB的参数（色度亮度同时），只需指定是哪个相邻块（左方或上方）</p>
+<h2><span id="syntax">syntax</span></h2><p><img src="/img/VVC/sao-syntax.png"></p>
+<p><img src="/img/VVC/VQSAO.png"></p>
+<h2><span id="结果">结果</span></h2><p>下表显示了在有/无ALF和CC-ALF的VTM-9.0中启用SAO对SDR内容的BD-rate改进。anchor为SAO禁用。</p>
 <ul>
 <li><p>当ALF和CC-ALF被启用时，在四个测试条件下，启用SAO的平均YUV BD-速率增益为0.2%。</p>
 </li>
@@ -331,9 +331,9 @@
 </li>
 </ul>
 <p>启用SAO的BD-rate改进与ALF部分重合。然而，考虑到SAO在HEVC中得到了很好的部署，而且所需的计算复杂度很低，SAO被保留在VVC中，以允许使用SAO来进一步提高客观和主观质量，特别是当ALF被禁用时。</p>
-<p><img src="/img/VVC/sao.png" style="zoom: 50%;" /></p>
-<p><img src="/img/VVC/sao2.png" style="zoom:;" /></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><img src="/img/VVC/codesao.png"  /></p>
+<p><img src="/img/VVC/sao.png" style="zoom: 50%;"></p>
+<p><img src="/img/VVC/sao2.png" style="zoom:;"></p>
+<h2><span id="代码">代码</span></h2><p><img src="/img/VVC/codesao.png"></p>
 
     </div>
 
@@ -437,7 +437,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A5%E5%81%BF%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">补偿模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#EO"><span class="nav-number">2.1.</span> <span class="nav-text">EO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BO"><span class="nav-number">2.2.</span> <span class="nav-text">BO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E8%9E%8D%E5%90%88%EF%BC%88merge%EF%BC%89"><span class="nav-number">2.3.</span> <span class="nav-text">参数融合（merge）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#syntax"><span class="nav-number">3.</span> <span class="nav-text">syntax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9E%9C"><span class="nav-number">4.</span> <span class="nav-text">结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">5.</span> <span class="nav-text">代码</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">补偿模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.1.</span> <span class="nav-text">EO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.2.</span> <span class="nav-text">BO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.3.</span> <span class="nav-text">参数融合（merge）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">syntax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">5.</span> <span class="nav-text">代码</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -453,14 +453,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -505,12 +505,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">133k</span>
+    <span title="Symbols count total">139k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:01</span>
+    <span title="Reading time total">2:06</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
   </div>

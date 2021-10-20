@@ -273,7 +273,7 @@
 <p>代理模式的一个典型应用：AOP(面向切面编程)</p>
 </blockquote>
 <span id="more"></span>
-<h2 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h2><p>a类本来需要调用c类（目标类）的方法完成某个功能， 但是c不让a调用。 </p>
+<h2><span id="代理">代理</span></h2><p>a类本来需要调用c类（目标类）的方法完成某个功能， 但是c不让a调用。 </p>
 <p>a —&gt;不能直接调用 c的方法。<br>在a 和 c 直接创建一个 b 代理，c让b访问。 c，b实现相同的功能（接口）。<br>a —&gt;访问b—&gt;访问c</p>
 <p>作用：</p>
 <ul>
@@ -282,7 +282,7 @@
 <li><p>控制访问： 代理类不让你访问目标，例如商家不让用户访问厂家。 </p>
 </li>
 </ul>
-<h2 id="静态代理"><a href="#静态代理" class="headerlink" title="静态代理"></a>静态代理</h2><p>代理类需要手工实现。即自己创建一个java类，表示代理类。所要代理的目标类是确定的。</p>
+<h2><span id="静态代理">静态代理</span></h2><p>代理类需要手工实现。即自己创建一个java类，表示代理类。所要代理的目标类是确定的。</p>
 <ul>
 <li>缺点：当目标类和代理类很多时候，<ul>
 <li>当目标类增加， 代理类可能也需要成倍的增加。 代理类数量过多。</li>
@@ -290,11 +290,11 @@
 </ul>
 </li>
 </ul>
-<h2 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h2><p>在程序执行过程中，使用jdk的<strong>反射</strong>机制，创建<strong>代理类对象</strong>， 并动态的指定要代理目标类。</p>
+<h2><span id="动态代理">动态代理</span></h2><p>在程序执行过程中，使用jdk的<strong>反射</strong>机制，创建<strong>代理类对象</strong>， 并动态的指定要代理目标类。</p>
 <p>即使目标类很多，代理类数量可以很少；当修改了接口中的方法时，不影响代理类。</p>
 <p>动态代理是一种创建java对象的能力，不用创建代理类，就能创建代理类对象。</p>
 <p>两种实现方式：jdk动态代理；cglib动态代理</p>
-<h3 id="jdk动态代理"><a href="#jdk动态代理" class="headerlink" title="jdk动态代理"></a>jdk动态代理</h3><ul>
+<h3><span id="jdk动态代理">jdk动态代理</span></h3><ul>
 <li>使用java反射包中的类和接口实现动态代理的功能。</li>
 <li>反射包 java.lang.reflect , 里面有三个类 ： InvocationHandler , Method, Proxy.</li>
 <li>要求目标类实现接口</li>
@@ -307,7 +307,7 @@
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//实现InvocationHandler接口，完成代理类要做的功能（1.调用目标方法，2.功能增强）</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MySellHandler</span> <span class="keyword">implements</span> <span class="title">InvocationHandler</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Object target = <span class="keyword">null</span>; <span class="comment">// 为目标类创建对象（活动的，不是固定的，需要传入进来）</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MySellHandler</span><span class="params">(Object target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.target = target;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">	<span class="comment">// 实现invoke方法，完成代理类要做的功能</span></span><br><span class="line">    <span class="comment">// Object proxy: jdk创建的代理对象，无需赋值。</span></span><br><span class="line">	<span class="comment">// Method method: 目标类中的方法，jdk提供</span></span><br><span class="line">    <span class="comment">// Object[] args：目标类中方法的参数， jdk提供。</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">        Object res  = <span class="keyword">null</span>;</span><br><span class="line">        res =  method.invoke(target,args); <span class="comment">// 反射，执行目标对象target的method方法</span></span><br><span class="line">		<span class="comment">//功能增强，加价</span></span><br><span class="line">        <span class="keyword">if</span>( res != <span class="keyword">null</span> )&#123;</span><br><span class="line">            Float price = (Float)res;</span><br><span class="line">            price = price + <span class="number">25</span>;</span><br><span class="line">            res = price;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(res);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建代理对象，使用Proxy</span></span><br><span class="line"><span class="comment">//1. 创建目标对象</span></span><br><span class="line">UsbSell factory = <span class="keyword">new</span> UsbKingFactory();</span><br><span class="line"><span class="comment">//2.创建InvocationHandler对象</span></span><br><span class="line">InvocationHandler handler = <span class="keyword">new</span> MySellHandler(factory);</span><br><span class="line"><span class="comment">//3.创建代理对象</span></span><br><span class="line">UsbSell proxy = (UsbSell) Proxy.newProxyInstance(</span><br><span class="line">    factory.getClass().getClassLoader(),</span><br><span class="line">    factory.getClass().getInterfaces(),</span><br><span class="line">    handler</span><br><span class="line">	);</span><br><span class="line"><span class="comment">//4.通过代理执行方法</span></span><br><span class="line"><span class="keyword">float</span> price = proxy.sell(<span class="number">1</span>); <span class="comment">// 代理对象proxy调用目标类factory中的sell方法</span></span><br></pre></td></tr></table></figure>
-<h3 id="cglib动态代理"><a href="#cglib动态代理" class="headerlink" title="cglib动态代理"></a>cglib动态代理</h3><ul>
+<h3><span id="cglib动态代理">cglib动态代理</span></h3><ul>
 <li><p>cglib是第三方的工具库， 创建代理对象。</p>
 </li>
 <li><p>原理是继承， cglib通过继承目标类，创建它的子类，在子类中重写父类中同名的方法， 实现功能的修改。要求目标类不能是final的， 方法也不能是final的。</p>
@@ -418,7 +418,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">代理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E4%BB%A3%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">静态代理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86"><span class="nav-number">3.</span> <span class="nav-text">动态代理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#jdk%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86"><span class="nav-number">3.1.</span> <span class="nav-text">jdk动态代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cglib%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86"><span class="nav-number">3.2.</span> <span class="nav-text">cglib动态代理</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">代理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">静态代理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">动态代理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.1.</span> <span class="nav-text">jdk动态代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.2.</span> <span class="nav-text">cglib动态代理</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -434,14 +434,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -486,12 +486,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">133k</span>
+    <span title="Symbols count total">139k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:01</span>
+    <span title="Reading time total">2:06</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
   </div>

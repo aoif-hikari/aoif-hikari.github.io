@@ -271,34 +271,34 @@
 <p>大量数据存储中，在查找的背景下，BST由于树深度过大而造成磁盘IO读写过于频繁，进而导致效率低下。那么如何减少树的深度?</p>
 </blockquote>
 <span id="more"></span>
-<h2 id="why"><a href="#why" class="headerlink" title="why?"></a>why?</h2><p>二叉排序树在多数情况能够达到预期的查找效率，但是<strong>每个节点只能存储一个元素</strong>和<strong>只能有两个孩子</strong>，大量数据情况下会造成树的深度特别大，查找时多次的访问会造成查找效率的下降。所以引入新的数据结构——多路查找树。</p>
+<h2><span id="why">why?</span></h2><p>二叉排序树在多数情况能够达到预期的查找效率，但是<strong>每个节点只能存储一个元素</strong>和<strong>只能有两个孩子</strong>，大量数据情况下会造成树的深度特别大，查找时多次的访问会造成查找效率的下降。所以引入新的数据结构——多路查找树。</p>
 <ul>
 <li>多路查找树的每一个节点的孩子树可以多于两个，且每个节点处可以存储多个元素。</li>
 <li>多路查找树是一种特殊的查找树，所以其元素之间存在某种特定的排序关系。</li>
 <li>四种特殊形式：2-3树，2-3-4树，B树（B-树），B+树</li>
 </ul>
-<h2 id="B树（B-树）"><a href="#B树（B-树）" class="headerlink" title="B树（B-树）"></a>B树（B-树）</h2><p>B树（B-树）是一种平衡的多路查找树。2-3树和2-3-4树都是B树的特例。节点的最大孩子数目称为B树的阶（order），因此，2-3树是3阶B树，2-3-4树是4阶B树。</p>
-<h3 id="2-3树"><a href="#2-3树" class="headerlink" title="2-3树"></a>2-3树</h3><p>定义2-3树中每一个节点都具有两个孩子(称<strong>2节点</strong>)或三个孩子(称<strong>3节点</strong>)。</p>
+<h2><span id="b树b-树">B树（B-树）</span></h2><p>B树（B-树）是一种平衡的多路查找树。2-3树和2-3-4树都是B树的特例。节点的最大孩子数目称为B树的阶（order），因此，2-3树是3阶B树，2-3-4树是4阶B树。</p>
+<h3><span id="2-3树">2-3树</span></h3><p>定义2-3树中每一个节点都具有两个孩子(称<strong>2节点</strong>)或三个孩子(称<strong>3节点</strong>)。</p>
 <ul>
 <li><p>一个2节点包含一个元素（关键字）和两个孩子(只能包含两个孩子或没有孩子)，且与二叉排序树类似，左子树包含的元素小于该元素，右子树包含的元素大于该元素。</p>
 </li>
 <li><p>一个3节点包含一小一大两个元素和三个孩子(只能包含三个孩子或没有孩子)。如果某个3节点有孩子，左子树包含小于较小元素的元素，右子树包含大于较大元素的元素，中间子树包含介于两元素之间的元素。</p>
 </li>
 <li><p>2-3树的所有叶子都在同一层次。</p>
-<p><img src="/img/multitree/2-3.png"/></p>
+<p><img src="/img/multitree/2-3.png"></p>
 </li>
 </ul>
 <p>插入/删除：略</p>
-<h3 id="2-3-4树"><a href="#2-3-4树" class="headerlink" title="2-3-4树"></a>2-3-4树</h3><p>2-3-4树是2-3树的扩展，包括了4节点的使用，一个4节点包含小中大三个元素和四个孩子（或没有孩子）。</p>
+<h3><span id="2-3-4树">2-3-4树</span></h3><p>2-3-4树是2-3树的扩展，包括了4节点的使用，一个4节点包含小中大三个元素和四个孩子（或没有孩子）。</p>
 <p>插入/删除：略</p>
-<h3 id="应用：内外存的数据交互"><a href="#应用：内外存的数据交互" class="headerlink" title="应用：内外存的数据交互"></a>应用：内外存的数据交互</h3><p>计算机存储设备一般分为两种：内存储器和外存储器。 操作系统经常与内存和硬盘这两种存储设备进行通信，与内存操作，是虚拟一个页的概念来作为最小单位。</p>
+<h3><span id="应用内外存的数据交互">应用：内外存的数据交互</span></h3><p>计算机存储设备一般分为两种：内存储器和外存储器。 操作系统经常与内存和硬盘这两种存储设备进行通信，与内存操作，是虚拟一个页的概念来作为最小单位。</p>
 <p>内存储器为内存，内存存取速度快，但容量小，价格昂贵，而且不能长期保存数据(在不通电情况下数据会消失)。</p>
 <p>外存储器即为磁盘读取，磁盘读取数据靠的是机械运动，每次读取数据花费的时间可以分为寻道时间、旋转延迟、传输时间三个部分。</p>
 <blockquote>
 <p>寻道时间指的是磁臂移动到指定磁道所需要的时间，主流磁盘一般在5ms以下；旋转延迟就是我们经常听说的磁盘转速，比如一个磁盘7200转，表示每分钟能转7200次，也就是说1秒钟能转120次，旋转延迟就是1/120/2 = 4.17ms；传输时间指的是从磁盘读出或将数据写入磁盘的时间，一般在零点几毫秒，相对于前两个时间可以忽略不计。那么访问一次磁盘的时间，即一次磁盘IO的时间约等于5+4.17 = 9ms左右。执行一次IO的时间可以执行40万条指令，所以磁盘IO是非常高昂的操作。</p>
 </blockquote>
 <p>当要处理的数据很大时，无法一次全部装入内存。这时对B树调整，使得B树的阶数与硬盘存储的页面大小相匹配。比如说一棵B树的阶为1001（即1个节点包含1000个关键字），高度为2（从0开始），它可以存储超过10亿个关键字（1001x1001x1000+1001x1000+1000）,只要让根节点持久的保留在内存中，那么在这颗树上，寻找某一个关键字至多需要两次硬盘的读取即可。</p>
-<h4 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h4><p><img src="/img/multitree/b.png"/></p>
+<h4><span id="查询">查询</span></h4><p><img src="/img/multitree/b.png"></p>
 <p>假设要查询的数值是5，查询过程：</p>
 <p>第一次IO：把9节点加载到内存中，在内存中与目标比较；</p>
 <p>第二次IO：把（2，6）节点加载到内存中，在内存中与目标比较；</p>
@@ -308,15 +308,15 @@
 </blockquote>
 <p>B树在查询过程中<strong>比较次数</strong>其实并不会比二叉查找树少，尤其当某一个节点中的元素数量很多的时候。可是，单个节点的元素比较都在内存中进行，相比较于磁盘IO的速度,内存中比较耗时可以忽略不计，性能提高比较大。所以只要树的高度足够低，IO数量足够少，查询性能提升越明显。 相比之下，只要不超过磁盘页的大小，仅仅是多了几次内存的交互，这也是B树的优势之一。</p>
 <p>B树应用于文件系统索引和部分非关系型数据库，如MongoDB</p>
-<h2 id="B-树"><a href="#B-树" class="headerlink" title="B+树"></a>B+树</h2><p><img src="/img/multitree/b+.png"/></p>
-<h3 id="查询-1"><a href="#查询-1" class="headerlink" title="查询"></a>查询</h3><p>单元素查询过程：在单元素查询时，B+树会自顶向下逐层查找节点，最终找到匹配的叶子节点。</p>
+<h2><span id="b树">B+树</span></h2><p><img src="/img/multitree/b+.png"></p>
+<h3><span id="查询">查询</span></h3><p>单元素查询过程：在单元素查询时，B+树会自顶向下逐层查找节点，最终找到匹配的叶子节点。</p>
 <p>范围查询过程：例如查询3到11之间的元素,首先单元素查找到下限3，然后在链表上做遍历即可</p>
 <p>3, 5 -&gt; 8 -&gt; 11</p>
 <blockquote>
 <p>B树只能依靠中序遍历来实现范围查询，3, 5 (-&gt; 6) -&gt; 8 (-&gt;9) -&gt; 11</p>
 </blockquote>
 <p>B+树适合随机查找，只不过查到后是索引，不能提供实际记录的访问，还需要到达包含此关键字的终端节点。非叶结点仅具有索引作用，跟记录有关的信息均存放在叶结点中。B+树还适合带有范围的查找。</p>
-<h4 id="和B树查询的不同"><a href="#和B树查询的不同" class="headerlink" title="和B树查询的不同"></a>和B树查询的不同</h4><ul>
+<h4><span id="和b树查询的不同">和B树查询的不同</span></h4><ul>
 <li><p>B+树的中间节点没有卫星数据。B树中所有节点都带有卫星数据，而在B+树中，只有叶子节点带有卫星数据，其余中间节点仅仅是索引，没有任何的数据关联。所以同样大小的磁盘页可以容纳更多的节点元素，也意味着数据量相同的情况下，B+树的结构比B树更加“矮胖”，因此查询IO次数更少；</p>
 </li>
 <li><p>B+树的查询必须最终找到叶子节点，而B树只要匹配到元素即可，不论它是中间节点还是叶子节点，因此B树的查询性能并不稳定(最好情况是只查询根节点，最坏情况查询到叶子节点)，而B+树每一次查找都是稳定的。</p>
@@ -325,7 +325,7 @@
 <blockquote>
 <p>卫星数据：指索引元素所指向的数据记录，比如数据库中的某一行</p>
 </blockquote>
-<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><p>大部分关系型数据库(如MySQL)使用的都是B+树作为索引。</p>
+<h3><span id="应用">应用</span></h3><p>大部分关系型数据库(如MySQL)使用的都是B+树作为索引。</p>
 <blockquote>
 <p><strong>关于索引</strong></p>
 <ul>
@@ -444,7 +444,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#why"><span class="nav-number">1.</span> <span class="nav-text">why?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B%E6%A0%91%EF%BC%88B-%E6%A0%91%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">B树（B-树）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3%E6%A0%91"><span class="nav-number">2.1.</span> <span class="nav-text">2-3树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-4%E6%A0%91"><span class="nav-number">2.2.</span> <span class="nav-text">2-3-4树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%EF%BC%9A%E5%86%85%E5%A4%96%E5%AD%98%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92"><span class="nav-number">2.3.</span> <span class="nav-text">应用：内外存的数据交互</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2"><span class="nav-number">2.3.1.</span> <span class="nav-text">查询</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-%E6%A0%91"><span class="nav-number">3.</span> <span class="nav-text">B+树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2-1"><span class="nav-number">3.1.</span> <span class="nav-text">查询</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%92%8CB%E6%A0%91%E6%9F%A5%E8%AF%A2%E7%9A%84%E4%B8%8D%E5%90%8C"><span class="nav-number">3.1.1.</span> <span class="nav-text">和B树查询的不同</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A8"><span class="nav-number">3.2.</span> <span class="nav-text">应用</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">why?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">B树（B-树）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.1.</span> <span class="nav-text">2-3树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.2.</span> <span class="nav-text">2-3-4树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.3.</span> <span class="nav-text">应用：内外存的数据交互</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">2.3.1.</span> <span class="nav-text">查询</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">B+树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.1.</span> <span class="nav-text">查询</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">3.1.1.</span> <span class="nav-text">和B树查询的不同</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.2.</span> <span class="nav-text">应用</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -460,14 +460,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -512,12 +512,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">133k</span>
+    <span title="Symbols count total">139k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:01</span>
+    <span title="Reading time total">2:06</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
   </div>

@@ -282,7 +282,7 @@
 <p>Hash，一般译做散列或音译为哈希，是把任意长度的输入通过散列算法变换成固定长度的输出，该输出就是散列值，是一种压缩映射。</p>
 </blockquote>
 <span id="more"></span>
-<h2 id="哈希函数"><a href="#哈希函数" class="headerlink" title="哈希函数"></a>哈希函数</h2><p>哈希的过程中需要使用哈希函数进行计算。</p>
+<h2><span id="哈希函数">哈希函数</span></h2><p>哈希的过程中需要使用哈希函数进行计算。</p>
 <p>哈希函数是一种<strong>映射关系</strong>，根据数据的关键词$ key $，通过一定的函数关系，计算出该元素存储位置的函数。</p>
 <p>表示为：$address = H [key]$</p>
 <p>哈希函数属性：</p>
@@ -297,56 +297,56 @@
 <li>哈希函数产生的映射应当保持均匀，即不要使得映射结果堆积在小区间的某一块区域。</li>
 </ol>
 <p>常见的哈希函数构造方法：</p>
-<h3 id="直接定址法"><a href="#直接定址法" class="headerlink" title="直接定址法"></a>直接定址法</h3><ul>
+<h3><span id="直接定址法">直接定址法</span></h3><ul>
 <li>取关键字或关键字的某个线性函数值为散列地址。</li>
 <li>即 $H(key) = key$ 或$ H(key) = a*key + b$，其中a和b为常数。</li>
 </ul>
-<h3 id="除留余数法"><a href="#除留余数法" class="headerlink" title="除留余数法"></a>除留余数法</h3><ul>
+<h3><span id="除留余数法">除留余数法</span></h3><ul>
 <li>取关键字被某个不大于散列表长度$ m$ 的数$ p$ 求余，得到的作为散列地址。</li>
 <li>即 $H(key) = key\ \%\ p$，$ p \leq m$或$H(key) = key\ mod\ p$，$ p \leq m$</li>
 </ul>
-<h3 id="数字分析法"><a href="#数字分析法" class="headerlink" title="数字分析法"></a>数字分析法</h3><ul>
+<h3><span id="数字分析法">数字分析法</span></h3><ul>
 <li>当关键字的位数大于地址的位数，对关键字的各位分布进行分析，选出分布均匀的任意几位作为散列地址。</li>
 <li>仅适用于所有关键字都已知的情况下，根据实际应用确定要选取的部分，尽量避免发生冲突。</li>
 </ul>
-<h3 id="平方取中法"><a href="#平方取中法" class="headerlink" title="平方取中法"></a>平方取中法</h3><ul>
+<h3><span id="平方取中法">平方取中法</span></h3><ul>
 <li>先计算出关键字值的平方，然后取平方值中间几位作为散列地址。</li>
 <li>随机分布的关键字，得到的散列地址也是随机分布的。</li>
 </ul>
-<h3 id="折叠法（叠加法）"><a href="#折叠法（叠加法）" class="headerlink" title="折叠法（叠加法）"></a>折叠法（叠加法）</h3><ul>
+<h3><span id="折叠法叠加法">折叠法（叠加法）</span></h3><ul>
 <li>将关键字分为位数相同的几部分，然后取这几部分的叠加和（舍去进位）作为散列地址。</li>
 <li>用于关键字位数较多，并且关键字中每一位上数字分布大致均匀。 </li>
 </ul>
-<h3 id="随机数法"><a href="#随机数法" class="headerlink" title="随机数法"></a>随机数法</h3><ul>
+<h3><span id="随机数法">随机数法</span></h3><ul>
 <li>选择一个随机函数，把关键字的随机函数值作为它的哈希值。</li>
 <li>通常当关键字的长度不等时用这种方法。 </li>
 </ul>
 <p>构造哈希函数的方法很多，实际工作中要根据不同的情况选择合适的方法，总的原则是尽可能少的产生冲突。</p>
 <p>通常考虑的因素有<strong>关键字的长度</strong>和<strong>分布情况</strong>、<strong>哈希值的范围</strong>等。</p>
 <p>如：当关键字是整数类型时就可以用除留余数法；如果关键字是小数类型，选择随机数法会比较好。</p>
-<h2 id="哈希冲突的解决"><a href="#哈希冲突的解决" class="headerlink" title="哈希冲突的解决"></a>哈希冲突的解决</h2><p>选用哈希函数计算哈希值时，可能不同的$ key $会得到相同的结果，一个地址如何存放多个数据？这就是冲突。</p>
+<h2><span id="哈希冲突的解决">哈希冲突的解决</span></h2><p>选用哈希函数计算哈希值时，可能不同的$ key $会得到相同的结果，一个地址如何存放多个数据？这就是冲突。</p>
 <p>常用的主要有两种方法解决冲突：</p>
-<h3 id="链接法（拉链法）"><a href="#链接法（拉链法）" class="headerlink" title="链接法（拉链法）"></a>链接法（拉链法）</h3><p>拉链法解决冲突的做法是： 将所有关键字为同一哈希值的结点链接在同一个单链表中。</p>
+<h3><span id="链接法拉链法">链接法（拉链法）</span></h3><p>拉链法解决冲突的做法是： 将所有关键字为同一哈希值的结点链接在同一个单链表中。</p>
 <p>若选定的散列表长度为 $m$，则可将散列表定义为一个由 $m$ 个头指针组成的指针数组 $T[0..m-1] $。</p>
 <p>凡是散列地址为 $i$ 的结点，均插入到以$ T[i] $为头指针的单链表中。<br>$T $中各分量的初值均应为空指针。</p>
 <p>在拉链法中，装填因子$ α $可以大于 1，但一般均取 $α ≤ 1$。</p>
-<h3 id="开放定址法"><a href="#开放定址法" class="headerlink" title="开放定址法"></a>开放定址法</h3><p>用开放定址法解决冲突的做法是：</p>
+<h3><span id="开放定址法">开放定址法</span></h3><p>用开放定址法解决冲突的做法是：</p>
 <blockquote>
 <p>用开放定址法解决冲突的做法是：当冲突发生时，使用某种探测技术在散列表中形成一个探测序列。沿此序列逐个单元地查找，直到找到给定的关键字，或者碰到一个开放的地址（即该地址单元为空）为止（若要插入，在探查到开放的地址，则可将待插入的新结点存人该地址单元）。查找时探测到开放的地址则表明表中无待查的关键字，即查找失败。</p>
 </blockquote>
 <p>简单的说：当冲突发生时，使用某种探查(亦称探测)技术在散列表中寻找下一个空的散列地址，只要散列表足够大，空的散列地址总能找到。</p>
 <p>按照形成探查序列的方法不同，可将开放定址法区分为线性探查法、二次探查法、双重散列法等。</p>
-<h4 id="线性探查法"><a href="#线性探查法" class="headerlink" title="线性探查法"></a>线性探查法</h4><p>$h_i=(h(key)+i) ％ m $，$0 ≤ i ≤ m-1 $</p>
+<h4><span id="线性探查法">线性探查法</span></h4><p>$h_i=(h(key)+i) ％ m $，$0 ≤ i ≤ m-1 $</p>
 <p>基本思想是：<br>探查时从地址 $d$ 开始，首先探查 $T[d]$，然后依次探查$ T[d+1]，…，$直到$ T[m-1]$，此后又循环到 $T[0]，T[1]，…，$直到探查到 <strong>有空余地址</strong> 或者到 $T[d-1]$为止。</p>
-<h4 id="二次探查法"><a href="#二次探查法" class="headerlink" title="二次探查法"></a>二次探查法</h4><p>$h_i=(h(key)+i*i) ％ m$，$0 ≤ i ≤ m-1 $</p>
+<h4><span id="二次探查法">二次探查法</span></h4><p>$h_i=(h(key)+i*i) ％ m$，$0 ≤ i ≤ m-1 $</p>
 <p>基本思想是：<br>探查时从地址$ d$ 开始，首先探查 $T[d]$，然后依次探查$ T[d+1^2]，T[d+2^2]，T[d+3^2],…，$等，直到探查到 <strong>有空余地址</strong> 或者到 $T[d-1]$为止。</p>
 <p>缺点是无法探查到整个散列空间。</p>
-<h4 id="双重散列法"><a href="#双重散列法" class="headerlink" title="双重散列法"></a>双重散列法</h4><p>$h_i=(h(key)+i*h_1(key)) ％ m$，$0 ≤ i ≤ m-1 $</p>
+<h4><span id="双重散列法">双重散列法</span></h4><p>$h_i=(h(key)+i*h_1(key)) ％ m$，$0 ≤ i ≤ m-1 $</p>
 <p>基本思想是：<br>探查时从地址$ d $开始，首先探查$ T[d]$，然后依次探查$ T[d+h1(d)], T[d + 2*h1(d)]，…，$等。</p>
 <p>该方法使用了两个散列函数$ h(key)$ 和 $h_1(key)$，故也称为双散列函数探查法。</p>
 <p>定义$ h_1(key)$ 的方法较多，但无论采用什么方法定义，都必须使$ h_1(key) $的值和$ m $互素，才能使发生冲突的同义词地址均匀地分布在整个表中，否则可能造成同义词地址的循环计算。</p>
 <p>该方法是开放定址法中最好的方法之一。</p>
-<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><h3 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h3><p>哈希表（hash table）是哈希函数最主要的应用。哈希表是实现关联数组（associative array）的一种数据结构，广泛应用于实现数据的快速查找。</p>
+<h2><span id="应用">应用</span></h2><h3><span id="哈希表">哈希表</span></h3><p>哈希表（hash table）是哈希函数最主要的应用。哈希表是实现关联数组（associative array）的一种数据结构，广泛应用于实现数据的快速查找。</p>
 <p>用哈希函数计算关键字的哈希值（hash value）,通过哈希值这个索引就可以找到关键字的存储位置，即桶（bucket）。哈希表不同于二叉树、栈、序列的数据结构一般情况下，在哈希表上的插入、查找、删除等操作的时间复杂度是$ O(1)$。</p>
 <p>查找过程中，关键字的比较次数，取决于产生冲突的多少，产生的冲突少，查找效率就高，产生的冲突多，查找效率就低。因此，影响产生冲突多少的因素，也就是影响查找效率的因素。<br>影响产生冲突多少有以下三个因素：</p>
 <ol>
@@ -355,14 +355,14 @@
 <li>哈希表的加载因子。（加载因子 = 填入表中记录个数/散列长度）</li>
 </ol>
 <p>哈希表的加载因子和容量决定了在什么时候桶数（存储位置）不够，需要重新哈希。加载因子太大的话桶太多，遍历时效率变低；太小的话频繁 rehash，导致性能降低。所以加载因子的大小需要结合时间和空间效率考虑。</p>
-<h4 id="hashmap"><a href="#hashmap" class="headerlink" title="hashmap"></a>hashmap</h4><blockquote>
+<h4><span id="hashmap">hashmap</span></h4><blockquote>
 <p>简单来说，<strong>HashMap由数组+链表组成的</strong>，数组是HashMap的主体，链表则是主要为了解决哈希冲突而存在的。</p>
 <p>如果定位到的数组位置不含链表（当前entry的next指向null）,那么查找，添加等操作很快，仅需一次寻址即可</p>
 <p>如果定位到的数组包含链表，对于添加操作，其时间复杂度为$O(n)$，首先遍历链表，存在即覆盖，否则新增；对于查找操作来讲，仍需遍历链表，然后通过key对象的equals方法逐一比对查找。</p>
 <p>所以，性能考虑，<strong>HashMap中的链表出现越少，性能才会越好。</strong></p>
 </blockquote>
 <p>HashMap的主干是一个Entry数组。Entry是HashMap的基本组成单元，每一个Entry包含一个key-value键值对。</p>
-<p><img src="/img/hash/hashmap.png"/></p>
+<p><img src="/img/hash/hashmap.png"></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//HashMap的主干数组，可以看到就是一个Entry数组，初始值为空数组&#123;&#125;，主干数组的长度一定是2的次幂。</span></span><br><span class="line"><span class="keyword">transient</span> Entry&lt;K,V&gt;[] table = (Entry&lt;K,V&gt;[]) EMPTY_TABLE;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Entry是HashMap中的一个静态内部类</span></span><br><span class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Entry</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt; <span class="keyword">implements</span> <span class="title">Map</span>.<span class="title">Entry</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> K key;</span><br><span class="line">    V value;</span><br><span class="line">    Entry&lt;K,V&gt; next;<span class="comment">//存储指向下一个Entry的引用，单链表结构</span></span><br><span class="line">    <span class="keyword">int</span> hash;<span class="comment">//对key的hashcode值进行hash运算后得到的值，存储在Entry，避免重复计算</span></span><br><span class="line">	</span><br><span class="line">    <span class="comment">//Creates new entry.</span></span><br><span class="line">	Entry(<span class="keyword">int</span> h, K k, V v, Entry&lt;K,V&gt; n) &#123;</span><br><span class="line">        value = v;</span><br><span class="line">        next = n;</span><br><span class="line">        key = k;</span><br><span class="line">        hash = h;</span><br><span class="line">    &#125; </span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//重要字段</span></span><br><span class="line"><span class="comment">//实际存储的key-value键值对的个数</span></span><br><span class="line"><span class="keyword">transient</span> <span class="keyword">int</span> size;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**阈值，当table == &#123;&#125;时，该值为初始容量（初始容量默认为16）；当table被填充了，也就是为table分配内存空间后，threshold一般为 capacity*loadFactory。HashMap在进行扩容时需要参考threshold */</span></span><br><span class="line"><span class="keyword">int</span> threshold;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**负载因子，代表了table的填充度，默认是0.75</span></span><br><span class="line"><span class="comment">为了减缓哈希冲突，如果初始桶为16，等到满16个元素才扩容，某些桶里可能就有不止一个元素了。所以加载因子默认为0.75，也就是说大小为16的HashMap，到了第13个元素，就会扩容成32。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">final</span> <span class="keyword">float</span> loadFactor;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**HashMap被改变的次数，由于HashMap非线程安全，在对HashMap进行迭代时，</span></span><br><span class="line"><span class="comment">如果期间其他线程的参与导致HashMap的结构发生变化了（比如put，remove等操作），</span></span><br><span class="line"><span class="comment">需要抛出异常ConcurrentModificationException*/</span></span><br><span class="line"><span class="keyword">transient</span> <span class="keyword">int</span> modCount;</span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">HashMap有4个构造器，其他构造器如果用户没有传入initialCapacity 和loadFactor这两个参数，会使用默认值</span></span><br><span class="line"><span class="comment">initialCapacity默认为16，loadFactory默认为0.75</span></span><br><span class="line"><span class="comment">在常规构造器中，没有为数组table分配内存空间（有一个入参为指定Map的构造器例外），而是在执行put操作的时候才真正构建table数组</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">HashMap</span><span class="params">(<span class="keyword">int</span> initialCapacity, <span class="keyword">float</span> loadFactor)</span> </span>&#123;</span><br><span class="line">　　　　　<span class="comment">//此处对传入的初始容量进行校验，最大不能超过MAXIMUM_CAPACITY = 1&lt;&lt;30(2^30)</span></span><br><span class="line">        <span class="keyword">if</span> (initialCapacity &lt; <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">&quot;Illegal initial capacity: &quot;</span> +</span><br><span class="line">                                               initialCapacity);</span><br><span class="line">        <span class="keyword">if</span> (initialCapacity &gt; MAXIMUM_CAPACITY)</span><br><span class="line">            initialCapacity = MAXIMUM_CAPACITY;</span><br><span class="line">        <span class="keyword">if</span> (loadFactor &lt;= <span class="number">0</span> || Float.isNaN(loadFactor))</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">&quot;Illegal load factor: &quot;</span> +</span><br><span class="line">                                               loadFactor);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">this</span>.loadFactor = loadFactor;</span><br><span class="line">        threshold = initialCapacity;</span><br><span class="line">　　　　　</span><br><span class="line">        init();<span class="comment">//init方法在HashMap中没有实际实现，不过在其子类如 linkedHashMap中就会有对应实现</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -371,11 +371,11 @@
 <p>比如toSize=13,则capacity=16;to_size=16,capacity=16;to_size=17,capacity=32.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">inflateTable</span><span class="params">(<span class="keyword">int</span> toSize)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> capacity = roundUpToPowerOf2(toSize);<span class="comment">//capacity一定是2的次幂</span></span><br><span class="line">    <span class="comment">/**此处为threshold赋值，取capacity*loadFactor和MAXIMUM_CAPACITY+1的最小值，</span></span><br><span class="line"><span class="comment">        capaticy一定不会超过MAXIMUM_CAPACITY，除非loadFactor大于1 */</span></span><br><span class="line">    threshold = (<span class="keyword">int</span>) Math.min(capacity * loadFactor, MAXIMUM_CAPACITY + <span class="number">1</span>);</span><br><span class="line">    table = <span class="keyword">new</span> Entry[capacity];</span><br><span class="line">    initHashSeedAsNeeded(capacity);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//当发生哈希冲突并且size大于阈值的时候，需要进行数组扩容。</span></span><br><span class="line"><span class="comment">//扩容时，需要新建一个长度为之前数组2倍的新的数组，然后将当前的Entry数组中的元素全部传输过去</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addEntry</span><span class="params">(<span class="keyword">int</span> hash, K key, V value, <span class="keyword">int</span> bucketIndex)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> ((size &gt;= threshold) &amp;&amp; (<span class="keyword">null</span> != table[bucketIndex])) &#123;</span><br><span class="line">        resize(<span class="number">2</span> * table.length);<span class="comment">//当size超过临界阈值threshold，并且即将发生哈希冲突时进行扩容</span></span><br><span class="line">        hash = (<span class="keyword">null</span> != key) ? hash(key) : <span class="number">0</span>;</span><br><span class="line">        bucketIndex = indexFor(hash, table.length);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    createEntry(hash, key, value, bucketIndex);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>最终存储位置的确定流程：</p>
-<p><img src="/img/hash/2.png"/></p>
+<p><img src="/img/hash/2.png"></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//对key的hashcode进一步进行计算以及二进制位的调整等来保证最终获取的存储位置尽量分布均匀</span></span><br><span class="line"><span class="function"><span class="keyword">final</span> <span class="keyword">int</span> <span class="title">hash</span><span class="params">(Object k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> h = hashSeed;</span><br><span class="line">    <span class="keyword">if</span> (<span class="number">0</span> != h &amp;&amp; k <span class="keyword">instanceof</span> String) <span class="keyword">return</span> sun.misc.Hashing.stringHash32((String) k);</span><br><span class="line">    h ^= k.hashCode();</span><br><span class="line">    h ^= (h &gt;&gt;&gt; <span class="number">20</span>) ^ (h &gt;&gt;&gt; <span class="number">12</span>);</span><br><span class="line">    <span class="keyword">return</span> h ^ (h &gt;&gt;&gt; <span class="number">7</span>) ^ (h &gt;&gt;&gt; <span class="number">4</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//返回数组下标</span></span><br><span class="line"><span class="comment">//h&amp;（length-1）保证获取的index一定在数组范围内，如默认容量16，length-1=15，h=18,转换成二进制计算为index=2。位运算对计算机来说，位运算性能更高一些</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">indexFor</span><span class="params">(<span class="keyword">int</span> h, <span class="keyword">int</span> length)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> h &amp; (length-<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="为何HashMap的数组长度一定是2的次幂"><a href="#为何HashMap的数组长度一定是2的次幂" class="headerlink" title="为何HashMap的数组长度一定是2的次幂"></a>为何HashMap的数组长度一定是2的次幂</h4><p>HashMap的数组长度一定保持2的次幂，保证length-1低位全为1，而扩容后只有一位差异，也就是多出了最左位的1，这样在通过 h&amp;(length-1)的时候，只要h对应的最左边的那一个差异位为0，就能保证得到的新的数组索引和老数组索引一致(大大减少了之前已经散列良好的老数组的数据位置重新调换)</p>
+<h4><span id="为何hashmap的数组长度一定是2的次幂">为何HashMap的数组长度一定是2的次幂</span></h4><p>HashMap的数组长度一定保持2的次幂，保证length-1低位全为1，而扩容后只有一位差异，也就是多出了最左位的1，这样在通过 h&amp;(length-1)的时候，只要h对应的最左边的那一个差异位为0，就能保证得到的新的数组索引和老数组索引一致(大大减少了之前已经散列良好的老数组的数据位置重新调换)</p>
 <p>如果不是2的次幂，也就是低位不是全为1此时，h的低位部分不再具有唯一性了，哈希冲突的几率会变的更大。</p>
-<h4 id="hashmap与hashtable区别"><a href="#hashmap与hashtable区别" class="headerlink" title="hashmap与hashtable区别"></a>hashmap与hashtable区别</h4><div class="table-container">
+<h4><span id="hashmap与hashtable区别">hashmap与hashtable区别</span></h4><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -423,22 +423,22 @@
 </tbody>
 </table>
 </div>
-<h4 id="JDK1-8中HashMap的性能优化"><a href="#JDK1-8中HashMap的性能优化" class="headerlink" title="JDK1.8中HashMap的性能优化"></a>JDK1.8中HashMap的性能优化</h4><p>假如一个数组槽位上链上数据过多（即拉链过长的情况）导致性能下降该怎么办？</p>
+<h4><span id="jdk18中hashmap的性能优化">JDK1.8中HashMap的性能优化</span></h4><p>假如一个数组槽位上链上数据过多（即拉链过长的情况）导致性能下降该怎么办？</p>
 <p>JDK1.8在JDK1.7的基础上针对增加了红黑树来进行优化。即当链表超过8时，链表就转换为红黑树，利用红黑树快速增删改查的特点提高HashMap的性能，其中会用到红黑树的插入、删除、查找等算法。<br><strong>HashMap put方法逻辑图（JDK1.8）</strong></p>
-<p><img src="/img/hash/put.png"/></p>
-<h3 id="RSA"><a href="#RSA" class="headerlink" title="RSA"></a>RSA</h3><h4 id="对称加密与非对称加密"><a href="#对称加密与非对称加密" class="headerlink" title="对称加密与非对称加密"></a>对称加密与非对称加密</h4><p>对称加密：加密和解密的秘钥使用的是同一个，发送方和接收方事先商量好</p>
+<p><img src="/img/hash/put.png"></p>
+<h3><span id="rsa">RSA</span></h3><h4><span id="对称加密与非对称加密">对称加密与非对称加密</span></h4><p>对称加密：加密和解密的秘钥使用的是同一个，发送方和接收方事先商量好</p>
 <p>缺点：每对用户每次使用对称加密算法时，都需要使用其他人不知道的唯一秘钥，这会使得收、发双方所拥有的钥匙数量巨大，密钥管理成为双方的负担；密钥必须通过见面协商，而无法直接通过网络进行交换。</p>
-<p><img src="/img/hash/duichen.jpg"/></p>
+<p><img src="/img/hash/duichen.jpg"></p>
 <p>非对称加密（公钥加密）：需要两个密钥：公开密钥（publickey）和私有密钥（privatekey）。由于公钥是对所有人公开的，所以需要保证数据被公钥加密后无法反推，即单向计算容易，逆向反推困难。模运算即是这样的单向函数。</p>
-<p><img src="/img/hash/feiduichen.jpg"/></p>
+<p><img src="/img/hash/feiduichen.jpg"></p>
 <blockquote>
 <p>模运算，例如，已知$3^3mod\ 7 = 6$，反之已知$3^xmod\ 7 = 6$，求$x$很困难，只能一个数一个数带入尝试。而对于大数来说更不现实。</p>
 </blockquote>
-<h4 id="RSA的加密解密过程"><a href="#RSA的加密解密过程" class="headerlink" title="RSA的加密解密过程"></a>RSA的加密解密过程</h4><p>RSA属于非对称加密算法。</p>
+<h4><span id="rsa的加密解密过程">RSA的加密解密过程</span></h4><p>RSA属于非对称加密算法。</p>
 <p>原始数据$m（message）$，加密密钥$e（encrypt）$，密文$c（cipher）$，解密密钥$d（decrypt）$</p>
-<p><img src="/img/hash/rsa.jpg" style="zoom:50%;" /></p>
+<p><img src="/img/hash/rsa.jpg" style="zoom:50%;"></p>
 <p>变换后得</p>
-<p><img src="/img/hash/ed.jpg" style="zoom: 33%;" /></p>
+<p><img src="/img/hash/ed.jpg" style="zoom: 33%;"></p>
 <p>如何选$e，d$是关键。</p>
 <blockquote>
 <p><strong>互质</strong>，又称互素。若$N$个整数的最大公因子是1，则称这$N$个整数互质。</p>
@@ -468,8 +468,8 @@
 <li>将$p$和$q$的记录销毁。</li>
 </ul>
 <p>其中$(N，e)$是公钥，$(N，d)$是私钥。</p>
-<h4 id="应用-1"><a href="#应用-1" class="headerlink" title="应用"></a>应用</h4><p>RSA的应用包括数字签名，数字证书，ssh，https等。实际应用中，由于公钥加密计算量大，速度慢，常和对称加密一起使用，公钥加密算法常被用作最初建立连接，真正数据传输过程用对称加密算法处理。</p>
-<p><img src="/img/hash/https.jpg" style="zoom: 67%;" /></p>
+<h4><span id="应用">应用</span></h4><p>RSA的应用包括数字签名，数字证书，ssh，https等。实际应用中，由于公钥加密计算量大，速度慢，常和对称加密一起使用，公钥加密算法常被用作最初建立连接，真正数据传输过程用对称加密算法处理。</p>
+<p><img src="/img/hash/https.jpg" style="zoom: 67%;"></p>
 <ul>
 <li>ssh（Secure Shell）</li>
 </ul>
@@ -492,7 +492,7 @@
 <p>http 和 https 使用的是完全不同的连接方式，用的端口也不一样，前者是 80，后者是 443。</p>
 <p>HTTPS 其实就是建构在 SSL/TLS 之上的 HTTP 协议，所以，要比较 HTTPS 比 HTTP 要更耗费服务器资源。</p>
 </blockquote>
-<h3 id="MD5算法-数字摘要"><a href="#MD5算法-数字摘要" class="headerlink" title="MD5算法/数字摘要"></a>MD5算法/数字摘要</h3><p>用于提供消息的完整性性保护。算法的输出由四个32位分组组成，将这四个32位分组级联后将生成一个128位散列值，即16字节。又称数字摘要/数字指纹。</p>
+<h3><span id="md5算法数字摘要">MD5算法/数字摘要</span></h3><p>用于提供消息的完整性性保护。算法的输出由四个32位分组组成，将这四个32位分组级联后将生成一个128位散列值，即16字节。又称数字摘要/数字指纹。</p>
 <blockquote>
 <p>不可逆，从结果无法反推原始数据</p>
 <p>高度离散性，输出结果无法预测，哪怕输入改变一个bit输出也完全不同</p>
@@ -622,7 +622,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">哈希函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B4%E6%8E%A5%E5%AE%9A%E5%9D%80%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">直接定址法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%99%A4%E7%95%99%E4%BD%99%E6%95%B0%E6%B3%95"><span class="nav-number">1.2.</span> <span class="nav-text">除留余数法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E5%88%86%E6%9E%90%E6%B3%95"><span class="nav-number">1.3.</span> <span class="nav-text">数字分析法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%B3%E6%96%B9%E5%8F%96%E4%B8%AD%E6%B3%95"><span class="nav-number">1.4.</span> <span class="nav-text">平方取中法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%98%E5%8F%A0%E6%B3%95%EF%BC%88%E5%8F%A0%E5%8A%A0%E6%B3%95%EF%BC%89"><span class="nav-number">1.5.</span> <span class="nav-text">折叠法（叠加法）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E6%95%B0%E6%B3%95"><span class="nav-number">1.6.</span> <span class="nav-text">随机数法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E5%86%B2%E7%AA%81%E7%9A%84%E8%A7%A3%E5%86%B3"><span class="nav-number">2.</span> <span class="nav-text">哈希冲突的解决</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%93%BE%E6%8E%A5%E6%B3%95%EF%BC%88%E6%8B%89%E9%93%BE%E6%B3%95%EF%BC%89"><span class="nav-number">2.1.</span> <span class="nav-text">链接法（拉链法）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E6%94%BE%E5%AE%9A%E5%9D%80%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">开放定址法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E6%8E%A2%E6%9F%A5%E6%B3%95"><span class="nav-number">2.2.1.</span> <span class="nav-text">线性探查法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E6%AC%A1%E6%8E%A2%E6%9F%A5%E6%B3%95"><span class="nav-number">2.2.2.</span> <span class="nav-text">二次探查法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8C%E9%87%8D%E6%95%A3%E5%88%97%E6%B3%95"><span class="nav-number">2.2.3.</span> <span class="nav-text">双重散列法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%94%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E8%A1%A8"><span class="nav-number">3.1.</span> <span class="nav-text">哈希表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#hashmap"><span class="nav-number">3.1.1.</span> <span class="nav-text">hashmap</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E4%BD%95HashMap%E7%9A%84%E6%95%B0%E7%BB%84%E9%95%BF%E5%BA%A6%E4%B8%80%E5%AE%9A%E6%98%AF2%E7%9A%84%E6%AC%A1%E5%B9%82"><span class="nav-number">3.1.2.</span> <span class="nav-text">为何HashMap的数组长度一定是2的次幂</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hashmap%E4%B8%8Ehashtable%E5%8C%BA%E5%88%AB"><span class="nav-number">3.1.3.</span> <span class="nav-text">hashmap与hashtable区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JDK1-8%E4%B8%ADHashMap%E7%9A%84%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="nav-number">3.1.4.</span> <span class="nav-text">JDK1.8中HashMap的性能优化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RSA"><span class="nav-number">3.2.</span> <span class="nav-text">RSA</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E4%B8%8E%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86"><span class="nav-number">3.2.1.</span> <span class="nav-text">对称加密与非对称加密</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RSA%E7%9A%84%E5%8A%A0%E5%AF%86%E8%A7%A3%E5%AF%86%E8%BF%87%E7%A8%8B"><span class="nav-number">3.2.2.</span> <span class="nav-text">RSA的加密解密过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BA%94%E7%94%A8-1"><span class="nav-number">3.2.3.</span> <span class="nav-text">应用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD5%E7%AE%97%E6%B3%95-%E6%95%B0%E5%AD%97%E6%91%98%E8%A6%81"><span class="nav-number">3.3.</span> <span class="nav-text">MD5算法&#x2F;数字摘要</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">哈希函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text">直接定址法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.2.</span> <span class="nav-text">除留余数法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.3.</span> <span class="nav-text">数字分析法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.4.</span> <span class="nav-text">平方取中法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.5.</span> <span class="nav-text">折叠法（叠加法）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.6.</span> <span class="nav-text">随机数法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">哈希冲突的解决</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.1.</span> <span class="nav-text">链接法（拉链法）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.2.</span> <span class="nav-text">开放定址法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">2.2.1.</span> <span class="nav-text">线性探查法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">2.2.2.</span> <span class="nav-text">二次探查法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">2.2.3.</span> <span class="nav-text">双重散列法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.1.</span> <span class="nav-text">哈希表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">3.1.1.</span> <span class="nav-text">hashmap</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">3.1.2.</span> <span class="nav-text">为何HashMap的数组长度一定是2的次幂</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">3.1.3.</span> <span class="nav-text">hashmap与hashtable区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">3.1.4.</span> <span class="nav-text">JDK1.8中HashMap的性能优化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.2.</span> <span class="nav-text">RSA</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">3.2.1.</span> <span class="nav-text">对称加密与非对称加密</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">3.2.2.</span> <span class="nav-text">RSA的加密解密过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">3.2.3.</span> <span class="nav-text">应用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.3.</span> <span class="nav-text">MD5算法&#x2F;数字摘要</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -638,14 +638,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -690,12 +690,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">133k</span>
+    <span title="Symbols count total">139k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:01</span>
+    <span title="Reading time total">2:06</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
   </div>
