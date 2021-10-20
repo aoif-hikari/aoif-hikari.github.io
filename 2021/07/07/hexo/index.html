@@ -29,7 +29,7 @@
 <meta property="og:description" content="hexo，快速、简洁且高效的博客框架">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-07-07T11:46:00.000Z">
-<meta property="article:modified_time" content="2021-07-16T08:55:28.555Z">
+<meta property="article:modified_time" content="2021-10-20T07:22:13.491Z">
 <meta property="article:author" content="fu">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
@@ -222,7 +222,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-07-16 16:55:28" itemprop="dateModified" datetime="2021-07-16T16:55:28+08:00">2021-07-16</time>
+                <time title="Modified: 2021-10-20 15:22:13" itemprop="dateModified" datetime="2021-10-20T15:22:13+08:00">2021-10-20</time>
               </span>
 
           
@@ -251,7 +251,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
               </span>
-              <span>2.1k</span>
+              <span>2.3k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -286,10 +286,23 @@
 <p>需要折叠的部分之前加</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- more --&gt;</span></span><br></pre></td></tr></table></figure>
 <ul>
+<li>目录</li>
+</ul>
+<p>安装<code>npm install hexo-toc --save</code><br>在博客根目录下的 <code>_config.yml</code> 中如下配置：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#文章目录</span></span><br><span class="line"><span class="attr">toc:</span></span><br><span class="line">    <span class="attr">maxDepth:</span> <span class="number">3</span> <span class="comment">#表示目录深度为3，即最多生成三级目录</span></span><br></pre></td></tr></table></figure>
+<p>在Markdown中需要显示文章目录的地方添加<br>`</p>
+<!-- toc -->
+<ul>
+<li><a href="#多分支管理">多分支管理</a></li>
+<li><a href="#中文目录无法跳转">中文目录无法跳转</a></li>
+<li><a href="#其他">其他</a></li>
+</ul>
+<!-- tocstop -->
+<p>`</p>
+<ul>
 <li>公式</li>
 </ul>
-<p>卸载原有公式渲染引擎 <code>npm uninstall hexo-renderer-marked --save</code> </p>
-<p>安装kramed <code>npm install hexo-renderer-kramed --save</code></p>
+<p>卸载原有公式渲染引擎 <code>npm uninstall hexo-renderer-marked --save</code><br>安装kramed <code>npm install hexo-renderer-kramed --save</code></p>
 <blockquote>
 <p>问题1：kramed对<code>\,&#123;,&#125;</code>有转义，无法正常显示</p>
 <p>解决方法：</p>
@@ -432,7 +445,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">26</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -484,12 +497,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">139k</span>
+    <span title="Symbols count total">140k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:06</span>
+    <span title="Reading time total">2:07</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
   </div>

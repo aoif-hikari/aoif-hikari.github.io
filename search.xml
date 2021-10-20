@@ -968,10 +968,23 @@ f_{i}=\min \left(b_{i}, \max \left(-b_{i}, R\left(x+x_{i}, y+y_{i}\right)-R(x, y
 <p>需要折叠的部分之前加</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- more --&gt;</span></span><br></pre></td></tr></table></figure>
 <ul>
+<li>目录</li>
+</ul>
+<p>安装<code>npm install hexo-toc --save</code><br>在博客根目录下的 <code>_config.yml</code> 中如下配置：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#文章目录</span></span><br><span class="line"><span class="attr">toc:</span></span><br><span class="line">    <span class="attr">maxDepth:</span> <span class="number">3</span> <span class="comment">#表示目录深度为3，即最多生成三级目录</span></span><br></pre></td></tr></table></figure>
+<p>在Markdown中需要显示文章目录的地方添加<br>`</p>
+<!-- toc -->
+<ul>
+<li><a href="#多分支管理">多分支管理</a></li>
+<li><a href="#中文目录无法跳转">中文目录无法跳转</a></li>
+<li><a href="#其他">其他</a></li>
+</ul>
+<!-- tocstop -->
+<p>`</p>
+<ul>
 <li>公式</li>
 </ul>
-<p>卸载原有公式渲染引擎 <code>npm uninstall hexo-renderer-marked --save</code> </p>
-<p>安装kramed <code>npm install hexo-renderer-kramed --save</code></p>
+<p>卸载原有公式渲染引擎 <code>npm uninstall hexo-renderer-marked --save</code><br>安装kramed <code>npm install hexo-renderer-kramed --save</code></p>
 <blockquote>
 <p>问题1：kramed对<code>\,&#123;,&#125;</code>有转义，无法正常显示</p>
 <p>解决方法：</p>
@@ -3297,6 +3310,53 @@ P(\cup A_i)\leq \sum P(A_i)=\binom{n}{t}P(A_i)<1</script><p>令其小于$1$，�
 ]]></content>
       <tags>
         <tag>图与网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode / 二分查找</title>
+    <url>/2021/10/20/Leetcode%20_%20%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</url>
+    <content><![CDATA[<blockquote>
+<p>有序数组要想到二分查找</p>
+</blockquote>
+<span id="more"></span>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> right = nums.length-<span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span>(left &lt;= right)&#123; <span class="comment">// l = r 处理只有一个元素的情况;如果超时条件改为left &lt; right</span></span><br><span class="line">    <span class="keyword">int</span> mid = low + (high - low) / <span class="number">2</span>;</span><br><span class="line">        <span class="comment">//low+high在low和high特别大时可能溢出，使用减法low + (high - low)/2避免溢出</span></span><br><span class="line">    <span class="keyword">if</span>(target = nums[mid])&#123;</span><br><span class="line">        <span class="keyword">return</span> mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(target &gt; nums[mid])&#123;</span><br><span class="line">        left = mid+<span class="number">1</span>; <span class="comment">// 根据题目注意区间开闭</span></span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(target &lt; nums[mid])&#123;</span><br><span class="line">        right = mid -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>简单</p>
+<blockquote>
+<p>374  猜数字大小<br>278  第一个错误的版本</p>
+</blockquote>
+</li>
+<li><p>二分</p>
+<blockquote>
+<p>35  搜索插入位置<br>34 / 剑指 53 在排序数组中查找元素的第一个和最后一个位置(存在重复元素)(二分+中心扩散)<br>剑指53 - II. 0～n-1中缺失的数字<br>540 有序数组中的单一元素</p>
+</blockquote>
+</li>
+<li><p>旋转数组</p>
+<blockquote>
+<p>189 旋转数组<br>33 搜索旋转排序数组(无重复元素，两个区间必有一个有序)<br>81 搜索旋转排序数组 II(有重复元素，可能出现无法判断哪个区间有序的情况，num[l] = num[mid] = num[r]。解决方法：将当前二分区间的左边界加一，右边界减一。)<br>153 寻找旋转排序数组中的最小值(无重复元素)(几处细节)<br>154 / 剑指11 寻找旋转排序数组中的最小值 II (有重复元素)</p>
+</blockquote>
+</li>
+<li><p>数学</p>
+<blockquote>
+<p>367  有效的完全平方数<br>69  x 的平方根<br>275  H 指数 II(给定一个大小为 n 的升序的引用次数列表，要求找到满足 citations[i] &gt;= n - i 的第一个 citations[i])<br>441  排列硬币(等价于求满足k(k + 1) &lt;= 2n的k的最大值，二分法可以设置左边界为0，右边界设置为√2n，然后二分查找即可)<br>162  寻找峰值</p>
+<pre><code>   /\
+  /  \
+ /    \
+/      \
+
+二分时，取到的 中间值，与 中间值+1 做对比。有2种情况：
+中间值 &lt; 中间值+1 ：说明当前取的点，在 上坡 部分，峰顶值在前面
+中间值 &gt; 中间值+1 ：说明当前取的点，在 下坡 部分，峰顶值在后面
+
+二分法 第一次 mid 是有2层意义：
+第一次 mid 的点，一定会落到一座山上；并判断当前是处在上坡，还是下坡
+</code></pre></blockquote>
+</li>
+</ul>
+<p><strong>时间复杂度：$O(logN)$，远好于顺序查找的$O(n)$<br>（虽然二分查找效率高，但是要将表按关键字排序。而排序本身很费时）</strong></p>
+]]></content>
+      <tags>
+        <tag>leetcode</tag>
       </tags>
   </entry>
 </search>

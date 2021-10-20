@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://aoif-hikari.github.io/2021/10/20/Leetcode%20_%20%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</loc>
+    <lastmod>2021-10-20</lastmod>
+  </url>
+  <url>
+    <loc>https://aoif-hikari.github.io/2021/07/07/hexo/</loc>
+    <lastmod>2021-10-20</lastmod>
+  </url>
+  <url>
     <loc>https://aoif-hikari.github.io/2021/10/20/deep-learning%20_%20%E5%90%84%E7%A7%8D%E5%8D%B7%E7%A7%AF%E6%96%B9%E6%B3%95/</loc>
     <lastmod>2021-10-20</lastmod>
   </url>
@@ -90,10 +98,6 @@
   </url>
   <url>
     <loc>https://aoif-hikari.github.io/2021/07/12/%E8%B4%AA%E5%BF%83/</loc>
-    <lastmod>2021-07-16</lastmod>
-  </url>
-  <url>
-    <loc>https://aoif-hikari.github.io/2021/07/07/hexo/</loc>
     <lastmod>2021-07-16</lastmod>
   </url>
   <url>
