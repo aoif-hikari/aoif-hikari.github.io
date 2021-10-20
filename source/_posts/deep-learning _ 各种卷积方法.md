@@ -8,10 +8,6 @@ title: deep learning / 各种卷积方法
 
 <!-- more -->
 
-<!-- toc -->
-
-
-
 ## 2D-Convolution
 
 <img src="https://yinguobing.com/content/images/2018/02/conv-std.jpg">

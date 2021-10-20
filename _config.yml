@@ -148,5 +148,5 @@ leancloud_counter_security:
   password: # Recommmended to be left blank. Will be asked while deploying if is left blank
 
 #文章目录
-toc:
-  maxDepth: 3 #表示目录深度为3，即最多生成三级目录
+#toc:
+#  maxDepth: 3 #表示目录深度为3，即最多生成三级目录

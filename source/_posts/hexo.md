@@ -46,18 +46,19 @@ title: hexo博客 //标题
 <!-- more -->
 ```
 
-- 目录
+- 正文中插入目录
 
-安装`npm install hexo-toc --save`
-在博客根目录下的 `_config.yml` 中如下配置：
-
-```yaml
-#文章目录
-toc:
-    maxDepth: 3 #表示目录深度为3，即最多生成三级目录
-```
-在Markdown中需要显示文章目录的地方添加 
-`<!-- toc -->`
+以下 hexo-toc 插件与  next 主题侧边目录栏冲突(安装后导致侧边栏目录失效)
+> 安装`npm install hexo-toc --save`
+> 在博客根目录下的 `_config.yml` 中如下配置：
+>
+>```yaml
+>#文章目录
+>toc:
+>    maxDepth: 3 #表示目录深度为3，即最多生成三级目录
+>```
+>在Markdown中需要显示文章目录的地方添加 
+>`<!-- toc -->`
 
 - 公式
 

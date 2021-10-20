@@ -1,7 +1,7 @@
 ---
 tags: VVC
 mathjax: true 
-title: VVC环路滤波/SAO
+title: VVC环路滤波 / SAO
 ---
 
 > VVC环路滤波：自适应样点补偿滤波器

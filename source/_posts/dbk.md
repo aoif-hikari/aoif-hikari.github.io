@@ -1,11 +1,10 @@
 ---
 tags: VVC 
 mathjax: true 
-title: VVC环路滤波/Deblocking Filter
+title: VVC环路滤波 / Deblocking Filter
 ---
 
 > VVC环路滤波：去块滤波器
->
 
 <!--more-->
 
