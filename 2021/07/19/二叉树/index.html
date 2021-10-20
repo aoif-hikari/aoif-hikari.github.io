@@ -50,7 +50,7 @@
 <meta property="og:image" content="https://aoif-hikari.github.io/img/tree/dele3.png">
 <meta property="og:image" content="https://aoif-hikari.github.io/img/tree/dele4.png">
 <meta property="article:published_time" content="2021-07-19T06:02:00.182Z">
-<meta property="article:modified_time" content="2021-10-18T09:18:55.644Z">
+<meta property="article:modified_time" content="2021-10-20T09:46:55.451Z">
 <meta property="article:author" content="fu">
 <meta property="article:tag" content="leetcode">
 <meta name="twitter:card" content="summary">
@@ -244,7 +244,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-10-18 17:18:55" itemprop="dateModified" datetime="2021-10-18T17:18:55+08:00">2021-10-18</time>
+                <time title="Modified: 2021-10-20 17:46:55" itemprop="dateModified" datetime="2021-10-20T17:46:55+08:00">2021-10-20</time>
               </span>
 
           
@@ -296,57 +296,48 @@
 </blockquote>
 <span id="more"></span>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 二叉树</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BinaryNode</span></span>&#123;</span><br><span class="line">    Object element;</span><br><span class="line">    BinaryNode left;</span><br><span class="line">    BinaryNode right;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2><span id="基础二叉树的遍历">基础：二叉树的遍历</span></h2><p>遍历时均无返回值，所以遍历要另写函数，把需要返回的作为参数传入。</p>
-<h3><span id="dfs-深度优先">DFS, 深度优先</span></h3><h4><span id="先序遍历根左右文件目录结构">先序遍历：根左右（文件目录结构）</span></h4><p>常规迭代</p>
+<h2 id="基础：二叉树的遍历"><a href="#基础：二叉树的遍历" class="headerlink" title="基础：二叉树的遍历"></a>基础：二叉树的遍历</h2><p>遍历时均无返回值，所以遍历要另写函数，把需要返回的作为参数传入。</p>
+<h3 id="DFS-深度优先"><a href="#DFS-深度优先" class="headerlink" title="DFS, 深度优先"></a>DFS, 深度优先</h3><h4 id="先序遍历：根左右（文件目录结构）"><a href="#先序遍历：根左右（文件目录结构）" class="headerlink" title="先序遍历：根左右（文件目录结构）"></a>先序遍历：根左右（文件目录结构）</h4><p>常规迭代</p>
 <ul>
-<li><p>初始化栈，并将根节点入栈；</p>
-</li>
-<li><p>当栈不为空时：</p>
-<ul>
+<li>初始化栈，并将根节点入栈；</li>
+<li>当栈不为空时：<ul>
 <li>弹出栈顶元素 node，并将值添加到结果中；</li>
 <li>如果 node 的右子树非空，将右子树入栈；</li>
-<li>如果 node 的左子树非空，将左子树入栈；</li>
+<li>如果 node 的左子树非空，将左子树入栈；<br>由于栈是“先进后出”的顺序，所以入栈时先将右子树入栈，这样使得前序遍历结果为 “根-&gt;左-&gt;右”的顺序。</li>
 </ul>
 </li>
 </ul>
-<p>由于栈是“先进后出”的顺序，所以入栈时先将右子树入栈，这样使得前序遍历结果为 “根-&gt;左-&gt;右”的顺序。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 迭代，非递归实现,本质使用栈模拟递归</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">preorder</span><span class="params">(TreeNode root)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root == <span class="keyword">null</span> ) <span class="keyword">return</span>;</span><br><span class="line">    <span class="comment">//初始化栈，并将根节点入栈；</span></span><br><span class="line">    Stack&lt;TreeNode&gt; stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">    stack.push(root);</span><br><span class="line">	<span class="comment">//当栈不为空时：</span></span><br><span class="line">    <span class="keyword">while</span>(!stack.isEmpty())&#123;</span><br><span class="line">        <span class="comment">//弹出栈顶元素 node，并将值添加到结果中；</span></span><br><span class="line">        TreeNode node = stack.pop();</span><br><span class="line">        System.out.print(node.val); </span><br><span class="line">        <span class="comment">//如果 node 的右子树非空，将右子树入栈；</span></span><br><span class="line">        <span class="keyword">if</span>(node.right != <span class="keyword">null</span>) stack.push(node.right);</span><br><span class="line">        <span class="comment">//如果 node 的左子树非空，将左子树入栈；</span></span><br><span class="line">        <span class="keyword">if</span>(node.left != <span class="keyword">null</span>) stack.push(node.left);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>模板迭代</p>
 <ul>
-<li><p>先将根节点 <code>cur</code> 和所有的左孩子入栈并加入结果中，直至 <code>cur</code> 为空</p>
-</li>
-<li><p>每弹出一个栈顶元素 <code>tmp</code>，就到达它的右孩子，再将这个节点当作 <code>cur</code> 重新按上面的步骤来一遍，直至栈为空。</p>
-</li>
+<li>先将根节点 <code>cur</code> 和所有的左孩子入栈并加入结果中，直至 <code>cur</code> 为空</li>
+<li>每弹出一个栈顶元素 <code>tmp</code>，就到达它的右孩子，再将这个节点当作 <code>cur</code> 重新按上面的步骤来一遍，直至栈为空。</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">preorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;     </span><br><span class="line">    <span class="keyword">if</span>(root == <span class="keyword">null</span> ) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">    Stack&lt;TreeNode&gt; stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">    TreeNode cur = root;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(cur != <span class="keyword">null</span> || !stack.isEmpty())&#123;</span><br><span class="line">        <span class="comment">//将根节点cur和所有的左孩子入栈并加入结果中，直至cur为空</span></span><br><span class="line">        <span class="keyword">while</span>(cur != <span class="keyword">null</span>)&#123;</span><br><span class="line">            System.out.print(cur.val); </span><br><span class="line">            stack.push(cur);</span><br><span class="line">            cur = cur.left;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//每弹出一个栈顶元素tmp,就到达它的右孩子,再将这个节点当作cur</span></span><br><span class="line">        TreeNode temp = stack.pop();</span><br><span class="line">        cur = temp.right;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 递归实现</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">preorder_Traversal</span><span class="params">(TreeNode root)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root==<span class="keyword">null</span>)<span class="keyword">return</span>;        </span><br><span class="line">    <span class="comment">//访问节点的逻辑代码块</span></span><br><span class="line">    System.out.print(root.val+<span class="string">&quot; &quot;</span>);       </span><br><span class="line">    preorder_Traversal(root.left);</span><br><span class="line">    preorder_Traversal(root.right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4><span id="中序遍历左根右"><strong>中序遍历：左根右</strong></span></h4><p>模板迭代：</p>
+<h4 id="中序遍历：左根右"><a href="#中序遍历：左根右" class="headerlink" title="中序遍历：左根右"></a><strong>中序遍历：左根右</strong></h4><p>模板迭代：</p>
 <ul>
-<li><p>先将根节点 <code>cur</code> 和所有的左孩子入栈中，直至 <code>cur</code> 为空</p>
-</li>
-<li><p>每弹出一个栈顶元素 <code>tmp</code>，加入结果中，并到达它的右孩子，再将这个节点当作 <code>cur</code> 重新按上面的步骤来一遍，直至栈为空。</p>
-</li>
+<li>先将根节点 <code>cur</code> 和所有的左孩子入栈中，直至 <code>cur</code> 为空</li>
+<li>每弹出一个栈顶元素 <code>tmp</code>，加入结果中，并到达它的右孩子，再将这个节点当作 <code>cur</code> 重新按上面的步骤来一遍，直至栈为空。</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">preorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;     </span><br><span class="line">    <span class="keyword">if</span>(root == <span class="keyword">null</span> ) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">    Stack&lt;TreeNode&gt; stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">    TreeNode cur = root;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(cur != <span class="keyword">null</span> || !stack.isEmpty())&#123;</span><br><span class="line">        <span class="comment">//将根节点cur和所有的左孩子入栈中，直至cur为空</span></span><br><span class="line">        <span class="keyword">while</span>(cur != <span class="keyword">null</span>)&#123;</span><br><span class="line">            stack.push(cur);</span><br><span class="line">            cur = cur.left;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//每弹出一个栈顶元素tmp,加入结果中，并到达它的右孩子,再将这个节点当作cur</span></span><br><span class="line">        TreeNode temp = stack.pop();</span><br><span class="line">        System.out.print(temp.val); </span><br><span class="line">        cur = temp.right;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 递归实现</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">inorder_Traversal</span><span class="params">(TreeNode root)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root==<span class="keyword">null</span>)<span class="keyword">return</span>;</span><br><span class="line">    inorder_Traversal(root.left);        </span><br><span class="line">    <span class="comment">//访问节点的逻辑代码块</span></span><br><span class="line">    System.out.print(root.val+<span class="string">&quot; &quot;</span>);       </span><br><span class="line">    inorder_Traversal(root.right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4><span id="后续遍历左右根"><strong>后续遍历：左右根</strong></span></h4><p>对前序遍历的（根左右）修改为（根右左），再倒序输出。</p>
+<h4 id="后续遍历：左右根"><a href="#后续遍历：左右根" class="headerlink" title="后续遍历：左右根"></a><strong>后续遍历：左右根</strong></h4><p>对前序遍历的（根左右）修改为（根右左），再倒序输出。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 常规倒序输出</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">preorder</span><span class="params">(TreeNode root)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root == <span class="keyword">null</span> ) <span class="keyword">return</span>;</span><br><span class="line">    <span class="comment">//初始化栈，并将根节点入栈；</span></span><br><span class="line">    Stack&lt;TreeNode&gt; stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">    Stack&lt;TreeNode&gt; resStack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">    stack.push(root);</span><br><span class="line">	<span class="comment">//当栈不为空时：</span></span><br><span class="line">    <span class="keyword">while</span>(!stack.isEmpty())&#123;</span><br><span class="line">        <span class="comment">//弹出栈顶元素 node，并将值添加到结果中；</span></span><br><span class="line">        TreeNode node = stack.pop();</span><br><span class="line">        resStack.push(node);</span><br><span class="line">        <span class="comment">//如果 node 的右子树非空，将右子树入栈；</span></span><br><span class="line">        <span class="keyword">if</span>(node.left != <span class="keyword">null</span>) stack.push(node.left);</span><br><span class="line">        <span class="comment">//如果 node 的左子树非空，将左子树入栈；</span></span><br><span class="line">        <span class="keyword">if</span>(node.right != <span class="keyword">null</span>) stack.push(node.right);</span><br><span class="line">    &#125;</span><br><span class="line">    List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">while</span>(!resStack.isEmpty())&#123;</span><br><span class="line">        res.add(resStack.pop().val);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 模板倒序输出</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">postorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    Stack&lt;TreeNode&gt; s = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">    Stack&lt;TreeNode&gt; resStack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">    TreeNode cur = root;</span><br><span class="line">    <span class="comment">//将根节点cur和所有的右孩子入栈并加入结果中，直至cur为空</span></span><br><span class="line">    <span class="keyword">while</span>(cur != <span class="keyword">null</span> || !s.isEmpty())&#123;</span><br><span class="line">        <span class="keyword">while</span>(cur != <span class="keyword">null</span>)&#123;</span><br><span class="line">            resStack.push(cur); <span class="comment">// root</span></span><br><span class="line">            s.push(cur); </span><br><span class="line">            cur = cur.right; <span class="comment">// right</span></span><br><span class="line">        &#125;</span><br><span class="line">       <span class="comment">//弹出一个栈顶元素tmp，并到达它的左孩子，再将这个节点当作cur</span></span><br><span class="line">        cur = s.pop();</span><br><span class="line">        cur = cur.left; <span class="comment">// left</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 反向输出</span></span><br><span class="line">    List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">while</span>(!resStack.isEmpty())&#123;</span><br><span class="line">        res.add(resStack.pop().val);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 递归实现</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">postorder_Traversal</span><span class="params">(TreeNode root)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root==<span class="keyword">null</span>)<span class="keyword">return</span>;</span><br><span class="line">    postorder_Traversal(root.left);</span><br><span class="line">    postorder_Traversal(root.right);        </span><br><span class="line">    <span class="comment">//访问节点的逻辑代码块</span></span><br><span class="line">    System.out.print(root.val+<span class="string">&quot; &quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3><span id="bfs-广度优先层次遍历">BFS, 广度优先（层次遍历）</span></h3><p>广度优先搜索的步骤为：</p>
+<h3 id="BFS-广度优先（层次遍历）"><a href="#BFS-广度优先（层次遍历）" class="headerlink" title="BFS, 广度优先（层次遍历）"></a>BFS, 广度优先（层次遍历）</h3><p>广度优先搜索的步骤为：</p>
 <ul>
-<li><p>初始化队列 q，并将根节点 root 加入到队列中；</p>
-</li>
-<li><p>当队列不为空时：</p>
-<ul>
+<li>初始化队列 q，并将根节点 root 加入到队列中；</li>
+<li>当队列不为空时：<ul>
 <li>队列中弹出节点 node，加入到结果中；</li>
 <li>如果左子树非空，左子树加入队列；</li>
 <li>如果右子树非空，右子树加入队列；</li>
 </ul>
 </li>
 </ul>
-<p><img src="/img/tree/bfs1.gif"></p>
+<p><img src="/img/tree/bfs1.gif"/></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//队列实现,分层次，在每一层遍历开始前，先记录队列中的结点数量 n（也就是这一层的结点数量），然后一口气处理完这一层的 n 个结点。</span></span><br><span class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; LaywerTraversal(TreeNode root)&#123;</span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">if</span>(root == <span class="keyword">null</span>) <span class="keyword">return</span> res;</span><br><span class="line">    <span class="comment">// 初始化队列 q，并将根节点 root 加入到队列中；</span></span><br><span class="line">    Queue&lt;TreeNode&gt; queue = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</span><br><span class="line">    queue.add(root);</span><br><span class="line">    <span class="comment">//当队列不为空时：</span></span><br><span class="line">    <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">        <span class="keyword">int</span> n = queue.size();</span><br><span class="line">        List&lt;Integer&gt; level = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123; </span><br><span class="line">            <span class="comment">//队列中弹出节点 node，加入到结果中；</span></span><br><span class="line">            TreeNode node = queue.poll();</span><br><span class="line">            level.add(node.val);</span><br><span class="line">            <span class="comment">//如果左子树非空，左子树加入队列；</span></span><br><span class="line">            <span class="keyword">if</span> (node.left != <span class="keyword">null</span>) queue.add(node.left);</span><br><span class="line">            <span class="comment">//如果右子树非空，右子树加入队列；</span></span><br><span class="line">            <span class="keyword">if</span> (node.right != <span class="keyword">null</span>) queue.add(node.right);</span><br><span class="line">        &#125;</span><br><span class="line">        res.add(level);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="/img/tree/bfs2.gif"></p>
+<p><img src="/img/tree/bfs2.gif"/></p>
 <p>BFS常用于找最短路径。</p>
 <p>在一棵树中，一个结点到另一个结点的路径是唯一的，但在图中，结点之间可能有多条路径，其中哪条路最近？这一类问题称为最短路径问题。最短路径问题也是 BFS 的典型应用，而且其方法与层序遍历关系密切。</p>
 <p>在二叉树中，BFS 可以实现一层一层的遍历。在图中同样如此。从源点出发，BFS 首先遍历到第一层结点，到源点的距离为 1，然后遍历到第二层结点，到源点的距离为 2…… 可以看到，用 BFS 的话，距离源点更近的点会先被遍历到，这样就能找到到某个点的最短路径了。</p>
@@ -355,8 +346,7 @@
 <p>树叶是操作数值，其他节点是操作符。</p>
 </blockquote>
 <p>后缀表达式转树：操作数压栈，操作符弹栈</p>
-<h2><span id="对应例题">对应例题</span></h2><h3><span id="先序遍历">先序遍历</span></h3><p>144 二叉树的先序遍历</p>
-<p>589 N 叉树的前序遍历</p>
+<h2 id="对应例题"><a href="#对应例题" class="headerlink" title="对应例题"></a>对应例题</h2><h3 id="先序遍历"><a href="#先序遍历" class="headerlink" title="先序遍历"></a>先序遍历</h3><p>144 二叉树的先序遍历<br>589 N 叉树的前序遍历</p>
 <blockquote>
 <p><strong>606 根据先序遍历结果构造字符串</strong></p>
 <ul>
@@ -364,28 +354,20 @@
 </ul>
 <p>例如，对于[1,2,3,4]，得到”(1(2(4”</p>
 <ul>
-<li>如果当前访问的节点的左子树为空且右子树不为空，就在字符串中添加一个”()”</li>
+<li>如果当前访问的节点的左子树为空且右子树不为空，就在字符串中添加一个”()”<br>这样得到, “(1(2(4()”</li>
+<li>同时，对于每轮递归中，在最终返回前，补全右括号”)”<br>这样得到 “(1(2(4())(3))”<br>由此，基本输出形式已经完成。剩下处理头尾两个多余括号。</li>
 </ul>
-<p>这样得到, “(1(2(4()”</p>
-<ul>
-<li>同时，对于每轮递归中，在最终返回前，补全右括号”)”</li>
-</ul>
-<p>这样我们得到 “(1(2(4())(3))”</p>
-<p>由此，基本输出形式已经完成。剩下处理头尾两个多余括号。</p>
 <p><strong>331 验证是否是合法先序遍历结果</strong></p>
 <ul>
-<li><p>二叉树看成有向图，一条有向边带来一个入度和一个出度，二叉树的总入度等于总出度，也等于边数。即，遍历到最后，总入度肯定等于总出度。</p>
-</li>
-<li><p>还没遍历到最后时，肯定不会出现 入度 &gt;= 出度 的时刻。</p>
-</li>
+<li>二叉树看成有向图，一条有向边带来一个入度和一个出度，二叉树的总入度等于总出度，也等于边数。即，遍历到最后，总入度肯定等于总出度。</li>
+<li>还没遍历到最后时，肯定不会出现 入度 &gt;= 出度 的时刻。<br>提供 1 个出度可以理解为提供一个挂载点，提供 1 个入度为消耗一个挂载点。入度 &gt;= 出度，意味着当前已遍历的节点，消耗的挂载点已经大于等于提供的挂载点。说明已经没法挂载接下来遍历的节点了，还有要挂的，但挂满了，是不合法的。</li>
 </ul>
-<p>提供 1 个出度可以理解为提供一个挂载点，提供 1 个入度为消耗一个挂载点。入度 &gt;= 出度，意味着当前已遍历的节点，消耗的挂载点已经大于等于提供的挂载点。说明已经没法挂载接下来遍历的节点了，还有要挂的，但挂满了，是不合法的。</p>
 </blockquote>
-<h3><span id="中序遍历">中序遍历</span></h3><p>94 基本的中序遍历<br>173 二叉搜索树迭代器</p>
+<h3 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h3><p>94 基本的中序遍历<br>173 二叉搜索树迭代器</p>
 <p>中序遍历一般会和BST（二叉搜索树）结合使用，这样访问的顺序是升序</p>
-<h3><span id="后序遍历">后序遍历</span></h3><p>145 基本的二叉树的后序遍历<br>590 N 叉树的后序遍历</p>
-<h3><span id="层序遍历">层序遍历</span></h3><p>102 二叉树的层序遍历<br>103 二叉树的锯齿形层序遍历（每层加flag或用双端队列）<br>107  二叉树的层序遍历 II（自底向上）<br>429 N 叉树的层序遍历</p>
-<h3><span id="树的基本操作">树的基本操作</span></h3><p>递归三步：确定递归函数的参数和返回值；确定终止条件（if(root == null) return;）；确定单层递归逻辑（对哪个节点进行什么递归操作）；</p>
+<h3 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h3><p>145 基本的二叉树的后序遍历<br>590 N 叉树的后序遍历</p>
+<h3 id="层序遍历"><a href="#层序遍历" class="headerlink" title="层序遍历"></a>层序遍历</h3><p>102 二叉树的层序遍历<br>103 二叉树的锯齿形层序遍历（每层加flag或用双端队列）<br>107  二叉树的层序遍历 II（自底向上）<br>429 N 叉树的层序遍历</p>
+<h3 id="树的基本操作"><a href="#树的基本操作" class="headerlink" title="树的基本操作"></a>树的基本操作</h3><p>递归三步：确定递归函数的参数和返回值；确定终止条件（if(root == null) return;）；确定单层递归逻辑（对哪个节点进行什么递归操作）；</p>
 <p>226 翻转二叉树（对于每个节点，交换其左右子树，递归其左右子树）<br>100 相同的树（对于每个节点，判断其值是否相等，递归其左右子树）<br>572 另一个树的子树(一个树是另一个树的子树，要么这两个树相等；要么这个树是左树的子树；要么是右树的子树。)</p>
 <blockquote>
 <p><strong>剑指 Offer 26 树的子结构</strong></p>
@@ -402,12 +384,10 @@
 </li>
 </ul>
 </blockquote>
-<p>101 对称二叉树/剑指 Offer 28（添加辅助函数，对于每个节点的左右孩子，判断其左的右和右的左，左的左和右的右是否相等，递归其左的右和右的左，左的左和右的右）<br>617 合并二叉树<br>965 单值二叉树<br>104 二叉树的最大深度/559 N 叉树的最大深度/111 二叉树的最小深度/110 平衡二叉树(一个二叉树每个节点的左右两个子树的高度差的绝对值不超过 1 )</p>
-<p>257 二叉树的所有路径</p>
-<h2><span id="二叉搜索树bst">二叉搜索树（BST）</span></h2><blockquote>
-<p>基础操作：创建，判断 BST 的合法性、增、删、查。删较复杂</p>
-<p>性质：中序遍历为升序/投射x轴后有序。</p>
-<p><img src="/img/tree/x.png"></p>
+<p>101 对称二叉树/剑指 Offer 28（添加辅助函数，对于每个节点的左右孩子，判断其左的右和右的左，左的左和右的右是否相等，递归其左的右和右的左，左的左和右的右）<br>617 合并二叉树<br>965 单值二叉树<br>104 二叉树的最大深度/559 N 叉树的最大深度/111 二叉树的最小深度/110 平衡二叉树(一个二叉树每个节点的左右两个子树的高度差的绝对值不超过 1 )<br>257 二叉树的所有路径</p>
+<h2 id="二叉搜索树（BST）"><a href="#二叉搜索树（BST）" class="headerlink" title="二叉搜索树（BST）"></a>二叉搜索树（BST）</h2><blockquote>
+<p>基础操作：创建，判断 BST 的合法性、增、删、查。删较复杂<br>性质：中序遍历为升序/投射x轴后有序。</p>
+<p><img src="/img/tree/x.png"/></p>
 </blockquote>
 <p><strong>创建</strong></p>
 <p>95 不同的二叉搜索树 II<br>108 将有序数组转换为二叉搜索树<br>109 有序链表转换二叉搜索树</p>
@@ -422,8 +402,7 @@
 <p>450.删除二叉搜索树中的节点</p>
 <p><strong>合并删除：实质是将被删节点的的左子树合并到右子树上（反之也可），导致树的高度发生变化，极其容易导致树结构的不平衡。</strong></p>
 <ul>
-<li><p>没找到删除的节点，遍历到空节点直接返回</p>
-</li>
+<li>没找到删除的节点，遍历到空节点直接返回</li>
 <li><p>找到删除的节点</p>
 <ul>
 <li>左右孩子都为空（叶子节点），直接删除节点， 返回NULL为根节点</li>
@@ -431,145 +410,121 @@
 <li>删除节点的右孩子为空，左孩子不为空，删除节点，左孩子补位，返回左孩子为根节点</li>
 <li>左右孩子节点都不为空，则将删除节点左孩子放到删除节点的右子树的最左面节点的左孩子上，返回删除节点右孩子。</li>
 </ul>
-<p><img src="/img/tree/450.删除二叉搜索树中的节点.gif"></p>
+<p><img src="/img/tree/450.删除二叉搜索树中的节点.gif"/></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//左右孩子节点都不为空的情况</span></span><br><span class="line">TreeNode cur = root.right;</span><br><span class="line"><span class="keyword">while</span>(cur.left != <span class="keyword">null</span>)&#123;</span><br><span class="line">    cur = cur.left;</span><br><span class="line">&#125;</span><br><span class="line">cur.left = root.left;</span><br><span class="line">root = root.right;</span><br><span class="line"><span class="keyword">return</span> root;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p><strong>复制删除：不删除这个结点，而是让这个节点被覆盖。没有改变树的深度，对于树的删除是更优。</strong></p>
-<p>后继节点：大于删除结点的最小结点（删除结点的右子树最左结点）</p>
-<p>前驱节点：小于删除结点的最大结点（删除结点的左子树最右结点）</p>
-<p>即中序遍历后被删节点的前驱和后继。</p>
+<p>后继节点：大于删除结点的最小结点（删除结点的右子树最左结点）<br>前驱节点：小于删除结点的最大结点（删除结点的左子树最右结点）<br>即中序遍历后被删节点的前驱和后继。</p>
 <ul>
-<li><p>没找到删除的节点，遍历到空节点直接返回</p>
-</li>
+<li>没找到删除的节点，遍历到空节点直接返回</li>
 <li><p>找到删除的节点</p>
 <ul>
-<li><p>左右孩子都为空（叶子节点），直接删除节点， 返回NULL为根节点</p>
-</li>
-<li><p>若删除结点只有一个子结点，用子结点替换删除结点</p>
-</li>
+<li>左右孩子都为空（叶子节点），直接删除节点， 返回NULL为根节点</li>
+<li>若删除结点只有一个子结点，用子结点替换删除结点</li>
 <li><p>若删除结点有两个子结点，用后继结点替换删除结点（前驱结点替代也可以，但习惯上拿后继结点来替代），再删除该后继节点。</p>
-<p><img src="/img/tree/copydele.png"></p>
+<p><img src="/img/tree/copydele.png"/></p>
 </li>
 </ul>
 </li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">successor</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    root = root.right;</span><br><span class="line">    <span class="keyword">while</span> (root.left != <span class="keyword">null</span>) root = root.left;</span><br><span class="line">    <span class="keyword">return</span> root.val;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//删除结点有两个子结点的情况</span></span><br><span class="line">root.val = successor(root); <span class="comment">// 把 root.val 改成 successor</span></span><br><span class="line">root.right = deleteNode(root.right, root.val); <span class="comment">// 删除 successor</span></span><br></pre></td></tr></table></figure>
 </blockquote>
-<h3><span id="平衡二叉树avl树">平衡二叉树（AVL树）</span></h3><p>一个二叉查找树，每个节点的左右两个子树的高度差的绝对值不超过 1。</p>
+<h3 id="平衡二叉树（AVL树）"><a href="#平衡二叉树（AVL树）" class="headerlink" title="平衡二叉树（AVL树）"></a>平衡二叉树（AVL树）</h3><p>一个二叉查找树，每个节点的左右两个子树的高度差的绝对值不超过 1。</p>
 <blockquote>
 <p><strong>平衡因子</strong>： 某个结点的左子树的高度减去右子树的高度得到的差值。</p>
 </blockquote>
-<h4><span id="why">why？</span></h4><p>对于一般的二叉搜索树，其期望高度（即为一棵平衡树时）为$log_2n$，其各操作的时间复杂度$O(log_2n)$</p>
+<h4 id="why？"><a href="#why？" class="headerlink" title="why？"></a>why？</h4><p>对于一般的二叉搜索树，其期望高度（即为一棵平衡树时）为$log_2n$，其各操作的时间复杂度$O(log_2n)$</p>
 <p>但是，在某些极端的情况下（如在插入的序列是有序的时），二叉搜索树将退化成近似链或链，此时，其操作的时间复杂度将退化成线性的，即$O(n)$。</p>
 <p>我们可以通过随机化建立二叉搜索树来尽量的避免这种情况，但是在进行了多次的操作之后，由于在删除时，我们总是选择将待删除节点的后继代替它本身，这样就会造成总是右边的节点数目减少，以至于树向左偏沉。这同时也会造成树的平衡性受到破坏，提高它的操作的时间复杂度。</p>
 <p>例如：按顺序将一组数据{1,2,3,4,5,6}分别插入到一颗空二叉查找树和AVL树中，插入的结果如下图：</p>
-<p><img src="/img/tree/avl1.png"></p>
-<p><img src="/img/tree/avl2.png"></p>
-<p>由图可知，同样的结点，由于插入方式不同导致树的高度也有所不同。</p>
-<p>特别是在带插入结点个数很多且正序的情况下，会导致二叉树的高度是$O(N)$.</p>
-<p>而AVL树就不会出现这种情况，树的高度始终是$O(logN)$。</p>
-<h4><span id="how">how？</span></h4><p>平衡化有两大基础操作： 左旋和右旋。这两种操作都是从<strong>失去平衡的最小子树根结点</strong>开始的(即离插入结点最近且平衡因子超过1的祖结点)。</p>
-<p><strong>左旋</strong>： y 结点变为该部分子树的根结点，同时 x 结点（连同其左子树 a）移动至 y 结点的左孩子。若 y 结点有左孩子 b，由于 x 结点需占用其位置，所以调整至 x 结点的右孩子处。</p>
-<p><strong>右旋</strong>：x 结点变为根结点，同时 y 结点连同其右子树 c 作为 x 结点的右子树，原 x 结点的右子树 b 变为 y 结点的左子树。</p>
-<p><img src="/img/tree/rotate.png"></p>
+<p><img src="/img/tree/avl1.png"/></p>
+<p><img src="/img/tree/avl2.png"/></p>
+<p>由图可知，同样的结点，由于插入方式不同导致树的高度也有所不同。<br>特别是在带插入结点个数很多且正序的情况下，会导致二叉树的高度是$O(N)$.<br>而AVL树就不会出现这种情况，树的高度始终是$O(logN)$。</p>
+<h4 id="how？"><a href="#how？" class="headerlink" title="how？"></a>how？</h4><p>平衡化有两大基础操作： 左旋和右旋。这两种操作都是从<strong>失去平衡的最小子树根结点</strong>开始的(即离插入结点最近且平衡因子超过1的祖结点)。</p>
+<p><strong>左旋</strong>： y 结点变为该部分子树的根结点，同时 x 结点（连同其左子树 a）移动至 y 结点的左孩子。若 y 结点有左孩子 b，由于 x 结点需占用其位置，所以调整至 x 结点的右孩子处。<br><strong>右旋</strong>：x 结点变为根结点，同时 y 结点连同其右子树 c 作为 x 结点的右子树，原 x 结点的右子树 b 变为 y 结点的左子树。</p>
+<p><img src="/img/tree/rotate.png"/></p>
 <p>需要平衡的四种情况：（y为失衡节点）</p>
 <ul>
 <li>LL，向左子树（L）的左孩子（L）中插入新节点后导致不平衡。处理方法：右旋</li>
 </ul>
-<p><img src="/img/tree/ll.png"></p>
+<p><img src="/img/tree/ll.png"/></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//右旋转</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">rightRotate</span><span class="params">(Node y)</span></span>&#123;</span><br><span class="line">	Node x = y.left;</span><br><span class="line">	Node t3 = x.right;</span><br><span class="line">	x.right = y;</span><br><span class="line">	y.left = t3;</span><br><span class="line">	<span class="comment">//更新height</span></span><br><span class="line">	y.height = Math.max(getHeight(y.left),getHeight(y.right))+<span class="number">1</span>;</span><br><span class="line">	x.height = Math.max(getHeight(x.left),getHeight(x.right))+<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>RR，向右子树（R）的右孩子（R）中插入新节点后导致不平衡。处理方法：左旋</li>
 </ul>
-<p><img src="/img/tree/rr.png"></p>
+<p><img src="/img/tree/rr.png"/></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//左旋转</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">leftRotate</span><span class="params">(Node y)</span></span>&#123;</span><br><span class="line">	Node x = y.right;</span><br><span class="line">	Node t2 = x.left;</span><br><span class="line">	x.left = y;</span><br><span class="line">	y.right = t2;</span><br><span class="line">	<span class="comment">//更新height</span></span><br><span class="line">	y.height = Math.max(getHeight(y.left),getHeight(y.right))+<span class="number">1</span>;</span><br><span class="line">	x.height = Math.max(getHeight(x.left),getHeight(x.right))+<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>LR，处理方法：先左旋（变为LL情况）再右旋</li>
 </ul>
-<p><img src="/img/tree/lr.png"></p>
+<p><img src="/img/tree/lr.png"/></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//左右情况旋转</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">LR</span><span class="params">(Node y)</span> </span>&#123;</span><br><span class="line">    y.left = leftRotate(y.left);</span><br><span class="line">    <span class="keyword">return</span> rightRotate(y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>RL，处理方法：先右旋（变为RR情况）再左旋</li>
 </ul>
-<p><img src="/img/tree/rl.png"></p>
+<p><img src="/img/tree/rl.png"/></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//右左情况旋转</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">RL</span><span class="params">(Node y)</span> </span>&#123;</span><br><span class="line">    y.right = rightRotate(y.right);</span><br><span class="line">    <span class="keyword">return</span> leftRotate(y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Node <span class="title">treeRebalance</span><span class="params">(Node root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> factor = root.balaceFactor;</span><br><span class="line">    <span class="keyword">if</span>(factor &gt; <span class="number">1</span> &amp;&amp; root.left.balaceFactor &gt; <span class="number">0</span>) <span class="keyword">return</span> rightRotate(root); <span class="comment">//LL</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(factor &gt; <span class="number">1</span> &amp;&amp; root.left.balaceFactor &lt;= <span class="number">0</span>) <span class="keyword">return</span> LR(root); <span class="comment">//LR</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(factor &lt; -<span class="number">1</span> &amp;&amp; root.right.balanceFactor &lt;= <span class="number">0</span>) <span class="keyword">return</span> leftRotate(root); <span class="comment">//RR</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(factor &lt; -<span class="number">1</span> &amp;&amp; root.right.balanceFactor &gt; <span class="number">0</span>) <span class="keyword">return</span> RL(root); <span class="comment">//RL</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> root; <span class="comment">// Nothing happened.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>非旋转方法：二叉排序树 -&gt; 中序遍历得升序数组 -&gt; AVL树（leetcode 108）</p>
 </blockquote>
-<h4><span id="可视化">可视化</span></h4><p><a target="_blank" rel="noopener" href="https://www.cs.usfca.edu/~galles/visualization/AVLtree.html">AVL Tree Visualzation (usfca.edu)</a></p>
-<h3><span id="红黑树rbt">红黑树（RBT）</span></h3><p>红黑树本身是一棵二叉查找树，在其基础上附加了两个要求：</p>
+<h4 id="可视化"><a href="#可视化" class="headerlink" title="可视化"></a>可视化</h4><p><a target="_blank" rel="noopener" href="https://www.cs.usfca.edu/~galles/visualization/AVLtree.html">AVL Tree Visualzation (usfca.edu)</a></p>
+<h3 id="红黑树（RBT）"><a href="#红黑树（RBT）" class="headerlink" title="红黑树（RBT）"></a>红黑树（RBT）</h3><p>红黑树本身是一棵二叉查找树，在其基础上附加了两个要求：</p>
 <ol>
 <li>树中的每个结点增加了一个用于存储颜色的标志域；</li>
 <li>树中没有一条路径比其他任何路径长出两倍，整棵树要接近于“平衡”的状态。</li>
 </ol>
 <blockquote>
-<p>这里所指的路径，指的是从任何一个结点开始，一直到其子孙的叶子结点的长度；</p>
-<p>接近于平衡：红黑树并不是平衡二叉树，只是由于对各路径的长度之差有限制，所以近似于平衡的状态。</p>
+<p>这里所指的路径，指的是从任何一个结点开始，一直到其子孙的叶子结点的长度；<br>接近于平衡：红黑树并不是平衡二叉树，只是由于对各路径的长度之差有限制，所以近似于平衡的状态。</p>
 </blockquote>
-<p>红黑树节点属性：父节点，子节点（两个，左子节点和右子节点），颜色，value</p>
-<p>树上的每个节点都遵循下面的规则:</p>
+<p>红黑树节点属性：父节点，子节点（两个，左子节点和右子节点），颜色，value<br>树上的每个节点都遵循下面的规则:</p>
 <ul>
-<li><p>每个节点都有红色或黑色</p>
-</li>
-<li><p>树的根始终是黑色的</p>
-</li>
-<li><p>每个叶子节点（NIL）是黑色。 [注意：这里叶子节点，是指为空(NIL或NULL)的叶子节点！]</p>
-</li>
-<li><p>没有两个相邻的红色节点（红色节点不能有红色父节点或红色子节点，并没有说不能出现连续的黑色节点）</p>
-</li>
-<li><p>从节点（包括根）到其任何后代NULL节点的每条路径都具有相同数量的黑色节点（即自平衡）</p>
-</li>
+<li>每个节点都有红色或黑色</li>
+<li>树的根始终是黑色的</li>
+<li>每个叶子节点（NIL）是黑色。 [注意：这里叶子节点，是指为空(NIL或NULL)的叶子节点！]</li>
+<li>没有两个相邻的红色节点（红色节点不能有红色父节点或红色子节点，并没有说不能出现连续的黑色节点）</li>
+<li>从节点（包括根）到其任何后代NULL节点的每条路径都具有相同数量的黑色节点（即自平衡）</li>
 </ul>
-<p><img src="/img/tree/rbt.png"></p>
+<p><img src="/img/tree/rbt.png"/></p>
 <blockquote>
 <p>注意：图中每个结点附带一个整形数值，表示的是此结点的黑高度（从该结点到其子孙结点中包含的黑结点数，用 bh(x) 表示（x 表示此结点）），nil 的黑高度为 0，颜色为黑色（在编程时为节省空间，所有的 nil 共用一个存储空间）。在计算黑高度时，也看做是一个黑结点。</p>
 </blockquote>
 <p>红黑树中每个结点都有各自的黑高度，整棵树也有自己的黑高度，即为根结点的黑高度，如图中的红黑树的黑高度为 3。对于一棵具有 n 个结点的红黑树，树的高度至多为：<code>2lg(n+1)</code>。</p>
-<h4><span id="why">why?</span></h4><p>对于高度为 <code>h</code> 的二叉查找树的运行时间为<code>O(h)</code>，而包含有 <code>n</code> 个结点的红黑树本身就是最高为 <code>lgn</code>（简化之后）的查找树<code>（h=lgn）</code>，所以红黑树的时间复杂度为<code>O(lgn)</code>。</p>
+<h4 id="why"><a href="#why" class="headerlink" title="why?"></a>why?</h4><p>对于高度为 <code>h</code> 的二叉查找树的运行时间为<code>O(h)</code>，而包含有 <code>n</code> 个结点的红黑树本身就是最高为 <code>lgn</code>（简化之后）的查找树<code>（h=lgn）</code>，所以红黑树的时间复杂度为<code>O(lgn)</code>。</p>
 <p>红黑树，虽隶属于二叉查找树，但二叉查找树的时间复杂度会受到其树深度的影响，而红黑树可以保证在最坏情况下的时间复杂度仍为<code>O(lgn)</code>。当数据量多到一定程度时，使用红黑树比二叉查找树的效率要高。</p>
 <p>相比于AVL树，牺牲了部分平衡性，以换取删除/插入操作时少量的旋转次数，整体来说，性能优于AVL树。</p>
 <blockquote>
 <p>红黑树利用了缓存，等价于2-3树。</p>
-<p><img src="/img/tree/2-3.jpg"></p>
-<p>其中2-节点 等价于普通平衡二叉树的节点，<strong>3-节点 本质上是非平衡性的缓存</strong>。</p>
-<p>要再平衡（rebalance）时，增删操作时，2-节点与3-节点的转化会吸收不平衡性,减少旋转次数,使再平衡尽快结束。在综合条件下,增删操作相当时,数据的随机性强时,3-节点的非平衡性缓冲效果越明显。因此红<br>黑树的综合性能更优。</p>
-<p><strong>本质上是用空间换时间。</strong></p>
+<p><img src="/img/tree/2-3.jpg"/></p>
+<p>其中2-节点 等价于普通平衡二叉树的节点，<strong>3-节点 本质上是非平衡性的缓存</strong>。<br>要再平衡（rebalance）时，增删操作时，2-节点与3-节点的转化会吸收不平衡性,减少旋转次数,使再平衡尽快结束。在综合条件下,增删操作相当时,数据的随机性强时,3-节点的非平衡性缓冲效果越明显。因此红<br>黑树的综合性能更优。<br><strong>本质上是用空间换时间。</strong></p>
 </blockquote>
 <p>查找方法同BST树。</p>
-<h4><span id="基本操作">基本操作</span></h4><p><strong>换色</strong>：即红变黑，黑变红，只需要让某个对象的属性改变</p>
-<p><strong>旋转</strong>，分为左旋和右旋，同二叉排序树转平衡二叉树的旋转原理完全相同。</p>
-<h4><span id="插入节点">插入节点</span></h4><blockquote>
-<p>红黑树在插入数据时，插入的位置肯定在底部，不可能在中间突然插入一个值。</p>
-<p>插入的数据一定是红色的（遵守红黑树规则5，如果有一条分支增加了一个黑色节点，就会打破该规则）</p>
-<p>插入之后，为了满足规则4，就需要用到换色与左旋、右旋的操作</p>
+<h4 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h4><p><strong>换色</strong>：即红变黑，黑变红，只需要让某个对象的属性改变<br><strong>旋转</strong>，分为左旋和右旋，同二叉排序树转平衡二叉树的旋转原理完全相同。</p>
+<h4 id="插入节点"><a href="#插入节点" class="headerlink" title="插入节点"></a>插入节点</h4><blockquote>
+<p>红黑树在插入数据时，插入的位置肯定在底部，不可能在中间突然插入一个值。<br>插入的数据一定是红色的（遵守红黑树规则5，如果有一条分支增加了一个黑色节点，就会打破该规则）<br>插入之后，为了满足规则4，就需要用到换色与左旋、右旋的操作</p>
 </blockquote>
 <p>当创建一个红黑树或者向已有红黑树中插入新的数据时，执行以下 3 步：</p>
 <ul>
-<li><p>按照二叉查找树插入结点的方法，找到新结点插入的位置；</p>
-</li>
-<li><p>将新插入的结点结点初始化，颜色设置为红色后插入到指定位置；</p>
-</li>
+<li>按照二叉查找树插入结点的方法，找到新结点插入的位置；</li>
+<li>将新插入的结点结点初始化，颜色设置为红色后插入到指定位置；</li>
 <li><p>调整二叉查找树，想办法通过旋转以及修改树中结点的颜色，使其重新成为红黑树。分为以下情况：</p>
 <ul>
-<li><p>插入位置为整棵树的树根。处理办法：将插入结点的颜色改为黑色。</p>
-</li>
-<li><p>插入位置的双亲结点的颜色为黑色。处理方法：此种情况不需要做任何工作</p>
-</li>
+<li>插入位置为整棵树的树根。处理办法：将插入结点的颜色改为黑色。</li>
+<li>插入位置的双亲结点的颜色为黑色。处理方法：此种情况不需要做任何工作</li>
 <li><p>插入位置的双亲结点的颜色为红色。处理方法：此时需要结合其<strong>祖父结点</strong>和祖父结点的另一个孩子结点（父结点的兄弟结点，此处称“<strong>叔叔结点</strong>”）的状态，分为 3 种情况：</p>
 <ul>
 <li>当前结点的父节点是红色，且叔叔结点也是红色：破坏了红黑树的第 4 条性质，解决方案为：将父结点颜色改为黑色；将叔叔结点颜色改为黑色；将祖父结点颜色改为红色；下一步将祖父结点认做当前结点，继续判断，处理结果如下图所示：</li>
 </ul>
-<p><img src="/img/tree/insert1.png"></p>
+<p><img src="/img/tree/insert1.png"/></p>
 <ul>
 <li>当前结点的父结点颜色为红色，叔叔结点颜色为黑色，且当前结点是父结点的右孩子。解决方案：将父结点作为当前结点做左旋操作，此种情况就转变成了第 3 种情况，处理过程转情况 3 </li>
 </ul>
-<p><img src="/img/tree/insert2.png"></p>
+<p><img src="/img/tree/insert2.png"/></p>
 <ul>
 <li>当前结点的父结点颜色为红色，叔叔结点颜色为黑色，且当前结点是父结点的左孩子。解决方案：将父结点颜色改为黑色，祖父结点颜色改为红色，从祖父结点处进行右旋处理。</li>
 </ul>
-<p><img src="/img/tree/insert3.png"></p>
+<p><img src="/img/tree/insert3.png"/></p>
 </li>
 </ul>
 </li>
@@ -577,10 +532,9 @@
 <blockquote>
 <p>祖宗根节点必黑，允许黑连黑，不许红连红；新增红，爸叔通红就变色，爸红叔黑就旋转，哪黑往哪旋</p>
 </blockquote>
-<h4><span id="删除节点">删除节点</span></h4><p>需要完成 2 步操作：</p>
+<h4 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h4><p>需要完成 2 步操作：</p>
 <ul>
-<li><p>将红黑树按照BST删除结点的方法删除指定结点；</p>
-<ul>
+<li>将红黑树按照BST删除结点的方法删除指定结点；<ul>
 <li>若该删除结点本身是叶子结点，则直接删除，返回NULL为根节点</li>
 <li>若只有一个孩子结点（左孩子或者右孩子），则让其孩子结点顶替该删除结点；</li>
 <li>若有两个孩子结点，则将删除节点左孩子放到删除节点的右子树的最左面节点的左孩子上，返回删除节点右孩子。</li>
@@ -589,21 +543,21 @@
 <li><p>判断删除该结点是否会破坏红黑树的性质。判断的依据是：如果删除结点的颜色为红色，则不会破坏；如果删除结点的颜色为黑色，则破坏性质5，调整删除结点后的树，使之重新成为红黑树。调整方案分 4 种情况讨论</p>
 <ul>
 <li><p>删除结点的兄弟结点颜色是红色，调整措施为：将兄弟结点颜色改为黑色，父亲结点改为红色，以父亲结点来进行左旋操作，同时更新删除结点的兄弟结点（左旋后兄弟结点发生了变化），如下图所示：</p>
-<p><img src="/img/tree/dele1.png"></p>
+<p><img src="/img/tree/dele1.png"/></p>
 </li>
 <li><p>删除结点的兄弟结点及其孩子全部都是黑色的，调整措施为：将删除结点的兄弟结点设为红色，同时设置删除结点的父结点标记为新的结点，继续判断；</p>
-<p><img src="/img/tree/dele2.png"></p>
+<p><img src="/img/tree/dele2.png"/></p>
 </li>
 <li><p>删除结点的兄弟结点是黑色，其左孩子是红色，右孩子是黑色。调整措施为：将兄弟结点设为红色，兄弟结点的左孩子结点设为黑色，以兄弟结点为准进行右旋操作，最终更新删除结点的兄弟结点；</p>
-<p><img src="/img/tree/dele3.png"></p>
+<p><img src="/img/tree/dele3.png"/></p>
 </li>
 <li><p>删除结点的兄弟结点是黑色，其右孩子是红色（左孩子不管是什么颜色），调整措施为：将删除结点的父结点的颜色赋值给其兄弟结点，然后再设置父结点颜色为黑色，兄弟结点的右孩子结点为黑色，根据其父结点做左旋操作，最后设置替换删除结点的结点为根结点；</p>
-<p><img src="/img/tree/dele4.png"></p>
+<p><img src="/img/tree/dele4.png"/></p>
 </li>
 </ul>
 </li>
 </ul>
-<h4><span id="应用">应用</span></h4><p>Java中TreeSet和TreeMap的实现，以及JDK 8以后，HashMap的设计</p>
+<h4 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h4><p>Java中TreeSet和TreeMap的实现，以及JDK 8以后，HashMap的设计</p>
 
     </div>
 
@@ -707,7 +661,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">基础：二叉树的遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text">DFS, 深度优先</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.1.1.</span> <span class="nav-text">先序遍历：根左右（文件目录结构）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.1.2.</span> <span class="nav-text">中序遍历：左根右</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.1.3.</span> <span class="nav-text">后续遍历：左右根</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.2.</span> <span class="nav-text">BFS, 广度优先（层次遍历）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">对应例题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.1.</span> <span class="nav-text">先序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.2.</span> <span class="nav-text">中序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.3.</span> <span class="nav-text">后序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.4.</span> <span class="nav-text">层序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.5.</span> <span class="nav-text">树的基本操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">二叉搜索树（BST）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.1.</span> <span class="nav-text">平衡二叉树（AVL树）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">3.1.1.</span> <span class="nav-text">why？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">3.1.2.</span> <span class="nav-text">how？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">3.1.3.</span> <span class="nav-text">可视化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.2.</span> <span class="nav-text">红黑树（RBT）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">3.2.1.</span> <span class="nav-text">why?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">3.2.2.</span> <span class="nav-text">基本操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">3.2.3.</span> <span class="nav-text">插入节点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">3.2.4.</span> <span class="nav-text">删除节点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">3.2.5.</span> <span class="nav-text">应用</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%EF%BC%9A%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86"><span class="nav-number">1.</span> <span class="nav-text">基础：二叉树的遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DFS-%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88"><span class="nav-number">1.1.</span> <span class="nav-text">DFS, 深度优先</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86%EF%BC%9A%E6%A0%B9%E5%B7%A6%E5%8F%B3%EF%BC%88%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%EF%BC%89"><span class="nav-number">1.1.1.</span> <span class="nav-text">先序遍历：根左右（文件目录结构）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86%EF%BC%9A%E5%B7%A6%E6%A0%B9%E5%8F%B3"><span class="nav-number">1.1.2.</span> <span class="nav-text">中序遍历：左根右</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8E%E7%BB%AD%E9%81%8D%E5%8E%86%EF%BC%9A%E5%B7%A6%E5%8F%B3%E6%A0%B9"><span class="nav-number">1.1.3.</span> <span class="nav-text">后续遍历：左右根</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BFS-%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%EF%BC%88%E5%B1%82%E6%AC%A1%E9%81%8D%E5%8E%86%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">BFS, 广度优先（层次遍历）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E5%BA%94%E4%BE%8B%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">对应例题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">2.1.</span> <span class="nav-text">先序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">2.2.</span> <span class="nav-text">中序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">2.3.</span> <span class="nav-text">后序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">2.4.</span> <span class="nav-text">层序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-number">2.5.</span> <span class="nav-text">树的基本操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%EF%BC%88BST%EF%BC%89"><span class="nav-number">3.</span> <span class="nav-text">二叉搜索树（BST）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%EF%BC%88AVL%E6%A0%91%EF%BC%89"><span class="nav-number">3.1.</span> <span class="nav-text">平衡二叉树（AVL树）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#why%EF%BC%9F"><span class="nav-number">3.1.1.</span> <span class="nav-text">why？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#how%EF%BC%9F"><span class="nav-number">3.1.2.</span> <span class="nav-text">how？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="nav-number">3.1.3.</span> <span class="nav-text">可视化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%A2%E9%BB%91%E6%A0%91%EF%BC%88RBT%EF%BC%89"><span class="nav-number">3.2.</span> <span class="nav-text">红黑树（RBT）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#why"><span class="nav-number">3.2.1.</span> <span class="nav-text">why?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-number">3.2.2.</span> <span class="nav-text">基本操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9"><span class="nav-number">3.2.3.</span> <span class="nav-text">插入节点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9"><span class="nav-number">3.2.4.</span> <span class="nav-text">删除节点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BA%94%E7%94%A8"><span class="nav-number">3.2.5.</span> <span class="nav-text">应用</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

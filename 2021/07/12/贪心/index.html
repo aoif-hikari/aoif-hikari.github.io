@@ -279,7 +279,7 @@
 <p>贪心算法在对问题求解时，总是做出在当前看来是最好的选择。</p>
 </blockquote>
 <span id="more"></span>
-<h2><span id="最小生成树问题minimum-spanning-treesmst">最小生成树问题(Minimum spanning trees,MST)</span></h2><blockquote>
+<h2 id="最小生成树问题-Minimum-spanning-trees-MST"><a href="#最小生成树问题-Minimum-spanning-trees-MST" class="headerlink" title="最小生成树问题(Minimum spanning trees,MST)"></a>最小生成树问题(Minimum spanning trees,MST)</h2><blockquote>
 <p><strong>生成树</strong>：指一个连通子图，它含有图中全部$n$个顶点，但只有足以构成一棵树的$n-1$条边。</p>
 <p><strong>最小生成树</strong>：在所有生成树中，所有边的权重和最小的生成树。</p>
 <p>假设有一个连通的无向的图$G=(V,E)$，及权值函数$w: E\rightarrow R$。考虑贪婪的方法找出$MST$。</p>
@@ -312,23 +312,23 @@
 <li><strong>kruaskal算法</strong>找到安全边的方法是，在所有连接森林中两颗不同树的边里面，找到权重最小的边$(u,v)$。</li>
 </ul>
 <div align="center">
-    <img src="/img/greedy/2.jpg">
+    <img src="/img/greedy/2.jpg"/>
 </div>
 
 <ul>
 <li><strong>Prim算法</strong>所具有的一个性质是集合$A$中边总是构成一棵树。这颗树从一个任意的根节点r开始，一直长大到覆盖$V$中的所有结点时为止。算法每一步在连接集合$A$和$A$之外的节点所有边中，选择一条轻边加入到$A$中。</li>
 </ul>
 <div align="center">
-    <img src="/img/greedy/3.jpg">
+    <img src="/img/greedy/3.jpg"/>
 </div>
 
 
 
-<h2><span id="最大独立集maximum-independent-set">最大独立集(Maximum independent set)</span></h2><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Greedy independent <span class="keyword">set</span></span><br><span class="line"><span class="keyword">input</span> Graph G=(V,E);</span><br><span class="line">output independent <span class="keyword">set</span> V<span class="string">&#x27; in G;</span></span><br><span class="line"><span class="string">begin</span></span><br><span class="line"><span class="string">    V&#x27;</span>:=ф</span><br><span class="line">    U:=V</span><br><span class="line">    <span class="keyword">while</span> U <span class="keyword">is</span> <span class="keyword">not</span> empty <span class="keyword">do</span></span><br><span class="line">    <span class="keyword">begin</span></span><br><span class="line">        x: vertex <span class="keyword">of</span> minimum degree <span class="keyword">in</span> graph induced <span class="keyword">by</span> U</span><br><span class="line">        V<span class="string">&#x27;:=V&#x27;</span>U(x);</span><br><span class="line">        eliminate x <span class="keyword">and</span> <span class="keyword">all</span> its neighbors <span class="keyword">from</span> U</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">return</span> V<span class="string">&#x27;</span></span><br><span class="line"><span class="string">end</span></span><br></pre></td></tr></table></figure>
+<h2 id="最大独立集-Maximum-independent-set"><a href="#最大独立集-Maximum-independent-set" class="headerlink" title="最大独立集(Maximum independent set)"></a>最大独立集(Maximum independent set)</h2><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Greedy independent <span class="keyword">set</span></span><br><span class="line"><span class="keyword">input</span> Graph G=(V,E);</span><br><span class="line">output independent <span class="keyword">set</span> V<span class="string">&#x27; in G;</span></span><br><span class="line"><span class="string">begin</span></span><br><span class="line"><span class="string">    V&#x27;</span>:=ф</span><br><span class="line">    U:=V</span><br><span class="line">    <span class="keyword">while</span> U <span class="keyword">is</span> <span class="keyword">not</span> empty <span class="keyword">do</span></span><br><span class="line">    <span class="keyword">begin</span></span><br><span class="line">        x: vertex <span class="keyword">of</span> minimum degree <span class="keyword">in</span> graph induced <span class="keyword">by</span> U</span><br><span class="line">        V<span class="string">&#x27;:=V&#x27;</span>U(x);</span><br><span class="line">        eliminate x <span class="keyword">and</span> <span class="keyword">all</span> its neighbors <span class="keyword">from</span> U</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">return</span> V<span class="string">&#x27;</span></span><br><span class="line"><span class="string">end</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>贪心算法找不到最大独立集的例子：</p>
 <div align="center">
-    <img src="/img/greedy/1.png">
+    <img src="/img/greedy/1.png"/>
 </div>
 
 <p>贪心结果：${a, e}$</p>
@@ -366,7 +366,7 @@ n(2\delta +1)\geq \sum_{i=1}^{m_{Gr}(G)}(d_i+1)^2\geq \frac{n^2}{m_{Gr}(G)}</scr
 n(2\delta +1)+m^*(G)\geq \sum_{i=1}^{m_{Gr}(G)}((d_i+1)^2+k_i^2)\geq \frac{n^2+m^*(G)^2}{m_{Gr}(G)}</script><p>即</p>
 <script type="math/tex; mode=display">
 m_{Gr}(G)\geq m^*(G)\frac{\frac{n}{m^*(G)}+\frac{m^*(G)}{n}}{2\delta +1+\frac{m^*(G)}{n}}</script><p>当$m^*(G)=n$时，不等式最小。把这一项代入，定理成立。</p>
-<h2><span id="背包问题greedy-knapsack">背包问题(Greedy knapsack)</span></h2><p>输入:集合$X$的$n$个元素，对于$X$中的每个$x_i$，价值$p_i$，重量$w_i$，正整数$b$；</p>
+<h2 id="背包问题-Greedy-knapsack"><a href="#背包问题-Greedy-knapsack" class="headerlink" title="背包问题(Greedy knapsack)"></a>背包问题(Greedy knapsack)</h2><p>输入:集合$X$的$n$个元素，对于$X$中的每个$x_i$，价值$p_i$，重量$w_i$，正整数$b$；</p>
 <p>输出:子集$Y\in X$使得$\sum_{x_i\in Y}w_i\leq b,max\ {\sum_{x_i\in Y}} p_i$</p>
 <p>按$\frac{p_i}{w_i}$的规则进行贪心选择。</p>
 <figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">begin</span></span><br><span class="line">    sort X <span class="keyword">in</span> non-increasing <span class="keyword">order</span> <span class="keyword">with</span> respect <span class="keyword">to</span> the ratio pi/wi;</span><br><span class="line">    Y:=<span class="keyword">empty</span> <span class="keyword">set</span>;</span><br><span class="line">    <span class="keyword">for</span> i=<span class="number">1</span> <span class="keyword">to</span> n <span class="keyword">do</span></span><br><span class="line">    <span class="keyword">if</span> b&gt;=wi <span class="keyword">then</span></span><br><span class="line">    <span class="keyword">begin</span></span><br><span class="line">        Y=YU<span class="comment">&#123;xi&#125;</span></span><br><span class="line">        b=b-wi</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    return Y</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
@@ -387,7 +387,7 @@ m_{Gr}(G)\geq m^*(G)\frac{\frac{n}{m^*(G)}+\frac{m^*(G)}{n}}{2\delta +1+\frac{m^
 <p>因为装入前j-1个物品后，容量还剩余$b-\overline{w_j}&lt; w_j$，贪心选择在装入$j-1$个物品后，无法装入$j$，其密度为$\frac{p_j}{w_j}$，那么如果剩余容量按最优的去放，$(b-\overline{w_j})\frac{p_j}{w_j}&lt;w_j\frac{p_j}{w_j}=p_j$</p>
 <p>如果$p_j&lt;\overline{p_j}$，那么$m^*(x)&lt;2\overline{p_j}\leq 2m_{Gr}(x)\leq 2m_H(x)$；</p>
 <p>如果$p_j&gt;\overline{p_j}$，那么$P_{max}&gt;\overline{P_j}$，有$m^*(x)\leq \overline{p_j}+p_j\leq 2{p_j}\leq 2P{max}\leq 2m_H(x)$</p>
-<h2><span id="the-stein-lovasz-theorem">The Stein-Lovasz Theorem</span></h2><blockquote>
+<h2 id="The-Stein-Lovasz-Theorem"><a href="#The-Stein-Lovasz-Theorem" class="headerlink" title="The Stein-Lovasz Theorem"></a>The Stein-Lovasz Theorem</h2><blockquote>
 <p>The stein-lovasz Theorem 理论最基本的模型是解决集合的元素覆盖问题。使用贪心算法，以获得一个使用最少列元完成最大行覆盖的方案。</p>
 <p>假设$(0,1)$矩阵$A$的大小是$N×M$ ,矩阵$A$的特征是每行至少具有$v$个$1$，每列最多$a$个$1$。假设现在从其中抽取一个子矩阵$C⊂A$,大小是$N×K$，使得子矩阵的每行元素都不是全零行，证明$K$存在一个上界，<br>$K≤\frac{N}{a}+(\frac{M}{v})lna≤(\frac{M}{v})(1+lna)$</p>
 <p>分析：能不能使用一种抽取列数尽可能少的方案，如果使用的列数目比给定的边界条件$\frac{N}{a}+(\frac{M}{v})lna$小，那么原来的问题就自然获得证明。</p>
@@ -411,13 +411,13 @@ K_i=\frac{k_{i+1}-k_i}{i}</script><script type="math/tex; mode=display">
 <script type="math/tex; mode=display">
 k_i\times v\leq (M-K_a-...-K_i)\times (i-1)\leq M\times (i-1) \frac{k_i}{i-1}\leq \frac{M}{v}</script><p>那么</p>
 <script type="math/tex; mode=display">
-\sum_{i=1}^{a}K_i\leq \frac{N}{a}+\frac{1}{a}\frac{M}{v}+\frac{1}{a-1}\frac{M}{v}+...+\frac{1}{2}\frac{M}{v}=\frac{N}{a}+\frac{M}{v}(\frac{1}{a}+\frac{1}{a-1}+...+\frac{1}{2})\leq \frac{N}{a}+\frac{M}{v}lna\leq \frac{M}{v}+\frac{M}{v}lna=\frac{M}{v}(1+lna)​</script><h3><span id="应用1完美哈希族函数perfect-hash-function">应用1：完美哈希族函数（Perfect Hash Function）</span></h3><blockquote>
+\sum_{i=1}^{a}K_i\leq \frac{N}{a}+\frac{1}{a}\frac{M}{v}+\frac{1}{a-1}\frac{M}{v}+...+\frac{1}{2}\frac{M}{v}=\frac{N}{a}+\frac{M}{v}(\frac{1}{a}+\frac{1}{a-1}+...+\frac{1}{2})\leq \frac{N}{a}+\frac{M}{v}lna\leq \frac{M}{v}+\frac{M}{v}lna=\frac{M}{v}(1+lna)​</script><h3 id="应用1：完美哈希族函数（Perfect-Hash-Function）"><a href="#应用1：完美哈希族函数（Perfect-Hash-Function）" class="headerlink" title="应用1：完美哈希族函数（Perfect Hash Function）"></a>应用1：完美哈希族函数（Perfect Hash Function）</h3><blockquote>
 <p>$(n,m,w)$-完美哈希族是一个函数F集合，使得$|Y|=n$， $|X|=m$,</p>
 <p>$f:Y\rightarrow X$对于$F$中的每一个$f$，对于任何$C\subseteq \{1,2,…,n\}$使得$|C|=w$，$C$是$Y$的$w$元子集合，并且至少存在一个$F$中的$f$使得$f|C$是一一对应的。如果$|F|=N$那么完美哈希族可以记作$PHF(N;n,m,w)$。</p>
 <p>求满足条件的函数数目的一个上界。</p>
 </blockquote>
 <div align="center">
-    <img src="/img/greedy/3.png">
+    <img src="/img/greedy/3.png"/>
 </div>
 
 <p>$|F|=N$，如上图，假设$w=3$，那么任选$Y$中的三列，有$\binom{n}{3}$种选择，要求其中存在一行使得三个函数值各不同，例如取$1，2，3$列，$f_{11}$，$f_{12}$，$f_{13}$互不相同就满足要求一一映射。</p>
@@ -436,7 +436,7 @@ N\leq \frac{m}{w!\binom{m}{w}}(1+log\binom{n}{w})</script><ul>
 <p>从$m^n$个函数中随机选择$N$个函数出来，构造一张随机的函数表，考虑坏概率，在函数表中没有一个函数可以使$w$存在一一映射关系，对于一个函数坏概率为存在一一对应关系的对立事件，取出$N$个函数，得</p>
 <script type="math/tex; mode=display">
 (1-\frac{\binom{m}{w}w!m^(n-w)}{m^n})^N\binom{n}{w}</script><p>使其小于1，那么一定存在完美哈希族。(两边取对数求解)</p>
-<h3><span id="应用2分割系统splitting-systems">应用2：分割系统(Splitting Systems)</span></h3><p><strong>在某个域中，$\alpha ^n=\beta$，$\alpha ,\beta$已知且为离散的，那么如何求解$n$？</strong></p>
+<h3 id="应用2：分割系统-Splitting-Systems"><a href="#应用2：分割系统-Splitting-Systems" class="headerlink" title="应用2：分割系统(Splitting Systems)"></a>应用2：分割系统(Splitting Systems)</h3><p><strong>在某个域中，$\alpha ^n=\beta$，$\alpha ,\beta$已知且为离散的，那么如何求解$n$？</strong></p>
 <p><strong>分割系统的提出就是为了解决离散对数问题。</strong></p>
 <blockquote>
 <p>假设$n,t$为偶数，$X$是点集合,$B$是超边集合。</p>
@@ -453,7 +453,7 @@ N\leq \frac{m}{w!\binom{m}{w}}(1+log\binom{n}{w})</script><ul>
 <p>确定$a$，对于固定的$\frac{n}{2}$元子集合可以分割多少$t$，$\binom{\frac{n}{2}}{\frac{t}{2}}\binom{\frac{n}{2}}{\frac{t}{2}}$，套用S-T定理，</p>
 <script type="math/tex; mode=display">
 N\leq \frac{\binom{n}{\frac{n}{2}}}{\binom{t}{\frac{t}{2}}\binom{n-t}{\frac{n-t}{2}}}(1+2ln\binom{\frac{n}{2}}{\frac{t}{2}})</script><div align="center">
-    <img src="/img/greedy/2.png">
+    <img src="/img/greedy/2.png"/>
 </div>
 
 
@@ -572,7 +572,7 @@ P(\cup A_i)\leq \sum P(A_i)=\binom{n}{t}P(A_i)<1</script><p>令其小于$1$，�
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">最小生成树问题(Minimum spanning trees,MST)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">最大独立集(Maximum independent set)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">背包问题(Greedy knapsack)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">The Stein-Lovasz Theorem</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">4.1.</span> <span class="nav-text">应用1：完美哈希族函数（Perfect Hash Function）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">4.2.</span> <span class="nav-text">应用2：分割系统(Splitting Systems)</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E9%97%AE%E9%A2%98-Minimum-spanning-trees-MST"><span class="nav-number">1.</span> <span class="nav-text">最小生成树问题(Minimum spanning trees,MST)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%A4%A7%E7%8B%AC%E7%AB%8B%E9%9B%86-Maximum-independent-set"><span class="nav-number">2.</span> <span class="nav-text">最大独立集(Maximum independent set)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98-Greedy-knapsack"><span class="nav-number">3.</span> <span class="nav-text">背包问题(Greedy knapsack)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Stein-Lovasz-Theorem"><span class="nav-number">4.</span> <span class="nav-text">The Stein-Lovasz Theorem</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A81%EF%BC%9A%E5%AE%8C%E7%BE%8E%E5%93%88%E5%B8%8C%E6%97%8F%E5%87%BD%E6%95%B0%EF%BC%88Perfect-Hash-Function%EF%BC%89"><span class="nav-number">4.1.</span> <span class="nav-text">应用1：完美哈希族函数（Perfect Hash Function）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A82%EF%BC%9A%E5%88%86%E5%89%B2%E7%B3%BB%E7%BB%9F-Splitting-Systems"><span class="nav-number">4.2.</span> <span class="nav-text">应用2：分割系统(Splitting Systems)</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

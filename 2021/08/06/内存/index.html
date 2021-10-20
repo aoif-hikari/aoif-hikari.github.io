@@ -287,12 +287,12 @@
 </li>
 </ul>
 <p>操作系统的内存管理有以下四大功能：</p>
-<h2><span id="操作系统负责内存空间的分配与回收">操作系统负责内存空间的分配与回收</span></h2><p>连续分配：为用户进程分配的必须是一个连续的内存空间。</p>
+<h2 id="操作系统负责内存空间的分配与回收"><a href="#操作系统负责内存空间的分配与回收" class="headerlink" title="操作系统负责内存空间的分配与回收"></a>操作系统负责内存空间的分配与回收</h2><p>连续分配：为用户进程分配的必须是一个连续的内存空间。</p>
 <p>非连续分配：为用户进程分配的可以是一些分散的内存空间。</p>
-<h3><span id="连续分配管理方式">连续分配管理方式</span></h3><blockquote>
+<h3 id="连续分配管理方式"><a href="#连续分配管理方式" class="headerlink" title="连续分配管理方式"></a>连续分配管理方式</h3><blockquote>
 <p>内部碎片，分配给某进程的内存区域中，有些部分没有用上。<br>外部碎片，是指内存中的某些空闲分区由于太小而难以利用。</p>
 </blockquote>
-<h4><span id="单一连续分配">单一连续分配</span></h4><p>内存被分为系统区和用户区。</p>
+<h4 id="单一连续分配"><a href="#单一连续分配" class="headerlink" title="单一连续分配"></a>单一连续分配</h4><p>内存被分为系统区和用户区。</p>
 <ul>
 <li><p>系统区通常位于内存的低地址部分，用于存放操作系统相关数据；</p>
 </li>
@@ -303,7 +303,7 @@
 <p>优点：实现简单；无外部碎片；可以采用覆盖技术扩充内存；不一定需要采取内存保护（eg：早期的PC 操作系统MS-DOS）。</p>
 <p>缺点：只能用于单用户、单任务的操作系统中；有内部碎片；存储器利用率极低。</p>
 </blockquote>
-<h4><span id="固定分区分配">固定分区分配</span></h4><p>为了能在内存中装入多道程序，且这些程序之间又不会相互干扰，于是将整个用户空间划分为若干个固定大小的分区，在每个分区中只装入一道作业。</p>
+<h4 id="固定分区分配"><a href="#固定分区分配" class="headerlink" title="固定分区分配"></a>固定分区分配</h4><p>为了能在内存中装入多道程序，且这些程序之间又不会相互干扰，于是将整个用户空间划分为若干个固定大小的分区，在每个分区中只装入一道作业。</p>
 <blockquote>
 <p>分区大小相等：缺乏灵活性，但是很适合用于用一台计算机控制多个相同对象的场合</p>
 <p>（比如：钢铁厂有n个相同的炼钢炉，就可把内存分为n个大小相等的区域存放n个炼钢炉控制程序）</p>
@@ -312,14 +312,14 @@
 </blockquote>
 <p>操作系统需要建立一个数据结构——分区说明表，来实现各个分区的分配与回收。每个表项对应一个分区，通常按分区大小排列。每个表项包括对应分区的大小、起始地址、状态（是否已分配）。</p>
 <p>当某用户程序要装入内存时，由操作系统内核程序根据用户程序大小检索该表，从中找到一个能满足大小的、未分配的分区，将之分配给该程序，然后修改状态为“已分配”。用数据结构的数组（或链表）即可表示这个表</p>
-<p><img src="/img/memory/biao.jpg" style="zoom: 67%;"></p>
+<p><img src="/img/memory/biao.jpg" style="zoom: 67%;" /></p>
 <blockquote>
 <p>优点：实现简单，无外部碎片。</p>
 <p>缺点：a. 当用户程序太大时，可能所有的分区都不能满足需求，此时不得不采用覆盖技术来解决，但这又会降低性能；b. 会产生内部碎片，内存利用率低。</p>
 </blockquote>
-<h4><span id="动态分区分配">动态分区分配</span></h4><p>又称为可变分区分配。不会预先划分内存分区，而是在进程装入内存时，根据进程的大小动态地建立分区，并使分区的大小正好适合进程的需要。因此系统分区的大小和数目是可变的。</p>
+<h4 id="动态分区分配"><a href="#动态分区分配" class="headerlink" title="动态分区分配"></a>动态分区分配</h4><p>又称为可变分区分配。不会预先划分内存分区，而是在进程装入内存时，根据进程的大小动态地建立分区，并使分区的大小正好适合进程的需要。因此系统分区的大小和数目是可变的。</p>
 <p>1 系统要用什么样的数据结构记录内存的使用情况？</p>
-<p><img src="/img/memory/dynamic.jpg" style="zoom: 67%;"></p>
+<p><img src="/img/memory/dynamic.jpg" style="zoom: 67%;" /></p>
 <p>2 当很多个空闲分区都能满足需求时，应该选择哪个分区进行分配？</p>
 <p>按照一定的动态分区分配算法，从空闲分区表（或空闲分区链）中选出一个分区分配给该作业。</p>
 <div class="table-container">
@@ -371,7 +371,7 @@
 <p>动态分区分配没有内部碎片，但是有外部碎片。</p>
 <p>如果内存中空闲空间的总和本来可以满足某进程的要求，但由于进程需要的是一整块连续的内存空间，因此这些“碎片”不能满足进程的需求。可以通过紧凑（拼凑，Compaction）技术来解决外部碎片。</p>
 </blockquote>
-<h3><span id="非连续分配管理方式">非连续分配管理方式</span></h3><h4><span id="基本分页存储管理">基本分页存储管理</span></h4><ul>
+<h3 id="非连续分配管理方式"><a href="#非连续分配管理方式" class="headerlink" title="非连续分配管理方式"></a>非连续分配管理方式</h3><h4 id="基本分页存储管理"><a href="#基本分页存储管理" class="headerlink" title="基本分页存储管理"></a>基本分页存储管理</h4><ul>
 <li><p>页框：将<strong>内存空间</strong>分为一个个大小相等的分区（比如：每个分区4KB），每个分区就是一个“页框”，每个页框有一个编号，即“页框号”，页框号从0开始。（页框=页帧=内存块=物理块=物理页面）</p>
 </li>
 <li><p>页/页面：将<strong>进程的逻辑地址空间</strong>也分为与页框大小相等的一个个部分，每个部分称为一个“页”或“页面” 。每个页面也有一个编号，即“页号”，页号也是从0开始。</p>
@@ -383,7 +383,7 @@
 <p>注：进程的最后一个页面可能没有一个页框那么大。也就是说，分页存储有可能产生内部碎片，因此页框不能太大，否则可能产生过大的内部碎片造成浪费</p>
 </blockquote>
 <p>为了能知道进程的每个页面在内存中存放的位置，操作系统要为每个进程建立一张<strong>页表</strong>。页表通常存在PCB（进程控制块）中。</p>
-<p><img src="/img/memory/yebiao.jpg" style="zoom: 50%;"></p>
+<p><img src="/img/memory/yebiao.jpg" style="zoom: 50%;" /></p>
 <p>页表记录进程页面和实际存放的内存块之间的映射关系。每个页表项的长度相同。</p>
 <ol>
 <li>每个页表项多大？占几个字节？</li>
@@ -405,7 +405,7 @@
 </ul>
 <p>根据局部性原理可知，很多时候，进程在一段时间内只需要访问某几个页面就可以正常运行了。因此没有必要让整个页表都常驻内存。</p>
 <p>可以在需要访问页面时才把页面调入内存（虚拟存储技术）。可以在页表项中增加一个标志位，用于表示该页面是否已经调入内存。若想访问的页面不在内存中，则产生缺页中断（内中断/异常），然后将目标页面从外存调入内存</p>
-<h4><span id="基本分段存储管理">基本分段存储管理</span></h4><blockquote>
+<h4 id="基本分段存储管理"><a href="#基本分段存储管理" class="headerlink" title="基本分段存储管理"></a>基本分段存储管理</h4><blockquote>
 <p>与“分页”最大的区别就是——离散分配时所分配地址空间的基本单位不同</p>
 </blockquote>
 <p>进程的地址空间：按照程序自身的逻辑关系划分为若干个段，每个段都有一个段名（在低级语言中，程序员使用段名来编程），每段从0开始编址。<br>内存分配规则：以段为单位进行分配，每个段在内存中占据连续空间，但各段之间可以不相邻。</p>
@@ -423,7 +423,7 @@
 <blockquote>
 <p>访问一个逻辑地址需要几次访存？<br>分页（单级页表）：第一次访存——查内存中的页表，第二次访存——访问目标内存单元。总共两次访存<br>分段：第一次访存——查内存中的段表，第二次访存——访问目标内存单元。总共两次访存<br>与分页系统类似，分段系统中也可以引入快表机构，将近期访问过的段表项放到快表中，这样可以少一次访问，加快地址变换速度。</p>
 </blockquote>
-<h4><span id="段页式存储管理">段页式存储管理</span></h4><h2><span id="操作系统需要提供某种技术从逻辑上对内存空间扩充">操作系统需要提供某种技术从逻辑上对内存空间扩充</span></h2><h3><span id="覆盖技术">覆盖技术</span></h3><blockquote>
+<h4 id="段页式存储管理"><a href="#段页式存储管理" class="headerlink" title="段页式存储管理"></a>段页式存储管理</h4><h2 id="操作系统需要提供某种技术从逻辑上对内存空间扩充"><a href="#操作系统需要提供某种技术从逻辑上对内存空间扩充" class="headerlink" title="操作系统需要提供某种技术从逻辑上对内存空间扩充"></a>操作系统需要提供某种技术从逻辑上对内存空间扩充</h2><h3 id="覆盖技术"><a href="#覆盖技术" class="headerlink" title="覆盖技术"></a>覆盖技术</h3><blockquote>
 <p>早期的计算机内存很小，经常会出现内存大小不够的情况。引入覆盖技术，解决“程序大小超过物理内存总和”的问题。</p>
 </blockquote>
 <p>覆盖技术的思想：将程序分为多个段（多个模块），常用的段常驻内存，不常用的段在需要时调入内存。内存中分为一个“固定区”和若干个“覆盖区”。</p>
@@ -436,7 +436,7 @@
 </li>
 </ul>
 <p>缺点：对用户不透明，增加了用户编程负担。覆盖技术只用于早期的操作系统中，现在已成为历史。</p>
-<h3><span id="交换技术">交换技术</span></h3><p>交换（对换）技术的设计思想：内存空间紧张时，系统将内存中某些进程暂时<strong>换出</strong>外存，把外存中某些已具备运行条件的进程<strong>换入</strong>内存（进程在内存与磁盘间动态调度）。</p>
+<h3 id="交换技术"><a href="#交换技术" class="headerlink" title="交换技术"></a>交换技术</h3><p>交换（对换）技术的设计思想：内存空间紧张时，系统将内存中某些进程暂时<strong>换出</strong>外存，把外存中某些已具备运行条件的进程<strong>换入</strong>内存（进程在内存与磁盘间动态调度）。</p>
 <p>中级调度（内存调度），就是要决定将哪个处于挂起状态的进程重新调入内存。</p>
 <p>暂时换出外存等待的进程状态为挂起状态（挂起态，suspend）。挂起态又可以进一步细分为就绪挂起、阻塞挂起。</p>
 <ul>
@@ -457,12 +457,12 @@
 <li>应该换出哪些进程？</li>
 </ul>
 <p>可优先换出阻塞进程；可换出优先级低的进程；为了防止优先级低的进程在被调入内存后很快又被换出，有的系统还会考虑进程在内存的驻留时间…（注意：PCB 会常驻内存，不会被换出外存）</p>
-<h3><span id="虚拟存储技术">虚拟存储技术</span></h3><h4><span id="传统存储管理方式的特征-缺点">传统存储管理方式的特征、缺点</span></h4><p><strong>一次性：</strong>作业必须一次性全部装入内存后才能开始运行。</p>
+<h3 id="虚拟存储技术"><a href="#虚拟存储技术" class="headerlink" title="虚拟存储技术"></a>虚拟存储技术</h3><h4 id="传统存储管理方式的特征、缺点"><a href="#传统存储管理方式的特征、缺点" class="headerlink" title="传统存储管理方式的特征、缺点"></a>传统存储管理方式的特征、缺点</h4><p><strong>一次性：</strong>作业必须一次性全部装入内存后才能开始运行。</p>
 <p>这会造成两个问题：①作业很大时，不能全部装入内存，导致大作业无法运行；②当大量作业要求运行时，由于内存无法容纳所有作业，因此只有少量作业能运行，导致多道程序并发度下降。</p>
 <p><strong>驻留性：</strong>一旦作业被装入内存，就会一直驻留在内存中，直至作业运行结束。事实上，在一个时间段内，只需要访问作业的一小部分数据即可正常运行，这就导致了内存中会驻留大量的、暂时用不到的数据，浪费了宝贵的内存资源。</p>
-<h4><span id="局部性原理">局部性原理</span></h4><p><strong>时间局部性</strong>：如果执行了程序中的某条指令，那么不久后这条指令很有可能再次执行；如果某个数据被访问过，不久之后该数据很可能再次被访问。（因为程序中存在大量的循环）</p>
+<h4 id="局部性原理"><a href="#局部性原理" class="headerlink" title="局部性原理"></a>局部性原理</h4><p><strong>时间局部性</strong>：如果执行了程序中的某条指令，那么不久后这条指令很有可能再次执行；如果某个数据被访问过，不久之后该数据很可能再次被访问。（因为程序中存在大量的循环）</p>
 <p><strong>空间局部性</strong>：一旦程序访问了某个存储单元，在不久之后，其附近的存储单元也很有可能被访问。（因为很多数据在内存中都是连续存放的，并且程序的指令也是顺序地在内存中存放的）</p>
-<p><img src="/img/memory/jubu.jpg" style="zoom: 50%;"></p>
+<p><img src="/img/memory/jubu.jpg" style="zoom: 50%;" /></p>
 <p><strong>高速缓冲技术</strong>的思想：将近期会频繁访问到的数据放到更高速的存储器中，暂时用不到的数据放在更低速存储器中。</p>
 <p>基于局部性原理，在程序装入时，可以将程序中很快会用到的部分装入内存，暂时用不到的部分留在外存，就可以让程序开始执行。在程序执行过程中，当所访问的信息不在内存时，由操作系统负责将所需信息从外存调入内存，然后继续执行程序（请求调页功能）。若内存空间不够，由操作系统负责将内存中暂时用不到的信息换出到外存（页面置换功能）。</p>
 <p><strong>在操作系统的管理下，在用户看来似乎有一个比实际内存大得多的内存，这就是虚拟内存。</strong></p>
@@ -470,7 +470,7 @@
 <p>虚拟内存有一下三个主要特征：<br>多次性：无需在作业运行时一次性全部装入内存，而是允许被分成多次调入内存。<br>对换性：在作业运行时无需一直常驻内存，而是允许在作业运行过程中，将作业换入、换出。<br>虚拟性：从逻辑上扩充了内存的容量，使用户看到的内存容量，远大于实际的容量。</p>
 </blockquote>
 <p>虚拟内存技术，允许一个作业分多次调入内存。如果采用连续分配方式，会不方便实现。因此，虚拟内存的实现需要建立在离散分配的内存管理方式基础上。</p>
-<h4><span id="实现">实现</span></h4><ul>
+<h4 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h4><ul>
 <li>请求分页存储管理</li>
 </ul>
 <p><strong>在程序执行过程中，当所访问的信息不在内存时，由操作系统负责将所需信息从外存调入内存，然后继续执行程序（请求调页）</strong></p>
@@ -520,10 +520,10 @@
 <li><p>请求段页式存储管理</p>
 </li>
 </ul>
-<h2><span id="操作系统需要提供地址转换功能">操作系统需要提供地址转换功能</span></h2><p>负责程序的逻辑地址与物理地址的转换。逻辑地址到物理地址的转换称地址重定位</p>
+<h2 id="操作系统需要提供地址转换功能"><a href="#操作系统需要提供地址转换功能" class="headerlink" title="操作系统需要提供地址转换功能"></a>操作系统需要提供地址转换功能</h2><p>负责程序的逻辑地址与物理地址的转换。逻辑地址到物理地址的转换称地址重定位</p>
 <p>数据的实际存放地址（物理地址），但在实际中生产机器指令的时候并不知道该进程的数据会被放到什么位置，所以编译生成的指令一般使用的是逻辑地址（相对地址）</p>
 <p>从写程序到程序运行：</p>
-<p><img src="/img/memory/run.jpg" style="zoom: 50%;"></p>
+<p><img src="/img/memory/run.jpg" style="zoom: 50%;" /></p>
 <ol>
 <li><strong>编译</strong>：由编译程序将用户源代码文件（<em> .c文件）编译成若干个目标模块（</em> .o文件）（编译就是把高级语言翻译成机器语言）</li>
 <li><strong>链接</strong>：由连接程序将编译后形成的一组目标模块，以及所需库函数链接在一起，形成一个完整的装入模块</li>
@@ -557,12 +557,12 @@
 </ul>
 <p>允许程序在内存中发生移动。</p>
 </blockquote>
-<h2><span id="操作系统需要提供内存保护功能">操作系统需要提供内存保护功能</span></h2><p>保证各个进程在各自的存储空间内运行，互不干扰。两种方法：</p>
-<p><img src="/img/memory/protect1.jpg" style="zoom: 50%;"></p>
-<h3><span id="设置上下限寄存器">设置上下限寄存器</span></h3><p>在CPU中设置一对上、下限寄存器，存放进程的上、下限地址。进程的指令要访问某个地址时，CPU检查是否越界。</p>
-<p><img src="/img/memory/protect2.jpg" style="zoom:50%;"></p>
-<h3><span id="利用重定位寄存器-界地址寄存器进行判断">利用重定位寄存器、界地址寄存器进行判断</span></h3><p>采用重定位寄存器（又称基址寄存器）和界地址寄存器（又称限长寄存器）进行越界检查。重定位寄存器中存放的是进程的起始物理地址。界地址寄存器中存放的是进程的最大逻辑地址。</p>
-<p><img src="/img/memory/protect3.jpg" style="zoom:50%;"></p>
+<h2 id="操作系统需要提供内存保护功能"><a href="#操作系统需要提供内存保护功能" class="headerlink" title="操作系统需要提供内存保护功能"></a>操作系统需要提供内存保护功能</h2><p>保证各个进程在各自的存储空间内运行，互不干扰。两种方法：</p>
+<p><img src="/img/memory/protect1.jpg" style="zoom: 50%;" /></p>
+<h3 id="设置上下限寄存器"><a href="#设置上下限寄存器" class="headerlink" title="设置上下限寄存器"></a>设置上下限寄存器</h3><p>在CPU中设置一对上、下限寄存器，存放进程的上、下限地址。进程的指令要访问某个地址时，CPU检查是否越界。</p>
+<p><img src="/img/memory/protect2.jpg" style="zoom:50%;" /></p>
+<h3 id="利用重定位寄存器、界地址寄存器进行判断"><a href="#利用重定位寄存器、界地址寄存器进行判断" class="headerlink" title="利用重定位寄存器、界地址寄存器进行判断"></a>利用重定位寄存器、界地址寄存器进行判断</h3><p>采用重定位寄存器（又称基址寄存器）和界地址寄存器（又称限长寄存器）进行越界检查。重定位寄存器中存放的是进程的起始物理地址。界地址寄存器中存放的是进程的最大逻辑地址。</p>
+<p><img src="/img/memory/protect3.jpg" style="zoom:50%;" /></p>
 
     </div>
 
@@ -666,7 +666,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">操作系统负责内存空间的分配与回收</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text">连续分配管理方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.1.1.</span> <span class="nav-text">单一连续分配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.1.2.</span> <span class="nav-text">固定分区分配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.1.3.</span> <span class="nav-text">动态分区分配</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.2.</span> <span class="nav-text">非连续分配管理方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.2.1.</span> <span class="nav-text">基本分页存储管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.2.2.</span> <span class="nav-text">基本分段存储管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.2.3.</span> <span class="nav-text">段页式存储管理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">操作系统需要提供某种技术从逻辑上对内存空间扩充</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.1.</span> <span class="nav-text">覆盖技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.2.</span> <span class="nav-text">交换技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.3.</span> <span class="nav-text">虚拟存储技术</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">2.3.1.</span> <span class="nav-text">传统存储管理方式的特征、缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">2.3.2.</span> <span class="nav-text">局部性原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">2.3.3.</span> <span class="nav-text">实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">操作系统需要提供地址转换功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">操作系统需要提供内存保护功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">4.1.</span> <span class="nav-text">设置上下限寄存器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">4.2.</span> <span class="nav-text">利用重定位寄存器、界地址寄存器进行判断</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%B4%9F%E8%B4%A3%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%E7%9A%84%E5%88%86%E9%85%8D%E4%B8%8E%E5%9B%9E%E6%94%B6"><span class="nav-number">1.</span> <span class="nav-text">操作系统负责内存空间的分配与回收</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9E%E7%BB%AD%E5%88%86%E9%85%8D%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">连续分配管理方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%95%E4%B8%80%E8%BF%9E%E7%BB%AD%E5%88%86%E9%85%8D"><span class="nav-number">1.1.1.</span> <span class="nav-text">单一连续分配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BA%E5%AE%9A%E5%88%86%E5%8C%BA%E5%88%86%E9%85%8D"><span class="nav-number">1.1.2.</span> <span class="nav-text">固定分区分配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E5%88%86%E5%8C%BA%E5%88%86%E9%85%8D"><span class="nav-number">1.1.3.</span> <span class="nav-text">动态分区分配</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%9E%E8%BF%9E%E7%BB%AD%E5%88%86%E9%85%8D%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F"><span class="nav-number">1.2.</span> <span class="nav-text">非连续分配管理方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%88%86%E9%A1%B5%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86"><span class="nav-number">1.2.1.</span> <span class="nav-text">基本分页存储管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%88%86%E6%AE%B5%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86"><span class="nav-number">1.2.2.</span> <span class="nav-text">基本分段存储管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AE%B5%E9%A1%B5%E5%BC%8F%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86"><span class="nav-number">1.2.3.</span> <span class="nav-text">段页式存储管理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%9C%80%E8%A6%81%E6%8F%90%E4%BE%9B%E6%9F%90%E7%A7%8D%E6%8A%80%E6%9C%AF%E4%BB%8E%E9%80%BB%E8%BE%91%E4%B8%8A%E5%AF%B9%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%E6%89%A9%E5%85%85"><span class="nav-number">2.</span> <span class="nav-text">操作系统需要提供某种技术从逻辑上对内存空间扩充</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A6%86%E7%9B%96%E6%8A%80%E6%9C%AF"><span class="nav-number">2.1.</span> <span class="nav-text">覆盖技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%A4%E6%8D%A2%E6%8A%80%E6%9C%AF"><span class="nav-number">2.2.</span> <span class="nav-text">交换技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E6%8A%80%E6%9C%AF"><span class="nav-number">2.3.</span> <span class="nav-text">虚拟存储技术</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%A0%E7%BB%9F%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F%E7%9A%84%E7%89%B9%E5%BE%81%E3%80%81%E7%BC%BA%E7%82%B9"><span class="nav-number">2.3.1.</span> <span class="nav-text">传统存储管理方式的特征、缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E6%80%A7%E5%8E%9F%E7%90%86"><span class="nav-number">2.3.2.</span> <span class="nav-text">局部性原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.3.3.</span> <span class="nav-text">实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%9C%80%E8%A6%81%E6%8F%90%E4%BE%9B%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2%E5%8A%9F%E8%83%BD"><span class="nav-number">3.</span> <span class="nav-text">操作系统需要提供地址转换功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%9C%80%E8%A6%81%E6%8F%90%E4%BE%9B%E5%86%85%E5%AD%98%E4%BF%9D%E6%8A%A4%E5%8A%9F%E8%83%BD"><span class="nav-number">4.</span> <span class="nav-text">操作系统需要提供内存保护功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%B8%8A%E4%B8%8B%E9%99%90%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-number">4.1.</span> <span class="nav-text">设置上下限寄存器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A9%E7%94%A8%E9%87%8D%E5%AE%9A%E4%BD%8D%E5%AF%84%E5%AD%98%E5%99%A8%E3%80%81%E7%95%8C%E5%9C%B0%E5%9D%80%E5%AF%84%E5%AD%98%E5%99%A8%E8%BF%9B%E8%A1%8C%E5%88%A4%E6%96%AD"><span class="nav-number">4.2.</span> <span class="nav-text">利用重定位寄存器、界地址寄存器进行判断</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

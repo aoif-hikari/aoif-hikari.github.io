@@ -23,7 +23,7 @@
 
   <meta name="description" content="LMCS( luma mapping with chroma scaling)是  VVC 中新增的技术，其位 于去方块滤波之前，也被称为环路重整形（in-loop reshaper），主要包括两个部分：亮度映射（LM）、依赖亮度的色度缩放（CS）。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VVC环路滤波&#x2F;LMCS">
+<meta property="og:title" content="VVC环路滤波 &#x2F; LMCS">
 <meta property="og:url" content="https://aoif-hikari.github.io/2021/09/01/lmcs/index.html">
 <meta property="og:site_name" content="aoif-hikari">
 <meta property="og:description" content="LMCS( luma mapping with chroma scaling)是  VVC 中新增的技术，其位 于去方块滤波之前，也被称为环路重整形（in-loop reshaper），主要包括两个部分：亮度映射（LM）、依赖亮度的色度缩放（CS）。">
@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://aoif-hikari.github.io/img/VVC/sdr.png">
 <meta property="og:image" content="https://aoif-hikari.github.io/img/VVC/codereshape.png">
 <meta property="article:published_time" content="2021-09-01T02:37:20.400Z">
-<meta property="article:modified_time" content="2021-09-01T03:02:42.798Z">
+<meta property="article:modified_time" content="2021-10-20T09:42:48.976Z">
 <meta property="article:author" content="fu">
 <meta property="article:tag" content="VVC">
 <meta name="twitter:card" content="summary">
@@ -57,7 +57,7 @@
   };
 </script>
 
-  <title>VVC环路滤波/LMCS | aoif-hikari</title>
+  <title>VVC环路滤波 / LMCS | aoif-hikari</title>
   
 
 
@@ -215,7 +215,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          VVC环路滤波/LMCS
+          VVC环路滤波 / LMCS
         </h1>
 
         <div class="post-meta">
@@ -224,13 +224,19 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-09-01 10:37:20 / Modified: 11:02:42" itemprop="dateCreated datePublished" datetime="2021-09-01T10:37:20+08:00">2021-09-01</time>
+              <time title="Created: 2021-09-01 10:37:20" itemprop="dateCreated datePublished" datetime="2021-09-01T10:37:20+08:00">2021-09-01</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-10-20 17:42:48" itemprop="dateModified" datetime="2021-10-20T17:42:48+08:00">2021-10-20</time>
+              </span>
 
           
-            <span id="/2021/09/01/lmcs/" class="post-meta-item leancloud_visitors" data-flag-title="VVC环路滤波/LMCS" title="Views">
+            <span id="/2021/09/01/lmcs/" class="post-meta-item leancloud_visitors" data-flag-title="VVC环路滤波 / LMCS" title="Views">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -277,21 +283,21 @@
 <p>LMCS( luma mapping with chroma scaling)是  VVC 中新增的技术，其位 于去方块滤波之前，也被称为环路重整形（in-loop reshaper），主要包括两个部分：亮度映射（LM）、依赖亮度的色度缩放（CS）。</p>
 </blockquote>
 <span id="more"></span>
-<p><img src="/img/VVC/lmcs.png"></p>
+<p><img src="/img/VVC/lmcs.png"/></p>
 <p>前向LM：将luma值从原始样本域映射到映射的样本域</p>
 <p>反向LM：将luma值从映射的样本域映射回原始样本域</p>
 <p>色度缩放：确定一个色度缩放因子并根据该缩放因子缩放色度残差值</p>
 <p>映射样本域（灰色阴影块）中的过程包括反量化、反变换、luma帧内预测以及重建。原始采样域的过程包括环内滤波器、DPB 中参考图像存取和帧间预测。</p>
-<h2><span id="lm">LM</span></h2><p>LM 在像素级进行操作，其基本思想是在给定位深下调整亮度值的取值范围， 这是因为一般的视频信号不会取完取值空间的所有值。例如  ITU-R BT.2100-2[5] 中对  10bit 视频的亮度窄范围取值为  64 到  940，更好地利用信号范围来提高编码效率。</p>
-<p><img src="/img/VVC/reshape.png" style="zoom:;"></p>
-<p><img src="/img/VVC/his.png" style="zoom:;"></p>
-<h3><span id="解码端lm步骤">解码端LM步骤</span></h3><p>1.对解码出的luma变换系数进行反量化反变换产生【映射域】的亮度残差$Y’_{res}$</p>
+<h2 id="LM"><a href="#LM" class="headerlink" title="LM"></a>LM</h2><p>LM 在像素级进行操作，其基本思想是在给定位深下调整亮度值的取值范围， 这是因为一般的视频信号不会取完取值空间的所有值。例如  ITU-R BT.2100-2[5] 中对  10bit 视频的亮度窄范围取值为  64 到  940，更好地利用信号范围来提高编码效率。</p>
+<p><img src="/img/VVC/reshape.png" style="zoom:;" /></p>
+<p><img src="/img/VVC/his.png" style="zoom:;" /></p>
+<h3 id="解码端LM步骤"><a href="#解码端LM步骤" class="headerlink" title="解码端LM步骤"></a>解码端LM步骤</h3><p>1.对解码出的luma变换系数进行反量化反变换产生【映射域】的亮度残差$Y’_{res}$</p>
 <p>2.在【映射域】重建luma样本，$Y’_{r} = Y’_{res} + Y’_{pred}$</p>
 <blockquote>
 <p>$Y’_{pred}$：帧内下，直接通过【映射域】的帧内预测得出；帧间下，首先使用解码缓冲区（DPB）的参考图像进行运动补偿后产生【原始样本域】的预测值$Y_{pred}$,然后进行前向LM产生映射域预测值$Y’_{pred}$。（帧间预测的运动补偿时在原始像素域进行，但是信号重建在映射域进行）</p>
 </blockquote>
 <p>3.$Y’_{r}$进行反向LM，然后环路滤波。</p>
-<h3><span id="fwdmap和invmap">FwdMap和InvMap</span></h3><p>亮度映射为可逆过程，且分段进行，通过一个前向映射函数<code>FwdMap</code>实现，其对应的逆向映射函数为<code>InvMap</code>。</p>
+<h3 id="FwdMap和InvMap"><a href="#FwdMap和InvMap" class="headerlink" title="FwdMap和InvMap"></a>FwdMap和InvMap</h3><p>亮度映射为可逆过程，且分段进行，通过一个前向映射函数<code>FwdMap</code>实现，其对应的逆向映射函数为<code>InvMap</code>。</p>
 <p><code>FwdMap</code>是一个分段线性模型，参数需要在码流中传输，而<code>InvMap</code>不需要在码流中传输，解码器可以通过<code>FwdMap</code>生成<code>InvMap</code>函数。</p>
 <p>分段线性模型使用两个输入点$InputPivot[]$和两个输出点$MappedPivot[]$来确定分段及该分段内的映射关系，用$SignalledCW[ i ]$表示第$i$段输出码字数量（编码端确定）。</p>
 <ul>
@@ -314,28 +320,28 @@
 </ul>
 <p>根据输入和输出分段即可确定当前段内的映射函数，即分段线性模型：</p>
 <p>$Y_{pred}^{\prime}=\frac{\mathrm{MappedPivot}[\mathrm{i}+1]-\mathrm{MappedPivot}[\mathrm{i}]}{\mathrm{InputPivot}[\mathrm{i}+1]-\mathrm{InputPivot}[\mathrm{i}]}\ast (Y_{pred}-\mathrm{InputPivot}[\mathrm{i}])+\mathrm{MappedPivot}[\mathrm{i}]$</p>
-<h3><span id="实现查找表lutlook-up-table与即时计算">实现：查找表（LUT，look-up-table）与即时计算</span></h3><h4><span id="lut">LUT</span></h4><p>计算并预先存储<code>FwdMapLUT</code>和<code>InvMapLUT</code>以在Tile级别使用，并且向前和反向映射可以简单地应用查表操作，实现为：</p>
-<p><img src="/img/VVC/LUT.png" style="zoom: 80%;"></p>
+<h3 id="实现：查找表（LUT，look-up-table）与即时计算"><a href="#实现：查找表（LUT，look-up-table）与即时计算" class="headerlink" title="实现：查找表（LUT，look-up-table）与即时计算"></a>实现：查找表（LUT，look-up-table）与即时计算</h3><h4 id="LUT"><a href="#LUT" class="headerlink" title="LUT"></a>LUT</h4><p>计算并预先存储<code>FwdMapLUT</code>和<code>InvMapLUT</code>以在Tile级别使用，并且向前和反向映射可以简单地应用查表操作，实现为：</p>
+<p><img src="/img/VVC/LUT.png" style="zoom: 80%;" /></p>
 <p>下图为查找表的例子：</p>
 <p>CE12-2.1a: dQP模型产生的固定映射函数</p>
 <p>CE12-2.1b: a piece-wise linear (PWL) model </p>
-<p><img src="/img/VVC/celut.png" style="zoom: 80%;"></p>
-<h4><span id="即时计算">即时计算</span></h4><p>$Y_{pred}^{\prime}=\frac{\mathrm{MappedPivot}[\mathrm{i}+1]-\mathrm{MappedPivot}[\mathrm{i}]}{\mathrm{InputPivot}[\mathrm{i}+1]-\mathrm{InputPivot}[\mathrm{i}]}\ast (Y_{pred}-\mathrm{InputPivot}[\mathrm{i}])+\mathrm{MappedPivot}[\mathrm{i}]$</p>
+<p><img src="/img/VVC/celut.png" style="zoom: 80%;" /></p>
+<h4 id="即时计算"><a href="#即时计算" class="headerlink" title="即时计算"></a>即时计算</h4><p>$Y_{pred}^{\prime}=\frac{\mathrm{MappedPivot}[\mathrm{i}+1]-\mathrm{MappedPivot}[\mathrm{i}]}{\mathrm{InputPivot}[\mathrm{i}+1]-\mathrm{InputPivot}[\mathrm{i}]}\ast (Y_{pred}-\mathrm{InputPivot}[\mathrm{i}])+\mathrm{MappedPivot}[\mathrm{i}]$</p>
 <p>正向：像素值要右移 6 位得到所属区间 i。然后检索该段的线性模型参数并即时应用以计算映射的亮度值。</p>
 <p>反向：在映射域每段大小不同，因此反变换时需要较为复杂的计算来得出某个值属于哪个区域，从而增加了解码复杂度。VVC采取了以下限制，假设映射域范围时0-1023，首先范围被分为32等份，如果$MappedPivot[ i ]$不是32的倍数，$MappedPivot[ i + 1 ]$和$MappedPivot[ i ]$不能属于同一个32等分段（也就是说$MappedPivot[ i + 1 ]$必须增加大于等于32的值）。这样可以使用右移5位来判断数值属于哪一段。<code>InvMap</code>函数也可以使用简单的右移5位来执行。</p>
-<h2><span id="cs">CS</span></h2><p>CS 在色度块级进行操作，在 VVC 中，色度的 QP 依赖于对应亮度的 QP， 当使用 LM 之后映射域的亮度值和原始信号域的亮度值可能不同，所以对应色度 QP 可能不是最优的，LMCS 中通过依赖亮度值的色度缩放解决这个问题。</p>
+<h2 id="CS"><a href="#CS" class="headerlink" title="CS"></a>CS</h2><p>CS 在色度块级进行操作，在 VVC 中，色度的 QP 依赖于对应亮度的 QP， 当使用 LM 之后映射域的亮度值和原始信号域的亮度值可能不同，所以对应色度 QP 可能不是最优的，LMCS 中通过依赖亮度值的色度缩放解决这个问题。</p>
 <p>如果当前块使用了亮度映射，且dual tree parittion 关闭，则需要额外的标志标明是否使用色度残差尺度伸缩。如果当前快没有使用亮度映射，或者dual tree parittion打开（即亮度、色度单独划分预测），色度残差尺度伸缩默认关闭。另外区域小于等于4的色度块不适用CS。</p>
-<h3><span id="解码端cs步骤">解码端CS步骤</span></h3><ol>
+<h3 id="解码端CS步骤"><a href="#解码端CS步骤" class="headerlink" title="解码端CS步骤"></a>解码端CS步骤</h3><ol>
 <li>对解码出的chroma残差进行反量化反变换产生【映射域】的色度残差$C_{resScale}$</li>
 <li>$C_{res} = C_{resScale} * invScaleC$</li>
 <li>$C_{r} = C_{res} + C_{pred}$</li>
 </ol>
 <p>各分段内部$invScaleC$值是相同的。为了减少流水线延迟，$invScaleC$取决于当前虚拟流水线数据单元VPDU左方上方的重建亮度平均值$avgY’$<br>1、利用亮度映射的$InvMap$函数，找出$avg Y′$ 所对应分段线性模型的段序号$Y_{idx}$<br>2、$invScaleC = cScaleInv[ Y_{idx} ]$,  $cScaleInv[] $为事先定义好的表$LUT$</p>
-<p><img src="/img/VVC/cs.png"></p>
+<p><img src="/img/VVC/cs.png"  /></p>
 <p>如果当前CU时inter 128x128, inter 128x64或inter 64x128，第一个VPDU的CS缩放因子被用于所有色度变换块。对于整个色度块，$invScaleC$是一个固定值。</p>
 <p>deltaCRS：cfg中指定，APS中传输</p>
 <p><code>LMCSOffset                   : 2      # chroma residual scaling offset</code></p>
-<h2><span id="syntax">syntax</span></h2><p>LMCS可以在序列级、图片级或slice级进行控制。相关参数在APS中编码， aps_parameter_type = 1（LMCS_APS）。每个视频序列可以使用4个LMCS APS，每帧只能使用一个LMCS APS。LMCS APS数据包含两部分：1）与最多16段的线性模型有关的语法；2）CS偏移值deltaCRS，如果视频信号不是单色的。</p>
+<h2 id="syntax"><a href="#syntax" class="headerlink" title="syntax"></a>syntax</h2><p>LMCS可以在序列级、图片级或slice级进行控制。相关参数在APS中编码， aps_parameter_type = 1（LMCS_APS）。每个视频序列可以使用4个LMCS APS，每帧只能使用一个LMCS APS。LMCS APS数据包含两部分：1）与最多16段的线性模型有关的语法；2）CS偏移值deltaCRS，如果视频信号不是单色的。</p>
 <p><code>lmcs_min_bin_idx</code>：指定  LMCS 中分段模型的最小分段的索引号，其值在 [0,15]之间。</p>
 <p><code>lmcs_delta_max_bin_idx</code>：该值等于 15-LmcsMaxBinIdx，其中  LmcsMaxBinIdx 是 LMCS 中分段模型的最大分段的索引号。</p>
 <p><code>aps_chroma_Present_Flag</code>：表示是否使用deltaCRS</p>
@@ -344,10 +350,10 @@
 <p><code>lmcs_delta_sign_cw_flag[ i ]</code>  ： 表 示   lmcsDeltaCW[ i ]  的 符 号 ， 如 果 lmcs_delta_sign_cw_flag[ i ]等于 0 则  lmcsDeltaCW[ i ]为正，否则为负。</p>
 <p><code>lmcs_delta_abs_crs</code>：表示  lmcsDeltaCrs 的绝对值。</p>
 <p><code>lmcs_delta_sign_crs_flag</code>：表示  lmcsDeltaCrs 的符号。</p>
-<p><img src="/img/VVC/lmcsaps.png"></p>
-<h2><span id="编码端参数估计">编码端参数估计</span></h2><p>两种算法，分别对应SDR/HDR HLG视频和HDR PQ视频。</p>
-<h3><span id="对sdrhdr-hlg视频">对SDR/HDR HLG视频</span></h3><p>针对PSNR进行优化，将更多的luma码字分配给空间平滑区域而不是非平滑区域</p>
-<p><img src="/img/VVC/sdr.png"></p>
+<p><img src="/img/VVC/lmcsaps.png"  /></p>
+<h2 id="编码端参数估计"><a href="#编码端参数估计" class="headerlink" title="编码端参数估计"></a>编码端参数估计</h2><p>两种算法，分别对应SDR/HDR HLG视频和HDR PQ视频。</p>
+<h3 id="对SDR-HDR-HLG视频"><a href="#对SDR-HDR-HLG视频" class="headerlink" title="对SDR/HDR HLG视频"></a>对SDR/HDR HLG视频</h3><p>针对PSNR进行优化，将更多的luma码字分配给空间平滑区域而不是非平滑区域</p>
+<p><img src="/img/VVC/sdr.png"  /></p>
 <p><strong>1. 初始化时为每个有效分段分配相同数量的码字。</strong></p>
 <ul>
 <li>对于不是10bit的信号归一化到10bit。</li>
@@ -390,7 +396,7 @@
 <ul>
 <li>色度自适应可以根据图像亮度和色度分量的相对平均空域方差决定是否使用色度残差的缩放。如果色度分量和亮度分量的平均空域方差比值超过预定义阈值则不进行色度残差的缩放。</li>
 </ul>
-<h3><span id="对hdr-pq视频">对HDR PQ视频</span></h3><p>优化加权PSNR（wPSNR），luma映射曲线是直接基于wPSNR中使用的权重得出</p>
+<h3 id="对HDR-PQ视频"><a href="#对HDR-PQ视频" class="headerlink" title="对HDR PQ视频"></a>对HDR PQ视频</h3><p>优化加权PSNR（wPSNR），luma映射曲线是直接基于wPSNR中使用的权重得出</p>
 <p>本示例针对HDR PQ内容提供了一个固定的映射函数，该函数通过luma dQP（ luma-dependent quantization adaptation method）建模。luma dQP基于平均亮度值为每个CTU生成局部delta QP（dQP）。</p>
 <p>$\mathrm{dQP}(avgY)=max(-3,min(6,0.015\ast avgY-1.5-6))$</p>
 <p>HDR PQ视频使用wPSNR作为客观评价指标，wPSNR通过wSSE(ܻY)计算得到，</p>
@@ -407,7 +413,7 @@
 <p>$binCW[15]=FwdLUT[1023]-FwdLUT[960]$</p>
 <p>$for\ i = 14;i &gt;=0; i—$</p>
 <p>$binCW[i]=FwdLUT[(i+1)\ast OrgCW]-FwdLUT[i\ast OrgCW]$</p>
-<h2><span id="代码">代码</span></h2><p><img src="/img/VVC/codereshape.png"></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><img src="/img/VVC/codereshape.png"  /></p>
 
     </div>
 
@@ -445,8 +451,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/09/01/alf/" rel="prev" title="VVC环路滤波/ALF">
-      <i class="fa fa-chevron-left"></i> VVC环路滤波/ALF
+    <a href="/2021/09/01/alf/" rel="prev" title="VVC环路滤波 / ALF">
+      <i class="fa fa-chevron-left"></i> VVC环路滤波 / ALF
     </a></div>
       <div class="post-nav-item">
     <a href="/2021/09/29/Optical%20Flow/" rel="next" title="Optical Flow / 光流">
@@ -511,7 +517,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">LM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text">解码端LM步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.2.</span> <span class="nav-text">FwdMap和InvMap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.3.</span> <span class="nav-text">实现：查找表（LUT，look-up-table）与即时计算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.1.</span> <span class="nav-text">LUT</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.3.2.</span> <span class="nav-text">即时计算</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">CS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.1.</span> <span class="nav-text">解码端CS步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">syntax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">编码端参数估计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">4.1.</span> <span class="nav-text">对SDR&#x2F;HDR HLG视频</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">4.2.</span> <span class="nav-text">对HDR PQ视频</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">5.</span> <span class="nav-text">代码</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#LM"><span class="nav-number">1.</span> <span class="nav-text">LM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E7%A0%81%E7%AB%AFLM%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.1.</span> <span class="nav-text">解码端LM步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FwdMap%E5%92%8CInvMap"><span class="nav-number">1.2.</span> <span class="nav-text">FwdMap和InvMap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%EF%BC%9A%E6%9F%A5%E6%89%BE%E8%A1%A8%EF%BC%88LUT%EF%BC%8Clook-up-table%EF%BC%89%E4%B8%8E%E5%8D%B3%E6%97%B6%E8%AE%A1%E7%AE%97"><span class="nav-number">1.3.</span> <span class="nav-text">实现：查找表（LUT，look-up-table）与即时计算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#LUT"><span class="nav-number">1.3.1.</span> <span class="nav-text">LUT</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%B3%E6%97%B6%E8%AE%A1%E7%AE%97"><span class="nav-number">1.3.2.</span> <span class="nav-text">即时计算</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CS"><span class="nav-number">2.</span> <span class="nav-text">CS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E7%A0%81%E7%AB%AFCS%E6%AD%A5%E9%AA%A4"><span class="nav-number">2.1.</span> <span class="nav-text">解码端CS步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#syntax"><span class="nav-number">3.</span> <span class="nav-text">syntax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E7%A0%81%E7%AB%AF%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1"><span class="nav-number">4.</span> <span class="nav-text">编码端参数估计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9SDR-HDR-HLG%E8%A7%86%E9%A2%91"><span class="nav-number">4.1.</span> <span class="nav-text">对SDR&#x2F;HDR HLG视频</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9HDR-PQ%E8%A7%86%E9%A2%91"><span class="nav-number">4.2.</span> <span class="nav-text">对HDR PQ视频</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">5.</span> <span class="nav-text">代码</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
