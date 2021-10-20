@@ -146,3 +146,7 @@ leancloud_counter_security:
   app_key: ap55DtNaG0HBItnGc7CmFY5y
   username: # Will be asked while deploying if is left blank
   password: # Recommmended to be left blank. Will be asked while deploying if is left blank
+
+#文章目录
+toc:
+  maxDepth: 3 #表示目录深度为3，即最多生成三级目录

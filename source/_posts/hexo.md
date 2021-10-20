@@ -46,10 +46,22 @@ title: hexo博客 //标题
 <!-- more -->
 ```
 
+- 目录
+
+安装`npm install hexo-toc --save`
+在博客根目录下的 `_config.yml` 中如下配置：
+
+```yaml
+#文章目录
+toc:
+    maxDepth: 3 #表示目录深度为3，即最多生成三级目录
+```
+在Markdown中需要显示文章目录的地方添加 
+`<!-- toc -->`
+
 - 公式
 
 卸载原有公式渲染引擎 `npm uninstall hexo-renderer-marked --save` 
-
 安装kramed `npm install hexo-renderer-kramed --save`
 
 > 问题1：kramed对`\,{,}`有转义，无法正常显示
