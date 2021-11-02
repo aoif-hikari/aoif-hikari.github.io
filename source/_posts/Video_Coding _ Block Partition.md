@@ -4,7 +4,7 @@ mathjax: true
 title: Video Coding / Block Partition
 ---
 
-> VVC: 更大的 CTU size，更灵活的 coding tree。
+> Block Partition，Video Coding 的基础。
 
 <!-- more -->
 
