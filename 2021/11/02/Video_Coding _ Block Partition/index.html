@@ -55,7 +55,7 @@
 <meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_1e24229de95020cec3c498ebcc1e599b.png">
 <meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_d65d11b52523ffb342ac742c2817fc76.png">
 <meta property="article:published_time" content="2021-11-02T02:35:14.435Z">
-<meta property="article:modified_time" content="2021-11-02T02:45:52.595Z">
+<meta property="article:modified_time" content="2021-11-02T07:33:01.541Z">
 <meta property="article:author" content="fu">
 <meta property="article:tag" content="video coding">
 <meta name="twitter:card" content="summary">
@@ -243,7 +243,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-11-02 10:35:14 / Modified: 10:45:52" itemprop="dateCreated datePublished" datetime="2021-11-02T10:35:14+08:00">2021-11-02</time>
+              <time title="Created: 2021-11-02 10:35:14 / Modified: 15:33:01" itemprop="dateCreated datePublished" datetime="2021-11-02T10:35:14+08:00">2021-11-02</time>
             </span>
 
           
@@ -272,7 +272,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
               </span>
-              <span>1.1k</span>
+              <span>1.2k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -366,7 +366,10 @@
 <p><img src="https://notes.sjtu.edu.cn/uploads/upload_dbc58176795f865ac53bbe7d309e8db3.png" alt=""></p>
 <blockquote>
 <p>划分中止条件(VVC)：划分到最小 CU 块；达到规定的最大二级树的划分深度<br><img src="https://notes.sjtu.edu.cn/uploads/upload_c27c39236f4094d5ceb16ad1f885899c.png" alt=""></p>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_669090be1545b2fa2a74777ea4d4a97b.png" alt=""><br>AV1 划分实质上是 QT+MTT，MTT最大划分到两次。（少于QT+MTT，MTT depth2，故划分上AV1灵活性不如 VVC）</p>
+</blockquote>
+<p>出现 BT/TT 的区域不能用 QT ，第二级树只包含 BT/TT，称为 QT-MTT 级联结构。AVS3 和其他标准也不允许。</p>
+<blockquote>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_669090be1545b2fa2a74777ea4d4a97b.png" alt=""><br>AV1 划分实质上是 QT+MTT，MTT最大划分到两次，实际上还略少一些，相比 VVC 在划分上没那么灵活。</p>
 </blockquote>
 <h4 id="split-syntax"><a href="#split-syntax" class="headerlink" title="split syntax"></a>split syntax</h4><p><img src="https://notes.sjtu.edu.cn/uploads/upload_4c52fcd16e09eddfd9add941a695a213.png" alt=""></p>
 <p>首先确定五种划分模式中哪些可用（复杂）</p>
@@ -555,6 +558,10 @@
       </div>
   </nav>
 </div>
+  <div class="sidebar-button motion-element"><i class="fa fa-comment"></i>
+    Chat
+  </a>
+  </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
         <a href="https://www.instagram.com/fall_ivan" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;fall_ivan" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
@@ -604,6 +611,10 @@
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
   </div>
+
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 
         
 <div class="busuanzi-count">
