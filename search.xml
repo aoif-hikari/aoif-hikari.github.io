@@ -927,10 +927,10 @@ f_{i}=\min \left(b_{i}, \max \left(-b_{i}, R\left(x+x_{i}, y+y_{i}\right)-R(x, y
 ]]></content>
   </entry>
   <entry>
-    <title>hexo配置</title>
+    <title>hexo 配置</title>
     <url>/2021/07/07/hexo/</url>
     <content><![CDATA[<blockquote>
-<p>hexo，快速、简洁且高效的博客框架</p>
+<p>hexo配置及踩坑</p>
 </blockquote>
 <span id="more"></span>
 <h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">hexo clean <span class="regexp">//</span> 清除缓存</span><br><span class="line">hexo g <span class="regexp">//</span> 创建静态文件</span><br><span class="line">hexo s <span class="regexp">//</span> 本地运行</span><br><span class="line">hexo d <span class="regexp">//</span> 部署到远程</span><br></pre></td></tr></table></figure>
@@ -975,8 +975,10 @@ f_{i}=\min \left(b_{i}, \max \left(-b_{i}, R\left(x+x_{i}, y+y_{i}\right)-R(x, y
 <li>master -负责展示静态网页</li>
 <li>hexo -备份本地hexo文件（默认分支）</li>
 </ul>
-<p>执行<code>hexo d</code>时，自动更新master分支（config文件中deploy配置）</p>
-<p>add, commit, pull更新hexo分支需要备份的源文件</p>
+<p>执行<code>hexo d</code>时，自动更新master分支（config文件中deploy配置）<br>add, commit, pull更新hexo分支需要备份的源文件</p>
+<blockquote>
+<p>踩坑：尝试把仓库设为 private，发现博客失效后又改回 public，网站仍然 404<br>原因：改回public后仓库的默认分支是hexo（备份本地文件的分支），需把默认分支改为master，待网站部署成功后再改回hexo</p>
+</blockquote>
 <h2 id="中文目录无法跳转"><a href="#中文目录无法跳转" class="headerlink" title="中文目录无法跳转"></a>中文目录无法跳转</h2><p><a href="https://github.com/theme-next/hexo-theme-next/pull/1540/files">fix: Chinese TOC cannot jump by jiangtj · Pull Request #1540 · theme-next/hexo-theme-next (github.com)</a></p>
 <p>解决方法：在 <code>themes/next/source/js/util.js</code> 中增加两行代码，删除两行代码。保存后<code>hexo clean &amp; hexo g &amp; hexo s</code> 即可解决。</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> navItems = <span class="built_in">document</span>.querySelectorAll(<span class="string">&#x27;.post-toc li&#x27;</span>);</span><br><span class="line">   <span class="keyword">const</span> sections = [...navItems].map(<span class="function"><span class="params">element</span> =&gt;</span> &#123;</span><br><span class="line">     <span class="keyword">var</span> link = element.querySelector(<span class="string">&#x27;a.nav-link&#x27;</span>);</span><br><span class="line">     <span class="comment">//增加该行</span></span><br><span class="line">     <span class="keyword">var</span> target = <span class="built_in">document</span>.getElementById(<span class="built_in">decodeURI</span>(link.getAttribute(<span class="string">&#x27;href&#x27;</span>)).replace(<span class="string">&#x27;#&#x27;</span>, <span class="string">&#x27;&#x27;</span>));</span><br><span class="line">     <span class="comment">// TOC item animation navigate.</span></span><br><span class="line">     link.addEventListener(<span class="string">&#x27;click&#x27;</span>, <span class="function"><span class="params">event</span> =&gt;</span> &#123;</span><br><span class="line">       event.preventDefault();</span><br><span class="line">       <span class="comment">//删除该行</span></span><br><span class="line">       <span class="comment">//var target = document.getElementById(event.currentTarget.getAttribute(&#x27;href&#x27;).replace(&#x27;#&#x27;, &#x27;&#x27;));</span></span><br><span class="line">       <span class="keyword">var</span> offset = target.getBoundingClientRect().top + <span class="built_in">window</span>.scrollY;</span><br><span class="line">       <span class="built_in">window</span>.anime(&#123;</span><br><span class="line">         <span class="attr">targets</span>  : <span class="built_in">document</span>.scrollingElement,</span><br><span class="line">         <span class="attr">duration</span> : <span class="number">500</span>,</span><br><span class="line">         <span class="attr">easing</span>   : <span class="string">&#x27;linear&#x27;</span>,</span><br><span class="line">         <span class="attr">scrollTop</span>: offset + <span class="number">10</span></span><br><span class="line">       &#125;);</span><br><span class="line">     &#125;);</span><br><span class="line">     <span class="comment">// 删除该行 </span></span><br><span class="line">     <span class="comment">//return document.getElementById(link.getAttribute(&#x27;href&#x27;).replace(&#x27;#&#x27;, &#x27;&#x27;));</span></span><br><span class="line">     <span class="comment">// 增加该行</span></span><br><span class="line">     <span class="keyword">return</span> target;</span><br><span class="line">   &#125;);</span><br></pre></td></tr></table></figure>
