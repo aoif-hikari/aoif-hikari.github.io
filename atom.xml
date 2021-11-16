@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>aoif-hikari</title>
+  <title>心臓から花が咲くように</title>
   
   
   <link href="https://aoif-hikari.github.io/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>https://aoif-hikari.github.io/</id>
   
   <author>
-    <name>fu</name>
+    <name>aoif</name>
     
   </author>
   
