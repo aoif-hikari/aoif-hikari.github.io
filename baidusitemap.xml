@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://aoif-hikari.github.io/2021/10/09/DVC/</loc>
+    <lastmod>2021-11-15</lastmod>
+  </url>
+  <url>
     <loc>https://aoif-hikari.github.io/2021/11/02/Video_Coding%20_%20Block%20Partition/</loc>
-    <lastmod>2021-11-02</lastmod>
+    <lastmod>2021-11-15</lastmod>
   </url>
   <url>
     <loc>https://aoif-hikari.github.io/2021/11/02/Video_Coding%20_%20HDR/</loc>
@@ -63,10 +67,6 @@
   <url>
     <loc>https://aoif-hikari.github.io/2021/10/13/Leetcode-%E4%BD%8D%E8%BF%90%E7%AE%97/</loc>
     <lastmod>2021-10-18</lastmod>
-  </url>
-  <url>
-    <loc>https://aoif-hikari.github.io/2021/10/09/DVC/</loc>
-    <lastmod>2021-10-09</lastmod>
   </url>
   <url>
     <loc>https://aoif-hikari.github.io/2021/09/29/Optical%20Flow/</loc>

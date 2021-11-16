@@ -3,7 +3,9 @@
   <entry>
     <title>End-to-end 视频编码框架： DVC 与 M-LVC</title>
     <url>/2021/10/09/DVC/</url>
-    <content><![CDATA[<p>DVC: An End-to-end Deep Video Compression Framework<br>M-LVC: Multiple Frames Prediction for Learned VideoCompression</p>
+    <content><![CDATA[<blockquote>
+<p>DVC: An End-to-end Deep Video Compression Framework<br>M-LVC: Multiple Frames Prediction for Learned VideoCompression</p>
+</blockquote>
 <span id="more"></span>
 <h2 id="DVC"><a href="#DVC" class="headerlink" title="DVC"></a>DVC</h2><ul>
 <li>单参考帧</li>
@@ -33,7 +35,7 @@ L\left(g_{a}, g_{s}, P_{q}\right)=-E\left[\log _{2} P_{q}\right]+\lambda E[d(z, 
 </blockquote>
 <h3 id="运动补偿"><a href="#运动补偿" class="headerlink" title="运动补偿"></a>运动补偿</h3><p><img src="https://notes.sjtu.edu.cn/uploads/upload_086a9f9ef0f9f6e3cd6cecfa2d486ba1.png" alt=""></p>
 <p><img src="https://notes.sjtu.edu.cn/uploads/upload_63e81feb7ecf9972b1a543962cddbb62.png" alt=""></p>
-<p>给定前一重建帧 $\hat x_{t-1}$ 和解码的运动矢量 $\hat v_t$，运动补偿网络将获得预测帧 $\bar x_t$。</p>
+<p>给定前一重建帧 $\hat x_{t-1}$ 和解码的运动矢量  $\hat v_t$，运动补偿网络将获得预测帧 $\bar x_t$。</p>
 <p>首先基于运动信息 $\hat v_t$ 将 $\hat x_{t-1}$ warp到当前帧，warp的帧有伪影，所以将warped frame 和 $\hat v_t$，$\hat x_{t-1}$共同作为运动补偿网络输入。</p>
 <p>该方法是像素级的运动补偿方法，避免了传统的基于块的运动补偿方法中的块效应，不需要环路滤波模块。</p>
 <h3 id="变换、量化"><a href="#变换、量化" class="headerlink" title="变换、量化"></a>变换、量化</h3><ul>
@@ -3340,6 +3342,25 @@ P(\cup A_i)\leq \sum P(A_i)=\binom{n}{t}P(A_i)<1</script><p>令其小于$1$，�
 <blockquote>
 <p><img src="https://notes.sjtu.edu.cn/uploads/upload_669090be1545b2fa2a74777ea4d4a97b.png" alt=""><br>AV1 划分实质上是 QT+MTT，MTT最大划分到两次，实际上还略少一些，相比 VVC 在划分上没那么灵活。</p>
 </blockquote>
+<h4 id="快速划分算法"><a href="#快速划分算法" class="headerlink" title="快速划分算法"></a>快速划分算法</h4><blockquote>
+<p>对于coding tree 的每个节点，编码端检查顺序：<code>no_split -&gt; HBT -&gt; VBT -&gt; HTT -&gt; VTT -&gt; QT</code><br>快速算法思想：剪枝</p>
+</blockquote>
+<ul>
+<li>基于上一个尝试的的RD结果决策要不要尝试下一种划分；</li>
+<li>基于上一层（patent node）的结果决定是否尝试下一种划分</li>
+<li>基于neighbor coding info and/or temporal layer</li>
+<li>多种划分方式得到同样的块（左上角） — 储存先前的结果<br>  <img src="https://notes.sjtu.edu.cn/uploads/upload_fb27c4cafee76c3784cefaf563e52e19.png" alt=""></li>
+</ul>
+<p>VTM3 CTC中会打开约10种快速算法，86% enc time saving and 1.09% RA loss.</p>
+<p>其他默认关闭的快速算法：</p>
+<ul>
+<li>基于梯度<ul>
+<li><img src="/uploads/upload_8ad166474b6ce6639adb33b8f5b23ab1.png" alt=""></li>
+<li>loss 相对较大</li>
+</ul>
+</li>
+<li>QT split skipping：如果当前最好预测模式是skip，不检查QT划分</li>
+</ul>
 <h4 id="split-syntax"><a href="#split-syntax" class="headerlink" title="split syntax"></a>split syntax</h4><p><img src="https://notes.sjtu.edu.cn/uploads/upload_4c52fcd16e09eddfd9add941a695a213.png" alt=""></p>
 <p>首先确定五种划分模式中哪些可用（复杂）</p>
 <ul>
@@ -3367,7 +3388,10 @@ P(\cup A_i)\leq \sum P(A_i)=\binom{n}{t}P(A_i)<1</script><p>令其小于$1$，�
 </li>
 <li><p>图像边界强制划分</p>
 <ul>
-<li><img src="https://notes.sjtu.edu.cn/uploads/upload_405f172caad834cfa865a71299a6babf.png" alt=""></li>
+<li><img src="https://notes.sjtu.edu.cn/uploads/upload_405f172caad834cfa865a71299a6babf.png" alt=""><ul>
+<li><img src="https://notes.sjtu.edu.cn/uploads/upload_bfb836a3749424257ae02c15db198133.png" alt="">     </li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -3388,6 +3412,7 @@ P(\cup A_i)\leq \sum P(A_i)=\binom{n}{t}P(A_i)<1</script><p>令其小于$1$，�
 <li>VPDU 以64x64节点为单位处理，不能出现跨多个节点的单元</li>
 </ul>
 <p><img src="https://notes.sjtu.edu.cn/uploads/upload_1e24229de95020cec3c498ebcc1e599b.png" alt=""></p>
+<p>Due to VPDU,  the valid CU size could be 128x128, 128x64 .64x128, 64x64 and below 64x64</p>
 <ul>
 <li>local dual tree 可能出现少于16个像素的chroma块<ul>
 <li>intra：luma继续划分，chroma停止划分</li>

@@ -44,18 +44,21 @@
 <meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_dbc58176795f865ac53bbe7d309e8db3.png">
 <meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_c27c39236f4094d5ceb16ad1f885899c.png">
 <meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_669090be1545b2fa2a74777ea4d4a97b.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_fb27c4cafee76c3784cefaf563e52e19.png">
+<meta property="og:image" content="https://aoif-hikari.github.io/uploads/upload_8ad166474b6ce6639adb33b8f5b23ab1.png">
 <meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_4c52fcd16e09eddfd9add941a695a213.png">
 <meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_916dd4abd01b5c9051bc66232e4e5b65.png">
 <meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_a816b57182398d42fac421e9e609880a.png">
 <meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_120e85edb6970ee8553f3d4cc867ed20.png">
 <meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_f7ae94d0d3fd5ba00d13625cbe952249.png">
 <meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_405f172caad834cfa865a71299a6babf.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_bfb836a3749424257ae02c15db198133.png">
 <meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_8688831be7a094f6ff08305c986aaad4.png">
 <meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_114d1fca4e5e70adfa7d3896dd72c509.png">
 <meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_1e24229de95020cec3c498ebcc1e599b.png">
 <meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_d65d11b52523ffb342ac742c2817fc76.png">
 <meta property="article:published_time" content="2021-11-02T02:35:14.435Z">
-<meta property="article:modified_time" content="2021-11-02T07:33:01.541Z">
+<meta property="article:modified_time" content="2021-11-15T07:47:29.019Z">
 <meta property="article:author" content="fu">
 <meta property="article:tag" content="video coding">
 <meta name="twitter:card" content="summary">
@@ -241,10 +244,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-11-02 10:35:14 / Modified: 15:33:01" itemprop="dateCreated datePublished" datetime="2021-11-02T10:35:14+08:00">2021-11-02</time>
+              <time title="Created: 2021-11-02 10:35:14" itemprop="dateCreated datePublished" datetime="2021-11-02T10:35:14+08:00">2021-11-02</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-11-15 15:47:29" itemprop="dateModified" datetime="2021-11-15T15:47:29+08:00">2021-11-15</time>
+              </span>
 
           
             <span id="/2021/11/02/Video_Coding%20_%20Block%20Partition/" class="post-meta-item leancloud_visitors" data-flag-title="Video Coding / Block Partition" title="Views">
@@ -272,7 +281,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
               </span>
-              <span>1.2k</span>
+              <span>1.6k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -371,6 +380,25 @@
 <blockquote>
 <p><img src="https://notes.sjtu.edu.cn/uploads/upload_669090be1545b2fa2a74777ea4d4a97b.png" alt=""><br>AV1 划分实质上是 QT+MTT，MTT最大划分到两次，实际上还略少一些，相比 VVC 在划分上没那么灵活。</p>
 </blockquote>
+<h4 id="快速划分算法"><a href="#快速划分算法" class="headerlink" title="快速划分算法"></a>快速划分算法</h4><blockquote>
+<p>对于coding tree 的每个节点，编码端检查顺序：<code>no_split -&gt; HBT -&gt; VBT -&gt; HTT -&gt; VTT -&gt; QT</code><br>快速算法思想：剪枝</p>
+</blockquote>
+<ul>
+<li>基于上一个尝试的的RD结果决策要不要尝试下一种划分；</li>
+<li>基于上一层（patent node）的结果决定是否尝试下一种划分</li>
+<li>基于neighbor coding info and/or temporal layer</li>
+<li>多种划分方式得到同样的块（左上角） — 储存先前的结果<br>  <img src="https://notes.sjtu.edu.cn/uploads/upload_fb27c4cafee76c3784cefaf563e52e19.png" alt=""></li>
+</ul>
+<p>VTM3 CTC中会打开约10种快速算法，86% enc time saving and 1.09% RA loss.</p>
+<p>其他默认关闭的快速算法：</p>
+<ul>
+<li>基于梯度<ul>
+<li><img src="/uploads/upload_8ad166474b6ce6639adb33b8f5b23ab1.png" alt=""></li>
+<li>loss 相对较大</li>
+</ul>
+</li>
+<li>QT split skipping：如果当前最好预测模式是skip，不检查QT划分</li>
+</ul>
 <h4 id="split-syntax"><a href="#split-syntax" class="headerlink" title="split syntax"></a>split syntax</h4><p><img src="https://notes.sjtu.edu.cn/uploads/upload_4c52fcd16e09eddfd9add941a695a213.png" alt=""></p>
 <p>首先确定五种划分模式中哪些可用（复杂）</p>
 <ul>
@@ -398,7 +426,10 @@
 </li>
 <li><p>图像边界强制划分</p>
 <ul>
-<li><img src="https://notes.sjtu.edu.cn/uploads/upload_405f172caad834cfa865a71299a6babf.png" alt=""></li>
+<li><img src="https://notes.sjtu.edu.cn/uploads/upload_405f172caad834cfa865a71299a6babf.png" alt=""><ul>
+<li><img src="https://notes.sjtu.edu.cn/uploads/upload_bfb836a3749424257ae02c15db198133.png" alt="">     </li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -419,6 +450,7 @@
 <li>VPDU 以64x64节点为单位处理，不能出现跨多个节点的单元</li>
 </ul>
 <p><img src="https://notes.sjtu.edu.cn/uploads/upload_1e24229de95020cec3c498ebcc1e599b.png" alt=""></p>
+<p>Due to VPDU,  the valid CU size could be 128x128, 128x64 .64x128, 64x64 and below 64x64</p>
 <ul>
 <li>local dual tree 可能出现少于16个像素的chroma块<ul>
 <li>intra：luma继续划分，chroma停止划分</li>
@@ -530,7 +562,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#H-264"><span class="nav-number">1.</span> <span class="nav-text">H.264</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#H-265"><span class="nav-number">2.</span> <span class="nav-text">H.265</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#H-266"><span class="nav-number">3.</span> <span class="nav-text">H.266</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CTU-%E2%80%94-gt-CU"><span class="nav-number">3.1.</span> <span class="nav-text">CTU —&gt; CU</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#QT-MTT"><span class="nav-number">3.1.1.</span> <span class="nav-text">QT-MTT</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#split-syntax"><span class="nav-number">3.1.2.</span> <span class="nav-text">split syntax</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CST-VVC-only"><span class="nav-number">3.1.3.</span> <span class="nav-text">CST(VVC only)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#other-improvements"><span class="nav-number">3.1.4.</span> <span class="nav-text">other improvements</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CU-%E2%80%94-gt-TU"><span class="nav-number">3.2.</span> <span class="nav-text">CU —&gt; TU</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ISP-a-k-a-SDIP-for-intra-CU"><span class="nav-number">3.2.1.</span> <span class="nav-text">ISP(a.k.a SDIP) for intra CU</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SBT-for-inter-CU"><span class="nav-number">3.2.2.</span> <span class="nav-text">SBT for inter CU</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A1%AC%E4%BB%B6%E5%AE%9E%E7%8E%B0%E8%80%83%E8%99%91"><span class="nav-number">3.3.</span> <span class="nav-text">硬件实现考虑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A2%9E%E7%9B%8A"><span class="nav-number">3.4.</span> <span class="nav-text">增益</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#H-264"><span class="nav-number">1.</span> <span class="nav-text">H.264</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#H-265"><span class="nav-number">2.</span> <span class="nav-text">H.265</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#H-266"><span class="nav-number">3.</span> <span class="nav-text">H.266</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CTU-%E2%80%94-gt-CU"><span class="nav-number">3.1.</span> <span class="nav-text">CTU —&gt; CU</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#QT-MTT"><span class="nav-number">3.1.1.</span> <span class="nav-text">QT-MTT</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E5%88%92%E5%88%86%E7%AE%97%E6%B3%95"><span class="nav-number">3.1.2.</span> <span class="nav-text">快速划分算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#split-syntax"><span class="nav-number">3.1.3.</span> <span class="nav-text">split syntax</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CST-VVC-only"><span class="nav-number">3.1.4.</span> <span class="nav-text">CST(VVC only)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#other-improvements"><span class="nav-number">3.1.5.</span> <span class="nav-text">other improvements</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CU-%E2%80%94-gt-TU"><span class="nav-number">3.2.</span> <span class="nav-text">CU —&gt; TU</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ISP-a-k-a-SDIP-for-intra-CU"><span class="nav-number">3.2.1.</span> <span class="nav-text">ISP(a.k.a SDIP) for intra CU</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SBT-for-inter-CU"><span class="nav-number">3.2.2.</span> <span class="nav-text">SBT for inter CU</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A1%AC%E4%BB%B6%E5%AE%9E%E7%8E%B0%E8%80%83%E8%99%91"><span class="nav-number">3.3.</span> <span class="nav-text">硬件实现考虑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A2%9E%E7%9B%8A"><span class="nav-number">3.4.</span> <span class="nav-text">增益</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -607,7 +639,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:13</span>
+    <span title="Reading time total">2:14</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
   </div>
