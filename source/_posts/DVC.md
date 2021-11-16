@@ -4,8 +4,8 @@ mathjax: true
 title: End-to-end 视频编码框架： DVC 与 M-LVC
 ---
 
-DVC: An End-to-end Deep Video Compression Framework
-M-LVC: Multiple Frames Prediction for Learned VideoCompression
+> DVC: An End-to-end Deep Video Compression Framework
+> M-LVC: Multiple Frames Prediction for Learned VideoCompression
 
 <!-- more -->
 
@@ -63,8 +63,7 @@ spynet
 
 ![](https://notes.sjtu.edu.cn/uploads/upload_63e81feb7ecf9972b1a543962cddbb62.png)
 
-
-给定前一重建帧 $\hat x_{t-1}$ 和解码的运动矢量 $\hat v_t$，运动补偿网络将获得预测帧 $\bar x_t$。
+给定前一重建帧 $\hat x_{t-1}$ 和解码的运动矢量  $\hat v_t$，运动补偿网络将获得预测帧 $\bar x_t$。
 
 首先基于运动信息 $\hat v_t$ 将 $\hat x_{t-1}$ warp到当前帧，warp的帧有伪影，所以将warped frame 和 $\hat v_t$，$\hat x_{t-1}$共同作为运动补偿网络输入。
 

@@ -52,6 +52,7 @@ title: Video Coding / Block Partition
 ### CTU --> CU
 
 #### QT-MTT
+
 - ![](https://notes.sjtu.edu.cn/uploads/upload_964095e103d8c1e6d2cd3d4e5a93e21d.png)
 - ![](https://notes.sjtu.edu.cn/uploads/upload_09d6c5324e183c5d382b71be2cfcde85.png)
 - ![](https://notes.sjtu.edu.cn/uploads/upload_6397fadb947252dccda1e38fcfcfe2da.png)
@@ -67,11 +68,31 @@ title: Video Coding / Block Partition
 
 
 
+出现 BT/TT 的区域不能用 QT ，第二级树只包含 BT/TT，称为 QT-MTT 级联结构。AVS3 和其他标准也不允许。
+
 
 
 > ![](https://notes.sjtu.edu.cn/uploads/upload_669090be1545b2fa2a74777ea4d4a97b.png)
-> AV1 划分实质上是 QT+MTT，MTT最大划分到两次。（少于QT+MTT，MTT depth2，故划分上AV1灵活性不如 VVC）
+> AV1 划分实质上是 QT+MTT，MTT最大划分到两次，实际上还略少一些，相比 VVC 在划分上没那么灵活。
 
+#### 快速划分算法
+
+> 对于coding tree 的每个节点，编码端检查顺序：`no_split -> HBT -> VBT -> HTT -> VTT -> QT`
+> 快速算法思想：剪枝
+
+- 基于上一个尝试的的RD结果决策要不要尝试下一种划分；
+- 基于上一层（patent node）的结果决定是否尝试下一种划分
+- 基于neighbor coding info and/or temporal layer
+- 多种划分方式得到同样的块（左上角） -- 储存先前的结果
+    ![](https://notes.sjtu.edu.cn/uploads/upload_fb27c4cafee76c3784cefaf563e52e19.png)
+
+VTM3 CTC中会打开约10种快速算法，86% enc time saving and 1.09% RA loss.
+
+其他默认关闭的快速算法：
+- 基于梯度
+    - ![](/uploads/upload_8ad166474b6ce6639adb33b8f5b23ab1.png)
+    - loss 相对较大
+- QT split skipping：如果当前最好预测模式是skip，不检查QT划分
 
 #### split syntax
 
@@ -102,6 +123,7 @@ title: Video Coding / Block Partition
 
 - 图像边界强制划分
     - ![](https://notes.sjtu.edu.cn/uploads/upload_405f172caad834cfa865a71299a6babf.png)
+    	- ![](https://notes.sjtu.edu.cn/uploads/upload_bfb836a3749424257ae02c15db198133.png)	 
 
 
 ### CU --> TU
@@ -126,6 +148,8 @@ title: Video Coding / Block Partition
 - VPDU 以64x64节点为单位处理，不能出现跨多个节点的单元
 
 ![](https://notes.sjtu.edu.cn/uploads/upload_1e24229de95020cec3c498ebcc1e599b.png)
+
+Due to VPDU,  the valid CU size could be 128x128, 128x64 .64x128, 64x64 and below 64x64
 
 - local dual tree 可能出现少于16个像素的chroma块
     - intra：luma继续划分，chroma停止划分

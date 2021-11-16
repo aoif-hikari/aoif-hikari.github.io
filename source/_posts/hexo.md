@@ -2,10 +2,10 @@
 date: 2021/7/7 19:46:00
 tags: hexo 
 mathjax: true 
-title: hexo配置 
+title: hexo 配置 
 ---
 
-> hexo，快速、简洁且高效的博客框架
+> hexo配置及踩坑
 
 <!--more-->
 
@@ -102,8 +102,10 @@ title: hexo博客 //标题
 - hexo -备份本地hexo文件（默认分支）
 
 执行`hexo d`时，自动更新master分支（config文件中deploy配置）
-
 add, commit, pull更新hexo分支需要备份的源文件
+
+> 踩坑：尝试把仓库设为 private，发现博客失效后又改回 public，网站仍然 404
+> 原因：改回public后仓库的默认分支是hexo（备份本地文件的分支），需把默认分支改为master，待网站部署成功后再改回hexo
 
 ## 中文目录无法跳转
 
