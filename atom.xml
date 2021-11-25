@@ -359,15 +359,15 @@
   </entry>
   
   <entry>
-    <title>VVC环路滤波 / Deblocking Filter</title>
-    <link href="https://aoif-hikari.github.io/2021/11/25/dbk/"/>
-    <id>https://aoif-hikari.github.io/2021/11/25/dbk/</id>
+    <title>VVC环路滤波 / ALF</title>
+    <link href="https://aoif-hikari.github.io/2021/11/25/alf/"/>
+    <id>https://aoif-hikari.github.io/2021/11/25/alf/</id>
     <published>2021-11-25T02:59:27.321Z</published>
     <updated>2021-11-25T02:59:27.321Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;VVC环路滤波：去块滤波器&lt;/p&gt;
+&lt;p&gt;ALF, VVC中增益最大的单项工具。&lt;/p&gt;
 &lt;/blockquote&gt;</summary>
     
     
@@ -378,15 +378,15 @@
   </entry>
   
   <entry>
-    <title>VVC环路滤波 / ALF</title>
-    <link href="https://aoif-hikari.github.io/2021/11/25/alf/"/>
-    <id>https://aoif-hikari.github.io/2021/11/25/alf/</id>
+    <title>VVC环路滤波 / Deblocking Filter</title>
+    <link href="https://aoif-hikari.github.io/2021/11/25/dbk/"/>
+    <id>https://aoif-hikari.github.io/2021/11/25/dbk/</id>
     <published>2021-11-25T02:59:27.321Z</published>
     <updated>2021-11-25T02:59:27.321Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;ALF, VVC中增益最大的单项工具。&lt;/p&gt;
+&lt;p&gt;VVC环路滤波：去块滤波器&lt;/p&gt;
 &lt;/blockquote&gt;</summary>
     
     
