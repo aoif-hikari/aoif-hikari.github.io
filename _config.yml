@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: aoif-hikari
+title: 心臓から花が咲くように
 subtitle: ''
 description: ''
 keywords:
-author: fu
+author: aoif.hikari
 language: en
 timezone: Asia/Shanghai
 
@@ -103,6 +103,15 @@ feed:
   type: atom
   path: atom.xml
   limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  icon: icon.png
+  autodiscovery: true
+  template:
+  
 ## Themes: https://hexo.io/themes/
 theme: next
 # 搜索
