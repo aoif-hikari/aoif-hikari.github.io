@@ -2,10 +2,8 @@
 <search>
   <entry>
     <title>End-to-end 视频编码框架： DVC 与 M-LVC</title>
-    <url>/2021/10/09/DVC/</url>
-    <content><![CDATA[<blockquote>
-<p>DVC: An End-to-end Deep Video Compression Framework<br>M-LVC: Multiple Frames Prediction for Learned VideoCompression</p>
-</blockquote>
+    <url>/2021/11/25/DVC/</url>
+    <content><![CDATA[<p>DVC: An End-to-end Deep Video Compression Framework<br>M-LVC: Multiple Frames Prediction for Learned VideoCompression</p>
 <span id="more"></span>
 <h2 id="DVC"><a href="#DVC" class="headerlink" title="DVC"></a>DVC</h2><ul>
 <li>单参考帧</li>
@@ -35,7 +33,7 @@ L\left(g_{a}, g_{s}, P_{q}\right)=-E\left[\log _{2} P_{q}\right]+\lambda E[d(z, 
 </blockquote>
 <h3 id="运动补偿"><a href="#运动补偿" class="headerlink" title="运动补偿"></a>运动补偿</h3><p><img src="https://notes.sjtu.edu.cn/uploads/upload_086a9f9ef0f9f6e3cd6cecfa2d486ba1.png" alt=""></p>
 <p><img src="https://notes.sjtu.edu.cn/uploads/upload_63e81feb7ecf9972b1a543962cddbb62.png" alt=""></p>
-<p>给定前一重建帧 $\hat x_{t-1}$ 和解码的运动矢量  $\hat v_t$，运动补偿网络将获得预测帧 $\bar x_t$。</p>
+<p>给定前一重建帧 $\hat x_{t-1}$ 和解码的运动矢量 $\hat v_t$，运动补偿网络将获得预测帧 $\bar x_t$。</p>
 <p>首先基于运动信息 $\hat v_t$ 将 $\hat x_{t-1}$ warp到当前帧，warp的帧有伪影，所以将warped frame 和 $\hat v_t$，$\hat x_{t-1}$共同作为运动补偿网络输入。</p>
 <p>该方法是像素级的运动补偿方法，避免了传统的基于块的运动补偿方法中的块效应，不需要环路滤波模块。</p>
 <h3 id="变换、量化"><a href="#变换、量化" class="headerlink" title="变换、量化"></a>变换、量化</h3><ul>
@@ -121,7 +119,7 @@ J=D+\lambda R=d\left(x_{t}, \hat{x}_{t}\right)+\lambda\left(R_{m v d}+R_{r e s}\
   </entry>
   <entry>
     <title>In-Loop Filter / 融入QP信息的网络</title>
-    <url>/2021/10/19/In-Loop_Filter%20_%20%E8%9E%8D%E5%85%A5QP%E4%BF%A1%E6%81%AF%E7%9A%84%E7%BD%91%E7%BB%9C/</url>
+    <url>/2021/11/25/In-Loop_Filter%20_%20%E8%9E%8D%E5%85%A5QP%E4%BF%A1%E6%81%AF%E7%9A%84%E7%BD%91%E7%BB%9C/</url>
     <content><![CDATA[<blockquote>
 <p>两篇paper<br>A QP-ADAPTIVE MECHANISM FOR CNN-BASED FILTER IN VIDEO CODING<br>One-for-all: An Efﬁcient Variable Convolution Neural Network for In-loop Filter of VVC</p>
 </blockquote>
@@ -326,7 +324,7 @@ J=D+\lambda R=d\left(x_{t}, \hat{x}_{t}\right)+\lambda\left(R_{m v d}+R_{r e s}\
   </entry>
   <entry>
     <title>Leetcode / 位运算</title>
-    <url>/2021/10/13/Leetcode-%E4%BD%8D%E8%BF%90%E7%AE%97/</url>
+    <url>/2021/11/25/Leetcode-%E4%BD%8D%E8%BF%90%E7%AE%97/</url>
     <content><![CDATA[<p>合理的运用位运算能显著提高代码在机器上的执行效率。<br><span id="more"></span></p>
 <h2 id="右移运算符：-gt-gt"><a href="#右移运算符：-gt-gt" class="headerlink" title="右移运算符：&gt;&gt;"></a>右移运算符：&gt;&gt;</h2><p>将一个数a向右移动n位记为：a&gt;&gt;n。</p>
 <ul>
@@ -397,7 +395,7 @@ J=D+\lambda R=d\left(x_{t}, \hat{x}_{t}\right)+\lambda\left(R_{m v d}+R_{r e s}\
   </entry>
   <entry>
     <title>Leetcode / 二分查找</title>
-    <url>/2021/10/20/Leetcode%20_%20%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</url>
+    <url>/2021/11/25/Leetcode%20_%20%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</url>
     <content><![CDATA[<blockquote>
 <p>有序数组要想到二分查找</p>
 </blockquote>
@@ -443,51 +441,8 @@ J=D+\lambda R=d\left(x_{t}, \hat{x}_{t}\right)+\lambda\left(R_{m v d}+R_{r e s}\
       </tags>
   </entry>
   <entry>
-    <title>Optical Flow / 光流</title>
-    <url>/2021/09/29/Optical%20Flow/</url>
-    <content><![CDATA[<blockquote>
-<p>在连续图片序列中，从第t帧到第t+1帧，每个像素的<strong>运动速度</strong>和<strong>运动方向</strong>。</p>
-</blockquote>
-<span id="more"></span>
-<p>稀疏光流:只计算图片中特定点的光流<br>稠密光流:每个像素都要计算光流。</p>
-<h2 id="光流的表示"><a href="#光流的表示" class="headerlink" title="光流的表示"></a>光流的表示</h2><p>用三维数组 $[height, width, 2]$ 表示。其中$height$表示图像的高度，$width$表示图像的宽度，2表示x,y两个方向。<br>光流是个和原来图像大小相等的双通道图像。<br>在x方向上，正值表示物体向左移动，而负值表示物体向右移动；在y方向上，正值表示物体向上移动，而负值表示物体向下移动。</p>
-<h2 id="光流提取"><a href="#光流提取" class="headerlink" title="光流提取"></a>光流提取</h2><ul>
-<li>传统算法 Lucas-Kanade （稀疏）</li>
-<li>深度学习算法 FlowNet/FlowNet2.0 （稠密）</li>
-</ul>
-<p><a href="https://zhuanlan.zhihu.com/p/74460341">https://zhuanlan.zhihu.com/p/74460341</a></p>
-<h2 id="光流可视化"><a href="#光流可视化" class="headerlink" title="光流可视化"></a>光流可视化</h2><h3 id="稀疏"><a href="#稀疏" class="headerlink" title="稀疏"></a>稀疏</h3><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">//[11,11,2]</span><br><span class="line">//通道1</span><br><span class="line">[[ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]]</span><br><span class="line">//通道2</span><br><span class="line">[[ 2.5  2.5  2.5  2.5  2.5  2.5  2.5  2.5  2.5  2.5  2.5]</span><br><span class="line"> [ 2.   2.   2.   2.   2.   2.   2.   2.   2.   2.   2. ]</span><br><span class="line"> [ 1.5  1.5  1.5  1.5  1.5  1.5  1.5  1.5  1.5  1.5  1.5]</span><br><span class="line"> [ 1.   1.   1.   1.   1.   1.   1.   1.   1.   1.   1. ]</span><br><span class="line"> [ 0.5  0.5  0.5  0.5  0.5  0.5  0.5  0.5  0.5  0.5  0.5]</span><br><span class="line"> [ 0.   0.   0.   0.   0.   0.   0.   0.   0.   0.   0. ]</span><br><span class="line"> [<span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5]</span><br><span class="line"> [<span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>. ]</span><br><span class="line"> [<span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5]</span><br><span class="line"> [<span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>. ]</span><br><span class="line"> [<span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5]]</span><br></pre></td></tr></table></figure>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_c8aeb6016d832173d50d999f73f6a45f.png" alt=""></p>
-<h3 id="稠密"><a href="#稠密" class="headerlink" title="稠密"></a>稠密</h3><p><img src="https://notes.sjtu.edu.cn/uploads/upload_5ea99a85113e6fb0f28a8bc190c35260.png" alt=""></p>
-<h2 id="warp"><a href="#warp" class="headerlink" title="warp"></a>warp</h2><p>将生成的光流应用到一张图像</p>
-<p>在x方向上，正值表示物体向左移动，负值表示物体向右移动；<br>在y方向上，正值表示物体向上移动，而负值表示物体向下移动。 </p>
-<p>x0 = pos_x + x， y0 = pos_y + y。pos_x和pos_y是原始的像素坐标，x和y是光流（向下取整），x0和y0就是warp后的像素坐标。以x方向为例，原始坐标加上一个负值，得到的结果变小了，也就相当于这个像素像左移了，如果加一个正值，结果变大，像素右移。</p>
-<p>坐标变换后，很多坐标并没有相应的原始像素与之对应，需要通过插值来处理。</p>
-<h3 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h3><p>图像的很多处理得到的结果是连续的，为了得到离散点上的值，就需要插值。典型代表就是图像坐标的空间变换，如仿射变换，坐标经仿射变换后通常是小数，而图像只保存整数坐标位置上的像素值，所以需要插值。</p>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_d9a581e5ce7f1f5ed31f590edf8ddcc5.png" alt=""></p>
-<ul>
-<li>四个角上的点 $P_{x, y}, P_{x+1, y}, P_{x, y+1}, P_{x+1, y+1}$ 是整数坐标位置上的已知点；</li>
-<li>红色的点 $P_{x_{p}, y_{p}}$ 是待插值的点；</li>
-<li>红色虚线连着的两个点 $P_{x_{p}, y}, P_{x_{p}, y+1}$ 是两个辅助点。</li>
-</ul>
-<p>最邻近和双线性两种插值方法都比较简单，仅需要源图像和待插值的坐标。</p>
-<h4 id="nearest"><a href="#nearest" class="headerlink" title="nearest"></a>nearest</h4><p>最邻近插值算法将距离$P_{x_{p}, y_{p}}$最近的已知点的像素值直接赋给$P_{x_{p}, y_{p}}$，对${x_{p}, y_{p}}$四舍五入得到${x, y}$，直接令$P_{x_{p}, y_{p}}=P_{x, y}$即可</p>
-<ul>
-<li>简单，但缺失精度，造成插值的图像灰度上的不连续，变化地方可能出现明显锯齿状</li>
-</ul>
-<h4 id="bilinear"><a href="#bilinear" class="headerlink" title="bilinear"></a>bilinear</h4><p>双线性插值从两个方向进行线性插值</p>
-<script type="math/tex; mode=display">
-P_{x_{p}, y}=P_{x, y}+\left(P_{x+1, y}-P_{x, y}\right)\left(x_{p}-x\right)</script><script type="math/tex; mode=display">
-P_{x_{p}, y+1}=P_{x, y+1}+\left(P_{x+1, y+1}-P_{x, y+1}\right)\left(x_{p}-x\right)</script><script type="math/tex; mode=display">
-P_{x_{p}, y_{p}}=P_{x_{p}, y}+\left(P_{x_{p}, y+1}-P_{x_{p}, y}\right)\left(y_{p}-y\right)</script><p>参考：<a href="https://blog.csdn.net/bby1987/article/details/105851870">https://blog.csdn.net/bby1987/article/details/105851870</a></p>
-]]></content>
-      <tags>
-        <tag>图像处理</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Leetcode / 链表</title>
-    <url>/2021/07/07/Leetcode-%E9%93%BE%E8%A1%A8/</url>
+    <url>/2021/11/25/Leetcode-%E9%93%BE%E8%A1%A8/</url>
     <content><![CDATA[<blockquote>
 <p>常用数据结构—链表</p>
 </blockquote>
@@ -531,8 +486,346 @@ P_{x_{p}, y_{p}}=P_{x_{p}, y}+\left(P_{x_{p}, y+1}-P_{x_{p}, y}\right)\left(y_{p
       </tags>
   </entry>
   <entry>
+    <title>Optical Flow / 光流</title>
+    <url>/2021/11/25/Optical%20Flow/</url>
+    <content><![CDATA[<blockquote>
+<p>在连续图片序列中，从第t帧到第t+1帧，每个像素的<strong>运动速度</strong>和<strong>运动方向</strong>。</p>
+</blockquote>
+<span id="more"></span>
+<p>稀疏光流:只计算图片中特定点的光流<br>稠密光流:每个像素都要计算光流。</p>
+<h2 id="光流的表示"><a href="#光流的表示" class="headerlink" title="光流的表示"></a>光流的表示</h2><p>用三维数组 $[height, width, 2]$ 表示。其中$height$表示图像的高度，$width$表示图像的宽度，2表示x,y两个方向。<br>光流是个和原来图像大小相等的双通道图像。<br>在x方向上，正值表示物体向左移动，而负值表示物体向右移动；在y方向上，正值表示物体向上移动，而负值表示物体向下移动。</p>
+<h2 id="光流提取"><a href="#光流提取" class="headerlink" title="光流提取"></a>光流提取</h2><ul>
+<li>传统算法 Lucas-Kanade （稀疏）</li>
+<li>深度学习算法 FlowNet/FlowNet2.0 （稠密）</li>
+</ul>
+<p><a href="https://zhuanlan.zhihu.com/p/74460341">https://zhuanlan.zhihu.com/p/74460341</a></p>
+<h2 id="光流可视化"><a href="#光流可视化" class="headerlink" title="光流可视化"></a>光流可视化</h2><h3 id="稀疏"><a href="#稀疏" class="headerlink" title="稀疏"></a>稀疏</h3><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">//[11,11,2]</span><br><span class="line">//通道1</span><br><span class="line">[[ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]]</span><br><span class="line">//通道2</span><br><span class="line">[[ 2.5  2.5  2.5  2.5  2.5  2.5  2.5  2.5  2.5  2.5  2.5]</span><br><span class="line"> [ 2.   2.   2.   2.   2.   2.   2.   2.   2.   2.   2. ]</span><br><span class="line"> [ 1.5  1.5  1.5  1.5  1.5  1.5  1.5  1.5  1.5  1.5  1.5]</span><br><span class="line"> [ 1.   1.   1.   1.   1.   1.   1.   1.   1.   1.   1. ]</span><br><span class="line"> [ 0.5  0.5  0.5  0.5  0.5  0.5  0.5  0.5  0.5  0.5  0.5]</span><br><span class="line"> [ 0.   0.   0.   0.   0.   0.   0.   0.   0.   0.   0. ]</span><br><span class="line"> [<span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5]</span><br><span class="line"> [<span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>. ]</span><br><span class="line"> [<span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5]</span><br><span class="line"> [<span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>. ]</span><br><span class="line"> [<span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5]]</span><br></pre></td></tr></table></figure>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_c8aeb6016d832173d50d999f73f6a45f.png" alt=""></p>
+<h3 id="稠密"><a href="#稠密" class="headerlink" title="稠密"></a>稠密</h3><p><img src="https://notes.sjtu.edu.cn/uploads/upload_5ea99a85113e6fb0f28a8bc190c35260.png" alt=""></p>
+<h2 id="warp"><a href="#warp" class="headerlink" title="warp"></a>warp</h2><p>将生成的光流应用到一张图像</p>
+<p>在x方向上，正值表示物体向左移动，负值表示物体向右移动；<br>在y方向上，正值表示物体向上移动，而负值表示物体向下移动。 </p>
+<p>x0 = pos_x + x， y0 = pos_y + y。pos_x和pos_y是原始的像素坐标，x和y是光流（向下取整），x0和y0就是warp后的像素坐标。以x方向为例，原始坐标加上一个负值，得到的结果变小了，也就相当于这个像素像左移了，如果加一个正值，结果变大，像素右移。</p>
+<p>坐标变换后，很多坐标并没有相应的原始像素与之对应，需要通过插值来处理。</p>
+<h3 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h3><p>图像的很多处理得到的结果是连续的，为了得到离散点上的值，就需要插值。典型代表就是图像坐标的空间变换，如仿射变换，坐标经仿射变换后通常是小数，而图像只保存整数坐标位置上的像素值，所以需要插值。</p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_d9a581e5ce7f1f5ed31f590edf8ddcc5.png" alt=""></p>
+<ul>
+<li>四个角上的点 $P_{x, y}, P_{x+1, y}, P_{x, y+1}, P_{x+1, y+1}$ 是整数坐标位置上的已知点；</li>
+<li>红色的点 $P_{x_{p}, y_{p}}$ 是待插值的点；</li>
+<li>红色虚线连着的两个点 $P_{x_{p}, y}, P_{x_{p}, y+1}$ 是两个辅助点。</li>
+</ul>
+<p>最邻近和双线性两种插值方法都比较简单，仅需要源图像和待插值的坐标。</p>
+<h4 id="nearest"><a href="#nearest" class="headerlink" title="nearest"></a>nearest</h4><p>最邻近插值算法将距离$P_{x_{p}, y_{p}}$最近的已知点的像素值直接赋给$P_{x_{p}, y_{p}}$，对${x_{p}, y_{p}}$四舍五入得到${x, y}$，直接令$P_{x_{p}, y_{p}}=P_{x, y}$即可</p>
+<ul>
+<li>简单，但缺失精度，造成插值的图像灰度上的不连续，变化地方可能出现明显锯齿状</li>
+</ul>
+<h4 id="bilinear"><a href="#bilinear" class="headerlink" title="bilinear"></a>bilinear</h4><p>双线性插值从两个方向进行线性插值</p>
+<script type="math/tex; mode=display">
+P_{x_{p}, y}=P_{x, y}+\left(P_{x+1, y}-P_{x, y}\right)\left(x_{p}-x\right)</script><script type="math/tex; mode=display">
+P_{x_{p}, y+1}=P_{x, y+1}+\left(P_{x+1, y+1}-P_{x, y+1}\right)\left(x_{p}-x\right)</script><script type="math/tex; mode=display">
+P_{x_{p}, y_{p}}=P_{x_{p}, y}+\left(P_{x_{p}, y+1}-P_{x_{p}, y}\right)\left(y_{p}-y\right)</script><p>参考：<a href="https://blog.csdn.net/bby1987/article/details/105851870">https://blog.csdn.net/bby1987/article/details/105851870</a></p>
+]]></content>
+      <tags>
+        <tag>图像处理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Video Coding / Block Partition</title>
+    <url>/2021/11/25/Video_Coding%20_%20Block%20Partition/</url>
+    <content><![CDATA[<blockquote>
+<p>Block Partition，Video Coding 的基础。</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="H-264"><a href="#H-264" class="headerlink" title="H.264"></a>H.264</h2><ul>
+<li>macroblock 16x16, 在一个MB内划分PU, TU<ul>
+<li>I macroblock(intra)<ul>
+<li>PB: luma 4x4, 16x16; chroma: 16x16</li>
+</ul>
+</li>
+<li>P/B macroblock(inter)<ul>
+<li>PB: 2Nx2N, Nx2N, 2NxN, NxN<ul>
+<li><img src="https://notes.sjtu.edu.cn/uploads/upload_35672750ff82e0032d687554f6eea5d0.png" alt="macroblock 进一步 PU 划分"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>TB within an MB: 4x4 DCT2; 8x8 DCT2 in FRExt</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_8ef1bf563d8fcaa5ad45d30c504ababd.png" alt="大分辨率序列上效率低"></p>
+<h2 id="H-265"><a href="#H-265" class="headerlink" title="H.265"></a>H.265</h2><ul>
+<li><p>CTU: 64X64 —-quad-tree—-&gt; CU: 8x8, 16x16, … 64x64</p>
+<ul>
+<li><img src="https://notes.sjtu.edu.cn/uploads/upload_8e63500a385f17b8b3c4874752b4b2ca.png" alt=""></li>
+<li><p>CU —&gt; PU</p>
+<ul>
+<li>intra: 2Nx2N, NxN(N=4, 8, 16, 32)</li>
+<li>inter: 2Nx2N, Nx2N, 2NxN, NxN, AMP<ul>
+<li><img src="https://notes.sjtu.edu.cn/uploads/upload_5ba2983cd9e4f1ed54ecda83c73c32af.png" alt=""></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>CU —-Residual quad tree—-&gt; TU</p>
+<ul>
+<li>4x4, 8x8, 16x16, 32x32 DCT-2</li>
+<li>4x4 DST-7 for intra 4x4 luma block</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_b3d3c8a256459361a7095512c8c9faa4.png" alt=""></p>
+<h2 id="H-266"><a href="#H-266" class="headerlink" title="H.266"></a>H.266</h2><ul>
+<li><p>CTU 128x128 ——QT + MTT(multi-type-tree)—-&gt; CU: 8x8, 16x16, … 128x128</p>
+<ul>
+<li><img src="https://notes.sjtu.edu.cn/uploads/upload_80c198b7a7bef214264f455a662378f1.png" alt="MTT"></li>
+<li><p><img src="https://notes.sjtu.edu.cn/uploads/upload_9ff1804a48e3deec292ad5d2ef10c62b.png" alt="左下的CTU经历了三次划分，(编码端决策)复杂度已经很高"></p>
+</li>
+<li><p>CU划分灵活，取消PU</p>
+</li>
+<li>CU —-&gt;TU(取消RQT划分)<ul>
+<li>ISP(intra subpartition)</li>
+<li>SBT(sub-block transform)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_c0a509e00ae2037086d4bfe0a645fbae.png" alt=""></p>
+<h3 id="CTU-—-gt-CU"><a href="#CTU-—-gt-CU" class="headerlink" title="CTU —&gt; CU"></a>CTU —&gt; CU</h3><h4 id="QT-MTT"><a href="#QT-MTT" class="headerlink" title="QT-MTT"></a>QT-MTT</h4><ul>
+<li><img src="https://notes.sjtu.edu.cn/uploads/upload_964095e103d8c1e6d2cd3d4e5a93e21d.png" alt=""></li>
+<li><img src="https://notes.sjtu.edu.cn/uploads/upload_09d6c5324e183c5d382b71be2cfcde85.png" alt=""></li>
+<li><img src="https://notes.sjtu.edu.cn/uploads/upload_6397fadb947252dccda1e38fcfcfe2da.png" alt=""></li>
+</ul>
+<blockquote>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_6c8e028c48d9fd597c43afc8d44b8b70.png" alt=""></p>
+</blockquote>
+<ul>
+<li><img src="https://notes.sjtu.edu.cn/uploads/upload_16e8b9e266046d5aeccea4c27d223c69.png" alt=""></li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_dbc58176795f865ac53bbe7d309e8db3.png" alt=""></p>
+<blockquote>
+<p>划分中止条件(VVC)：划分到最小 CU 块；达到规定的最大二级树的划分深度<br><img src="https://notes.sjtu.edu.cn/uploads/upload_c27c39236f4094d5ceb16ad1f885899c.png" alt=""></p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_669090be1545b2fa2a74777ea4d4a97b.png" alt=""><br>AV1 划分实质上是 QT+MTT，MTT最大划分到两次。（少于QT+MTT，MTT depth2，故划分上AV1灵活性不如 VVC）</p>
+</blockquote>
+<h4 id="split-syntax"><a href="#split-syntax" class="headerlink" title="split syntax"></a>split syntax</h4><p><img src="https://notes.sjtu.edu.cn/uploads/upload_4c52fcd16e09eddfd9add941a695a213.png" alt=""></p>
+<p>首先确定五种划分模式中哪些可用（复杂）</p>
+<ul>
+<li>example: allow quad-split<br>  <img src="https://notes.sjtu.edu.cn/uploads/upload_916dd4abd01b5c9051bc66232e4e5b65.png" alt=""></li>
+</ul>
+<h4 id="CST-VVC-only"><a href="#CST-VVC-only" class="headerlink" title="CST(VVC only)"></a>CST(VVC only)</h4><ul>
+<li><p>for I slice, chroma的划分可以与luma不同。</p>
+<ul>
+<li>intra 中 chroma 通常比 luma 简单可以划分成更少的块</li>
+<li><p>CCLM技术: 用 luma 的重建信号预测 chroma，luma 预测质量高，没必要划分成更小的块</p>
+</li>
+<li><p><img src="https://notes.sjtu.edu.cn/uploads/upload_a816b57182398d42fac421e9e609880a.png" alt=""></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="other-improvements"><a href="#other-improvements" class="headerlink" title="other improvements"></a>other improvements</h4><ul>
+<li><p>redundancy removal</p>
+<ul>
+<li><p><img src="https://notes.sjtu.edu.cn/uploads/upload_120e85edb6970ee8553f3d4cc867ed20.png" alt=""></p>
+</li>
+<li><p><img src="https://notes.sjtu.edu.cn/uploads/upload_f7ae94d0d3fd5ba00d13625cbe952249.png" alt=""></p>
+</li>
+</ul>
+</li>
+<li><p>图像边界强制划分</p>
+<ul>
+<li><img src="https://notes.sjtu.edu.cn/uploads/upload_405f172caad834cfa865a71299a6babf.png" alt=""></li>
+</ul>
+</li>
+</ul>
+<h3 id="CU-—-gt-TU"><a href="#CU-—-gt-TU" class="headerlink" title="CU —&gt; TU"></a>CU —&gt; TU</h3><h4 id="ISP-a-k-a-SDIP-for-intra-CU"><a href="#ISP-a-k-a-SDIP-for-intra-CU" class="headerlink" title="ISP(a.k.a SDIP) for intra CU"></a>ISP(a.k.a SDIP) for intra CU</h4><ul>
+<li>all luma CU 可以被划分为2个或4个预测模式相同的 TU<ul>
+<li><img src="https://notes.sjtu.edu.cn/uploads/upload_8688831be7a094f6ff08305c986aaad4.png" alt=""></li>
+</ul>
+</li>
+<li>chroma 不划分，残差较小，用大的变换效率较高</li>
+<li>出于硬件复杂度考虑，luma TB 必须至少包含16个像素</li>
+</ul>
+<h4 id="SBT-for-inter-CU"><a href="#SBT-for-inter-CU" class="headerlink" title="SBT for inter CU"></a>SBT for inter CU</h4><ul>
+<li>motivation：多数inter情况下，残差只出现在块的一侧</li>
+<li>CU划分为两个sub-TU：一部分为残差，另一部分强制不传</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_114d1fca4e5e70adfa7d3896dd72c509.png" alt=""></p>
+<h3 id="硬件实现考虑"><a href="#硬件实现考虑" class="headerlink" title="硬件实现考虑"></a>硬件实现考虑</h3><ul>
+<li>VPDU 以64x64节点为单位处理，不能出现跨多个节点的单元</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_1e24229de95020cec3c498ebcc1e599b.png" alt=""></p>
+<ul>
+<li>local dual tree 可能出现少于16个像素的chroma块<ul>
+<li>intra：luma继续划分，chroma停止划分</li>
+<li>inter：不存在该问题</li>
+</ul>
+</li>
+</ul>
+<h3 id="增益"><a href="#增益" class="headerlink" title="增益"></a>增益</h3><p><img src="https://notes.sjtu.edu.cn/uploads/upload_d65d11b52523ffb342ac742c2817fc76.png" alt=""></p>
+]]></content>
+      <tags>
+        <tag>video coding</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Video Coding / HDR</title>
+    <url>/2021/11/25/Video_Coding%20_%20HDR/</url>
+    <content><![CDATA[<blockquote>
+<p>HDR — 更高的动态范围，更广的色域，更深的比特位。</p>
+</blockquote>
+<span id="more"></span>
+<p>将自然界中真实场景转换为屏幕上显示出来的图像，往往需要经过两个主要步骤：</p>
+<ul>
+<li>通过摄影设备，将外界光信息转换为图像信息存储为数字信号；</li>
+<li>通过显示设备，将图像信息转换为屏幕输出的光信息。</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_062a65b8c9ed7a81b968dca8947aadd9.png" alt=""></p>
+<p>在整个过程中，信息流要经过两个重要的非线性映射，才能形成我们在显示设备上看到的图像。</p>
+<ul>
+<li>相机的非线性映射通常称为光电转换函数（OETF）</li>
+<li>显示端的显示器的非线性映射通常称为电光转换函数（EOTF）</li>
+</ul>
+<p>通常，OETF和EOTF并不是互逆关系。显示端的EOTF往往还包括代表创作者渲染意图的光光转换函数（OOTF），其对观看者在较暗环境下通过显示器观看带来的心理视觉影响进行了修正。</p>
+<h2 id="SDR：Gamma校正"><a href="#SDR：Gamma校正" class="headerlink" title="SDR：Gamma校正"></a>SDR：Gamma校正</h2><p><img src="https://notes.sjtu.edu.cn/uploads/upload_73a758e0925744047b37727ae50db089.png" alt=""></p>
+<p>经过一系列实验的测定，人类能够感知到的连续亮度谱如上图所示。</p>
+<blockquote>
+<p>也就是说，如果比上图更加精细，则没有必要，因为人眼无法识别；<br>如果比上图粗糙，则人眼能够感觉到间断。</p>
+</blockquote>
+<p>接着，将最左边纯黑编号为“0.0”，最右端纯白编号为“1.0”，中间定义为中灰“0.5”。这就形成了人眼的亮度谱。</p>
+<p>但是，上图中的亮度在自然界中并不是同样成比例的，例如图中的中灰，对应自然界中的亮度是纯白的20%。</p>
+<p>将人眼亮度谱与自然界中实际亮度进行建模，就可以得到下面的图像：</p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_46af7cd62fea840a8a7795344e9bb60b.png" alt=""></p>
+<p>在低亮度区域，人眼的敏感性较高，因此自然界中很小的亮度范围，都能够被人眼察觉；<br>在高亮度范围，人眼的敏感度较低，因此自然界中的大范围的亮度变化，在人眼感知上却并不大。<br>可以使用幂函数来拟合这种非线性的映射，用公式表示如下：</p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_a30ade2b1f5ab50f8c5a912270d38b6e.png" alt=""></p>
+<ul>
+<li>X是使用0-1之间的实数,表示输入亮度</li>
+<li>Y是使用0-1之间实数表示的输出亮度</li>
+<li>γ为人为设定的参数，不同的γ选择会产生不同的效果。</li>
+</ul>
+<p>这种通过调整γ的取值，来调整输入输出亮度之间映射关系的方式，称之为gamma校正。根据γ取值的不同，能够发现gamma校正的不同效果：</p>
+<p>当γ<1时，曲线上凸，输出值大于输入值。
+当γ=1时，曲线为一条直线，输入与输出相等，不进行校正
+当γ>1时，曲线下凸，输出值小于输入值</p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_38001fcceeeef81b8e25162a93c8cbbb.png" alt=""></p>
+<h3 id="真实场景到屏幕显示"><a href="#真实场景到屏幕显示" class="headerlink" title="真实场景到屏幕显示"></a>真实场景到屏幕显示</h3><p><img src="https://notes.sjtu.edu.cn/uploads/upload_9b556e400adfa83d459a6721e9fc9e57.png" alt=""></p>
+<ul>
+<li><p>首先，图像每个像素的取值在0-255之间，先进行归一化，将0-255这256个数线性映射到0-1之间。</p>
+</li>
+<li><p>接着，在图像获取阶段，摄像机中会使用一种encoding gamma函数进行gamma校正，这里的gamma值小于1。</p>
+<ul>
+<li>自然界中的亮度，首先在摄像机中进行归一化，映射到0-1之间，接着，将这个经过归一化的值输入encoding gamma函数中。最后将encoding gamma函数的输出值与0-255的像素值归一化结果进行比较，就能得到这个像素点的像素值。</li>
+</ul>
+</li>
+<li><p>显示阶段的gamma校正通常使用一种display gamma函数来完成，这里的gamma值大于1。</p>
+<ul>
+<li>显示设备读取像素值后，进行归一化，然后将归一化结果输入display gamma函数中。将输出的值对应的自然光线进行输出。</li>
+</ul>
+</li>
+</ul>
+<h3 id="可逆过程？"><a href="#可逆过程？" class="headerlink" title="可逆过程？"></a>可逆过程？</h3><p>理论上来说，上述两个阶段的gamma值乘积应该为1。因为两个gamma校正实际上做的是恰好相反的操作，一个是将自然光线存储为数字信息，另一个是将数字信息转换为光线。而为了使自然中的光线与显示设备产生的光线一致，显然这里的gamma值的乘积需要为1。</p>
+<p>但是，在实际操作中，这两个gamma值的乘积并不为1，原因有以下两点：</p>
+<ul>
+<li>对于传统显示设备来说，屏幕能够显示的亮度范围与颜色范围与实际情况相差好几个数量级；</li>
+<li>在真实的场景中，原始的场景填充了观察者的所有视野，而显示设备的亮度往往只局限在一个被周围环境包围的屏幕上。</li>
+</ul>
+<p>这两个差别使得感知对比度相较于原始场景明显下降了。</p>
+<p>为了平衡这种现象，进而保证显示亮度在<strong>感知上</strong>和原始场景是一致，的两个gamma的乘积并不是1，而是经过试验得到的其他值。</p>
+<blockquote>
+<p>在电影院这种漆黑的环境中，乘积为1.5<br>在明亮的室内，乘积为1.125<br>个人电脑使用的一个标准叫sRGB，它使用的encoding gamma大约是0.45（也就是1/2.2）。这个值是为了配合display gamma为2.5的设备工作的。这样，end-to-end gamma就是0.45 * 2.5 = 1.125了。</p>
+</blockquote>
+<h3 id="Gamma-校正的意义"><a href="#Gamma-校正的意义" class="headerlink" title="Gamma 校正的意义"></a>Gamma 校正的意义</h3><p>按照上一节所说，两段gamma校正实际上是一对逆过程，一个将光信息转化为数字信息，一个将数字信息转化为光信息。<br>按照常理来说，并不需要复杂的非线性映射，只需要将归一化后的光信息记录下来，然后再让显示设备进行输出即可。<br>从这种角度来说，gamma校正是一个不必要的操作。</p>
+<p>这是一个合理的质疑。问题的根源在<strong>存储位宽</strong>上，如果存储位宽足够大，显然可以使用上述归一化记录方式进行处理，但是，实际生产与应用中的位宽是有限的。</p>
+<ul>
+<li>在传统的图像存储与显示标准中，一个像素点有三个通道，而每个通道只有8位。</li>
+<li>这也就意味着，图像的灰阶有限，与真实世界相比，差了很多数量级。</li>
+<li>因此，想要在有限灰阶上表现出近似于自然界的亮度，就需要对灰阶分配进行设计</li>
+</ul>
+<p>这也是Gamma校正的意义。</p>
+<ul>
+<li><p>由于人类感知的“中灰”，在实际的自然光线中对应于白光的20%的亮度。因此，如果完全按照自然光线的数值进行灰度处理，纯黑到中灰这一段在人类感知中占到一半的灰度，将只能由20%的灰阶进行表示，而剩下的一半会有80%的灰阶进行表示，这显然是不合理的。Gamma校正就可以解决这个问题。</p>
+</li>
+<li><p>在实际操作中，中灰对应的自然光线，显然会被映射为0.5的取值，也就对应128这一灰阶。这样的结果就是高亮度与低亮度部分分别占有一半的灰阶，这就会使得显示的图像的直观感受更接近于现实。</p>
+</li>
+</ul>
+<p>因此，gamma校正实际上是用来解决显示设备亮度灰阶不足的问题的。</p>
+<ul>
+<li>如果将图像存储的编码位宽扩大到32位，也就是能完全包含自然界亮度范围的时候，自然就不再需要进行gamma校正了，这种情况下，只需要将自然光线的亮度值记录下来，然后对应输出即可。</li>
+<li>但是，使用32位位宽来存储图像过于“奢侈”，因此gamma校正在实际生活中起到了广泛而巨大的作用。</li>
+</ul>
+<h3 id="不足"><a href="#不足" class="headerlink" title="不足"></a>不足</h3><p>传统的Gamma校正方式，是针对<strong>传统CRT显示设备与LDR图像</strong>设计的，对应的标准是BT.1886标准。而BT.1886标准规定的的峰值亮度仅为100nits，它与传统CRT设备的显示能力相一致。</p>
+<p>目前大多数显示设备的显示能力早已突破100nits的限制，普通消费级显示器的亮度一般在200nits至500nits，商业级的监视器亮度可以达到1000nits至2000nits，实验室级别的监视器甚至可以高达4000nits至20000nits。</p>
+<p>同时，现代数字运动图像传感器能够捕获动态范围到80dB或者比特深度达到14bit的线性视频信号。由于实践和历史原因，大多数专业视频制作系统都采用10比特，而消费者级别的视频和计算机图形学通常采用8比特。在HDR技术中，通常采用10比特或12比特。</p>
+<p>显示设备亮度范围的提升、图像编码bit depth的提升，使得传统Gamma校正不适用于HDR的光电转换过程。如果强行使用Gamma校正进行转换，会在图像与视频中出现明显的分块与分环瑕疵。</p>
+<p>针对上述问题，标准化组织规范了两种新型光电转换曲线：PQ曲线、HLG曲线。</p>
+<p>由于8比特的位深限制了使用更宽广的动态范围，因此需要定义新的OETF曲线为视频制作和传输提供更高的动态范围。Dolby实验室提出了新的OETF曲线，称为PQ曲线，目前已经被标准化为SMPTE ST 2084。</p>
+<p>Dolby提出的 PQ EOTF基于 Barten 的CSF模型。</p>
+<h2 id="HDR：PQ-and-HLG-transfer-functions"><a href="#HDR：PQ-and-HLG-transfer-functions" class="headerlink" title="HDR：PQ and HLG transfer functions"></a>HDR：PQ and HLG transfer functions</h2><p>为了在屏幕上显示数字图像，显示设备需要将<strong>像素值转换成相应的光值</strong>。这个过程通常是非线性的，被称为EOTF（Electro-Optical Transfer Function，电光传输函数）。不同的显示设备支持不同类型的 “传输函数”。</p>
+<p>常规的HDTV显示设备（SDR显示器）通常使用BT.709 Gamma transfer function来将视频信号转换为光。这些显示器主要用于显示亮度范围达100 Nits（cd/m2）的图像。</p>
+<p>HDR定义了两个额外的传输函数来处理这个问题—感知量化器（Perceptual Quantizer，PQ）和混合对数伽马（Hybrid Log-Gamma，HLG）。</p>
+<ul>
+<li>HDR PQ是一个绝对的、以显示为参考的信号，支持PQ的显示设备需要实现tone mapping来适应光照度。显示设备使用内容元数据来显示PQ编码的图像。这可以为整个视频流（静态）或每个单独的镜头（动态）来一次。</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_ce534244d8a230353f0fffdf0804d7de.png" alt="PQ"></p>
+<ul>
+<li>HDR HLG是一个相对的、以场景为参考的信号。这意味着支持HLG的显示设备会根据内容和自身的显示能力自动适应光照度。</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_2767a93b6aec39142d38dd2e3ee9d8a4.png" alt="HLG"></p>
+<p>预计在理想条件下，基于PQ的动态转换将达到最佳的质量效果，但代价是与现有显示系统的兼容性。</p>
+<p>下图描述了各种传递函数的光照度的映射情况。垂直轴显示信号值的刻度为0-1，0为黑色，1为白色。这样做是为了使信号范围、比特深度不受影响。水平轴显示的是显示设备的尼特光照水平。</p>
+<p>OETF - 光-电转移函数。描述光值将如何转换为数字值的数学传输函数，通常在相机内。<br>OOTF - 光-光传输函数。这个转移函数补偿了相机环境和显示器环境之间的色调感知差异。<br><img src="https://notes.sjtu.edu.cn/uploads/upload_0a057c35d6b3c8458095bfb0c48c2613.png" alt=""></p>
+<p>人类对较暗区域的变化比对较亮区域的变化更敏感。这一特性在HDR系统中也得到了利用，与明亮区域相比，黑暗区域的颗粒度更大。</p>
+<p>上图显示，与明亮区域相比，黑暗区域的光照度范围由更大的信号值表示—这意味着黑暗区域的颗粒度更高。虽然这在基于BT.709的显示器中分布更均匀，但在明亮区域的HDR显示器中，它的颗粒度变得更小。</p>
+<ul>
+<li>在HLG的情况下，一半以上的信号值在0-60尼特之间的光照度中被表示，其余的信号值在60-1000尼特范围内被表示。</li>
+<li>在基于PQ ST2084的显示器中，大约有一半的信号值在0-40尼特之间的光照度中表示，其余一半的信号值在60-1000尼特范围内表示。</li>
+</ul>
+<p>根据该图，HDR HLG在低亮度区域与BT.709相似，因此与现有的SDR显示设备有更好的兼容性。<br>然而，HDR PQ与BT.709有很大不同。如果我们试图在SDR显示器上显示PQ HDR图像，由PQ代表的较暗区域将无一例外地变得更亮，从而降低了图像的对比度水平，其结果是一个水洗的图像。</p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_accd4d5e5cadcce2af7dc4d83f348f86.png" alt=""></p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_dd3197d6133124bbcf0111d4706009cb.png" alt=""></p>
+<p>虽然基于PQ的转换提供了在支持HDR的显示器上显示最佳质量结果的承诺，但与HLG相比，它需要显示设备的适当 Tone mapping。</p>
+<h3 id="HDR-Tone-Mapping"><a href="#HDR-Tone-Mapping" class="headerlink" title="HDR Tone Mapping"></a>HDR Tone Mapping</h3><ul>
+<li>Tone Mapping是在HDR元数据的基础上将数字信号适应适当的光照水平的过程。</li>
+<li>这个过程不是简单地在图像数据上应用EOTF（电光传输函数），而是试图<strong>使用元数据信息</strong>将<strong>图像数据与显示设备的能力进行映射</strong>。</li>
+<li>由于市场上有广泛的HDR显示设备，每个设备都有自己的Nits（即 “亮度”）范围，正确的色调映射对于良好的用户体验是必要的。由于色调映射是根据视频流中的元数据完成的，因此正确的元数据的存在是必要的。</li>
+</ul>
+<p>源素材可以用最好的相机以HDR拍摄，然后在高端HDR母版系统上进行母版处理，但它仍然需要在市场上可用的HDR电视上以最佳方式显示。色调映射将内容与设备进行适当的亮度映射，不会出现明显的退化。</p>
+<blockquote>
+<p>比如，一个图像是以2000尼特的峰值亮度拍摄的。如果它显示在0-2000尼特范围的电视上，亮度范围将与拍摄的原始画面完全一致。然而，在其他设备上的结果将是不同的。<br><img src="https://notes.sjtu.edu.cn/uploads/upload_07cd23fdacd116f9139ac14d8bc6abd6.png" alt=""><br>由于 Tone Mapping 是在 HDR 显示设备上显示基于 PQ 的 HDR 内容的必要操作，电视需要知道内容的原始属性，即所使用的亮度范围和母版系统参数。这些信息是以 HDR 元数据的形式传达的。<br>读取 HDR 元数据后，显示设备可以决定 Tone Mapping 参数，使转换后的视频在显示设备的显示范围内处于最佳状态。</p>
+</blockquote>
+<h3 id="HDR元数据"><a href="#HDR元数据" class="headerlink" title="HDR元数据"></a>HDR元数据</h3><p>HDR 元数据是显示设备以最佳方式显示内容的一种辅助手段。它包含 HDR 内容和母版设备属性，显示设备根据其自身的色域和峰值亮度来映射内容。有两种类型的元数据 - 静态和动态。</p>
+<ul>
+<li>静态元数据：静态元数据包含适用于整个内容的元数据信息。它由SMPTE ST 2086标准化。<ul>
+<li>在一个典型的内容中，亮度和色彩范围因镜头而异。静态元数据的挑战在于，如果根据静态元数据进行 Tone Mapping，它将只基于整个内容中最亮的那一帧。</li>
+<li>因此，大部分内容的动态范围和色域的压缩程度将超过需要。</li>
+<li>这将导致在能力较差的HDR显示设备上出现糟糕的观看体验。</li>
+</ul>
+</li>
+<li>动态元数据：动态元数据允许在每个场景的基础上进行 Tone Mapping。动态元数据已经被SMPTE ST 2094标准化，它定义了与内容相关的元数据。<ul>
+<li>当内容在能力较弱的 HDR 显示设备上显示时，这将导致用户的观看体验明显改善。</li>
+</ul>
+</li>
+<li>将动态元数据与静态元数据一起使用，可以克服只使用静态元数据进行 Tone Mapping 所带来的问题。</li>
+</ul>
+<h3 id="Dolby-Vision"><a href="#Dolby-Vision" class="headerlink" title="Dolby Vision"></a>Dolby Vision</h3><ul>
+<li>Dolby Vision使用动态元数据，是当今最常用的HDR技术。</li>
+<li>主要的OTT服务提供商，如Netflix和亚马逊，以及主要的电影公司和许多著名的电视制造商都采用了这种技术。</li>
+<li>Dolby Vision在SMPTE ST 2094-10中得到了标准化。除了支持动态元数据外，杜比视界还允许为特定设备描述多种修饰，从而在这些设备上实现更精细的显示。</li>
+</ul>
+<h2 id="Defination"><a href="#Defination" class="headerlink" title="Defination"></a>Defination</h2><p>cd/m2 - 坎德拉(cd)是国际单位制(SI)中发光强度的基本单位；即一个点光源在特定方向上发出的每单位实体角度的发光功率。一支普通的蜡烛发出的光，其发光强度大约为1坎德拉。</p>
+<p>Nits — 一种用于描述亮度的非SI单位。1Nits=1cd/m2。</p>
+<p>WCG - Wide Color Gamut，宽色域。提供比BT.709更广泛的颜色范围的色域。DCI-P3和BT.2020是WCG的例子，在显示设备上提供更真实的图像表现。</p>
+<p>参考：<br><a href="https://www.veneratech.com/hdr/">https://www.veneratech.com/hdr/</a></p>
+]]></content>
+      <tags>
+        <tag>video coding</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>VVC环路滤波 / ALF</title>
-    <url>/2021/09/01/alf/</url>
+    <url>/2021/11/25/alf/</url>
     <content><![CDATA[<blockquote>
 <p>ALF, VVC中增益最大的单项工具。</p>
 </blockquote>
@@ -727,7 +1020,7 @@ f_{i}=\min \left(b_{i}, \max \left(-b_{i}, R\left(x+x_{i}, y+y_{i}\right)-R(x, y
   </entry>
   <entry>
     <title>VVC环路滤波 / Deblocking Filter</title>
-    <url>/2021/08/28/dbk/</url>
+    <url>/2021/11/25/dbk/</url>
     <content><![CDATA[<blockquote>
 <p>VVC环路滤波：去块滤波器</p>
 </blockquote>
@@ -910,6 +1203,48 @@ f_{i}=\min \left(b_{i}, \max \left(-b_{i}, R\left(x+x_{i}, y+y_{i}\right)-R(x, y
       </tags>
   </entry>
   <entry>
+    <title>deep learning / 各种卷积方法</title>
+    <url>/2021/11/25/deep-learning%20_%20%E5%90%84%E7%A7%8D%E5%8D%B7%E7%A7%AF%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<blockquote>
+<p>卷积及其变种</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="2D-Convolution"><a href="#2D-Convolution" class="headerlink" title="2D-Convolution"></a>2D-Convolution</h2><p><img src="https://yinguobing.com/content/images/2018/02/conv-std.jpg"></p>
+<h2 id="Group-Convolution【AlexNet】"><a href="#Group-Convolution【AlexNet】" class="headerlink" title="Group Convolution【AlexNet】"></a>Group Convolution【AlexNet】</h2><p><img src="https://notes.sjtu.edu.cn/uploads/upload_b10b20c60b86b91ff70f65fef21f6a09.png" alt="在分组卷积中，filters被拆分为不同的组，每一个组都负责具有一定深度的传统 2D 卷积的工作"></p>
+<p>上图表示的是被拆分为 2 个filters组的分组卷积。在每个filters组中，其深度仅为传统2D-卷积的一半$D_{in}/2$，而每个filters组都包含$D_{out}/2$个filters。第一个filters组（红色）对输入层的前半部分做卷积，第二个filters组（蓝色）对输入层的后半部分做卷积。最终，每个filters组都输出了$D_{out}/2$个通道。整体上，两个组输出的通道数为$D_{out}$。之后再将这些通道堆叠到输出层中，输出层就有了$D_{out}$个通道。</p>
+<h2 id="Dilated-Convolution"><a href="#Dilated-Convolution" class="headerlink" title="Dilated Convolution"></a>Dilated Convolution</h2><p><img src="https://notes.sjtu.edu.cn/uploads/upload_d89c9f7c57d4924728b65e2803d488b9.png" alt="Dilated Convolution with a 3 x 3 kernel and dilation rate 2"></p>
+<h2 id="Depthwise-Separable-Convolution（DSC）【MobileNet-Xception】"><a href="#Depthwise-Separable-Convolution（DSC）【MobileNet-Xception】" class="headerlink" title="Depthwise Separable Convolution（DSC）【MobileNet/Xception】"></a>Depthwise Separable Convolution（DSC）【MobileNet/Xception】</h2><p>损失精度不多的情况下大幅度降低参数量和计算量，在参数量相同的前提下，采用DSC的神经网络层数可以做的更深。</p>
+<ul>
+<li>step1. Depthwise Convolution</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_a3ec37d801ec2f319a7ff8c909d6166d.png" alt=""></p>
+<ul>
+<li>step2. Pointwise Convolution</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_0567db7aabb74b5289b923643fdb8854.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;&#x27;CLASS torch.nn.Conv2d(in_channels, out_channels, kernel_size, stride=1, padding=0, dilation=1, groups=1, bias=True)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> - dilation: controls the spacing between the kernel points; also known as the à trous algorithm.</span></span><br><span class="line"><span class="string"> - groups: controls the connections between inputs and outputs. in_channels and out_channels must both be divisible by groups. For example,</span></span><br><span class="line"><span class="string">		At groups=1, all inputs are convolved to all outputs.</span></span><br><span class="line"><span class="string">		At groups=2, the operation becomes equivalent to having two conv layers side by side, each seeing half the input channels, and producing half the output channels, and both subsequently concatenated.</span></span><br><span class="line"><span class="string">		At groups= in_channels, each input channel is convolved with its own set of filters.</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span>        </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DSC</span>(<span class="params">nn.Module</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, in_ch, out_ch</span>):</span></span><br><span class="line">        <span class="built_in">super</span>(CSDN_Tem, self).__init__()</span><br><span class="line">        self.depth_conv = nn.Conv2d(</span><br><span class="line">            in_channels=in_ch,</span><br><span class="line">            out_channels=in_ch,</span><br><span class="line">            kernel_size=<span class="number">3</span>,</span><br><span class="line">            stride=<span class="number">1</span>,</span><br><span class="line">            padding=<span class="number">1</span>,</span><br><span class="line">            groups=in_ch</span><br><span class="line">        )</span><br><span class="line">        self.point_conv = nn.Conv2d(</span><br><span class="line">            in_channels=in_ch,</span><br><span class="line">            out_channels=out_ch,</span><br><span class="line">            kernel_size=<span class="number">1</span>,</span><br><span class="line">            stride=<span class="number">1</span>,</span><br><span class="line">            padding=<span class="number">0</span>,</span><br><span class="line">            groups=<span class="number">1</span></span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span>(<span class="params">self, <span class="built_in">input</span></span>):</span></span><br><span class="line">        out = self.depth_conv(<span class="built_in">input</span>)</span><br><span class="line">        out = self.point_conv(out)</span><br><span class="line">        <span class="keyword">return</span> out</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="Asymmetric-Convolutions（AC）"><a href="#Asymmetric-Convolutions（AC）" class="headerlink" title="Asymmetric Convolutions（AC）"></a>Asymmetric Convolutions（AC）</h2><p><img src="https://notes.sjtu.edu.cn/uploads/upload_8d0cba80232d748effba02636b749964.png" alt=""></p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_5b7630300458886a5397d6cb4c327fd6.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CropLayer</span>(<span class="params">nn.Module</span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#   E.g., (-1, 0) means this layer should crop the first and last rows of the feature map. And (0, -1) crops the first and last columns</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, crop_set</span>):</span></span><br><span class="line">        <span class="built_in">super</span>(CropLayer, self).__init__()</span><br><span class="line">        self.rows_to_crop = - crop_set[<span class="number">0</span>]</span><br><span class="line">        self.cols_to_crop = - crop_set[<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">assert</span> self.rows_to_crop &gt;= <span class="number">0</span></span><br><span class="line">        <span class="keyword">assert</span> self.cols_to_crop &gt;= <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span>(<span class="params">self, <span class="built_in">input</span></span>):</span></span><br><span class="line">        <span class="keyword">if</span> self.rows_to_crop == <span class="number">0</span> <span class="keyword">and</span> self.cols_to_crop == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">input</span></span><br><span class="line">        <span class="keyword">elif</span> self.rows_to_crop &gt; <span class="number">0</span> <span class="keyword">and</span> self.cols_to_crop == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">input</span>[:, :, self.rows_to_crop:-self.rows_to_crop, :]</span><br><span class="line">        <span class="keyword">elif</span> self.rows_to_crop == <span class="number">0</span> <span class="keyword">and</span> self.cols_to_crop &gt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">input</span>[:, :, :, self.cols_to_crop:-self.cols_to_crop]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">input</span>[:, :, self.rows_to_crop:-self.rows_to_crop, self.cols_to_crop:-self.cols_to_crop]</span><br><span class="line">            </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ACBlock</span>(<span class="params">nn.Module</span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, in_channels, out_channels, kernel_size, stride=<span class="number">1</span>, padding=<span class="number">0</span>, dilation=<span class="number">1</span>, groups=<span class="number">1</span>, padding_mode=<span class="string">&#x27;zeros&#x27;</span>, deploy=<span class="literal">False</span>, use_affine=<span class="literal">True</span>, reduce_gamma=<span class="literal">False</span>, use_last_bn=<span class="literal">False</span>, gamma_init=<span class="literal">None</span> </span>):</span></span><br><span class="line">        <span class="built_in">super</span>(ACBlock, self).__init__()</span><br><span class="line">        self.deploy = deploy</span><br><span class="line">        <span class="keyword">if</span> deploy:</span><br><span class="line">            self.fused_conv = nn.Conv2d(in_channels=in_channels, out_channels=out_channels, kernel_size=(kernel_size,kernel_size), stride=stride, padding=padding, dilation=dilation, groups=groups, bias=<span class="literal">True</span>, padding_mode=padding_mode)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            self.square_conv = nn.Conv2d(in_channels=in_channels, out_channels=out_channels,</span><br><span class="line">                                         kernel_size=(kernel_size, kernel_size), stride=stride,</span><br><span class="line">                                         padding=padding, dilation=dilation, groups=groups, bias=<span class="literal">False</span>,</span><br><span class="line">                                         padding_mode=padding_mode)</span><br><span class="line">            self.square_bn = nn.BatchNorm2d(num_features=out_channels, affine=use_affine)</span><br><span class="line"></span><br><span class="line">            center_offset_from_origin_border = padding - kernel_size // <span class="number">2</span></span><br><span class="line">            ver_pad_or_crop = (padding, center_offset_from_origin_border)</span><br><span class="line">            hor_pad_or_crop = (center_offset_from_origin_border, padding)</span><br><span class="line">            <span class="keyword">if</span> center_offset_from_origin_border &gt;= <span class="number">0</span>:</span><br><span class="line">                self.ver_conv_crop_layer = nn.Identity()</span><br><span class="line">                ver_conv_padding = ver_pad_or_crop</span><br><span class="line">                self.hor_conv_crop_layer = nn.Identity()</span><br><span class="line">                hor_conv_padding = hor_pad_or_crop</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                self.ver_conv_crop_layer = CropLayer(crop_set=ver_pad_or_crop)</span><br><span class="line">                ver_conv_padding = (<span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">                self.hor_conv_crop_layer = CropLayer(crop_set=hor_pad_or_crop)</span><br><span class="line">                hor_conv_padding = (<span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">            self.ver_conv = nn.Conv2d(in_channels=in_channels, out_channels=out_channels, kernel_size=(kernel_size, <span class="number">1</span>),</span><br><span class="line">                                      stride=stride,</span><br><span class="line">                                      padding=ver_conv_padding, dilation=dilation, groups=groups, bias=<span class="literal">False</span>,</span><br><span class="line">                                      padding_mode=padding_mode)</span><br><span class="line"></span><br><span class="line">            self.hor_conv = nn.Conv2d(in_channels=in_channels, out_channels=out_channels, kernel_size=(<span class="number">1</span>, kernel_size),</span><br><span class="line">                                      stride=stride,</span><br><span class="line">                                      padding=hor_conv_padding, dilation=dilation, groups=groups, bias=<span class="literal">False</span>,</span><br><span class="line">                                      padding_mode=padding_mode)</span><br><span class="line">            self.ver_bn = nn.BatchNorm2d(num_features=out_channels, affine=use_affine)</span><br><span class="line">            self.hor_bn = nn.BatchNorm2d(num_features=out_channels, affine=use_affine)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> reduce_gamma:</span><br><span class="line">                <span class="keyword">assert</span> <span class="keyword">not</span> use_last_bn</span><br><span class="line">                self.init_gamma(<span class="number">1.0</span> / <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> use_last_bn:</span><br><span class="line">                <span class="keyword">assert</span> <span class="keyword">not</span> reduce_gamma</span><br><span class="line">                self.last_bn = nn.BatchNorm2d(num_features=out_channels, affine=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> gamma_init <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">                <span class="keyword">assert</span> <span class="keyword">not</span> reduce_gamma</span><br><span class="line">                self.init_gamma(gamma_init)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">init_gamma</span>(<span class="params">self, gamma_value</span>):</span></span><br><span class="line">        init.constant_(self.square_bn.weight, gamma_value)</span><br><span class="line">        init.constant_(self.ver_bn.weight, gamma_value)</span><br><span class="line">        init.constant_(self.hor_bn.weight, gamma_value)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;init gamma of square, ver and hor as &#x27;</span>, gamma_value)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">single_init</span>(<span class="params">self</span>):</span></span><br><span class="line">        init.constant_(self.square_bn.weight, <span class="number">1.0</span>)</span><br><span class="line">        init.constant_(self.ver_bn.weight, <span class="number">0.0</span>)</span><br><span class="line">        init.constant_(self.hor_bn.weight, <span class="number">0.0</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;init gamma of square as 1, ver and hor as 0&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span>(<span class="params">self, <span class="built_in">input</span></span>):</span></span><br><span class="line">        <span class="keyword">if</span> self.deploy:</span><br><span class="line">            <span class="keyword">return</span> self.fused_conv(<span class="built_in">input</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            square_outputs = self.square_conv(<span class="built_in">input</span>)</span><br><span class="line">            square_outputs = self.square_bn(square_outputs)</span><br><span class="line">            vertical_outputs = self.ver_conv_crop_layer(<span class="built_in">input</span>)</span><br><span class="line">            vertical_outputs = self.ver_conv(vertical_outputs)</span><br><span class="line">            vertical_outputs = self.ver_bn(vertical_outputs)</span><br><span class="line">            horizontal_outputs = self.hor_conv_crop_layer(<span class="built_in">input</span>)</span><br><span class="line">             = self.hor_conv(horizontal_outputs)</span><br><span class="line">            horizontal_outputs = self.hor_bn(horizontal_outputs)</span><br><span class="line">            result = square_outputs + vertical_outputs + horizontal_outputs</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">hasattr</span>(self, <span class="string">&#x27;last_bn&#x27;</span>):</span><br><span class="line">                <span class="keyword">return</span> self.last_bn(result)</span><br><span class="line">            <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+<h2 id="Transposed-Convolution-Deconvolution"><a href="#Transposed-Convolution-Deconvolution" class="headerlink" title="Transposed Convolution / Deconvolution"></a>Transposed Convolution / Deconvolution</h2><p>反卷积/转置卷积是上采样过程。</p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_1a988c699452eb8e51899e65db49db05.png" alt="No padding，no strides，transposed"></p>
+<h2 id="计算复杂度和参数量"><a href="#计算复杂度和参数量" class="headerlink" title="计算复杂度和参数量"></a>计算复杂度和参数量</h2><ul>
+<li><code>MACs</code> 或 <code>MAdds</code>， 加乘数，（a*x+b as 1 MAC）</li>
+<li>FLOPs，floating point operations. 浮点运算数<ul>
+<li>FLOPs = 2MACs</li>
+</ul>
+</li>
+</ul>
+<p>JVET nnvc-ctc 脚本使用 torchsummary+ptflops(get_model_complexity_info) 计算，结果对齐 MACs/pixel（=结果/输入尺寸）。torchstat计算出的差2倍。</p>
+<ul>
+<li>param各包计算结果相同</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>deep learning</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2021/07/06/hello-world/</url>
     <content><![CDATA[<blockquote>
@@ -927,10 +1262,10 @@ f_{i}=\min \left(b_{i}, \max \left(-b_{i}, R\left(x+x_{i}, y+y_{i}\right)-R(x, y
 ]]></content>
   </entry>
   <entry>
-    <title>hexo 配置</title>
+    <title>hexo配置</title>
     <url>/2021/07/07/hexo/</url>
     <content><![CDATA[<blockquote>
-<p>hexo配置及踩坑</p>
+<p>hexo，快速、简洁且高效的博客框架</p>
 </blockquote>
 <span id="more"></span>
 <h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">hexo clean <span class="regexp">//</span> 清除缓存</span><br><span class="line">hexo g <span class="regexp">//</span> 创建静态文件</span><br><span class="line">hexo s <span class="regexp">//</span> 本地运行</span><br><span class="line">hexo d <span class="regexp">//</span> 部署到远程</span><br></pre></td></tr></table></figure>
@@ -975,10 +1310,8 @@ f_{i}=\min \left(b_{i}, \max \left(-b_{i}, R\left(x+x_{i}, y+y_{i}\right)-R(x, y
 <li>master -负责展示静态网页</li>
 <li>hexo -备份本地hexo文件（默认分支）</li>
 </ul>
-<p>执行<code>hexo d</code>时，自动更新master分支（config文件中deploy配置）<br>add, commit, pull更新hexo分支需要备份的源文件</p>
-<blockquote>
-<p>踩坑：尝试把仓库设为 private，发现博客失效后又改回 public，网站仍然 404<br>原因：改回public后仓库的默认分支是hexo（备份本地文件的分支），需把默认分支改为master，待网站部署成功后再改回hexo</p>
-</blockquote>
+<p>执行<code>hexo d</code>时，自动更新master分支（config文件中deploy配置）</p>
+<p>add, commit, pull更新hexo分支需要备份的源文件</p>
 <h2 id="中文目录无法跳转"><a href="#中文目录无法跳转" class="headerlink" title="中文目录无法跳转"></a>中文目录无法跳转</h2><p><a href="https://github.com/theme-next/hexo-theme-next/pull/1540/files">fix: Chinese TOC cannot jump by jiangtj · Pull Request #1540 · theme-next/hexo-theme-next (github.com)</a></p>
 <p>解决方法：在 <code>themes/next/source/js/util.js</code> 中增加两行代码，删除两行代码。保存后<code>hexo clean &amp; hexo g &amp; hexo s</code> 即可解决。</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> navItems = <span class="built_in">document</span>.querySelectorAll(<span class="string">&#x27;.post-toc li&#x27;</span>);</span><br><span class="line">   <span class="keyword">const</span> sections = [...navItems].map(<span class="function"><span class="params">element</span> =&gt;</span> &#123;</span><br><span class="line">     <span class="keyword">var</span> link = element.querySelector(<span class="string">&#x27;a.nav-link&#x27;</span>);</span><br><span class="line">     <span class="comment">//增加该行</span></span><br><span class="line">     <span class="keyword">var</span> target = <span class="built_in">document</span>.getElementById(<span class="built_in">decodeURI</span>(link.getAttribute(<span class="string">&#x27;href&#x27;</span>)).replace(<span class="string">&#x27;#&#x27;</span>, <span class="string">&#x27;&#x27;</span>));</span><br><span class="line">     <span class="comment">// TOC item animation navigate.</span></span><br><span class="line">     link.addEventListener(<span class="string">&#x27;click&#x27;</span>, <span class="function"><span class="params">event</span> =&gt;</span> &#123;</span><br><span class="line">       event.preventDefault();</span><br><span class="line">       <span class="comment">//删除该行</span></span><br><span class="line">       <span class="comment">//var target = document.getElementById(event.currentTarget.getAttribute(&#x27;href&#x27;).replace(&#x27;#&#x27;, &#x27;&#x27;));</span></span><br><span class="line">       <span class="keyword">var</span> offset = target.getBoundingClientRect().top + <span class="built_in">window</span>.scrollY;</span><br><span class="line">       <span class="built_in">window</span>.anime(&#123;</span><br><span class="line">         <span class="attr">targets</span>  : <span class="built_in">document</span>.scrollingElement,</span><br><span class="line">         <span class="attr">duration</span> : <span class="number">500</span>,</span><br><span class="line">         <span class="attr">easing</span>   : <span class="string">&#x27;linear&#x27;</span>,</span><br><span class="line">         <span class="attr">scrollTop</span>: offset + <span class="number">10</span></span><br><span class="line">       &#125;);</span><br><span class="line">     &#125;);</span><br><span class="line">     <span class="comment">// 删除该行 </span></span><br><span class="line">     <span class="comment">//return document.getElementById(link.getAttribute(&#x27;href&#x27;).replace(&#x27;#&#x27;, &#x27;&#x27;));</span></span><br><span class="line">     <span class="comment">// 增加该行</span></span><br><span class="line">     <span class="keyword">return</span> target;</span><br><span class="line">   &#125;);</span><br></pre></td></tr></table></figure>
@@ -990,7 +1323,7 @@ f_{i}=\min \left(b_{i}, \max \left(-b_{i}, R\left(x+x_{i}, y+y_{i}\right)-R(x, y
   </entry>
   <entry>
     <title>Java/HTML与CSS</title>
-    <url>/2021/07/22/html%E4%B8%8Ecss/</url>
+    <url>/2021/11/25/html%E4%B8%8Ecss/</url>
     <content><![CDATA[<blockquote>
 <p>HTML，超文本标记式编程语言，是一种专门在浏览器编译与执行的编程语言。用于通知浏览器将接收的数据以指定方式在窗口展示；控制浏览器请求行为。CSS则用于定位浏览器中HTML标签并对定位的HTML标签中【样式属性】进行统一管理。</p>
 </blockquote>
@@ -1093,7 +1426,7 @@ f_{i}=\min \left(b_{i}, \max \left(-b_{i}, R\left(x+x_{i}, y+y_{i}\right)-R(x, y
   </entry>
   <entry>
     <title>Java/JSP</title>
-    <url>/2021/07/22/jsp/</url>
+    <url>/2021/11/25/jsp/</url>
     <content><![CDATA[<blockquote>
 <p>JSP规范来自于JAVAEE规范中一种，制定了如何开发JSP文件<strong>代替响应对象将处理结果写入到响应体</strong>的开发流程制，Http服务器应该如何调用管理JSP文件。放在<code>/web/*.jsp</code>下</p>
 </blockquote>
@@ -1218,50 +1551,8 @@ f_{i}=\min \left(b_{i}, \max \left(-b_{i}, R\left(x+x_{i}, y+y_{i}\right)-R(x, y
       </tags>
   </entry>
   <entry>
-    <title>deep learning / 各种卷积方法</title>
-    <url>/2021/10/20/deep-learning%20_%20%E5%90%84%E7%A7%8D%E5%8D%B7%E7%A7%AF%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<blockquote>
-<p>卷积及其变种</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="2D-Convolution"><a href="#2D-Convolution" class="headerlink" title="2D-Convolution"></a>2D-Convolution</h2><p><img src="https://yinguobing.com/content/images/2018/02/conv-std.jpg"></p>
-<h2 id="Group-Convolution【AlexNet】"><a href="#Group-Convolution【AlexNet】" class="headerlink" title="Group Convolution【AlexNet】"></a>Group Convolution【AlexNet】</h2><p><img src="https://notes.sjtu.edu.cn/uploads/upload_b10b20c60b86b91ff70f65fef21f6a09.png" alt="在分组卷积中，filters被拆分为不同的组，每一个组都负责具有一定深度的传统 2D 卷积的工作"></p>
-<p>上图表示的是被拆分为 2 个filters组的分组卷积。在每个filters组中，其深度仅为传统2D-卷积的一半$D_{in}/2$，而每个filters组都包含$D_{out}/2$个filters。第一个filters组（红色）对输入层的前半部分做卷积，第二个filters组（蓝色）对输入层的后半部分做卷积。最终，每个filters组都输出了$D_{out}/2$个通道。整体上，两个组输出的通道数为$D_{out}$。之后再将这些通道堆叠到输出层中，输出层就有了$D_{out}$个通道。</p>
-<h2 id="Dilated-Convolution"><a href="#Dilated-Convolution" class="headerlink" title="Dilated Convolution"></a>Dilated Convolution</h2><p><img src="https://notes.sjtu.edu.cn/uploads/upload_d89c9f7c57d4924728b65e2803d488b9.png" alt="Dilated Convolution with a 3 x 3 kernel and dilation rate 2"></p>
-<h2 id="Depthwise-Separable-Convolution（DSC）【MobileNet-Xception】"><a href="#Depthwise-Separable-Convolution（DSC）【MobileNet-Xception】" class="headerlink" title="Depthwise Separable Convolution（DSC）【MobileNet/Xception】"></a>Depthwise Separable Convolution（DSC）【MobileNet/Xception】</h2><p>损失精度不多的情况下大幅度降低参数量和计算量，在参数量相同的前提下，采用DSC的神经网络层数可以做的更深。</p>
-<ul>
-<li>step1. Depthwise Convolution</li>
-</ul>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_a3ec37d801ec2f319a7ff8c909d6166d.png" alt=""></p>
-<ul>
-<li>step2. Pointwise Convolution</li>
-</ul>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_0567db7aabb74b5289b923643fdb8854.png" alt=""></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;&#x27;CLASS torch.nn.Conv2d(in_channels, out_channels, kernel_size, stride=1, padding=0, dilation=1, groups=1, bias=True)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> - dilation: controls the spacing between the kernel points; also known as the à trous algorithm.</span></span><br><span class="line"><span class="string"> - groups: controls the connections between inputs and outputs. in_channels and out_channels must both be divisible by groups. For example,</span></span><br><span class="line"><span class="string">		At groups=1, all inputs are convolved to all outputs.</span></span><br><span class="line"><span class="string">		At groups=2, the operation becomes equivalent to having two conv layers side by side, each seeing half the input channels, and producing half the output channels, and both subsequently concatenated.</span></span><br><span class="line"><span class="string">		At groups= in_channels, each input channel is convolved with its own set of filters.</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span>        </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DSC</span>(<span class="params">nn.Module</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, in_ch, out_ch</span>):</span></span><br><span class="line">        <span class="built_in">super</span>(CSDN_Tem, self).__init__()</span><br><span class="line">        self.depth_conv = nn.Conv2d(</span><br><span class="line">            in_channels=in_ch,</span><br><span class="line">            out_channels=in_ch,</span><br><span class="line">            kernel_size=<span class="number">3</span>,</span><br><span class="line">            stride=<span class="number">1</span>,</span><br><span class="line">            padding=<span class="number">1</span>,</span><br><span class="line">            groups=in_ch</span><br><span class="line">        )</span><br><span class="line">        self.point_conv = nn.Conv2d(</span><br><span class="line">            in_channels=in_ch,</span><br><span class="line">            out_channels=out_ch,</span><br><span class="line">            kernel_size=<span class="number">1</span>,</span><br><span class="line">            stride=<span class="number">1</span>,</span><br><span class="line">            padding=<span class="number">0</span>,</span><br><span class="line">            groups=<span class="number">1</span></span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span>(<span class="params">self, <span class="built_in">input</span></span>):</span></span><br><span class="line">        out = self.depth_conv(<span class="built_in">input</span>)</span><br><span class="line">        out = self.point_conv(out)</span><br><span class="line">        <span class="keyword">return</span> out</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="Asymmetric-Convolutions（AC）"><a href="#Asymmetric-Convolutions（AC）" class="headerlink" title="Asymmetric Convolutions（AC）"></a>Asymmetric Convolutions（AC）</h2><p><img src="https://notes.sjtu.edu.cn/uploads/upload_8d0cba80232d748effba02636b749964.png" alt=""></p>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_5b7630300458886a5397d6cb4c327fd6.png" alt=""></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CropLayer</span>(<span class="params">nn.Module</span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#   E.g., (-1, 0) means this layer should crop the first and last rows of the feature map. And (0, -1) crops the first and last columns</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, crop_set</span>):</span></span><br><span class="line">        <span class="built_in">super</span>(CropLayer, self).__init__()</span><br><span class="line">        self.rows_to_crop = - crop_set[<span class="number">0</span>]</span><br><span class="line">        self.cols_to_crop = - crop_set[<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">assert</span> self.rows_to_crop &gt;= <span class="number">0</span></span><br><span class="line">        <span class="keyword">assert</span> self.cols_to_crop &gt;= <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span>(<span class="params">self, <span class="built_in">input</span></span>):</span></span><br><span class="line">        <span class="keyword">if</span> self.rows_to_crop == <span class="number">0</span> <span class="keyword">and</span> self.cols_to_crop == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">input</span></span><br><span class="line">        <span class="keyword">elif</span> self.rows_to_crop &gt; <span class="number">0</span> <span class="keyword">and</span> self.cols_to_crop == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">input</span>[:, :, self.rows_to_crop:-self.rows_to_crop, :]</span><br><span class="line">        <span class="keyword">elif</span> self.rows_to_crop == <span class="number">0</span> <span class="keyword">and</span> self.cols_to_crop &gt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">input</span>[:, :, :, self.cols_to_crop:-self.cols_to_crop]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">input</span>[:, :, self.rows_to_crop:-self.rows_to_crop, self.cols_to_crop:-self.cols_to_crop]</span><br><span class="line">            </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ACBlock</span>(<span class="params">nn.Module</span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, in_channels, out_channels, kernel_size, stride=<span class="number">1</span>, padding=<span class="number">0</span>, dilation=<span class="number">1</span>, groups=<span class="number">1</span>, padding_mode=<span class="string">&#x27;zeros&#x27;</span>, deploy=<span class="literal">False</span>, use_affine=<span class="literal">True</span>, reduce_gamma=<span class="literal">False</span>, use_last_bn=<span class="literal">False</span>, gamma_init=<span class="literal">None</span> </span>):</span></span><br><span class="line">        <span class="built_in">super</span>(ACBlock, self).__init__()</span><br><span class="line">        self.deploy = deploy</span><br><span class="line">        <span class="keyword">if</span> deploy:</span><br><span class="line">            self.fused_conv = nn.Conv2d(in_channels=in_channels, out_channels=out_channels, kernel_size=(kernel_size,kernel_size), stride=stride, padding=padding, dilation=dilation, groups=groups, bias=<span class="literal">True</span>, padding_mode=padding_mode)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            self.square_conv = nn.Conv2d(in_channels=in_channels, out_channels=out_channels,</span><br><span class="line">                                         kernel_size=(kernel_size, kernel_size), stride=stride,</span><br><span class="line">                                         padding=padding, dilation=dilation, groups=groups, bias=<span class="literal">False</span>,</span><br><span class="line">                                         padding_mode=padding_mode)</span><br><span class="line">            self.square_bn = nn.BatchNorm2d(num_features=out_channels, affine=use_affine)</span><br><span class="line"></span><br><span class="line">            center_offset_from_origin_border = padding - kernel_size // <span class="number">2</span></span><br><span class="line">            ver_pad_or_crop = (padding, center_offset_from_origin_border)</span><br><span class="line">            hor_pad_or_crop = (center_offset_from_origin_border, padding)</span><br><span class="line">            <span class="keyword">if</span> center_offset_from_origin_border &gt;= <span class="number">0</span>:</span><br><span class="line">                self.ver_conv_crop_layer = nn.Identity()</span><br><span class="line">                ver_conv_padding = ver_pad_or_crop</span><br><span class="line">                self.hor_conv_crop_layer = nn.Identity()</span><br><span class="line">                hor_conv_padding = hor_pad_or_crop</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                self.ver_conv_crop_layer = CropLayer(crop_set=ver_pad_or_crop)</span><br><span class="line">                ver_conv_padding = (<span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">                self.hor_conv_crop_layer = CropLayer(crop_set=hor_pad_or_crop)</span><br><span class="line">                hor_conv_padding = (<span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">            self.ver_conv = nn.Conv2d(in_channels=in_channels, out_channels=out_channels, kernel_size=(kernel_size, <span class="number">1</span>),</span><br><span class="line">                                      stride=stride,</span><br><span class="line">                                      padding=ver_conv_padding, dilation=dilation, groups=groups, bias=<span class="literal">False</span>,</span><br><span class="line">                                      padding_mode=padding_mode)</span><br><span class="line"></span><br><span class="line">            self.hor_conv = nn.Conv2d(in_channels=in_channels, out_channels=out_channels, kernel_size=(<span class="number">1</span>, kernel_size),</span><br><span class="line">                                      stride=stride,</span><br><span class="line">                                      padding=hor_conv_padding, dilation=dilation, groups=groups, bias=<span class="literal">False</span>,</span><br><span class="line">                                      padding_mode=padding_mode)</span><br><span class="line">            self.ver_bn = nn.BatchNorm2d(num_features=out_channels, affine=use_affine)</span><br><span class="line">            self.hor_bn = nn.BatchNorm2d(num_features=out_channels, affine=use_affine)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> reduce_gamma:</span><br><span class="line">                <span class="keyword">assert</span> <span class="keyword">not</span> use_last_bn</span><br><span class="line">                self.init_gamma(<span class="number">1.0</span> / <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> use_last_bn:</span><br><span class="line">                <span class="keyword">assert</span> <span class="keyword">not</span> reduce_gamma</span><br><span class="line">                self.last_bn = nn.BatchNorm2d(num_features=out_channels, affine=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> gamma_init <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">                <span class="keyword">assert</span> <span class="keyword">not</span> reduce_gamma</span><br><span class="line">                self.init_gamma(gamma_init)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">init_gamma</span>(<span class="params">self, gamma_value</span>):</span></span><br><span class="line">        init.constant_(self.square_bn.weight, gamma_value)</span><br><span class="line">        init.constant_(self.ver_bn.weight, gamma_value)</span><br><span class="line">        init.constant_(self.hor_bn.weight, gamma_value)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;init gamma of square, ver and hor as &#x27;</span>, gamma_value)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">single_init</span>(<span class="params">self</span>):</span></span><br><span class="line">        init.constant_(self.square_bn.weight, <span class="number">1.0</span>)</span><br><span class="line">        init.constant_(self.ver_bn.weight, <span class="number">0.0</span>)</span><br><span class="line">        init.constant_(self.hor_bn.weight, <span class="number">0.0</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;init gamma of square as 1, ver and hor as 0&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span>(<span class="params">self, <span class="built_in">input</span></span>):</span></span><br><span class="line">        <span class="keyword">if</span> self.deploy:</span><br><span class="line">            <span class="keyword">return</span> self.fused_conv(<span class="built_in">input</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            square_outputs = self.square_conv(<span class="built_in">input</span>)</span><br><span class="line">            square_outputs = self.square_bn(square_outputs)</span><br><span class="line">            vertical_outputs = self.ver_conv_crop_layer(<span class="built_in">input</span>)</span><br><span class="line">            vertical_outputs = self.ver_conv(vertical_outputs)</span><br><span class="line">            vertical_outputs = self.ver_bn(vertical_outputs)</span><br><span class="line">            horizontal_outputs = self.hor_conv_crop_layer(<span class="built_in">input</span>)</span><br><span class="line">             = self.hor_conv(horizontal_outputs)</span><br><span class="line">            horizontal_outputs = self.hor_bn(horizontal_outputs)</span><br><span class="line">            result = square_outputs + vertical_outputs + horizontal_outputs</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">hasattr</span>(self, <span class="string">&#x27;last_bn&#x27;</span>):</span><br><span class="line">                <span class="keyword">return</span> self.last_bn(result)</span><br><span class="line">            <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
-<h2 id="Transposed-Convolution-Deconvolution"><a href="#Transposed-Convolution-Deconvolution" class="headerlink" title="Transposed Convolution / Deconvolution"></a>Transposed Convolution / Deconvolution</h2><p>反卷积/转置卷积是上采样过程。</p>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_1a988c699452eb8e51899e65db49db05.png" alt="No padding，no strides，transposed"></p>
-<h2 id="计算复杂度和参数量"><a href="#计算复杂度和参数量" class="headerlink" title="计算复杂度和参数量"></a>计算复杂度和参数量</h2><ul>
-<li><code>MACs</code> 或 <code>MAdds</code>， 加乘数，（a*x+b as 1 MAC）</li>
-<li>FLOPs，floating point operations. 浮点运算数<ul>
-<li>FLOPs = 2MACs</li>
-</ul>
-</li>
-</ul>
-<p>JVET nnvc-ctc 脚本使用 torchsummary+ptflops(get_model_complexity_info) 计算，结果对齐 MACs/pixel（=结果/输入尺寸）。torchstat计算出的差2倍。</p>
-<ul>
-<li>param各包计算结果相同</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>deep learning</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>VVC环路滤波 / LMCS</title>
-    <url>/2021/09/01/lmcs/</url>
+    <url>/2021/11/25/lmcs/</url>
     <content><![CDATA[<blockquote>
 <p>LMCS( luma mapping with chroma scaling)是  VVC 中新增的技术，其位 于去方块滤波之前，也被称为环路重整形（in-loop reshaper），主要包括两个部分：亮度映射（LM）、依赖亮度的色度缩放（CS）。</p>
 </blockquote>
@@ -1404,7 +1695,7 @@ f_{i}=\min \left(b_{i}, \max \left(-b_{i}, R\left(x+x_{i}, y+y_{i}\right)-R(x, y
   </entry>
   <entry>
     <title>VVC环路滤波 / SAO</title>
-    <url>/2021/08/28/sao/</url>
+    <url>/2021/11/25/sao/</url>
     <content><![CDATA[<blockquote>
 <p>VVC环路滤波：自适应样点补偿滤波器</p>
 </blockquote>
@@ -1469,60 +1760,6 @@ f_{i}=\min \left(b_{i}, \max \left(-b_{i}, R\left(x+x_{i}, y+y_{i}\right)-R(x, y
 ]]></content>
       <tags>
         <tag>VVC</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java/代理模式</title>
-    <url>/2021/07/09/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/</url>
-    <content><![CDATA[<blockquote>
-<p>代理模式的一个典型应用：AOP(面向切面编程)</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h2><p>a类本来需要调用c类（目标类）的方法完成某个功能， 但是c不让a调用。 </p>
-<p>a —&gt;不能直接调用 c的方法。<br>在a 和 c 直接创建一个 b 代理，c让b访问。 c，b实现相同的功能（接口）。<br>a —&gt;访问b—&gt;访问c</p>
-<p>作用：</p>
-<ul>
-<li><p>功能增强： 在原有的功能上，增加了额外的功能。 新增加的功能，叫做功能增强</p>
-</li>
-<li><p>控制访问： 代理类不让你访问目标，例如商家不让用户访问厂家。 </p>
-</li>
-</ul>
-<h2 id="静态代理"><a href="#静态代理" class="headerlink" title="静态代理"></a>静态代理</h2><p>代理类需要手工实现。即自己创建一个java类，表示代理类。所要代理的目标类是确定的。</p>
-<ul>
-<li>缺点：当目标类和代理类很多时候，<ul>
-<li>当目标类增加， 代理类可能也需要成倍的增加。 代理类数量过多。</li>
-<li>当接口中功能增加或修改，会影响众多的实现类，厂家类，代理类都需要修改。影响较大。</li>
-</ul>
-</li>
-</ul>
-<h2 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h2><p>在程序执行过程中，使用jdk的<strong>反射</strong>机制，创建<strong>代理类对象</strong>， 并动态的指定要代理目标类。</p>
-<p>即使目标类很多，代理类数量可以很少；当修改了接口中的方法时，不影响代理类。</p>
-<p>动态代理是一种创建java对象的能力，不用创建代理类，就能创建代理类对象。</p>
-<p>两种实现方式：jdk动态代理；cglib动态代理</p>
-<h3 id="jdk动态代理"><a href="#jdk动态代理" class="headerlink" title="jdk动态代理"></a>jdk动态代理</h3><ul>
-<li>使用java反射包中的类和接口实现动态代理的功能。</li>
-<li>反射包 java.lang.reflect , 里面有三个类 ： InvocationHandler , Method, Proxy.</li>
-<li>要求目标类实现接口</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 不使用反射调用方法</span></span><br><span class="line">HelloService service = <span class="keyword">new</span> HelloServiceImpl(); <span class="comment">//创建类对象service</span></span><br><span class="line">service.sayHello(<span class="string">&quot;张三&quot;</span>); <span class="comment">// 通过对象调用sayHello()方法</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用反射调用方法</span></span><br><span class="line">Method method =  HelloService.class.getMethod(<span class="string">&quot;sayHello&quot;</span>, String.class); <span class="comment">// 获取method对象（sayHello()方法）</span></span><br><span class="line">HelloService service2 = <span class="keyword">new</span> HelloServiceImpl2();</span><br><span class="line">Object ret = method.invoke(service2, <span class="string">&quot;李四&quot;</span>); <span class="comment">// invoke()方法调用对象service2的方法</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>InvocationHandler接口，只有一个方法invoke()，代理对象要完成的功能。（目标方法/功能增强）</li>
-<li>Method类：表示目标类中的方法。通过Method可以执行某个目标类的方法，method.invoke(目标对象，方法的参数)</li>
-<li>Proxy类：创建代理对象。之前创建对象是 new ，现在使用Proxy类的静态方法 newProxyInstance() 。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//实现InvocationHandler接口，完成代理类要做的功能（1.调用目标方法，2.功能增强）</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MySellHandler</span> <span class="keyword">implements</span> <span class="title">InvocationHandler</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Object target = <span class="keyword">null</span>; <span class="comment">// 为目标类创建对象（活动的，不是固定的，需要传入进来）</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MySellHandler</span><span class="params">(Object target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.target = target;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">	<span class="comment">// 实现invoke方法，完成代理类要做的功能</span></span><br><span class="line">    <span class="comment">// Object proxy: jdk创建的代理对象，无需赋值。</span></span><br><span class="line">	<span class="comment">// Method method: 目标类中的方法，jdk提供</span></span><br><span class="line">    <span class="comment">// Object[] args：目标类中方法的参数， jdk提供。</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">        Object res  = <span class="keyword">null</span>;</span><br><span class="line">        res =  method.invoke(target,args); <span class="comment">// 反射，执行目标对象target的method方法</span></span><br><span class="line">		<span class="comment">//功能增强，加价</span></span><br><span class="line">        <span class="keyword">if</span>( res != <span class="keyword">null</span> )&#123;</span><br><span class="line">            Float price = (Float)res;</span><br><span class="line">            price = price + <span class="number">25</span>;</span><br><span class="line">            res = price;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(res);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//创建代理对象，使用Proxy</span></span><br><span class="line"><span class="comment">//1. 创建目标对象</span></span><br><span class="line">UsbSell factory = <span class="keyword">new</span> UsbKingFactory();</span><br><span class="line"><span class="comment">//2.创建InvocationHandler对象</span></span><br><span class="line">InvocationHandler handler = <span class="keyword">new</span> MySellHandler(factory);</span><br><span class="line"><span class="comment">//3.创建代理对象</span></span><br><span class="line">UsbSell proxy = (UsbSell) Proxy.newProxyInstance(</span><br><span class="line">    factory.getClass().getClassLoader(),</span><br><span class="line">    factory.getClass().getInterfaces(),</span><br><span class="line">    handler</span><br><span class="line">	);</span><br><span class="line"><span class="comment">//4.通过代理执行方法</span></span><br><span class="line"><span class="keyword">float</span> price = proxy.sell(<span class="number">1</span>); <span class="comment">// 代理对象proxy调用目标类factory中的sell方法</span></span><br></pre></td></tr></table></figure>
-<h3 id="cglib动态代理"><a href="#cglib动态代理" class="headerlink" title="cglib动态代理"></a>cglib动态代理</h3><ul>
-<li><p>cglib是第三方的工具库， 创建代理对象。</p>
-</li>
-<li><p>原理是继承， cglib通过继承目标类，创建它的子类，在子类中重写父类中同名的方法， 实现功能的修改。要求目标类不能是final的， 方法也不能是final的。</p>
-</li>
-<li><p>cglib的要求目标类比较宽松， 只要能继承即可。</p>
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>java</tag>
       </tags>
   </entry>
   <entry>
@@ -1759,8 +1996,62 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
       </tags>
   </entry>
   <entry>
+    <title>Java/代理模式</title>
+    <url>/2021/11/25/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/</url>
+    <content><![CDATA[<blockquote>
+<p>代理模式的一个典型应用：AOP(面向切面编程)</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h2><p>a类本来需要调用c类（目标类）的方法完成某个功能， 但是c不让a调用。 </p>
+<p>a —&gt;不能直接调用 c的方法。<br>在a 和 c 直接创建一个 b 代理，c让b访问。 c，b实现相同的功能（接口）。<br>a —&gt;访问b—&gt;访问c</p>
+<p>作用：</p>
+<ul>
+<li><p>功能增强： 在原有的功能上，增加了额外的功能。 新增加的功能，叫做功能增强</p>
+</li>
+<li><p>控制访问： 代理类不让你访问目标，例如商家不让用户访问厂家。 </p>
+</li>
+</ul>
+<h2 id="静态代理"><a href="#静态代理" class="headerlink" title="静态代理"></a>静态代理</h2><p>代理类需要手工实现。即自己创建一个java类，表示代理类。所要代理的目标类是确定的。</p>
+<ul>
+<li>缺点：当目标类和代理类很多时候，<ul>
+<li>当目标类增加， 代理类可能也需要成倍的增加。 代理类数量过多。</li>
+<li>当接口中功能增加或修改，会影响众多的实现类，厂家类，代理类都需要修改。影响较大。</li>
+</ul>
+</li>
+</ul>
+<h2 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h2><p>在程序执行过程中，使用jdk的<strong>反射</strong>机制，创建<strong>代理类对象</strong>， 并动态的指定要代理目标类。</p>
+<p>即使目标类很多，代理类数量可以很少；当修改了接口中的方法时，不影响代理类。</p>
+<p>动态代理是一种创建java对象的能力，不用创建代理类，就能创建代理类对象。</p>
+<p>两种实现方式：jdk动态代理；cglib动态代理</p>
+<h3 id="jdk动态代理"><a href="#jdk动态代理" class="headerlink" title="jdk动态代理"></a>jdk动态代理</h3><ul>
+<li>使用java反射包中的类和接口实现动态代理的功能。</li>
+<li>反射包 java.lang.reflect , 里面有三个类 ： InvocationHandler , Method, Proxy.</li>
+<li>要求目标类实现接口</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 不使用反射调用方法</span></span><br><span class="line">HelloService service = <span class="keyword">new</span> HelloServiceImpl(); <span class="comment">//创建类对象service</span></span><br><span class="line">service.sayHello(<span class="string">&quot;张三&quot;</span>); <span class="comment">// 通过对象调用sayHello()方法</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用反射调用方法</span></span><br><span class="line">Method method =  HelloService.class.getMethod(<span class="string">&quot;sayHello&quot;</span>, String.class); <span class="comment">// 获取method对象（sayHello()方法）</span></span><br><span class="line">HelloService service2 = <span class="keyword">new</span> HelloServiceImpl2();</span><br><span class="line">Object ret = method.invoke(service2, <span class="string">&quot;李四&quot;</span>); <span class="comment">// invoke()方法调用对象service2的方法</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>InvocationHandler接口，只有一个方法invoke()，代理对象要完成的功能。（目标方法/功能增强）</li>
+<li>Method类：表示目标类中的方法。通过Method可以执行某个目标类的方法，method.invoke(目标对象，方法的参数)</li>
+<li>Proxy类：创建代理对象。之前创建对象是 new ，现在使用Proxy类的静态方法 newProxyInstance() 。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//实现InvocationHandler接口，完成代理类要做的功能（1.调用目标方法，2.功能增强）</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MySellHandler</span> <span class="keyword">implements</span> <span class="title">InvocationHandler</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Object target = <span class="keyword">null</span>; <span class="comment">// 为目标类创建对象（活动的，不是固定的，需要传入进来）</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MySellHandler</span><span class="params">(Object target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.target = target;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">	<span class="comment">// 实现invoke方法，完成代理类要做的功能</span></span><br><span class="line">    <span class="comment">// Object proxy: jdk创建的代理对象，无需赋值。</span></span><br><span class="line">	<span class="comment">// Method method: 目标类中的方法，jdk提供</span></span><br><span class="line">    <span class="comment">// Object[] args：目标类中方法的参数， jdk提供。</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">        Object res  = <span class="keyword">null</span>;</span><br><span class="line">        res =  method.invoke(target,args); <span class="comment">// 反射，执行目标对象target的method方法</span></span><br><span class="line">		<span class="comment">//功能增强，加价</span></span><br><span class="line">        <span class="keyword">if</span>( res != <span class="keyword">null</span> )&#123;</span><br><span class="line">            Float price = (Float)res;</span><br><span class="line">            price = price + <span class="number">25</span>;</span><br><span class="line">            res = price;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(res);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//创建代理对象，使用Proxy</span></span><br><span class="line"><span class="comment">//1. 创建目标对象</span></span><br><span class="line">UsbSell factory = <span class="keyword">new</span> UsbKingFactory();</span><br><span class="line"><span class="comment">//2.创建InvocationHandler对象</span></span><br><span class="line">InvocationHandler handler = <span class="keyword">new</span> MySellHandler(factory);</span><br><span class="line"><span class="comment">//3.创建代理对象</span></span><br><span class="line">UsbSell proxy = (UsbSell) Proxy.newProxyInstance(</span><br><span class="line">    factory.getClass().getClassLoader(),</span><br><span class="line">    factory.getClass().getInterfaces(),</span><br><span class="line">    handler</span><br><span class="line">	);</span><br><span class="line"><span class="comment">//4.通过代理执行方法</span></span><br><span class="line"><span class="keyword">float</span> price = proxy.sell(<span class="number">1</span>); <span class="comment">// 代理对象proxy调用目标类factory中的sell方法</span></span><br></pre></td></tr></table></figure>
+<h3 id="cglib动态代理"><a href="#cglib动态代理" class="headerlink" title="cglib动态代理"></a>cglib动态代理</h3><ul>
+<li><p>cglib是第三方的工具库， 创建代理对象。</p>
+</li>
+<li><p>原理是继承， cglib通过继承目标类，创建它的子类，在子类中重写父类中同名的方法， 实现功能的修改。要求目标类不能是final的， 方法也不能是final的。</p>
+</li>
+<li><p>cglib的要求目标类比较宽松， 只要能继承即可。</p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数据结构 / 多路查找树</title>
-    <url>/2021/07/30/%E5%A4%9A%E8%B7%AF%E6%9F%A5%E6%89%BE%E6%A0%91/</url>
+    <url>/2021/11/25/%E5%A4%9A%E8%B7%AF%E6%9F%A5%E6%89%BE%E6%A0%91/</url>
     <content><![CDATA[<blockquote>
 <p>大量数据存储中，在查找的背景下，BST由于树深度过大而造成磁盘IO读写过于频繁，进而导致效率低下。那么如何减少树的深度?</p>
 </blockquote>
@@ -1839,7 +2130,7 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
   </entry>
   <entry>
     <title>排序 —— 快速排序/归并排序/插入排序</title>
-    <url>/2021/08/13/%E6%8E%92%E5%BA%8F/</url>
+    <url>/2021/11/25/%E6%8E%92%E5%BA%8F/</url>
     <content><![CDATA[<blockquote>
 <p>快速排序/归并排序/插入排序</p>
 </blockquote>
@@ -1897,7 +2188,7 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
   </entry>
   <entry>
     <title>数据结构/Hash</title>
-    <url>/2021/08/05/hash/</url>
+    <url>/2021/11/25/hash/</url>
     <content><![CDATA[<blockquote>
 <p>Hash，一般译做散列或音译为哈希，是把任意长度的输入通过散列算法变换成固定长度的输出，该输出就是散列值，是一种压缩映射。</p>
 </blockquote>
@@ -2126,7 +2417,7 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
   </entry>
   <entry>
     <title>Java/JDBC</title>
-    <url>/2021/07/07/jdbc/</url>
+    <url>/2021/11/25/jdbc/</url>
     <content><![CDATA[<blockquote>
 <p>Java DataBase Connectivity, Java连接数据库，是SUN公司制定的一套接口, java.sql.*;</p>
 <p>后期将集成到Mybatis框架中。</p>
@@ -2164,7 +2455,7 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
   </entry>
   <entry>
     <title>数据库/MySQL</title>
-    <url>/2021/08/06/mysql/</url>
+    <url>/2021/11/25/mysql/</url>
     <content><![CDATA[<blockquote>
 <p>MySQL，最流行的关系型数据库管理系统。</p>
 </blockquote>
@@ -2303,7 +2594,7 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
   </entry>
   <entry>
     <title>Java/Servlet规范</title>
-    <url>/2021/07/19/servlet/</url>
+    <url>/2021/11/25/servlet/</url>
     <content><![CDATA[<blockquote>
 <p>Servlet规范，来自于JAVAEE规范中的一种。</p>
 <p>后期使用springMVC框架。</p>
@@ -2486,7 +2777,7 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
   </entry>
   <entry>
     <title>Leetcode/二叉树</title>
-    <url>/2021/07/19/%E4%BA%8C%E5%8F%89%E6%A0%91/</url>
+    <url>/2021/11/25/%E4%BA%8C%E5%8F%89%E6%A0%91/</url>
     <content><![CDATA[<blockquote>
 <p>二叉树与递归有着千丝万缕的联系，二叉树在定义时就使用了递归的概念：一棵二叉树可能是空树，如果不是空树，那么它的左右子树都是二叉树。</p>
 </blockquote>
@@ -2761,7 +3052,7 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
   </entry>
   <entry>
     <title>操作系统/内存管理</title>
-    <url>/2021/08/06/%E5%86%85%E5%AD%98/</url>
+    <url>/2021/11/25/%E5%86%85%E5%AD%98/</url>
     <content><![CDATA[<blockquote>
 <p>内存是用于存放数据的硬件。程序执行前需要先放到内存中才能被CPU处理，如果高速CPU直接和慢速的外存进行数据的交互，有速度矛盾。</p>
 </blockquote>
@@ -3060,7 +3351,7 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
   </entry>
   <entry>
     <title>图与网络/贪心算法</title>
-    <url>/2021/07/12/%E8%B4%AA%E5%BF%83/</url>
+    <url>/2021/11/25/%E8%B4%AA%E5%BF%83/</url>
     <content><![CDATA[<blockquote>
 <p>贪心算法在对问题求解时，总是做出在当前看来是最好的选择。</p>
 </blockquote>
@@ -3258,327 +3549,6 @@ P(\cup A_i)\leq \sum P(A_i)=\binom{n}{t}P(A_i)<1</script><p>令其小于$1$，�
 ]]></content>
       <tags>
         <tag>图与网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Video Coding / Block Partition</title>
-    <url>/2021/11/02/Video_Coding%20_%20Block%20Partition/</url>
-    <content><![CDATA[<blockquote>
-<p>Block Partition，Video Coding 的基础。</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="H-264"><a href="#H-264" class="headerlink" title="H.264"></a>H.264</h2><ul>
-<li>macroblock 16x16, 在一个MB内划分PU, TU<ul>
-<li>I macroblock(intra)<ul>
-<li>PB: luma 4x4, 16x16; chroma: 16x16</li>
-</ul>
-</li>
-<li>P/B macroblock(inter)<ul>
-<li>PB: 2Nx2N, Nx2N, 2NxN, NxN<ul>
-<li><img src="https://notes.sjtu.edu.cn/uploads/upload_35672750ff82e0032d687554f6eea5d0.png" alt="macroblock 进一步 PU 划分"></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>TB within an MB: 4x4 DCT2; 8x8 DCT2 in FRExt</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_8ef1bf563d8fcaa5ad45d30c504ababd.png" alt="大分辨率序列上效率低"></p>
-<h2 id="H-265"><a href="#H-265" class="headerlink" title="H.265"></a>H.265</h2><ul>
-<li><p>CTU: 64X64 —-quad-tree—-&gt; CU: 8x8, 16x16, … 64x64</p>
-<ul>
-<li><img src="https://notes.sjtu.edu.cn/uploads/upload_8e63500a385f17b8b3c4874752b4b2ca.png" alt=""></li>
-<li><p>CU —&gt; PU</p>
-<ul>
-<li>intra: 2Nx2N, NxN(N=4, 8, 16, 32)</li>
-<li>inter: 2Nx2N, Nx2N, 2NxN, NxN, AMP<ul>
-<li><img src="https://notes.sjtu.edu.cn/uploads/upload_5ba2983cd9e4f1ed54ecda83c73c32af.png" alt=""></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>CU —-Residual quad tree—-&gt; TU</p>
-<ul>
-<li>4x4, 8x8, 16x16, 32x32 DCT-2</li>
-<li>4x4 DST-7 for intra 4x4 luma block</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_b3d3c8a256459361a7095512c8c9faa4.png" alt=""></p>
-<h2 id="H-266"><a href="#H-266" class="headerlink" title="H.266"></a>H.266</h2><ul>
-<li><p>CTU 128x128 ——QT + MTT(multi-type-tree)—-&gt; CU: 8x8, 16x16, … 128x128</p>
-<ul>
-<li><img src="https://notes.sjtu.edu.cn/uploads/upload_80c198b7a7bef214264f455a662378f1.png" alt="MTT"></li>
-<li><p><img src="https://notes.sjtu.edu.cn/uploads/upload_9ff1804a48e3deec292ad5d2ef10c62b.png" alt="左下的CTU经历了三次划分，(编码端决策)复杂度已经很高"></p>
-</li>
-<li><p>CU划分灵活，取消PU</p>
-</li>
-<li>CU —-&gt;TU(取消RQT划分)<ul>
-<li>ISP(intra subpartition)</li>
-<li>SBT(sub-block transform)</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_c0a509e00ae2037086d4bfe0a645fbae.png" alt=""></p>
-<h3 id="CTU-—-gt-CU"><a href="#CTU-—-gt-CU" class="headerlink" title="CTU —&gt; CU"></a>CTU —&gt; CU</h3><h4 id="QT-MTT"><a href="#QT-MTT" class="headerlink" title="QT-MTT"></a>QT-MTT</h4><ul>
-<li><img src="https://notes.sjtu.edu.cn/uploads/upload_964095e103d8c1e6d2cd3d4e5a93e21d.png" alt=""></li>
-<li><img src="https://notes.sjtu.edu.cn/uploads/upload_09d6c5324e183c5d382b71be2cfcde85.png" alt=""></li>
-<li><img src="https://notes.sjtu.edu.cn/uploads/upload_6397fadb947252dccda1e38fcfcfe2da.png" alt=""></li>
-</ul>
-<blockquote>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_6c8e028c48d9fd597c43afc8d44b8b70.png" alt=""></p>
-</blockquote>
-<ul>
-<li><img src="https://notes.sjtu.edu.cn/uploads/upload_16e8b9e266046d5aeccea4c27d223c69.png" alt=""></li>
-</ul>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_dbc58176795f865ac53bbe7d309e8db3.png" alt=""></p>
-<blockquote>
-<p>划分中止条件(VVC)：划分到最小 CU 块；达到规定的最大二级树的划分深度<br><img src="https://notes.sjtu.edu.cn/uploads/upload_c27c39236f4094d5ceb16ad1f885899c.png" alt=""></p>
-</blockquote>
-<p>出现 BT/TT 的区域不能用 QT ，第二级树只包含 BT/TT，称为 QT-MTT 级联结构。AVS3 和其他标准也不允许。</p>
-<blockquote>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_669090be1545b2fa2a74777ea4d4a97b.png" alt=""><br>AV1 划分实质上是 QT+MTT，MTT最大划分到两次，实际上还略少一些，相比 VVC 在划分上没那么灵活。</p>
-</blockquote>
-<h4 id="快速划分算法"><a href="#快速划分算法" class="headerlink" title="快速划分算法"></a>快速划分算法</h4><blockquote>
-<p>对于coding tree 的每个节点，编码端检查顺序：<code>no_split -&gt; HBT -&gt; VBT -&gt; HTT -&gt; VTT -&gt; QT</code><br>快速算法思想：剪枝</p>
-</blockquote>
-<ul>
-<li>基于上一个尝试的的RD结果决策要不要尝试下一种划分；</li>
-<li>基于上一层（patent node）的结果决定是否尝试下一种划分</li>
-<li>基于neighbor coding info and/or temporal layer</li>
-<li>多种划分方式得到同样的块（左上角） — 储存先前的结果<br>  <img src="https://notes.sjtu.edu.cn/uploads/upload_fb27c4cafee76c3784cefaf563e52e19.png" alt=""></li>
-</ul>
-<p>VTM3 CTC中会打开约10种快速算法，86% enc time saving and 1.09% RA loss.</p>
-<p>其他默认关闭的快速算法：</p>
-<ul>
-<li>基于梯度<ul>
-<li><img src="/uploads/upload_8ad166474b6ce6639adb33b8f5b23ab1.png" alt=""></li>
-<li>loss 相对较大</li>
-</ul>
-</li>
-<li>QT split skipping：如果当前最好预测模式是skip，不检查QT划分</li>
-</ul>
-<h4 id="split-syntax"><a href="#split-syntax" class="headerlink" title="split syntax"></a>split syntax</h4><p><img src="https://notes.sjtu.edu.cn/uploads/upload_4c52fcd16e09eddfd9add941a695a213.png" alt=""></p>
-<p>首先确定五种划分模式中哪些可用（复杂）</p>
-<ul>
-<li>example: allow quad-split<br>  <img src="https://notes.sjtu.edu.cn/uploads/upload_916dd4abd01b5c9051bc66232e4e5b65.png" alt=""></li>
-</ul>
-<h4 id="CST-VVC-only"><a href="#CST-VVC-only" class="headerlink" title="CST(VVC only)"></a>CST(VVC only)</h4><ul>
-<li><p>for I slice, chroma的划分可以与luma不同。</p>
-<ul>
-<li>intra 中 chroma 通常比 luma 简单可以划分成更少的块</li>
-<li><p>CCLM技术: 用 luma 的重建信号预测 chroma，luma 预测质量高，没必要划分成更小的块</p>
-</li>
-<li><p><img src="https://notes.sjtu.edu.cn/uploads/upload_a816b57182398d42fac421e9e609880a.png" alt=""></p>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="other-improvements"><a href="#other-improvements" class="headerlink" title="other improvements"></a>other improvements</h4><ul>
-<li><p>redundancy removal</p>
-<ul>
-<li><p><img src="https://notes.sjtu.edu.cn/uploads/upload_120e85edb6970ee8553f3d4cc867ed20.png" alt=""></p>
-</li>
-<li><p><img src="https://notes.sjtu.edu.cn/uploads/upload_f7ae94d0d3fd5ba00d13625cbe952249.png" alt=""></p>
-</li>
-</ul>
-</li>
-<li><p>图像边界强制划分</p>
-<ul>
-<li><img src="https://notes.sjtu.edu.cn/uploads/upload_405f172caad834cfa865a71299a6babf.png" alt=""><ul>
-<li><img src="https://notes.sjtu.edu.cn/uploads/upload_bfb836a3749424257ae02c15db198133.png" alt="">     </li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="CU-—-gt-TU"><a href="#CU-—-gt-TU" class="headerlink" title="CU —&gt; TU"></a>CU —&gt; TU</h3><h4 id="ISP-a-k-a-SDIP-for-intra-CU"><a href="#ISP-a-k-a-SDIP-for-intra-CU" class="headerlink" title="ISP(a.k.a SDIP) for intra CU"></a>ISP(a.k.a SDIP) for intra CU</h4><ul>
-<li>all luma CU 可以被划分为2个或4个预测模式相同的 TU<ul>
-<li><img src="https://notes.sjtu.edu.cn/uploads/upload_8688831be7a094f6ff08305c986aaad4.png" alt=""></li>
-</ul>
-</li>
-<li>chroma 不划分，残差较小，用大的变换效率较高</li>
-<li>出于硬件复杂度考虑，luma TB 必须至少包含16个像素</li>
-</ul>
-<h4 id="SBT-for-inter-CU"><a href="#SBT-for-inter-CU" class="headerlink" title="SBT for inter CU"></a>SBT for inter CU</h4><ul>
-<li>motivation：多数inter情况下，残差只出现在块的一侧</li>
-<li>CU划分为两个sub-TU：一部分为残差，另一部分强制不传</li>
-</ul>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_114d1fca4e5e70adfa7d3896dd72c509.png" alt=""></p>
-<h3 id="硬件实现考虑"><a href="#硬件实现考虑" class="headerlink" title="硬件实现考虑"></a>硬件实现考虑</h3><ul>
-<li>VPDU 以64x64节点为单位处理，不能出现跨多个节点的单元</li>
-</ul>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_1e24229de95020cec3c498ebcc1e599b.png" alt=""></p>
-<p>Due to VPDU,  the valid CU size could be 128x128, 128x64 .64x128, 64x64 and below 64x64</p>
-<ul>
-<li>local dual tree 可能出现少于16个像素的chroma块<ul>
-<li>intra：luma继续划分，chroma停止划分</li>
-<li>inter：不存在该问题</li>
-</ul>
-</li>
-</ul>
-<h3 id="增益"><a href="#增益" class="headerlink" title="增益"></a>增益</h3><p><img src="https://notes.sjtu.edu.cn/uploads/upload_d65d11b52523ffb342ac742c2817fc76.png" alt=""></p>
-]]></content>
-      <tags>
-        <tag>video coding</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Video Coding / HDR</title>
-    <url>/2021/11/02/Video_Coding%20_%20HDR/</url>
-    <content><![CDATA[<blockquote>
-<p>HDR — 更高的动态范围，更广的色域，更深的比特位。</p>
-</blockquote>
-<span id="more"></span>
-<p>将自然界中真实场景转换为屏幕上显示出来的图像，往往需要经过两个主要步骤：</p>
-<ul>
-<li>通过摄影设备，将外界光信息转换为图像信息存储为数字信号；</li>
-<li>通过显示设备，将图像信息转换为屏幕输出的光信息。</li>
-</ul>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_062a65b8c9ed7a81b968dca8947aadd9.png" alt=""></p>
-<p>在整个过程中，信息流要经过两个重要的非线性映射，才能形成我们在显示设备上看到的图像。</p>
-<ul>
-<li>相机的非线性映射通常称为光电转换函数（OETF）</li>
-<li>显示端的显示器的非线性映射通常称为电光转换函数（EOTF）</li>
-</ul>
-<p>通常，OETF和EOTF并不是互逆关系。显示端的EOTF往往还包括代表创作者渲染意图的光光转换函数（OOTF），其对观看者在较暗环境下通过显示器观看带来的心理视觉影响进行了修正。</p>
-<h2 id="SDR：Gamma校正"><a href="#SDR：Gamma校正" class="headerlink" title="SDR：Gamma校正"></a>SDR：Gamma校正</h2><p><img src="https://notes.sjtu.edu.cn/uploads/upload_73a758e0925744047b37727ae50db089.png" alt=""></p>
-<p>经过一系列实验的测定，人类能够感知到的连续亮度谱如上图所示。</p>
-<blockquote>
-<p>也就是说，如果比上图更加精细，则没有必要，因为人眼无法识别；<br>如果比上图粗糙，则人眼能够感觉到间断。</p>
-</blockquote>
-<p>接着，将最左边纯黑编号为“0.0”，最右端纯白编号为“1.0”，中间定义为中灰“0.5”。这就形成了人眼的亮度谱。</p>
-<p>但是，上图中的亮度在自然界中并不是同样成比例的，例如图中的中灰，对应自然界中的亮度是纯白的20%。</p>
-<p>将人眼亮度谱与自然界中实际亮度进行建模，就可以得到下面的图像：</p>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_46af7cd62fea840a8a7795344e9bb60b.png" alt=""></p>
-<p>在低亮度区域，人眼的敏感性较高，因此自然界中很小的亮度范围，都能够被人眼察觉；<br>在高亮度范围，人眼的敏感度较低，因此自然界中的大范围的亮度变化，在人眼感知上却并不大。<br>可以使用幂函数来拟合这种非线性的映射，用公式表示如下：</p>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_a30ade2b1f5ab50f8c5a912270d38b6e.png" alt=""></p>
-<ul>
-<li>X是使用0-1之间的实数,表示输入亮度</li>
-<li>Y是使用0-1之间实数表示的输出亮度</li>
-<li>γ为人为设定的参数，不同的γ选择会产生不同的效果。</li>
-</ul>
-<p>这种通过调整γ的取值，来调整输入输出亮度之间映射关系的方式，称之为gamma校正。根据γ取值的不同，能够发现gamma校正的不同效果：</p>
-<p>当γ<1时，曲线上凸，输出值大于输入值。
-当γ=1时，曲线为一条直线，输入与输出相等，不进行校正
-当γ>1时，曲线下凸，输出值小于输入值</p>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_38001fcceeeef81b8e25162a93c8cbbb.png" alt=""></p>
-<h3 id="真实场景到屏幕显示"><a href="#真实场景到屏幕显示" class="headerlink" title="真实场景到屏幕显示"></a>真实场景到屏幕显示</h3><p><img src="https://notes.sjtu.edu.cn/uploads/upload_9b556e400adfa83d459a6721e9fc9e57.png" alt=""></p>
-<ul>
-<li><p>首先，图像每个像素的取值在0-255之间，先进行归一化，将0-255这256个数线性映射到0-1之间。</p>
-</li>
-<li><p>接着，在图像获取阶段，摄像机中会使用一种encoding gamma函数进行gamma校正，这里的gamma值小于1。</p>
-<ul>
-<li>自然界中的亮度，首先在摄像机中进行归一化，映射到0-1之间，接着，将这个经过归一化的值输入encoding gamma函数中。最后将encoding gamma函数的输出值与0-255的像素值归一化结果进行比较，就能得到这个像素点的像素值。</li>
-</ul>
-</li>
-<li><p>显示阶段的gamma校正通常使用一种display gamma函数来完成，这里的gamma值大于1。</p>
-<ul>
-<li>显示设备读取像素值后，进行归一化，然后将归一化结果输入display gamma函数中。将输出的值对应的自然光线进行输出。</li>
-</ul>
-</li>
-</ul>
-<h3 id="可逆过程？"><a href="#可逆过程？" class="headerlink" title="可逆过程？"></a>可逆过程？</h3><p>理论上来说，上述两个阶段的gamma值乘积应该为1。因为两个gamma校正实际上做的是恰好相反的操作，一个是将自然光线存储为数字信息，另一个是将数字信息转换为光线。而为了使自然中的光线与显示设备产生的光线一致，显然这里的gamma值的乘积需要为1。</p>
-<p>但是，在实际操作中，这两个gamma值的乘积并不为1，原因有以下两点：</p>
-<ul>
-<li>对于传统显示设备来说，屏幕能够显示的亮度范围与颜色范围与实际情况相差好几个数量级；</li>
-<li>在真实的场景中，原始的场景填充了观察者的所有视野，而显示设备的亮度往往只局限在一个被周围环境包围的屏幕上。</li>
-</ul>
-<p>这两个差别使得感知对比度相较于原始场景明显下降了。</p>
-<p>为了平衡这种现象，进而保证显示亮度在<strong>感知上</strong>和原始场景是一致，的两个gamma的乘积并不是1，而是经过试验得到的其他值。</p>
-<blockquote>
-<p>在电影院这种漆黑的环境中，乘积为1.5<br>在明亮的室内，乘积为1.125<br>个人电脑使用的一个标准叫sRGB，它使用的encoding gamma大约是0.45（也就是1/2.2）。这个值是为了配合display gamma为2.5的设备工作的。这样，end-to-end gamma就是0.45 * 2.5 = 1.125了。</p>
-</blockquote>
-<h3 id="Gamma-校正的意义"><a href="#Gamma-校正的意义" class="headerlink" title="Gamma 校正的意义"></a>Gamma 校正的意义</h3><p>按照上一节所说，两段gamma校正实际上是一对逆过程，一个将光信息转化为数字信息，一个将数字信息转化为光信息。<br>按照常理来说，并不需要复杂的非线性映射，只需要将归一化后的光信息记录下来，然后再让显示设备进行输出即可。<br>从这种角度来说，gamma校正是一个不必要的操作。</p>
-<p>这是一个合理的质疑。问题的根源在<strong>存储位宽</strong>上，如果存储位宽足够大，显然可以使用上述归一化记录方式进行处理，但是，实际生产与应用中的位宽是有限的。</p>
-<ul>
-<li>在传统的图像存储与显示标准中，一个像素点有三个通道，而每个通道只有8位。</li>
-<li>这也就意味着，图像的灰阶有限，与真实世界相比，差了很多数量级。</li>
-<li>因此，想要在有限灰阶上表现出近似于自然界的亮度，就需要对灰阶分配进行设计</li>
-</ul>
-<p>这也是Gamma校正的意义。</p>
-<ul>
-<li><p>由于人类感知的“中灰”，在实际的自然光线中对应于白光的20%的亮度。因此，如果完全按照自然光线的数值进行灰度处理，纯黑到中灰这一段在人类感知中占到一半的灰度，将只能由20%的灰阶进行表示，而剩下的一半会有80%的灰阶进行表示，这显然是不合理的。Gamma校正就可以解决这个问题。</p>
-</li>
-<li><p>在实际操作中，中灰对应的自然光线，显然会被映射为0.5的取值，也就对应128这一灰阶。这样的结果就是高亮度与低亮度部分分别占有一半的灰阶，这就会使得显示的图像的直观感受更接近于现实。</p>
-</li>
-</ul>
-<p>因此，gamma校正实际上是用来解决显示设备亮度灰阶不足的问题的。</p>
-<ul>
-<li>如果将图像存储的编码位宽扩大到32位，也就是能完全包含自然界亮度范围的时候，自然就不再需要进行gamma校正了，这种情况下，只需要将自然光线的亮度值记录下来，然后对应输出即可。</li>
-<li>但是，使用32位位宽来存储图像过于“奢侈”，因此gamma校正在实际生活中起到了广泛而巨大的作用。</li>
-</ul>
-<h3 id="不足"><a href="#不足" class="headerlink" title="不足"></a>不足</h3><p>传统的Gamma校正方式，是针对<strong>传统CRT显示设备与LDR图像</strong>设计的，对应的标准是BT.1886标准。而BT.1886标准规定的的峰值亮度仅为100nits，它与传统CRT设备的显示能力相一致。</p>
-<p>目前大多数显示设备的显示能力早已突破100nits的限制，普通消费级显示器的亮度一般在200nits至500nits，商业级的监视器亮度可以达到1000nits至2000nits，实验室级别的监视器甚至可以高达4000nits至20000nits。</p>
-<p>同时，现代数字运动图像传感器能够捕获动态范围到80dB或者比特深度达到14bit的线性视频信号。由于实践和历史原因，大多数专业视频制作系统都采用10比特，而消费者级别的视频和计算机图形学通常采用8比特。在HDR技术中，通常采用10比特或12比特。</p>
-<p>显示设备亮度范围的提升、图像编码bit depth的提升，使得传统Gamma校正不适用于HDR的光电转换过程。如果强行使用Gamma校正进行转换，会在图像与视频中出现明显的分块与分环瑕疵。</p>
-<p>针对上述问题，标准化组织规范了两种新型光电转换曲线：PQ曲线、HLG曲线。</p>
-<p>由于8比特的位深限制了使用更宽广的动态范围，因此需要定义新的OETF曲线为视频制作和传输提供更高的动态范围。Dolby实验室提出了新的OETF曲线，称为PQ曲线，目前已经被标准化为SMPTE ST 2084。</p>
-<p>Dolby提出的 PQ EOTF基于 Barten 的CSF模型。</p>
-<h2 id="HDR：PQ-and-HLG-transfer-functions"><a href="#HDR：PQ-and-HLG-transfer-functions" class="headerlink" title="HDR：PQ and HLG transfer functions"></a>HDR：PQ and HLG transfer functions</h2><p>为了在屏幕上显示数字图像，显示设备需要将<strong>像素值转换成相应的光值</strong>。这个过程通常是非线性的，被称为EOTF（Electro-Optical Transfer Function，电光传输函数）。不同的显示设备支持不同类型的 “传输函数”。</p>
-<p>常规的HDTV显示设备（SDR显示器）通常使用BT.709 Gamma transfer function来将视频信号转换为光。这些显示器主要用于显示亮度范围达100 Nits（cd/m2）的图像。</p>
-<p>HDR定义了两个额外的传输函数来处理这个问题—感知量化器（Perceptual Quantizer，PQ）和混合对数伽马（Hybrid Log-Gamma，HLG）。</p>
-<ul>
-<li>HDR PQ是一个绝对的、以显示为参考的信号，支持PQ的显示设备需要实现tone mapping来适应光照度。显示设备使用内容元数据来显示PQ编码的图像。这可以为整个视频流（静态）或每个单独的镜头（动态）来一次。</li>
-</ul>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_ce534244d8a230353f0fffdf0804d7de.png" alt="PQ"></p>
-<ul>
-<li>HDR HLG是一个相对的、以场景为参考的信号。这意味着支持HLG的显示设备会根据内容和自身的显示能力自动适应光照度。</li>
-</ul>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_2767a93b6aec39142d38dd2e3ee9d8a4.png" alt="HLG"></p>
-<p>预计在理想条件下，基于PQ的动态转换将达到最佳的质量效果，但代价是与现有显示系统的兼容性。</p>
-<p>下图描述了各种传递函数的光照度的映射情况。垂直轴显示信号值的刻度为0-1，0为黑色，1为白色。这样做是为了使信号范围、比特深度不受影响。水平轴显示的是显示设备的尼特光照水平。</p>
-<p>OETF - 光-电转移函数。描述光值将如何转换为数字值的数学传输函数，通常在相机内。<br>OOTF - 光-光传输函数。这个转移函数补偿了相机环境和显示器环境之间的色调感知差异。<br><img src="https://notes.sjtu.edu.cn/uploads/upload_0a057c35d6b3c8458095bfb0c48c2613.png" alt=""></p>
-<p>人类对较暗区域的变化比对较亮区域的变化更敏感。这一特性在HDR系统中也得到了利用，与明亮区域相比，黑暗区域的颗粒度更大。</p>
-<p>上图显示，与明亮区域相比，黑暗区域的光照度范围由更大的信号值表示—这意味着黑暗区域的颗粒度更高。虽然这在基于BT.709的显示器中分布更均匀，但在明亮区域的HDR显示器中，它的颗粒度变得更小。</p>
-<ul>
-<li>在HLG的情况下，一半以上的信号值在0-60尼特之间的光照度中被表示，其余的信号值在60-1000尼特范围内被表示。</li>
-<li>在基于PQ ST2084的显示器中，大约有一半的信号值在0-40尼特之间的光照度中表示，其余一半的信号值在60-1000尼特范围内表示。</li>
-</ul>
-<p>根据该图，HDR HLG在低亮度区域与BT.709相似，因此与现有的SDR显示设备有更好的兼容性。<br>然而，HDR PQ与BT.709有很大不同。如果我们试图在SDR显示器上显示PQ HDR图像，由PQ代表的较暗区域将无一例外地变得更亮，从而降低了图像的对比度水平，其结果是一个水洗的图像。</p>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_accd4d5e5cadcce2af7dc4d83f348f86.png" alt=""></p>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_dd3197d6133124bbcf0111d4706009cb.png" alt=""></p>
-<p>虽然基于PQ的转换提供了在支持HDR的显示器上显示最佳质量结果的承诺，但与HLG相比，它需要显示设备的适当 Tone mapping。</p>
-<h3 id="HDR-Tone-Mapping"><a href="#HDR-Tone-Mapping" class="headerlink" title="HDR Tone Mapping"></a>HDR Tone Mapping</h3><ul>
-<li>Tone Mapping是在HDR元数据的基础上将数字信号适应适当的光照水平的过程。</li>
-<li>这个过程不是简单地在图像数据上应用EOTF（电光传输函数），而是试图<strong>使用元数据信息</strong>将<strong>图像数据与显示设备的能力进行映射</strong>。</li>
-<li>由于市场上有广泛的HDR显示设备，每个设备都有自己的Nits（即 “亮度”）范围，正确的色调映射对于良好的用户体验是必要的。由于色调映射是根据视频流中的元数据完成的，因此正确的元数据的存在是必要的。</li>
-</ul>
-<p>源素材可以用最好的相机以HDR拍摄，然后在高端HDR母版系统上进行母版处理，但它仍然需要在市场上可用的HDR电视上以最佳方式显示。色调映射将内容与设备进行适当的亮度映射，不会出现明显的退化。</p>
-<blockquote>
-<p>比如，一个图像是以2000尼特的峰值亮度拍摄的。如果它显示在0-2000尼特范围的电视上，亮度范围将与拍摄的原始画面完全一致。然而，在其他设备上的结果将是不同的。<br><img src="https://notes.sjtu.edu.cn/uploads/upload_07cd23fdacd116f9139ac14d8bc6abd6.png" alt=""><br>由于 Tone Mapping 是在 HDR 显示设备上显示基于 PQ 的 HDR 内容的必要操作，电视需要知道内容的原始属性，即所使用的亮度范围和母版系统参数。这些信息是以 HDR 元数据的形式传达的。<br>读取 HDR 元数据后，显示设备可以决定 Tone Mapping 参数，使转换后的视频在显示设备的显示范围内处于最佳状态。</p>
-</blockquote>
-<h3 id="HDR元数据"><a href="#HDR元数据" class="headerlink" title="HDR元数据"></a>HDR元数据</h3><p>HDR 元数据是显示设备以最佳方式显示内容的一种辅助手段。它包含 HDR 内容和母版设备属性，显示设备根据其自身的色域和峰值亮度来映射内容。有两种类型的元数据 - 静态和动态。</p>
-<ul>
-<li>静态元数据：静态元数据包含适用于整个内容的元数据信息。它由SMPTE ST 2086标准化。<ul>
-<li>在一个典型的内容中，亮度和色彩范围因镜头而异。静态元数据的挑战在于，如果根据静态元数据进行 Tone Mapping，它将只基于整个内容中最亮的那一帧。</li>
-<li>因此，大部分内容的动态范围和色域的压缩程度将超过需要。</li>
-<li>这将导致在能力较差的HDR显示设备上出现糟糕的观看体验。</li>
-</ul>
-</li>
-<li>动态元数据：动态元数据允许在每个场景的基础上进行 Tone Mapping。动态元数据已经被SMPTE ST 2094标准化，它定义了与内容相关的元数据。<ul>
-<li>当内容在能力较弱的 HDR 显示设备上显示时，这将导致用户的观看体验明显改善。</li>
-</ul>
-</li>
-<li>将动态元数据与静态元数据一起使用，可以克服只使用静态元数据进行 Tone Mapping 所带来的问题。</li>
-</ul>
-<h3 id="Dolby-Vision"><a href="#Dolby-Vision" class="headerlink" title="Dolby Vision"></a>Dolby Vision</h3><ul>
-<li>Dolby Vision使用动态元数据，是当今最常用的HDR技术。</li>
-<li>主要的OTT服务提供商，如Netflix和亚马逊，以及主要的电影公司和许多著名的电视制造商都采用了这种技术。</li>
-<li>Dolby Vision在SMPTE ST 2094-10中得到了标准化。除了支持动态元数据外，杜比视界还允许为特定设备描述多种修饰，从而在这些设备上实现更精细的显示。</li>
-</ul>
-<h2 id="Defination"><a href="#Defination" class="headerlink" title="Defination"></a>Defination</h2><p>cd/m2 - 坎德拉(cd)是国际单位制(SI)中发光强度的基本单位；即一个点光源在特定方向上发出的每单位实体角度的发光功率。一支普通的蜡烛发出的光，其发光强度大约为1坎德拉。</p>
-<p>Nits — 一种用于描述亮度的非SI单位。1Nits=1cd/m2。</p>
-<p>WCG - Wide Color Gamut，宽色域。提供比BT.709更广泛的颜色范围的色域。DCI-P3和BT.2020是WCG的例子，在显示设备上提供更真实的图像表现。</p>
-<p>参考：<br><a href="https://www.veneratech.com/hdr/">https://www.veneratech.com/hdr/</a></p>
-]]></content>
-      <tags>
-        <tag>video coding</tag>
       </tags>
   </entry>
 </search>

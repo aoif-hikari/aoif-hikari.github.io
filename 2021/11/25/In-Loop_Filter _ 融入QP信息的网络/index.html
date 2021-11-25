@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="JSt260h9ZipxDe9fDWuLLwbMKW6KZ1gPsQ2V68XJlTA">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aoif-hikari.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="两篇paperA QP-ADAPTIVE MECHANISM FOR CNN-BASED FILTER IN VIDEO CODINGOne-for-all: An Efﬁcient Variable Convolution Neural Network for In-loop Filter of VVC">
+<meta property="og:type" content="article">
+<meta property="og:title" content="In-Loop Filter &#x2F; 融入QP信息的网络">
+<meta property="og:url" content="https://aoif-hikari.github.io/2021/11/25/In-Loop_Filter%20_%20%E8%9E%8D%E5%85%A5QP%E4%BF%A1%E6%81%AF%E7%9A%84%E7%BD%91%E7%BB%9C/index.html">
+<meta property="og:site_name" content="aoif-hikari">
+<meta property="og:description" content="两篇paperA QP-ADAPTIVE MECHANISM FOR CNN-BASED FILTER IN VIDEO CODINGOne-for-all: An Efﬁcient Variable Convolution Neural Network for In-loop Filter of VVC">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_23b54651e201bcbc4be324893286ff33.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_325bde70ed8996168a743bc8d95c7486.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_18abe3cdcfd7d251d18cd079de1c589f.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_e196c8ad1d5122ceeaac174effc64d46.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_ed4a0a5646ca0cd4756c91f010e60835.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_305e44ab52fc39a81220ffd583e71115.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_15537338f437af0ddd716b8eda252373.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_19cb97506db4a38e75b34b4ead57da6a.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_1ba48a0e32c2c84df6564fba3d7bae0b.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_9ef4aa964eb4b2d8e738dd4efb6acfce.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_ed6f1b8343f0262e86f409df04379a20.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_143d74670a6ed6c8f5e87a0abcd55450.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_e6838d51215601199e4c4b24c1221660.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_9b8235398f6d52404211def555c08153.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_57666646d6769dbb18f9715cd57159a1.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_2c88d6044b40b0ec1dddcbde15b5539e.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_6462317026173b9ea3376d51739f28ad.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_c21fba20db9589b896b735b543afb452.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_29ca327de24ba74d082f4c45e5780c40.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_494e75bd6f31305c6cd665d6873d3150.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_b7a6d06a0bcf37593311c8d8b71c8616.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_38c0eb28bff9b9b66dffa31886851389.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_b3f11be27e97b704f3cfa80121b40cbc.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_de6a347d017bbd7ea3efd10ddef4cf1d.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_7b42f1242eda5a0b29e9df5cd228a589.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_f925d0880e543aad122b64d6d0f15522.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_bbb38e8af88f9c91b4c6b4b1303eb197.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_f84d929bc41d46cc80cde6c74f4cfc0e.png">
+<meta property="article:published_time" content="2021-11-25T02:59:27.319Z">
+<meta property="article:modified_time" content="2021-11-25T02:59:27.319Z">
+<meta property="article:author" content="fu">
+<meta property="article:tag" content="视频编码">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://notes.sjtu.edu.cn/uploads/upload_23b54651e201bcbc4be324893286ff33.png">
+
+<link rel="canonical" href="https://aoif-hikari.github.io/2021/11/25/In-Loop_Filter%20_%20%E8%9E%8D%E5%85%A5QP%E4%BF%A1%E6%81%AF%E7%9A%84%E7%BD%91%E7%BB%9C/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>In-Loop Filter / 融入QP信息的网络 | aoif-hikari</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="aoif-hikari" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">aoif-hikari</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://aoif-hikari.github.io/2021/11/25/In-Loop_Filter%20_%20%E8%9E%8D%E5%85%A5QP%E4%BF%A1%E6%81%AF%E7%9A%84%E7%BD%91%E7%BB%9C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cat.jpg">
+      <meta itemprop="name" content="fu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="aoif-hikari">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          In-Loop Filter / 融入QP信息的网络
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-11-25 10:59:27" itemprop="dateCreated datePublished" datetime="2021-11-25T10:59:27+08:00">2021-11-25</time>
+            </span>
+
+          
+            <span id="/2021/11/25/In-Loop_Filter%20_%20%E8%9E%8D%E5%85%A5QP%E4%BF%A1%E6%81%AF%E7%9A%84%E7%BD%91%E7%BB%9C/" class="post-meta-item leancloud_visitors" data-flag-title="In-Loop Filter / 融入QP信息的网络" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2021/11/25/In-Loop_Filter%20_%20%E8%9E%8D%E5%85%A5QP%E4%BF%A1%E6%81%AF%E7%9A%84%E7%BD%91%E7%BB%9C/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/11/25/In-Loop_Filter%20_%20%E8%9E%8D%E5%85%A5QP%E4%BF%A1%E6%81%AF%E7%9A%84%E7%BD%91%E7%BB%9C/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              <span>7.1k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              <span>6 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>两篇paper<br>A QP-ADAPTIVE MECHANISM FOR CNN-BASED FILTER IN VIDEO CODING<br>One-for-all: An Efﬁcient Variable Convolution Neural Network for In-loop Filter of VVC</p>
+</blockquote>
+<span id="more"></span>
+<ul>
+<li>不同量化参数（QP）压缩的视频，其压缩噪声水平不同</li>
+<li>不同的帧类型（FT），压缩噪声水平不同。</li>
+<li>为单个QP/QP段或FT训练模型，消耗大量的资源训练大量模型，增加了视频编解码器的内存负担</li>
+<li>A practical convolutional neural network as loop filter for intra frame: QPmap</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_23b54651e201bcbc4be324893286ff33.png" alt=""></p>
+<ul>
+<li>$\hat{\boldsymbol{y} }=\boldsymbol{w} *\{\boldsymbol{y} ; Q P\}+\boldsymbol{b}$</li>
+</ul>
+<ul>
+<li><script type="math/tex; mode=display">
+  \begin{aligned} \hat{\boldsymbol{y} } &=\boldsymbol{w}_{1} * \boldsymbol{y}+\boldsymbol{w}_{2} * Q P+\boldsymbol{b} \\ &=\boldsymbol{w}_{1} * \boldsymbol{y}+\left(\Sigma \boldsymbol{w}_{2} \cdot Q P+\boldsymbol{b}\right) \\ &=\boldsymbol{w}_{1} * \boldsymbol{y}+\boldsymbol{b}^{\prime}(Q P) \end{aligned}</script></li>
+<li><p>$\boldsymbol{b}^{\prime}(Q P)=\Sigma \boldsymbol{w}_{2} \cdot Q P+\boldsymbol{b}$</p>
+</li>
+<li>QP被添加到线性函数的偏置上，没有反应出QP和滤波强度(权重)的关系，且只有第一层引入了QP信息</li>
+<li>QPmap不如QP-Separate/QP-Band models</li>
+</ul>
+<h2 id="A-QP-ADAPTIVE-MECHANISM-FOR-CNN-BASED-FILTER-IN-VIDEO-CODING"><a href="#A-QP-ADAPTIVE-MECHANISM-FOR-CNN-BASED-FILTER-IN-VIDEO-CODING" class="headerlink" title="A QP-ADAPTIVE MECHANISM FOR CNN-BASED FILTER IN VIDEO CODING"></a>A QP-ADAPTIVE MECHANISM FOR CNN-BASED FILTER IN VIDEO CODING</h2><h3 id="问题建模"><a href="#问题建模" class="headerlink" title="问题建模"></a>问题建模</h3><p>（忽略偏置bias）<br>时域卷积：$\boldsymbol{w} * \boldsymbol{y}=\hat{\boldsymbol{x } }$<br>频域乘积：$\mathcal{F}(\boldsymbol{w}) \mathcal{F}(\boldsymbol{y})=\mathcal{F}(\hat{\boldsymbol{x} })$<br>$\mathcal{F}(\hat{\boldsymbol{x} }) \approx \mathcal{F}(\boldsymbol{x})$</p>
+<p>QP增加导致Qstep增加，引入噪声$\epsilon$</p>
+<p>$\boldsymbol{w}^{\prime} *(\boldsymbol{y}+\boldsymbol{\epsilon})=\hat{\boldsymbol{x} }^{\prime}$</p>
+<p>$\mathcal{F}\left(\boldsymbol{w}^{\prime}\right)(\mathcal{F}(\boldsymbol{y})+\mathcal{F}(\boldsymbol{\epsilon}))=\mathcal{F}\left(\hat{\boldsymbol{x} }^{\prime}\right)$</p>
+<p>loss fuc：MSE</p>
+<p>$\mathcal{L}=\mathbb{E}\left|\boldsymbol{x}-\hat{\boldsymbol{x} }^{\prime}\right|^{2}$</p>
+<p>Parseval’s theorem</p>
+<p>$\begin{aligned} \mathcal{L} &amp;=\mathbb{E}\left|\mathcal{F}(\boldsymbol{x})-\mathcal{F}\left(\hat{\boldsymbol{x} }^{\prime}\right)\right|^{2} \\ &amp;=\mathbb{E}\left|\mathcal{F}(\boldsymbol{x})-\mathcal{F}\left(\boldsymbol{w}^{\prime}\right)(\mathcal{F}(\boldsymbol{y})+\mathcal{F}(\boldsymbol{\epsilon}))\right|^{2} \\ &amp; \approx \mathbb{E}\left|\mathcal{F}(\boldsymbol{x})-\mathcal{F}\left(\boldsymbol{w}^{\prime}\right)[\mathcal{F}(\boldsymbol{x}) / \mathcal{F}(\boldsymbol{w})+\mathcal{F}(\boldsymbol{\epsilon})]\right|^{2} \end{aligned}$</p>
+<script type="math/tex; mode=display">
+\mathcal{F}\left(\boldsymbol{w}^{\prime}\right)=\underbrace{\mathcal{F}(\boldsymbol{w})}_{\text {org. filter } } \underbrace{\left[\frac{1}{1+|\mathcal{F}(\boldsymbol{w})|^{2} \mathcal{F}(\boldsymbol{n}) / \mathcal{F}(\boldsymbol{s})}\right]}_{\text {influence factor } }</script><script type="math/tex; mode=display">
+\mathcal{F}(\boldsymbol{n})=\mathbb{E}|\mathcal{F}(\boldsymbol{\epsilon})|^{2} \text { and } \mathcal{F}(\boldsymbol{s})=\mathbb{E}|\mathcal{F}(\boldsymbol{x})|^{2}</script><p>similar to Wiener deconvolution</p>
+<ul>
+<li>Wiener deconvolution：recover the original signal from the distorted signal by using the priors of the input signal, noise, and degradation function</li>
+<li>this solution：aims at making a speciﬁc ﬁlter adaptive to the changing quantization noise.</li>
+</ul>
+<h3 id="应用于CNN"><a href="#应用于CNN" class="headerlink" title="应用于CNN"></a>应用于CNN</h3><p>从频域的角度来看，从CNN中提取的特征对应于输入图像在不同频率上的选择<br>作用在整个频带上的 $\boldsymbol{w}^{\prime}$ 可以被分解成作用在特定频带上的子滤波器 $w_{i}^{\prime}$ </p>
+<p>上式可写为</p>
+<p>$\begin{aligned} \mathcal{F}\left(\boldsymbol{w}^{\prime}\right) &amp;=\sum_{i} \mathcal{F}\left(w_{i}^{\prime}\right) \\ &amp;=\sum_{i} \mathcal{F}\left(w_{i}\right)\left[\frac{1}{1+\left|\mathcal{F}\left(w_{i}\right)\right|^{2} \mathcal{F}\left(n_{i}\right) / \mathcal{F}\left(s_{i}\right)}\right] \end{aligned}$</p>
+<p>第一项 $\mathcal{F}\left(w_{i}\right)$ 等价于CNN中的卷积核<br>第二项表示每个卷积核的 influence factor ，可以看作作用在特定子频带上</p>
+<p>$\left|\mathcal{F}\left(w_{i}\right)\right|^{2} / \mathcal{F}\left(s_{i}\right)$ : 假设子带中$\left|\mathcal{F}\left(w_{i}\right)\right|^{2}$ 是常数，原始信号强度$\mathcal{F}\left(s_{i}\right)$ is also invariable in the task of adapting to different quantization noises，整体是常数 $k_i$</p>
+<p>量化噪声强度 $\mathcal{F}(\boldsymbol{n})$ ：默认编码配置下，在所有频率上都与量化步长Qstep的平方成正比<br>分解子噪声 $\mathcal{F}\left(n_{i}\right)$载特定频率上与量化步长Qstep的平方成正比</p>
+<script type="math/tex; mode=display">
+\frac{\left|\mathcal{F}\left(w_{i}\right)\right|^{2} }{\mathcal{F}\left(s_{i}\right)} \mathcal{F}\left(n_{i}\right) \approx k_{i} \mathcal{F}\left(n_{i}\right) \propto Q_{s t e p}^{2}</script><p>trainable parameters θ  to represent the proportional relation- ship，then</p>
+<script type="math/tex; mode=display">
+\mathcal{F}\left(\boldsymbol{w}^{\prime}\right) \approx \sum_{i} \mathcal{F}\left(w_{i}\right)\left[\frac{1}{1+\theta_{i} Q_{\text {step } }^{2} }\right]</script><p>N ： the number of feature maps of CNN<br>number of parameters introduced by this method: $O\left(N^{2}\right)$, the same order as the number of the kernels</p>
+<p>Inspired by DSC (depthwise convolution instead of standard con- volution), we apply the inﬂuence factor to the feature maps instead of the convolution kernels.</p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_325bde70ed8996168a743bc8d95c7486.png" alt=""></p>
+<p>parameter quantity becomes $O\left(N\right)$, same order as the number of the biases (the QP map method).</p>
+<ul>
+<li>Qstep 的调整</li>
+</ul>
+<p>VVC/HEVC: </p>
+<p>$Q_{s t e p}=2^{(Q P-4) / 6}$，$Q_{s t e p}^{2}=2^{(Q P-4) / 3}$</p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_18abe3cdcfd7d251d18cd079de1c589f.png" alt=""></p>
+<ul>
+<li>$\theta_{i}$ 不能小于等于 0</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_e196c8ad1d5122ceeaac174effc64d46.png" alt=""></p>
+<p>选择第二种直接截断的方法</p>
+<h3 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h3><ul>
+<li>把这种方法应用到已经提出的这4个CNN上</li>
+<li>网络加在DB和SAO之间，因为经过CNN增强后SAO ALF可能能节省一些比特</li>
+<li>CNN-被集成到 VTM-6.3</li>
+<li>DIV2K数据集，四个QPs包括22、27、32和37，测试用HEVC测试序列的第1帧</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_ed4a0a5646ca0cd4756c91f010e60835.png" alt="只用luma训练模型，同时也能提升色度分量"></p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_305e44ab52fc39a81220ffd583e71115.png" alt="解码复杂度"></p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_15537338f437af0ddd716b8eda252373.png" alt="与QPmap方法的对比"></p>
+<h2 id="One-for-all-An-Efﬁcient-Variable-Convolution-Neural-Network-for-In-loop-Filter-of-VVC"><a href="#One-for-all-An-Efﬁcient-Variable-Convolution-Neural-Network-for-In-loop-Filter-of-VVC" class="headerlink" title="One-for-all:  An  Efﬁcient  Variable  Convolution Neural  Network  for  In-loop  Filter  of  VVC"></a>One-for-all:  An  Efﬁcient  Variable  Convolution Neural  Network  for  In-loop  Filter  of  VVC</h2><ul>
+<li>注意力模块 </li>
+</ul>
+<p>给定离散值$x$，$x∈ Ω = [a, b]$, one-hot encoding 得向量</p>
+<p>$\mathbf{v}_{\Omega}(x) \in \mathbb{R}^{m \times 1}$</p>
+<p>$U \in \mathbb{R}^{C \times m}$ is a weight matrix</p>
+<p>$\mathbf{M}=\sigma\left(U \mathbf{v}_{\Omega}(x)\right)$</p>
+<p>$\sigma(x)=\log \left(1+e^{x}\right)$</p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_19cb97506db4a38e75b34b4ead57da6a.png" alt=""></p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_1ba48a0e32c2c84df6564fba3d7bae0b.png" alt=""></p>
+<p>$I(x)=\left\{\begin{array}{l}0, \quad x \in[0, L] \\ 1+\left\lfloor\frac{x-L}{r}\right\rfloor, \quad x \in[L+1, R-1] \\ 1+\left\lfloor\frac{R-L}{r}\right\rfloor, \quad x \in[R, 63]\end{array}\right.$</p>
+<p>x is QP value<br>I (x) is the index of the single high 1 bit<br>L = 20, R = 45 and r = 3. </p>
+<p>the shape of U is changed from (64, C ) to (10, C )</p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_9ef4aa964eb4b2d8e738dd4efb6acfce.png" alt=""></p>
+<h3 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h3><p><img src="https://notes.sjtu.edu.cn/uploads/upload_ed6f1b8343f0262e86f409df04379a20.png" alt=""></p>
+<ul>
+<li>CTU and frame-level RDO</li>
+<li>N = 1, D = 6,  3 × 3 convolutions C = 64</li>
+<li>DIV2K, All-intra conﬁguration with QP randomly selected from [21, 41]</li>
+<li>40 videos of various resolutions (3840 × 2160, 1920 × 1080, 1280 × 720, 640 × 360), encoded under Low-delay P and Random-Access conﬁg- urations at QP=22, 27, 32, and 37. select one frame per ﬁve </li>
+<li>64 × 64 non-overlapping, remove the sub-images whose PSNR are more than 50.0 or less than 20.0</li>
+<li>Only use the Y-channel for training</li>
+</ul>
+<ul>
+<li><p>训练 patch 分布不均匀，修改 loss func 为 focal MSE</p>
+<blockquote>
+<p>疑问：为何不直接构造分布均匀的数据集？</p>
+</blockquote>
+<p>  <img src="https://notes.sjtu.edu.cn/uploads/upload_143d74670a6ed6c8f5e87a0abcd55450.png" alt=""></p>
+<ul>
+<li>首先用MSE训练一个VCNN，验证集计算增益率R<ul>
+<li>$R=1-\frac{l_{\text {rec } } }{l_{\text {init } } }$</li>
+<li>$l_{\text {init } }=|\mathbf{Y}-\mathbf{X}|^{2}$ and $l_{r e c}=|\hat{\mathbf{Y} }-\mathbf{Y}|^{2}$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_e6838d51215601199e4c4b24c1221660.png" alt=""></p>
+<p>有以下结论：</p>
+<ul>
+<li>该网络在相对小QP上表现较好，而在较大QP上，如QP∈[42,44]，表现并不理想。</li>
+<li>该网络在I帧上取得了最佳性能，在P和B帧上表现类似。</li>
+<li>大多数有效数据的增益率低于10%，也就是说，增益率低的数据占了很大比例。所以期望网络能更多地关注具有低增益率的数据。</li>
+</ul>
+<h4 id="focal-MSE"><a href="#focal-MSE" class="headerlink" title="focal MSE"></a>focal MSE</h4><p>$\begin{aligned} L &amp;=\frac{1}{N} \sum_{i=1}^{N}\left(\alpha_{q}^{(i)}+\alpha_{f}^{(i)}\right)\left(1-R^{(i)}\right)^{\gamma} l_{r e c}^{(i)} \\ &amp;=\frac{1}{N} \sum_{i=1}^{N}\left(\alpha_{q}^{(i)}+\alpha_{f}^{(i)}\right) \frac{l_{\text {rec } }^{(i)^{1+\gamma} } }{l_{\text {init } }^{(i) } } \end{aligned}$</p>
+<p>$\alpha_q$ : weighting factor over QP band<br>$\alpha_f$ : weighting factor over FT<br>$\gamma$ : focusing parameter</p>
+<ul>
+<li>ﬁrst utilize the following formula to adjust $\alpha_q$ $\alpha_f$ for each QP band and FT: $\alpha(t)=\frac{n \times(1-p(t))}{n-1}$<ul>
+<li>$n$ : the number of total types, i.e. n = 10 for QP and n = 3 for FT, </li>
+<li>$p(t)$ : the proportion of the data with type t. </li>
+</ul>
+</li>
+<li>then increase α(t) of type t where the network performs poorly.</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_9b8235398f6d52404211def555c08153.png" alt=""></p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_57666646d6769dbb18f9715cd57159a1.png" alt=""></p>
+<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><ul>
+<li>BD-rate</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_2c88d6044b40b0ec1dddcbde15b5539e.png" alt=""></p>
+<p>VCNN-S: separate qp model, without attention<br>VCNN-M: QPmap method</p>
+<ul>
+<li>Quality ﬂuctuation</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_6462317026173b9ea3376d51739f28ad.png" alt=""></p>
+<ul>
+<li>消融实验<ul>
+<li>网络结构：复杂度和性能可以进一步权衡</li>
+<li>1）VCN-C32：C=32，D=6，N=1。</li>
+<li>2）VCN-D3：C=32，D=3，N=1。</li>
+<li>3）VCN-N3：C=64，D=6，N=3。</li>
+<li>4）VCNN：C=64，D=6，N=1</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_c21fba20db9589b896b735b543afb452.png" alt=""></p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_29ca327de24ba74d082f4c45e5780c40.png" alt=""></p>
+<ul>
+<li>注意力模块</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_494e75bd6f31305c6cd665d6873d3150.png" alt=""></p>
+<p>1) separate：网络结构与VCN-S相同，为每个QP段和FT分别训练，共4×3=12个<br>2) FT：为每个QP段单独训练模型，共4个<br>3) QP：为每个FT单独训练，共3<br>4) FT + QP：VCNN，1个模型</p>
+<p>从数据集中随机选择1/5的数据来训练</p>
+<blockquote>
+<p>疑问：为何 separate 表现最差？理论上separate应该表现最好</p>
+</blockquote>
+<ul>
+<li>focal MSE</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_b7a6d06a0bcf37593311c8d8b71c8616.png" alt=""></p>
+<ul>
+<li>RFA</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_38c0eb28bff9b9b66dffa31886851389.png" alt=""></p>
+<ul>
+<li><p>以下实验都用来说明模型泛化性强</p>
+<ul>
+<li><p>chroma</p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_b3f11be27e97b704f3cfa80121b40cbc.png" alt=""></p>
+</li>
+<li><p>Performance on other QPs</p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_de6a347d017bbd7ea3efd10ddef4cf1d.png" alt=""></p>
+</li>
+<li><p>HEVC</p>
+<p>apply our model trained on the VTM- 6.0 dataset directly to HM-16.9 without any ﬁne-tuning.</p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_7b42f1242eda5a0b29e9df5cd228a589.png" alt=""></p>
+</li>
+<li><p>补充测试序列</p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_f925d0880e543aad122b64d6d0f15522.png" alt=""></p>
+</li>
+</ul>
+</li>
+<li><p>计算复杂度</p>
+</li>
+</ul>
+<p>每种编码算法的计算复杂度是在RA配置下评估的。编码复杂度∆T的计算方法是</p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_bbb38e8af88f9c91b4c6b4b1303eb197.png" alt=""></p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_f84d929bc41d46cc80cde6c74f4cfc0e.png" alt=""></p>
+<h3 id="后续方向"><a href="#后续方向" class="headerlink" title="后续方向"></a>后续方向</h3><ul>
+<li>解码复杂，无法在实时应用中实现。<ul>
+<li>利用整数量化优化的网络。可以加快滤波的速度，避免在不同的硬件或软件平台上由于浮点运算而产生的不同的舍入误差</li>
+<li>训练一组简单和浅层的网络，编码器根据情况选择最优的，并将索引传送到解码端</li>
+<li>模型的推理依赖于第三方的深度学习框架，减少VVC编解码器和深度学习框架之间的互动造成的开销。</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%A7%86%E9%A2%91%E7%BC%96%E7%A0%81/" rel="tag"># 视频编码</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/25/Leetcode-%E4%BD%8D%E8%BF%90%E7%AE%97/" rel="prev" title="Leetcode / 位运算">
+      <i class="fa fa-chevron-left"></i> Leetcode / 位运算
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/11/25/Optical%20Flow/" rel="next" title="Optical Flow / 光流">
+      Optical Flow / 光流 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#A-QP-ADAPTIVE-MECHANISM-FOR-CNN-BASED-FILTER-IN-VIDEO-CODING"><span class="nav-number">1.</span> <span class="nav-text">A QP-ADAPTIVE MECHANISM FOR CNN-BASED FILTER IN VIDEO CODING</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%BB%BA%E6%A8%A1"><span class="nav-number">1.1.</span> <span class="nav-text">问题建模</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E4%BA%8ECNN"><span class="nav-number">1.2.</span> <span class="nav-text">应用于CNN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C"><span class="nav-number">1.3.</span> <span class="nav-text">实验结果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#One-for-all-An-Ef%EF%AC%81cient-Variable-Convolution-Neural-Network-for-In-loop-Filter-of-VVC"><span class="nav-number">2.</span> <span class="nav-text">One-for-all:  An  Efﬁcient  Variable  Convolution Neural  Network  for  In-loop  Filter  of  VVC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%AD%E7%BB%83"><span class="nav-number">2.1.</span> <span class="nav-text">训练</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#focal-MSE"><span class="nav-number">2.1.1.</span> <span class="nav-text">focal MSE</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E6%9E%9C"><span class="nav-number">2.2.</span> <span class="nav-text">结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8E%E7%BB%AD%E6%96%B9%E5%90%91"><span class="nav-number">2.3.</span> <span class="nav-text">后续方向</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="fu"
+      src="/images/cat.jpg">
+  <p class="site-author-name" itemprop="name">fu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/fall_ivan" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;fall_ivan" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">fu</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="Symbols count total">147k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">2:13</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</div>
+
+
+
+
+
+
+<script>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = decodeURI(visitors.id);
+      var title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              Counter('post', '/classes/Counter', { title, url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.error('Failed to create', error);
+                });
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"vGxmpKFQ0V9UFhbevVmCc8JP-gzGzoHsz","app_key":"ap55DtNaG0HBItnGc7CmFY5y","server_url":null,"security":false};
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'vGxmpKFQ0V9UFhbevVmCc8JP-gzGzoHsz',
+      appKey     : 'ap55DtNaG0HBItnGc7CmFY5y',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>

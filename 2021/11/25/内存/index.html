@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="JSt260h9ZipxDe9fDWuLLwbMKW6KZ1gPsQ2V68XJlTA">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aoif-hikari.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="内存是用于存放数据的硬件。程序执行前需要先放到内存中才能被CPU处理，如果高速CPU直接和慢速的外存进行数据的交互，有速度矛盾。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="操作系统&#x2F;内存管理">
+<meta property="og:url" content="https://aoif-hikari.github.io/2021/11/25/%E5%86%85%E5%AD%98/index.html">
+<meta property="og:site_name" content="aoif-hikari">
+<meta property="og:description" content="内存是用于存放数据的硬件。程序执行前需要先放到内存中才能被CPU处理，如果高速CPU直接和慢速的外存进行数据的交互，有速度矛盾。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://aoif-hikari.github.io/img/memory/biao.jpg">
+<meta property="og:image" content="https://aoif-hikari.github.io/img/memory/dynamic.jpg">
+<meta property="og:image" content="https://aoif-hikari.github.io/img/memory/yebiao.jpg">
+<meta property="og:image" content="https://aoif-hikari.github.io/img/memory/jubu.jpg">
+<meta property="og:image" content="https://aoif-hikari.github.io/img/memory/run.jpg">
+<meta property="og:image" content="https://aoif-hikari.github.io/img/memory/protect1.jpg">
+<meta property="og:image" content="https://aoif-hikari.github.io/img/memory/protect2.jpg">
+<meta property="og:image" content="https://aoif-hikari.github.io/img/memory/protect3.jpg">
+<meta property="article:published_time" content="2021-11-25T02:59:27.325Z">
+<meta property="article:modified_time" content="2021-11-25T02:59:27.325Z">
+<meta property="article:author" content="fu">
+<meta property="article:tag" content="操作系统">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://aoif-hikari.github.io/img/memory/biao.jpg">
+
+<link rel="canonical" href="https://aoif-hikari.github.io/2021/11/25/%E5%86%85%E5%AD%98/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>操作系统/内存管理 | aoif-hikari</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="aoif-hikari" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">aoif-hikari</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://aoif-hikari.github.io/2021/11/25/%E5%86%85%E5%AD%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cat.jpg">
+      <meta itemprop="name" content="fu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="aoif-hikari">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          操作系统/内存管理
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-11-25 10:59:27" itemprop="dateCreated datePublished" datetime="2021-11-25T10:59:27+08:00">2021-11-25</time>
+            </span>
+
+          
+            <span id="/2021/11/25/%E5%86%85%E5%AD%98/" class="post-meta-item leancloud_visitors" data-flag-title="操作系统/内存管理" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2021/11/25/%E5%86%85%E5%AD%98/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/11/25/%E5%86%85%E5%AD%98/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              <span>7.7k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              <span>7 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>内存是用于存放数据的硬件。程序执行前需要先放到内存中才能被CPU处理，如果高速CPU直接和慢速的外存进行数据的交互，有速度矛盾。</p>
+</blockquote>
+<span id="more"></span>
+<ul>
+<li><p>内存地址从0开始，每个地址对应一个存储单元</p>
+</li>
+<li><p>内存中也有一个一个的“小房间”，每个小房间就是以一个存储单元</p>
+</li>
+<li><p>如果计算机“按字节编址”，则每个存储单元大小为<strong>1字节</strong>，即1B，即<strong>8个二进制位</strong></p>
+</li>
+<li><p>如果字长16位的计算机“按字编址”，则每个存储单元大小为<strong>1个字</strong>，每个字的大小为<strong>16个二进制位</strong></p>
+</li>
+</ul>
+<p>操作系统的内存管理有以下四大功能：</p>
+<h2 id="操作系统负责内存空间的分配与回收"><a href="#操作系统负责内存空间的分配与回收" class="headerlink" title="操作系统负责内存空间的分配与回收"></a>操作系统负责内存空间的分配与回收</h2><p>连续分配：为用户进程分配的必须是一个连续的内存空间。</p>
+<p>非连续分配：为用户进程分配的可以是一些分散的内存空间。</p>
+<h3 id="连续分配管理方式"><a href="#连续分配管理方式" class="headerlink" title="连续分配管理方式"></a>连续分配管理方式</h3><blockquote>
+<p>内部碎片，分配给某进程的内存区域中，有些部分没有用上。<br>外部碎片，是指内存中的某些空闲分区由于太小而难以利用。</p>
+</blockquote>
+<h4 id="单一连续分配"><a href="#单一连续分配" class="headerlink" title="单一连续分配"></a>单一连续分配</h4><p>内存被分为系统区和用户区。</p>
+<ul>
+<li><p>系统区通常位于内存的低地址部分，用于存放操作系统相关数据；</p>
+</li>
+<li><p>用户区用于存放用户进程相关数据。内存中只能有一道用户程序，用户程序独占整个用户区空间。</p>
+</li>
+</ul>
+<blockquote>
+<p>优点：实现简单；无外部碎片；可以采用覆盖技术扩充内存；不一定需要采取内存保护（eg：早期的PC 操作系统MS-DOS）。</p>
+<p>缺点：只能用于单用户、单任务的操作系统中；有内部碎片；存储器利用率极低。</p>
+</blockquote>
+<h4 id="固定分区分配"><a href="#固定分区分配" class="headerlink" title="固定分区分配"></a>固定分区分配</h4><p>为了能在内存中装入多道程序，且这些程序之间又不会相互干扰，于是将整个用户空间划分为若干个固定大小的分区，在每个分区中只装入一道作业。</p>
+<blockquote>
+<p>分区大小相等：缺乏灵活性，但是很适合用于用一台计算机控制多个相同对象的场合</p>
+<p>（比如：钢铁厂有n个相同的炼钢炉，就可把内存分为n个大小相等的区域存放n个炼钢炉控制程序）</p>
+<p>分区大小不等：增加了灵活性，可以满足不同大小的进程需求。根据常在系统中运行的作业大小情况进行划分</p>
+<p>（比如：划分多个小分区、适量中等分区、少量大分区）</p>
+</blockquote>
+<p>操作系统需要建立一个数据结构——分区说明表，来实现各个分区的分配与回收。每个表项对应一个分区，通常按分区大小排列。每个表项包括对应分区的大小、起始地址、状态（是否已分配）。</p>
+<p>当某用户程序要装入内存时，由操作系统内核程序根据用户程序大小检索该表，从中找到一个能满足大小的、未分配的分区，将之分配给该程序，然后修改状态为“已分配”。用数据结构的数组（或链表）即可表示这个表</p>
+<p><img src="/img/memory/biao.jpg" style="zoom: 67%;" /></p>
+<blockquote>
+<p>优点：实现简单，无外部碎片。</p>
+<p>缺点：a. 当用户程序太大时，可能所有的分区都不能满足需求，此时不得不采用覆盖技术来解决，但这又会降低性能；b. 会产生内部碎片，内存利用率低。</p>
+</blockquote>
+<h4 id="动态分区分配"><a href="#动态分区分配" class="headerlink" title="动态分区分配"></a>动态分区分配</h4><p>又称为可变分区分配。不会预先划分内存分区，而是在进程装入内存时，根据进程的大小动态地建立分区，并使分区的大小正好适合进程的需要。因此系统分区的大小和数目是可变的。</p>
+<p>1 系统要用什么样的数据结构记录内存的使用情况？</p>
+<p><img src="/img/memory/dynamic.jpg" style="zoom: 67%;" /></p>
+<p>2 当很多个空闲分区都能满足需求时，应该选择哪个分区进行分配？</p>
+<p>按照一定的动态分区分配算法，从空闲分区表（或空闲分区链）中选出一个分区分配给该作业。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>首次适应</th>
+<th>最佳适应</th>
+<th style="text-align:left">最坏适应</th>
+<th style="text-align:left">邻近适应</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>从头到尾找适合的分区</td>
+<td>优先使用更小的分区，以保留更多大分区</td>
+<td style="text-align:left">优先使用更大的分区，以防止产生太小的不可用的碎片</td>
+<td style="text-align:left">由首次适应演变而来，每次从上次查找结束位置开始查找</td>
+</tr>
+<tr>
+<td>空闲分区以地址递增次序排列</td>
+<td>以容量递增次序排列</td>
+<td style="text-align:left">以容量递减次序排列</td>
+<td style="text-align:left">以地址递增次序排列（可排列成循环链表）</td>
+</tr>
+<tr>
+<td>综合看性能最好。算法开销小，回收分区后一般不需要对空闲分区队列重新排序</td>
+<td>会有更多的大分区被保留下来，更能满足大进程需求</td>
+<td style="text-align:left">可以减少难以利用的小碎片</td>
+<td style="text-align:left">不用每次都从低地址的小分区开始检索。算法开销小（原因同首次适应）</td>
+</tr>
+<tr>
+<td></td>
+<td>会产生很多太小的、难以利用的碎片；算法开销大，回收分区后可能需要对空闲分区队列重新排序</td>
+<td style="text-align:left">大分区容易被用完，不利于大进程；算法开销大（原因同左）</td>
+<td style="text-align:left">会使高地址的大分区也被用完</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>3 如何进行分区的分配与回收操作？</p>
+<p><strong>分配</strong>：？</p>
+<p><strong>回收</strong>：相邻的空闲分区要合并</p>
+<p>情况一：回收区的后面有一个相邻的空闲分区，两个相邻的空闲分区合并为一个</p>
+<p>情况二：回收区的前面有一个相邻的空闲分区，两个相邻的空闲分区合并为一个</p>
+<p>情况三：回收区的前、后各有一个相邻的空闲分区，三个相邻的空闲分区合并为一个</p>
+<p>情况四：回收区的前、后都没有相邻的空闲分区，新增一个表项。注：各表项的顺序不一定按照地址递增顺序排列，具体的排列方式需要依据动态分区分配算法来确定。</p>
+<blockquote>
+<p>动态分区分配没有内部碎片，但是有外部碎片。</p>
+<p>如果内存中空闲空间的总和本来可以满足某进程的要求，但由于进程需要的是一整块连续的内存空间，因此这些“碎片”不能满足进程的需求。可以通过紧凑（拼凑，Compaction）技术来解决外部碎片。</p>
+</blockquote>
+<h3 id="非连续分配管理方式"><a href="#非连续分配管理方式" class="headerlink" title="非连续分配管理方式"></a>非连续分配管理方式</h3><h4 id="基本分页存储管理"><a href="#基本分页存储管理" class="headerlink" title="基本分页存储管理"></a>基本分页存储管理</h4><ul>
+<li><p>页框：将<strong>内存空间</strong>分为一个个大小相等的分区（比如：每个分区4KB），每个分区就是一个“页框”，每个页框有一个编号，即“页框号”，页框号从0开始。（页框=页帧=内存块=物理块=物理页面）</p>
+</li>
+<li><p>页/页面：将<strong>进程的逻辑地址空间</strong>也分为与页框大小相等的一个个部分，每个部分称为一个“页”或“页面” 。每个页面也有一个编号，即“页号”，页号也是从0开始。</p>
+</li>
+</ul>
+<p>操作系统以页框为单位为各个进程分配内存空间。进程的每个页面分别放入一个页框中。</p>
+<p>也即<strong>进程的页面</strong>与<strong>内存的页框</strong>有一一对应的关系。各个页面不必连续存放，可以放到不相邻的各个页框中。</p>
+<blockquote>
+<p>注：进程的最后一个页面可能没有一个页框那么大。也就是说，分页存储有可能产生内部碎片，因此页框不能太大，否则可能产生过大的内部碎片造成浪费</p>
+</blockquote>
+<p>为了能知道进程的每个页面在内存中存放的位置，操作系统要为每个进程建立一张<strong>页表</strong>。页表通常存在PCB（进程控制块）中。</p>
+<p><img src="/img/memory/yebiao.jpg" style="zoom: 50%;" /></p>
+<p>页表记录进程页面和实际存放的内存块之间的映射关系。每个页表项的长度相同。</p>
+<ol>
+<li>每个页表项多大？占几个字节？</li>
+<li>如何通过页表实现逻辑地址到物理地址的转换？</li>
+</ol>
+<p><strong>快表</strong>，又称联想寄存器（TLB， translation lookaside buffer ），是一种访问速度比内存快很多的高速缓存（TLB不是内存！），用来存放最近访问的页表项的副本，可以加速地址变换的速度。与此对应，内存中的页表常称为慢表。</p>
+<blockquote>
+<p>TLB 和普通Cache 的区别——TLB 中只有页表项的副本，而普通Cache 中可能会有其他各种数据的副本。</p>
+</blockquote>
+<p>引入快表后，地址的变换过程？</p>
+<p><strong>单级页表存在的的问题</strong></p>
+<ul>
+<li>问题一：页表必须连续存放，因此当页表很大时，需要占用很多个连续的页框。</li>
+</ul>
+<p>两级页表，把页表再分页并离散存储，然后再建立一张页表记录页表各个部分的存放位置，称为页目录表，或称外层页表，或称顶层页表。</p>
+<p>如何实现地址变换？</p>
+<ul>
+<li>问题二：没有必要让整个页表常驻内存，因为进程在一段时间内可能只需要访问某几个特定的页面。</li>
+</ul>
+<p>根据局部性原理可知，很多时候，进程在一段时间内只需要访问某几个页面就可以正常运行了。因此没有必要让整个页表都常驻内存。</p>
+<p>可以在需要访问页面时才把页面调入内存（虚拟存储技术）。可以在页表项中增加一个标志位，用于表示该页面是否已经调入内存。若想访问的页面不在内存中，则产生缺页中断（内中断/异常），然后将目标页面从外存调入内存</p>
+<h4 id="基本分段存储管理"><a href="#基本分段存储管理" class="headerlink" title="基本分段存储管理"></a>基本分段存储管理</h4><blockquote>
+<p>与“分页”最大的区别就是——离散分配时所分配地址空间的基本单位不同</p>
+</blockquote>
+<p>进程的地址空间：按照程序自身的逻辑关系划分为若干个段，每个段都有一个段名（在低级语言中，程序员使用段名来编程），每段从0开始编址。<br>内存分配规则：以段为单位进行分配，每个段在内存中占据连续空间，但各段之间可以不相邻。</p>
+<p>程序分多个段，各段离散地装入内存，为了保证程序能正常运行，就必须能从物理内存中找到各个逻辑段的存放位置。为此，需为每个进程建立一张段映射表，简称“段表”。</p>
+<p>地址变换过程？</p>
+<p><strong>分页与分段的区别</strong></p>
+<ul>
+<li><p>页是信息的物理单位。分页的主要目的是为了实现离散分配，提高内存利用率。分页仅仅是系统管理上的需要，完全是系统行为，对用户是不可见的。段是信息的逻辑单位。分段的主要目的是更好地满足用户需求。一个段通常包含着一组属于一个逻辑模块的信息。分段对用户是可见的，用户编程时需要显式地给出段名。页的大小固定且由系统决定。段的长度却不固定，决定于用户编写的程序。</p>
+</li>
+<li><p>分页的用户进程地址空间是一维的，程序员只需给出一个记忆符即可表示一个地址。分段的用户进程地址空间是二维的，程序员在标识一个地址时，既要给出段名，也要给出段内地址。</p>
+</li>
+<li><p>分段比分页更容易实现信息的共享和保护。不能被修改的代码称为纯代码或可重入代码（不属于临界资源），这样的代码是可以共享的。可修改的代码是不能共享的（比如，有一个代码段中有很多变量，各进程并发地同时访问可能造成数据不一致）</p>
+</li>
+</ul>
+<blockquote>
+<p>访问一个逻辑地址需要几次访存？<br>分页（单级页表）：第一次访存——查内存中的页表，第二次访存——访问目标内存单元。总共两次访存<br>分段：第一次访存——查内存中的段表，第二次访存——访问目标内存单元。总共两次访存<br>与分页系统类似，分段系统中也可以引入快表机构，将近期访问过的段表项放到快表中，这样可以少一次访问，加快地址变换速度。</p>
+</blockquote>
+<h4 id="段页式存储管理"><a href="#段页式存储管理" class="headerlink" title="段页式存储管理"></a>段页式存储管理</h4><h2 id="操作系统需要提供某种技术从逻辑上对内存空间扩充"><a href="#操作系统需要提供某种技术从逻辑上对内存空间扩充" class="headerlink" title="操作系统需要提供某种技术从逻辑上对内存空间扩充"></a>操作系统需要提供某种技术从逻辑上对内存空间扩充</h2><h3 id="覆盖技术"><a href="#覆盖技术" class="headerlink" title="覆盖技术"></a>覆盖技术</h3><blockquote>
+<p>早期的计算机内存很小，经常会出现内存大小不够的情况。引入覆盖技术，解决“程序大小超过物理内存总和”的问题。</p>
+</blockquote>
+<p>覆盖技术的思想：将程序分为多个段（多个模块），常用的段常驻内存，不常用的段在需要时调入内存。内存中分为一个“固定区”和若干个“覆盖区”。</p>
+<ul>
+<li><p>需要常驻内存的段放在“固定区”中，调入后就不再调出（除非运行结束）。</p>
+</li>
+<li><p>不常用的段放在“覆盖区”，需要用到时调入内存，用不到时调出内存。</p>
+</li>
+<li><p>必须由程序员声明覆盖结构，操作系统完成自动覆盖。</p>
+</li>
+</ul>
+<p>缺点：对用户不透明，增加了用户编程负担。覆盖技术只用于早期的操作系统中，现在已成为历史。</p>
+<h3 id="交换技术"><a href="#交换技术" class="headerlink" title="交换技术"></a>交换技术</h3><p>交换（对换）技术的设计思想：内存空间紧张时，系统将内存中某些进程暂时<strong>换出</strong>外存，把外存中某些已具备运行条件的进程<strong>换入</strong>内存（进程在内存与磁盘间动态调度）。</p>
+<p>中级调度（内存调度），就是要决定将哪个处于挂起状态的进程重新调入内存。</p>
+<p>暂时换出外存等待的进程状态为挂起状态（挂起态，suspend）。挂起态又可以进一步细分为就绪挂起、阻塞挂起。</p>
+<ul>
+<li>应该在<strong>外存</strong>（磁盘）的什么位置保存被换出的进程？</li>
+</ul>
+<p>具有对换功能的操作系统中，通常把磁盘空间分为文件区和对换区两部分。</p>
+<blockquote>
+<p>文件区主要用于存放文件，主要追求存储空间的利用率，因此对文件区空间的管理采用离散分配方式；</p>
+<p>对换区空间只占磁盘空间的小部分，被换出的进程数据就存放在对换区。</p>
+</blockquote>
+<p>由于对换的速度直接影响到系统的整体速度，因此对换区空间的管理主要追求换入换出速度，因此通常对换区采用连续分配方式（文件管理章节）。总之，对换区的I/O速度比文件区的更快。</p>
+<ul>
+<li>什么时候应该交换？</li>
+</ul>
+<p>交换通常在许多进程运行且内存吃紧时进行，而系统负荷降低就暂停。</p>
+<p>例如：发现许多进程运行时经常发生缺页，说明内存紧张，此时可以换出一些进程；如果缺页率明显下降，可以暂停换出。</p>
+<ul>
+<li>应该换出哪些进程？</li>
+</ul>
+<p>可优先换出阻塞进程；可换出优先级低的进程；为了防止优先级低的进程在被调入内存后很快又被换出，有的系统还会考虑进程在内存的驻留时间…（注意：PCB 会常驻内存，不会被换出外存）</p>
+<h3 id="虚拟存储技术"><a href="#虚拟存储技术" class="headerlink" title="虚拟存储技术"></a>虚拟存储技术</h3><h4 id="传统存储管理方式的特征、缺点"><a href="#传统存储管理方式的特征、缺点" class="headerlink" title="传统存储管理方式的特征、缺点"></a>传统存储管理方式的特征、缺点</h4><p><strong>一次性：</strong>作业必须一次性全部装入内存后才能开始运行。</p>
+<p>这会造成两个问题：①作业很大时，不能全部装入内存，导致大作业无法运行；②当大量作业要求运行时，由于内存无法容纳所有作业，因此只有少量作业能运行，导致多道程序并发度下降。</p>
+<p><strong>驻留性：</strong>一旦作业被装入内存，就会一直驻留在内存中，直至作业运行结束。事实上，在一个时间段内，只需要访问作业的一小部分数据即可正常运行，这就导致了内存中会驻留大量的、暂时用不到的数据，浪费了宝贵的内存资源。</p>
+<h4 id="局部性原理"><a href="#局部性原理" class="headerlink" title="局部性原理"></a>局部性原理</h4><p><strong>时间局部性</strong>：如果执行了程序中的某条指令，那么不久后这条指令很有可能再次执行；如果某个数据被访问过，不久之后该数据很可能再次被访问。（因为程序中存在大量的循环）</p>
+<p><strong>空间局部性</strong>：一旦程序访问了某个存储单元，在不久之后，其附近的存储单元也很有可能被访问。（因为很多数据在内存中都是连续存放的，并且程序的指令也是顺序地在内存中存放的）</p>
+<p><img src="/img/memory/jubu.jpg" style="zoom: 50%;" /></p>
+<p><strong>高速缓冲技术</strong>的思想：将近期会频繁访问到的数据放到更高速的存储器中，暂时用不到的数据放在更低速存储器中。</p>
+<p>基于局部性原理，在程序装入时，可以将程序中很快会用到的部分装入内存，暂时用不到的部分留在外存，就可以让程序开始执行。在程序执行过程中，当所访问的信息不在内存时，由操作系统负责将所需信息从外存调入内存，然后继续执行程序（请求调页功能）。若内存空间不够，由操作系统负责将内存中暂时用不到的信息换出到外存（页面置换功能）。</p>
+<p><strong>在操作系统的管理下，在用户看来似乎有一个比实际内存大得多的内存，这就是虚拟内存。</strong></p>
+<blockquote>
+<p>虚拟内存有一下三个主要特征：<br>多次性：无需在作业运行时一次性全部装入内存，而是允许被分成多次调入内存。<br>对换性：在作业运行时无需一直常驻内存，而是允许在作业运行过程中，将作业换入、换出。<br>虚拟性：从逻辑上扩充了内存的容量，使用户看到的内存容量，远大于实际的容量。</p>
+</blockquote>
+<p>虚拟内存技术，允许一个作业分多次调入内存。如果采用连续分配方式，会不方便实现。因此，虚拟内存的实现需要建立在离散分配的内存管理方式基础上。</p>
+<h4 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h4><ul>
+<li>请求分页存储管理</li>
+</ul>
+<p><strong>在程序执行过程中，当所访问的信息不在内存时，由操作系统负责将所需信息从外存调入内存，然后继续执行程序（请求调页）</strong></p>
+<blockquote>
+<ul>
+<li><p><strong>何时调入页面？</strong></p>
+<ul>
+<li>预调页策略：运行前调入。根据局部性原理，一次调入若干个相邻的页面可能比一次调入一个页面更高效。但如 果提前调入的页面中大多数都没被访问过，则又是低效的。因此可以预测不久之后可能访问到的页 面，将它们预先调入内存，但目前预测成功率只有50%左右。故这种策略主要用于进程的首次调入， 由程序员指出应该先调入哪些部分。</li>
+<li>请求调页策略：运行时调入。进程在运行期间发现缺页时才将所缺页面调入内存。由这种策略调入的页面一定会 被访问到，但由于每次只能调入一页，而每次调页都要磁盘I/O操作，因此I/O开销较大。</li>
+</ul>
+</li>
+<li><p><strong>从何处调页？</strong></p>
+<ul>
+<li>系统拥有足够的对换区空间：页面的调入、调 出都是在内存与对换区之间进行，这样可以保证页面的调入、调出速度很快。在进程运行前， 需将进程相关的数据从文件区复制到对换区。</li>
+<li>系统缺少足够的对换区空间：凡是不会被修改的数据都直接从文件区调入，由于这些页面不会被修改，因此换出时不必写回磁盘，下次需要时再从文件区调入即可。对于可能被修改的部分，换出时需写回磁盘对换区，下次需要时再从对换区调入。</li>
+<li>UNIX 方式：运行之前进程有关的数据全部放在 文件区，故未使用过的页面，都可从文件区调入。若被使用过的页面需要换出，则写回对换区，下次需要时从对换区调入。</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p><strong>若内存空间不够，由操作系统负责将内存中暂时用不到的信息换出到外存（页面置换）</strong></p>
+<blockquote>
+<p><strong>页面置换算法</strong>决定应该换出哪个页面。页面换入换出需要磁盘IO，开销较大，所以好的页面置换算法因该追求更少的缺页率。</p>
+<p>最佳置换算法；先进先出置换算法；最近最久未使用置换算法；时钟置换算法；改进型的时钟置换算法</p>
+</blockquote>
+<p>在请求分页系统中，每当要访问的页面不在内存时，便产生一个<strong>缺页中断</strong>（属于内中断），然后由操作系统的缺页中断处理程序处理中断。此时缺页的进程阻塞，放入阻塞队列，调页完成后再将其唤醒，放回就绪队列。</p>
+<p>如果内存中有空闲块，则为进程分配一个空闲块，将所缺页面装入该块，并修改页表中相应的页表项。</p>
+<p>如果内存中没有空闲块，则由页面置换算法选择一个页面淘汰，若该页面在内存期间被修改过，则要将其写回外存。未修改过的页面不用写回外存。</p>
+<p>一条指令在执行期间，可能产生多次缺页中断。</p>
+<blockquote>
+<p>刚刚换出的页面马上又要换入内存，刚刚换入的页面马上又要换出外存，这种频繁的页面调度行为称为<strong>抖动</strong>，或颠簸。</p>
+<p>产生<strong>抖动</strong>的主要原因是进程频繁访问的页面数目高于可用的物理块数（分配给进程的物理块不够）</p>
+</blockquote>
+<p><strong>请求分页存储管理</strong>与<strong>基本分页存储管理</strong>的主要区别：<br>在程序执行过程中，当所访问的信息不在内存时，由操作系统负责将所需信息从外存调入内存，然后继续执行程序。若内存空间不够，由操作系统负责将内存中暂时用不到的信息换出到外存。</p>
+<p><strong>页面分配、置换策略</strong></p>
+<blockquote>
+<p>驻留集：指请求分页存储管理中给进程分配的物理块的集合。</p>
+</blockquote>
+<p>固定分配VS可变分配：区别在于进程运行期间驻留集大小是否可变</p>
+<p>局部置换ⅤS全局置换：区别在于发生缺页时是否只能从进程自己的页面中选择一个换出</p>
+<p>固定分配局部置换：进程运行前就分配一定数量物理块,缺页时只能换出进程自己的某一页</p>
+<p>可变分配全局置换：只要缺页就分配新物理块,可能来自空闲物理块,也可能需换出别的进程页面</p>
+<p>可变分配局部置换：频繁缺页的进程,多分配一些物理块;缺页率很低回收一些物理块。直到缺页率合适</p>
+<ul>
+<li><p>请求分段存储管理</p>
+</li>
+<li><p>请求段页式存储管理</p>
+</li>
+</ul>
+<h2 id="操作系统需要提供地址转换功能"><a href="#操作系统需要提供地址转换功能" class="headerlink" title="操作系统需要提供地址转换功能"></a>操作系统需要提供地址转换功能</h2><p>负责程序的逻辑地址与物理地址的转换。逻辑地址到物理地址的转换称地址重定位</p>
+<p>数据的实际存放地址（物理地址），但在实际中生产机器指令的时候并不知道该进程的数据会被放到什么位置，所以编译生成的指令一般使用的是逻辑地址（相对地址）</p>
+<p>从写程序到程序运行：</p>
+<p><img src="/img/memory/run.jpg" style="zoom: 50%;" /></p>
+<ol>
+<li><strong>编译</strong>：由编译程序将用户源代码文件（<em> .c文件）编译成若干个目标模块（</em> .o文件）（编译就是把高级语言翻译成机器语言）</li>
+<li><strong>链接</strong>：由连接程序将编译后形成的一组目标模块，以及所需库函数链接在一起，形成一个完整的装入模块</li>
+</ol>
+<blockquote>
+<p><strong>静态链接</strong>：在程序运行之前，将各个目标模块以及它们所需的库函数链接成一个完整的可执行文件（装入模块），之后便不再拆开</p>
+<p><strong>装入时动态链接</strong>：将各个目标模块装入内存时，边装入边链接的链接方式</p>
+<p><strong>运行时动态链接</strong>：在程序执行中需要该目标模块时，才对他进行链接。其优点是便于修改和更新，便于实现对目标模块的分享</p>
+</blockquote>
+<ol>
+<li><strong>装入</strong>：由装入程序将装入模块装入内存运行</li>
+</ol>
+<blockquote>
+<p><strong>绝对装入</strong>：单道程序环境，此时还没产生操作系统，编译、链接后得到的装入模块的指令直接就使用了绝对地址</p>
+<p><strong>静态重定位（可重定位装入）</strong>：用于早期的多道批处理操作系统。</p>
+<ul>
+<li><p>编译、链接后的装入模块的地址都是从0开始的，</p>
+</li>
+<li><p><strong>指令中</strong>使用的地址、数据存放的地址都是相对于起始地址而言的逻辑地址。可根据内存的当前情况，将装入模块装入到内存的适当位置。</p>
+</li>
+<li><p>装入时对地址进行“重定位”，将逻辑地址变换为物理地址（地址变换在装入时一次完成的）。</p>
+</li>
+</ul>
+<p>特点：在一个作业装入内存时，必须分配其要求的全部内存空间，如果没有足够的内存，就不能装入该作业。作业一旦进入内存后，在运行期间就不能再移动，也不能再申请内存空间。</p>
+<p><strong>动态重定位（动态运行时装入）</strong>：现代操作系统。</p>
+<ul>
+<li><p>编译、链接后的装入模块的地址都是从0开始的。</p>
+</li>
+<li><p>装入内存后所有的<strong>指令中</strong>使用的地址依然是逻辑地址，需设置重定位寄存器。（装入程序把装入模块装入内存后，并不会立即把逻辑地址转换为物理地址，而是把地址转换推迟到程序真正要执行时才进行。）</p>
+</li>
+</ul>
+<p>允许程序在内存中发生移动。</p>
+</blockquote>
+<h2 id="操作系统需要提供内存保护功能"><a href="#操作系统需要提供内存保护功能" class="headerlink" title="操作系统需要提供内存保护功能"></a>操作系统需要提供内存保护功能</h2><p>保证各个进程在各自的存储空间内运行，互不干扰。两种方法：</p>
+<p><img src="/img/memory/protect1.jpg" style="zoom: 50%;" /></p>
+<h3 id="设置上下限寄存器"><a href="#设置上下限寄存器" class="headerlink" title="设置上下限寄存器"></a>设置上下限寄存器</h3><p>在CPU中设置一对上、下限寄存器，存放进程的上、下限地址。进程的指令要访问某个地址时，CPU检查是否越界。</p>
+<p><img src="/img/memory/protect2.jpg" style="zoom:50%;" /></p>
+<h3 id="利用重定位寄存器、界地址寄存器进行判断"><a href="#利用重定位寄存器、界地址寄存器进行判断" class="headerlink" title="利用重定位寄存器、界地址寄存器进行判断"></a>利用重定位寄存器、界地址寄存器进行判断</h3><p>采用重定位寄存器（又称基址寄存器）和界地址寄存器（又称限长寄存器）进行越界检查。重定位寄存器中存放的是进程的起始物理地址。界地址寄存器中存放的是进程的最大逻辑地址。</p>
+<p><img src="/img/memory/protect3.jpg" style="zoom:50%;" /></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag"># 操作系统</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/25/sao/" rel="prev" title="VVC环路滤波 / SAO">
+      <i class="fa fa-chevron-left"></i> VVC环路滤波 / SAO
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/11/25/%E5%A4%9A%E8%B7%AF%E6%9F%A5%E6%89%BE%E6%A0%91/" rel="next" title="数据结构 / 多路查找树">
+      数据结构 / 多路查找树 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%B4%9F%E8%B4%A3%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%E7%9A%84%E5%88%86%E9%85%8D%E4%B8%8E%E5%9B%9E%E6%94%B6"><span class="nav-number">1.</span> <span class="nav-text">操作系统负责内存空间的分配与回收</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9E%E7%BB%AD%E5%88%86%E9%85%8D%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">连续分配管理方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%95%E4%B8%80%E8%BF%9E%E7%BB%AD%E5%88%86%E9%85%8D"><span class="nav-number">1.1.1.</span> <span class="nav-text">单一连续分配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BA%E5%AE%9A%E5%88%86%E5%8C%BA%E5%88%86%E9%85%8D"><span class="nav-number">1.1.2.</span> <span class="nav-text">固定分区分配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E5%88%86%E5%8C%BA%E5%88%86%E9%85%8D"><span class="nav-number">1.1.3.</span> <span class="nav-text">动态分区分配</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%9E%E8%BF%9E%E7%BB%AD%E5%88%86%E9%85%8D%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F"><span class="nav-number">1.2.</span> <span class="nav-text">非连续分配管理方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%88%86%E9%A1%B5%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86"><span class="nav-number">1.2.1.</span> <span class="nav-text">基本分页存储管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%88%86%E6%AE%B5%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86"><span class="nav-number">1.2.2.</span> <span class="nav-text">基本分段存储管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AE%B5%E9%A1%B5%E5%BC%8F%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86"><span class="nav-number">1.2.3.</span> <span class="nav-text">段页式存储管理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%9C%80%E8%A6%81%E6%8F%90%E4%BE%9B%E6%9F%90%E7%A7%8D%E6%8A%80%E6%9C%AF%E4%BB%8E%E9%80%BB%E8%BE%91%E4%B8%8A%E5%AF%B9%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%E6%89%A9%E5%85%85"><span class="nav-number">2.</span> <span class="nav-text">操作系统需要提供某种技术从逻辑上对内存空间扩充</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A6%86%E7%9B%96%E6%8A%80%E6%9C%AF"><span class="nav-number">2.1.</span> <span class="nav-text">覆盖技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%A4%E6%8D%A2%E6%8A%80%E6%9C%AF"><span class="nav-number">2.2.</span> <span class="nav-text">交换技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E6%8A%80%E6%9C%AF"><span class="nav-number">2.3.</span> <span class="nav-text">虚拟存储技术</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%A0%E7%BB%9F%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F%E7%9A%84%E7%89%B9%E5%BE%81%E3%80%81%E7%BC%BA%E7%82%B9"><span class="nav-number">2.3.1.</span> <span class="nav-text">传统存储管理方式的特征、缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E6%80%A7%E5%8E%9F%E7%90%86"><span class="nav-number">2.3.2.</span> <span class="nav-text">局部性原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.3.3.</span> <span class="nav-text">实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%9C%80%E8%A6%81%E6%8F%90%E4%BE%9B%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2%E5%8A%9F%E8%83%BD"><span class="nav-number">3.</span> <span class="nav-text">操作系统需要提供地址转换功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%9C%80%E8%A6%81%E6%8F%90%E4%BE%9B%E5%86%85%E5%AD%98%E4%BF%9D%E6%8A%A4%E5%8A%9F%E8%83%BD"><span class="nav-number">4.</span> <span class="nav-text">操作系统需要提供内存保护功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%B8%8A%E4%B8%8B%E9%99%90%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-number">4.1.</span> <span class="nav-text">设置上下限寄存器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A9%E7%94%A8%E9%87%8D%E5%AE%9A%E4%BD%8D%E5%AF%84%E5%AD%98%E5%99%A8%E3%80%81%E7%95%8C%E5%9C%B0%E5%9D%80%E5%AF%84%E5%AD%98%E5%99%A8%E8%BF%9B%E8%A1%8C%E5%88%A4%E6%96%AD"><span class="nav-number">4.2.</span> <span class="nav-text">利用重定位寄存器、界地址寄存器进行判断</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="fu"
+      src="/images/cat.jpg">
+  <p class="site-author-name" itemprop="name">fu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/fall_ivan" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;fall_ivan" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">fu</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="Symbols count total">147k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">2:13</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</div>
+
+
+
+
+
+
+<script>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = decodeURI(visitors.id);
+      var title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              Counter('post', '/classes/Counter', { title, url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.error('Failed to create', error);
+                });
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"vGxmpKFQ0V9UFhbevVmCc8JP-gzGzoHsz","app_key":"ap55DtNaG0HBItnGc7CmFY5y","server_url":null,"security":false};
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'vGxmpKFQ0V9UFhbevVmCc8JP-gzGzoHsz',
+      appKey     : 'ap55DtNaG0HBItnGc7CmFY5y',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
