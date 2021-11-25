@@ -18,19 +18,19 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"aoif-hikari.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"aoif-hikari.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="有序数组要想到二分查找">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode &#x2F; 二分查找">
 <meta property="og:url" content="https://aoif-hikari.github.io/2021/11/25/Leetcode%20_%20%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/index.html">
-<meta property="og:site_name" content="aoif-hikari">
+<meta property="og:site_name" content="心臓から花が咲くように">
 <meta property="og:description" content="有序数组要想到二分查找">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-11-25T02:59:27.319Z">
 <meta property="article:modified_time" content="2021-11-25T02:59:27.319Z">
-<meta property="article:author" content="fu">
+<meta property="article:author" content="aoif.hikari">
 <meta property="article:tag" content="leetcode">
 <meta name="twitter:card" content="summary">
 
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>Leetcode / 二分查找 | aoif-hikari</title>
+  <title>Leetcode / 二分查找 | 心臓から花が咲くように</title>
   
 
 
@@ -78,7 +78,7 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="aoif-hikari" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="心臓から花が咲くように" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -99,7 +99,7 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">aoif-hikari</h1>
+      <h1 class="site-title">心臓から花が咲くように</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -129,11 +129,6 @@
         <li class="menu-item menu-item-tags">
 
     <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
 
   </li>
         <li class="menu-item menu-item-archives">
@@ -196,12 +191,12 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/cat.jpg">
-      <meta itemprop="name" content="fu">
+      <meta itemprop="name" content="aoif.hikari">
       <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="aoif-hikari">
+      <meta itemprop="name" content="心臓から花が咲くように">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -307,25 +302,6 @@
     
     
     
-        
-
-  <div class="followme">
-    <p>Welcome to my other publishing channels</p>
-
-    <div class="social-list">
-
-        <div class="social-item">
-          <a target="_blank" class="social-link" href="/atom.xml">
-            <span class="icon">
-              <i class="fa fa-rss"></i>
-            </span>
-
-            <span class="label">RSS</span>
-          </a>
-        </div>
-    </div>
-  </div>
-
 
       <footer class="post-footer">
           <div class="post-tags">
@@ -409,9 +385,9 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="fu"
+    <img class="site-author-image" itemprop="image" alt="aoif.hikari"
       src="/images/cat.jpg">
-  <p class="site-author-name" itemprop="name">fu</p>
+  <p class="site-author-name" itemprop="name">aoif.hikari</p>
   <div class="site-description" itemprop="description"></div>
 </div>
 <div class="site-state-wrap motion-element">
@@ -434,6 +410,9 @@
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
         <a href="https://www.instagram.com/fall_ivan" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;fall_ivan" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-fas fa-rss"></i>RSS</a>
       </span>
   </div>
 
@@ -466,7 +445,7 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">fu</span>
+  <span class="author" itemprop="copyrightHolder">aoif.hikari</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>

@@ -441,6 +441,49 @@ J=D+\lambda R=d\left(x_{t}, \hat{x}_{t}\right)+\lambda\left(R_{m v d}+R_{r e s}\
       </tags>
   </entry>
   <entry>
+    <title>Optical Flow / 光流</title>
+    <url>/2021/11/25/Optical%20Flow/</url>
+    <content><![CDATA[<blockquote>
+<p>在连续图片序列中，从第t帧到第t+1帧，每个像素的<strong>运动速度</strong>和<strong>运动方向</strong>。</p>
+</blockquote>
+<span id="more"></span>
+<p>稀疏光流:只计算图片中特定点的光流<br>稠密光流:每个像素都要计算光流。</p>
+<h2 id="光流的表示"><a href="#光流的表示" class="headerlink" title="光流的表示"></a>光流的表示</h2><p>用三维数组 $[height, width, 2]$ 表示。其中$height$表示图像的高度，$width$表示图像的宽度，2表示x,y两个方向。<br>光流是个和原来图像大小相等的双通道图像。<br>在x方向上，正值表示物体向左移动，而负值表示物体向右移动；在y方向上，正值表示物体向上移动，而负值表示物体向下移动。</p>
+<h2 id="光流提取"><a href="#光流提取" class="headerlink" title="光流提取"></a>光流提取</h2><ul>
+<li>传统算法 Lucas-Kanade （稀疏）</li>
+<li>深度学习算法 FlowNet/FlowNet2.0 （稠密）</li>
+</ul>
+<p><a href="https://zhuanlan.zhihu.com/p/74460341">https://zhuanlan.zhihu.com/p/74460341</a></p>
+<h2 id="光流可视化"><a href="#光流可视化" class="headerlink" title="光流可视化"></a>光流可视化</h2><h3 id="稀疏"><a href="#稀疏" class="headerlink" title="稀疏"></a>稀疏</h3><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">//[11,11,2]</span><br><span class="line">//通道1</span><br><span class="line">[[ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]]</span><br><span class="line">//通道2</span><br><span class="line">[[ 2.5  2.5  2.5  2.5  2.5  2.5  2.5  2.5  2.5  2.5  2.5]</span><br><span class="line"> [ 2.   2.   2.   2.   2.   2.   2.   2.   2.   2.   2. ]</span><br><span class="line"> [ 1.5  1.5  1.5  1.5  1.5  1.5  1.5  1.5  1.5  1.5  1.5]</span><br><span class="line"> [ 1.   1.   1.   1.   1.   1.   1.   1.   1.   1.   1. ]</span><br><span class="line"> [ 0.5  0.5  0.5  0.5  0.5  0.5  0.5  0.5  0.5  0.5  0.5]</span><br><span class="line"> [ 0.   0.   0.   0.   0.   0.   0.   0.   0.   0.   0. ]</span><br><span class="line"> [<span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5]</span><br><span class="line"> [<span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>. ]</span><br><span class="line"> [<span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5]</span><br><span class="line"> [<span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>. ]</span><br><span class="line"> [<span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5]]</span><br></pre></td></tr></table></figure>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_c8aeb6016d832173d50d999f73f6a45f.png" alt=""></p>
+<h3 id="稠密"><a href="#稠密" class="headerlink" title="稠密"></a>稠密</h3><p><img src="https://notes.sjtu.edu.cn/uploads/upload_5ea99a85113e6fb0f28a8bc190c35260.png" alt=""></p>
+<h2 id="warp"><a href="#warp" class="headerlink" title="warp"></a>warp</h2><p>将生成的光流应用到一张图像</p>
+<p>在x方向上，正值表示物体向左移动，负值表示物体向右移动；<br>在y方向上，正值表示物体向上移动，而负值表示物体向下移动。 </p>
+<p>x0 = pos_x + x， y0 = pos_y + y。pos_x和pos_y是原始的像素坐标，x和y是光流（向下取整），x0和y0就是warp后的像素坐标。以x方向为例，原始坐标加上一个负值，得到的结果变小了，也就相当于这个像素像左移了，如果加一个正值，结果变大，像素右移。</p>
+<p>坐标变换后，很多坐标并没有相应的原始像素与之对应，需要通过插值来处理。</p>
+<h3 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h3><p>图像的很多处理得到的结果是连续的，为了得到离散点上的值，就需要插值。典型代表就是图像坐标的空间变换，如仿射变换，坐标经仿射变换后通常是小数，而图像只保存整数坐标位置上的像素值，所以需要插值。</p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_d9a581e5ce7f1f5ed31f590edf8ddcc5.png" alt=""></p>
+<ul>
+<li>四个角上的点 $P_{x, y}, P_{x+1, y}, P_{x, y+1}, P_{x+1, y+1}$ 是整数坐标位置上的已知点；</li>
+<li>红色的点 $P_{x_{p}, y_{p}}$ 是待插值的点；</li>
+<li>红色虚线连着的两个点 $P_{x_{p}, y}, P_{x_{p}, y+1}$ 是两个辅助点。</li>
+</ul>
+<p>最邻近和双线性两种插值方法都比较简单，仅需要源图像和待插值的坐标。</p>
+<h4 id="nearest"><a href="#nearest" class="headerlink" title="nearest"></a>nearest</h4><p>最邻近插值算法将距离$P_{x_{p}, y_{p}}$最近的已知点的像素值直接赋给$P_{x_{p}, y_{p}}$，对${x_{p}, y_{p}}$四舍五入得到${x, y}$，直接令$P_{x_{p}, y_{p}}=P_{x, y}$即可</p>
+<ul>
+<li>简单，但缺失精度，造成插值的图像灰度上的不连续，变化地方可能出现明显锯齿状</li>
+</ul>
+<h4 id="bilinear"><a href="#bilinear" class="headerlink" title="bilinear"></a>bilinear</h4><p>双线性插值从两个方向进行线性插值</p>
+<script type="math/tex; mode=display">
+P_{x_{p}, y}=P_{x, y}+\left(P_{x+1, y}-P_{x, y}\right)\left(x_{p}-x\right)</script><script type="math/tex; mode=display">
+P_{x_{p}, y+1}=P_{x, y+1}+\left(P_{x+1, y+1}-P_{x, y+1}\right)\left(x_{p}-x\right)</script><script type="math/tex; mode=display">
+P_{x_{p}, y_{p}}=P_{x_{p}, y}+\left(P_{x_{p}, y+1}-P_{x_{p}, y}\right)\left(y_{p}-y\right)</script><p>参考：<a href="https://blog.csdn.net/bby1987/article/details/105851870">https://blog.csdn.net/bby1987/article/details/105851870</a></p>
+]]></content>
+      <tags>
+        <tag>图像处理</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Leetcode / 链表</title>
     <url>/2021/11/25/Leetcode-%E9%93%BE%E8%A1%A8/</url>
     <content><![CDATA[<blockquote>
@@ -483,49 +526,6 @@ J=D+\lambda R=d\left(x_{t}, \hat{x}_{t}\right)+\lambda\left(R_{m v d}+R_{r e s}\
 ]]></content>
       <tags>
         <tag>leetcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Optical Flow / 光流</title>
-    <url>/2021/11/25/Optical%20Flow/</url>
-    <content><![CDATA[<blockquote>
-<p>在连续图片序列中，从第t帧到第t+1帧，每个像素的<strong>运动速度</strong>和<strong>运动方向</strong>。</p>
-</blockquote>
-<span id="more"></span>
-<p>稀疏光流:只计算图片中特定点的光流<br>稠密光流:每个像素都要计算光流。</p>
-<h2 id="光流的表示"><a href="#光流的表示" class="headerlink" title="光流的表示"></a>光流的表示</h2><p>用三维数组 $[height, width, 2]$ 表示。其中$height$表示图像的高度，$width$表示图像的宽度，2表示x,y两个方向。<br>光流是个和原来图像大小相等的双通道图像。<br>在x方向上，正值表示物体向左移动，而负值表示物体向右移动；在y方向上，正值表示物体向上移动，而负值表示物体向下移动。</p>
-<h2 id="光流提取"><a href="#光流提取" class="headerlink" title="光流提取"></a>光流提取</h2><ul>
-<li>传统算法 Lucas-Kanade （稀疏）</li>
-<li>深度学习算法 FlowNet/FlowNet2.0 （稠密）</li>
-</ul>
-<p><a href="https://zhuanlan.zhihu.com/p/74460341">https://zhuanlan.zhihu.com/p/74460341</a></p>
-<h2 id="光流可视化"><a href="#光流可视化" class="headerlink" title="光流可视化"></a>光流可视化</h2><h3 id="稀疏"><a href="#稀疏" class="headerlink" title="稀疏"></a>稀疏</h3><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">//[11,11,2]</span><br><span class="line">//通道1</span><br><span class="line">[[ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]</span><br><span class="line"> [ 2.5  2.   1.5  1.   0.5  0.  <span class="string">-0</span>.5 <span class="string">-1</span>.  <span class="string">-1</span>.5 <span class="string">-2</span>.  <span class="string">-2</span>.5]]</span><br><span class="line">//通道2</span><br><span class="line">[[ 2.5  2.5  2.5  2.5  2.5  2.5  2.5  2.5  2.5  2.5  2.5]</span><br><span class="line"> [ 2.   2.   2.   2.   2.   2.   2.   2.   2.   2.   2. ]</span><br><span class="line"> [ 1.5  1.5  1.5  1.5  1.5  1.5  1.5  1.5  1.5  1.5  1.5]</span><br><span class="line"> [ 1.   1.   1.   1.   1.   1.   1.   1.   1.   1.   1. ]</span><br><span class="line"> [ 0.5  0.5  0.5  0.5  0.5  0.5  0.5  0.5  0.5  0.5  0.5]</span><br><span class="line"> [ 0.   0.   0.   0.   0.   0.   0.   0.   0.   0.   0. ]</span><br><span class="line"> [<span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5 <span class="string">-0</span>.5]</span><br><span class="line"> [<span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>.  <span class="string">-1</span>. ]</span><br><span class="line"> [<span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5 <span class="string">-1</span>.5]</span><br><span class="line"> [<span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>.  <span class="string">-2</span>. ]</span><br><span class="line"> [<span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5 <span class="string">-2</span>.5]]</span><br></pre></td></tr></table></figure>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_c8aeb6016d832173d50d999f73f6a45f.png" alt=""></p>
-<h3 id="稠密"><a href="#稠密" class="headerlink" title="稠密"></a>稠密</h3><p><img src="https://notes.sjtu.edu.cn/uploads/upload_5ea99a85113e6fb0f28a8bc190c35260.png" alt=""></p>
-<h2 id="warp"><a href="#warp" class="headerlink" title="warp"></a>warp</h2><p>将生成的光流应用到一张图像</p>
-<p>在x方向上，正值表示物体向左移动，负值表示物体向右移动；<br>在y方向上，正值表示物体向上移动，而负值表示物体向下移动。 </p>
-<p>x0 = pos_x + x， y0 = pos_y + y。pos_x和pos_y是原始的像素坐标，x和y是光流（向下取整），x0和y0就是warp后的像素坐标。以x方向为例，原始坐标加上一个负值，得到的结果变小了，也就相当于这个像素像左移了，如果加一个正值，结果变大，像素右移。</p>
-<p>坐标变换后，很多坐标并没有相应的原始像素与之对应，需要通过插值来处理。</p>
-<h3 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h3><p>图像的很多处理得到的结果是连续的，为了得到离散点上的值，就需要插值。典型代表就是图像坐标的空间变换，如仿射变换，坐标经仿射变换后通常是小数，而图像只保存整数坐标位置上的像素值，所以需要插值。</p>
-<p><img src="https://notes.sjtu.edu.cn/uploads/upload_d9a581e5ce7f1f5ed31f590edf8ddcc5.png" alt=""></p>
-<ul>
-<li>四个角上的点 $P_{x, y}, P_{x+1, y}, P_{x, y+1}, P_{x+1, y+1}$ 是整数坐标位置上的已知点；</li>
-<li>红色的点 $P_{x_{p}, y_{p}}$ 是待插值的点；</li>
-<li>红色虚线连着的两个点 $P_{x_{p}, y}, P_{x_{p}, y+1}$ 是两个辅助点。</li>
-</ul>
-<p>最邻近和双线性两种插值方法都比较简单，仅需要源图像和待插值的坐标。</p>
-<h4 id="nearest"><a href="#nearest" class="headerlink" title="nearest"></a>nearest</h4><p>最邻近插值算法将距离$P_{x_{p}, y_{p}}$最近的已知点的像素值直接赋给$P_{x_{p}, y_{p}}$，对${x_{p}, y_{p}}$四舍五入得到${x, y}$，直接令$P_{x_{p}, y_{p}}=P_{x, y}$即可</p>
-<ul>
-<li>简单，但缺失精度，造成插值的图像灰度上的不连续，变化地方可能出现明显锯齿状</li>
-</ul>
-<h4 id="bilinear"><a href="#bilinear" class="headerlink" title="bilinear"></a>bilinear</h4><p>双线性插值从两个方向进行线性插值</p>
-<script type="math/tex; mode=display">
-P_{x_{p}, y}=P_{x, y}+\left(P_{x+1, y}-P_{x, y}\right)\left(x_{p}-x\right)</script><script type="math/tex; mode=display">
-P_{x_{p}, y+1}=P_{x, y+1}+\left(P_{x+1, y+1}-P_{x, y+1}\right)\left(x_{p}-x\right)</script><script type="math/tex; mode=display">
-P_{x_{p}, y_{p}}=P_{x_{p}, y}+\left(P_{x_{p}, y+1}-P_{x_{p}, y}\right)\left(y_{p}-y\right)</script><p>参考：<a href="https://blog.csdn.net/bby1987/article/details/105851870">https://blog.csdn.net/bby1987/article/details/105851870</a></p>
-]]></content>
-      <tags>
-        <tag>图像处理</tag>
       </tags>
   </entry>
   <entry>
@@ -824,6 +824,190 @@ P_{x_{p}, y_{p}}=P_{x_{p}, y}+\left(P_{x_{p}, y+1}-P_{x_{p}, y}\right)\left(y_{p
       </tags>
   </entry>
   <entry>
+    <title>VVC环路滤波 / Deblocking Filter</title>
+    <url>/2021/11/25/dbk/</url>
+    <content><![CDATA[<blockquote>
+<p>VVC环路滤波：去块滤波器</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
+<li>主要用于去除因为基于块的运动预测和变换导致的块状伪影<ul>
+<li>在 VVC 中，变换尺寸最大到 64×64 </li>
+<li>DBF 主要用来提升主观质量，因此 BD-rate 数值并不是很有意义。</li>
+</ul>
+</li>
+<li>在去块滤波方面，VVC 相比于 HEVC 的主要变化是：<ul>
+<li>亮度和色度都有更强（更多抽头）的去块滤波器，<ul>
+<li>主要原因是 VVC 有大到 64×64 的变换块，CTU 尺寸是 128×128</li>
+</ul>
+</li>
+<li>亮度 4×4 网格去块滤波</li>
+<li>子块边界去块滤波（仿射和 STMVP）<ul>
+<li>运动矢量不同，也会有一点块效应</li>
+</ul>
+</li>
+<li>去块决策适用于运动中更小的差异<ul>
+<li>HEVC 中亮度整像素，VVC 中半像素</li>
+</ul>
+</li>
+<li>亮度自适应去块滤波</li>
+<li>Tc 表扩展到 10 bit 视频<ul>
+<li>HEVC 中只对 8 bit 视频</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>下图是一个典型的块效应，在靠近块边界的地方存在一个很大的阶越，图中的 p0 和 q0 之间，这会使主观质量下降。</p>
+<p><img src="/img/VVC/blk.png"  /></p>
+<p>去方块滤波的基本原理是对平滑区域的不连续边界做强滤波，对纹理丰富区域不滤波或弱滤波。处理顺序是先对整帧图像的垂直边界进行水平滤波，然 后对水平边界进行垂直滤波。这种架构使得多个水平滤波或垂直滤波可以并行进行，也可以逐 CTB 处理。</p>
+<p>对于亮度，VVC 可以对 CU 边界、TU 子块边界的 4x4 块边界进行滤波，以及对 PU 子 块边界的 8x8 块边界进行滤波。对于色度可以对CU和TU进行8x8的边界滤波。</p>
+<blockquote>
+<p>PU 子块包括 SbTMVP 和仿射模式产生的子块， TU 子块包括SBT 和 ISP 模式产生的子块。对于采用矩形变换核的亮度块，也可以对 4x4 的块边界进行去方块滤波。</p>
+</blockquote>
+<p>需要注意的是如果去方块滤波处理的是 8x8 的块边界，实际上是将 8x8 的块分成两部分单独处理，垂直边界以 8x4 为基本单位，水平边界以 4x8 为基本 单位。</p>
+<h2 id="滤波过程"><a href="#滤波过程" class="headerlink" title="滤波过程"></a>滤波过程</h2><h3 id="1-确定滤波长度"><a href="#1-确定滤波长度" class="headerlink" title="1. 确定滤波长度"></a>1. 确定滤波长度</h3><p>滤波长度$S_P$,$ S_Q$：$P\ Q$块中滤波的像素个数，取决于块大小。</p>
+<p>用于决策滤波的样本：$p_{x,i}…q_{x,i}\ with\ x=0..N\ and\ i=0,3$，共$S_P+1$, $S_Q+1$个</p>
+<p>滤波样本：$p_{x,i}…q_{x,i} with\ x=0..N−1\ and\ i=0..3$</p>
+<p><img src="/img/VVC/pq.png" style="zoom: 50%;" /></p>
+<h4 id="luma"><a href="#luma" class="headerlink" title="luma"></a>luma</h4><p>CU/TU的$ S_P$/$S_Q$初始化为：</p>
+<ul>
+<li><p>CU/TU block side size &gt;= 32, SP and SQ = 7.</p>
+</li>
+<li><p>CU/TU block side size&lt;= 4, SP and SQ = 1.  </p>
+</li>
+<li>Otherwise, remaining uninitialized SP/SQ = 3.</li>
+</ul>
+<p>If a CU uses PUs, SP/SQ of the CU/TU boundary is set as follows: </p>
+<ul>
+<li>If  CU/TU  boundary  is  8  samples  distant  from  a  PU boundary, corresponding SP or SQ &lt;= 5. </li>
+</ul>
+<p>SP/SQ of the PU boundary: </p>
+<ul>
+<li><p>If the PU boundary is 8 samples distant from a CU/TU boundary, SP and SQ &lt;= 2. </p>
+</li>
+<li><p>if the PU boundary is 4 samples distant from a CU/TU boundary, SP and SQ = 1. </p>
+</li>
+<li><p>Otherwise, SP and SQ = 3. </p>
+</li>
+</ul>
+<p>SP  on  the  upper  side  of  a  horizontal  CTU  boundary,  is restricted to be &lt;= 3. （减少行缓冲区）</p>
+<blockquote>
+<p>for CU/TU boundaries, SP+SQ, can be 7+7, 7+5, 5+7, 5+5, 7+3, 3+7, 5+3, 3+5, 3+3 or 1+1</p>
+<p>for PU boundaries  inside  a  CU， 3+3, 2+2 or 1+1 </p>
+</blockquote>
+<p>这些滤波长度可以在随后的过滤决策步骤中进一步减少。</p>
+<h4 id="chroma"><a href="#chroma" class="headerlink" title="chroma"></a>chroma</h4><ul>
+<li>the CU/TU block side sizes orthogonal to the block boundary are both &gt;= 8 in chroma samples, $S_P $and$ S_Q $=3</li>
+<li>Otherwise, $S_P$ and $S_Q$ = 1.</li>
+</ul>
+<p>The deblocking length for the upper side of a horizontal CTU boundary, SP, is restricted to be 1</p>
+<blockquote>
+<p> $S_P+S_Q$, can thus be 3+3, 1+3 or 1+1.  </p>
+</blockquote>
+<h3 id="2-根据边界两侧的编码模式和编码参数确定边界强度BS"><a href="#2-根据边界两侧的编码模式和编码参数确定边界强度BS" class="headerlink" title="2. 根据边界两侧的编码模式和编码参数确定边界强度BS"></a>2. 根据边界两侧的编码模式和编码参数确定边界强度BS</h3><p>边界强度值在一 定程度上反映了两个相邻块编码参数的一致性，相邻块采用的编码参数越一致， 其边界强度越小。</p>
+<p><img src="/img/VVC/bs.png" style="zoom:80%;" /></p>
+<ul>
+<li>对于luma，BS=2 或 1 表示需要进行滤波，BS=0 表示不需要进行滤波。</li>
+</ul>
+<ul>
+<li>对于色度，BS=2 或1且为大块边界表示需要进行滤波，其余情况不需要进行滤波。“大块”即边界长度大于等于32的块。<ul>
+<li>If both $S_P$ and$ S_Q $=1 and bS != 2,$ S_P$ and$S_Q $= 0. </li>
+<li>When$ S_Q$ = 3 and bS is non-zero, an additional decision based on spatial activity is made.  </li>
+</ul>
+</li>
+</ul>
+<h3 id="3-根据空间活动性确定滤波强度"><a href="#3-根据空间活动性确定滤波强度" class="headerlink" title="3.根据空间活动性确定滤波强度"></a>3.根据空间活动性确定滤波强度</h3><p>根据边界两侧像素的变化程度判断块的内容特性，确定该边界是否需要滤波处理。滤波强度由阈值$\beta$和$t_c$决定。</p>
+<p><img src="/img/VVC/eq.png" style="zoom: 25%;" /> $i=0，3$</p>
+<h4 id="luma-1"><a href="#luma-1" class="headerlink" title="luma"></a>luma</h4><h5 id="滤波长度-lt-3，判断是否应用short-tap-deblocking-filter，同HEVC。"><a href="#滤波长度-lt-3，判断是否应用short-tap-deblocking-filter，同HEVC。" class="headerlink" title="滤波长度&lt;=3，判断是否应用short-tap deblocking filter，同HEVC。"></a>滤波长度&lt;=3，判断是否应用short-tap deblocking filter，同HEVC。</h5><p>首先判断方程中的1式，即边界两遍的信号变化低于指定的阈值。</p>
+<p><img src="/img/VVC/eq1.png" style="zoom: 50%;" /></p>
+<p>即</p>
+<p>$\begin{array}{l}<br>\left|p_{2,0}-2 p_{1,0}+p_{0,0}\right|+\left|q_{2,0}-2 q_{1,0}+q_{0,0}\right|+\left|p_{2,3}-2 p_{1,3}+p_{0,3}\right|+\left|q_{2,3}-2 q_{1,3}+q_{0,3}\right|&lt;\beta<br>\end{array}$</p>
+<p>其次判断应用strong or normal。通过下式选择强滤波还是普通滤波，其中$i=0,3$<img src="/img/VVC/sw.png" style="zoom:67%;" /></p>
+<p>如果(2)、(3)和(4)式都成立，则进行强滤波，否则进行普通滤波。</p>
+<blockquote>
+<p>(2)保证了边缘两边满足更小的局部自适应，<br>(3)保证了边缘两边的信号的平稳，<br>(4)保证边缘两遍的像素值跳变小于一个阈值。</p>
+</blockquote>
+<h5 id="至少一边滤波长度-gt-3，判断是否应用long-tap-deblocking-filter，为VVC新增。"><a href="#至少一边滤波长度-gt-3，判断是否应用long-tap-deblocking-filter，为VVC新增。" class="headerlink" title="至少一边滤波长度&gt;3，判断是否应用long-tap deblocking filter，为VVC新增。"></a>至少一边滤波长度&gt;3，判断是否应用long-tap deblocking filter，为VVC新增。</h5><p>为了去除平坦区域大尺寸块的方块效应，VVC 采用更长抽头的滤波器。设$S_P$&gt;3。方程中的每一项增加以下项：</p>
+<ul>
+<li><p>对$dPQ_i$：增加$\left|p_{3, i}-2 p_{4, i}+p_{5, i}\right|$</p>
+</li>
+<li><p>对$sP_i$</p>
+<ul>
+<li>若$S_P=5$，增加$|p_{3, i} - p_{s_p,i}|$</li>
+<li>若$S_P=7$，增加$\left|p_{4, i}-p_{5, i}-p_{6, i}+p_{7, i}\right|$</li>
+</ul>
+</li>
+</ul>
+<p>避免过平滑，相应$thr$也要修改。</p>
+<ul>
+<li><p>$thr1$改为$\beta$&gt;&gt;4</p>
+</li>
+<li><p>$thr2$ 改为3$\beta$&gt;&gt;5</p>
+</li>
+</ul>
+<p>若不满足使用long-tap deblocking filter的条件，转为判断是否使用short-tap deblocking filter。</p>
+<h4 id="chroma-1"><a href="#chroma-1" class="headerlink" title="chroma"></a>chroma</h4><p>滤波长度大于3，判断四个条件，如果是420格式改为判断第0行和第1行的像素，否则还是1，3行。满足用强滤波，不满足滤波长度减到1判断是否使用弱滤波。</p>
+<h3 id="4-滤波处理"><a href="#4-滤波处理" class="headerlink" title="4. 滤波处理"></a>4. 滤波处理</h3><h4 id="luma-2"><a href="#luma-2" class="headerlink" title="luma"></a>luma</h4><h5 id="更强滤波（long-tap-deblocking-filter），为双线性滤波器。"><a href="#更强滤波（long-tap-deblocking-filter），为双线性滤波器。" class="headerlink" title="更强滤波（long-tap deblocking filter），为双线性滤波器。"></a>更强滤波（long-tap deblocking filter），为双线性滤波器。</h5><p>$i = 0\ to\ 3$,  $k = 0\ to$ $S_P−1$,$ l = 0\ to$ $S_Q−1$</p>
+<script type="math/tex; mode=display">
+\begin{align*} &p\hbox{"}_{k,i}=Clip3\left(p_{k,i}-t_{CPk},p_{k,i}+t_{CPk},p\hbox{'}_{k,i}\right),\\ &q\hbox{"}_{l,i}=Clip3\left(q_{l,i}-t_{CQl},q_{l,i}+t_{CQl},q_{l,i}\right),\\ &p\hbox{'}_{k,i}=(f_{k}\cdot refM_{i}+(64-f_{k})\cdot refP_{i}+32) >> 6,\\ &q\hbox{'}_{l,i}=(g_{l}\cdot refM_{i}+(64-g_{l})\cdot refQ_{i}+32) >> 6,\\ &refP_{i}=(p_{Sp,i}+p_{Sp+1_{r}i}+1) >> 1,\tag{1}\\ &refQ_{i}=(q_{Sq,i}+q_{Sq+1,i}+1) >> 1,\\ &refM_{i}=\left(\sum_{m=1}^{6}(p_{m,i}+q_{m,i})+2\cdot(p_{0,i}+q_{0,i})+8\right) >> 4,\\ &\pmb{f}=\pmb{g}=\{59,50,41,32,23,14,5\},\\ &\pmb{t}_{\pmb{CP}}=\pmb{t}_{\pmb{CQ}}=(t_{C}\cdot\{6,5,4,3,2,1,1\}) >> 1, \end{align*}</script><h5 id="强滤波（short-tap-strong-deblocking-filter）-，对每块的每行-3-个像素进行修正"><a href="#强滤波（short-tap-strong-deblocking-filter）-，对每块的每行-3-个像素进行修正" class="headerlink" title="强滤波（short-tap strong deblocking filter） ，对每块的每行 3 个像素进行修正"></a><strong>强</strong>滤波（short-tap strong deblocking filter） ，对每块的每行 3 个像素进行修正</h5><p>$\delta_{0 s}=\left(p_{2}+2 p_{1}+2 p_{0}+2 q_{0}+q_{1}+4\right)&gt;&gt;3$</p>
+<p>$\delta_{1 s}=\left(p_{2}+ p_{1}+p_{0}+q_{0}+2\right)&gt;&gt;2$</p>
+<p>$\delta_{2 s}=\left(2 p_{3}+3 p_{2}+p_{1}+p_{0}+q_{0}+4\right)&gt;&gt;3 .$</p>
+<p>$\delta$进行$clip$操作得到滤波后像素。相当于分别进行了$(1, 2, 2, 2, 1)/8$、$(1, 1, 1, 1)/4$和$(2, 3, 1, 1, 1)/8$的滤波操作。对$\delta$的$0，1，2$，$clip$的区间分别为$[p0-3tc, p0+3tc],[p1-2tc, p1+2tc],[p2-tc, p2+tc]$</p>
+<h5 id="弱滤波（short-tap-normal-deblocking-filter）"><a href="#弱滤波（short-tap-normal-deblocking-filter）" class="headerlink" title="弱滤波（short-tap normal deblocking filter）"></a><strong>弱</strong>滤波（short-tap normal deblocking filter）</h5><p>通过下式判断修改几个像素值，满足式子则改变两个，否则改变一个。块越平坦也就意味着$P$和$Q$的边界越明显，即需要改变的像素也就越多</p>
+<p><img src="/img/VVC/weak.png" style="zoom: 67%;" /></p>
+<p>对于$i=0,1,2,3$的每一行，进行滤波前还需要单独进行下式条件判断，只有满足，该行才能够进行滤波。避免对正常存在的块边界进行不必要的滤波，因为当$\delta$绝对的大于10倍tc时，一般不太可能是由于块效应导致的。</p>
+<p><img src="/img/VVC/weak2.png" style="zoom: 80%;" /></p>
+<p>满足上式时，无论哪种情况，都需要对p0和q0进行滤波，</p>
+<p><img src="/img/VVC/p0q0.png" style="zoom: 80%;" /></p>
+<p>$\delta_{0}$的clip区间为$[-tc, tc]$。</p>
+<p>当条件(5)满足时，则需要对p1进行滤波；当条件(6)满足时，需要对q1进行滤波。对p1/q1滤波操作如下：   </p>
+<p><img src="/img/VVC/p1q1.png" style="zoom: 80%;" /></p>
+<p>$\delta_{p1}$和$\delta_{q1}$的clip区间为$[-\frac{tc}{2}, \frac{tc}{2}]$,</p>
+<blockquote>
+<p>clip操作是将$\delta$的值限定到$[-c, c]$的区间,</p>
+<p><img src="/img/VVC/clip.png" style="zoom: 70%;" /></p>
+</blockquote>
+<h4 id="chroma-2"><a href="#chroma-2" class="headerlink" title="chroma"></a>chroma</h4><h5 id="强滤波（long-tap-chroma-deblocking-filter）"><a href="#强滤波（long-tap-chroma-deblocking-filter）" class="headerlink" title="强滤波（long-tap  chroma deblocking filter）"></a>强滤波（long-tap  chroma deblocking filter）</h5><p>$S_P$  and $ S_Q$ = 3</p>
+<p><img src="/img/VVC/chroma-strong.png" style="zoom: 40%;" /></p>
+<p>$S_P$= 1 and $S_Q$ = 3</p>
+<p><img src="/img/VVC/13.png" style="zoom: 40%;" /></p>
+<p>$clip$到$[p-tc, p+tc]$或$[q-tc, q+tc]$</p>
+<h5 id="弱滤波（-short-tap-chroma-deblocking-filter）"><a href="#弱滤波（-short-tap-chroma-deblocking-filter）" class="headerlink" title="弱滤波（ short-tap chroma deblocking filter）"></a>弱滤波（ short-tap chroma deblocking filter）</h5><p>both $S_P$ and $S_Q$ = 1</p>
+<p><img src="/img/VVC/chroma-weak.png" style="zoom: 67%;" /></p>
+<p>clip到$[-tc, tc]$后分别加/减到p0/q0上。</p>
+<h2 id="luma-adaptive-deblocking-filter"><a href="#luma-adaptive-deblocking-filter" class="headerlink" title="luma adaptive deblocking filter"></a>luma adaptive deblocking filter</h2><ul>
+<li>基本思想：块失真在更亮的区域更明显<ul>
+<li>特别为 HDR 格式调优</li>
+<li>通过增加tc和 $\beta$ 获取的 qpOffset 增加了去块强度</li>
+</ul>
+</li>
+</ul>
+<p>在HEVC中滤波强度由$\beta$和tc决定，而$\beta$和tc是由平均量化参数$qPL$生成。</p>
+<p>在VVC中为$qPL$增加一个偏移值，偏移量由重建像素的平均亮度级$LL$决定。</p>
+<p><img src="/img/VVC/ll.png" style="zoom: 50%;" /></p>
+<p><img src="/img/VVC/mapping.png" style="zoom: 67%;" /></p>
+<p>$LL$的范围在SPS中传输。</p>
+<p><img src="/img/VVC/qpl.png" style="zoom: 50%;" /></p>
+<p>$Q_{beta} = clip3(0.63, qPL+(sh_beta_offset_div2&lt;&lt;1))$</p>
+<p>$Q_{tc} = clip3(0.65, qPL+ 2*(bS-1)+(sh_tc_offset_div2&lt;&lt;1))$</p>
+<p><img src="/img/VVC/beta.png" style="zoom: 67%;" /></p>
+<p><img src="/img/VVC/beta1.png" style="zoom: 50%;" /></p>
+<p>$t_{C}=\left\{\begin{array}{cl}\left(t_{C}^{\prime}+(1&lt;&lt;(9-\text { BitDepth }))&gt;&gt;(10-\text { BitDepth }),\right. &amp; \text { BitDepth }&lt;10 \\ t_{C}^{\prime} *(1&lt;&lt;(\text { BitDepth }-10)), &amp; \text { BitDepth } \geq 10\end{array}\right.$</p>
+<p>在slice级中有相应的语法元素：tc_offset_div2 和 beta_offset_div2。tc和$\beta$计算时，相应地把tc−offset−div2 和beta−offset−div2的2倍加到当前的QP上，从而调整tc和$\beta$的值，实现对滤波的自适应控制。</p>
+<p><img src="/img/VVC/dbk.png" style="zoom: 80%;" /></p>
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p>anchor为相应的工具关闭。</p>
+<p><img src="/img/VVC/dbfres.png" style="zoom: 50%;" /></p>
+<p><img src="/img/VVC/dbfres2.png" style="zoom: 33%;" /></p>
+<p><img src="/img/VVC/dbkres1.png" style="zoom:;" /></p>
+<p><img src="/img/VVC/dbkres.png" style="zoom:;" /></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><img src="/img/VVC/codedbk.png" style="zoom:;" /></p>
+]]></content>
+      <tags>
+        <tag>VVC</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>VVC环路滤波 / ALF</title>
     <url>/2021/11/25/alf/</url>
     <content><![CDATA[<blockquote>
@@ -1013,190 +1197,6 @@ f_{i}=\min \left(b_{i}, \max \left(-b_{i}, R\left(x+x_{i}, y+y_{i}\right)-R(x, y
 <p><img src="/img/VVC/ccalfres.png" style="zoom:80%;" /></p>
 <p><img src="/img/VVC/ccalfres2.png" style="zoom:80%;" /></p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><img src="/img/VVC/codealf.png"  /></p>
-]]></content>
-      <tags>
-        <tag>VVC</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VVC环路滤波 / Deblocking Filter</title>
-    <url>/2021/11/25/dbk/</url>
-    <content><![CDATA[<blockquote>
-<p>VVC环路滤波：去块滤波器</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
-<li>主要用于去除因为基于块的运动预测和变换导致的块状伪影<ul>
-<li>在 VVC 中，变换尺寸最大到 64×64 </li>
-<li>DBF 主要用来提升主观质量，因此 BD-rate 数值并不是很有意义。</li>
-</ul>
-</li>
-<li>在去块滤波方面，VVC 相比于 HEVC 的主要变化是：<ul>
-<li>亮度和色度都有更强（更多抽头）的去块滤波器，<ul>
-<li>主要原因是 VVC 有大到 64×64 的变换块，CTU 尺寸是 128×128</li>
-</ul>
-</li>
-<li>亮度 4×4 网格去块滤波</li>
-<li>子块边界去块滤波（仿射和 STMVP）<ul>
-<li>运动矢量不同，也会有一点块效应</li>
-</ul>
-</li>
-<li>去块决策适用于运动中更小的差异<ul>
-<li>HEVC 中亮度整像素，VVC 中半像素</li>
-</ul>
-</li>
-<li>亮度自适应去块滤波</li>
-<li>Tc 表扩展到 10 bit 视频<ul>
-<li>HEVC 中只对 8 bit 视频</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>下图是一个典型的块效应，在靠近块边界的地方存在一个很大的阶越，图中的 p0 和 q0 之间，这会使主观质量下降。</p>
-<p><img src="/img/VVC/blk.png"  /></p>
-<p>去方块滤波的基本原理是对平滑区域的不连续边界做强滤波，对纹理丰富区域不滤波或弱滤波。处理顺序是先对整帧图像的垂直边界进行水平滤波，然 后对水平边界进行垂直滤波。这种架构使得多个水平滤波或垂直滤波可以并行进行，也可以逐 CTB 处理。</p>
-<p>对于亮度，VVC 可以对 CU 边界、TU 子块边界的 4x4 块边界进行滤波，以及对 PU 子 块边界的 8x8 块边界进行滤波。对于色度可以对CU和TU进行8x8的边界滤波。</p>
-<blockquote>
-<p>PU 子块包括 SbTMVP 和仿射模式产生的子块， TU 子块包括SBT 和 ISP 模式产生的子块。对于采用矩形变换核的亮度块，也可以对 4x4 的块边界进行去方块滤波。</p>
-</blockquote>
-<p>需要注意的是如果去方块滤波处理的是 8x8 的块边界，实际上是将 8x8 的块分成两部分单独处理，垂直边界以 8x4 为基本单位，水平边界以 4x8 为基本 单位。</p>
-<h2 id="滤波过程"><a href="#滤波过程" class="headerlink" title="滤波过程"></a>滤波过程</h2><h3 id="1-确定滤波长度"><a href="#1-确定滤波长度" class="headerlink" title="1. 确定滤波长度"></a>1. 确定滤波长度</h3><p>滤波长度$S_P$,$ S_Q$：$P\ Q$块中滤波的像素个数，取决于块大小。</p>
-<p>用于决策滤波的样本：$p_{x,i}…q_{x,i}\ with\ x=0..N\ and\ i=0,3$，共$S_P+1$, $S_Q+1$个</p>
-<p>滤波样本：$p_{x,i}…q_{x,i} with\ x=0..N−1\ and\ i=0..3$</p>
-<p><img src="/img/VVC/pq.png" style="zoom: 50%;" /></p>
-<h4 id="luma"><a href="#luma" class="headerlink" title="luma"></a>luma</h4><p>CU/TU的$ S_P$/$S_Q$初始化为：</p>
-<ul>
-<li><p>CU/TU block side size &gt;= 32, SP and SQ = 7.</p>
-</li>
-<li><p>CU/TU block side size&lt;= 4, SP and SQ = 1.  </p>
-</li>
-<li>Otherwise, remaining uninitialized SP/SQ = 3.</li>
-</ul>
-<p>If a CU uses PUs, SP/SQ of the CU/TU boundary is set as follows: </p>
-<ul>
-<li>If  CU/TU  boundary  is  8  samples  distant  from  a  PU boundary, corresponding SP or SQ &lt;= 5. </li>
-</ul>
-<p>SP/SQ of the PU boundary: </p>
-<ul>
-<li><p>If the PU boundary is 8 samples distant from a CU/TU boundary, SP and SQ &lt;= 2. </p>
-</li>
-<li><p>if the PU boundary is 4 samples distant from a CU/TU boundary, SP and SQ = 1. </p>
-</li>
-<li><p>Otherwise, SP and SQ = 3. </p>
-</li>
-</ul>
-<p>SP  on  the  upper  side  of  a  horizontal  CTU  boundary,  is restricted to be &lt;= 3. （减少行缓冲区）</p>
-<blockquote>
-<p>for CU/TU boundaries, SP+SQ, can be 7+7, 7+5, 5+7, 5+5, 7+3, 3+7, 5+3, 3+5, 3+3 or 1+1</p>
-<p>for PU boundaries  inside  a  CU， 3+3, 2+2 or 1+1 </p>
-</blockquote>
-<p>这些滤波长度可以在随后的过滤决策步骤中进一步减少。</p>
-<h4 id="chroma"><a href="#chroma" class="headerlink" title="chroma"></a>chroma</h4><ul>
-<li>the CU/TU block side sizes orthogonal to the block boundary are both &gt;= 8 in chroma samples, $S_P $and$ S_Q $=3</li>
-<li>Otherwise, $S_P$ and $S_Q$ = 1.</li>
-</ul>
-<p>The deblocking length for the upper side of a horizontal CTU boundary, SP, is restricted to be 1</p>
-<blockquote>
-<p> $S_P+S_Q$, can thus be 3+3, 1+3 or 1+1.  </p>
-</blockquote>
-<h3 id="2-根据边界两侧的编码模式和编码参数确定边界强度BS"><a href="#2-根据边界两侧的编码模式和编码参数确定边界强度BS" class="headerlink" title="2. 根据边界两侧的编码模式和编码参数确定边界强度BS"></a>2. 根据边界两侧的编码模式和编码参数确定边界强度BS</h3><p>边界强度值在一 定程度上反映了两个相邻块编码参数的一致性，相邻块采用的编码参数越一致， 其边界强度越小。</p>
-<p><img src="/img/VVC/bs.png" style="zoom:80%;" /></p>
-<ul>
-<li>对于luma，BS=2 或 1 表示需要进行滤波，BS=0 表示不需要进行滤波。</li>
-</ul>
-<ul>
-<li>对于色度，BS=2 或1且为大块边界表示需要进行滤波，其余情况不需要进行滤波。“大块”即边界长度大于等于32的块。<ul>
-<li>If both $S_P$ and$ S_Q $=1 and bS != 2,$ S_P$ and$S_Q $= 0. </li>
-<li>When$ S_Q$ = 3 and bS is non-zero, an additional decision based on spatial activity is made.  </li>
-</ul>
-</li>
-</ul>
-<h3 id="3-根据空间活动性确定滤波强度"><a href="#3-根据空间活动性确定滤波强度" class="headerlink" title="3.根据空间活动性确定滤波强度"></a>3.根据空间活动性确定滤波强度</h3><p>根据边界两侧像素的变化程度判断块的内容特性，确定该边界是否需要滤波处理。滤波强度由阈值$\beta$和$t_c$决定。</p>
-<p><img src="/img/VVC/eq.png" style="zoom: 25%;" /> $i=0，3$</p>
-<h4 id="luma-1"><a href="#luma-1" class="headerlink" title="luma"></a>luma</h4><h5 id="滤波长度-lt-3，判断是否应用short-tap-deblocking-filter，同HEVC。"><a href="#滤波长度-lt-3，判断是否应用short-tap-deblocking-filter，同HEVC。" class="headerlink" title="滤波长度&lt;=3，判断是否应用short-tap deblocking filter，同HEVC。"></a>滤波长度&lt;=3，判断是否应用short-tap deblocking filter，同HEVC。</h5><p>首先判断方程中的1式，即边界两遍的信号变化低于指定的阈值。</p>
-<p><img src="/img/VVC/eq1.png" style="zoom: 50%;" /></p>
-<p>即</p>
-<p>$\begin{array}{l}<br>\left|p_{2,0}-2 p_{1,0}+p_{0,0}\right|+\left|q_{2,0}-2 q_{1,0}+q_{0,0}\right|+\left|p_{2,3}-2 p_{1,3}+p_{0,3}\right|+\left|q_{2,3}-2 q_{1,3}+q_{0,3}\right|&lt;\beta<br>\end{array}$</p>
-<p>其次判断应用strong or normal。通过下式选择强滤波还是普通滤波，其中$i=0,3$<img src="/img/VVC/sw.png" style="zoom:67%;" /></p>
-<p>如果(2)、(3)和(4)式都成立，则进行强滤波，否则进行普通滤波。</p>
-<blockquote>
-<p>(2)保证了边缘两边满足更小的局部自适应，<br>(3)保证了边缘两边的信号的平稳，<br>(4)保证边缘两遍的像素值跳变小于一个阈值。</p>
-</blockquote>
-<h5 id="至少一边滤波长度-gt-3，判断是否应用long-tap-deblocking-filter，为VVC新增。"><a href="#至少一边滤波长度-gt-3，判断是否应用long-tap-deblocking-filter，为VVC新增。" class="headerlink" title="至少一边滤波长度&gt;3，判断是否应用long-tap deblocking filter，为VVC新增。"></a>至少一边滤波长度&gt;3，判断是否应用long-tap deblocking filter，为VVC新增。</h5><p>为了去除平坦区域大尺寸块的方块效应，VVC 采用更长抽头的滤波器。设$S_P$&gt;3。方程中的每一项增加以下项：</p>
-<ul>
-<li><p>对$dPQ_i$：增加$\left|p_{3, i}-2 p_{4, i}+p_{5, i}\right|$</p>
-</li>
-<li><p>对$sP_i$</p>
-<ul>
-<li>若$S_P=5$，增加$|p_{3, i} - p_{s_p,i}|$</li>
-<li>若$S_P=7$，增加$\left|p_{4, i}-p_{5, i}-p_{6, i}+p_{7, i}\right|$</li>
-</ul>
-</li>
-</ul>
-<p>避免过平滑，相应$thr$也要修改。</p>
-<ul>
-<li><p>$thr1$改为$\beta$&gt;&gt;4</p>
-</li>
-<li><p>$thr2$ 改为3$\beta$&gt;&gt;5</p>
-</li>
-</ul>
-<p>若不满足使用long-tap deblocking filter的条件，转为判断是否使用short-tap deblocking filter。</p>
-<h4 id="chroma-1"><a href="#chroma-1" class="headerlink" title="chroma"></a>chroma</h4><p>滤波长度大于3，判断四个条件，如果是420格式改为判断第0行和第1行的像素，否则还是1，3行。满足用强滤波，不满足滤波长度减到1判断是否使用弱滤波。</p>
-<h3 id="4-滤波处理"><a href="#4-滤波处理" class="headerlink" title="4. 滤波处理"></a>4. 滤波处理</h3><h4 id="luma-2"><a href="#luma-2" class="headerlink" title="luma"></a>luma</h4><h5 id="更强滤波（long-tap-deblocking-filter），为双线性滤波器。"><a href="#更强滤波（long-tap-deblocking-filter），为双线性滤波器。" class="headerlink" title="更强滤波（long-tap deblocking filter），为双线性滤波器。"></a>更强滤波（long-tap deblocking filter），为双线性滤波器。</h5><p>$i = 0\ to\ 3$,  $k = 0\ to$ $S_P−1$,$ l = 0\ to$ $S_Q−1$</p>
-<script type="math/tex; mode=display">
-\begin{align*} &p\hbox{"}_{k,i}=Clip3\left(p_{k,i}-t_{CPk},p_{k,i}+t_{CPk},p\hbox{'}_{k,i}\right),\\ &q\hbox{"}_{l,i}=Clip3\left(q_{l,i}-t_{CQl},q_{l,i}+t_{CQl},q_{l,i}\right),\\ &p\hbox{'}_{k,i}=(f_{k}\cdot refM_{i}+(64-f_{k})\cdot refP_{i}+32) >> 6,\\ &q\hbox{'}_{l,i}=(g_{l}\cdot refM_{i}+(64-g_{l})\cdot refQ_{i}+32) >> 6,\\ &refP_{i}=(p_{Sp,i}+p_{Sp+1_{r}i}+1) >> 1,\tag{1}\\ &refQ_{i}=(q_{Sq,i}+q_{Sq+1,i}+1) >> 1,\\ &refM_{i}=\left(\sum_{m=1}^{6}(p_{m,i}+q_{m,i})+2\cdot(p_{0,i}+q_{0,i})+8\right) >> 4,\\ &\pmb{f}=\pmb{g}=\{59,50,41,32,23,14,5\},\\ &\pmb{t}_{\pmb{CP}}=\pmb{t}_{\pmb{CQ}}=(t_{C}\cdot\{6,5,4,3,2,1,1\}) >> 1, \end{align*}</script><h5 id="强滤波（short-tap-strong-deblocking-filter）-，对每块的每行-3-个像素进行修正"><a href="#强滤波（short-tap-strong-deblocking-filter）-，对每块的每行-3-个像素进行修正" class="headerlink" title="强滤波（short-tap strong deblocking filter） ，对每块的每行 3 个像素进行修正"></a><strong>强</strong>滤波（short-tap strong deblocking filter） ，对每块的每行 3 个像素进行修正</h5><p>$\delta_{0 s}=\left(p_{2}+2 p_{1}+2 p_{0}+2 q_{0}+q_{1}+4\right)&gt;&gt;3$</p>
-<p>$\delta_{1 s}=\left(p_{2}+ p_{1}+p_{0}+q_{0}+2\right)&gt;&gt;2$</p>
-<p>$\delta_{2 s}=\left(2 p_{3}+3 p_{2}+p_{1}+p_{0}+q_{0}+4\right)&gt;&gt;3 .$</p>
-<p>$\delta$进行$clip$操作得到滤波后像素。相当于分别进行了$(1, 2, 2, 2, 1)/8$、$(1, 1, 1, 1)/4$和$(2, 3, 1, 1, 1)/8$的滤波操作。对$\delta$的$0，1，2$，$clip$的区间分别为$[p0-3tc, p0+3tc],[p1-2tc, p1+2tc],[p2-tc, p2+tc]$</p>
-<h5 id="弱滤波（short-tap-normal-deblocking-filter）"><a href="#弱滤波（short-tap-normal-deblocking-filter）" class="headerlink" title="弱滤波（short-tap normal deblocking filter）"></a><strong>弱</strong>滤波（short-tap normal deblocking filter）</h5><p>通过下式判断修改几个像素值，满足式子则改变两个，否则改变一个。块越平坦也就意味着$P$和$Q$的边界越明显，即需要改变的像素也就越多</p>
-<p><img src="/img/VVC/weak.png" style="zoom: 67%;" /></p>
-<p>对于$i=0,1,2,3$的每一行，进行滤波前还需要单独进行下式条件判断，只有满足，该行才能够进行滤波。避免对正常存在的块边界进行不必要的滤波，因为当$\delta$绝对的大于10倍tc时，一般不太可能是由于块效应导致的。</p>
-<p><img src="/img/VVC/weak2.png" style="zoom: 80%;" /></p>
-<p>满足上式时，无论哪种情况，都需要对p0和q0进行滤波，</p>
-<p><img src="/img/VVC/p0q0.png" style="zoom: 80%;" /></p>
-<p>$\delta_{0}$的clip区间为$[-tc, tc]$。</p>
-<p>当条件(5)满足时，则需要对p1进行滤波；当条件(6)满足时，需要对q1进行滤波。对p1/q1滤波操作如下：   </p>
-<p><img src="/img/VVC/p1q1.png" style="zoom: 80%;" /></p>
-<p>$\delta_{p1}$和$\delta_{q1}$的clip区间为$[-\frac{tc}{2}, \frac{tc}{2}]$,</p>
-<blockquote>
-<p>clip操作是将$\delta$的值限定到$[-c, c]$的区间,</p>
-<p><img src="/img/VVC/clip.png" style="zoom: 70%;" /></p>
-</blockquote>
-<h4 id="chroma-2"><a href="#chroma-2" class="headerlink" title="chroma"></a>chroma</h4><h5 id="强滤波（long-tap-chroma-deblocking-filter）"><a href="#强滤波（long-tap-chroma-deblocking-filter）" class="headerlink" title="强滤波（long-tap  chroma deblocking filter）"></a>强滤波（long-tap  chroma deblocking filter）</h5><p>$S_P$  and $ S_Q$ = 3</p>
-<p><img src="/img/VVC/chroma-strong.png" style="zoom: 40%;" /></p>
-<p>$S_P$= 1 and $S_Q$ = 3</p>
-<p><img src="/img/VVC/13.png" style="zoom: 40%;" /></p>
-<p>$clip$到$[p-tc, p+tc]$或$[q-tc, q+tc]$</p>
-<h5 id="弱滤波（-short-tap-chroma-deblocking-filter）"><a href="#弱滤波（-short-tap-chroma-deblocking-filter）" class="headerlink" title="弱滤波（ short-tap chroma deblocking filter）"></a>弱滤波（ short-tap chroma deblocking filter）</h5><p>both $S_P$ and $S_Q$ = 1</p>
-<p><img src="/img/VVC/chroma-weak.png" style="zoom: 67%;" /></p>
-<p>clip到$[-tc, tc]$后分别加/减到p0/q0上。</p>
-<h2 id="luma-adaptive-deblocking-filter"><a href="#luma-adaptive-deblocking-filter" class="headerlink" title="luma adaptive deblocking filter"></a>luma adaptive deblocking filter</h2><ul>
-<li>基本思想：块失真在更亮的区域更明显<ul>
-<li>特别为 HDR 格式调优</li>
-<li>通过增加tc和 $\beta$ 获取的 qpOffset 增加了去块强度</li>
-</ul>
-</li>
-</ul>
-<p>在HEVC中滤波强度由$\beta$和tc决定，而$\beta$和tc是由平均量化参数$qPL$生成。</p>
-<p>在VVC中为$qPL$增加一个偏移值，偏移量由重建像素的平均亮度级$LL$决定。</p>
-<p><img src="/img/VVC/ll.png" style="zoom: 50%;" /></p>
-<p><img src="/img/VVC/mapping.png" style="zoom: 67%;" /></p>
-<p>$LL$的范围在SPS中传输。</p>
-<p><img src="/img/VVC/qpl.png" style="zoom: 50%;" /></p>
-<p>$Q_{beta} = clip3(0.63, qPL+(sh_beta_offset_div2&lt;&lt;1))$</p>
-<p>$Q_{tc} = clip3(0.65, qPL+ 2*(bS-1)+(sh_tc_offset_div2&lt;&lt;1))$</p>
-<p><img src="/img/VVC/beta.png" style="zoom: 67%;" /></p>
-<p><img src="/img/VVC/beta1.png" style="zoom: 50%;" /></p>
-<p>$t_{C}=\left\{\begin{array}{cl}\left(t_{C}^{\prime}+(1&lt;&lt;(9-\text { BitDepth }))&gt;&gt;(10-\text { BitDepth }),\right. &amp; \text { BitDepth }&lt;10 \\ t_{C}^{\prime} *(1&lt;&lt;(\text { BitDepth }-10)), &amp; \text { BitDepth } \geq 10\end{array}\right.$</p>
-<p>在slice级中有相应的语法元素：tc_offset_div2 和 beta_offset_div2。tc和$\beta$计算时，相应地把tc−offset−div2 和beta−offset−div2的2倍加到当前的QP上，从而调整tc和$\beta$的值，实现对滤波的自适应控制。</p>
-<p><img src="/img/VVC/dbk.png" style="zoom: 80%;" /></p>
-<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p>anchor为相应的工具关闭。</p>
-<p><img src="/img/VVC/dbfres.png" style="zoom: 50%;" /></p>
-<p><img src="/img/VVC/dbfres2.png" style="zoom: 33%;" /></p>
-<p><img src="/img/VVC/dbkres1.png" style="zoom:;" /></p>
-<p><img src="/img/VVC/dbkres.png" style="zoom:;" /></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><img src="/img/VVC/codedbk.png" style="zoom:;" /></p>
 ]]></content>
       <tags>
         <tag>VVC</tag>
@@ -1763,6 +1763,60 @@ f_{i}=\min \left(b_{i}, \max \left(-b_{i}, R\left(x+x_{i}, y+y_{i}\right)-R(x, y
       </tags>
   </entry>
   <entry>
+    <title>Java/代理模式</title>
+    <url>/2021/11/25/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/</url>
+    <content><![CDATA[<blockquote>
+<p>代理模式的一个典型应用：AOP(面向切面编程)</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h2><p>a类本来需要调用c类（目标类）的方法完成某个功能， 但是c不让a调用。 </p>
+<p>a —&gt;不能直接调用 c的方法。<br>在a 和 c 直接创建一个 b 代理，c让b访问。 c，b实现相同的功能（接口）。<br>a —&gt;访问b—&gt;访问c</p>
+<p>作用：</p>
+<ul>
+<li><p>功能增强： 在原有的功能上，增加了额外的功能。 新增加的功能，叫做功能增强</p>
+</li>
+<li><p>控制访问： 代理类不让你访问目标，例如商家不让用户访问厂家。 </p>
+</li>
+</ul>
+<h2 id="静态代理"><a href="#静态代理" class="headerlink" title="静态代理"></a>静态代理</h2><p>代理类需要手工实现。即自己创建一个java类，表示代理类。所要代理的目标类是确定的。</p>
+<ul>
+<li>缺点：当目标类和代理类很多时候，<ul>
+<li>当目标类增加， 代理类可能也需要成倍的增加。 代理类数量过多。</li>
+<li>当接口中功能增加或修改，会影响众多的实现类，厂家类，代理类都需要修改。影响较大。</li>
+</ul>
+</li>
+</ul>
+<h2 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h2><p>在程序执行过程中，使用jdk的<strong>反射</strong>机制，创建<strong>代理类对象</strong>， 并动态的指定要代理目标类。</p>
+<p>即使目标类很多，代理类数量可以很少；当修改了接口中的方法时，不影响代理类。</p>
+<p>动态代理是一种创建java对象的能力，不用创建代理类，就能创建代理类对象。</p>
+<p>两种实现方式：jdk动态代理；cglib动态代理</p>
+<h3 id="jdk动态代理"><a href="#jdk动态代理" class="headerlink" title="jdk动态代理"></a>jdk动态代理</h3><ul>
+<li>使用java反射包中的类和接口实现动态代理的功能。</li>
+<li>反射包 java.lang.reflect , 里面有三个类 ： InvocationHandler , Method, Proxy.</li>
+<li>要求目标类实现接口</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 不使用反射调用方法</span></span><br><span class="line">HelloService service = <span class="keyword">new</span> HelloServiceImpl(); <span class="comment">//创建类对象service</span></span><br><span class="line">service.sayHello(<span class="string">&quot;张三&quot;</span>); <span class="comment">// 通过对象调用sayHello()方法</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用反射调用方法</span></span><br><span class="line">Method method =  HelloService.class.getMethod(<span class="string">&quot;sayHello&quot;</span>, String.class); <span class="comment">// 获取method对象（sayHello()方法）</span></span><br><span class="line">HelloService service2 = <span class="keyword">new</span> HelloServiceImpl2();</span><br><span class="line">Object ret = method.invoke(service2, <span class="string">&quot;李四&quot;</span>); <span class="comment">// invoke()方法调用对象service2的方法</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>InvocationHandler接口，只有一个方法invoke()，代理对象要完成的功能。（目标方法/功能增强）</li>
+<li>Method类：表示目标类中的方法。通过Method可以执行某个目标类的方法，method.invoke(目标对象，方法的参数)</li>
+<li>Proxy类：创建代理对象。之前创建对象是 new ，现在使用Proxy类的静态方法 newProxyInstance() 。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//实现InvocationHandler接口，完成代理类要做的功能（1.调用目标方法，2.功能增强）</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MySellHandler</span> <span class="keyword">implements</span> <span class="title">InvocationHandler</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Object target = <span class="keyword">null</span>; <span class="comment">// 为目标类创建对象（活动的，不是固定的，需要传入进来）</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MySellHandler</span><span class="params">(Object target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.target = target;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">	<span class="comment">// 实现invoke方法，完成代理类要做的功能</span></span><br><span class="line">    <span class="comment">// Object proxy: jdk创建的代理对象，无需赋值。</span></span><br><span class="line">	<span class="comment">// Method method: 目标类中的方法，jdk提供</span></span><br><span class="line">    <span class="comment">// Object[] args：目标类中方法的参数， jdk提供。</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">        Object res  = <span class="keyword">null</span>;</span><br><span class="line">        res =  method.invoke(target,args); <span class="comment">// 反射，执行目标对象target的method方法</span></span><br><span class="line">		<span class="comment">//功能增强，加价</span></span><br><span class="line">        <span class="keyword">if</span>( res != <span class="keyword">null</span> )&#123;</span><br><span class="line">            Float price = (Float)res;</span><br><span class="line">            price = price + <span class="number">25</span>;</span><br><span class="line">            res = price;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(res);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//创建代理对象，使用Proxy</span></span><br><span class="line"><span class="comment">//1. 创建目标对象</span></span><br><span class="line">UsbSell factory = <span class="keyword">new</span> UsbKingFactory();</span><br><span class="line"><span class="comment">//2.创建InvocationHandler对象</span></span><br><span class="line">InvocationHandler handler = <span class="keyword">new</span> MySellHandler(factory);</span><br><span class="line"><span class="comment">//3.创建代理对象</span></span><br><span class="line">UsbSell proxy = (UsbSell) Proxy.newProxyInstance(</span><br><span class="line">    factory.getClass().getClassLoader(),</span><br><span class="line">    factory.getClass().getInterfaces(),</span><br><span class="line">    handler</span><br><span class="line">	);</span><br><span class="line"><span class="comment">//4.通过代理执行方法</span></span><br><span class="line"><span class="keyword">float</span> price = proxy.sell(<span class="number">1</span>); <span class="comment">// 代理对象proxy调用目标类factory中的sell方法</span></span><br></pre></td></tr></table></figure>
+<h3 id="cglib动态代理"><a href="#cglib动态代理" class="headerlink" title="cglib动态代理"></a>cglib动态代理</h3><ul>
+<li><p>cglib是第三方的工具库， 创建代理对象。</p>
+</li>
+<li><p>原理是继承， cglib通过继承目标类，创建它的子类，在子类中重写父类中同名的方法， 实现功能的修改。要求目标类不能是final的， 方法也不能是final的。</p>
+</li>
+<li><p>cglib的要求目标类比较宽松， 只要能继承即可。</p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>图与网络/双计数</title>
     <url>/2021/07/06/%E5%8F%8C%E8%AE%A1%E6%95%B0/</url>
     <content><![CDATA[<blockquote>
@@ -1993,60 +2047,6 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 ]]></content>
       <tags>
         <tag>图与网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java/代理模式</title>
-    <url>/2021/11/25/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/</url>
-    <content><![CDATA[<blockquote>
-<p>代理模式的一个典型应用：AOP(面向切面编程)</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h2><p>a类本来需要调用c类（目标类）的方法完成某个功能， 但是c不让a调用。 </p>
-<p>a —&gt;不能直接调用 c的方法。<br>在a 和 c 直接创建一个 b 代理，c让b访问。 c，b实现相同的功能（接口）。<br>a —&gt;访问b—&gt;访问c</p>
-<p>作用：</p>
-<ul>
-<li><p>功能增强： 在原有的功能上，增加了额外的功能。 新增加的功能，叫做功能增强</p>
-</li>
-<li><p>控制访问： 代理类不让你访问目标，例如商家不让用户访问厂家。 </p>
-</li>
-</ul>
-<h2 id="静态代理"><a href="#静态代理" class="headerlink" title="静态代理"></a>静态代理</h2><p>代理类需要手工实现。即自己创建一个java类，表示代理类。所要代理的目标类是确定的。</p>
-<ul>
-<li>缺点：当目标类和代理类很多时候，<ul>
-<li>当目标类增加， 代理类可能也需要成倍的增加。 代理类数量过多。</li>
-<li>当接口中功能增加或修改，会影响众多的实现类，厂家类，代理类都需要修改。影响较大。</li>
-</ul>
-</li>
-</ul>
-<h2 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h2><p>在程序执行过程中，使用jdk的<strong>反射</strong>机制，创建<strong>代理类对象</strong>， 并动态的指定要代理目标类。</p>
-<p>即使目标类很多，代理类数量可以很少；当修改了接口中的方法时，不影响代理类。</p>
-<p>动态代理是一种创建java对象的能力，不用创建代理类，就能创建代理类对象。</p>
-<p>两种实现方式：jdk动态代理；cglib动态代理</p>
-<h3 id="jdk动态代理"><a href="#jdk动态代理" class="headerlink" title="jdk动态代理"></a>jdk动态代理</h3><ul>
-<li>使用java反射包中的类和接口实现动态代理的功能。</li>
-<li>反射包 java.lang.reflect , 里面有三个类 ： InvocationHandler , Method, Proxy.</li>
-<li>要求目标类实现接口</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 不使用反射调用方法</span></span><br><span class="line">HelloService service = <span class="keyword">new</span> HelloServiceImpl(); <span class="comment">//创建类对象service</span></span><br><span class="line">service.sayHello(<span class="string">&quot;张三&quot;</span>); <span class="comment">// 通过对象调用sayHello()方法</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用反射调用方法</span></span><br><span class="line">Method method =  HelloService.class.getMethod(<span class="string">&quot;sayHello&quot;</span>, String.class); <span class="comment">// 获取method对象（sayHello()方法）</span></span><br><span class="line">HelloService service2 = <span class="keyword">new</span> HelloServiceImpl2();</span><br><span class="line">Object ret = method.invoke(service2, <span class="string">&quot;李四&quot;</span>); <span class="comment">// invoke()方法调用对象service2的方法</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>InvocationHandler接口，只有一个方法invoke()，代理对象要完成的功能。（目标方法/功能增强）</li>
-<li>Method类：表示目标类中的方法。通过Method可以执行某个目标类的方法，method.invoke(目标对象，方法的参数)</li>
-<li>Proxy类：创建代理对象。之前创建对象是 new ，现在使用Proxy类的静态方法 newProxyInstance() 。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//实现InvocationHandler接口，完成代理类要做的功能（1.调用目标方法，2.功能增强）</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MySellHandler</span> <span class="keyword">implements</span> <span class="title">InvocationHandler</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Object target = <span class="keyword">null</span>; <span class="comment">// 为目标类创建对象（活动的，不是固定的，需要传入进来）</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MySellHandler</span><span class="params">(Object target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.target = target;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">	<span class="comment">// 实现invoke方法，完成代理类要做的功能</span></span><br><span class="line">    <span class="comment">// Object proxy: jdk创建的代理对象，无需赋值。</span></span><br><span class="line">	<span class="comment">// Method method: 目标类中的方法，jdk提供</span></span><br><span class="line">    <span class="comment">// Object[] args：目标类中方法的参数， jdk提供。</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">        Object res  = <span class="keyword">null</span>;</span><br><span class="line">        res =  method.invoke(target,args); <span class="comment">// 反射，执行目标对象target的method方法</span></span><br><span class="line">		<span class="comment">//功能增强，加价</span></span><br><span class="line">        <span class="keyword">if</span>( res != <span class="keyword">null</span> )&#123;</span><br><span class="line">            Float price = (Float)res;</span><br><span class="line">            price = price + <span class="number">25</span>;</span><br><span class="line">            res = price;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(res);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//创建代理对象，使用Proxy</span></span><br><span class="line"><span class="comment">//1. 创建目标对象</span></span><br><span class="line">UsbSell factory = <span class="keyword">new</span> UsbKingFactory();</span><br><span class="line"><span class="comment">//2.创建InvocationHandler对象</span></span><br><span class="line">InvocationHandler handler = <span class="keyword">new</span> MySellHandler(factory);</span><br><span class="line"><span class="comment">//3.创建代理对象</span></span><br><span class="line">UsbSell proxy = (UsbSell) Proxy.newProxyInstance(</span><br><span class="line">    factory.getClass().getClassLoader(),</span><br><span class="line">    factory.getClass().getInterfaces(),</span><br><span class="line">    handler</span><br><span class="line">	);</span><br><span class="line"><span class="comment">//4.通过代理执行方法</span></span><br><span class="line"><span class="keyword">float</span> price = proxy.sell(<span class="number">1</span>); <span class="comment">// 代理对象proxy调用目标类factory中的sell方法</span></span><br></pre></td></tr></table></figure>
-<h3 id="cglib动态代理"><a href="#cglib动态代理" class="headerlink" title="cglib动态代理"></a>cglib动态代理</h3><ul>
-<li><p>cglib是第三方的工具库， 创建代理对象。</p>
-</li>
-<li><p>原理是继承， cglib通过继承目标类，创建它的子类，在子类中重写父类中同名的方法， 实现功能的修改。要求目标类不能是final的， 方法也不能是final的。</p>
-</li>
-<li><p>cglib的要求目标类比较宽松， 只要能继承即可。</p>
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>java</tag>
       </tags>
   </entry>
   <entry>
