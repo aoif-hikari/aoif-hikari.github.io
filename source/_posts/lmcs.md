@@ -1,7 +1,8 @@
 ---
 tags: VVC
 mathjax: true 
-title: VVC环路滤波 / LMCS
+title: Video Coding / LMCS
+date: 2021-10-20
 ---
 
 > LMCS( luma mapping with chroma scaling)是  VVC 中新增的技术，其位 于去方块滤波之前，也被称为环路重整形（in-loop reshaper），主要包括两个部分：亮度映射（LM）、依赖亮度的色度缩放（CS）。

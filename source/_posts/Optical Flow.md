@@ -2,6 +2,7 @@
 tags: 图像处理
 mathjax: true 
 title: Optical Flow / 光流
+date: 2021-10-09
 ---
 
 > 在连续图片序列中，从第t帧到第t+1帧，每个像素的**运动速度**和**运动方向**。

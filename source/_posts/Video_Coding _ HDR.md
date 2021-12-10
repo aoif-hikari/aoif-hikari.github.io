@@ -2,6 +2,7 @@
 tags: video coding
 mathjax: true 
 title: Video Coding / HDR
+date: 2021-11-02
 ---
 
 > HDR -- 更高的动态范围，更广的色域，更深的比特位。

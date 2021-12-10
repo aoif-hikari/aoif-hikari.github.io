@@ -2,6 +2,7 @@
 tags: leetcode 
 mathjax: true 
 title: Leetcode / 二分查找
+date: 2021-10-20
 ---
 
 > 有序数组要想到二分查找

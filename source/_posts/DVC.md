@@ -2,10 +2,11 @@
 tags: end-to-end
 mathjax: true 
 title: End-to-end 视频编码框架： DVC 与 M-LVC
+date: 2021-11-16
 ---
 
-DVC: An End-to-end Deep Video Compression Framework
-M-LVC: Multiple Frames Prediction for Learned VideoCompression
+> DVC: An End-to-end Deep Video Compression Framework
+> M-LVC: Multiple Frames Prediction for Learned VideoCompression
 
 <!-- more -->
 

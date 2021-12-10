@@ -1,6 +1,7 @@
 ---
 title: Leetcode / 链表
 tags: leetcode
+date: 2021-10-20
 ---
 
 > 常用数据结构--链表

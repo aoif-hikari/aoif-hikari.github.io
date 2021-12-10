@@ -1,6 +1,7 @@
 ---
-title: Java/JDBC
+title: Java / JDBC
 tags: java
+date: 2021-08-06
 ---
 
 > Java DataBase Connectivity, Java连接数据库，是SUN公司制定的一套接口, java.sql.*;
@@ -10,8 +11,7 @@ tags: java
 <!-- more -->
 
 从官网下载对应的驱动jar包，将其配置到环境变量classpath。
-
-classpath=.;D:\course\06-JDBC\resources\MySql Connector Java 5.1.23\mysql-connector-java-5.1.23-bin.jar
+`classpath=.;D:\course\06-JDBC\resources\MySql Connector Java 5.1.23\mysql-connector-java-5.1.23-bin.jar`
 
 ## 编程
 
@@ -85,7 +85,6 @@ public static void main(String[] args) {
 ## 处理返回结果
 
 executeUpdate：insert/update/delete, 返回结果对表文件操作时，受影响行数
-
 executeQuery：查询命令【select  *  from 表名】，返回结果是查询命令得到【临时表】，ResultSet实例对象。
 
 ```java
@@ -140,7 +139,6 @@ password=146
 ## sql注入
 
 问题：用户输入语句含有sql语句关键字，完成了sql语句的拼接，参与编译，导致原sql语句含义被扭曲。
-
 解决方法：用户提供的信息不参与编译过程，用java.sql.PreparedStatement（继承java.sql.Statement）
 
    * PreparedStatement属于预编译的数据库操作对象，原理：预先对sql语句的框架进行编译，再给sql语句传“值”，使用较多。
@@ -354,11 +352,8 @@ public static void main(String[] args) {
 ## DAO与Entity
 
 DAO(Data Access Object) 数据访问对象，将数据库操作都封装起来。包括：
-
 1）实体类Dept：用于存放与传输对象数据。
-
 2）数据库连接和关闭工具类JdbcUtil： 避免了数据库连接和关闭代码的重复使用，方便修改。
-
 3）DAO 实现类DeptDao： 针对不同数据库给出DAO接口定义方法的具体实现。
 
 ```java

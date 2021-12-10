@@ -2,6 +2,7 @@
 tags: deep learning 
 mathjax: true 
 title: deep learning / 各种卷积方法
+date: 2021-10-20
 ---
 
 > 卷积及其变种

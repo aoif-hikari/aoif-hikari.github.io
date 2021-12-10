@@ -1,27 +1,21 @@
 ---
 tags: java
-title: Java/Servlet规范
+title: Java / Servlet规范
+date: 2021-08-06
 ---
 
 > Servlet规范，来自于JAVAEE规范中的一种。
->
-> 后期使用springMVC框架。
 
 <!--more-->
 
 Servlet规范指定【动态资源文件】开发步骤；Http服务器调用动态资源文件规则；Http服务器管理动态资源文件实例对象规则。
-
-Tomcat服务器下lib文件中servlet-api.jar存放Servlet接口（javax.servlet.Servlet接口）
-
+Tomcat服务器下lib文件中`servlet-api.jar`存放Servlet接口（javax.servlet.Servlet接口）
 Servlet规范任务中，Http服务器能调用的【动态资源文件】必须是一个**Servlet接口实现类**
 
 ## Servlet规范开发步骤
 
 - 创建一个Java类继承HttpServlet父类，使之成为一个Servlet接口实现类
-
-
 - 重写两个方法，doGet或则doPost
-  
 - 将Servlet接口实现类信息【注册】到Tomcat服务器
 
 ```xml
@@ -42,8 +36,6 @@ Servlet规范任务中，Http服务器能调用的【动态资源文件】必须
 ## Servlet对象生命周期
 
 - 网站中所有的Servlet接口实现类的实例对象，只能由Http服务器(如Tomcat，相当于servlet的容器)负责额创建。 开发人员不能手动创建。
-
-
 - 在默认的情况下，Http服务器接收到对于当前Servlet接口实现类第一次请求时，自动创建这个Servlet接口实现类的实例对象；在手动配置情况下，要求Http服务器在启动时自动创建某个Servlet接口实现类的实例对象
 
 ```xml
@@ -56,20 +48,15 @@ Servlet规范任务中，Http服务器能调用的【动态资源文件】必须
 ```
 
 - 在Http服务器运行期间，一个Servlet接口实现类只能被创建出一个实例对象
-
 - 在Http服务器关闭时刻，自动将网站中所有的Servlet对象进行销毁
-
 
 ## HttpServletResponse接口
 
 来自于Servlet规范，在Tomcat中存在servlet-api.jar，实现类由Http服务器负责提供。负责将doGet/doPost方法**执行结果**写入到【响应体】交给浏览器。惯于将HttpServletResponse接口修饰的对象称为【**响应对象**】
-
 主要功能:
 
 - 执行结果以二进制形式写入到【响应体】
-
 - 设置响应头中[content-type]属性值，从而控制浏览器使用对应编译器将响应体二进制数据编译为【文字，图片，视频，命令】
-
 
 ```java
 protected void doGet(HttpServletRequest request, HttpServletResponse response) 
@@ -85,8 +72,6 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response)
 ```
 
 - 设置响应头中【location】属性，将一个请求地址赋值给location，从而控制浏览器向指定服务器发送请求
-
-
 ```java
 protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 		throws ServletException, IOException {
@@ -100,7 +85,6 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response)
 ## HttpServletRequest接口
 
 来自于Servlet规范中，在Tomcat中存在servlet-api.jar，接口实现类由Http服务器负责提供。负责在doGet/doPost方法运行时读取Http请求协议包中信息，修饰的对象称为【请求对象】
-
 作用:
 
 - 读取Http请求协议包中【请求行】信息
@@ -150,28 +134,21 @@ public class OneServlet extends HttpServlet {
 ```
 
 > 请求对象和响应对象生命周期
->
-> - ​       在Http服务器接收到浏览器发送的【Http请求协议包】之后，自动为当前的【Http请求协议包】生成一个【请求对象】和一个【响应对象】
-> - 在Http服务器调用doGet/doPost方法时，负责将【请求对象】和【响应对象】作为实参传递到方法，确保doGet/doPost正确执行
-> - 在Http服务器准备推送Http响应协议包之前，负责将本次请求关联的【请求对象】和【响应对象】
->   ​      销毁
->
+> 在Http服务器接收到浏览器发送的【Http请求协议包】之后，自动为当前的【Http请求协议包】生成一个【请求对象】和一个【响应对象】
+> -在Http服务器调用doGet/doPost方法时，负责将【请求对象】和【响应对象】作为实参传递到方法，确保doGet/doPost正确执行
+> -在Http服务器准备推送Http响应协议包之前，负责将本次请求关联的【请求对象】和【响应对象】销毁
 > 【请求对象】和【响应对象】生命周期贯穿一次请求的处理过程中
 
 ## Http状态码
 
 由三位数字组成的一个符号。Http服务器在推送响应包之前，根据本次请求处理情况将Http状态码写入到响应包中【状态行】上。
-
 如果Http服务器针对本次请求，返回了对应的资源文件，通过Http状态码通知浏览器应该如何处理这个结果
-
 如果Http服务器针对本次请求，无法返回对应的资源文件，通过Http状态码向浏览器解释不能提供服务的原因
 
 分类：
 100---599组成；分为5个大类
 100; 通知浏览器本次返回的资源文件并不是一个独立的资源文件，需要浏览器在接收响应包之后，继续向Http服务器所要依赖的其他资源文件
-
 200，通知浏览器本次返回的资源文件是一个完整独立资源文件，浏览器在接收到之后不需要所要其他关联文件
-
 302，通知浏览器本次返回的不是一个资源文件内容而是一个资源文件地址，需要浏览器根据这个地址自动发起请求来索要这个资源文件
 
 ```java
@@ -180,9 +157,7 @@ response.sendRedirect("资源文件地址") //写入到响应头中location
 ```
 
 404: 通知浏览器，由于在服务端没有定位到被访问的资源文件 因此无法提供帮助
-
 405：通知浏览器，在服务端已经定位到被访问的资源文件（Servlet），但是这个Servlet对于浏览器采用的请求方式不能处理
-
 500:通知浏览器，在服务端已经定位到被访问的资源文件（Servlet）这个Servlet可以接收浏览器采用请求方式，但是Servlet在处理请求期间，由于Java异常导致处理失败
 
 ## 多个Servlet之间调用规则
@@ -190,8 +165,6 @@ response.sendRedirect("资源文件地址") //写入到响应头中location
 多个Servlet:
 
 - 前提条件：某些来自于浏览器发送请求，往往需要服务端中多个Servlet协同处理。但是浏览器一次只能访问一个Servlet，导致用户需要手动通过浏览器发起多次请求才能得到服务。这样增加用户获得服务难度，导致用户放弃访问当前网站
-
-
 - 提高用户使用感受规则：无论本次请求涉及到多少个Servlet,用户只需要【手动】通知浏览器发起一次请求即可
 
 ### 重定向解决方案
@@ -220,39 +193,28 @@ report.forward(request, response)
 ```
 
 - 无论本次请求涉及到多少个Servlet,用户只需要手动通过浏览器发送一次请求
-
-
 - Servlet之间调用发生在服务端计算机上，节省服务端与浏览器之间往返次数增加处理服务速度
 
-
 请求次数：在请求转发过程中，浏览器只发送一次请求
-
 请求地址：只能向Tomcat服务器申请调用当前网站下资源文件地址
-
 请求方式：在请求转发过程中，浏览器只发送一个了个Http请求协议包。参与本次请求的所有Servlet共享同一个请求协议包，因此这些Servlet接收的请求方式与浏览器发送的请求方式保持一致
 
 ## 多个Servlet之间数据共享实现方案
 
 数据共享：OneServlet工作完毕后，将产生数据交给TwoServlet来使用
-
 Servlet规范中提供四种数据共享方案
 
 ### ServletContext接口
 
 来自于Servlet规范中一个接口。在Tomcat中存在servlet-api.jar，在Tomcat中负责提供这个接口实现类。
-
 如果两个Servlet来自于同一个网站。彼此之间通过网站的ServletContext实例对象实现数据共享。
-
 习惯于将ServletContext对象称为【全局作用域对象】。
 
 > 每一个网站都存在一个全局作用域对象。 这个全局作用域对象【相当于】一个Map.在这个网站中OneServlet可以将一个数据存入到全局作用域对象，当前网站中其他Servlet此时都可以从全局作用域对象得到这个数据进行使用。
-
 > 生命周期：全局作用域对象生命周期贯穿网站整个运行期间
 
 在Http服务器启动过程中，自动为当前网站在内存中创建一个全局作用域对象
-
 在Http服务器运行期间时，一个网站只有一个全局作用域对象，全局作用域对象一直处于存活状态
-
 在Http服务器准备关闭时，负责将当前网站中全局作用域对象 进行销毁处理          
 
 ```java
@@ -337,13 +299,9 @@ Cookie域保存在自己浏览器内部，与别人互不干扰，但因为是�
 来自于Servlet规范下一个接口。存在于Tomcat中servlet-api.jar，其实现类由Http服务器提供。Tomcat提供实现类存在于servlet-api.jar。如果两个Servlet来自于同一个网站，并且为同一个浏览器/用户提供服务，此时借助于HttpSession对象进行数据共享。习惯于将HttpSession接口修饰对象称为【会话作用域对象】
 
 > HttpSession 与  Cookie 区别：
->
 > 存储位置:Cookie：存放在客户端计算机（浏览器内存/硬盘）。HttpSession：存放在服务端计算机内存
->
 > 数据类型：Cookie对象存储共享数据类型只能是String。HttpSession对象可以存储任意类型的共享数据Object
->
 > 数据数量: 一个Cookie对象只能存储一个共享数据。HttpSession使用map集合，可以存储任意数量共享数据
->
 > 参照物：Cookie相当于客户在服务端【会员卡】。HttpSession相当于客户在服务端【私人保险柜】
 
 ```java
@@ -370,9 +328,7 @@ TwoServlet{
 Http服务器如何将用户与HttpSession关联：cookie
 
 > getSession()  与  getSession(false)
->
 > getSession(): 如果当前用户在服务端已经拥有了自己的私人储物。要求tomcat将这个私人储物柜进行返回。如果当前用户在服务端尚未拥有自己的私人储物柜。要求tocmat为当前用户创建一个全新的私人储物柜
->
 > getSession(false):如果当前用户在服务端已经拥有了自己的私人储物柜.要求tomcat将这个私人储物柜进行返回。如果当前用户在服务端尚未拥有自己的私人储物柜。此时Tomcat将返回null
 
 HttpSession销毁时机:
@@ -408,13 +364,10 @@ TwoServlet{
 一组来自于Servlet规范下接口，共有8个接口。在Tomcat存在servlet-api.jar包。监听器接口需要由开发人员亲自实现，Http服务器提供jar包并没有对应的实现类。监听器接口用于监控【**作用域对象**生命周期变化时刻】以及【作用域对象共享数据变化时刻】
 
 > 作用域对象：在Servlet规范中，认为在**服务端内存**中可以在某些条件下为两个Servlet之间提供数据共享方案的对象，被称为【作用域对象】
->
 > Servlet规范下作用域对象:
->
 > - ServletContext：全局作用域对象
 > - HttpSession:  会话作用域对象
 > - HttpServletRequest: 请求作用域对象
->
 > (cookie存放在客户端，故不属于作用域对象)
 
 监听器接口实现类开发规范：根据监听的实际情况，选择对应监听器接口进行实现；重写监听器接口声明【监听事件处理方法】；在web.xml文件将监听器接口实现类注册到Http服务器

@@ -1,7 +1,8 @@
 ---
 tags: VVC
 mathjax: true 
-title: VVC环路滤波 / SAO
+title: Video Coding / SAO
+date: 2021-10-20
 ---
 
 > VVC环路滤波：自适应样点补偿滤波器

@@ -1,7 +1,8 @@
 ---
 tags: VVC 
 mathjax: true 
-title: VVC环路滤波 / Deblocking Filter
+title: Video Coding / Deblocking Filter
+date: 2021-10-20
 ---
 
 > VVC环路滤波：去块滤波器

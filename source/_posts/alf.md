@@ -1,7 +1,8 @@
 ---
 tags: VVC
 mathjax: true 
-title: VVC环路滤波 / ALF 
+title: Video Coding / ALF
+date: 2021-10-20 
 ---
 
 > ALF, VVC中增益最大的单项工具。
