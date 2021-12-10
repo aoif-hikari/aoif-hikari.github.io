@@ -93,25 +93,6 @@
   </entry>
   
   <entry>
-    <title>Leetcode / 链表</title>
-    <link href="https://aoif-hikari.github.io/2021/10/20/Leetcode-%E9%93%BE%E8%A1%A8/"/>
-    <id>https://aoif-hikari.github.io/2021/10/20/Leetcode-%E9%93%BE%E8%A1%A8/</id>
-    <published>2021-10-19T16:00:00.000Z</published>
-    <updated>2021-12-10T04:27:53.289Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;常用数据结构—链表&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    
-    <category term="leetcode" scheme="https://aoif-hikari.github.io/tags/leetcode/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Video Coding / ALF</title>
     <link href="https://aoif-hikari.github.io/2021/10/20/alf/"/>
     <id>https://aoif-hikari.github.io/2021/10/20/alf/</id>
@@ -264,25 +245,6 @@
   </entry>
   
   <entry>
-    <title>Leetcode / 二叉树</title>
-    <link href="https://aoif-hikari.github.io/2021/10/20/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
-    <id>https://aoif-hikari.github.io/2021/10/20/%E4%BA%8C%E5%8F%89%E6%A0%91/</id>
-    <published>2021-10-19T16:00:00.000Z</published>
-    <updated>2021-12-10T04:40:09.661Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;二叉树与递归有着千丝万缕的联系，二叉树在定义时就使用了递归的概念：一棵二叉树可能是空树，如果不是空树，那么它的左右子树都是二叉树。&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    
-    <category term="leetcode" scheme="https://aoif-hikari.github.io/tags/leetcode/"/>
-    
-  </entry>
-  
-  <entry>
     <title>In-Loop Filter / 融入QP信息的网络</title>
     <link href="https://aoif-hikari.github.io/2021/10/19/In-Loop_Filter%20_%20%E8%9E%8D%E5%85%A5QP%E4%BF%A1%E6%81%AF%E7%9A%84%E7%BD%91%E7%BB%9C/"/>
     <id>https://aoif-hikari.github.io/2021/10/19/In-Loop_Filter%20_%20%E8%9E%8D%E5%85%A5QP%E4%BF%A1%E6%81%AF%E7%9A%84%E7%BD%91%E7%BB%9C/</id>
@@ -385,6 +347,44 @@
     
     <summary type="html">&lt;blockquote&gt;
 &lt;p&gt;JSP规范来自于JAVAEE规范中一种，制定了如何开发JSP文件&lt;strong&gt;代替响应对象将处理结果写入到响应体&lt;/strong&gt;的开发流程制，Http服务器应该如何调用管理JSP文件。放在&lt;code&gt;/web/*.jsp&lt;/code&gt;下&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    
+    <category term="java" scheme="https://aoif-hikari.github.io/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>操作系统 / 内存管理</title>
+    <link href="https://aoif-hikari.github.io/2021/08/06/%E5%86%85%E5%AD%98/"/>
+    <id>https://aoif-hikari.github.io/2021/08/06/%E5%86%85%E5%AD%98/</id>
+    <published>2021-08-05T16:00:00.000Z</published>
+    <updated>2021-12-10T04:42:28.824Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;内存是用于存放数据的硬件。程序执行前需要先放到内存中才能被CPU处理，如果高速CPU直接和慢速的外存进行数据的交互，有速度矛盾。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    
+    <category term="操作系统" scheme="https://aoif-hikari.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java / Servlet规范</title>
+    <link href="https://aoif-hikari.github.io/2021/07/19/servlet/"/>
+    <id>https://aoif-hikari.github.io/2021/07/19/servlet/</id>
+    <published>2021-07-18T16:00:00.000Z</published>
+    <updated>2021-12-10T05:06:15.483Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Servlet规范，来自于JAVAEE规范中的一种。&lt;/p&gt;
 &lt;/blockquote&gt;</summary>
     
     
