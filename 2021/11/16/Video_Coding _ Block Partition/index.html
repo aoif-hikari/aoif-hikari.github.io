@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="JSt260h9ZipxDe9fDWuLLwbMKW6KZ1gPsQ2V68XJlTA">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aoif-hikari.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Block Partition，Video Coding 的基础。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Video Coding &#x2F; Block Partition">
+<meta property="og:url" content="https://aoif-hikari.github.io/2021/11/16/Video_Coding%20_%20Block%20Partition/index.html">
+<meta property="og:site_name" content="心臓から花が咲くように">
+<meta property="og:description" content="Block Partition，Video Coding 的基础。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_35672750ff82e0032d687554f6eea5d0.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_8ef1bf563d8fcaa5ad45d30c504ababd.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_8e63500a385f17b8b3c4874752b4b2ca.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_5ba2983cd9e4f1ed54ecda83c73c32af.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_b3d3c8a256459361a7095512c8c9faa4.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_80c198b7a7bef214264f455a662378f1.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_9ff1804a48e3deec292ad5d2ef10c62b.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_c0a509e00ae2037086d4bfe0a645fbae.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_964095e103d8c1e6d2cd3d4e5a93e21d.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_09d6c5324e183c5d382b71be2cfcde85.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_6397fadb947252dccda1e38fcfcfe2da.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_6c8e028c48d9fd597c43afc8d44b8b70.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_16e8b9e266046d5aeccea4c27d223c69.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_dbc58176795f865ac53bbe7d309e8db3.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_c27c39236f4094d5ceb16ad1f885899c.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_669090be1545b2fa2a74777ea4d4a97b.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_4c52fcd16e09eddfd9add941a695a213.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_916dd4abd01b5c9051bc66232e4e5b65.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_a816b57182398d42fac421e9e609880a.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_120e85edb6970ee8553f3d4cc867ed20.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_f7ae94d0d3fd5ba00d13625cbe952249.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_405f172caad834cfa865a71299a6babf.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_8688831be7a094f6ff08305c986aaad4.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_114d1fca4e5e70adfa7d3896dd72c509.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_1e24229de95020cec3c498ebcc1e599b.png">
+<meta property="og:image" content="https://notes.sjtu.edu.cn/uploads/upload_d65d11b52523ffb342ac742c2817fc76.png">
+<meta property="article:published_time" content="2021-11-15T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-12-10T04:28:48.913Z">
+<meta property="article:author" content="aoif.hikari">
+<meta property="article:tag" content="video coding">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://notes.sjtu.edu.cn/uploads/upload_35672750ff82e0032d687554f6eea5d0.png">
+
+<link rel="canonical" href="https://aoif-hikari.github.io/2021/11/16/Video_Coding%20_%20Block%20Partition/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Video Coding / Block Partition | 心臓から花が咲くように</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="心臓から花が咲くように" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">心臓から花が咲くように</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://aoif-hikari.github.io/2021/11/16/Video_Coding%20_%20Block%20Partition/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/cat.jpg">
+      <meta itemprop="name" content="aoif.hikari">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="心臓から花が咲くように">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Video Coding / Block Partition
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-11-16 00:00:00" itemprop="dateCreated datePublished" datetime="2021-11-16T00:00:00+08:00">2021-11-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-10 12:28:48" itemprop="dateModified" datetime="2021-12-10T12:28:48+08:00">2021-12-10</time>
+              </span>
+
+          
+            <span id="/2021/11/16/Video_Coding%20_%20Block%20Partition/" class="post-meta-item leancloud_visitors" data-flag-title="Video Coding / Block Partition" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2021/11/16/Video_Coding%20_%20Block%20Partition/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/11/16/Video_Coding%20_%20Block%20Partition/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>Block Partition，Video Coding 的基础。</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="H-264"><a href="#H-264" class="headerlink" title="H.264"></a>H.264</h2><ul>
+<li>macroblock 16x16, 在一个MB内划分PU, TU<ul>
+<li>I macroblock(intra)<ul>
+<li>PB: luma 4x4, 16x16; chroma: 16x16</li>
+</ul>
+</li>
+<li>P/B macroblock(inter)<ul>
+<li>PB: 2Nx2N, Nx2N, 2NxN, NxN<ul>
+<li><img src="https://notes.sjtu.edu.cn/uploads/upload_35672750ff82e0032d687554f6eea5d0.png" alt="macroblock 进一步 PU 划分"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>TB within an MB: 4x4 DCT2; 8x8 DCT2 in FRExt</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_8ef1bf563d8fcaa5ad45d30c504ababd.png" alt="大分辨率序列上效率低"></p>
+<h2 id="H-265"><a href="#H-265" class="headerlink" title="H.265"></a>H.265</h2><ul>
+<li><p>CTU: 64X64 —-quad-tree—-&gt; CU: 8x8, 16x16, … 64x64</p>
+<ul>
+<li><img src="https://notes.sjtu.edu.cn/uploads/upload_8e63500a385f17b8b3c4874752b4b2ca.png" alt=""></li>
+<li><p>CU —&gt; PU</p>
+<ul>
+<li>intra: 2Nx2N, NxN(N=4, 8, 16, 32)</li>
+<li>inter: 2Nx2N, Nx2N, 2NxN, NxN, AMP<ul>
+<li><img src="https://notes.sjtu.edu.cn/uploads/upload_5ba2983cd9e4f1ed54ecda83c73c32af.png" alt=""></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>CU —-Residual quad tree—-&gt; TU</p>
+<ul>
+<li>4x4, 8x8, 16x16, 32x32 DCT-2</li>
+<li>4x4 DST-7 for intra 4x4 luma block</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_b3d3c8a256459361a7095512c8c9faa4.png" alt=""></p>
+<h2 id="H-266"><a href="#H-266" class="headerlink" title="H.266"></a>H.266</h2><ul>
+<li><p>CTU 128x128 ——QT + MTT(multi-type-tree)—-&gt; CU: 8x8, 16x16, … 128x128</p>
+<ul>
+<li><img src="https://notes.sjtu.edu.cn/uploads/upload_80c198b7a7bef214264f455a662378f1.png" alt="MTT"></li>
+<li><p><img src="https://notes.sjtu.edu.cn/uploads/upload_9ff1804a48e3deec292ad5d2ef10c62b.png" alt="左下的CTU经历了三次划分，(编码端决策)复杂度已经很高"></p>
+</li>
+<li><p>CU划分灵活，取消PU</p>
+</li>
+<li>CU —-&gt;TU(取消RQT划分)<ul>
+<li>ISP(intra subpartition)</li>
+<li>SBT(sub-block transform)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_c0a509e00ae2037086d4bfe0a645fbae.png" alt=""></p>
+<h3 id="CTU-—-gt-CU"><a href="#CTU-—-gt-CU" class="headerlink" title="CTU —&gt; CU"></a>CTU —&gt; CU</h3><h4 id="QT-MTT"><a href="#QT-MTT" class="headerlink" title="QT-MTT"></a>QT-MTT</h4><ul>
+<li><img src="https://notes.sjtu.edu.cn/uploads/upload_964095e103d8c1e6d2cd3d4e5a93e21d.png" alt=""></li>
+<li><img src="https://notes.sjtu.edu.cn/uploads/upload_09d6c5324e183c5d382b71be2cfcde85.png" alt=""></li>
+<li><img src="https://notes.sjtu.edu.cn/uploads/upload_6397fadb947252dccda1e38fcfcfe2da.png" alt=""></li>
+</ul>
+<blockquote>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_6c8e028c48d9fd597c43afc8d44b8b70.png" alt=""></p>
+</blockquote>
+<ul>
+<li><img src="https://notes.sjtu.edu.cn/uploads/upload_16e8b9e266046d5aeccea4c27d223c69.png" alt=""></li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_dbc58176795f865ac53bbe7d309e8db3.png" alt=""></p>
+<blockquote>
+<p>划分中止条件(VVC)：划分到最小 CU 块；达到规定的最大二级树的划分深度<br><img src="https://notes.sjtu.edu.cn/uploads/upload_c27c39236f4094d5ceb16ad1f885899c.png" alt=""></p>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_669090be1545b2fa2a74777ea4d4a97b.png" alt=""><br>AV1 划分实质上是 QT+MTT，MTT最大划分到两次。（少于QT+MTT，MTT depth2，故划分上AV1灵活性不如 VVC）</p>
+</blockquote>
+<h4 id="split-syntax"><a href="#split-syntax" class="headerlink" title="split syntax"></a>split syntax</h4><p><img src="https://notes.sjtu.edu.cn/uploads/upload_4c52fcd16e09eddfd9add941a695a213.png" alt=""></p>
+<p>首先确定五种划分模式中哪些可用（复杂）</p>
+<ul>
+<li>example: allow quad-split<br>  <img src="https://notes.sjtu.edu.cn/uploads/upload_916dd4abd01b5c9051bc66232e4e5b65.png" alt=""></li>
+</ul>
+<h4 id="CST-VVC-only"><a href="#CST-VVC-only" class="headerlink" title="CST(VVC only)"></a>CST(VVC only)</h4><ul>
+<li><p>for I slice, chroma的划分可以与luma不同。</p>
+<ul>
+<li>intra 中 chroma 通常比 luma 简单可以划分成更少的块</li>
+<li><p>CCLM技术: 用 luma 的重建信号预测 chroma，luma 预测质量高，没必要划分成更小的块</p>
+</li>
+<li><p><img src="https://notes.sjtu.edu.cn/uploads/upload_a816b57182398d42fac421e9e609880a.png" alt=""></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="other-improvements"><a href="#other-improvements" class="headerlink" title="other improvements"></a>other improvements</h4><ul>
+<li><p>redundancy removal</p>
+<ul>
+<li><p><img src="https://notes.sjtu.edu.cn/uploads/upload_120e85edb6970ee8553f3d4cc867ed20.png" alt=""></p>
+</li>
+<li><p><img src="https://notes.sjtu.edu.cn/uploads/upload_f7ae94d0d3fd5ba00d13625cbe952249.png" alt=""></p>
+</li>
+</ul>
+</li>
+<li><p>图像边界强制划分</p>
+<ul>
+<li><img src="https://notes.sjtu.edu.cn/uploads/upload_405f172caad834cfa865a71299a6babf.png" alt=""></li>
+</ul>
+</li>
+</ul>
+<h3 id="CU-—-gt-TU"><a href="#CU-—-gt-TU" class="headerlink" title="CU —&gt; TU"></a>CU —&gt; TU</h3><h4 id="ISP-a-k-a-SDIP-for-intra-CU"><a href="#ISP-a-k-a-SDIP-for-intra-CU" class="headerlink" title="ISP(a.k.a SDIP) for intra CU"></a>ISP(a.k.a SDIP) for intra CU</h4><ul>
+<li>all luma CU 可以被划分为2个或4个预测模式相同的 TU<ul>
+<li><img src="https://notes.sjtu.edu.cn/uploads/upload_8688831be7a094f6ff08305c986aaad4.png" alt=""></li>
+</ul>
+</li>
+<li>chroma 不划分，残差较小，用大的变换效率较高</li>
+<li>出于硬件复杂度考虑，luma TB 必须至少包含16个像素</li>
+</ul>
+<h4 id="SBT-for-inter-CU"><a href="#SBT-for-inter-CU" class="headerlink" title="SBT for inter CU"></a>SBT for inter CU</h4><ul>
+<li>motivation：多数inter情况下，残差只出现在块的一侧</li>
+<li>CU划分为两个sub-TU：一部分为残差，另一部分强制不传</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_114d1fca4e5e70adfa7d3896dd72c509.png" alt=""></p>
+<h3 id="硬件实现考虑"><a href="#硬件实现考虑" class="headerlink" title="硬件实现考虑"></a>硬件实现考虑</h3><ul>
+<li>VPDU 以64x64节点为单位处理，不能出现跨多个节点的单元</li>
+</ul>
+<p><img src="https://notes.sjtu.edu.cn/uploads/upload_1e24229de95020cec3c498ebcc1e599b.png" alt=""></p>
+<ul>
+<li>local dual tree 可能出现少于16个像素的chroma块<ul>
+<li>intra：luma继续划分，chroma停止划分</li>
+<li>inter：不存在该问题</li>
+</ul>
+</li>
+</ul>
+<h3 id="增益"><a href="#增益" class="headerlink" title="增益"></a>增益</h3><p><img src="https://notes.sjtu.edu.cn/uploads/upload_d65d11b52523ffb342ac742c2817fc76.png" alt=""></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/video-coding/" rel="tag"># video coding</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/02/Video_Coding%20_%20HDR/" rel="prev" title="Video Coding / HDR">
+      <i class="fa fa-chevron-left"></i> Video Coding / HDR
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/11/16/DVC/" rel="next" title="End-to-end 视频编码框架： DVC 与 M-LVC">
+      End-to-end 视频编码框架： DVC 与 M-LVC <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#H-264"><span class="nav-number">1.</span> <span class="nav-text">H.264</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#H-265"><span class="nav-number">2.</span> <span class="nav-text">H.265</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#H-266"><span class="nav-number">3.</span> <span class="nav-text">H.266</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CTU-%E2%80%94-gt-CU"><span class="nav-number">3.1.</span> <span class="nav-text">CTU —&gt; CU</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#QT-MTT"><span class="nav-number">3.1.1.</span> <span class="nav-text">QT-MTT</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#split-syntax"><span class="nav-number">3.1.2.</span> <span class="nav-text">split syntax</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CST-VVC-only"><span class="nav-number">3.1.3.</span> <span class="nav-text">CST(VVC only)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#other-improvements"><span class="nav-number">3.1.4.</span> <span class="nav-text">other improvements</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CU-%E2%80%94-gt-TU"><span class="nav-number">3.2.</span> <span class="nav-text">CU —&gt; TU</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ISP-a-k-a-SDIP-for-intra-CU"><span class="nav-number">3.2.1.</span> <span class="nav-text">ISP(a.k.a SDIP) for intra CU</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SBT-for-inter-CU"><span class="nav-number">3.2.2.</span> <span class="nav-text">SBT for inter CU</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A1%AC%E4%BB%B6%E5%AE%9E%E7%8E%B0%E8%80%83%E8%99%91"><span class="nav-number">3.3.</span> <span class="nav-text">硬件实现考虑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A2%9E%E7%9B%8A"><span class="nav-number">3.4.</span> <span class="nav-text">增益</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="aoif.hikari"
+      src="/images/cat.jpg">
+  <p class="site-author-name" itemprop="name">aoif.hikari</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/fall_ivan" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;fall_ivan" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-fas fa-rss"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">aoif.hikari</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="Symbols count total">148k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">2:15</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</div>
+
+
+
+
+
+
+<script>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = decodeURI(visitors.id);
+      var title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              Counter('post', '/classes/Counter', { title, url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.error('Failed to create', error);
+                });
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"vGxmpKFQ0V9UFhbevVmCc8JP-gzGzoHsz","app_key":"ap55DtNaG0HBItnGc7CmFY5y","server_url":null,"security":false};
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'vGxmpKFQ0V9UFhbevVmCc8JP-gzGzoHsz',
+      appKey     : 'ap55DtNaG0HBItnGc7CmFY5y',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>

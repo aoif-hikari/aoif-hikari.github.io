@@ -6,7 +6,7 @@
   <link href="https://aoif-hikari.github.io/atom.xml" rel="self"/>
   
   <link href="https://aoif-hikari.github.io/"/>
-  <updated>2021-11-25T03:03:47.037Z</updated>
+  <updated>2021-12-10T04:26:41.080Z</updated>
   <id>https://aoif-hikari.github.io/</id>
   
   <author>
@@ -18,13 +18,15 @@
   
   <entry>
     <title>End-to-end 视频编码框架： DVC 与 M-LVC</title>
-    <link href="https://aoif-hikari.github.io/2021/11/25/DVC/"/>
-    <id>https://aoif-hikari.github.io/2021/11/25/DVC/</id>
-    <published>2021-11-25T03:03:47.037Z</published>
-    <updated>2021-11-25T03:03:47.037Z</updated>
+    <link href="https://aoif-hikari.github.io/2021/11/16/DVC/"/>
+    <id>https://aoif-hikari.github.io/2021/11/16/DVC/</id>
+    <published>2021-11-15T16:00:00.000Z</published>
+    <updated>2021-12-10T04:26:41.080Z</updated>
     
     
-    <summary type="html">&lt;p&gt;DVC: An End-to-end Deep Video Compression Framework&lt;br&gt;M-LVC: Multiple Frames Prediction for Learned VideoCompression&lt;/p&gt;</summary>
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;DVC: An End-to-end Deep Video Compression Framework&lt;br&gt;M-LVC: Multiple Frames Prediction for Learned VideoCompression&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
     
     
     
@@ -35,10 +37,10 @@
   
   <entry>
     <title>Video Coding / Block Partition</title>
-    <link href="https://aoif-hikari.github.io/2021/11/25/Video_Coding%20_%20Block%20Partition/"/>
-    <id>https://aoif-hikari.github.io/2021/11/25/Video_Coding%20_%20Block%20Partition/</id>
-    <published>2021-11-25T03:03:47.037Z</published>
-    <updated>2021-11-25T03:03:47.037Z</updated>
+    <link href="https://aoif-hikari.github.io/2021/11/16/Video_Coding%20_%20Block%20Partition/"/>
+    <id>https://aoif-hikari.github.io/2021/11/16/Video_Coding%20_%20Block%20Partition/</id>
+    <published>2021-11-15T16:00:00.000Z</published>
+    <updated>2021-12-10T04:28:48.913Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -53,298 +55,11 @@
   </entry>
   
   <entry>
-    <title>排序 —— 快速排序/归并排序/插入排序</title>
-    <link href="https://aoif-hikari.github.io/2021/11/25/%E6%8E%92%E5%BA%8F/"/>
-    <id>https://aoif-hikari.github.io/2021/11/25/%E6%8E%92%E5%BA%8F/</id>
-    <published>2021-11-25T02:59:27.326Z</published>
-    <updated>2021-11-25T02:59:27.326Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;快速排序/归并排序/插入排序&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    
-    <category term="算法" scheme="https://aoif-hikari.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>图与网络/贪心算法</title>
-    <link href="https://aoif-hikari.github.io/2021/11/25/%E8%B4%AA%E5%BF%83/"/>
-    <id>https://aoif-hikari.github.io/2021/11/25/%E8%B4%AA%E5%BF%83/</id>
-    <published>2021-11-25T02:59:27.326Z</published>
-    <updated>2021-11-25T02:59:27.326Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;贪心算法在对问题求解时，总是做出在当前看来是最好的选择。&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    
-    <category term="图与网络" scheme="https://aoif-hikari.github.io/tags/%E5%9B%BE%E4%B8%8E%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java/代理模式</title>
-    <link href="https://aoif-hikari.github.io/2021/11/25/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/"/>
-    <id>https://aoif-hikari.github.io/2021/11/25/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/</id>
-    <published>2021-11-25T02:59:27.325Z</published>
-    <updated>2021-11-25T02:59:27.325Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;代理模式的一个典型应用：AOP(面向切面编程)&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    
-    <category term="java" scheme="https://aoif-hikari.github.io/tags/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据结构 / 多路查找树</title>
-    <link href="https://aoif-hikari.github.io/2021/11/25/%E5%A4%9A%E8%B7%AF%E6%9F%A5%E6%89%BE%E6%A0%91/"/>
-    <id>https://aoif-hikari.github.io/2021/11/25/%E5%A4%9A%E8%B7%AF%E6%9F%A5%E6%89%BE%E6%A0%91/</id>
-    <published>2021-11-25T02:59:27.325Z</published>
-    <updated>2021-11-25T02:59:27.325Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;大量数据存储中，在查找的背景下，BST由于树深度过大而造成磁盘IO读写过于频繁，进而导致效率低下。那么如何减少树的深度?&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    
-    <category term="数据结构" scheme="https://aoif-hikari.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>操作系统/内存管理</title>
-    <link href="https://aoif-hikari.github.io/2021/11/25/%E5%86%85%E5%AD%98/"/>
-    <id>https://aoif-hikari.github.io/2021/11/25/%E5%86%85%E5%AD%98/</id>
-    <published>2021-11-25T02:59:27.325Z</published>
-    <updated>2021-11-25T02:59:27.325Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;内存是用于存放数据的硬件。程序执行前需要先放到内存中才能被CPU处理，如果高速CPU直接和慢速的外存进行数据的交互，有速度矛盾。&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    
-    <category term="操作系统" scheme="https://aoif-hikari.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>VVC环路滤波 / SAO</title>
-    <link href="https://aoif-hikari.github.io/2021/11/25/sao/"/>
-    <id>https://aoif-hikari.github.io/2021/11/25/sao/</id>
-    <published>2021-11-25T02:59:27.324Z</published>
-    <updated>2021-11-25T02:59:27.324Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;VVC环路滤波：自适应样点补偿滤波器&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    
-    <category term="VVC" scheme="https://aoif-hikari.github.io/tags/VVC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据库/MySQL</title>
-    <link href="https://aoif-hikari.github.io/2021/11/25/mysql/"/>
-    <id>https://aoif-hikari.github.io/2021/11/25/mysql/</id>
-    <published>2021-11-25T02:59:27.324Z</published>
-    <updated>2021-11-25T02:59:27.324Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;MySQL，最流行的关系型数据库管理系统。&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    
-    <category term="数据库" scheme="https://aoif-hikari.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java/Servlet规范</title>
-    <link href="https://aoif-hikari.github.io/2021/11/25/servlet/"/>
-    <id>https://aoif-hikari.github.io/2021/11/25/servlet/</id>
-    <published>2021-11-25T02:59:27.324Z</published>
-    <updated>2021-11-25T02:59:27.324Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;Servlet规范，来自于JAVAEE规范中的一种。&lt;/p&gt;
-&lt;p&gt;后期使用springMVC框架。&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    
-    <category term="java" scheme="https://aoif-hikari.github.io/tags/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Leetcode/二叉树</title>
-    <link href="https://aoif-hikari.github.io/2021/11/25/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
-    <id>https://aoif-hikari.github.io/2021/11/25/%E4%BA%8C%E5%8F%89%E6%A0%91/</id>
-    <published>2021-11-25T02:59:27.324Z</published>
-    <updated>2021-11-25T02:59:27.325Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;二叉树与递归有着千丝万缕的联系，二叉树在定义时就使用了递归的概念：一棵二叉树可能是空树，如果不是空树，那么它的左右子树都是二叉树。&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    
-    <category term="leetcode" scheme="https://aoif-hikari.github.io/tags/leetcode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java/HTML与CSS</title>
-    <link href="https://aoif-hikari.github.io/2021/11/25/html%E4%B8%8Ecss/"/>
-    <id>https://aoif-hikari.github.io/2021/11/25/html%E4%B8%8Ecss/</id>
-    <published>2021-11-25T02:59:27.323Z</published>
-    <updated>2021-11-25T02:59:27.323Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;HTML，超文本标记式编程语言，是一种专门在浏览器编译与执行的编程语言。用于通知浏览器将接收的数据以指定方式在窗口展示；控制浏览器请求行为。CSS则用于定位浏览器中HTML标签并对定位的HTML标签中【样式属性】进行统一管理。&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    
-    <category term="java" scheme="https://aoif-hikari.github.io/tags/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java/JSP</title>
-    <link href="https://aoif-hikari.github.io/2021/11/25/jsp/"/>
-    <id>https://aoif-hikari.github.io/2021/11/25/jsp/</id>
-    <published>2021-11-25T02:59:27.323Z</published>
-    <updated>2021-11-25T02:59:27.323Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;JSP规范来自于JAVAEE规范中一种，制定了如何开发JSP文件&lt;strong&gt;代替响应对象将处理结果写入到响应体&lt;/strong&gt;的开发流程制，Http服务器应该如何调用管理JSP文件。放在&lt;code&gt;/web/*.jsp&lt;/code&gt;下&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    
-    <category term="java" scheme="https://aoif-hikari.github.io/tags/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>VVC环路滤波 / LMCS</title>
-    <link href="https://aoif-hikari.github.io/2021/11/25/lmcs/"/>
-    <id>https://aoif-hikari.github.io/2021/11/25/lmcs/</id>
-    <published>2021-11-25T02:59:27.323Z</published>
-    <updated>2021-11-25T02:59:27.323Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;LMCS( luma mapping with chroma scaling)是  VVC 中新增的技术，其位 于去方块滤波之前，也被称为环路重整形（in-loop reshaper），主要包括两个部分：亮度映射（LM）、依赖亮度的色度缩放（CS）。&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    
-    <category term="VVC" scheme="https://aoif-hikari.github.io/tags/VVC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java/JDBC</title>
-    <link href="https://aoif-hikari.github.io/2021/11/25/jdbc/"/>
-    <id>https://aoif-hikari.github.io/2021/11/25/jdbc/</id>
-    <published>2021-11-25T02:59:27.323Z</published>
-    <updated>2021-11-25T02:59:27.323Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;Java DataBase Connectivity, Java连接数据库，是SUN公司制定的一套接口, java.sql.*;&lt;/p&gt;
-&lt;p&gt;后期将集成到Mybatis框架中。&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    
-    <category term="java" scheme="https://aoif-hikari.github.io/tags/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>deep learning / 各种卷积方法</title>
-    <link href="https://aoif-hikari.github.io/2021/11/25/deep-learning%20_%20%E5%90%84%E7%A7%8D%E5%8D%B7%E7%A7%AF%E6%96%B9%E6%B3%95/"/>
-    <id>https://aoif-hikari.github.io/2021/11/25/deep-learning%20_%20%E5%90%84%E7%A7%8D%E5%8D%B7%E7%A7%AF%E6%96%B9%E6%B3%95/</id>
-    <published>2021-11-25T02:59:27.322Z</published>
-    <updated>2021-11-25T02:59:27.322Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;卷积及其变种&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    
-    <category term="deep learning" scheme="https://aoif-hikari.github.io/tags/deep-learning/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据结构/Hash</title>
-    <link href="https://aoif-hikari.github.io/2021/11/25/hash/"/>
-    <id>https://aoif-hikari.github.io/2021/11/25/hash/</id>
-    <published>2021-11-25T02:59:27.322Z</published>
-    <updated>2021-11-25T02:59:27.322Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;Hash，一般译做散列或音译为哈希，是把任意长度的输入通过散列算法变换成固定长度的输出，该输出就是散列值，是一种压缩映射。&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    
-    <category term="数据结构" scheme="https://aoif-hikari.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Video Coding / HDR</title>
-    <link href="https://aoif-hikari.github.io/2021/11/25/Video_Coding%20_%20HDR/"/>
-    <id>https://aoif-hikari.github.io/2021/11/25/Video_Coding%20_%20HDR/</id>
-    <published>2021-11-25T02:59:27.321Z</published>
-    <updated>2021-11-25T02:59:27.321Z</updated>
+    <link href="https://aoif-hikari.github.io/2021/11/02/Video_Coding%20_%20HDR/"/>
+    <id>https://aoif-hikari.github.io/2021/11/02/Video_Coding%20_%20HDR/</id>
+    <published>2021-11-01T16:00:00.000Z</published>
+    <updated>2021-12-10T04:29:16.908Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -359,11 +74,49 @@
   </entry>
   
   <entry>
-    <title>VVC环路滤波 / ALF</title>
-    <link href="https://aoif-hikari.github.io/2021/11/25/alf/"/>
-    <id>https://aoif-hikari.github.io/2021/11/25/alf/</id>
-    <published>2021-11-25T02:59:27.321Z</published>
-    <updated>2021-11-25T02:59:27.321Z</updated>
+    <title>Leetcode / 二分查找</title>
+    <link href="https://aoif-hikari.github.io/2021/10/20/Leetcode%20_%20%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
+    <id>https://aoif-hikari.github.io/2021/10/20/Leetcode%20_%20%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</id>
+    <published>2021-10-19T16:00:00.000Z</published>
+    <updated>2021-12-10T04:27:32.079Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;有序数组要想到二分查找&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    
+    <category term="leetcode" scheme="https://aoif-hikari.github.io/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Leetcode / 链表</title>
+    <link href="https://aoif-hikari.github.io/2021/10/20/Leetcode-%E9%93%BE%E8%A1%A8/"/>
+    <id>https://aoif-hikari.github.io/2021/10/20/Leetcode-%E9%93%BE%E8%A1%A8/</id>
+    <published>2021-10-19T16:00:00.000Z</published>
+    <updated>2021-12-10T04:27:53.289Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;常用数据结构—链表&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    
+    <category term="leetcode" scheme="https://aoif-hikari.github.io/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Video Coding / ALF</title>
+    <link href="https://aoif-hikari.github.io/2021/10/20/alf/"/>
+    <id>https://aoif-hikari.github.io/2021/10/20/alf/</id>
+    <published>2021-10-19T16:00:00.000Z</published>
+    <updated>2021-12-10T04:30:28.110Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -378,11 +131,30 @@
   </entry>
   
   <entry>
-    <title>VVC环路滤波 / Deblocking Filter</title>
-    <link href="https://aoif-hikari.github.io/2021/11/25/dbk/"/>
-    <id>https://aoif-hikari.github.io/2021/11/25/dbk/</id>
-    <published>2021-11-25T02:59:27.321Z</published>
-    <updated>2021-11-25T02:59:27.321Z</updated>
+    <title>deep learning / 各种卷积方法</title>
+    <link href="https://aoif-hikari.github.io/2021/10/20/deep-learning%20_%20%E5%90%84%E7%A7%8D%E5%8D%B7%E7%A7%AF%E6%96%B9%E6%B3%95/"/>
+    <id>https://aoif-hikari.github.io/2021/10/20/deep-learning%20_%20%E5%90%84%E7%A7%8D%E5%8D%B7%E7%A7%AF%E6%96%B9%E6%B3%95/</id>
+    <published>2021-10-19T16:00:00.000Z</published>
+    <updated>2021-12-10T04:31:12.419Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;卷积及其变种&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    
+    <category term="deep learning" scheme="https://aoif-hikari.github.io/tags/deep-learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Video Coding / Deblocking Filter</title>
+    <link href="https://aoif-hikari.github.io/2021/10/20/dbk/"/>
+    <id>https://aoif-hikari.github.io/2021/10/20/dbk/</id>
+    <published>2021-10-19T16:00:00.000Z</published>
+    <updated>2021-12-10T04:31:01.914Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -393,6 +165,232 @@
     
     
     <category term="VVC" scheme="https://aoif-hikari.github.io/tags/VVC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Video Coding / LMCS</title>
+    <link href="https://aoif-hikari.github.io/2021/10/20/lmcs/"/>
+    <id>https://aoif-hikari.github.io/2021/10/20/lmcs/</id>
+    <published>2021-10-19T16:00:00.000Z</published>
+    <updated>2021-12-10T04:36:25.422Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;LMCS( luma mapping with chroma scaling)是  VVC 中新增的技术，其位 于去方块滤波之前，也被称为环路重整形（in-loop reshaper），主要包括两个部分：亮度映射（LM）、依赖亮度的色度缩放（CS）。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    
+    <category term="VVC" scheme="https://aoif-hikari.github.io/tags/VVC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Video Coding / SAO</title>
+    <link href="https://aoif-hikari.github.io/2021/10/20/sao/"/>
+    <id>https://aoif-hikari.github.io/2021/10/20/sao/</id>
+    <published>2021-10-19T16:00:00.000Z</published>
+    <updated>2021-12-10T04:37:15.209Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;VVC环路滤波：自适应样点补偿滤波器&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    
+    <category term="VVC" scheme="https://aoif-hikari.github.io/tags/VVC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据结构 / 多路查找树</title>
+    <link href="https://aoif-hikari.github.io/2021/10/20/%E5%A4%9A%E8%B7%AF%E6%9F%A5%E6%89%BE%E6%A0%91/"/>
+    <id>https://aoif-hikari.github.io/2021/10/20/%E5%A4%9A%E8%B7%AF%E6%9F%A5%E6%89%BE%E6%A0%91/</id>
+    <published>2021-10-19T16:00:00.000Z</published>
+    <updated>2021-12-10T04:45:27.751Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;大量数据存储中，在查找的背景下，BST由于树深度过大而造成磁盘IO读写过于频繁，进而导致效率低下。那么如何减少树的深度?&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    
+    <category term="数据结构" scheme="https://aoif-hikari.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>排序 - 快速排序/归并排序/插入排序</title>
+    <link href="https://aoif-hikari.github.io/2021/10/20/%E6%8E%92%E5%BA%8F/"/>
+    <id>https://aoif-hikari.github.io/2021/10/20/%E6%8E%92%E5%BA%8F/</id>
+    <published>2021-10-19T16:00:00.000Z</published>
+    <updated>2021-12-10T04:46:11.953Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;快速排序/归并排序/插入排序&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    
+    <category term="算法" scheme="https://aoif-hikari.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据结构 / Hash</title>
+    <link href="https://aoif-hikari.github.io/2021/10/20/hash/"/>
+    <id>https://aoif-hikari.github.io/2021/10/20/hash/</id>
+    <published>2021-10-19T16:00:00.000Z</published>
+    <updated>2021-12-10T04:24:58.534Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Hash，一般译做散列或音译为哈希，是把任意长度的输入通过散列算法变换成固定长度的输出，该输出就是散列值，是一种压缩映射。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    
+    <category term="数据结构" scheme="https://aoif-hikari.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Leetcode / 二叉树</title>
+    <link href="https://aoif-hikari.github.io/2021/10/20/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    <id>https://aoif-hikari.github.io/2021/10/20/%E4%BA%8C%E5%8F%89%E6%A0%91/</id>
+    <published>2021-10-19T16:00:00.000Z</published>
+    <updated>2021-12-10T04:40:09.661Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;二叉树与递归有着千丝万缕的联系，二叉树在定义时就使用了递归的概念：一棵二叉树可能是空树，如果不是空树，那么它的左右子树都是二叉树。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    
+    <category term="leetcode" scheme="https://aoif-hikari.github.io/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>In-Loop Filter / 融入QP信息的网络</title>
+    <link href="https://aoif-hikari.github.io/2021/10/19/In-Loop_Filter%20_%20%E8%9E%8D%E5%85%A5QP%E4%BF%A1%E6%81%AF%E7%9A%84%E7%BD%91%E7%BB%9C/"/>
+    <id>https://aoif-hikari.github.io/2021/10/19/In-Loop_Filter%20_%20%E8%9E%8D%E5%85%A5QP%E4%BF%A1%E6%81%AF%E7%9A%84%E7%BD%91%E7%BB%9C/</id>
+    <published>2021-10-18T16:00:00.000Z</published>
+    <updated>2021-12-10T04:27:04.769Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;两篇paper&lt;br&gt;A QP-ADAPTIVE MECHANISM FOR CNN-BASED FILTER IN VIDEO CODING&lt;br&gt;One-for-all: An Efﬁcient Variable Convolution Neural Network for In-loop Filter of VVC&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    
+    <category term="视频编码" scheme="https://aoif-hikari.github.io/tags/%E8%A7%86%E9%A2%91%E7%BC%96%E7%A0%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Leetcode / 位运算</title>
+    <link href="https://aoif-hikari.github.io/2021/10/19/Leetcode-%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
+    <id>https://aoif-hikari.github.io/2021/10/19/Leetcode-%E4%BD%8D%E8%BF%90%E7%AE%97/</id>
+    <published>2021-10-18T16:00:00.000Z</published>
+    <updated>2021-12-10T04:28:04.335Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;合理的运用位运算能显著提高代码在机器上的执行效率。&lt;br&gt;</summary>
+    
+    
+    
+    
+    <category term="leetcode" scheme="https://aoif-hikari.github.io/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Optical Flow / 光流</title>
+    <link href="https://aoif-hikari.github.io/2021/10/09/Optical%20Flow/"/>
+    <id>https://aoif-hikari.github.io/2021/10/09/Optical%20Flow/</id>
+    <published>2021-10-08T16:00:00.000Z</published>
+    <updated>2021-12-10T04:28:32.162Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;在连续图片序列中，从第t帧到第t+1帧，每个像素的&lt;strong&gt;运动速度&lt;/strong&gt;和&lt;strong&gt;运动方向&lt;/strong&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    
+    <category term="图像处理" scheme="https://aoif-hikari.github.io/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据库 / MySQL</title>
+    <link href="https://aoif-hikari.github.io/2021/10/09/mysql/"/>
+    <id>https://aoif-hikari.github.io/2021/10/09/mysql/</id>
+    <published>2021-10-08T16:00:00.000Z</published>
+    <updated>2021-12-10T04:36:55.280Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;MySQL，最流行的关系型数据库管理系统。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    
+    <category term="数据库" scheme="https://aoif-hikari.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java / HTML与CSS</title>
+    <link href="https://aoif-hikari.github.io/2021/08/06/html%E4%B8%8Ecss/"/>
+    <id>https://aoif-hikari.github.io/2021/08/06/html%E4%B8%8Ecss/</id>
+    <published>2021-08-05T16:00:00.000Z</published>
+    <updated>2021-12-10T04:33:01.684Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;HTML，超文本标记式编程语言，是一种专门在浏览器编译与执行的编程语言。用于通知浏览器将接收的数据以指定方式在窗口展示；控制浏览器请求行为。CSS则用于定位浏览器中HTML标签并对定位的HTML标签中【样式属性】进行统一管理。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    
+    <category term="java" scheme="https://aoif-hikari.github.io/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java / JSP</title>
+    <link href="https://aoif-hikari.github.io/2021/08/06/jsp/"/>
+    <id>https://aoif-hikari.github.io/2021/08/06/jsp/</id>
+    <published>2021-08-05T16:00:00.000Z</published>
+    <updated>2021-12-10T04:36:02.586Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;JSP规范来自于JAVAEE规范中一种，制定了如何开发JSP文件&lt;strong&gt;代替响应对象将处理结果写入到响应体&lt;/strong&gt;的开发流程制，Http服务器应该如何调用管理JSP文件。放在&lt;code&gt;/web/*.jsp&lt;/code&gt;下&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    
+    <category term="java" scheme="https://aoif-hikari.github.io/tags/java/"/>
     
   </entry>
   

@@ -2,8 +2,10 @@
 <search>
   <entry>
     <title>End-to-end 视频编码框架： DVC 与 M-LVC</title>
-    <url>/2021/11/25/DVC/</url>
-    <content><![CDATA[<p>DVC: An End-to-end Deep Video Compression Framework<br>M-LVC: Multiple Frames Prediction for Learned VideoCompression</p>
+    <url>/2021/11/16/DVC/</url>
+    <content><![CDATA[<blockquote>
+<p>DVC: An End-to-end Deep Video Compression Framework<br>M-LVC: Multiple Frames Prediction for Learned VideoCompression</p>
+</blockquote>
 <span id="more"></span>
 <h2 id="DVC"><a href="#DVC" class="headerlink" title="DVC"></a>DVC</h2><ul>
 <li>单参考帧</li>
@@ -119,7 +121,7 @@ J=D+\lambda R=d\left(x_{t}, \hat{x}_{t}\right)+\lambda\left(R_{m v d}+R_{r e s}\
   </entry>
   <entry>
     <title>Leetcode / 二分查找</title>
-    <url>/2021/11/25/Leetcode%20_%20%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</url>
+    <url>/2021/10/20/Leetcode%20_%20%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</url>
     <content><![CDATA[<blockquote>
 <p>有序数组要想到二分查找</p>
 </blockquote>
@@ -166,7 +168,7 @@ J=D+\lambda R=d\left(x_{t}, \hat{x}_{t}\right)+\lambda\left(R_{m v d}+R_{r e s}\
   </entry>
   <entry>
     <title>In-Loop Filter / 融入QP信息的网络</title>
-    <url>/2021/11/25/In-Loop_Filter%20_%20%E8%9E%8D%E5%85%A5QP%E4%BF%A1%E6%81%AF%E7%9A%84%E7%BD%91%E7%BB%9C/</url>
+    <url>/2021/10/19/In-Loop_Filter%20_%20%E8%9E%8D%E5%85%A5QP%E4%BF%A1%E6%81%AF%E7%9A%84%E7%BD%91%E7%BB%9C/</url>
     <content><![CDATA[<blockquote>
 <p>两篇paper<br>A QP-ADAPTIVE MECHANISM FOR CNN-BASED FILTER IN VIDEO CODING<br>One-for-all: An Efﬁcient Variable Convolution Neural Network for In-loop Filter of VVC</p>
 </blockquote>
@@ -371,7 +373,7 @@ J=D+\lambda R=d\left(x_{t}, \hat{x}_{t}\right)+\lambda\left(R_{m v d}+R_{r e s}\
   </entry>
   <entry>
     <title>Leetcode / 链表</title>
-    <url>/2021/11/25/Leetcode-%E9%93%BE%E8%A1%A8/</url>
+    <url>/2021/10/20/Leetcode-%E9%93%BE%E8%A1%A8/</url>
     <content><![CDATA[<blockquote>
 <p>常用数据结构—链表</p>
 </blockquote>
@@ -416,7 +418,7 @@ J=D+\lambda R=d\left(x_{t}, \hat{x}_{t}\right)+\lambda\left(R_{m v d}+R_{r e s}\
   </entry>
   <entry>
     <title>Leetcode / 位运算</title>
-    <url>/2021/11/25/Leetcode-%E4%BD%8D%E8%BF%90%E7%AE%97/</url>
+    <url>/2021/10/19/Leetcode-%E4%BD%8D%E8%BF%90%E7%AE%97/</url>
     <content><![CDATA[<p>合理的运用位运算能显著提高代码在机器上的执行效率。<br><span id="more"></span></p>
 <h2 id="右移运算符：-gt-gt"><a href="#右移运算符：-gt-gt" class="headerlink" title="右移运算符：&gt;&gt;"></a>右移运算符：&gt;&gt;</h2><p>将一个数a向右移动n位记为：a&gt;&gt;n。</p>
 <ul>
@@ -487,7 +489,7 @@ J=D+\lambda R=d\left(x_{t}, \hat{x}_{t}\right)+\lambda\left(R_{m v d}+R_{r e s}\
   </entry>
   <entry>
     <title>Optical Flow / 光流</title>
-    <url>/2021/11/25/Optical%20Flow/</url>
+    <url>/2021/10/09/Optical%20Flow/</url>
     <content><![CDATA[<blockquote>
 <p>在连续图片序列中，从第t帧到第t+1帧，每个像素的<strong>运动速度</strong>和<strong>运动方向</strong>。</p>
 </blockquote>
@@ -530,7 +532,7 @@ P_{x_{p}, y_{p}}=P_{x_{p}, y}+\left(P_{x_{p}, y+1}-P_{x_{p}, y}\right)\left(y_{p
   </entry>
   <entry>
     <title>Video Coding / Block Partition</title>
-    <url>/2021/11/25/Video_Coding%20_%20Block%20Partition/</url>
+    <url>/2021/11/16/Video_Coding%20_%20Block%20Partition/</url>
     <content><![CDATA[<blockquote>
 <p>Block Partition，Video Coding 的基础。</p>
 </blockquote>
@@ -672,7 +674,7 @@ P_{x_{p}, y_{p}}=P_{x_{p}, y}+\left(P_{x_{p}, y+1}-P_{x_{p}, y}\right)\left(y_{p
   </entry>
   <entry>
     <title>Video Coding / HDR</title>
-    <url>/2021/11/25/Video_Coding%20_%20HDR/</url>
+    <url>/2021/11/02/Video_Coding%20_%20HDR/</url>
     <content><![CDATA[<blockquote>
 <p>HDR — 更高的动态范围，更广的色域，更深的比特位。</p>
 </blockquote>
@@ -824,8 +826,8 @@ P_{x_{p}, y_{p}}=P_{x_{p}, y}+\left(P_{x_{p}, y+1}-P_{x_{p}, y}\right)\left(y_{p
       </tags>
   </entry>
   <entry>
-    <title>VVC环路滤波 / ALF</title>
-    <url>/2021/11/25/alf/</url>
+    <title>Video Coding / ALF</title>
+    <url>/2021/10/20/alf/</url>
     <content><![CDATA[<blockquote>
 <p>ALF, VVC中增益最大的单项工具。</p>
 </blockquote>
@@ -1020,7 +1022,7 @@ f_{i}=\min \left(b_{i}, \max \left(-b_{i}, R\left(x+x_{i}, y+y_{i}\right)-R(x, y
   </entry>
   <entry>
     <title>deep learning / 各种卷积方法</title>
-    <url>/2021/11/25/deep-learning%20_%20%E5%90%84%E7%A7%8D%E5%8D%B7%E7%A7%AF%E6%96%B9%E6%B3%95/</url>
+    <url>/2021/10/20/deep-learning%20_%20%E5%90%84%E7%A7%8D%E5%8D%B7%E7%A7%AF%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<blockquote>
 <p>卷积及其变种</p>
 </blockquote>
@@ -1061,8 +1063,8 @@ f_{i}=\min \left(b_{i}, \max \left(-b_{i}, R\left(x+x_{i}, y+y_{i}\right)-R(x, y
       </tags>
   </entry>
   <entry>
-    <title>VVC环路滤波 / Deblocking Filter</title>
-    <url>/2021/11/25/dbk/</url>
+    <title>Video Coding / Deblocking Filter</title>
+    <url>/2021/10/20/dbk/</url>
     <content><![CDATA[<blockquote>
 <p>VVC环路滤波：去块滤波器</p>
 </blockquote>
@@ -1322,8 +1324,8 @@ f_{i}=\min \left(b_{i}, \max \left(-b_{i}, R\left(x+x_{i}, y+y_{i}\right)-R(x, y
       </tags>
   </entry>
   <entry>
-    <title>Java/HTML与CSS</title>
-    <url>/2021/11/25/html%E4%B8%8Ecss/</url>
+    <title>Java / HTML与CSS</title>
+    <url>/2021/08/06/html%E4%B8%8Ecss/</url>
     <content><![CDATA[<blockquote>
 <p>HTML，超文本标记式编程语言，是一种专门在浏览器编译与执行的编程语言。用于通知浏览器将接收的数据以指定方式在窗口展示；控制浏览器请求行为。CSS则用于定位浏览器中HTML标签并对定位的HTML标签中【样式属性】进行统一管理。</p>
 </blockquote>
@@ -1342,28 +1344,22 @@ f_{i}=\min \left(b_{i}, \max \left(-b_{i}, R\left(x+x_{i}, y+y_{i}\right)-R(x, y
 <h2 id="浏览器发送请求三要素"><a href="#浏览器发送请求三要素" class="headerlink" title="浏览器发送请求三要素"></a>浏览器发送请求三要素</h2><p>控制浏览器发送请求地址；请求方式；携带请求参数</p>
 <h3 id="控制浏览器发送请求地址"><a href="#控制浏览器发送请求地址" class="headerlink" title="控制浏览器发送请求地址"></a>控制浏览器发送请求地址</h3><h4 id="超链接标签命令"><a href="#超链接标签命令" class="headerlink" title="超链接标签命令"></a>超链接标签命令</h4><ul>
 <li>格式：  <code>&lt;a href=&quot;请求地址&quot;&gt;提示信息&lt;/a&gt;</code></li>
-</ul>
-<ul>
 <li>原理：  超链接标签命令不会被浏览器自动执行。在用户使用鼠标单击超链接标签命令时，命令才会执行，执行要求浏览器立刻按照href属性地址发送请求</li>
 </ul>
 <h4 id="表单标签命令"><a href="#表单标签命令" class="headerlink" title="表单标签命令"></a>表单标签命令</h4><ul>
-<li>格式</li>
-</ul>
+<li><p>格式</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;请求地址&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span><span class="comment">&lt;!--提交按钮--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>原理：表单标签命令不会被浏览器自动执行。在用户单击提交按钮时，此时表单标签命令被触发执行。执行时要求浏览器立刻按照action属性地址发送请求</li>
+</li>
+<li><p>原理：表单标签命令不会被浏览器自动执行。在用户单击提交按钮时，此时表单标签命令被触发执行。执行时要求浏览器立刻按照action属性地址发送请求</p>
+</li>
 </ul>
-<h3 id="控制浏览器发送请求采用请求方式"><a href="#控制浏览器发送请求采用请求方式" class="headerlink" title="控制浏览器发送请求采用请求方式"></a>控制浏览器发送请求采用请求方式</h3><p>请求方式：决定浏览器在发送请求时行为特征</p>
-<p>浏览器可以选择请求方式：7种，目前为止只考虑【POST请求方式】和【GET请求方式】</p>
+<h3 id="控制浏览器发送请求采用请求方式"><a href="#控制浏览器发送请求采用请求方式" class="headerlink" title="控制浏览器发送请求采用请求方式"></a>控制浏览器发送请求采用请求方式</h3><p>请求方式：决定浏览器在发送请求时行为特征<br>浏览器可以选择请求方式：7种，目前为止只考虑【POST请求方式】和【GET请求方式】</p>
 <blockquote>
-<p>GET请求方式：</p>
-<p>要求浏览器发送请求时，携带的【请求参数数量】不能超过4K；必须在浏览器地址栏上将【请求参数信息】展示出来；必须将请求参数信息保存在Http请求协议包中【请求头】；要求浏览器在接收到服务器返回的资源文件内容后，必须将资源文件内容保存在浏览器的缓存</p>
+<p>GET请求方式：<br>要求浏览器发送请求时，携带的【请求参数数量】不能超过4K；必须在浏览器地址栏上将【请求参数信息】展示出来；必须将请求参数信息保存在Http请求协议包中【请求头】；要求浏览器在接收到服务器返回的资源文件内容后，必须将资源文件内容保存在浏览器的缓存</p>
 <p>POST请求方式：<br>要求浏览器发送请求时，可以携带任意数量的【请求参数】；必须在浏览器地址栏上隐藏请求参数信息；必须将请求参数信息保存在Http请求协议包中【请求体】；禁止浏览器将服务器返回资源文件内容进行保存【阅后即焚】</p>
 </blockquote>
 <h4 id="控制浏览器发送请求时采用GET请求方式"><a href="#控制浏览器发送请求时采用GET请求方式" class="headerlink" title="控制浏览器发送请求时采用GET请求方式"></a>控制浏览器发送请求时采用GET请求方式</h4><ul>
 <li>超链接标签命令在执行时，要求浏览器必须采用GET方式发送请求</li>
-</ul>
-<ul>
 <li>表单标签存在一个method属性，通过这个属性可以要求浏览器采用对应请求方式发送请求</li>
 </ul>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;请求地址&quot;</span> <span class="attr">method</span>=<span class="string">&quot;get&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;请求地址&quot;</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--method属性默认值是GET--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;请求地址&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -1375,31 +1371,22 @@ f_{i}=\min \left(b_{i}, \max \left(-b_{i}, R\left(x+x_{i}, y+y_{i}\right)-R(x, y
 <li>索要服务器中实时变化数据时（股票价格，车票数量……）</li>
 </ul>
 <h3 id="控制浏览器发送请求携带请求参数"><a href="#控制浏览器发送请求携带请求参数" class="headerlink" title="控制浏览器发送请求携带请求参数"></a>控制浏览器发送请求携带请求参数</h3><p>方法运行时需要实参，需要由用户通过浏览器以请求参数方式提供。如<code>http：//www.baidu.com?n1=100&amp;n2=200</code>  [n1=100&amp;n2=200]就是浏览器发送请求参数。</p>
-<p>请求参数格式：请求地址?请求参数名1=值1&amp;请求参数名2=值2</p>
-<p>浏览器发送请求时携带的请求参数来源：</p>
+<p>请求参数格式：请求地址?请求参数名1=值1&amp;请求参数名2=值2<br>浏览器发送请求时携带的请求参数来源：</p>
 <ul>
-<li>通过超链接标签命令指定请求参数</li>
+<li><p>通过超链接标签命令指定请求参数<br><code>&lt;a href=&quot;http：//www.baidu.com?userName=mike&amp;password=123&quot;&gt;百度&lt;/a&gt;</code></p>
+</li>
+<li><p>通过表单域标签命令指定请求参数<br>表单域标签命令，一组声明在form标签内部的标签命令，提示用户填写对应的【请求参数内容】，用于提供相对灵活的请求参数内容<br>表单域标签分类：<code>&lt;input /&gt;</code>，<code>&lt;select&gt;&lt;/select&gt;</code>，<code>&lt;textarea&gt;&lt;/textarea&gt;</code><br>所有的表单域标签都拥有两个属性：name属性声明【请求参数名】；value属性声明【请求参数内容】</p>
+</li>
 </ul>
-<p><code>&lt;a href=&quot;http：//www.baidu.com?userName=mike&amp;password=123&quot;&gt;百度&lt;/a&gt;</code></p>
-<ul>
-<li>通过表单域标签命令指定请求参数</li>
-</ul>
-<p>表单域标签命令，一组声明在form标签内部的标签命令，提示用户填写对应的【请求参数内容】，用于提供相对灵活的请求参数内容</p>
-<p>表单域标签分类：<code>&lt;input /&gt;</code>，<code>&lt;select&gt;&lt;/select&gt;</code>，<code>&lt;textarea&gt;&lt;/textarea&gt;</code></p>
-<p>所有的表单域标签都拥有两个属性：name属性声明【请求参数名】；value属性声明【请求参数内容】</p>
 <blockquote>
-<p>value属性默认值</p>
-<p>大多数表单域标签value属性默认值是空字符串 userName=’ ‘</p>
-<p>对于radio与checkbox来说，value属性默认值’on’字符串</p>
+<p>value属性默认值<br>大多数表单域标签value属性默认值是空字符串 userName=’ ‘<br>对于radio与checkbox来说，value属性默认值’on’字符串</p>
 </blockquote>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;http：//www.baidu.com&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;userName&quot;</span> <span class="attr">value</span>=<span class="string">&quot;mike&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>当用户单击submit后，浏览器发送请求信息 <code>http：//www.baidu.com?userName=mike</code></p>
 <blockquote>
 <p>表单域标签作为请求参数条件</p>
 </blockquote>
-<p>对于大多数表单域标签来说，只要同时满足两个条件，就可以作为请求参数：必须声明在form标签内部；必须声明name属性。</p>
-<p>对于radio标签与checkbox标签来说在满足上述两个条件同时，radio与checkbox必须在【被选中】的情况下才可以作为请求参数。</p>
-<p>如果表单域标签使用disabled来修饰时，失去作为请求参数条件</p>
+<p>对于大多数表单域标签来说，只要同时满足两个条件，就可以作为请求参数：必须声明在form标签内部；必须声明name属性。<br>对于radio标签与checkbox标签来说在满足上述两个条件同时，radio与checkbox必须在【被选中】的情况下才可以作为请求参数。<br>如果表单域标签使用disabled来修饰时，失去作为请求参数条件</p>
 <blockquote>
 <p>readOnly与disabled：<br>readOnly：要求当前标签中value属性只能看但是不能被修改，readOnly不会影响表单域标签作为请求参数条件<br>disabled：设置当前标签为不可用状态，此时标签中value属性内容不能被修改的。disabled修饰的表单域标签是永远都不能作为请求参数</p>
 </blockquote>
@@ -1409,10 +1396,7 @@ f_{i}=\min \left(b_{i}, \max \left(-b_{i}, R\left(x+x_{i}, y+y_{i}\right)-R(x, y
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;background-color：red;color：green;width：300px;height：200px&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="工作状态属性"><a href="#工作状态属性" class="headerlink" title="工作状态属性"></a>工作状态属性</h3><p>只存在于【表单域标签】中，用于表示【表单域标签】状态。</p>
 <blockquote>
-<p>checked：存在于radio与checkbox中，表示标签是否被选中</p>
-<p>disabled：表示标签处于不可用状态</p>
-<p>readOny：表示标签处于只读状态</p>
-<p>seleteced：存在option标签，表示标签是否被选中</p>
+<p>checked：存在于radio与checkbox中，表示标签是否被选中<br>disabled：表示标签处于不可用状态<br>readOny：表示标签处于只读状态<br>seleteced：存在option标签，表示标签是否被选中</p>
 </blockquote>
 <h3 id="监听属性"><a href="#监听属性" class="headerlink" title="监听属性"></a>监听属性</h3><p>监听属性用于监听用户在何时对当前标签进行何种操作,当指定操作产生时，监听属性将会通知浏览器调用对应JavaScript方法处理当前请求。</p>
 <h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><p>通知浏览器将所有满足定位条件的HTML标签进行统一定位；对已经定位HTML标签中样式属性进行集中统一赋值管理。</p>
@@ -1425,8 +1409,8 @@ f_{i}=\min \left(b_{i}, \max \left(-b_{i}, R\left(x+x_{i}, y+y_{i}\right)-R(x, y
       </tags>
   </entry>
   <entry>
-    <title>Java/JSP</title>
-    <url>/2021/11/25/jsp/</url>
+    <title>Java / JSP</title>
+    <url>/2021/08/06/jsp/</url>
     <content><![CDATA[<blockquote>
 <p>JSP规范来自于JAVAEE规范中一种，制定了如何开发JSP文件<strong>代替响应对象将处理结果写入到响应体</strong>的开发流程制，Http服务器应该如何调用管理JSP文件。放在<code>/web/*.jsp</code>下</p>
 </blockquote>
@@ -1435,32 +1419,24 @@ f_{i}=\min \left(b_{i}, \max \left(-b_{i}, R\left(x+x_{i}, y+y_{i}\right)-R(x, y
 <p>响应对象存在弊端</p>
 </blockquote>
 <ul>
-<li>适合将数据量较少的处理结果写入到响应体。如果处理结果数量过多，使用响应对象增加开发难度</li>
-</ul>
+<li><p>适合将数据量较少的处理结果写入到响应体。如果处理结果数量过多，使用响应对象增加开发难度</p>
 <blockquote>
 <p>JSP文件优势</p>
 </blockquote>
-<ul>
+</li>
 <li><p>JSP文件在互联网通信过程，是响应对象替代品。降低将处理结果写入到响应体的开发工作量，降低处理结果维护难度。</p>
 </li>
-<li><p>在JSP文件开发时，可以直接将处理结果写入到JSP文件，不需要手写out.print命令。</p>
-</li>
+<li>在JSP文件开发时，可以直接将处理结果写入到JSP文件，不需要手写out.print命令。</li>
 <li><p>在Http服务器调用JSP文件时，根据JSP规范要求自动将JSP文件书写的所有内容通过输出流写入到响应体。</p>
-</li>
-</ul>
 <blockquote>
 <p>HTML文件与JSP文件区别</p>
 </blockquote>
-<ul>
-<li>作为资源文件类型不同</li>
+</li>
+<li><p>作为资源文件类型不同<br>HTML文件属于静态资源文件，其相关命令需要在浏览器编译并执行的.<br>JSP文件属于动态资源文件，其相关命令需要在服务端编译并执行的</p>
+</li>
+<li><p>调用形式不同<br>如果浏览器访问HTML文件，此时Http服务器直接通过一个输出流将HTML文件中所有的内容写入到响应体<br>如果浏览器访问JSP文件。此时Http服务器根据JSP规范来操作JSP文件编辑——&gt;编译——-&gt;调用</p>
+</li>
 </ul>
-<p>HTML文件属于静态资源文件，其相关命令需要在浏览器编译并执行的.</p>
-<p>JSP文件属于动态资源文件，其相关命令需要在服务端编译并执行的</p>
-<ul>
-<li>调用形式不同</li>
-</ul>
-<p>如果浏览器访问HTML文件，此时Http服务器直接通过一个输出流将HTML文件中所有的内容写入到响应体</p>
-<p>如果浏览器访问JSP文件。此时Http服务器根据JSP规范来操作JSP文件编辑——&gt;编译——-&gt;调用</p>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;!--在JSP文件中直接书写Java命令，不能被JSP文件识别，此时只会被当做字符串写入到响应体--&gt;</span><br><span class="line">&lt;%</span><br><span class="line">  <span class="comment">//在只有书写在执行标记&lt;%中内容才会被当做Java命令</span></span><br><span class="line">  <span class="comment">//1.声明Java变量</span></span><br><span class="line">  <span class="keyword">int</span> num1 = <span class="number">100</span>;</span><br><span class="line">  <span class="keyword">int</span> num2 = <span class="number">200</span>;</span><br><span class="line">  <span class="comment">//2.声明运行表达式：数学运算，关系运算，逻辑运算</span></span><br><span class="line">  <span class="keyword">int</span> num3 = num1 + num2; <span class="comment">//数学运算</span></span><br><span class="line">  <span class="keyword">int</span> num4 = num2&gt;=num1?num2:num1;<span class="comment">//关系运算</span></span><br><span class="line">  <span class="keyword">boolean</span> num5 = num2&gt;=<span class="number">200</span> &amp;&amp; num1&gt;=<span class="number">100</span>;<span class="comment">//逻辑运算</span></span><br><span class="line">  <span class="comment">//3.声明控制语句</span></span><br><span class="line">   <span class="keyword">if</span>(num2&gt;=num1)&#123;</span><br><span class="line">       <span class="comment">//...</span></span><br><span class="line">   &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">       <span class="comment">//...</span></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">10</span>;i++)&#123;</span><br><span class="line">   &#125;</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">   <span class="keyword">int</span> num1 =<span class="number">100</span>;</span><br><span class="line">   <span class="keyword">int</span> num2 =<span class="number">200</span>;</span><br><span class="line">%&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--在JSP文件，通过输出标记，通知JSP将Java变量的值写入到响应体--&gt;</span><br><span class="line">变量num1的值:&lt;%=num1%&gt;&lt;br/&gt;</span><br><span class="line">变量num2的值:&lt;%=num2%&gt;&lt;br/&gt;</span><br><span class="line">&lt;!--执行标记还可以通知Jsp将运算结果写入到响应体--&gt;</span><br><span class="line">num1 + num2 = &lt;%=num1+num2%&gt;</span><br></pre></td></tr></table></figure>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%@ page contentType=<span class="string">&quot;text/html;charset=UTF-8&quot;</span> language=<span class="string">&quot;java&quot;</span> %&gt;</span><br><span class="line">&lt;!--制造数据--&gt;</span><br><span class="line">&lt;%</span><br><span class="line">       Student stu1 = <span class="keyword">new</span> Student(<span class="number">10</span>,<span class="string">&quot;mike&quot;</span>);</span><br><span class="line">       Student stu2 = <span class="keyword">new</span> Student(<span class="number">20</span>,<span class="string">&quot;allen&quot;</span>);</span><br><span class="line">       Student stu3 = <span class="keyword">new</span> Student(<span class="number">30</span>,<span class="string">&quot;smith&quot;</span>);</span><br><span class="line">       List&lt;Student&gt; list = <span class="keyword">new</span> ArrayList();</span><br><span class="line">       list.add(stu1);</span><br><span class="line">       list.add(stu2);</span><br><span class="line">       list.add(stu3);</span><br><span class="line">%&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--数据输出--&gt;</span><br><span class="line">&lt;table border=<span class="string">&quot;2&quot;</span> align=<span class="string">&quot;center&quot;</span>&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">        &lt;td&gt;学员编号&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;学员姓名&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line"></span><br><span class="line">    &lt;%</span><br><span class="line">       <span class="keyword">for</span>(Student stu:list)&#123;</span><br><span class="line">    %&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;&lt;%=stu.getSid()%&gt;&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;&lt;%=stu.getSname()%&gt;&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">       &#125;</span><br><span class="line">    %&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
@@ -1470,78 +1446,46 @@ f_{i}=\min \left(b_{i}, \max \left(-b_{i}, R\left(x+x_{i}, y+y_{i}\right)-R(x, y
 <h3 id="application"><a href="#application" class="headerlink" title="application"></a>application</h3><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%@ page contentType=<span class="string">&quot;text/html;charset=UTF-8&quot;</span> language=<span class="string">&quot;java&quot;</span> %&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--</span><br><span class="line">       JSP文件内置对象 ： application</span><br><span class="line">       ServletContext application;全局作用域对象</span><br><span class="line">       同一个网站中Servlet与JSP，都可以通过当前网站的全局作用域对象实现数据共享       </span><br><span class="line">--&gt;</span><br><span class="line"></span><br><span class="line">&lt;%</span><br><span class="line">    application.setAttribute(<span class="string">&quot;key1&quot;</span>, <span class="string">&quot;hello world&quot;</span>);</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="JSP文件原理"><a href="#JSP文件原理" class="headerlink" title="JSP文件原理"></a>JSP文件原理</h2><p>Tomcat根据JSP规范，将被访问的JSP文件[编辑]为一个java文件。这个Java文件是Servlet接口实现类；调用JVM（javac one_jsp.java）将这个java文件[编译]为class类型；生成这个class文件的实例对象（Servelt接口实例对象）；通过实例对象调用class文件中_jspService方法，_jspService方法在运行时负责将JSP文件中书写内容写入到响应体中</p>
 <blockquote>
-<p>_jspService方法内部结构</p>
-<p>判断当前请求方式。Jsp文件可以接收的请求方式有POST,GET,HEAD</p>
-<p>声明局部变量。这些局部变量都可以在JSP文件开发时直接使用</p>
-<p>输出部分。这部分执行时将JSP文件内容通过输出流写入到响应体</p>
+<p>_jspService方法内部结构<br>判断当前请求方式。Jsp文件可以接收的请求方式有POST,GET,HEAD<br>声明局部变量。这些局部变量都可以在JSP文件开发时直接使用<br>输出部分。这部分执行时将JSP文件内容通过输出流写入到响应体</p>
 </blockquote>
 <h2 id="Servlet-与-JSP"><a href="#Servlet-与-JSP" class="headerlink" title="Servlet 与 JSP"></a>Servlet 与 JSP</h2><p>JSP文件被访问时，并不是JSP文件在执行，而是对应的Servlet在执行。自定义Serlvet接口实现类与JSP文件之间调用关系，等同于两个Servlet之间调用关系</p>
 <ul>
-<li>Servlet 与JSP 分工</li>
+<li><p>Servlet 与JSP 分工<br>Servlet：负责处理业务并得到【处理结果】<br>JSP：不负责业务处理，主要任务将Servlet中【处理结果】写入到响应体</p>
+</li>
+<li><p>Servlet 与  JSP 之间调用关系<br>Servlet工作完毕后，一般通过请求转发方式 向Tomcat申请调用JSP</p>
+</li>
+<li><p>Servlet  与 JSP 之间实现数据共享<br>Servlet将处理结果添加到【请求作用域对象】<br>JSP文件在运行时从【请求作用域对象】得到处理结果</p>
+</li>
 </ul>
-<p>Servlet：负责处理业务并得到【处理结果】</p>
-<p>JSP：不负责业务处理，主要任务将Servlet中【处理结果】写入到响应体</p>
-<ul>
-<li>Servlet 与  JSP 之间调用关系</li>
-</ul>
-<p>Servlet工作完毕后，一般通过请求转发方式 向Tomcat申请调用JSP</p>
-<ul>
-<li>Servlet  与 JSP 之间实现数据共享</li>
-</ul>
-<p>Servlet将处理结果添加到【请求作用域对象】</p>
-<p>JSP文件在运行时从【请求作用域对象】得到处理结果</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OneServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//处理业务，得到处理结果-----查询信息</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        Student s1 = <span class="keyword">new</span> Student(<span class="number">10</span>,<span class="string">&quot;mike&quot;</span>);</span><br><span class="line">        Student s2 = <span class="keyword">new</span> Student(<span class="number">20</span>,<span class="string">&quot;allen&quot;</span>);</span><br><span class="line">        List stuList = <span class="keyword">new</span> ArrayList();</span><br><span class="line">        stuList.add(s1);</span><br><span class="line">        stuList.add(s2);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//将处理结果添加到请求作用域对象</span></span><br><span class="line">        request.setAttribute(<span class="string">&quot;key&quot;</span>, stuList);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//通过请求转发方案，向Tomcat申请调用user_show.jsp</span></span><br><span class="line">        <span class="comment">//同时将request与response通过tomcat交给user_show.jsp使用</span></span><br><span class="line">        request.getRequestDispatcher(<span class="string">&quot;/user_show.jsp&quot;</span>).forward(request, response);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%@ page contentType=<span class="string">&quot;text/html;charset=UTF-8&quot;</span> language=<span class="string">&quot;java&quot;</span> %&gt;</span><br><span class="line">&lt;%</span><br><span class="line">   <span class="comment">//从请求作用域对象得到OneServlet添加进去的集合</span></span><br><span class="line">     List&lt;Student&gt; stuList = (List)request.getAttribute(<span class="string">&quot;key&quot;</span>);</span><br><span class="line">%&gt;</span><br><span class="line">&lt;!--将处理结果写入到响应体--&gt;</span><br><span class="line">&lt;table border=<span class="string">&quot;2&quot;</span> align=<span class="string">&quot;center&quot;</span>&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">        &lt;td&gt;用户编号&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;用户姓名&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">       <span class="keyword">for</span>(Student stu:stuList)&#123;</span><br><span class="line">    %&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;&lt;%=stu.getSid()%&gt;&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;&lt;%=stu.getSname()%&gt;&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">       &#125;</span><br><span class="line">    %&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="EL表达式"><a href="#EL表达式" class="headerlink" title="EL表达式"></a>EL表达式</h2><p>Tomcat服务器本身自带了EL工具包（Tomcat安装地址/lib/el-api.jar）</p>
-<p>格式：${作用域对象别名.共享数据}</p>
-<p>作用：EL表达式是EL工具包提供一种特殊命令格式【表达式命令格式】，在JSP文件上使用，负责在JSP文件上从作用域对象读取指定的共享数据并输出到响应体。</p>
+<h2 id="EL表达式"><a href="#EL表达式" class="headerlink" title="EL表达式"></a>EL表达式</h2><p>Tomcat服务器本身自带了EL工具包（Tomcat安装地址/lib/el-api.jar）<br>格式：${作用域对象别名.共享数据}<br>作用：EL表达式是EL工具包提供一种特殊命令格式【表达式命令格式】，在JSP文件上使用，负责在JSP文件上从作用域对象读取指定的共享数据并输出到响应体。</p>
 <p><code>&lt;%@ page isELIgnored=&quot;true&quot; %&gt;</code> 表示是否禁用EL语言,TRUE表示禁止.FALSE表示不禁止</p>
 <h3 id="JSP文件可以使用的作用域对象"><a href="#JSP文件可以使用的作用域对象" class="headerlink" title="JSP文件可以使用的作用域对象"></a>JSP文件可以使用的作用域对象</h3><ul>
 <li>ServletContext application:  全局作用域对象</li>
-</ul>
-<ul>
 <li>HttpSession session: 会话作用域对象</li>
-</ul>
-<ul>
 <li>HttpServletRequest request: 请求作用域对象</li>
-</ul>
-<ul>
 <li>PageContext  pageContext：当前页作用域对象，这是JSP文件独有的作用域对象。Servlet中不存在在当前页作用域对象存放的共享数据仅能在当前JSP文件中使用，不能共享给其他Servlet或则其他JSP文件真实开发过程，主要用于JSTL标签与JSP文件之间数据共享数据（JSTL———-&gt;pageContext——&gt;JSP）</li>
 </ul>
 <blockquote>
-<p>EL表达式提供作用域对象别名</p>
-<p>​          JSP                           EL表达式</p>
-<p>​      application                 ${applicationScope.共享数据名}</p>
-<p>​      session                       ${sessionScope.共享数据名}</p>
-<p>​      request                       ${requestScope.共享数据名}</p>
-<p>​      pageContext              ${pageScope.共享数据名}</p>
+<p>EL表达式提供作用域对象别名<br>​          JSP                           EL表达式<br>​      application                 ${applicationScope.共享数据名}<br>​      session                       ${sessionScope.共享数据名}<br>​      request                       ${requestScope.共享数据名}<br>​      pageContext              ${pageScope.共享数据名}</p>
 </blockquote>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%@ page contentType=<span class="string">&quot;text/html;charset=UTF-8&quot;</span> language=<span class="string">&quot;java&quot;</span> %&gt;</span><br><span class="line">&lt;%</span><br><span class="line">     Integer sid =(Integer)application.getAttribute(<span class="string">&quot;sid&quot;</span>);</span><br><span class="line">     String  home=  (String)request.getAttribute(<span class="string">&quot;home&quot;</span>);</span><br><span class="line">	 Student stu= (Student)request.getAttribute(<span class="string">&quot;key&quot;</span>);</span><br><span class="line">%&gt;</span><br><span class="line">学员ID:&lt;%=sid%&gt;&lt;br/&gt;</span><br><span class="line">学员地址:&lt;%=home%&gt;&lt;br/&gt;</span><br><span class="line">学员编号:&lt;%=stu.getSid()%&gt;&lt;br/&gt;</span><br><span class="line">学员姓名:&lt;%=stu.getSname()%&gt;</span><br><span class="line">&lt;!---EL表达式--&gt;</span><br><span class="line">&lt;hr/&gt;</span><br><span class="line">学员ID:  $&#123;applicationScope.sid&#125;&lt;br/&gt;</span><br><span class="line">学员地址：$&#123;requestScope.home&#125;&lt;br/&gt;</span><br><span class="line">&lt;!---将引用对象属性写入到响应体--&gt;</span><br><span class="line">学员编号:$&#123;requestScope.key.sid&#125;&lt;br/&gt;</span><br><span class="line">学员姓名:$&#123;requestScope.key.sname&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>EL表达式没有提供遍历集合方法，因此无法从作用域对象读取集合内容输出</strong></p>
-<h3 id="EL表达式简化版"><a href="#EL表达式简化版" class="headerlink" title="EL表达式简化版"></a>EL表达式简化版</h3><p>EL表达式允许开发时省略作用域对象别名。命令格式： ${共享数据名}</p>
-<p>EL表达式简化版由于没有指定作用域对象，所以在执行时采用【猜】算法</p>
+<h3 id="EL表达式简化版"><a href="#EL表达式简化版" class="headerlink" title="EL表达式简化版"></a>EL表达式简化版</h3><p>EL表达式允许开发时省略作用域对象别名。命令格式： ${共享数据名}<br>EL表达式简化版由于没有指定作用域对象，所以在执行时采用【猜】算法</p>
 <blockquote>
-<p>首先到【pageContext】定位共享数据，如果存在直接读取输出并结束执行<br>如果在【pageContext】没有定位成功，到【request】定位共享数据，如果存在直接读取输出并结束执行<br>如果在【request】没有定位成功，到【session】定位共享数据，如果存在直接读取输出并结束执行<br>如果在【session】没有定位成功，到【application】定位共享数据，如果存在直接读取输出并结束执行<br>如果在【application】没有定位成功，返回null</p>
-<p> pageContext—-&gt;request—-&gt;session—-&gt;application</p>
+<p>首先到【pageContext】定位共享数据，如果存在直接读取输出并结束执行<br>如果在【pageContext】没有定位成功，到【request】定位共享数据，如果存在直接读取输出并结束执行<br>如果在【request】没有定位成功，到【session】定位共享数据，如果存在直接读取输出并结束执行<br>如果在【session】没有定位成功，到【application】定位共享数据，如果存在直接读取输出并结束执行<br>如果在【application】没有定位成功，返回null<br> pageContext—-&gt;request—-&gt;session—-&gt;application</p>
 </blockquote>
-<p>存在隐患：容易降低程序执行速度；容易导致数据定位错误</p>
-<p>应用场景：设计目的就是简化从pageContext读取共享数据并输出的难度</p>
-<p>EL表达式简化版尽管存在很多隐患，但是在实际开发过程中为了节省时间一都使用简化版。</p>
+<p>存在隐患：容易降低程序执行速度；容易导致数据定位错误<br>应用场景：设计目的就是简化从pageContext读取共享数据并输出的难度<br>EL表达式简化版尽管存在很多隐患，但是在实际开发过程中为了节省时间一都使用简化版。</p>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%@ page contentType=<span class="string">&quot;text/html;charset=UTF-8&quot;</span> language=<span class="string">&quot;java&quot;</span> %&gt;</span><br><span class="line">标准版EL表达式输出session中key的值:$&#123;sessionScope.key&#125;&lt;br/&gt;</span><br><span class="line">简化版EL表达式输出session中key的值:$&#123;key&#125;&lt;br/&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="支持运算表达式"><a href="#支持运算表达式" class="headerlink" title="支持运算表达式"></a>支持运算表达式</h3><p>在JSP文件有时需要将读取共享数据进行运算之后，将运算结果写入到响应体</p>
 <blockquote>
-<p>运算表达式包括：</p>
-<p>1) 数学运算</p>
-<p>2) 关系运算:  &gt;    &gt;=   ==    &lt;   &lt;=  !=</p>
-<p>​                       gt   ge   eq    lt  le   !=</p>
-<p>3)逻辑运算：  &amp;&amp;   ||    ！</p>
+<p>运算表达式包括：<br>1) 数学运算<br>2) 关系运算:  &gt;    &gt;=   ==    &lt;   &lt;=  !=<br>​                       gt   ge   eq    lt  le   !=<br>3)逻辑运算：  &amp;&amp;   ||    ！</p>
 </blockquote>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%@ page contentType=<span class="string">&quot;text/html;charset=UTF-8&quot;</span> language=<span class="string">&quot;java&quot;</span> %&gt;</span><br><span class="line">&lt;!--EL表达式支持运算表达式--&gt;</span><br><span class="line">&lt;!--将作用域对象中共享数据读取出来相加，将相加结果写入到响应体--&gt;</span><br><span class="line">&lt;%</span><br><span class="line">     String num1 = (String)request.getAttribute(<span class="string">&quot;key1&quot;</span>);</span><br><span class="line">     Integer num2 = (Integer)request.getAttribute(<span class="string">&quot;key2&quot;</span>);</span><br><span class="line">     <span class="keyword">int</span> sum = Integer.valueOf(num1) + num2;</span><br><span class="line">%&gt;</span><br><span class="line">传统的Java命令计算后的结果:&lt;%=sum%&gt;</span><br><span class="line">EL表达式计算后的结果:$&#123;key1+key2&#125;</span><br><span class="line">EL表达式输出关系运算:$&#123;age ge <span class="number">12</span>?<span class="string">&quot;欢迎光临&quot;</span>:<span class="string">&quot;谢绝入内&quot;</span>&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="EL表达式提供内置对象"><a href="#EL表达式提供内置对象" class="headerlink" title="EL表达式提供内置对象"></a>EL表达式提供内置对象</h3><h4 id="param"><a href="#param" class="headerlink" title="param"></a>param</h4><p>命令格式: ${param.请求参数名}</p>
-<p>命令作用： 通过请求对象读取当前请求包中请求参数内容，并将请求参数内容写入到响应体</p>
+<h3 id="EL表达式提供内置对象"><a href="#EL表达式提供内置对象" class="headerlink" title="EL表达式提供内置对象"></a>EL表达式提供内置对象</h3><h4 id="param"><a href="#param" class="headerlink" title="param"></a>param</h4><p>命令格式: ${param.请求参数名}<br>命令作用： 通过请求对象读取当前请求包中请求参数内容，并将请求参数内容写入到响应体</p>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%@ page contentType=<span class="string">&quot;text/html;charset=UTF-8&quot;</span> language=<span class="string">&quot;java&quot;</span> %&gt; </span><br><span class="line">&lt;%</span><br><span class="line"> String userName = request.getParameter(<span class="string">&quot;userName&quot;</span>);</span><br><span class="line"> String password = request.getParameter(<span class="string">&quot;password&quot;</span>);</span><br><span class="line"> %&gt;</span><br><span class="line">来访者姓名:&lt;%=userName%&gt;</span><br><span class="line">来访者密码:&lt;%=password%&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--使用EL表达式内置对象--&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">   http:<span class="comment">//localhost:8080/myWeb/index_1.jsp?userName=mike&amp;password=123</span></span><br><span class="line">--&gt;</span><br><span class="line">来访者姓名:$&#123;param.userName&#125;&lt;br/&gt;</span><br><span class="line">来访者密码:$&#123;param.password&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="paramValues"><a href="#paramValues" class="headerlink" title="paramValues"></a>paramValues</h4><p>命令格式：${paramValues.请求参数名[下标]}</p>
-<p>命令作用: 如果浏览器发送的请求参数是[一个请求参数关联多个值]，此时可以通过paramVaues读取请求参数下指定位置的值，并写入到响应体。此时pageNo请求参数在请求包以数组形式存在</p>
+<h4 id="paramValues"><a href="#paramValues" class="headerlink" title="paramValues"></a>paramValues</h4><p>命令格式：${paramValues.请求参数名[下标]}<br>命令作用: 如果浏览器发送的请求参数是[一个请求参数关联多个值]，此时可以通过paramVaues读取请求参数下指定位置的值，并写入到响应体。此时pageNo请求参数在请求包以数组形式存在</p>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">	String  array[]= request.getParameterValues(<span class="string">&quot;pageNo&quot;</span>);</span><br><span class="line">%&gt;</span><br><span class="line">第一个值:&lt;%=array[<span class="number">0</span>]%&gt;</span><br><span class="line">第二个值:&lt;%=array[<span class="number">1</span>]%&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--使用EL表达式内置对象--&gt;</span><br><span class="line">&lt;%@ page contentType=<span class="string">&quot;text/html;charset=UTF-8&quot;</span> language=<span class="string">&quot;java&quot;</span> %&gt; </span><br><span class="line">&lt;!--</span><br><span class="line">http:<span class="comment">//localhost:8080/myWeb/index_2.jsp?deptNo=10&amp;deptNo=20&amp;deptNo=30</span></span><br><span class="line">--&gt;</span><br><span class="line">第一个部门编号:$&#123;paramValues.deptNo[<span class="number">0</span>]&#125;&lt;br/&gt;</span><br><span class="line">第二个部门编号:$&#123;paramValues.deptNo[<span class="number">1</span>]&#125;&lt;br/&gt;</span><br><span class="line">第三个部门编号:$&#123;paramValues.deptNo[<span class="number">2</span>]&#125;&lt;br/&gt;</span><br></pre></td></tr></table></figure>
 <p> header/headerValues/cookie</p>
 <h3 id="EL表达式常见异常"><a href="#EL表达式常见异常" class="headerlink" title="EL表达式常见异常"></a>EL表达式常见异常</h3><p><code>javax.el.PropertyNotFoundException</code>在对象中没有找到指定属性</p>
@@ -1551,8 +1495,8 @@ f_{i}=\min \left(b_{i}, \max \left(-b_{i}, R\left(x+x_{i}, y+y_{i}\right)-R(x, y
       </tags>
   </entry>
   <entry>
-    <title>VVC环路滤波 / LMCS</title>
-    <url>/2021/11/25/lmcs/</url>
+    <title>Video Coding / LMCS</title>
+    <url>/2021/10/20/lmcs/</url>
     <content><![CDATA[<blockquote>
 <p>LMCS( luma mapping with chroma scaling)是  VVC 中新增的技术，其位 于去方块滤波之前，也被称为环路重整形（in-loop reshaper），主要包括两个部分：亮度映射（LM）、依赖亮度的色度缩放（CS）。</p>
 </blockquote>
@@ -1694,8 +1638,8 @@ f_{i}=\min \left(b_{i}, \max \left(-b_{i}, R\left(x+x_{i}, y+y_{i}\right)-R(x, y
       </tags>
   </entry>
   <entry>
-    <title>VVC环路滤波 / SAO</title>
-    <url>/2021/11/25/sao/</url>
+    <title>Video Coding / SAO</title>
+    <url>/2021/10/20/sao/</url>
     <content><![CDATA[<blockquote>
 <p>VVC环路滤波：自适应样点补偿滤波器</p>
 </blockquote>
@@ -1763,7 +1707,7 @@ f_{i}=\min \left(b_{i}, \max \left(-b_{i}, R\left(x+x_{i}, y+y_{i}\right)-R(x, y
       </tags>
   </entry>
   <entry>
-    <title>图与网络/双计数</title>
+    <title>图与网络 / 双计数</title>
     <url>/2021/07/06/%E5%8F%8C%E8%AE%A1%E6%95%B0/</url>
     <content><![CDATA[<blockquote>
 <p>双计数狭义上讲，对于一个集合运用两种不同的方式（行 / 列），得到等式结果或者不等式的结果。</p>
@@ -1775,15 +1719,12 @@ f_{i}=\min \left(b_{i}, \max \left(-b_{i}, R\left(x+x_{i}, y+y_{i}\right)-R(x, y
 \sum_{v\in V}d(v) = 2|E|</script></blockquote>
 <p>证明：对图G的邻接矩阵中1的个数分别从行（左），列（右）进行计数。即对二元组$\{(v,e)|v\in e\}$进行计数。</p>
 <blockquote>
-<p>推论：图中奇度点数目为偶数。</p>
-<p>超图握手定理：对于超图$G=(V, B)$</p>
+<p>推论：图中奇度点数目为偶数。<br>超图握手定理：对于超图$G=(V, B)$</p>
 </blockquote>
 <script type="math/tex; mode=display">
 \sum_{v\in V}d(v) = \sum_{\beta\in B}|\beta|</script><h2 id="完全图边的双计数"><a href="#完全图边的双计数" class="headerlink" title="完全图边的双计数"></a>完全图边的双计数</h2><script type="math/tex; mode=display">
 \sum_{i=1}^S{n_i} = n</script><script type="math/tex; mode=display">
-{n\choose 2} = \sum_{i = 1}^S {n_i \choose 2}+\sum_{i<j}n_in_j</script><p>对于一个完全图，共有$n\choose 2$条边；</p>
-<p>将完全图划分为$S$部分，每部分有$n_i$个点，${n_i \choose 2}$条边；</p>
-<p>每部分之间有$n_in_j$条边。</p>
+{n\choose 2} = \sum_{i = 1}^S {n_i \choose 2}+\sum_{i<j}n_in_j</script><p>对于一个完全图，共有$n\choose 2$条边；<br>将完全图划分为$S$部分，每部分有$n_i$个点，${n_i \choose 2}$条边；<br>每部分之间有$n_in_j$条边。</p>
 <h2 id="等式证明"><a href="#等式证明" class="headerlink" title="等式证明"></a>等式证明</h2><script type="math/tex; mode=display">
 {n\choose k } = \frac{n}{k}{n-1 \choose k-1}</script><p>证明：设$A$为$k$元子集，对二元组$\{(x,A)|x\in A, |A| = k\}$进行计数。</p>
 <script type="math/tex; mode=display">
@@ -1798,8 +1739,7 @@ T(n,k,l)\geq \frac{n\choose l}{k \choose l}</script><blockquote>
 <p>行计数：对于某一个$l$元集合，有$\binom{n-l}{k-l}]$个$k$元集合包含它，共有$|F|$个，行计数$1$的个数为$|F|\binom{n-l}{k-l}$</p>
 <p>列计数：每个$B_i$必包含一个$A_i$，则每一列至少有一个$1$，可以得到$|F|\binom{n-l}{k-l} \geq {n\choose k}$</p>
 <h2 id="Zarankiewicz’s-problem"><a href="#Zarankiewicz’s-problem" class="headerlink" title="Zarankiewicz’s problem"></a>Zarankiewicz’s problem</h2><blockquote>
-<p>对于一个$n\times n$的$0-1$矩阵，如果不存在$a\times a$的全$1$子矩阵，那么这个$nxn$的矩阵最多有多少个1？</p>
-<p>等价于：用二部图重新表述这个问题。一个部分大小为$n$的二部图$G=(V_1,V_2,E)$，其中$V_1,V_2$是顶点的不相交$n$元集合，$E\in V_1\times V_2$是边的集合。令$K_a(n)$为最小整数$k$边，使得任意大小为$n$且边数大于k的二部图至少包含一个$a\times a-clique$。对于任意的自然数$n$和$a$，</p>
+<p>对于一个$n\times n$的$0-1$矩阵，如果不存在$a\times a$的全$1$子矩阵，那么这个$nxn$的矩阵最多有多少个1？<br>等价于：用二部图重新表述这个问题。一个部分大小为$n$的二部图$G=(V_1,V_2,E)$，其中$V_1,V_2$是顶点的不相交$n$元集合，$E\in V_1\times V_2$是边的集合。令$K_a(n)$为最小整数$k$边，使得任意大小为$n$且边数大于k的二部图至少包含一个$a\times a-clique$。对于任意的自然数$n$和$a$，</p>
 </blockquote>
 <script type="math/tex; mode=display">
 K_a(n) \leq (a-1)^{\frac{1}{a} }n^{2-\frac{1}{a} }+(a-1)n</script><p>对$S= \{(x,A)|x\in V_1,A \in V_2,|A|=a,且x与A中所有点都有边相连\}$计数, 即对下图中的结构进行计数。</p>
@@ -1807,28 +1747,22 @@ K_a(n) \leq (a-1)^{\frac{1}{a} }n^{2-\frac{1}{a} }+(a-1)n</script><p>对$S= \{(x
     <img src="/img/0607-1.png" style="zoom:33%;">
 </div>
 
-<p>固定$x$：从与$x$相连的元素中取$A$，设$x$的neighbor为$d(x)$，那么A有$\sum_{x\in V_1}\binom{d(x)}{a}$种选法，且$|S|=\sum_{x\in V_1}\binom{d(x)}{a}$</p>
-<p>固定$A$：从$n$中选出$a$元集合，与之对应相连的$x$最多有$(a-1)$个，否则就会出现$a\times a-clique$，即$|S| \leq \binom{n}{a}(a-1)$</p>
-<p>即$\sum_{x\in V_1}\binom{d(x)}{a}\leq \binom{n}{a}(a-1)$</p>
+<p>固定$x$：从与$x$相连的元素中取$A$，设$x$的neighbor为$d(x)$，那么A有$\sum_{x\in V_1}\binom{d(x)}{a}$种选法，且$|S|=\sum_{x\in V_1}\binom{d(x)}{a}$<br>固定$A$：从$n$中选出$a$元集合，与之对应相连的$x$最多有$(a-1)$个，否则就会出现$a\times a-clique$，即$|S| \leq \binom{n}{a}(a-1)$<br>即$\sum_{x\in V_1}\binom{d(x)}{a}\leq \binom{n}{a}(a-1)$</p>
 <blockquote>
 <p>Jensen不等式，对凸函数有：</p>
 <script type="math/tex; mode=display">
 s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 \sum_{i=1}^n\lambda_if(x_i)\geq f(\sum_{i=1}^n\lambda_ix_i),</script><p>Jensen不等式可由数学归纳法证明，略。</p>
 </blockquote>
-<p>令$f(x)=\binom{x}{a}$,$x_i=d(x_i)$;</p>
-<p>根据Jensen不等式，有</p>
-<p>$\frac{1}{n}\sum_{x\in V_1}\binom{d(x)}{a}\geq \binom{\frac{1}{n}\sum_{x\in V_1}d(x)}{a}$</p>
+<p>令$f(x)=\binom{x}{a}$,$x_i=d(x_i)$;<br>根据Jensen不等式，有<br>$\frac{1}{n}\sum_{x\in V_1}\binom{d(x)}{a}\geq \binom{\frac{1}{n}\sum_{x\in V_1}d(x)}{a}$</p>
 <p>$\sum_{x\in V_1}\binom{d(x)}{a}\geq n\binom{\frac{1}{n}\sum_{x\in V_1}d(x)}{a}=n\binom{\frac{|E|}{n} }{a}$(因为为二部图，则degree为一倍边数)</p>
-<p>即$n\binom{\frac{|E|}{n} }{a}\leq \binom{n}{a}(a-1)$</p>
-<p>经过放缩有$n(\frac{|E|}{n}-(a-1))^a&lt;\frac{n(|E|/n)(|E|/n-1)…(|E|/n-(a-1))}{a!}=n\binom{\frac{|E|}{n} }{a}$</p>
+<p>即$n\binom{\frac{|E|}{n} }{a}\leq \binom{n}{a}(a-1)$<br>经过放缩有$n(\frac{|E|}{n}-(a-1))^a&lt;\frac{n(|E|/n)(|E|/n-1)…(|E|/n-(a-1))}{a!}=n\binom{\frac{|E|}{n} }{a}$</p>
 <p>$\binom{n}{a}(a-1)=\frac{n(n-1)…(n-(a-1))}{a!}(a-1)&lt;\frac{n^a}{a!}(a-1)$，两边同时开a次方即可解。</p>
 <ul>
 <li>$K_a(n)$的下界可以用概率方法求得</li>
 </ul>
 <h2 id="H-free图"><a href="#H-free图" class="headerlink" title="H-free图"></a>H-free图</h2><blockquote>
-<p>一个有$n$个顶点的无$H$图可以最多有多少条边?</p>
-<p>定理：如果图$G=(V，E)$中不包含4个点的圈, 即$C_4-free$，那么有$|E|\leq \left \lfloor n/4(1+\sqrt{4n-3}) \right \rfloor$</p>
+<p>一个有$n$个顶点的无$H$图可以最多有多少条边?<br>定理：如果图$G=(V，E)$中不包含4个点的圈, 即$C_4-free$，那么有$|E|\leq \left \lfloor n/4(1+\sqrt{4n-3}) \right \rfloor$</p>
 </blockquote>
 <p>令点集$V={1，2，…，n}$，用于双计数的集合为$S=\{(u,\{v,w\})|u与v,w都邻接，且v≠w\}$，即对下图中的结构进行计数。</p>
 <div align="center">
@@ -1839,8 +1773,7 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 <p>固定$v$和$w$，最多只有一个点可以和它们都关联，那么有$\binom{n}{2}\geq |S|$，</p>
 <p>那么，$\sum _{u\in V}d^2(u)\leq \sum _{u\in V}d(u)+n(n-1)$,</p>
 <blockquote>
-<p>柯西—施瓦茨不等式，$|(\alpha ,\beta )|\leq ||\alpha ||*||\beta ||$</p>
-<p>上述不等式中对应的分别是$[d(u_1),d(u_2)….d(u_n)]$，$(1,1,…1)$。</p>
+<p>柯西—施瓦茨不等式，$|(\alpha ,\beta )|\leq ||\alpha ||*||\beta ||$<br>上述不等式中对应的分别是$[d(u_1),d(u_2)….d(u_n)]$，$(1,1,…1)$。</p>
 </blockquote>
 <p>由柯西—施瓦茨不等式得，$n\sum_{u\in V}d^2(n)\geq (\sum_{u\in V}d(n)*1)^2$，代入上式，$\frac{(\sum_{u\in V} d(u))^2}{n}\leq \sum_{u\in V}d(u)+n)n-1$，</p>
 <p>由握手定理得$4|E|^2\leq n2|E|+n^2(n-1)$，求解n可得上述结论。</p>
@@ -1848,19 +1781,13 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 <p>在超图中，有</p>
 <script type="math/tex; mode=display">
 \sum_{x\in X}d^2(x)=\sum_{A\in F} \sum_{x\in A}d(x)=\sum_{A\in F} \sum_{B\in F}|A\cap B|</script></blockquote>
-<p>对于集合$(X,F)$，$X$为点集合，$F$为超边集合，对三元组${(x,A,B)|A,B∈F,x∈A，x∈B}$计数。</p>
-<p>左：$x$在全集$X$上，$A，B$集合均包含点$x$；</p>
-<p>中：先选出在$A$的$x$，再使得$x$在$B$中；</p>
-<p>右：先选出$A$和$B$集合，使得$x$在$A$和$B$上，即在$A\cap B$上。</p>
+<p>对于集合$(X,F)$，$X$为点集合，$F$为超边集合，对三元组${(x,A,B)|A,B∈F,x∈A，x∈B}$计数。<br>左：$x$在全集$X$上，$A，B$集合均包含点$x$；<br>中：先选出在$A$的$x$，再使得$x$在$B$中；<br>右：先选出$A$和$B$集合，使得$x$在$A$和$B$上，即在$A\cap B$上。</p>
 <h2 id="整除关系"><a href="#整除关系" class="headerlink" title="整除关系"></a>整除关系</h2><blockquote>
-<p>假设两个有限集$R$和$C$和一个子集$S\subseteq R\times C$。无论何时$(p，g)∈s $那么认为$p$和$q$是关联的。</p>
-<p>设$r_p$表示$p$固定，与$p$关联的元素数目；$c_p$表示$q$固定，与$q$关联的元素数目。有</p>
+<p>假设两个有限集$R$和$C$和一个子集$S\subseteq R\times C$。无论何时$(p，g)∈s $那么认为$p$和$q$是关联的。<br>设$r_p$表示$p$固定，与$p$关联的元素数目；$c_p$表示$q$固定，与$q$关联的元素数目。有</p>
 <script type="math/tex; mode=display">
 \sum_{p\in R}r_p=|S|=\sum_{q\in C}c_q</script></blockquote>
 <p>假设$M_{|p|\times |q|}$的关联矩阵使用双计数进行证明，矩阵中若$p_i$和$q_j$相关联，$a_{ij}$则置为$1$，否则为$0$，那么$|S|$就是矩阵$M$中全部$1$的个数，等式的第一项可从行计数，最后一项可从列计数角度统计矩阵中1的个数。</p>
-<p>例：</p>
-<p>$R=C={1，2，…，n}$，集合$S=\{(i,j)|i可以整除j\}$，</p>
-<p>$t(j)$表示$j$的因子的数目，如$j=4$，因子有$1,2,4$，那么$t(4)=3$。</p>
+<p>例：<br>$R=C={1，2，…，n}$，集合$S=\{(i,j)|i可以整除j\}$，<br>$t(j)$表示$j$的因子的数目，如$j=4$，因子有$1,2,4$，那么$t(4)=3$。</p>
 <div class="table-container">
 <table>
 <thead>
@@ -1973,8 +1900,7 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 \frac{1}{n}\sum_{i=1}^{n}(\frac{n}{j}-1)<\frac{1}{n}\sum_{i=1}^{n}\left \lfloor n/i \right \rfloor\leq \frac{1}{n}\sum_{i=1}^{n}\frac{n}{i}=\sum_{i=1}^{n}\frac{1}{i}</script><script type="math/tex; mode=display">
 \sum_{i=1}^{n}\frac{1}{i}-1 < t(j) \leq lnn</script><script type="math/tex; mode=display">
 |\overline{t(j)}-lnn|<1</script><h2 id="Sperner-Lemma"><a href="#Sperner-Lemma" class="headerlink" title="Sperner Lemma"></a>Sperner Lemma</h2><blockquote>
-<p>假设某个顶点为$V1、V2、V3$的“大”三角形被三角化了(也就是说，被分解成有限数量的“小”三角形，这些“小”三角形每条边都能拼接在一起)。</p>
-<p>假设三角化中的顶点从集合$\{1,2,3\}$中获取颜色，使得$V_i$接收颜色$i$(对于每个$i$)，并且沿着$V_i$到$V_i$的边的顶点只用$i$和$j$的颜色，而内部顶点用1、2或3的颜色任意着色。那么在三角测量中一定有一个小的“三色”三角形。</p>
+<p>假设某个顶点为$V1、V2、V3$的“大”三角形被三角化了(也就是说，被分解成有限数量的“小”三角形，这些“小”三角形每条边都能拼接在一起)。<br>假设三角化中的顶点从集合$\{1,2,3\}$中获取颜色，使得$V_i$接收颜色$i$(对于每个$i$)，并且沿着$V_i$到$V_i$的边的顶点只用$i$和$j$的颜色，而内部顶点用1、2或3的颜色任意着色。那么在三角测量中一定有一个小的“三色”三角形。</p>
 </blockquote>
 <div align="center">
     <img src="/img/0607-3.png">
@@ -1987,7 +1913,6 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
     <img src="/img/0607-4.png">
 </div>
 
-
 <p>根据握手定理可知，度之和必为偶数， 在$V_1$和$V_2$构成的边上，观察可得出度必为奇数，即边上(1,2).(2,1)的线段必有奇数个，那么在小三角形必存在奇数度的三角形，即必存在1度的三角形，得证。</p>
 <p>参考：<a href="https://www.it610.com/article/1295411404924329984.htm">【图论学习笔记二】双计数(Double Counting) - it610.com</a></p>
 ]]></content>
@@ -1996,8 +1921,8 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
       </tags>
   </entry>
   <entry>
-    <title>Java/代理模式</title>
-    <url>/2021/11/25/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/</url>
+    <title>Java / 代理模式</title>
+    <url>/2021/08/06/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/</url>
     <content><![CDATA[<blockquote>
 <p>代理模式的一个典型应用：AOP(面向切面编程)</p>
 </blockquote>
@@ -2006,10 +1931,8 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 <p>a —&gt;不能直接调用 c的方法。<br>在a 和 c 直接创建一个 b 代理，c让b访问。 c，b实现相同的功能（接口）。<br>a —&gt;访问b—&gt;访问c</p>
 <p>作用：</p>
 <ul>
-<li><p>功能增强： 在原有的功能上，增加了额外的功能。 新增加的功能，叫做功能增强</p>
-</li>
-<li><p>控制访问： 代理类不让你访问目标，例如商家不让用户访问厂家。 </p>
-</li>
+<li>功能增强： 在原有的功能上，增加了额外的功能。 新增加的功能，叫做功能增强</li>
+<li>控制访问： 代理类不让你访问目标，例如商家不让用户访问厂家。 </li>
 </ul>
 <h2 id="静态代理"><a href="#静态代理" class="headerlink" title="静态代理"></a>静态代理</h2><p>代理类需要手工实现。即自己创建一个java类，表示代理类。所要代理的目标类是确定的。</p>
 <ul>
@@ -2019,10 +1942,7 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 </ul>
 </li>
 </ul>
-<h2 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h2><p>在程序执行过程中，使用jdk的<strong>反射</strong>机制，创建<strong>代理类对象</strong>， 并动态的指定要代理目标类。</p>
-<p>即使目标类很多，代理类数量可以很少；当修改了接口中的方法时，不影响代理类。</p>
-<p>动态代理是一种创建java对象的能力，不用创建代理类，就能创建代理类对象。</p>
-<p>两种实现方式：jdk动态代理；cglib动态代理</p>
+<h2 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h2><p>在程序执行过程中，使用jdk的<strong>反射</strong>机制，创建<strong>代理类对象</strong>， 并动态的指定要代理目标类。<br>即使目标类很多，代理类数量可以很少；当修改了接口中的方法时，不影响代理类。<br>动态代理是一种创建java对象的能力，不用创建代理类，就能创建代理类对象。<br>两种实现方式：jdk动态代理；cglib动态代理</p>
 <h3 id="jdk动态代理"><a href="#jdk动态代理" class="headerlink" title="jdk动态代理"></a>jdk动态代理</h3><ul>
 <li>使用java反射包中的类和接口实现动态代理的功能。</li>
 <li>反射包 java.lang.reflect , 里面有三个类 ： InvocationHandler , Method, Proxy.</li>
@@ -2037,12 +1957,9 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//实现InvocationHandler接口，完成代理类要做的功能（1.调用目标方法，2.功能增强）</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MySellHandler</span> <span class="keyword">implements</span> <span class="title">InvocationHandler</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Object target = <span class="keyword">null</span>; <span class="comment">// 为目标类创建对象（活动的，不是固定的，需要传入进来）</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MySellHandler</span><span class="params">(Object target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.target = target;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">	<span class="comment">// 实现invoke方法，完成代理类要做的功能</span></span><br><span class="line">    <span class="comment">// Object proxy: jdk创建的代理对象，无需赋值。</span></span><br><span class="line">	<span class="comment">// Method method: 目标类中的方法，jdk提供</span></span><br><span class="line">    <span class="comment">// Object[] args：目标类中方法的参数， jdk提供。</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">        Object res  = <span class="keyword">null</span>;</span><br><span class="line">        res =  method.invoke(target,args); <span class="comment">// 反射，执行目标对象target的method方法</span></span><br><span class="line">		<span class="comment">//功能增强，加价</span></span><br><span class="line">        <span class="keyword">if</span>( res != <span class="keyword">null</span> )&#123;</span><br><span class="line">            Float price = (Float)res;</span><br><span class="line">            price = price + <span class="number">25</span>;</span><br><span class="line">            res = price;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(res);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//创建代理对象，使用Proxy</span></span><br><span class="line"><span class="comment">//1. 创建目标对象</span></span><br><span class="line">UsbSell factory = <span class="keyword">new</span> UsbKingFactory();</span><br><span class="line"><span class="comment">//2.创建InvocationHandler对象</span></span><br><span class="line">InvocationHandler handler = <span class="keyword">new</span> MySellHandler(factory);</span><br><span class="line"><span class="comment">//3.创建代理对象</span></span><br><span class="line">UsbSell proxy = (UsbSell) Proxy.newProxyInstance(</span><br><span class="line">    factory.getClass().getClassLoader(),</span><br><span class="line">    factory.getClass().getInterfaces(),</span><br><span class="line">    handler</span><br><span class="line">	);</span><br><span class="line"><span class="comment">//4.通过代理执行方法</span></span><br><span class="line"><span class="keyword">float</span> price = proxy.sell(<span class="number">1</span>); <span class="comment">// 代理对象proxy调用目标类factory中的sell方法</span></span><br></pre></td></tr></table></figure>
 <h3 id="cglib动态代理"><a href="#cglib动态代理" class="headerlink" title="cglib动态代理"></a>cglib动态代理</h3><ul>
-<li><p>cglib是第三方的工具库， 创建代理对象。</p>
-</li>
-<li><p>原理是继承， cglib通过继承目标类，创建它的子类，在子类中重写父类中同名的方法， 实现功能的修改。要求目标类不能是final的， 方法也不能是final的。</p>
-</li>
-<li><p>cglib的要求目标类比较宽松， 只要能继承即可。</p>
-</li>
+<li>cglib是第三方的工具库， 创建代理对象。</li>
+<li>原理是继承， cglib通过继承目标类，创建它的子类，在子类中重写父类中同名的方法， 实现功能的修改。要求目标类不能是final的， 方法也不能是final的。</li>
+<li>cglib的要求目标类比较宽松， 只要能继承即可。</li>
 </ul>
 ]]></content>
       <tags>
@@ -2051,7 +1968,7 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
   </entry>
   <entry>
     <title>数据结构 / 多路查找树</title>
-    <url>/2021/11/25/%E5%A4%9A%E8%B7%AF%E6%9F%A5%E6%89%BE%E6%A0%91/</url>
+    <url>/2021/10/20/%E5%A4%9A%E8%B7%AF%E6%9F%A5%E6%89%BE%E6%A0%91/</url>
     <content><![CDATA[<blockquote>
 <p>大量数据存储中，在查找的背景下，BST由于树深度过大而造成磁盘IO读写过于频繁，进而导致效率低下。那么如何减少树的深度?</p>
 </blockquote>
@@ -2065,17 +1982,14 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 <h2 id="B树（B-树）"><a href="#B树（B-树）" class="headerlink" title="B树（B-树）"></a>B树（B-树）</h2><p>B树（B-树）是一种平衡的多路查找树。2-3树和2-3-4树都是B树的特例。节点的最大孩子数目称为B树的阶（order），因此，2-3树是3阶B树，2-3-4树是4阶B树。</p>
 <h3 id="2-3树"><a href="#2-3树" class="headerlink" title="2-3树"></a>2-3树</h3><p>定义2-3树中每一个节点都具有两个孩子(称<strong>2节点</strong>)或三个孩子(称<strong>3节点</strong>)。</p>
 <ul>
-<li><p>一个2节点包含一个元素（关键字）和两个孩子(只能包含两个孩子或没有孩子)，且与二叉排序树类似，左子树包含的元素小于该元素，右子树包含的元素大于该元素。</p>
-</li>
-<li><p>一个3节点包含一小一大两个元素和三个孩子(只能包含三个孩子或没有孩子)。如果某个3节点有孩子，左子树包含小于较小元素的元素，右子树包含大于较大元素的元素，中间子树包含介于两元素之间的元素。</p>
-</li>
+<li>一个2节点包含一个元素（关键字）和两个孩子(只能包含两个孩子或没有孩子)，且与二叉排序树类似，左子树包含的元素小于该元素，右子树包含的元素大于该元素。</li>
+<li>一个3节点包含一小一大两个元素和三个孩子(只能包含三个孩子或没有孩子)。如果某个3节点有孩子，左子树包含小于较小元素的元素，右子树包含大于较大元素的元素，中间子树包含介于两元素之间的元素。</li>
 <li><p>2-3树的所有叶子都在同一层次。</p>
 <p><img src="/img/multitree/2-3.png"/></p>
 </li>
 </ul>
 <p>插入/删除：略</p>
-<h3 id="2-3-4树"><a href="#2-3-4树" class="headerlink" title="2-3-4树"></a>2-3-4树</h3><p>2-3-4树是2-3树的扩展，包括了4节点的使用，一个4节点包含小中大三个元素和四个孩子（或没有孩子）。</p>
-<p>插入/删除：略</p>
+<h3 id="2-3-4树"><a href="#2-3-4树" class="headerlink" title="2-3-4树"></a>2-3-4树</h3><p>2-3-4树是2-3树的扩展，包括了4节点的使用，一个4节点包含小中大三个元素和四个孩子（或没有孩子）。<br>插入/删除：略</p>
 <h3 id="应用：内外存的数据交互"><a href="#应用：内外存的数据交互" class="headerlink" title="应用：内外存的数据交互"></a>应用：内外存的数据交互</h3><p>计算机存储设备一般分为两种：内存储器和外存储器。 操作系统经常与内存和硬盘这两种存储设备进行通信，与内存操作，是虚拟一个页的概念来作为最小单位。</p>
 <p>内存储器为内存，内存存取速度快，但容量小，价格昂贵，而且不能长期保存数据(在不通电情况下数据会消失)。</p>
 <p>外存储器即为磁盘读取，磁盘读取数据靠的是机械运动，每次读取数据花费的时间可以分为寻道时间、旋转延迟、传输时间三个部分。</p>
@@ -2099,10 +2013,8 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 </blockquote>
 <p>B+树适合随机查找，只不过查到后是索引，不能提供实际记录的访问，还需要到达包含此关键字的终端节点。非叶结点仅具有索引作用，跟记录有关的信息均存放在叶结点中。B+树还适合带有范围的查找。</p>
 <h4 id="和B树查询的不同"><a href="#和B树查询的不同" class="headerlink" title="和B树查询的不同"></a>和B树查询的不同</h4><ul>
-<li><p>B+树的中间节点没有卫星数据。B树中所有节点都带有卫星数据，而在B+树中，只有叶子节点带有卫星数据，其余中间节点仅仅是索引，没有任何的数据关联。所以同样大小的磁盘页可以容纳更多的节点元素，也意味着数据量相同的情况下，B+树的结构比B树更加“矮胖”，因此查询IO次数更少；</p>
-</li>
-<li><p>B+树的查询必须最终找到叶子节点，而B树只要匹配到元素即可，不论它是中间节点还是叶子节点，因此B树的查询性能并不稳定(最好情况是只查询根节点，最坏情况查询到叶子节点)，而B+树每一次查找都是稳定的。</p>
-</li>
+<li>B+树的中间节点没有卫星数据。B树中所有节点都带有卫星数据，而在B+树中，只有叶子节点带有卫星数据，其余中间节点仅仅是索引，没有任何的数据关联。所以同样大小的磁盘页可以容纳更多的节点元素，也意味着数据量相同的情况下，B+树的结构比B树更加“矮胖”，因此查询IO次数更少；</li>
+<li>B+树的查询必须最终找到叶子节点，而B树只要匹配到元素即可，不论它是中间节点还是叶子节点，因此B树的查询性能并不稳定(最好情况是只查询根节点，最坏情况查询到叶子节点)，而B+树每一次查找都是稳定的。</li>
 </ul>
 <blockquote>
 <p>卫星数据：指索引元素所指向的数据记录，比如数据库中的某一行</p>
@@ -2111,10 +2023,8 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 <blockquote>
 <p><strong>关于索引</strong></p>
 <ul>
-<li><p>磁盘IO的存取次数是评价一个数据库索引优劣的关键性指标。利用索引查询数据的时会逐一加载磁盘页到内存当中，每一页对应索引树的节点。所以索引需要的是减少磁盘IO的次数以及节点存储更多的数据量。</p>
-</li>
-<li><p>在数据库的设计中，聚集索引(Clustered Index)，叶子节点直接包含了卫星数据。在非聚集索引(NonClustered Index)，叶子节点叶子节点存储的是主键值。</p>
-</li>
+<li>磁盘IO的存取次数是评价一个数据库索引优劣的关键性指标。利用索引查询数据的时会逐一加载磁盘页到内存当中，每一页对应索引树的节点。所以索引需要的是减少磁盘IO的次数以及节点存储更多的数据量。</li>
+<li>在数据库的设计中，聚集索引(Clustered Index)，叶子节点直接包含了卫星数据。在非聚集索引(NonClustered Index)，叶子节点叶子节点存储的是主键值。</li>
 </ul>
 </blockquote>
 <p>B+树相较于B树的优势有三个:</p>
@@ -2129,8 +2039,8 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
       </tags>
   </entry>
   <entry>
-    <title>排序 —— 快速排序/归并排序/插入排序</title>
-    <url>/2021/11/25/%E6%8E%92%E5%BA%8F/</url>
+    <title>排序 - 快速排序/归并排序/插入排序</title>
+    <url>/2021/10/20/%E6%8E%92%E5%BA%8F/</url>
     <content><![CDATA[<blockquote>
 <p>快速排序/归并排序/插入排序</p>
 </blockquote>
@@ -2149,10 +2059,7 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//前后指针partition</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">Partition</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> pivot = nums[right];</span><br><span class="line">    <span class="keyword">int</span> i = left - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = left; j &lt;= right - <span class="number">1</span>; j++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums[j] &lt;= pivot) &#123;</span><br><span class="line">            i = i + <span class="number">1</span>;</span><br><span class="line">            swap(nums[i], nums[j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    swap(nums[i + <span class="number">1</span>], nums[right]);</span><br><span class="line">    <span class="keyword">return</span> i + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">Partition</span><span class="params">(<span class="keyword">int</span>[] array,<span class="keyword">int</span> left,<span class="keyword">int</span> right)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(left &lt; right)&#123;</span><br><span class="line">        <span class="keyword">int</span> pivot = array[right];</span><br><span class="line">        <span class="keyword">int</span> cur = left;</span><br><span class="line">        <span class="keyword">int</span> pre = cur - <span class="number">1</span>;</span><br><span class="line">        <span class="comment">//如果找到小于key的值，并且cur和pre之间有距离时则进行交换。注意两个条件的先后位置不能更换</span></span><br><span class="line">        <span class="keyword">while</span>(cur &lt; right)&#123;</span><br><span class="line">            <span class="keyword">while</span>(array[cur] &lt; pivot &amp;&amp; pre++ != cur)&#123; swap(array[cur],array[pre]);&#125;</span><br><span class="line">            cur++;</span><br><span class="line">        &#125;</span><br><span class="line">        swap(array[pre++],array[right]);</span><br><span class="line">        <span class="keyword">return</span> pre;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>交换元素</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp = a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="1-基准的选择"><a href="#1-基准的选择" class="headerlink" title="1.基准的选择"></a>1.基准的选择</h3><p>(1)<strong>固定基准</strong>。如果数组元素是随机的，划分过程不产生极端情况，那么程序的运行时间不会有太大的波动。</p>
-<p>如果数组元素已经基本有序时，此时的划分就容易产生最坏的情况，即快速排序变成冒泡排序，时间复杂度为O(n^2)。</p>
-<p>(2)<strong>随机基准</strong>。虽然使用随机基准能解决待排数组基本有序的情况，但是由于这种随机性的存在，对其他情况的数组也会有影响(若数组元素是随机的，使用固定基准常常优于随机基准)。</p>
-<p>(3)<strong>三数取中</strong>。选取数组开头，中间和结尾的元素，通过比较，选择中间的值作为快排的基准。其实可以将这个数字扩展到更大(例如5数取中，7数取中等)。这种方式能很好的解决待排数组基本有序的情况，而且选取的基准没有随机性。</p>
+<h3 id="1-基准的选择"><a href="#1-基准的选择" class="headerlink" title="1.基准的选择"></a>1.基准的选择</h3><p>(1)<strong>固定基准</strong>。如果数组元素是随机的，划分过程不产生极端情况，那么程序的运行时间不会有太大的波动。<br>如果数组元素已经基本有序时，此时的划分就容易产生最坏的情况，即快速排序变成冒泡排序，时间复杂度为O(n^2)。<br>(2)<strong>随机基准</strong>。虽然使用随机基准能解决待排数组基本有序的情况，但是由于这种随机性的存在，对其他情况的数组也会有影响(若数组元素是随机的，使用固定基准常常优于随机基准)。<br>(3)<strong>三数取中</strong>。选取数组开头，中间和结尾的元素，通过比较，选择中间的值作为快排的基准。其实可以将这个数字扩展到更大(例如5数取中，7数取中等)。这种方式能很好的解决待排数组基本有序的情况，而且选取的基准没有随机性。</p>
 <h3 id="2-快速排序分析"><a href="#2-快速排序分析" class="headerlink" title="2.快速排序分析"></a>2.快速排序分析</h3><p>快速排序是一种不稳定的排序算法。</p>
 <ol>
 <li><strong>最坏时间复杂度：</strong>即元素都分到一个子序列，另一个子序列为空的情况，<strong>时间复杂度为O(N2)。</strong></li>
@@ -2171,24 +2078,19 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 </ol>
 <p><img src="/img/sort/mergesort.gif" style="zoom: 67%;" ></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> L, <span class="keyword">int</span> R)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(L == R) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">int</span> mid = L + ((R - L) &gt;&gt; <span class="number">1</span>);</span><br><span class="line">    sort(arr, L, mid);</span><br><span class="line">    sort(arr, mid + <span class="number">1</span>, R);</span><br><span class="line">    merge(arr, L, mid, R);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> L, <span class="keyword">int</span> mid, <span class="keyword">int</span> R)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[] temp = <span class="keyword">new</span> <span class="keyword">int</span>[R - L + <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> p1 = L;</span><br><span class="line">    <span class="keyword">int</span> p2 = mid + <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 比较左右两部分的元素，哪个小，把那个元素填入temp中。先执行语句，执行完后自加</span></span><br><span class="line">    <span class="keyword">while</span>(p1 &lt;= mid &amp;&amp; p2 &lt;= R) &#123; temp[i++] = arr[p1] &lt; arr[p2] ? arr[p1++] : arr[p2++];&#125;</span><br><span class="line">    <span class="comment">// 上面的循环退出后，把剩余的元素依次填入到temp中</span></span><br><span class="line">    <span class="comment">// 以下两个while只有一个会执行</span></span><br><span class="line">    <span class="keyword">while</span>(p1 &lt;= mid) &#123; temp[i++] = arr[p1++];&#125;</span><br><span class="line">    <span class="keyword">while</span>(p2 &lt;= R) &#123; temp[i++] = arr[p2++];&#125;</span><br><span class="line">    <span class="comment">// 把最终的排序的结果复制给原数组</span></span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; temp.length; i++) &#123; arr[L + i] = temp[i];&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h3><p><strong>时间复杂度：O(nlogn)</strong></p>
-<p><strong>空间复杂度：O(N)</strong>，归并排序需要一个与原数组相同长度的数组做辅助来排序</p>
-<p>稳定性：归并排序是稳定的排序算法，<code>temp[i++] = arr[p1] &lt;= arr[p2] ? arr[p1++] : arr[p2++];</code>这行代码可以保证当左右两部分的值相等的时候，先复制左边的值，这样可以保证值相等的时候两个元素的相对位置不变。</p>
+<h3 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h3><p><strong>时间复杂度：O(nlogn)</strong><br><strong>空间复杂度：O(N)</strong>，归并排序需要一个与原数组相同长度的数组做辅助来排序<br>稳定性：归并排序是稳定的排序算法，<code>temp[i++] = arr[p1] &lt;= arr[p2] ? arr[p1++] : arr[p2++];</code>这行代码可以保证当左右两部分的值相等的时候，先复制左边的值，这样可以保证值相等的时候两个元素的相对位置不变。</p>
 <h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><p>插入排序与打扑克时整理手上的牌非常类似。摸来的第1张牌无须整理，此后每次从桌上的牌(无序区)中摸最上面的1张并插入左手的牌(有序区)中正确的位置上。为了找到这个正确的位置，须自左向右(或自右向左)将摸来的牌与左手中已有的牌逐一比较。</p>
 <p><img src="/img/sort/insertion.gif" style="zoom: 67%;" ></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insertionsort</span><span class="params">(<span class="keyword">int</span> arr[])</span></span>&#123; </span><br><span class="line">    <span class="keyword">int</span> n = arr.length; </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;n; i++)&#123; </span><br><span class="line">        <span class="keyword">int</span> key = arr[i]; </span><br><span class="line">        <span class="keyword">int</span> j = i-<span class="number">1</span>; </span><br><span class="line">        <span class="keyword">while</span> (j&gt;=<span class="number">0</span> &amp;&amp; arr[j] &gt; key) &#123; </span><br><span class="line">            arr[j+<span class="number">1</span>] = arr[j]; </span><br><span class="line">            j = j-<span class="number">1</span>; </span><br><span class="line">        &#125; </span><br><span class="line">        arr[j+<span class="number">1</span>] = key; </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h3><p>不稳定排序算法。</p>
-<p>最坏情况：$O(n^2)$ </p>
-<p>最好情况：$O(n) $</p>
-<p>平均情况：$O(n^2)$ </p>
+<h3 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h3><p>不稳定排序算法。<br>最坏情况：$O(n^2)$<br>最好情况：$O(n) $<br>平均情况：$O(n^2)$ </p>
 ]]></content>
       <tags>
         <tag>算法</tag>
       </tags>
   </entry>
   <entry>
-    <title>数据结构/Hash</title>
-    <url>/2021/11/25/hash/</url>
+    <title>数据结构 / Hash</title>
+    <url>/2021/10/20/hash/</url>
     <content><![CDATA[<blockquote>
 <p>Hash，一般译做散列或音译为哈希，是把任意长度的输入通过散列算法变换成固定长度的输出，该输出就是散列值，是一种压缩映射。</p>
 </blockquote>
@@ -2234,21 +2136,15 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 <p>如：当关键字是整数类型时就可以用除留余数法；如果关键字是小数类型，选择随机数法会比较好。</p>
 <h2 id="哈希冲突的解决"><a href="#哈希冲突的解决" class="headerlink" title="哈希冲突的解决"></a>哈希冲突的解决</h2><p>选用哈希函数计算哈希值时，可能不同的$ key $会得到相同的结果，一个地址如何存放多个数据？这就是冲突。</p>
 <p>常用的主要有两种方法解决冲突：</p>
-<h3 id="链接法（拉链法）"><a href="#链接法（拉链法）" class="headerlink" title="链接法（拉链法）"></a>链接法（拉链法）</h3><p>拉链法解决冲突的做法是： 将所有关键字为同一哈希值的结点链接在同一个单链表中。</p>
-<p>若选定的散列表长度为 $m$，则可将散列表定义为一个由 $m$ 个头指针组成的指针数组 $T[0..m-1] $。</p>
-<p>凡是散列地址为 $i$ 的结点，均插入到以$ T[i] $为头指针的单链表中。<br>$T $中各分量的初值均应为空指针。</p>
-<p>在拉链法中，装填因子$ α $可以大于 1，但一般均取 $α ≤ 1$。</p>
+<h3 id="链接法（拉链法）"><a href="#链接法（拉链法）" class="headerlink" title="链接法（拉链法）"></a>链接法（拉链法）</h3><p>拉链法解决冲突的做法是： 将所有关键字为同一哈希值的结点链接在同一个单链表中。<br>若选定的散列表长度为 $m$，则可将散列表定义为一个由 $m$ 个头指针组成的指针数组 $T[0..m-1] $。<br>凡是散列地址为 $i$ 的结点，均插入到以$ T[i] $为头指针的单链表中。<br>$T $中各分量的初值均应为空指针。<br>在拉链法中，装填因子$ α $可以大于 1，但一般均取 $α ≤ 1$。</p>
 <h3 id="开放定址法"><a href="#开放定址法" class="headerlink" title="开放定址法"></a>开放定址法</h3><p>用开放定址法解决冲突的做法是：</p>
 <blockquote>
 <p>用开放定址法解决冲突的做法是：当冲突发生时，使用某种探测技术在散列表中形成一个探测序列。沿此序列逐个单元地查找，直到找到给定的关键字，或者碰到一个开放的地址（即该地址单元为空）为止（若要插入，在探查到开放的地址，则可将待插入的新结点存人该地址单元）。查找时探测到开放的地址则表明表中无待查的关键字，即查找失败。</p>
 </blockquote>
-<p>简单的说：当冲突发生时，使用某种探查(亦称探测)技术在散列表中寻找下一个空的散列地址，只要散列表足够大，空的散列地址总能找到。</p>
-<p>按照形成探查序列的方法不同，可将开放定址法区分为线性探查法、二次探查法、双重散列法等。</p>
-<h4 id="线性探查法"><a href="#线性探查法" class="headerlink" title="线性探查法"></a>线性探查法</h4><p>$h_i=(h(key)+i) ％ m $，$0 ≤ i ≤ m-1 $</p>
-<p>基本思想是：<br>探查时从地址 $d$ 开始，首先探查 $T[d]$，然后依次探查$ T[d+1]，…，$直到$ T[m-1]$，此后又循环到 $T[0]，T[1]，…，$直到探查到 <strong>有空余地址</strong> 或者到 $T[d-1]$为止。</p>
+<p>简单的说：当冲突发生时，使用某种探查(亦称探测)技术在散列表中寻找下一个空的散列地址，只要散列表足够大，空的散列地址总能找到。<br>按照形成探查序列的方法不同，可将开放定址法区分为线性探查法、二次探查法、双重散列法等。</p>
+<h4 id="线性探查法"><a href="#线性探查法" class="headerlink" title="线性探查法"></a>线性探查法</h4><p>$h_i=(h(key)+i) ％ m $，$0 ≤ i ≤ m-1 $<br>基本思想是：<br>探查时从地址 $d$ 开始，首先探查 $T[d]$，然后依次探查$ T[d+1]，…，$直到$ T[m-1]$，此后又循环到 $T[0]，T[1]，…，$直到探查到 <strong>有空余地址</strong> 或者到 $T[d-1]$为止。</p>
 <h4 id="二次探查法"><a href="#二次探查法" class="headerlink" title="二次探查法"></a>二次探查法</h4><p>$h_i=(h(key)+i*i) ％ m$，$0 ≤ i ≤ m-1 $</p>
-<p>基本思想是：<br>探查时从地址$ d$ 开始，首先探查 $T[d]$，然后依次探查$ T[d+1^2]，T[d+2^2]，T[d+3^2],…，$等，直到探查到 <strong>有空余地址</strong> 或者到 $T[d-1]$为止。</p>
-<p>缺点是无法探查到整个散列空间。</p>
+<p>基本思想是：<br>探查时从地址$ d$ 开始，首先探查 $T[d]$，然后依次探查$ T[d+1^2]，T[d+2^2]，T[d+3^2],…，$等，直到探查到 <strong>有空余地址</strong> 或者到 $T[d-1]$为止。<br>缺点是无法探查到整个散列空间。</p>
 <h4 id="双重散列法"><a href="#双重散列法" class="headerlink" title="双重散列法"></a>双重散列法</h4><p>$h_i=(h(key)+i*h_1(key)) ％ m$，$0 ≤ i ≤ m-1 $</p>
 <p>基本思想是：<br>探查时从地址$ d $开始，首先探查$ T[d]$，然后依次探查$ T[d+h1(d)], T[d + 2*h1(d)]，…，$等。<br>该方法使用了两个散列函数$ h(key)$ 和 $h_1(key)$，故也称为双散列函数探查法。</p>
 <p>定义$ h_1(key)$ 的方法较多，但无论采用什么方法定义，都必须使$ h_1(key) $的值和$ m $互素，才能使发生冲突的同义词地址均匀地分布在整个表中，否则可能造成同义词地址的循环计算。<br>该方法是开放定址法中最好的方法之一。</p>
@@ -2352,10 +2248,7 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 <li>求$φ(n)$很困难，只能通过质因数分解。对大数求$φ(n)$计算上不可行。<br><strong>欧拉定理</strong>，如果两个正整数m和n互质，那么m的φ(n)次方减去1，可以被n整除。$m^{φ(n)}mod\ n\equiv 1$</li>
 </ul>
 </blockquote>
-<p>对欧拉定理变形，$m^{φ(n)}\equiv 1 (mod\ n)$</p>
-<p>$m^{kφ(n)}\equiv 1 (mod\ n)$</p>
-<p>$m^{kφ(n)+1}\equiv m (mod\ n)$</p>
-<p>$m^{kφ(n)+1}mod\ n\equiv m $</p>
+<p>对欧拉定理变形，$m^{φ(n)}\equiv 1 (mod\ n)$<br>$m^{kφ(n)}\equiv 1 (mod\ n)$<br>$m^{kφ(n)+1}\equiv m (mod\ n)$<br>$m^{kφ(n)+1}mod\ n\equiv m $</p>
 <p>可得，$ed = kφ(n)+1$，$d = \frac{kφ(n)+1}{e}$。通过选取$k，n，e$，来计算解密密钥$d$</p>
 <p>RSA算法具体的加密过程如下：</p>
 <p>假设Alice想通过一个不可靠的媒体接受Bob的一条私人消息，他可以用下面的方式产生一个公钥和私钥。</p>
@@ -2376,12 +2269,7 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 <ul>
 <li>https</li>
 </ul>
-<p>HTTPS 默认工作在 TCP 协议443端口，它的工作流程一般如以下方式：</p>
-<p>1、TCP 三次同步握手</p>
-<p>2、客户端验证服务器数字证书</p>
-<p>3、DH 算法协商对称加密算法的密钥、hash 算法的密钥</p>
-<p>4、SSL 安全加密隧道协商完成</p>
-<p>5、网页以加密的方式传输，用协商的对称加密算法和密钥加密，保证数据机密性；用协商的hash算法进行数据完整性保护，保证数据不被篡改。</p>
+<p>HTTPS 默认工作在 TCP 协议443端口，它的工作流程一般如以下方式：<br>1、TCP 三次同步握手<br>2、客户端验证服务器数字证书<br>3、DH 算法协商对称加密算法的密钥、hash 算法的密钥<br>4、SSL 安全加密隧道协商完成<br>5、网页以加密的方式传输，用协商的对称加密算法和密钥加密，保证数据机密性；用协商的hash算法进行数据完整性保护，保证数据不被篡改。</p>
 <blockquote>
 <p><strong>HTTP 与 HTTPS 区别</strong></p>
 <p>HTTP 明文传输，数据都是未加密的，安全性较差，HTTPS（SSL+HTTP） 数据传输过程是加密的，安全性较好。<br>使用 HTTPS 协议需要到 CA（Certificate Authority，数字证书认证机构） 申请证书，一般免费证书较少，因而需要一定费用。证书颁发机构如：Symantec、Comodo、GoDaddy 和 GlobalSign 等。<br>HTTP 页面响应速度比 HTTPS 快，主要是因为 HTTP 使用 TCP 三次握手建立连接，客户端和服务器需要交换 3 个包，而 HTTPS除了 TCP 的三个包，还要加上 ssl 握手需要的 9 个包，所以一共是 12 个包。<br>http 和 https 使用的是完全不同的连接方式，用的端口也不一样，前者是 80，后者是 443。<br>HTTPS 其实就是建构在 SSL/TLS 之上的 HTTP 协议，所以，要比较 HTTPS 比 HTTP 要更耗费服务器资源。</p>
@@ -2392,21 +2280,17 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 </blockquote>
 <p>应用场景：</p>
 <ul>
-<li><p>用户密码保护，储存密码时不记录密码本身，只记录密码的md5结果，只有用户自己知道密码明文</p>
-</li>
-<li><p>文件完整性校验，文件较大，网络传输的不可靠因素导致传输不完整，或被篡改，校验接收端与发送端的文件一致</p>
-</li>
+<li>用户密码保护，储存密码时不记录密码本身，只记录密码的md5结果，只有用户自己知道密码明文</li>
+<li>文件完整性校验，文件较大，网络传输的不可靠因素导致传输不完整，或被篡改，校验接收端与发送端的文件一致</li>
 <li><p>数字签名，发布程序同时发布md5，防止植入木马。</p>
-</li>
-</ul>
 <blockquote>
 <p>经过发送方私钥加密的数字摘要，即“数字签名”，数字签名能确定消息确实是由发送方签名并发送出，因为别人假冒不了发送方的签名。还能能验证数据的完整性。</p>
 </blockquote>
-<ul>
-<li>云盘秒传，数据库中搜索是否存在相同的md5，如果存在则使用现有的即可。</li>
+</li>
+<li><p>云盘秒传，数据库中搜索是否存在相同的md5，如果存在则使用现有的即可。</p>
+</li>
 </ul>
-<p>大概步骤如下：</p>
-<p>填充：如果输入信息的长度(bit)对512求余的结果不等于448，就需要填充使得对512求余的结果等于448。填充的方法是填充一个1和n个0。即便原始长度满足也必须进行。填充完后，信息的长度就为N*512+448(bit)；</p>
+<p>大概步骤如下：<br>填充：如果输入信息的长度(bit)对512求余的结果不等于448，就需要填充使得对512求余的结果等于448。填充的方法是填充一个1和n个0。即便原始长度满足也必须进行。填充完后，信息的长度就为N*512+448(bit)；</p>
 <p>记录信息长度：用64位来存储填充前信息长度。这64位加在第一步结果的后面，这样信息长度就变为N*512+448+64=(N+1)*512位。</p>
 <p>装入标准幻数（四个整数）：标准的幻数（物理顺序）是（A=(01234567) 16 ，B=(89ABCDEF) 16 ，C=(FEDCBA98) 16 ，D=(76543210) 16 ）。在程序中定义是小端，高位在前（A=0X67452301L，B=0XEFCDAB89L，C=0X98BADCFEL，D=0X10325476L）。</p>
 <p>四轮循环运算：循环的次数是分组的个数（N+1）</p>
@@ -2416,23 +2300,20 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
       </tags>
   </entry>
   <entry>
-    <title>Java/JDBC</title>
-    <url>/2021/11/25/jdbc/</url>
+    <title>Java / JDBC</title>
+    <url>/2021/08/06/jdbc/</url>
     <content><![CDATA[<blockquote>
 <p>Java DataBase Connectivity, Java连接数据库，是SUN公司制定的一套接口, java.sql.*;</p>
 <p>后期将集成到Mybatis框架中。</p>
 </blockquote>
 <span id="more"></span>
-<p>从官网下载对应的驱动jar包，将其配置到环境变量classpath。</p>
-<p>classpath=.;D:\course\06-JDBC\resources\MySql Connector Java 5.1.23\mysql-connector-java-5.1.23-bin.jar</p>
+<p>从官网下载对应的驱动jar包，将其配置到环境变量classpath。<br><code>classpath=.;D:\course\06-JDBC\resources\MySql Connector Java 5.1.23\mysql-connector-java-5.1.23-bin.jar</code></p>
 <h2 id="编程"><a href="#编程" class="headerlink" title="编程"></a>编程</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    Connection conn = <span class="keyword">null</span>;</span><br><span class="line">    Statement stmt = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        <span class="comment">// 1、注册驱动</span></span><br><span class="line">        Driver driver = <span class="keyword">new</span> com.mysql.jdbc.Driver();	<span class="comment">//多态，父类型引用指向子类型对象</span></span><br><span class="line">        DriverManager.registerDriver(driver); <span class="comment">//静态方法</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//注册驱动的另一种方法</span></span><br><span class="line">        <span class="comment">//Class.forName(driver);</span></span><br><span class="line">        <span class="comment">//不用接受返回值，只想用类加载这个操作，执行静态代码块完成注册驱动</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 2、获取连接</span></span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">				url包括哪几部分:协议，IP，Port，资源名				</span></span><br><span class="line"><span class="comment">				eg：http://180.101.49.11:80/index.html</span></span><br><span class="line"><span class="comment">			http:// 通信协议; 180.101.49.11 IP地址; 80 端口号; index.html 资源名</span></span><br><span class="line"><span class="comment">			*/</span></span><br><span class="line">        <span class="comment">// </span></span><br><span class="line">        String url = <span class="string">&quot;jdbc:mysql://127.0.0.1:3306/mydatabase&quot;</span>;</span><br><span class="line">        String user = <span class="string">&quot;root&quot;</span>;</span><br><span class="line">        String password = <span class="string">&quot;146&quot;</span>;</span><br><span class="line">        <span class="comment">// static Connection getConnection(String url, String user, String password)</span></span><br><span class="line">        conn = DriverManager.getConnection(url,user,password); </span><br><span class="line"></span><br><span class="line">        <span class="comment">//System.out.println(&quot;数据库连接对象&quot; + conn);	</span></span><br><span class="line">        <span class="comment">//数据库连接对象com.mysql.jdbc.JDBC4Connection@1ae369b7</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 3、获取数据库操作对象</span></span><br><span class="line">        <span class="comment">// Statement createStatement() 创建一个 Statement 对象来将 SQL 语句发送到数据库。</span></span><br><span class="line">        stmt = conn.createStatement();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 4、执行sql语句</span></span><br><span class="line">        <span class="comment">// int executeUpdate(String sql) </span></span><br><span class="line">        <span class="comment">// 专门执行DML语句,返回值是“影响数据库中的记录条数”</span></span><br><span class="line">        <span class="comment">// 这里的sql语句不用;</span></span><br><span class="line">        <span class="keyword">int</span> count = stmt.executeUpdate(<span class="string">&quot;update dept set dname = &#x27;销售部&#x27;,</span></span><br><span class="line"><span class="string">                                       loc = &#x27;合肥&#x27; where deptno = 20;&quot;</span>);</span><br><span class="line">        <span class="comment">//System.out.println(count == 1 ? &quot;保存成功&quot;:&quot;保存失败&quot;);</span></span><br><span class="line">		<span class="comment">// 5、处理查询结果集</span></span><br><span class="line">        &#125; <span class="keyword">catch</span>(SQLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="comment">// 6、释放资源, 从小到大依次关闭</span></span><br><span class="line">            <span class="comment">// 释放Statement</span></span><br><span class="line">            <span class="keyword">if</span>(stmt != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">try</span>	&#123;</span><br><span class="line">                    stmt.close();	</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//释放Connection</span></span><br><span class="line">            <span class="keyword">if</span>(conn != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">try</span>	&#123;</span><br><span class="line">                    conn.close();	</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="处理返回结果"><a href="#处理返回结果" class="headerlink" title="处理返回结果"></a>处理返回结果</h2><p>executeUpdate：insert/update/delete, 返回结果对表文件操作时，受影响行数</p>
-<p>executeQuery：查询命令【select  *  from 表名】，返回结果是查询命令得到【临时表】，ResultSet实例对象。</p>
+<h2 id="处理返回结果"><a href="#处理返回结果" class="headerlink" title="处理返回结果"></a>处理返回结果</h2><p>executeUpdate：insert/update/delete, 返回结果对表文件操作时，受影响行数<br>executeQuery：查询命令【select  *  from 表名】，返回结果是查询命令得到【临时表】，ResultSet实例对象。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ResultSet rs = <span class="keyword">null</span>;</span><br><span class="line">rs = ps.executeQuery();</span><br><span class="line"><span class="comment">//rs = stmt.executeQuery(&quot;select empno,ename,sal from emp&quot;);</span></span><br><span class="line"><span class="comment">//遍历查询到的结果</span></span><br><span class="line"><span class="keyword">while</span>(rs.next())&#123;</span><br><span class="line">    <span class="comment">//按顺序取</span></span><br><span class="line">    String empno = rs.getString(<span class="number">1</span>);</span><br><span class="line">    String ename = rs.getString(<span class="number">2</span>);</span><br><span class="line">    String sal = rs.getString(<span class="number">3</span>);</span><br><span class="line">    System.out.println(empno + <span class="string">&quot;,&quot;</span> + ename + <span class="string">&quot;,&quot;</span> + sal);</span><br><span class="line">	<span class="comment">//按名称取出</span></span><br><span class="line">    String empno = rs.getString(<span class="string">&quot;empno&quot;</span>);</span><br><span class="line">    String ename = rs.getString(<span class="string">&quot;ename&quot;</span>);</span><br><span class="line">    String sal = rs.getString(<span class="string">&quot;sal&quot;</span>);</span><br><span class="line">    System.out.println(empno + <span class="string">&quot;,&quot;</span> + ename + <span class="string">&quot;,&quot;</span> + sal);</span><br><span class="line">	<span class="comment">//类型+顺序</span></span><br><span class="line">    <span class="keyword">int</span> empno = rs.getInt(<span class="number">1</span>);</span><br><span class="line">    String ename = rs.getString(<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">double</span> sal = rs.getDouble(<span class="number">3</span>);</span><br><span class="line">    System.out.println(empno + <span class="string">&quot;,&quot;</span> + ename + <span class="string">&quot;,&quot;</span> + (sal + <span class="number">100</span>));</span><br><span class="line">	<span class="comment">//类型+名称</span></span><br><span class="line">    <span class="keyword">int</span> empno = rs.getInt(<span class="string">&quot;empno&quot;</span>);</span><br><span class="line">    String ename = rs.getString(<span class="string">&quot;ename&quot;</span>);</span><br><span class="line">    <span class="keyword">double</span> sal = rs.getDouble(<span class="string">&quot;sal&quot;</span>);</span><br><span class="line">    System.out.println(empno + <span class="string">&quot;,&quot;</span> + ename + <span class="string">&quot;,&quot;</span> + (sal + <span class="number">200</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="使用动态资源绑定器传参"><a href="#使用动态资源绑定器传参" class="headerlink" title="使用动态资源绑定器传参"></a>使用动态资源绑定器传参</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ResourceBundle bundle = ResourceBundle.getBundle(<span class="string">&quot;jdbc&quot;</span>); <span class="comment">//.properties后缀不用写</span></span><br><span class="line">String driver = bundle.getString(<span class="string">&quot;driver&quot;</span>);</span><br><span class="line">String url = bundle.getString(<span class="string">&quot;url&quot;</span>);</span><br><span class="line">String user = bundle.getString(<span class="string">&quot;user&quot;</span>);</span><br><span class="line">String password = bundle.getString(<span class="string">&quot;password&quot;</span>);</span><br><span class="line"><span class="comment">//...</span></span><br><span class="line">Connection conn = <span class="keyword">null</span>;</span><br><span class="line">conn = DriverManager.getConnection(url,user,password);</span><br></pre></td></tr></table></figure>
 <figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">driver</span>=<span class="string">com.mysql.jdbc.Driver</span></span><br><span class="line"><span class="attr">url</span>=<span class="string">jdbc:mysql://localhost:3306/mydatabase</span></span><br><span class="line"><span class="attr">user</span>=<span class="string">root</span></span><br><span class="line"><span class="attr">password</span>=<span class="string">146</span></span><br></pre></td></tr></table></figure>
-<h2 id="sql注入"><a href="#sql注入" class="headerlink" title="sql注入"></a>sql注入</h2><p>问题：用户输入语句含有sql语句关键字，完成了sql语句的拼接，参与编译，导致原sql语句含义被扭曲。</p>
-<p>解决方法：用户提供的信息不参与编译过程，用java.sql.PreparedStatement（继承java.sql.Statement）</p>
+<h2 id="sql注入"><a href="#sql注入" class="headerlink" title="sql注入"></a>sql注入</h2><p>问题：用户输入语句含有sql语句关键字，完成了sql语句的拼接，参与编译，导致原sql语句含义被扭曲。<br>解决方法：用户提供的信息不参与编译过程，用java.sql.PreparedStatement（继承java.sql.Statement）</p>
 <ul>
 <li>PreparedStatement属于预编译的数据库操作对象，原理：预先对sql语句的框架进行编译，再给sql语句传“值”，使用较多。</li>
 <li>PreparedStatement效率高。只用预编译一次，可执行多次。在编译阶段做安全检查（ps.setString()）Statement执行一次编译一次</li>
@@ -2443,10 +2324,7 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 <h2 id="JDBC事务自动提交"><a href="#JDBC事务自动提交" class="headerlink" title="JDBC事务自动提交"></a>JDBC事务自动提交</h2><p>即执行任一条DML语句，则自动提交一次。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//conn.setAutoCommit(false); // 开启事务</span></span><br><span class="line"><span class="comment">//conn.commit(); // 提交事务</span></span><br><span class="line"><span class="comment">//conn.rollback(); // 回滚</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    Connection conn = <span class="keyword">null</span>;</span><br><span class="line">    PreparedStatement ps = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">// 注册驱动</span></span><br><span class="line">        Class.forName(<span class="string">&quot;com.mysql.jdbc.Driver&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获取连接</span></span><br><span class="line">        conn = DriverManager.getConnection(</span><br><span class="line">            <span class="string">&quot;jdbc:mysql://localhost:3306/mydatabase&quot;</span>,</span><br><span class="line">            <span class="string">&quot;root&quot;</span>,</span><br><span class="line">            <span class="string">&quot;146&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// ---------------将自动提交改为手动提交------------------------------</span></span><br><span class="line">        conn.setAutoCommit(<span class="keyword">false</span>); <span class="comment">// 开启事务</span></span><br><span class="line">        <span class="comment">//-----------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获取预编译的数据库操作对象</span></span><br><span class="line">        String sql = <span class="string">&quot;update t_act set balance = ? where actno = ? &quot;</span>;</span><br><span class="line">        ps = conn.prepareStatement(sql);</span><br><span class="line">        ps.setInt(<span class="number">1</span>,<span class="number">10000</span>);</span><br><span class="line">        ps.setDouble(<span class="number">2</span>,<span class="number">111</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 执行sql语句</span></span><br><span class="line">        <span class="keyword">int</span> count = ps.executeUpdate();</span><br><span class="line"></span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">            String s = null;</span></span><br><span class="line"><span class="comment">            s.toString();</span></span><br><span class="line"><span class="comment">            */</span></span><br><span class="line"></span><br><span class="line">        ps.setInt(<span class="number">1</span>,<span class="number">10000</span>);</span><br><span class="line">        ps.setDouble(<span class="number">2</span>,<span class="number">222</span>);</span><br><span class="line">        count += ps.executeUpdate();</span><br><span class="line"></span><br><span class="line">        System.out.println(count == <span class="number">2</span> ? <span class="string">&quot;转账成功&quot;</span> : <span class="string">&quot;转账失败&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// -----------程序能执行到此处，说明没有异常，事务结束，手动提交数据----------------------</span></span><br><span class="line">        conn.commit(); <span class="comment">// 提交事务</span></span><br><span class="line">        <span class="comment">//-------------------------------------------------------------------------------</span></span><br><span class="line">        </span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        <span class="comment">// --------遇到异常，回滚-------------------</span></span><br><span class="line">        <span class="keyword">if</span> (conn != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                conn.rollback(); <span class="comment">// 回滚</span></span><br><span class="line">            &#125; <span class="keyword">catch</span> (SQLException throwables) &#123;</span><br><span class="line">                throwables.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">        <span class="comment">//-----------------------------------------</span></span><br><span class="line">    &#125;  <span class="keyword">finally</span> &#123;</span><br><span class="line">        <span class="comment">// 释放资源</span></span><br><span class="line">        <span class="keyword">if</span> (ps != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                ps.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (SQLException throwables) &#123;</span><br><span class="line">                throwables.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (conn != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                conn.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (SQLException throwables) &#123;</span><br><span class="line">                throwables.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h2><p>行级锁（悲观锁）:for update 当前事务结束之前，行结果被锁住，无法修改。事务排队进行，不允许并发<br>乐观锁：多线程并发，事务不需要排队，都可以修改，需要版本号。</p>
-<h2 id="DAO与Entity"><a href="#DAO与Entity" class="headerlink" title="DAO与Entity"></a>DAO与Entity</h2><p>DAO(Data Access Object) 数据访问对象，将数据库操作都封装起来。包括：</p>
-<p>1）实体类Dept：用于存放与传输对象数据。</p>
-<p>2）数据库连接和关闭工具类JdbcUtil： 避免了数据库连接和关闭代码的重复使用，方便修改。</p>
-<p>3）DAO 实现类DeptDao： 针对不同数据库给出DAO接口定义方法的具体实现。</p>
+<h2 id="DAO与Entity"><a href="#DAO与Entity" class="headerlink" title="DAO与Entity"></a>DAO与Entity</h2><p>DAO(Data Access Object) 数据访问对象，将数据库操作都封装起来。包括：<br>1）实体类Dept：用于存放与传输对象数据。<br>2）数据库连接和关闭工具类JdbcUtil： 避免了数据库连接和关闭代码的重复使用，方便修改。<br>3）DAO 实现类DeptDao： 针对不同数据库给出DAO接口定义方法的具体实现。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 实体类（一张表对应一个实体，用于描述表结构，一个实例对象对应表中一个数据行，属性与表中字段保持一致）</span></span><br><span class="line"><span class="keyword">package</span> com.bjpowernode.entity;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Dept</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Integer deptNo;</span><br><span class="line">    <span class="keyword">private</span> String  dname;</span><br><span class="line">    <span class="keyword">private</span> String  loc;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getDeptNo</span><span class="params">()</span> </span>&#123;<span class="keyword">return</span> deptNo;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setDeptNo</span><span class="params">(Integer deptNo)</span> </span>&#123;<span class="keyword">this</span>.deptNo = deptNo;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getDname</span><span class="params">()</span> </span>&#123;<span class="keyword">return</span> dname;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setDname</span><span class="params">(String dname)</span> </span>&#123;<span class="keyword">this</span>.dname = dname;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getLoc</span><span class="params">()</span> </span>&#123;<span class="keyword">return</span> loc;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setLoc</span><span class="params">(String loc)</span> </span>&#123;<span class="keyword">this</span>.loc = loc;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Dept</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Dept</span><span class="params">(Integer deptNo, String dname, String loc)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.deptNo = deptNo;</span><br><span class="line">        <span class="keyword">this</span>.dname = dname;</span><br><span class="line">        <span class="keyword">this</span>.loc = loc;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//数据库连接和关闭工具类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JdbcUtil</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span>  Connection con = <span class="keyword">null</span>;<span class="comment">//类文件属性，可以在类文件中所有的方法中使用</span></span><br><span class="line">    <span class="keyword">private</span>  PreparedStatement ps=<span class="keyword">null</span>;<span class="comment">//类文件属性，可以在类文件中所有的方法中使用</span></span><br><span class="line">    <span class="comment">//静态语句块 static&#123;&#125;</span></span><br><span class="line">    <span class="comment">//在当前类文件第一次被加载到JVM时，JVM将会自动调用当前类文件静态语句块</span></span><br><span class="line">    <span class="keyword">static</span>&#123;</span><br><span class="line">        <span class="comment">//1.注册数据库服务器提供的Driver接口实现类</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Class.forName(<span class="string">&quot;com.mysql.jdbc.Driver&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//封装Connection对象创建细节 不需要考虑使用对象创建细节</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span>  Connection  <span class="title">createCon</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            con = DriverManager.getConnection(</span><br><span class="line">                <span class="string">&quot;jdbc:mysql://localhost:3306/bjpowernode&quot;</span>, <span class="string">&quot;root&quot;</span>, <span class="string">&quot;123&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            System.out.println(<span class="string">&quot;Connection对象创建失败&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> con;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//封装PreparedStatement对象创建细节</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> PreparedStatement <span class="title">createStatement</span><span class="params">(String sql)</span></span>&#123;</span><br><span class="line">        Connection con = createCon();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            ps = con.prepareStatement(sql);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ps;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//封装PreparedStatement对象与Connection对象销毁细节</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(ps!=<span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                ps.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(con!=<span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                con.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//封装PreparedStatement对象与Connection对象与ResultSet对象销毁细节</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">(ResultSet rs)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(rs!=<span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                rs.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        close();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// DAO接口实现（命名为表名+Dao，实现CRUD功能）</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DeptDao</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span>  JdbcUtil util = <span class="keyword">new</span> JdbcUtil();</span><br><span class="line">    <span class="comment">//添加数据行</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">(String deptNo,String dname,String loc)</span></span>&#123;</span><br><span class="line">        String sql=<span class="string">&quot;insert into dept (deptNo,dname,loc) values(?,?,?)&quot;</span>;</span><br><span class="line">        <span class="keyword">int</span> result=<span class="number">0</span>;</span><br><span class="line">        PreparedStatement ps = util.createStatement(sql);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            ps.setInt(<span class="number">1</span>, Integer.valueOf(deptNo));</span><br><span class="line">            ps.setString(<span class="number">2</span>, dname);</span><br><span class="line">            ps.setString(<span class="number">3</span>, loc);</span><br><span class="line">            result=ps.executeUpdate();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            util.close();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//删除数据行</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">delete</span><span class="params">(String deptNo)</span></span>&#123;</span><br><span class="line">        String sql =<span class="string">&quot;delete from dept where deptno=?&quot;</span>;</span><br><span class="line">        PreparedStatement ps = util.createStatement(sql);</span><br><span class="line">        <span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            ps.setInt(<span class="number">1</span>, Integer.valueOf(deptNo));</span><br><span class="line">            result = ps.executeUpdate();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            util.close();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//更新数据行</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">update</span><span class="params">(String deptNo,String dname,String loc)</span></span>&#123;</span><br><span class="line">        String  sql =<span class="string">&quot;update dept set dname=?,loc=? where deptno=?&quot;</span>;</span><br><span class="line">        PreparedStatement ps = util.createStatement(sql);</span><br><span class="line">        <span class="keyword">int</span> result=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            ps.setString(<span class="number">1</span>, dname);</span><br><span class="line">            ps.setString(<span class="number">2</span>, loc);</span><br><span class="line">            ps.setInt(<span class="number">3</span>, Integer.valueOf(deptNo));</span><br><span class="line">            result = ps.executeUpdate();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">           util.close();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//查询数据行</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List <span class="title">findAll</span><span class="params">()</span></span>&#123;</span><br><span class="line">        String sql =<span class="string">&quot;select * from dept&quot;</span>;</span><br><span class="line">        PreparedStatement ps = util.createStatement(sql);</span><br><span class="line">        ResultSet rs = <span class="keyword">null</span>;</span><br><span class="line">        List list = <span class="keyword">new</span> ArrayList();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            rs = ps.executeQuery();</span><br><span class="line">            <span class="comment">//将是临时表数据行转换为实体类实例对象保管</span></span><br><span class="line">            <span class="keyword">while</span>(rs.next())&#123;</span><br><span class="line">                <span class="keyword">int</span> deptNo = rs.getInt(<span class="string">&quot;deptno&quot;</span>);</span><br><span class="line">                String dname = rs.getString(<span class="string">&quot;dname&quot;</span>);</span><br><span class="line">                String loc = rs.getString(<span class="string">&quot;loc&quot;</span>);</span><br><span class="line">                Dept dept = <span class="keyword">new</span> Dept(deptNo, dname, loc);</span><br><span class="line">                list.add(dept);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            util.close(rs);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
@@ -2454,8 +2332,8 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
       </tags>
   </entry>
   <entry>
-    <title>数据库/MySQL</title>
-    <url>/2021/11/25/mysql/</url>
+    <title>数据库 / MySQL</title>
+    <url>/2021/10/09/mysql/</url>
     <content><![CDATA[<blockquote>
 <p>MySQL，最流行的关系型数据库管理系统。</p>
 </blockquote>
@@ -2490,157 +2368,172 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">create table t_class(</span><br><span class="line">    cno int,</span><br><span class="line">    cname varchar(255),</span><br><span class="line">    primary key(cno)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">create table t_student(</span><br><span class="line">    sno int,</span><br><span class="line">    sname varchar(255),</span><br><span class="line">    classno int,</span><br><span class="line">    primary key(sno),</span><br><span class="line">    foreign key(classno) references t_class(cno)</span><br><span class="line">);</span><br><span class="line"># t_student中的classno字段引用t_class表中的cno字段，此时t_class表叫做父表。t_student表叫做子表。</span><br></pre></td></tr></table></figure>
 <h2 id="事务（Transaction）"><a href="#事务（Transaction）" class="headerlink" title="事务（Transaction）"></a>事务（Transaction）</h2><p>一个事务是一个完整的业务逻辑单元，不可再分。事务的存在是为了保证数据的完整性，安全性。和事务相关的语句只有：DML语句。（insert delete update）</p>
 <blockquote>
-<p>比如：银行账户转账，从A账户向B账户转账10000.需要执行两条update语句：<br>        update t_act set balance = balance - 10000 where actno = ‘act-001’;<br>        update t_act set balance = balance + 10000 where actno = ‘act-002’;</p>
-<p>以上两条DML语句必须同时成功，或者同时失败，不允许出现一条成功，一条失败。</p>
-<p>要想保证以上的两条DML语句同时成功或者同时失败，那么就需要使用数据库的“事务机制”。</p>
+<p>比如：银行账户转账，从A账户向B账户转账10000.需要执行两条update语句：<br>        update t_act set balance = balance - 10000 where actno = ‘act-001’;<br>        update t_act set balance = balance + 10000 where actno = ‘act-002’;<br>以上两条DML语句必须同时成功，或者同时失败，不允许出现一条成功，一条失败。<br>要想保证以上的两条DML语句同时成功或者同时失败，那么就需要使用数据库的“事务机制”。</p>
 </blockquote>
-<h3 id="事务包括四大特性：ACID"><a href="#事务包括四大特性：ACID" class="headerlink" title="事务包括四大特性：ACID"></a>事务包括四大特性：ACID</h3><ul>
-<li>A: 原子性：事务是最小的工作单元，不可再分。</li>
-<li>C: 一致性：事务必须保证多条DML语句同时成功或者同时失败。</li>
-<li>I：隔离性：事务A与事务B之间具有隔离。    </li>
-<li>D：持久性：持久性说的是最终数据必须持久化到硬盘文件中，事务才算成功的结束。</li>
-</ul>
+<h3 id="事务包括四大特性：ACID"><a href="#事务包括四大特性：ACID" class="headerlink" title="事务包括四大特性：ACID"></a>事务包括四大特性：ACID</h3><blockquote>
+<p>A: 原子性：事务是最小的工作单元，不可再分。<br>C: 一致性：事务必须保证多条DML语句同时成功或者同时失败。<br>I：隔离性：事务A与事务B之间具有隔离。<br>D：持久性：持久性说的是最终数据必须持久化到硬盘文件中，事务才算成功的结束。</p>
+</blockquote>
 <h3 id="事务隔离性存在隔离级别"><a href="#事务隔离性存在隔离级别" class="headerlink" title="事务隔离性存在隔离级别"></a>事务隔离性存在隔离级别</h3><p>理论上隔离级别包括4个</p>
 <ul>
-<li>第一级别：读未提交（read uncommitted）对方事务还没有提交，我们当前事务可以读取到对方未提交的数据。</li>
+<li><p>第一级别：读未提交（read uncommitted）对方事务还没有提交，我们当前事务可以读取到对方未提交的数据。<br>读未提交存在脏读（Dirty Read）现象：表示读到了脏的数据。</p>
+</li>
+<li><p>第二级别：读已提交（read committed）对方事务提交之后的数据我方可以读取到。<br>解决了: 脏读。<br>存在的问题是：不可重复读。</p>
+</li>
+<li><p>第三级别：可重复读（repeatable read）<br>解决了：不可重复读。<br>存在的问题是：幻读，读取到的数据是幻象。</p>
+</li>
+<li><p>第四级别：序列化读/串行化读（serializable）<br>解决了所有问题。效率低。需要事务排队。</p>
+</li>
 </ul>
-<p>读未提交存在脏读（Dirty Read）现象：表示读到了脏的数据。</p>
-<ul>
-<li>第二级别：读已提交（read committed）对方事务提交之后的数据我方可以读取到。</li>
-</ul>
-<p>解决了: 脏读。<br>存在的问题是：不可重复读。</p>
-<ul>
-<li>第三级别：可重复读（repeatable read）</li>
-</ul>
-<p>解决了：不可重复读。<br>存在的问题是：幻读，读取到的数据是幻象。</p>
-<ul>
-<li>第四级别：序列化读/串行化读（serializable） </li>
-</ul>
-<p>解决了所有问题。效率低。需要事务排队。</p>
 <blockquote>
-<p>oracle数据库默认的隔离级别是：读已提交。<br>mysql数据库默认的隔离级别是：可重复读。</p>
+<p>oracle 数据库默认的隔离级别是：读已提交。<br>MySQL 数据库默认的隔离级别是：可重复读。</p>
 </blockquote>
-<p>mysql事务默认情况下是自动提交，只要执行任意一条DML语句则提交一次。</p>
-<p>关闭自动提交：<code>start transaction;</code>提交语句：<code>commit;</code>回滚：<code>rollback;</code></p>
-<h2 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h2><h3 id="乐观锁和悲观锁-逻辑上的锁"><a href="#乐观锁和悲观锁-逻辑上的锁" class="headerlink" title="乐观锁和悲观锁(逻辑上的锁)"></a>乐观锁和悲观锁(逻辑上的锁)</h3><ul>
-<li><p>乐观锁：对于数据冲突保持一种乐观态度，操作数据时不会对操作的数据进行加锁，只有到数据提交的时候才通过一种机制来验证数据是否存在冲突。</p>
-</li>
-<li><p>悲观锁：对于数据冲突保持一种悲观态度，在修改数据之前把数据锁住，然后再对数据进行读写，在它释放锁之前任何人都不能对其数据进行操作，直到前面一个人把锁释放后下一个人数据加锁才可对数据进行加锁，然后才可以对数据进行操作，一般数据库本身锁的机制都是基于悲观锁的机制实现的。</p>
-</li>
-</ul>
-<h3 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h3><p>如何解决数据库死锁</p>
-<ol>
-<li>预先检测到死锁的循环依赖，并立即返回一个错误。</li>
-<li>当查询的时间达到锁等待超时的设定后放弃锁请求。</li>
-</ol>
-<h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><p>索引可以大大提高MySQL的提高检索效率。索引也是数据库当中的对象，也需要数据库不断的维护，有维护成本的。比如，经常被修改的数据不适合添加索引，因为数据一旦修改，索引需要重新排序，进行维护。</p>
-<p>添加索引是给某一个字段，或者说某些字段添加索引。</p>
-<p>创建索引对象：<code>create index 索引名称 on 表名(字段名);</code><br>删除索引对象：<code>drop index 索引名称 on 表名;</code></p>
-<p>添加索引需满足什么条件？</p>
+<p>MySQL 事务默认情况下是自动提交，只要执行任意一条DML语句则提交一次。<br>关闭自动提交：<code>start transaction;</code>提交语句：<code>commit;</code>回滚：<code>rollback;</code></p>
+<h3 id="隔离性如何实现-MVCC-多版本并发控制-和锁"><a href="#隔离性如何实现-MVCC-多版本并发控制-和锁" class="headerlink" title="隔离性如何实现:  MVCC(多版本并发控制)和锁"></a>隔离性如何实现:  MVCC(多版本并发控制)和锁</h3><p>提交读和可重复读可以通过MVCC实现，串行化可以通过锁机制实现。</p>
+<h4 id="MVCC-multiple-version-concurrent-control"><a href="#MVCC-multiple-version-concurrent-control" class="headerlink" title="MVCC(multiple version concurrent control)"></a>MVCC(multiple version concurrent control)</h4><p>一种控制并发的方法，主要用来提高数据库的并发性能。在了解MVCC时应该先了解当前读和快照读：</p>
+<blockquote>
+<p>当前读：读取的是数据库的最新版本，并且在读取时要保证其他事务不会修改当前记录，所以会对读取的记录加锁。<br>快照读：不加锁读取操作即为快照读，使用MVCC来读取快照中的数据，避免加锁带来的性能损耗。</p>
+</blockquote>
+<p>MVCC的作用就是在避免加锁的情况下最大限度解决读写并发冲突的问题，它可以实现提交读和可重复度两个隔离级。不能解决丢失修改问题。<br>实现原理：</p>
 <ul>
-<li><p>数据量庞大。（根据客户的需求，根据线上的环境）</p>
+<li>版本号<ul>
+<li>系统版本号：一个自增的ID，每开启一个事务，系统版本号都会递增</li>
+<li>事务版本号：事务版本号就是事务开始时的系统版本号，可以通过事务版本号的大小判断事务的时间顺序。</li>
+</ul>
 </li>
-<li><p>该字段很少的DML操作。（因为字段进行修改操作，索引也需要维护）</p>
-</li>
-<li><p>该字段经常出现在where子句中。（经常根据哪个字段查询）</p>
+<li>undo日志<ul>
+<li>MVCC使用到的快照会存储在Undo日志中，该日志通过回滚指针将一个一个数据行的所有快照连接起来。</li>
+</ul>
 </li>
 </ul>
-<p>索引底层采用的数据结构是：B+ Tree。详情：<a href="https://aoif-hikari.github.io/2021/07/30/多路查找树/#more">数据结构/多路查找树 | aoif-hikari</a></p>
-<p>主键和具有unique约束的字段自动会添加索引。根据主键查询效率较高。尽量根据主键检索。<br>模糊查询的时候，第一个通配符使用的是%，这个时候索引是失效的。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">select ename from emp where ename like &#x27;%A%&#x27;; # 索引失效的情况</span><br></pre></td></tr></table></figure>
+<h4 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h4><ul>
+<li><p>表级锁、行级锁与页面锁</p>
+<blockquote>
+<p>按照锁的粒度可以将MySQL锁分为三种：<br><img src="https://notes.sjtu.edu.cn/uploads/upload_706e769f8dbc49a66417d8e29879ebba.png" alt=""><br>MyISAM默认采用表级锁，InnoDB默认采用行级锁。</p>
+</blockquote>
+</li>
+<li><p>共享锁和排他锁</p>
+<blockquote>
+<p>共享锁：共享锁又称读锁，简写为S锁，一个事务对一个数据对象加了S锁，可以对这个数据对象进行读取操作，但不能进行更新操作。并且在加锁期间其他事务只能对这个数据对象加S锁，不能加X锁。<br>排他锁：排他锁又称为写锁，简写为X锁，一个事务对一个数据对象加了X锁，可以对这个对象进行读取和更新操作，加锁期间，其他事务不能对该数据对象进行加X锁或S锁。</p>
+</blockquote>
+</li>
+<li><p>乐观锁和悲观锁（逻辑上的锁）</p>
+<blockquote>
+<p>乐观锁：对于数据冲突保持一种乐观态度，操作数据时不会对操作的数据进行加锁，只有到数据提交的时候才通过一种机制来验证数据是否存在冲突。<br>悲观锁：对于数据冲突保持一种悲观态度，在修改数据之前把数据锁住，然后再对数据进行读写，在它释放锁之前任何人都不能对其数据进行操作，直到前面一个人把锁释放后下一个人数据加锁才可对数据进行加锁，然后才可以对数据进行操作，一般数据库本身锁的机制都是基于悲观锁的机制实现的。</p>
+</blockquote>
+</li>
+<li><p>死锁</p>
+<blockquote>
+<p>如何解决数据库死锁<br>预先检测到死锁的循环依赖，并立即返回一个错误。<br>当查询的时间达到锁等待超时的设定后放弃锁请求。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><p>索引是数据库当中的对象，使用索引可以快速访问数据表中的特定信息。</p>
+<blockquote>
+<p>优点：大大加快数据检索的速度，将随机I/O变成顺序I/O(因为B+树的叶子节点是连接在一起的) 加速表与表之间的连接<br>缺点：从空间角度考虑，建立索引需要占用物理空间；从时间角度考虑，创建和维护索引都需要花费时间，例如对数据进行增删改的时候都需要维护索引，有维护成本。</p>
+</blockquote>
+<p>添加索引是给某一个字段，或者说某些字段添加索引。<br>创建索引对象：<code>create index 索引名称 on 表名(字段名);</code><br>删除索引对象：<code>drop index 索引名称 on 表名;</code></p>
+<h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><ul>
+<li>对于中大型表建立索引非常有效，对于非常小的表，一般全部表扫描速度更快些。</li>
+<li>对于超大型的表，建立和维护索引的代价也会变高，这时可以考虑分区技术。</li>
+</ul>
+<h3 id="设计原则（添加索引需满足什么条件）"><a href="#设计原则（添加索引需满足什么条件）" class="headerlink" title="设计原则（添加索引需满足什么条件）"></a>设计原则（添加索引需满足什么条件）</h3><ul>
+<li>数据量庞大</li>
+<li>该字段很少的DML操作。（因为字段进行修改操作，索引也需要维护）</li>
+<li>该字段经常出现在where子句中。（经常根据哪个字段查询）</li>
+</ul>
+<h3 id="索引的数据结构"><a href="#索引的数据结构" class="headerlink" title="索引的数据结构"></a>索引的数据结构</h3><p>主要有B+树和哈希表。<br>InnoDB引擎的索引类型有B+树索引和哈希索引，默认为B+树索引。</p>
+<ul>
+<li>B+ Tree。详情：<a href="https://aoif-hikari.github.io/2021/11/25/多路查找树/">数据结构 / 多路查找树 | 心臓から花が咲くように (aoif-hikari.github.io)</a></li>
+<li>哈希索引，基于哈希表实现。对于每一行数据，存储引擎会对索引列通过哈希算法进行hash得到hash code，作为哦哈希表的key值，将指向数据行的指针作为哈希表的value值。这样查找一个数据的时间复杂度就是o(1)。详情：<a href="https://aoif-hikari.github.io/2021/11/25/hash/">数据结构/Hash | 心臓から花が咲くように (aoif-hikari.github.io)</a><ul>
+<li>多用于精确查找</li>
+<li>不支持排序，因为哈希表是无序的。</li>
+<li>不支持范围查找。</li>
+<li>不支持模糊查询及多列索引的最左前缀匹配。</li>
+<li>性能是不稳定，因为哈希表中存在哈希冲突。B+树索引的性能是相对稳定 的，每次查询都是从根节点到叶子节点。</li>
+</ul>
+</li>
+</ul>
+<h3 id="索引种类"><a href="#索引种类" class="headerlink" title="索引种类"></a>索引种类</h3><blockquote>
+<p>主键索引：数据列不允许重复，不能为NULL，一个表只能有一个主键索引<br>组合索引：由多个列值组成的索引。<br>唯一索引：数据列不允许重复，可以为NULL，索引列的值必须唯一的，如果是组合索引，则列值的组合必须唯一。<br>全文索引：对文本的内容进行搜索。<br>普通索引：基本的索引类型，可以为NULL</p>
+</blockquote>
+<p>主键和具有unique约束的字段自动会添加索引。根据主键查询效率较高。尽量根据主键检索。<br><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 模糊查询的时候，第一个通配符使用的是%，此时索引是失效的。</span><br><span class="line">select ename from emp where ename like &#x27;%A%&#x27;; # 索引失效的情况</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>聚簇索引与非聚簇索引</p>
+</blockquote>
+<p>最主要的区别是数据和索引是否分开存储。</p>
+<ul>
+<li>聚簇索引：将数据和索引放到一起存储，索引结构的叶子节点保留了数据行。</li>
+<li>非聚簇索引：将数据进和索引分开存储，索引叶子节点存储的是指向数据行的地址。</li>
+</ul>
+<p>在InnoDB存储引擎中，默认的索引为B+树索引，利用主键创建的索引为主索引，也是聚簇索引，在主索引之上创建的索引为辅助索引，也是非聚簇索引。为什么说辅助索引是在主索引之上创建的呢，因为辅助索引中的叶子节点存储的是主键。</p>
+<p>在MyISAM存储引擎中，默认的索引也是B+树索引，但主索引和辅助索引都是非聚簇索引，也就是说索引结构的叶子节点存储的都是一个指向数据行的地址。并且使用辅助索引检索无需访问主键的索引。</p>
 <h2 id="存储引擎"><a href="#存储引擎" class="headerlink" title="存储引擎"></a>存储引擎</h2><p>建表的时候可以指定存储引擎，也可以指定字符集。mysql默认使用的存储引擎是InnoDB，默认采用的字符集是UTF8。</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE TABLE t_x(</span><br><span class="line">    id int(11) DEFAULT NULL</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=utf8; # 完整的建表语句</span><br></pre></td></tr></table></figure>
 <ul>
-<li>MyISAM</li>
+<li><p>MyISAM<br>MySQL5.1及之前，MyISAM 是默认存储引擎。MyISAM不支持事务，Myisam支持表级锁，不支持行级锁，表不支持外键，该存储引擎存有表的行数，count运算会更快。适合查询频繁，不适合对于增删改要求高的情况</p>
+</li>
+<li><p>InnoDB<br>InnoDB 是 MySQL 的默认事务型引擎，支持事务，表是基于聚簇索引建立的。支持表级锁和行级锁，支持外键，适合数据增删改查都频繁的情况。InnoDB 采用 MVCC 来支持高并发，并且实现了四个标准的隔离级别。其默认级别是 REPEATABLE READ，并通过间隙锁策略防止幻读，间隙锁使 InnoDB 不仅仅锁定查询涉及的行，还会对索引中的间隙进行锁定防止幻行的插入。</p>
+</li>
 </ul>
-<p>MySQL5.1及之前，MyISAM 是默认存储引擎。MyISAM不支持事务，Myisam支持表级锁，不支持行级锁，表不支持外键，该存储引擎存有表的行数，count运算会更快。适合查询频繁，不适合对于增删改要求高的情况</p>
-<ul>
-<li>InnoDB</li>
-</ul>
-<p>InnoDB 是 MySQL 的默认事务型引擎，支持事务，表是基于聚簇索引建立的。支持表级锁和行级锁，支持外键，适合数据增删改查都频繁的情况。InnoDB 采用 MVCC 来支持高并发，并且实现了四个标准的隔离级别。其默认级别是 REPEATABLE READ，并通过间隙锁策略防止幻读，间隙锁使 InnoDB 不仅仅锁定查询涉及的行，还会对索引中的间隙进行锁定防止幻行的插入。</p>
 <h2 id="数据库设计三范式"><a href="#数据库设计三范式" class="headerlink" title="数据库设计三范式"></a>数据库设计三范式</h2><ul>
 <li>第一范式：任何一张表都应该有主键，并且每一个字段原子性不可再分。</li>
-</ul>
-<ul>
-<li><p>第二范式：建立在第一范式的基础之上，所有非主键字段完全依赖主键，不能产生部分依赖。</p>
-</li>
-<li><p>第三范式：建立在第二范式的基础之上，所有非主键字段直接依赖主键，不能产生传递依赖。</p>
-</li>
+<li>第二范式：建立在第一范式的基础之上，所有非主键字段完全依赖主键，不能产生部分依赖。</li>
+<li>第三范式：建立在第二范式的基础之上，所有非主键字段直接依赖主键，不能产生传递依赖。</li>
 </ul>
 <p>在实际的开发中，以满足客户的需求为主，有的时候会拿冗余换执行速度。</p>
-<h2 id="窗口函数"><a href="#窗口函数" class="headerlink" title="窗口函数"></a>窗口函数</h2><p>窗口函数 over (partition by 用于分列的列名 order by 用于排序的列名）；</p>
-<p>原则上一般写在<strong>select子句</strong>中。</p>
+<h2 id="窗口函数"><a href="#窗口函数" class="headerlink" title="窗口函数"></a>窗口函数</h2><p>窗口函数 over (partition by 用于分列的列名 order by 用于排序的列名）；<br>原则上一般写在<strong>select子句</strong>中。</p>
 <p><code>over</code>用来指定函数执行的窗口范围，若后面括号中什么都不写，则意味着窗口包含满足WHERE条件的所有行，窗口函数基于所有行进行计算。如果不为空，则支持以下4中语法来设置窗口。</p>
 <p>①window_name：给窗口指定一个别名。如果SQL中涉及的窗口较多，采用别名可以看起来更清晰易读；<br>②PARTITION BY 子句：窗口按照哪些字段进行分组，窗口函数在不同的分组上分别执行；<br>③ORDER BY子句：按照哪些字段进行排序，窗口函数将按照排序后的记录顺序进行编号；<br>④FRAME子句：FRAME是当前分区的一个子集，子句用来定义子集的规则，通常用来作为滑动窗口使用。</p>
 <ul>
-<li>解决排名问题，e.g.每个班级按成绩排名</li>
+<li>解决排名问题，e.g.每个班级按成绩排名<br>序号函数：<br><code>ROW_NUMBER()</code>：顺序排序——1、2、3<br><code>RANK()</code>：并列排序，跳过重复序号——1、1、3<br><code>DENSE_RANK()</code>：并列排序，不跳过重复序号——1、1、2</li>
 </ul>
-<p>序号函数：</p>
-<p><code>ROW_NUMBER()</code>：顺序排序——1、2、3<br><code>RANK()</code>：并列排序，跳过重复序号——1、1、3<br><code>DENSE_RANK()</code>：并列排序，不跳过重复序号——1、1、2</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT stu_id,</span><br><span class="line">       ROW_NUMBER() OVER (PARTITION BY stu_id ORDER BY score DESC) AS score_order,       </span><br><span class="line">FROM ...</span><br><span class="line"></span><br><span class="line"># 为窗口设置别名</span><br><span class="line">SELECT ROW_NUMBER() OVER w AS rk,</span><br><span class="line">       stu_id, lesson_id, score</span><br><span class="line">FROM ...</span><br><span class="line">WHERE ...</span><br><span class="line">WINDOW w AS (PARTITION BY stu_id ORDER BY score)</span><br></pre></td></tr></table></figure>
 <ul>
-<li>解决TOP N问题，e.g.每个班级前两名的学生</li>
-</ul>
+<li><p>解决TOP N问题，e.g.每个班级前两名的学生</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#查询每个学生成绩最高的两个科目</span><br><span class="line">SELECT *</span><br><span class="line">FROM </span><br><span class="line">	(SELECT*,row_number() over (PARTITION BY 姓名 ORDER BY 成绩 DESC) AS ranking </span><br><span class="line">     FROM test1) </span><br><span class="line">     AS newtest</span><br><span class="line">WHERE ranking&lt;=2;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>聚合函数作为窗口函数</strong></li>
+</li>
+<li><p><strong>聚合函数作为窗口函数</strong><br><strong>作用</strong>：聚合函数作为窗口函数，是起到”<strong>累加/累计</strong>“的效果，比如，就是截止到本行，最大值？最小值是多少<br><strong>与专用窗口函数的区别</strong>：括号中需要有指定列，不能为空</p>
+</li>
 </ul>
-<p><strong>作用</strong>：聚合函数作为窗口函数，是起到”<strong>累加/累计</strong>“的效果，比如，就是截止到本行，最大值？最小值是多少</p>
-<p><strong>与专用窗口函数的区别</strong>：括号中需要有指定列，不能为空</p>
 ]]></content>
       <tags>
         <tag>数据库</tag>
       </tags>
   </entry>
   <entry>
-    <title>Java/Servlet规范</title>
-    <url>/2021/11/25/servlet/</url>
+    <title>Java / Servlet规范</title>
+    <url>/2021/08/06/servlet/</url>
     <content><![CDATA[<blockquote>
 <p>Servlet规范，来自于JAVAEE规范中的一种。</p>
-<p>后期使用springMVC框架。</p>
 </blockquote>
 <span id="more"></span>
-<p>Servlet规范指定【动态资源文件】开发步骤；Http服务器调用动态资源文件规则；Http服务器管理动态资源文件实例对象规则。</p>
-<p>Tomcat服务器下lib文件中servlet-api.jar存放Servlet接口（javax.servlet.Servlet接口）</p>
-<p>Servlet规范任务中，Http服务器能调用的【动态资源文件】必须是一个<strong>Servlet接口实现类</strong></p>
+<p>Servlet规范指定【动态资源文件】开发步骤；Http服务器调用动态资源文件规则；Http服务器管理动态资源文件实例对象规则。<br>Tomcat服务器下lib文件中<code>servlet-api.jar</code>存放Servlet接口（javax.servlet.Servlet接口）<br>Servlet规范任务中，Http服务器能调用的【动态资源文件】必须是一个<strong>Servlet接口实现类</strong></p>
 <h2 id="Servlet规范开发步骤"><a href="#Servlet规范开发步骤" class="headerlink" title="Servlet规范开发步骤"></a>Servlet规范开发步骤</h2><ul>
 <li>创建一个Java类继承HttpServlet父类，使之成为一个Servlet接口实现类</li>
-</ul>
-<ul>
-<li><p>重写两个方法，doGet或则doPost</p>
-</li>
-<li><p>将Servlet接口实现类信息【注册】到Tomcat服务器</p>
-</li>
+<li>重写两个方法，doGet或则doPost</li>
+<li>将Servlet接口实现类信息【注册】到Tomcat服务器</li>
 </ul>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- /web/WEB-INF/web.xml文件中--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--将Servlet接口实现类类路径地址交给Tomcat--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>mm<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span> <span class="comment">&lt;!--声明一个变量存储servlet接口实现类类路径--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>com.bjpowernode.controller.OneServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span><span class="comment">&lt;!--声明servlet接口实现类类路径--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line">    Tomcat  String mm = &quot;com.bjpowernode.controller.OneServlet&quot;</span><br><span class="line">    <span class="comment">&lt;!--为了降低用户访问Servlet接口实现类难度，需要设置简短请求别名--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span> </span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>mm<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/one<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span> <span class="comment">&lt;!--设置简短请求别名,别名在书写时必须以&quot;/&quot;为开头--&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="Servlet对象生命周期"><a href="#Servlet对象生命周期" class="headerlink" title="Servlet对象生命周期"></a>Servlet对象生命周期</h2><ul>
 <li>网站中所有的Servlet接口实现类的实例对象，只能由Http服务器(如Tomcat，相当于servlet的容器)负责额创建。 开发人员不能手动创建。</li>
-</ul>
-<ul>
 <li>在默认的情况下，Http服务器接收到对于当前Servlet接口实现类第一次请求时，自动创建这个Servlet接口实现类的实例对象；在手动配置情况下，要求Http服务器在启动时自动创建某个Servlet接口实现类的实例对象</li>
 </ul>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--手动配置--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>mm<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span> <span class="comment">&lt;!--声明一个变量存储servlet接口实现类类路径--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>com.bjpowernode.controller.OneServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">load-on-startup</span>&gt;</span>30<span class="tag">&lt;<span class="name">load-on-startup</span>&gt;</span><span class="comment">&lt;!--填写一个大于0的整数即可--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>在Http服务器运行期间，一个Servlet接口实现类只能被创建出一个实例对象</p>
-</li>
-<li><p>在Http服务器关闭时刻，自动将网站中所有的Servlet对象进行销毁</p>
-</li>
+<li>在Http服务器运行期间，一个Servlet接口实现类只能被创建出一个实例对象</li>
+<li>在Http服务器关闭时刻，自动将网站中所有的Servlet对象进行销毁</li>
 </ul>
-<h2 id="HttpServletResponse接口"><a href="#HttpServletResponse接口" class="headerlink" title="HttpServletResponse接口"></a>HttpServletResponse接口</h2><p>来自于Servlet规范，在Tomcat中存在servlet-api.jar，实现类由Http服务器负责提供。负责将doGet/doPost方法<strong>执行结果</strong>写入到【响应体】交给浏览器。惯于将HttpServletResponse接口修饰的对象称为【<strong>响应对象</strong>】</p>
-<p>主要功能:</p>
+<h2 id="HttpServletResponse接口"><a href="#HttpServletResponse接口" class="headerlink" title="HttpServletResponse接口"></a>HttpServletResponse接口</h2><p>来自于Servlet规范，在Tomcat中存在servlet-api.jar，实现类由Http服务器负责提供。负责将doGet/doPost方法<strong>执行结果</strong>写入到【响应体】交给浏览器。惯于将HttpServletResponse接口修饰的对象称为【<strong>响应对象</strong>】<br>主要功能:</p>
 <ul>
-<li><p>执行结果以二进制形式写入到【响应体】</p>
-</li>
-<li><p>设置响应头中[content-type]属性值，从而控制浏览器使用对应编译器将响应体二进制数据编译为【文字，图片，视频，命令】</p>
-</li>
+<li>执行结果以二进制形式写入到【响应体】</li>
+<li>设置响应头中[content-type]属性值，从而控制浏览器使用对应编译器将响应体二进制数据编译为【文字，图片，视频，命令】</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> </span></span><br><span class="line"><span class="function">    <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">         String result=<span class="string">&quot;Java&lt;br/&gt;Mysql&lt;br/&gt;HTML&lt;br/&gt;&quot;</span>; <span class="comment">//既有文字信息又有HTML标签命令</span></span><br><span class="line">        <span class="comment">//设置响应头content-type</span></span><br><span class="line">        response.setContentType(<span class="string">&quot;text/html;charset=utf-8&quot;</span>);</span><br><span class="line">        <span class="comment">//向Tomcat索要输出流</span></span><br><span class="line">        PrintWriter out = response.getWriter();</span><br><span class="line">        <span class="comment">//通过输出流将结果写入到响应体</span></span><br><span class="line">        out.print(result);</span><br><span class="line">    &#125;<span class="comment">//doGet执行完毕，Tomcat将响应包推送给浏览器</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li>设置响应头中【location】属性，将一个请求地址赋值给location，从而控制浏览器向指定服务器发送请求</li>
+<li>设置响应头中【location】属性，将一个请求地址赋值给location，从而控制浏览器向指定服务器发送请求<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> </span></span><br><span class="line"><span class="function">		<span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">    String result =<span class="string">&quot;http://www.baidu.com?userName=mike&quot;</span>;</span><br><span class="line">    <span class="comment">//通过响应对象，将地址赋值给响应头中location属性</span></span><br><span class="line">    response.sendRedirect(result);<span class="comment">//[响应头  location=&quot;http://www.baidu.com&quot;]</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//浏览器在接收到响应包之后，如果发现响应头中存在location属性，自动通过地址栏向location指定网站发送请求。sendRedirect方法远程控制浏览器请求行为【请求地址，请求方式，请求参数】</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> </span></span><br><span class="line"><span class="function">		<span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">    String result =<span class="string">&quot;http://www.baidu.com?userName=mike&quot;</span>;</span><br><span class="line">    <span class="comment">//通过响应对象，将地址赋值给响应头中location属性</span></span><br><span class="line">    response.sendRedirect(result);<span class="comment">//[响应头  location=&quot;http://www.baidu.com&quot;]</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//浏览器在接收到响应包之后，如果发现响应头中存在location属性，自动通过地址栏向location指定网站发送请求。sendRedirect方法远程控制浏览器请求行为【请求地址，请求方式，请求参数】</span></span><br></pre></td></tr></table></figure>
-<h2 id="HttpServletRequest接口"><a href="#HttpServletRequest接口" class="headerlink" title="HttpServletRequest接口"></a>HttpServletRequest接口</h2><p>来自于Servlet规范中，在Tomcat中存在servlet-api.jar，接口实现类由Http服务器负责提供。负责在doGet/doPost方法运行时读取Http请求协议包中信息，修饰的对象称为【请求对象】</p>
-<p>作用:</p>
+<h2 id="HttpServletRequest接口"><a href="#HttpServletRequest接口" class="headerlink" title="HttpServletRequest接口"></a>HttpServletRequest接口</h2><p>来自于Servlet规范中，在Tomcat中存在servlet-api.jar，接口实现类由Http服务器负责提供。负责在doGet/doPost方法运行时读取Http请求协议包中信息，修饰的对象称为【请求对象】<br>作用:</p>
 <ul>
 <li>读取Http请求协议包中【请求行】信息</li>
 <li>读取保存在Http请求协议包中【请求头】或则【请求体】中请求参数信息</li>
@@ -2648,29 +2541,15 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 </ul>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OneServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> </span></span><br><span class="line"><span class="function">        <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="comment">//1.通过请求对象，读取【请求行】中【url】信息</span></span><br><span class="line">         String url = request.getRequestURL().toString();</span><br><span class="line">        <span class="comment">//2.通过请求对象，读取【请求行】中【method】信息</span></span><br><span class="line">         String method = request.getMethod();</span><br><span class="line">        <span class="comment">//3.通过请求对象，读取【请求行】中uri信息</span></span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        * URI：资源文件精准定位地址，在请求行并没有URI这个属性。</span></span><br><span class="line"><span class="comment">        *      实际上URL中截取一个字符串，这个字符串格式&quot;/网站名/资源文件名&quot;</span></span><br><span class="line"><span class="comment">        *      URI用于让Http服务器对被访问的资源文件进行定位</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        String uri =  request.getRequestURI();<span class="comment">// substring</span></span><br><span class="line">        System.out.println(<span class="string">&quot;URL &quot;</span>+url);</span><br><span class="line">        System.out.println(<span class="string">&quot;method &quot;</span>+method);</span><br><span class="line">        System.out.println(<span class="string">&quot;URI &quot;</span>+uri);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//1.通过请求对象获得【请求头】中【所有请求参数名】</span></span><br><span class="line">        Enumeration paramNames =request.getParameterNames(); </span><br><span class="line">        <span class="comment">//将所有请求参数名称保存到一个枚举对象进行返回</span></span><br><span class="line">        <span class="keyword">while</span>(paramNames.hasMoreElements())&#123;</span><br><span class="line">            String paramName = (String)paramNames.nextElement();</span><br><span class="line">            <span class="comment">//2.通过请求对象读取指定的请求参数的值</span></span><br><span class="line">            String value = request.getParameter(paramName);</span><br><span class="line">            System.out.println(<span class="string">&quot;请求参数名 &quot;</span>+paramName+<span class="string">&quot; 请求参数值 &quot;</span>+value);</span><br><span class="line">    &#125;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        浏览器以GET方式发送请求,请求参数保存在【请求头】,在Http请求协议包到达Http服务器之后，第一件事就是进行解码，请求头二进制内容由Tomcat负责解码，Tomcat9.0默认使用【utf-8】字符集，可以解释一切国家文字</span></span><br><span class="line"><span class="comment">	浏览器以POST方式发送请求，请求参数保存在【请求体】,在Http请求协议包到达Http服务器之后，第一件事就是进行解码，请求体二进制内容由当前请求对象（request）负责解码。request默认使用[ISO-8859-1]字符集，一个东欧语系字符集，此时如果请求体参数内容是中文，将无法解码只能得到乱码</span></span><br><span class="line"><span class="comment">	解决方案:在Post请求方式下，在读取请求体内容之前，应该通知请求对象使用utf-8字符集对请求体内容进行一次重新解码*/</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="comment">//通知请求对象，使用utf-8字符集对请求体二进制内容进行一次重写解码</span></span><br><span class="line">        request.setCharacterEncoding(<span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line">        <span class="comment">//通过请求对象，读取【请求体】参数信息</span></span><br><span class="line">        String value = request.getParameter(<span class="string">&quot;userName&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;从请求体得到参数值 &quot;</span>+value);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>请求对象和响应对象生命周期</p>
-<ul>
-<li>​       在Http服务器接收到浏览器发送的【Http请求协议包】之后，自动为当前的【Http请求协议包】生成一个【请求对象】和一个【响应对象】</li>
-<li>在Http服务器调用doGet/doPost方法时，负责将【请求对象】和【响应对象】作为实参传递到方法，确保doGet/doPost正确执行</li>
-<li>在Http服务器准备推送Http响应协议包之前，负责将本次请求关联的【请求对象】和【响应对象】<br>​      销毁</li>
-</ul>
-<p>【请求对象】和【响应对象】生命周期贯穿一次请求的处理过程中</p>
+<p>请求对象和响应对象生命周期<br>在Http服务器接收到浏览器发送的【Http请求协议包】之后，自动为当前的【Http请求协议包】生成一个【请求对象】和一个【响应对象】<br>-在Http服务器调用doGet/doPost方法时，负责将【请求对象】和【响应对象】作为实参传递到方法，确保doGet/doPost正确执行<br>-在Http服务器准备推送Http响应协议包之前，负责将本次请求关联的【请求对象】和【响应对象】销毁<br>【请求对象】和【响应对象】生命周期贯穿一次请求的处理过程中</p>
 </blockquote>
-<h2 id="Http状态码"><a href="#Http状态码" class="headerlink" title="Http状态码"></a>Http状态码</h2><p>由三位数字组成的一个符号。Http服务器在推送响应包之前，根据本次请求处理情况将Http状态码写入到响应包中【状态行】上。</p>
-<p>如果Http服务器针对本次请求，返回了对应的资源文件，通过Http状态码通知浏览器应该如何处理这个结果</p>
-<p>如果Http服务器针对本次请求，无法返回对应的资源文件，通过Http状态码向浏览器解释不能提供服务的原因</p>
-<p>分类：<br>100—-599组成；分为5个大类<br>100; 通知浏览器本次返回的资源文件并不是一个独立的资源文件，需要浏览器在接收响应包之后，继续向Http服务器所要依赖的其他资源文件</p>
-<p>200，通知浏览器本次返回的资源文件是一个完整独立资源文件，浏览器在接收到之后不需要所要其他关联文件</p>
-<p>302，通知浏览器本次返回的不是一个资源文件内容而是一个资源文件地址，需要浏览器根据这个地址自动发起请求来索要这个资源文件</p>
+<h2 id="Http状态码"><a href="#Http状态码" class="headerlink" title="Http状态码"></a>Http状态码</h2><p>由三位数字组成的一个符号。Http服务器在推送响应包之前，根据本次请求处理情况将Http状态码写入到响应包中【状态行】上。<br>如果Http服务器针对本次请求，返回了对应的资源文件，通过Http状态码通知浏览器应该如何处理这个结果<br>如果Http服务器针对本次请求，无法返回对应的资源文件，通过Http状态码向浏览器解释不能提供服务的原因</p>
+<p>分类：<br>100—-599组成；分为5个大类<br>100; 通知浏览器本次返回的资源文件并不是一个独立的资源文件，需要浏览器在接收响应包之后，继续向Http服务器所要依赖的其他资源文件<br>200，通知浏览器本次返回的资源文件是一个完整独立资源文件，浏览器在接收到之后不需要所要其他关联文件<br>302，通知浏览器本次返回的不是一个资源文件内容而是一个资源文件地址，需要浏览器根据这个地址自动发起请求来索要这个资源文件</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">response.sendRedirect(<span class="string">&quot;资源文件地址&quot;</span>) <span class="comment">//写入到响应头中location</span></span><br><span class="line"><span class="comment">//而这个行为导致Tomcat将302状态码写入到状态行</span></span><br></pre></td></tr></table></figure>
-<p>404: 通知浏览器，由于在服务端没有定位到被访问的资源文件 因此无法提供帮助</p>
-<p>405：通知浏览器，在服务端已经定位到被访问的资源文件（Servlet），但是这个Servlet对于浏览器采用的请求方式不能处理</p>
-<p>500:通知浏览器，在服务端已经定位到被访问的资源文件（Servlet）这个Servlet可以接收浏览器采用请求方式，但是Servlet在处理请求期间，由于Java异常导致处理失败</p>
+<p>404: 通知浏览器，由于在服务端没有定位到被访问的资源文件 因此无法提供帮助<br>405：通知浏览器，在服务端已经定位到被访问的资源文件（Servlet），但是这个Servlet对于浏览器采用的请求方式不能处理<br>500:通知浏览器，在服务端已经定位到被访问的资源文件（Servlet）这个Servlet可以接收浏览器采用请求方式，但是Servlet在处理请求期间，由于Java异常导致处理失败</p>
 <h2 id="多个Servlet之间调用规则"><a href="#多个Servlet之间调用规则" class="headerlink" title="多个Servlet之间调用规则"></a>多个Servlet之间调用规则</h2><p>多个Servlet:</p>
 <ul>
 <li>前提条件：某些来自于浏览器发送请求，往往需要服务端中多个Servlet协同处理。但是浏览器一次只能访问一个Servlet，导致用户需要手动通过浏览器发起多次请求才能得到服务。这样增加用户获得服务难度，导致用户放弃访问当前网站</li>
-</ul>
-<ul>
 <li>提高用户使用感受规则：无论本次请求涉及到多少个Servlet,用户只需要【手动】通知浏览器发起一次请求即可</li>
 </ul>
 <h3 id="重定向解决方案"><a href="#重定向解决方案" class="headerlink" title="重定向解决方案"></a>重定向解决方案</h3><p>用户第一次通过【手动方式】通知浏览器访问OneServlet。OneServlet工作完毕后，将TwoServlet地址写入到响应头location属性中，导致Tomcat将302状态码写入到状态行。浏览器接收到响应包之后，读取到302状态。此时浏览器自动根据响应头中location属性地址【自动】发起第二次请求，访问TwoServlet去完成请求中剩余任务。</p>
@@ -2685,25 +2564,15 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//请求对象代替浏览器向Tomcat发送请求</span></span><br><span class="line"><span class="comment">//1.通过当前请求对象生成资源文件申请报告对象</span></span><br><span class="line">RequestDispatcher  report = request.getRequestDispatcher(<span class="string">&quot;/资源文件名&quot;</span>); <span class="comment">//一定要以&quot;/&quot;为开头</span></span><br><span class="line"><span class="comment">//2.将报告对象发送给Tomcat</span></span><br><span class="line">report.forward(request, response)</span><br></pre></td></tr></table></figure>
 <ul>
 <li>无论本次请求涉及到多少个Servlet,用户只需要手动通过浏览器发送一次请求</li>
-</ul>
-<ul>
 <li>Servlet之间调用发生在服务端计算机上，节省服务端与浏览器之间往返次数增加处理服务速度</li>
 </ul>
-<p>请求次数：在请求转发过程中，浏览器只发送一次请求</p>
-<p>请求地址：只能向Tomcat服务器申请调用当前网站下资源文件地址</p>
-<p>请求方式：在请求转发过程中，浏览器只发送一个了个Http请求协议包。参与本次请求的所有Servlet共享同一个请求协议包，因此这些Servlet接收的请求方式与浏览器发送的请求方式保持一致</p>
-<h2 id="多个Servlet之间数据共享实现方案"><a href="#多个Servlet之间数据共享实现方案" class="headerlink" title="多个Servlet之间数据共享实现方案"></a>多个Servlet之间数据共享实现方案</h2><p>数据共享：OneServlet工作完毕后，将产生数据交给TwoServlet来使用</p>
-<p>Servlet规范中提供四种数据共享方案</p>
-<h3 id="ServletContext接口"><a href="#ServletContext接口" class="headerlink" title="ServletContext接口"></a>ServletContext接口</h3><p>来自于Servlet规范中一个接口。在Tomcat中存在servlet-api.jar，在Tomcat中负责提供这个接口实现类。</p>
-<p>如果两个Servlet来自于同一个网站。彼此之间通过网站的ServletContext实例对象实现数据共享。</p>
-<p>习惯于将ServletContext对象称为【全局作用域对象】。</p>
+<p>请求次数：在请求转发过程中，浏览器只发送一次请求<br>请求地址：只能向Tomcat服务器申请调用当前网站下资源文件地址<br>请求方式：在请求转发过程中，浏览器只发送一个了个Http请求协议包。参与本次请求的所有Servlet共享同一个请求协议包，因此这些Servlet接收的请求方式与浏览器发送的请求方式保持一致</p>
+<h2 id="多个Servlet之间数据共享实现方案"><a href="#多个Servlet之间数据共享实现方案" class="headerlink" title="多个Servlet之间数据共享实现方案"></a>多个Servlet之间数据共享实现方案</h2><p>数据共享：OneServlet工作完毕后，将产生数据交给TwoServlet来使用<br>Servlet规范中提供四种数据共享方案</p>
+<h3 id="ServletContext接口"><a href="#ServletContext接口" class="headerlink" title="ServletContext接口"></a>ServletContext接口</h3><p>来自于Servlet规范中一个接口。在Tomcat中存在servlet-api.jar，在Tomcat中负责提供这个接口实现类。<br>如果两个Servlet来自于同一个网站。彼此之间通过网站的ServletContext实例对象实现数据共享。<br>习惯于将ServletContext对象称为【全局作用域对象】。</p>
 <blockquote>
-<p>每一个网站都存在一个全局作用域对象。 这个全局作用域对象【相当于】一个Map.在这个网站中OneServlet可以将一个数据存入到全局作用域对象，当前网站中其他Servlet此时都可以从全局作用域对象得到这个数据进行使用。</p>
-<p>生命周期：全局作用域对象生命周期贯穿网站整个运行期间</p>
+<p>每一个网站都存在一个全局作用域对象。 这个全局作用域对象【相当于】一个Map.在这个网站中OneServlet可以将一个数据存入到全局作用域对象，当前网站中其他Servlet此时都可以从全局作用域对象得到这个数据进行使用。<br>生命周期：全局作用域对象生命周期贯穿网站整个运行期间</p>
 </blockquote>
-<p>在Http服务器启动过程中，自动为当前网站在内存中创建一个全局作用域对象</p>
-<p>在Http服务器运行期间时，一个网站只有一个全局作用域对象，全局作用域对象一直处于存活状态</p>
-<p>在Http服务器准备关闭时，负责将当前网站中全局作用域对象 进行销毁处理          </p>
+<p>在Http服务器启动过程中，自动为当前网站在内存中创建一个全局作用域对象<br>在Http服务器运行期间时，一个网站只有一个全局作用域对象，全局作用域对象一直处于存活状态<br>在Http服务器准备关闭时，负责将当前网站中全局作用域对象 进行销毁处理          </p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 命令实现： 【同一个网站】OneServlet将数据共享给TwoServlet</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OneServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> </span></span><br><span class="line"><span class="function">        <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="comment">//1.通过请求对象向Tomcat索要当前网站全局作用域对象</span></span><br><span class="line">        ServletContext application = request.getServletContext();</span><br><span class="line">        <span class="comment">//2.将数据添加到全局作用域对象，作为共享数据</span></span><br><span class="line">        application.setAttribute(<span class="string">&quot;key1&quot;</span>, <span class="number">100</span>);<span class="comment">// map: key-value</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TwoServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="comment">//1.通过请求对象向Tomcat索要当前网站全局作用域对象</span></span><br><span class="line">        ServletContext application = request.getServletContext();</span><br><span class="line">        <span class="comment">//2.从全局作用域对象得到指定关键字对应的值</span></span><br><span class="line">        Integer money=(Integer)application.getAttribute(<span class="string">&quot;key1&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="Cookie类"><a href="#Cookie类" class="headerlink" title="Cookie类"></a>Cookie类</h3><p>来自于Servlet规范中一个工具类，存在于Tomcat提供servlet-api.jar中。如果两个Servlet来自于同一个网站，并且为同一个浏览器/用户提供服务，此时借助于Cookie对象进行数据共享</p>
@@ -2719,18 +2588,12 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 <p>Cookie域保存在自己浏览器内部，与别人互不干扰，但因为是客户端技术，所以安全性不高。</p>
 <h3 id="HttpSession接口"><a href="#HttpSession接口" class="headerlink" title="HttpSession接口"></a>HttpSession接口</h3><p>来自于Servlet规范下一个接口。存在于Tomcat中servlet-api.jar，其实现类由Http服务器提供。Tomcat提供实现类存在于servlet-api.jar。如果两个Servlet来自于同一个网站，并且为同一个浏览器/用户提供服务，此时借助于HttpSession对象进行数据共享。习惯于将HttpSession接口修饰对象称为【会话作用域对象】</p>
 <blockquote>
-<p>HttpSession 与  Cookie 区别：</p>
-<p>存储位置:Cookie：存放在客户端计算机（浏览器内存/硬盘）。HttpSession：存放在服务端计算机内存</p>
-<p>数据类型：Cookie对象存储共享数据类型只能是String。HttpSession对象可以存储任意类型的共享数据Object</p>
-<p>数据数量: 一个Cookie对象只能存储一个共享数据。HttpSession使用map集合，可以存储任意数量共享数据</p>
-<p>参照物：Cookie相当于客户在服务端【会员卡】。HttpSession相当于客户在服务端【私人保险柜】</p>
+<p>HttpSession 与  Cookie 区别：<br>存储位置:Cookie：存放在客户端计算机（浏览器内存/硬盘）。HttpSession：存放在服务端计算机内存<br>数据类型：Cookie对象存储共享数据类型只能是String。HttpSession对象可以存储任意类型的共享数据Object<br>数据数量: 一个Cookie对象只能存储一个共享数据。HttpSession使用map集合，可以存储任意数量共享数据<br>参照物：Cookie相当于客户在服务端【会员卡】。HttpSession相当于客户在服务端【私人保险柜】</p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//命令实现:   同一个网站（myWeb）下OneServlet将数据传递给TwoServlet</span></span><br><span class="line">OneServlet&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request,HttpServletResponse response)</span></span>&#123;</span><br><span class="line">        <span class="comment">//1.调用请求对象向Tomcat索要当前用户在服务端的私人储物柜</span></span><br><span class="line">        HttpSession session = request.getSession();</span><br><span class="line">        <span class="comment">//2.将数据添加到用户私人储物柜</span></span><br><span class="line">        session.setAttribute(<span class="string">&quot;key1&quot;</span>,共享数据)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//浏览器访问/myWeb中TwoServlet</span></span><br><span class="line">TwoServlet&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request,HttpServletResponse response)</span></span>&#123;</span><br><span class="line">        <span class="comment">//1.调用请求对象向Tomcat索要当前用户在服务端的私人储物柜</span></span><br><span class="line">        HttpSession session = request.getSession();</span><br><span class="line">        <span class="comment">//2.从会话作用域对象得到OneServlet提供的共享数据</span></span><br><span class="line">        Object 共享数据 = session.getAttribute(<span class="string">&quot;key1&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Http服务器如何将用户与HttpSession关联：cookie</p>
 <blockquote>
-<p>getSession()  与  getSession(false)</p>
-<p>getSession(): 如果当前用户在服务端已经拥有了自己的私人储物。要求tomcat将这个私人储物柜进行返回。如果当前用户在服务端尚未拥有自己的私人储物柜。要求tocmat为当前用户创建一个全新的私人储物柜</p>
-<p>getSession(false):如果当前用户在服务端已经拥有了自己的私人储物柜.要求tomcat将这个私人储物柜进行返回。如果当前用户在服务端尚未拥有自己的私人储物柜。此时Tomcat将返回null</p>
+<p>getSession()  与  getSession(false)<br>getSession(): 如果当前用户在服务端已经拥有了自己的私人储物。要求tomcat将这个私人储物柜进行返回。如果当前用户在服务端尚未拥有自己的私人储物柜。要求tocmat为当前用户创建一个全新的私人储物柜<br>getSession(false):如果当前用户在服务端已经拥有了自己的私人储物柜.要求tomcat将这个私人储物柜进行返回。如果当前用户在服务端尚未拥有自己的私人储物柜。此时Tomcat将返回null</p>
 </blockquote>
 <p>HttpSession销毁时机:</p>
 <p>用户与HttpSession关联时使用的Cookie只能存放在浏览器缓存中，在浏览器关闭时，意味着用户与他的HttpSession关系被切断。由于Tomcat无法检测浏览器何时关闭，因此在浏览器关闭时并不会让Tomcat将浏览器关联的HttpSession进行销毁。为了解决这个问题，Tomcat为每一个HttpSession对象设置【空闲时间】，空闲时间默认30分钟，如果当前HttpSession对象空闲时间达到30分钟，此时Tomcat认为用户已经放弃了自己的HttpSession，Tomcat就会销毁这个HttpSession</p>
@@ -2739,14 +2602,12 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// OneServlet通过请求转发申请调用TwoServlet时，需要给TwoServlet提供共享数据</span></span><br><span class="line">OneServlet&#123;				 </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req,HttpServletResponse response)</span></span>&#123;</span><br><span class="line">        <span class="comment">//1.将数据添加到【请求作用域对象】中attribute属性</span></span><br><span class="line">        req.setAttribute(<span class="string">&quot;key1&quot;</span>,数据); <span class="comment">//数据类型可以任意类型Object</span></span><br><span class="line">        <span class="comment">//2.向Tomcat申请调用TwoServlet</span></span><br><span class="line">        req.getRequestDispatcher(<span class="string">&quot;/two&quot;</span>).forward(req,response)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">TwoServlet&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req,HttpServletResponse response)</span></span>&#123;</span><br><span class="line">        <span class="comment">//从当前请求对象得到OneServlet写入到共享数据</span></span><br><span class="line">        Object 数据 = req.getAttribute(<span class="string">&quot;key1&quot;</span>);</span><br><span class="line">    &#125;				 </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="监听器接口"><a href="#监听器接口" class="headerlink" title="监听器接口"></a>监听器接口</h2><p>一组来自于Servlet规范下接口，共有8个接口。在Tomcat存在servlet-api.jar包。监听器接口需要由开发人员亲自实现，Http服务器提供jar包并没有对应的实现类。监听器接口用于监控【<strong>作用域对象</strong>生命周期变化时刻】以及【作用域对象共享数据变化时刻】</p>
 <blockquote>
-<p>作用域对象：在Servlet规范中，认为在<strong>服务端内存</strong>中可以在某些条件下为两个Servlet之间提供数据共享方案的对象，被称为【作用域对象】</p>
-<p>Servlet规范下作用域对象:</p>
+<p>作用域对象：在Servlet规范中，认为在<strong>服务端内存</strong>中可以在某些条件下为两个Servlet之间提供数据共享方案的对象，被称为【作用域对象】<br>Servlet规范下作用域对象:</p>
 <ul>
 <li>ServletContext：全局作用域对象</li>
 <li>HttpSession:  会话作用域对象</li>
-<li>HttpServletRequest: 请求作用域对象</li>
+<li>HttpServletRequest: 请求作用域对象<br>(cookie存放在客户端，故不属于作用域对象)</li>
 </ul>
-<p>(cookie存放在客户端，故不属于作用域对象)</p>
 </blockquote>
 <p>监听器接口实现类开发规范：根据监听的实际情况，选择对应监听器接口进行实现；重写监听器接口声明【监听事件处理方法】；在web.xml文件将监听器接口实现类注册到Http服务器</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OneListener</span> <span class="keyword">implements</span> <span class="title">ServletContextListener</span></span>&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">contextInitialized</span><span class="params">(ServletContextEvent sce)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//...</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">contextDestroyed</span><span class="params">(ServletContextEvent sce)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -2776,8 +2637,8 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
       </tags>
   </entry>
   <entry>
-    <title>Leetcode/二叉树</title>
-    <url>/2021/11/25/%E4%BA%8C%E5%8F%89%E6%A0%91/</url>
+    <title>Leetcode / 二叉树</title>
+    <url>/2021/10/20/%E4%BA%8C%E5%8F%89%E6%A0%91/</url>
     <content><![CDATA[<blockquote>
 <p>二叉树与递归有着千丝万缕的联系，二叉树在定义时就使用了递归的概念：一棵二叉树可能是空树，如果不是空树，那么它的左右子树都是二叉树。</p>
 </blockquote>
@@ -3051,25 +2912,20 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
       </tags>
   </entry>
   <entry>
-    <title>操作系统/内存管理</title>
-    <url>/2021/11/25/%E5%86%85%E5%AD%98/</url>
+    <title>操作系统 / 内存管理</title>
+    <url>/2021/08/06/%E5%86%85%E5%AD%98/</url>
     <content><![CDATA[<blockquote>
 <p>内存是用于存放数据的硬件。程序执行前需要先放到内存中才能被CPU处理，如果高速CPU直接和慢速的外存进行数据的交互，有速度矛盾。</p>
 </blockquote>
 <span id="more"></span>
 <ul>
-<li><p>内存地址从0开始，每个地址对应一个存储单元</p>
-</li>
-<li><p>内存中也有一个一个的“小房间”，每个小房间就是以一个存储单元</p>
-</li>
-<li><p>如果计算机“按字节编址”，则每个存储单元大小为<strong>1字节</strong>，即1B，即<strong>8个二进制位</strong></p>
-</li>
-<li><p>如果字长16位的计算机“按字编址”，则每个存储单元大小为<strong>1个字</strong>，每个字的大小为<strong>16个二进制位</strong></p>
-</li>
+<li>内存地址从0开始，每个地址对应一个存储单元</li>
+<li>内存中也有一个一个的“小房间”，每个小房间就是以一个存储单元</li>
+<li>如果计算机“按字节编址”，则每个存储单元大小为<strong>1字节</strong>，即1B，即<strong>8个二进制位</strong></li>
+<li>如果字长16位的计算机“按字编址”，则每个存储单元大小为<strong>1个字</strong>，每个字的大小为<strong>16个二进制位</strong></li>
 </ul>
 <p>操作系统的内存管理有以下四大功能：</p>
-<h2 id="操作系统负责内存空间的分配与回收"><a href="#操作系统负责内存空间的分配与回收" class="headerlink" title="操作系统负责内存空间的分配与回收"></a>操作系统负责内存空间的分配与回收</h2><p>连续分配：为用户进程分配的必须是一个连续的内存空间。</p>
-<p>非连续分配：为用户进程分配的可以是一些分散的内存空间。</p>
+<h2 id="操作系统负责内存空间的分配与回收"><a href="#操作系统负责内存空间的分配与回收" class="headerlink" title="操作系统负责内存空间的分配与回收"></a>操作系统负责内存空间的分配与回收</h2><p>连续分配：为用户进程分配的必须是一个连续的内存空间。<br>非连续分配：为用户进程分配的可以是一些分散的内存空间。</p>
 <h3 id="连续分配管理方式"><a href="#连续分配管理方式" class="headerlink" title="连续分配管理方式"></a>连续分配管理方式</h3><blockquote>
 <p>内部碎片，分配给某进程的内存区域中，有些部分没有用上。<br>外部碎片，是指内存中的某些空闲分区由于太小而难以利用。</p>
 </blockquote>
@@ -3081,28 +2937,22 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 </li>
 </ul>
 <blockquote>
-<p>优点：实现简单；无外部碎片；可以采用覆盖技术扩充内存；不一定需要采取内存保护（eg：早期的PC 操作系统MS-DOS）。</p>
-<p>缺点：只能用于单用户、单任务的操作系统中；有内部碎片；存储器利用率极低。</p>
+<p>优点：实现简单；无外部碎片；可以采用覆盖技术扩充内存；不一定需要采取内存保护（eg：早期的PC 操作系统MS-DOS）。<br>缺点：只能用于单用户、单任务的操作系统中；有内部碎片；存储器利用率极低。</p>
 </blockquote>
 <h4 id="固定分区分配"><a href="#固定分区分配" class="headerlink" title="固定分区分配"></a>固定分区分配</h4><p>为了能在内存中装入多道程序，且这些程序之间又不会相互干扰，于是将整个用户空间划分为若干个固定大小的分区，在每个分区中只装入一道作业。</p>
 <blockquote>
-<p>分区大小相等：缺乏灵活性，但是很适合用于用一台计算机控制多个相同对象的场合</p>
-<p>（比如：钢铁厂有n个相同的炼钢炉，就可把内存分为n个大小相等的区域存放n个炼钢炉控制程序）</p>
-<p>分区大小不等：增加了灵活性，可以满足不同大小的进程需求。根据常在系统中运行的作业大小情况进行划分</p>
-<p>（比如：划分多个小分区、适量中等分区、少量大分区）</p>
+<p>分区大小相等：缺乏灵活性，但是很适合用于用一台计算机控制多个相同对象的场合<br>（比如：钢铁厂有n个相同的炼钢炉，就可把内存分为n个大小相等的区域存放n个炼钢炉控制程序）<br>分区大小不等：增加了灵活性，可以满足不同大小的进程需求。根据常在系统中运行的作业大小情况进行划分<br>（比如：划分多个小分区、适量中等分区、少量大分区）</p>
 </blockquote>
 <p>操作系统需要建立一个数据结构——分区说明表，来实现各个分区的分配与回收。每个表项对应一个分区，通常按分区大小排列。每个表项包括对应分区的大小、起始地址、状态（是否已分配）。</p>
 <p>当某用户程序要装入内存时，由操作系统内核程序根据用户程序大小检索该表，从中找到一个能满足大小的、未分配的分区，将之分配给该程序，然后修改状态为“已分配”。用数据结构的数组（或链表）即可表示这个表</p>
 <p><img src="/img/memory/biao.jpg" style="zoom: 67%;" /></p>
 <blockquote>
-<p>优点：实现简单，无外部碎片。</p>
-<p>缺点：a. 当用户程序太大时，可能所有的分区都不能满足需求，此时不得不采用覆盖技术来解决，但这又会降低性能；b. 会产生内部碎片，内存利用率低。</p>
+<p>优点：实现简单，无外部碎片。<br>缺点：a. 当用户程序太大时，可能所有的分区都不能满足需求，此时不得不采用覆盖技术来解决，但这又会降低性能；b. 会产生内部碎片，内存利用率低。</p>
 </blockquote>
 <h4 id="动态分区分配"><a href="#动态分区分配" class="headerlink" title="动态分区分配"></a>动态分区分配</h4><p>又称为可变分区分配。不会预先划分内存分区，而是在进程装入内存时，根据进程的大小动态地建立分区，并使分区的大小正好适合进程的需要。因此系统分区的大小和数目是可变的。</p>
 <p>1 系统要用什么样的数据结构记录内存的使用情况？</p>
 <p><img src="/img/memory/dynamic.jpg" style="zoom: 67%;" /></p>
-<p>2 当很多个空闲分区都能满足需求时，应该选择哪个分区进行分配？</p>
-<p>按照一定的动态分区分配算法，从空闲分区表（或空闲分区链）中选出一个分区分配给该作业。</p>
+<p>2 当很多个空闲分区都能满足需求时，应该选择哪个分区进行分配？<br>按照一定的动态分区分配算法，从空闲分区表（或空闲分区链）中选出一个分区分配给该作业。</p>
 <div class="table-container">
 <table>
 <thead>
@@ -3144,22 +2994,15 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 <p>3 如何进行分区的分配与回收操作？</p>
 <p><strong>分配</strong>：？</p>
 <p><strong>回收</strong>：相邻的空闲分区要合并</p>
-<p>情况一：回收区的后面有一个相邻的空闲分区，两个相邻的空闲分区合并为一个</p>
-<p>情况二：回收区的前面有一个相邻的空闲分区，两个相邻的空闲分区合并为一个</p>
-<p>情况三：回收区的前、后各有一个相邻的空闲分区，三个相邻的空闲分区合并为一个</p>
-<p>情况四：回收区的前、后都没有相邻的空闲分区，新增一个表项。注：各表项的顺序不一定按照地址递增顺序排列，具体的排列方式需要依据动态分区分配算法来确定。</p>
+<p>情况一：回收区的后面有一个相邻的空闲分区，两个相邻的空闲分区合并为一个<br>情况二：回收区的前面有一个相邻的空闲分区，两个相邻的空闲分区合并为一个<br>情况三：回收区的前、后各有一个相邻的空闲分区，三个相邻的空闲分区合并为一个<br>情况四：回收区的前、后都没有相邻的空闲分区，新增一个表项。注：各表项的顺序不一定按照地址递增顺序排列，具体的排列方式需要依据动态分区分配算法来确定。</p>
 <blockquote>
-<p>动态分区分配没有内部碎片，但是有外部碎片。</p>
-<p>如果内存中空闲空间的总和本来可以满足某进程的要求，但由于进程需要的是一整块连续的内存空间，因此这些“碎片”不能满足进程的需求。可以通过紧凑（拼凑，Compaction）技术来解决外部碎片。</p>
+<p>动态分区分配没有内部碎片，但是有外部碎片。<br>如果内存中空闲空间的总和本来可以满足某进程的要求，但由于进程需要的是一整块连续的内存空间，因此这些“碎片”不能满足进程的需求。可以通过紧凑（拼凑，Compaction）技术来解决外部碎片。</p>
 </blockquote>
 <h3 id="非连续分配管理方式"><a href="#非连续分配管理方式" class="headerlink" title="非连续分配管理方式"></a>非连续分配管理方式</h3><h4 id="基本分页存储管理"><a href="#基本分页存储管理" class="headerlink" title="基本分页存储管理"></a>基本分页存储管理</h4><ul>
-<li><p>页框：将<strong>内存空间</strong>分为一个个大小相等的分区（比如：每个分区4KB），每个分区就是一个“页框”，每个页框有一个编号，即“页框号”，页框号从0开始。（页框=页帧=内存块=物理块=物理页面）</p>
-</li>
-<li><p>页/页面：将<strong>进程的逻辑地址空间</strong>也分为与页框大小相等的一个个部分，每个部分称为一个“页”或“页面” 。每个页面也有一个编号，即“页号”，页号也是从0开始。</p>
-</li>
+<li>页框：将<strong>内存空间</strong>分为一个个大小相等的分区（比如：每个分区4KB），每个分区就是一个“页框”，每个页框有一个编号，即“页框号”，页框号从0开始。（页框=页帧=内存块=物理块=物理页面）</li>
+<li>页/页面：将<strong>进程的逻辑地址空间</strong>也分为与页框大小相等的一个个部分，每个部分称为一个“页”或“页面” 。每个页面也有一个编号，即“页号”，页号也是从0开始。</li>
 </ul>
-<p>操作系统以页框为单位为各个进程分配内存空间。进程的每个页面分别放入一个页框中。</p>
-<p>也即<strong>进程的页面</strong>与<strong>内存的页框</strong>有一一对应的关系。各个页面不必连续存放，可以放到不相邻的各个页框中。</p>
+<p>操作系统以页框为单位为各个进程分配内存空间。进程的每个页面分别放入一个页框中。<br>也即<strong>进程的页面</strong>与<strong>内存的页框</strong>有一一对应的关系。各个页面不必连续存放，可以放到不相邻的各个页框中。</p>
 <blockquote>
 <p>注：进程的最后一个页面可能没有一个页框那么大。也就是说，分页存储有可能产生内部碎片，因此页框不能太大，否则可能产生过大的内部碎片造成浪费</p>
 </blockquote>
@@ -3177,14 +3020,11 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 <p>引入快表后，地址的变换过程？</p>
 <p><strong>单级页表存在的的问题</strong></p>
 <ul>
-<li>问题一：页表必须连续存放，因此当页表很大时，需要占用很多个连续的页框。</li>
+<li><p>问题一：页表必须连续存放，因此当页表很大时，需要占用很多个连续的页框。<br>两级页表，把页表再分页并离散存储，然后再建立一张页表记录页表各个部分的存放位置，称为页目录表，或称外层页表，或称顶层页表。<br>如何实现地址变换？</p>
+</li>
+<li><p>问题二：没有必要让整个页表常驻内存，因为进程在一段时间内可能只需要访问某几个特定的页面。<br>根据局部性原理可知，很多时候，进程在一段时间内只需要访问某几个页面就可以正常运行了。因此没有必要让整个页表都常驻内存。</p>
+</li>
 </ul>
-<p>两级页表，把页表再分页并离散存储，然后再建立一张页表记录页表各个部分的存放位置，称为页目录表，或称外层页表，或称顶层页表。</p>
-<p>如何实现地址变换？</p>
-<ul>
-<li>问题二：没有必要让整个页表常驻内存，因为进程在一段时间内可能只需要访问某几个特定的页面。</li>
-</ul>
-<p>根据局部性原理可知，很多时候，进程在一段时间内只需要访问某几个页面就可以正常运行了。因此没有必要让整个页表都常驻内存。</p>
 <p>可以在需要访问页面时才把页面调入内存（虚拟存储技术）。可以在页表项中增加一个标志位，用于表示该页面是否已经调入内存。若想访问的页面不在内存中，则产生缺页中断（内中断/异常），然后将目标页面从外存调入内存</p>
 <h4 id="基本分段存储管理"><a href="#基本分段存储管理" class="headerlink" title="基本分段存储管理"></a>基本分段存储管理</h4><blockquote>
 <p>与“分页”最大的区别就是——离散分配时所分配地址空间的基本单位不同</p>
@@ -3194,12 +3034,9 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 <p>地址变换过程？</p>
 <p><strong>分页与分段的区别</strong></p>
 <ul>
-<li><p>页是信息的物理单位。分页的主要目的是为了实现离散分配，提高内存利用率。分页仅仅是系统管理上的需要，完全是系统行为，对用户是不可见的。段是信息的逻辑单位。分段的主要目的是更好地满足用户需求。一个段通常包含着一组属于一个逻辑模块的信息。分段对用户是可见的，用户编程时需要显式地给出段名。页的大小固定且由系统决定。段的长度却不固定，决定于用户编写的程序。</p>
-</li>
-<li><p>分页的用户进程地址空间是一维的，程序员只需给出一个记忆符即可表示一个地址。分段的用户进程地址空间是二维的，程序员在标识一个地址时，既要给出段名，也要给出段内地址。</p>
-</li>
-<li><p>分段比分页更容易实现信息的共享和保护。不能被修改的代码称为纯代码或可重入代码（不属于临界资源），这样的代码是可以共享的。可修改的代码是不能共享的（比如，有一个代码段中有很多变量，各进程并发地同时访问可能造成数据不一致）</p>
-</li>
+<li>页是信息的物理单位。分页的主要目的是为了实现离散分配，提高内存利用率。分页仅仅是系统管理上的需要，完全是系统行为，对用户是不可见的。段是信息的逻辑单位。分段的主要目的是更好地满足用户需求。一个段通常包含着一组属于一个逻辑模块的信息。分段对用户是可见的，用户编程时需要显式地给出段名。页的大小固定且由系统决定。段的长度却不固定，决定于用户编写的程序。</li>
+<li>分页的用户进程地址空间是一维的，程序员只需给出一个记忆符即可表示一个地址。分段的用户进程地址空间是二维的，程序员在标识一个地址时，既要给出段名，也要给出段内地址。</li>
+<li>分段比分页更容易实现信息的共享和保护。不能被修改的代码称为纯代码或可重入代码（不属于临界资源），这样的代码是可以共享的。可修改的代码是不能共享的（比如，有一个代码段中有很多变量，各进程并发地同时访问可能造成数据不一致）</li>
 </ul>
 <blockquote>
 <p>访问一个逻辑地址需要几次访存？<br>分页（单级页表）：第一次访存——查内存中的页表，第二次访存——访问目标内存单元。总共两次访存<br>分段：第一次访存——查内存中的段表，第二次访存——访问目标内存单元。总共两次访存<br>与分页系统类似，分段系统中也可以引入快表机构，将近期访问过的段表项放到快表中，这样可以少一次访问，加快地址变换速度。</p>
@@ -3209,40 +3046,28 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 </blockquote>
 <p>覆盖技术的思想：将程序分为多个段（多个模块），常用的段常驻内存，不常用的段在需要时调入内存。内存中分为一个“固定区”和若干个“覆盖区”。</p>
 <ul>
-<li><p>需要常驻内存的段放在“固定区”中，调入后就不再调出（除非运行结束）。</p>
-</li>
-<li><p>不常用的段放在“覆盖区”，需要用到时调入内存，用不到时调出内存。</p>
-</li>
-<li><p>必须由程序员声明覆盖结构，操作系统完成自动覆盖。</p>
-</li>
+<li>需要常驻内存的段放在“固定区”中，调入后就不再调出（除非运行结束）。</li>
+<li>不常用的段放在“覆盖区”，需要用到时调入内存，用不到时调出内存。</li>
+<li>必须由程序员声明覆盖结构，操作系统完成自动覆盖。</li>
 </ul>
 <p>缺点：对用户不透明，增加了用户编程负担。覆盖技术只用于早期的操作系统中，现在已成为历史。</p>
-<h3 id="交换技术"><a href="#交换技术" class="headerlink" title="交换技术"></a>交换技术</h3><p>交换（对换）技术的设计思想：内存空间紧张时，系统将内存中某些进程暂时<strong>换出</strong>外存，把外存中某些已具备运行条件的进程<strong>换入</strong>内存（进程在内存与磁盘间动态调度）。</p>
-<p>中级调度（内存调度），就是要决定将哪个处于挂起状态的进程重新调入内存。</p>
-<p>暂时换出外存等待的进程状态为挂起状态（挂起态，suspend）。挂起态又可以进一步细分为就绪挂起、阻塞挂起。</p>
+<h3 id="交换技术"><a href="#交换技术" class="headerlink" title="交换技术"></a>交换技术</h3><p>交换（对换）技术的设计思想：内存空间紧张时，系统将内存中某些进程暂时<strong>换出</strong>外存，把外存中某些已具备运行条件的进程<strong>换入</strong>内存（进程在内存与磁盘间动态调度）。<br>中级调度（内存调度），就是要决定将哪个处于挂起状态的进程重新调入内存。<br>暂时换出外存等待的进程状态为挂起状态（挂起态，suspend）。挂起态又可以进一步细分为就绪挂起、阻塞挂起。</p>
 <ul>
 <li>应该在<strong>外存</strong>（磁盘）的什么位置保存被换出的进程？</li>
 </ul>
 <p>具有对换功能的操作系统中，通常把磁盘空间分为文件区和对换区两部分。</p>
 <blockquote>
-<p>文件区主要用于存放文件，主要追求存储空间的利用率，因此对文件区空间的管理采用离散分配方式；</p>
-<p>对换区空间只占磁盘空间的小部分，被换出的进程数据就存放在对换区。</p>
+<p>文件区主要用于存放文件，主要追求存储空间的利用率，因此对文件区空间的管理采用离散分配方式；<br>对换区空间只占磁盘空间的小部分，被换出的进程数据就存放在对换区。</p>
 </blockquote>
 <p>由于对换的速度直接影响到系统的整体速度，因此对换区空间的管理主要追求换入换出速度，因此通常对换区采用连续分配方式（文件管理章节）。总之，对换区的I/O速度比文件区的更快。</p>
 <ul>
-<li>什么时候应该交换？</li>
+<li><p>什么时候应该交换？<br>交换通常在许多进程运行且内存吃紧时进行，而系统负荷降低就暂停。<br>例如：发现许多进程运行时经常发生缺页，说明内存紧张，此时可以换出一些进程；如果缺页率明显下降，可以暂停换出。</p>
+</li>
+<li><p>应该换出哪些进程？<br>可优先换出阻塞进程；可换出优先级低的进程；为了防止优先级低的进程在被调入内存后很快又被换出，有的系统还会考虑进程在内存的驻留时间…（注意：PCB 会常驻内存，不会被换出外存）</p>
+</li>
 </ul>
-<p>交换通常在许多进程运行且内存吃紧时进行，而系统负荷降低就暂停。</p>
-<p>例如：发现许多进程运行时经常发生缺页，说明内存紧张，此时可以换出一些进程；如果缺页率明显下降，可以暂停换出。</p>
-<ul>
-<li>应该换出哪些进程？</li>
-</ul>
-<p>可优先换出阻塞进程；可换出优先级低的进程；为了防止优先级低的进程在被调入内存后很快又被换出，有的系统还会考虑进程在内存的驻留时间…（注意：PCB 会常驻内存，不会被换出外存）</p>
-<h3 id="虚拟存储技术"><a href="#虚拟存储技术" class="headerlink" title="虚拟存储技术"></a>虚拟存储技术</h3><h4 id="传统存储管理方式的特征、缺点"><a href="#传统存储管理方式的特征、缺点" class="headerlink" title="传统存储管理方式的特征、缺点"></a>传统存储管理方式的特征、缺点</h4><p><strong>一次性：</strong>作业必须一次性全部装入内存后才能开始运行。</p>
-<p>这会造成两个问题：①作业很大时，不能全部装入内存，导致大作业无法运行；②当大量作业要求运行时，由于内存无法容纳所有作业，因此只有少量作业能运行，导致多道程序并发度下降。</p>
-<p><strong>驻留性：</strong>一旦作业被装入内存，就会一直驻留在内存中，直至作业运行结束。事实上，在一个时间段内，只需要访问作业的一小部分数据即可正常运行，这就导致了内存中会驻留大量的、暂时用不到的数据，浪费了宝贵的内存资源。</p>
-<h4 id="局部性原理"><a href="#局部性原理" class="headerlink" title="局部性原理"></a>局部性原理</h4><p><strong>时间局部性</strong>：如果执行了程序中的某条指令，那么不久后这条指令很有可能再次执行；如果某个数据被访问过，不久之后该数据很可能再次被访问。（因为程序中存在大量的循环）</p>
-<p><strong>空间局部性</strong>：一旦程序访问了某个存储单元，在不久之后，其附近的存储单元也很有可能被访问。（因为很多数据在内存中都是连续存放的，并且程序的指令也是顺序地在内存中存放的）</p>
+<h3 id="虚拟存储技术"><a href="#虚拟存储技术" class="headerlink" title="虚拟存储技术"></a>虚拟存储技术</h3><h4 id="传统存储管理方式的特征、缺点"><a href="#传统存储管理方式的特征、缺点" class="headerlink" title="传统存储管理方式的特征、缺点"></a>传统存储管理方式的特征、缺点</h4><p><strong>一次性：</strong>作业必须一次性全部装入内存后才能开始运行。<br>这会造成两个问题：①作业很大时，不能全部装入内存，导致大作业无法运行；②当大量作业要求运行时，由于内存无法容纳所有作业，因此只有少量作业能运行，导致多道程序并发度下降。<br><strong>驻留性：</strong>一旦作业被装入内存，就会一直驻留在内存中，直至作业运行结束。事实上，在一个时间段内，只需要访问作业的一小部分数据即可正常运行，这就导致了内存中会驻留大量的、暂时用不到的数据，浪费了宝贵的内存资源。</p>
+<h4 id="局部性原理"><a href="#局部性原理" class="headerlink" title="局部性原理"></a>局部性原理</h4><p><strong>时间局部性</strong>：如果执行了程序中的某条指令，那么不久后这条指令很有可能再次执行；如果某个数据被访问过，不久之后该数据很可能再次被访问。（因为程序中存在大量的循环）<br><strong>空间局部性</strong>：一旦程序访问了某个存储单元，在不久之后，其附近的存储单元也很有可能被访问。（因为很多数据在内存中都是连续存放的，并且程序的指令也是顺序地在内存中存放的）</p>
 <p><img src="/img/memory/jubu.jpg" style="zoom: 50%;" /></p>
 <p><strong>高速缓冲技术</strong>的思想：将近期会频繁访问到的数据放到更高速的存储器中，暂时用不到的数据放在更低速存储器中。</p>
 <p>基于局部性原理，在程序装入时，可以将程序中很快会用到的部分装入内存，暂时用不到的部分留在外存，就可以让程序开始执行。在程序执行过程中，当所访问的信息不在内存时，由操作系统负责将所需信息从外存调入内存，然后继续执行程序（请求调页功能）。若内存空间不够，由操作系统负责将内存中暂时用不到的信息换出到外存（页面置换功能）。</p>
@@ -3274,32 +3099,24 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 </blockquote>
 <p><strong>若内存空间不够，由操作系统负责将内存中暂时用不到的信息换出到外存（页面置换）</strong></p>
 <blockquote>
-<p><strong>页面置换算法</strong>决定应该换出哪个页面。页面换入换出需要磁盘IO，开销较大，所以好的页面置换算法因该追求更少的缺页率。</p>
-<p>最佳置换算法；先进先出置换算法；最近最久未使用置换算法；时钟置换算法；改进型的时钟置换算法</p>
+<p><strong>页面置换算法</strong>决定应该换出哪个页面。页面换入换出需要磁盘IO，开销较大，所以好的页面置换算法因该追求更少的缺页率。<br>最佳置换算法；先进先出置换算法；最近最久未使用置换算法；时钟置换算法；改进型的时钟置换算法</p>
 </blockquote>
 <p>在请求分页系统中，每当要访问的页面不在内存时，便产生一个<strong>缺页中断</strong>（属于内中断），然后由操作系统的缺页中断处理程序处理中断。此时缺页的进程阻塞，放入阻塞队列，调页完成后再将其唤醒，放回就绪队列。</p>
 <p>如果内存中有空闲块，则为进程分配一个空闲块，将所缺页面装入该块，并修改页表中相应的页表项。</p>
 <p>如果内存中没有空闲块，则由页面置换算法选择一个页面淘汰，若该页面在内存期间被修改过，则要将其写回外存。未修改过的页面不用写回外存。</p>
 <p>一条指令在执行期间，可能产生多次缺页中断。</p>
 <blockquote>
-<p>刚刚换出的页面马上又要换入内存，刚刚换入的页面马上又要换出外存，这种频繁的页面调度行为称为<strong>抖动</strong>，或颠簸。</p>
-<p>产生<strong>抖动</strong>的主要原因是进程频繁访问的页面数目高于可用的物理块数（分配给进程的物理块不够）</p>
+<p>刚刚换出的页面马上又要换入内存，刚刚换入的页面马上又要换出外存，这种频繁的页面调度行为称为<strong>抖动</strong>，或颠簸。<br>产生<strong>抖动</strong>的主要原因是进程频繁访问的页面数目高于可用的物理块数（分配给进程的物理块不够）</p>
 </blockquote>
 <p><strong>请求分页存储管理</strong>与<strong>基本分页存储管理</strong>的主要区别：<br>在程序执行过程中，当所访问的信息不在内存时，由操作系统负责将所需信息从外存调入内存，然后继续执行程序。若内存空间不够，由操作系统负责将内存中暂时用不到的信息换出到外存。</p>
 <p><strong>页面分配、置换策略</strong></p>
 <blockquote>
 <p>驻留集：指请求分页存储管理中给进程分配的物理块的集合。</p>
 </blockquote>
-<p>固定分配VS可变分配：区别在于进程运行期间驻留集大小是否可变</p>
-<p>局部置换ⅤS全局置换：区别在于发生缺页时是否只能从进程自己的页面中选择一个换出</p>
-<p>固定分配局部置换：进程运行前就分配一定数量物理块,缺页时只能换出进程自己的某一页</p>
-<p>可变分配全局置换：只要缺页就分配新物理块,可能来自空闲物理块,也可能需换出别的进程页面</p>
-<p>可变分配局部置换：频繁缺页的进程,多分配一些物理块;缺页率很低回收一些物理块。直到缺页率合适</p>
+<p>固定分配VS可变分配：区别在于进程运行期间驻留集大小是否可变<br>局部置换ⅤS全局置换：区别在于发生缺页时是否只能从进程自己的页面中选择一个换出<br>固定分配局部置换：进程运行前就分配一定数量物理块,缺页时只能换出进程自己的某一页<br>可变分配全局置换：只要缺页就分配新物理块,可能来自空闲物理块,也可能需换出别的进程页面<br>可变分配局部置换：频繁缺页的进程,多分配一些物理块;缺页率很低回收一些物理块。直到缺页率合适</p>
 <ul>
-<li><p>请求分段存储管理</p>
-</li>
-<li><p>请求段页式存储管理</p>
-</li>
+<li>请求分段存储管理</li>
+<li>请求段页式存储管理</li>
 </ul>
 <h2 id="操作系统需要提供地址转换功能"><a href="#操作系统需要提供地址转换功能" class="headerlink" title="操作系统需要提供地址转换功能"></a>操作系统需要提供地址转换功能</h2><p>负责程序的逻辑地址与物理地址的转换。逻辑地址到物理地址的转换称地址重定位</p>
 <p>数据的实际存放地址（物理地址），但在实际中生产机器指令的时候并不知道该进程的数据会被放到什么位置，所以编译生成的指令一般使用的是逻辑地址（相对地址）</p>
@@ -3310,33 +3127,20 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 <li><strong>链接</strong>：由连接程序将编译后形成的一组目标模块，以及所需库函数链接在一起，形成一个完整的装入模块</li>
 </ol>
 <blockquote>
-<p><strong>静态链接</strong>：在程序运行之前，将各个目标模块以及它们所需的库函数链接成一个完整的可执行文件（装入模块），之后便不再拆开</p>
-<p><strong>装入时动态链接</strong>：将各个目标模块装入内存时，边装入边链接的链接方式</p>
-<p><strong>运行时动态链接</strong>：在程序执行中需要该目标模块时，才对他进行链接。其优点是便于修改和更新，便于实现对目标模块的分享</p>
+<p><strong>静态链接</strong>：在程序运行之前，将各个目标模块以及它们所需的库函数链接成一个完整的可执行文件（装入模块），之后便不再拆开<br><strong>装入时动态链接</strong>：将各个目标模块装入内存时，边装入边链接的链接方式<br><strong>运行时动态链接</strong>：在程序执行中需要该目标模块时，才对他进行链接。其优点是便于修改和更新，便于实现对目标模块的分享</p>
 </blockquote>
 <ol>
 <li><strong>装入</strong>：由装入程序将装入模块装入内存运行</li>
 </ol>
 <blockquote>
-<p><strong>绝对装入</strong>：单道程序环境，此时还没产生操作系统，编译、链接后得到的装入模块的指令直接就使用了绝对地址</p>
-<p><strong>静态重定位（可重定位装入）</strong>：用于早期的多道批处理操作系统。</p>
+<p><strong>绝对装入</strong>：单道程序环境，此时还没产生操作系统，编译、链接后得到的装入模块的指令直接就使用了绝对地址<br><strong>静态重定位（可重定位装入）</strong>：用于早期的多道批处理操作系统。</p>
 <ul>
-<li><p>编译、链接后的装入模块的地址都是从0开始的，</p>
-</li>
-<li><p><strong>指令中</strong>使用的地址、数据存放的地址都是相对于起始地址而言的逻辑地址。可根据内存的当前情况，将装入模块装入到内存的适当位置。</p>
-</li>
-<li><p>装入时对地址进行“重定位”，将逻辑地址变换为物理地址（地址变换在装入时一次完成的）。</p>
-</li>
+<li>编译、链接后的装入模块的地址都是从0开始的，</li>
+<li><strong>指令中</strong>使用的地址、数据存放的地址都是相对于起始地址而言的逻辑地址。可根据内存的当前情况，将装入模块装入到内存的适当位置。</li>
+<li>装入时对地址进行“重定位”，将逻辑地址变换为物理地址（地址变换在装入时一次完成的）。<br>特点：在一个作业装入内存时，必须分配其要求的全部内存空间，如果没有足够的内存，就不能装入该作业。作业一旦进入内存后，在运行期间就不能再移动，也不能再申请内存空间。<br><strong>动态重定位（动态运行时装入）</strong>：现代操作系统。</li>
+<li>编译、链接后的装入模块的地址都是从0开始的。</li>
+<li>装入内存后所有的<strong>指令中</strong>使用的地址依然是逻辑地址，需设置重定位寄存器。（装入程序把装入模块装入内存后，并不会立即把逻辑地址转换为物理地址，而是把地址转换推迟到程序真正要执行时才进行。）<br>允许程序在内存中发生移动。</li>
 </ul>
-<p>特点：在一个作业装入内存时，必须分配其要求的全部内存空间，如果没有足够的内存，就不能装入该作业。作业一旦进入内存后，在运行期间就不能再移动，也不能再申请内存空间。</p>
-<p><strong>动态重定位（动态运行时装入）</strong>：现代操作系统。</p>
-<ul>
-<li><p>编译、链接后的装入模块的地址都是从0开始的。</p>
-</li>
-<li><p>装入内存后所有的<strong>指令中</strong>使用的地址依然是逻辑地址，需设置重定位寄存器。（装入程序把装入模块装入内存后，并不会立即把逻辑地址转换为物理地址，而是把地址转换推迟到程序真正要执行时才进行。）</p>
-</li>
-</ul>
-<p>允许程序在内存中发生移动。</p>
 </blockquote>
 <h2 id="操作系统需要提供内存保护功能"><a href="#操作系统需要提供内存保护功能" class="headerlink" title="操作系统需要提供内存保护功能"></a>操作系统需要提供内存保护功能</h2><p>保证各个进程在各自的存储空间内运行，互不干扰。两种方法：</p>
 <p><img src="/img/memory/protect1.jpg" style="zoom: 50%;" /></p>
@@ -3350,16 +3154,14 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
       </tags>
   </entry>
   <entry>
-    <title>图与网络/贪心算法</title>
-    <url>/2021/11/25/%E8%B4%AA%E5%BF%83/</url>
+    <title>图与网络 / 贪心算法</title>
+    <url>/2021/07/16/%E8%B4%AA%E5%BF%83/</url>
     <content><![CDATA[<blockquote>
 <p>贪心算法在对问题求解时，总是做出在当前看来是最好的选择。</p>
 </blockquote>
 <span id="more"></span>
 <h2 id="最小生成树问题-Minimum-spanning-trees-MST"><a href="#最小生成树问题-Minimum-spanning-trees-MST" class="headerlink" title="最小生成树问题(Minimum spanning trees,MST)"></a>最小生成树问题(Minimum spanning trees,MST)</h2><blockquote>
-<p><strong>生成树</strong>：指一个连通子图，它含有图中全部$n$个顶点，但只有足以构成一棵树的$n-1$条边。</p>
-<p><strong>最小生成树</strong>：在所有生成树中，所有边的权重和最小的生成树。</p>
-<p>假设有一个连通的无向的图$G=(V,E)$，及权值函数$w: E\rightarrow R$。考虑贪婪的方法找出$MST$。</p>
+<p><strong>生成树</strong>：指一个连通子图，它含有图中全部$n$个顶点，但只有足以构成一棵树的$n-1$条边。<br><strong>最小生成树</strong>：在所有生成树中，所有边的权重和最小的生成树。<br>假设有一个连通的无向的图$G=(V,E)$，及权值函数$w: E\rightarrow R$。考虑贪婪的方法找出$MST$。</p>
 </blockquote>
 <p>这个贪心策略由下面的“一般型”算法延伸，该算法<strong>每次只增长最小生成树的一条边</strong>。</p>
 <p>该算法管理边集$A$，$A$不断加$1$条边，需要做$n-1$次循环。在每次迭代之前，$A$是最小生成树的子集。在每一步，我们确定可以添加到$A$的边${u,v}$，在不违背这个不变式的情况下，$A\cup \{u，v\}$还是最小生成树的一个子集。</p>
@@ -3379,10 +3181,8 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 <p><strong>证明</strong>:</p>
 <p>设$T$是一个最小生成树，包含$A$。</p>
 <ul>
-<li><p>若$T$包含轻边$(u,v)$，则$A\cup \{u，v\} \in T$,</p>
-</li>
-<li><p>若$T$不包含轻边$(u,v)$，构造另一棵最小生成树$T’$，对于当前生成树$T，u，v$之间没有直接的边相连，但可以通过路径$p$连通，按图中将$G$分割为$cut$两部分，使得$u， v$在$cut$不同的点集，那么必然存在这样 的$x，y$也被划分在$cut$两部分，边$(u,v)(x,y)$都穿过该$cut$，$(u,v)$是轻边，连接$(u,v)$，断开$(x,y)$，得到新的生成树$T’$，$T’=T-(x,y)\cup (u,v)$。因为$(u,v)$是一个轻边，$w(u,v)\leq w(x,y)$。因此,$w (T’) = w (T) - w (x, y) + w (u, v) \leq w (T)$。由于$T$是最小生成树，所以$T’$也必须是最小生成树。</p>
-</li>
+<li>若$T$包含轻边$(u,v)$，则$A\cup \{u，v\} \in T$,</li>
+<li>若$T$不包含轻边$(u,v)$，构造另一棵最小生成树$T’$，对于当前生成树$T，u，v$之间没有直接的边相连，但可以通过路径$p$连通，按图中将$G$分割为$cut$两部分，使得$u， v$在$cut$不同的点集，那么必然存在这样 的$x，y$也被划分在$cut$两部分，边$(u,v)(x,y)$都穿过该$cut$，$(u,v)$是轻边，连接$(u,v)$，断开$(x,y)$，得到新的生成树$T’$，$T’=T-(x,y)\cup (u,v)$。因为$(u,v)$是一个轻边，$w(u,v)\leq w(x,y)$。因此,$w (T’) = w (T) - w (x, y) + w (u, v) \leq w (T)$。由于$T$是最小生成树，所以$T’$也必须是最小生成树。</li>
 </ul>
 <p><strong>Kruskal , Prim使用特定的规则来确定安全边。</strong></p>
 <ul>
@@ -3408,16 +3208,14 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
     <img src="/img/greedy/1.png"/>
 </div>
 
-<p>贪心结果：${a, e}$</p>
-<p>实际结果：${b, c, d}$</p>
+<p>贪心结果：${a, e}$<br>实际结果：${b, c, d}$</p>
 </blockquote>
 <p>可以看出，随着左部和中部图中点数的增加，贪心所得到的解与最优值可以相差任意远。可以使用图的密度函数判断贪心算法的表现。</p>
 <blockquote>
 <p>定理：假设图$G$有$n$个点和$m$条边，记$\delta =\frac{m}{n}$为图G的密度。贪心算法求得的解$m_{Gr}(G)\geq \frac{n}{(2\delta +1)}$</p>
 </blockquote>
 <p><strong>证明：</strong></p>
-<p>设$x_i$为程序while循环第$i$次迭代时选定的顶点，$d_i$为$x_i$的度。</p>
-<p>该算法将$x_i$及其所有$d_i$邻居从$G$中删除。第$i$步删除$d_{i+1}$个点，得到</p>
+<p>设$x_i$为程序while循环第$i$次迭代时选定的顶点，$d_i$为$x_i$的度。<br>该算法将$x_i$及其所有$d_i$邻居从$G$中删除。第$i$步删除$d_{i+1}$个点，得到</p>
 <script type="math/tex; mode=display">
 \sum_{i=1}^{m_{Gr}(G)}(d_i+1)=n.........(1)</script><p>又因为删除点的同时会删除边，那么与$x_i$相连的$d_i$个点至少度是$d_i$，那么删除的边有$(d_i+1)d_i$，又$d_i$个点之间可能存在互相连接的情况，那么删除的边至少有$(di+1)di/2$，删除的边数一定小于总边数，得</p>
 <script type="math/tex; mode=display">
@@ -3443,13 +3241,9 @@ n(2\delta +1)\geq \sum_{i=1}^{m_{Gr}(G)}(d_i+1)^2\geq \frac{n^2}{m_{Gr}(G)}</scr
 n(2\delta +1)+m^*(G)\geq \sum_{i=1}^{m_{Gr}(G)}((d_i+1)^2+k_i^2)\geq \frac{n^2+m^*(G)^2}{m_{Gr}(G)}</script><p>即</p>
 <script type="math/tex; mode=display">
 m_{Gr}(G)\geq m^*(G)\frac{\frac{n}{m^*(G)}+\frac{m^*(G)}{n}}{2\delta +1+\frac{m^*(G)}{n}}</script><p>当$m^*(G)=n$时，不等式最小。把这一项代入，定理成立。</p>
-<h2 id="背包问题-Greedy-knapsack"><a href="#背包问题-Greedy-knapsack" class="headerlink" title="背包问题(Greedy knapsack)"></a>背包问题(Greedy knapsack)</h2><p>输入:集合$X$的$n$个元素，对于$X$中的每个$x_i$，价值$p_i$，重量$w_i$，正整数$b$；</p>
-<p>输出:子集$Y\in X$使得$\sum_{x_i\in Y}w_i\leq b,max\ {\sum_{x_i\in Y}} p_i$</p>
-<p>按$\frac{p_i}{w_i}$的规则进行贪心选择。</p>
+<h2 id="背包问题-Greedy-knapsack"><a href="#背包问题-Greedy-knapsack" class="headerlink" title="背包问题(Greedy knapsack)"></a>背包问题(Greedy knapsack)</h2><p>输入:集合$X$的$n$个元素，对于$X$中的每个$x_i$，价值$p_i$，重量$w_i$，正整数$b$；<br>输出:子集$Y\in X$使得$\sum_{x_i\in Y}w_i\leq b,max\ {\sum_{x_i\in Y}} p_i$<br>按$\frac{p_i}{w_i}$的规则进行贪心选择。</p>
 <figure class="highlight oxygene"><table><tr><td class="code"><pre><span class="line"><span class="keyword">begin</span></span><br><span class="line">    sort X <span class="keyword">in</span> non-increasing <span class="keyword">order</span> <span class="keyword">with</span> respect <span class="keyword">to</span> the ratio pi/wi;</span><br><span class="line">    Y:=<span class="keyword">empty</span> <span class="keyword">set</span>;</span><br><span class="line">    <span class="keyword">for</span> i=<span class="number">1</span> <span class="keyword">to</span> n <span class="keyword">do</span></span><br><span class="line">    <span class="keyword">if</span> b&gt;=wi <span class="keyword">then</span></span><br><span class="line">    <span class="keyword">begin</span></span><br><span class="line">        Y=YU<span class="comment">&#123;xi&#125;</span></span><br><span class="line">        b=b-wi</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    return Y</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p>找不到最优解的例子：</p>
-<p>令$p_i=w_i=1，i=1,2，..，n-1, p_n=b-1, w_n=b=k_n$，其中$k$是一个任意大的数。</p>
-<p>在这种情况下，最优解$m^*(x)=b-1$;而贪心算法找到的解的值为$n-1$。因此</p>
+<p>找不到最优解的例子：<br>令$p_i=w_i=1，i=1,2，..，n-1, p_n=b-1, w_n=b=k_n$，其中$k$是一个任意大的数。<br>在这种情况下，最优解$m^*(x)=b-1$;而贪心算法找到的解的值为$n-1$。因此</p>
 <script type="math/tex; mode=display">
 \frac{m^*(x)}{m_{Gr}(x)} > k</script><p>贪心算法的劣势是由于算法没有将价值最高的元素包含在解中，而最优的元素正是价值最高的。这表明一个简单的修改贪心的程序有更好的性能。</p>
 <blockquote>
@@ -3459,15 +3253,12 @@ m_{Gr}(G)\geq m^*(G)\frac{\frac{n}{m^*(G)}+\frac{m^*(G)}{n}}{2\delta +1+\frac{m^
 <script type="math/tex; mode=display">
 \overline{p_j}=\sum_{i=1}^{j-1}\leq m_{Gr}(x)</script><p>重量为</p>
 <script type="math/tex; mode=display">
-\overline{w_j}=\sum_{i=1}^{j-1}w_i\leq b</script><p>首先证明任何最优解必须满足以下条件不等式:</p>
-<p>$m^*(x)&lt;\overline{p_j}+p_j$，</p>
+\overline{w_j}=\sum_{i=1}^{j-1}w_i\leq b</script><p>首先证明任何最优解必须满足以下条件不等式:<br>$m^*(x)&lt;\overline{p_j}+p_j$，</p>
 <p>因为装入前j-1个物品后，容量还剩余$b-\overline{w_j}&lt; w_j$，贪心选择在装入$j-1$个物品后，无法装入$j$，其密度为$\frac{p_j}{w_j}$，那么如果剩余容量按最优的去放，$(b-\overline{w_j})\frac{p_j}{w_j}&lt;w_j\frac{p_j}{w_j}=p_j$</p>
 <p>如果$p_j&lt;\overline{p_j}$，那么$m^*(x)&lt;2\overline{p_j}\leq 2m_{Gr}(x)\leq 2m_H(x)$；</p>
 <p>如果$p_j&gt;\overline{p_j}$，那么$P_{max}&gt;\overline{P_j}$，有$m^*(x)\leq \overline{p_j}+p_j\leq 2{p_j}\leq 2P{max}\leq 2m_H(x)$</p>
 <h2 id="The-Stein-Lovasz-Theorem"><a href="#The-Stein-Lovasz-Theorem" class="headerlink" title="The Stein-Lovasz Theorem"></a>The Stein-Lovasz Theorem</h2><blockquote>
-<p>The stein-lovasz Theorem 理论最基本的模型是解决集合的元素覆盖问题。使用贪心算法，以获得一个使用最少列元完成最大行覆盖的方案。</p>
-<p>假设$(0,1)$矩阵$A$的大小是$N×M$ ,矩阵$A$的特征是每行至少具有$v$个$1$，每列最多$a$个$1$。假设现在从其中抽取一个子矩阵$C⊂A$,大小是$N×K$，使得子矩阵的每行元素都不是全零行，证明$K$存在一个上界，<br>$K≤\frac{N}{a}+(\frac{M}{v})lna≤(\frac{M}{v})(1+lna)$</p>
-<p>分析：能不能使用一种抽取列数尽可能少的方案，如果使用的列数目比给定的边界条件$\frac{N}{a}+(\frac{M}{v})lna$小，那么原来的问题就自然获得证明。</p>
+<p>The stein-lovasz Theorem 理论最基本的模型是解决集合的元素覆盖问题。使用贪心算法，以获得一个使用最少列元完成最大行覆盖的方案。<br>假设$(0,1)$矩阵$A$的大小是$N×M$ ,矩阵$A$的特征是每行至少具有$v$个$1$，每列最多$a$个$1$。假设现在从其中抽取一个子矩阵$C⊂A$,大小是$N×K$，使得子矩阵的每行元素都不是全零行，证明$K$存在一个上界，<br>$K≤\frac{N}{a}+(\frac{M}{v})lna≤(\frac{M}{v})(1+lna)$<br>分析：能不能使用一种抽取列数尽可能少的方案，如果使用的列数目比给定的边界条件$\frac{N}{a}+(\frac{M}{v})lna$小，那么原来的问题就自然获得证明。</p>
 </blockquote>
 <p><strong>贪心算法思路描述如下</strong></p>
 <ol>
@@ -3489,43 +3280,31 @@ K_i=\frac{k_{i+1}-k_i}{i}</script><script type="math/tex; mode=display">
 k_i\times v\leq (M-K_a-...-K_i)\times (i-1)\leq M\times (i-1) \frac{k_i}{i-1}\leq \frac{M}{v}</script><p>那么</p>
 <script type="math/tex; mode=display">
 \sum_{i=1}^{a}K_i\leq \frac{N}{a}+\frac{1}{a}\frac{M}{v}+\frac{1}{a-1}\frac{M}{v}+...+\frac{1}{2}\frac{M}{v}=\frac{N}{a}+\frac{M}{v}(\frac{1}{a}+\frac{1}{a-1}+...+\frac{1}{2})\leq \frac{N}{a}+\frac{M}{v}lna\leq \frac{M}{v}+\frac{M}{v}lna=\frac{M}{v}(1+lna)​</script><h3 id="应用1：完美哈希族函数（Perfect-Hash-Function）"><a href="#应用1：完美哈希族函数（Perfect-Hash-Function）" class="headerlink" title="应用1：完美哈希族函数（Perfect Hash Function）"></a>应用1：完美哈希族函数（Perfect Hash Function）</h3><blockquote>
-<p>$(n,m,w)$-完美哈希族是一个函数F集合，使得$|Y|=n$， $|X|=m$,</p>
-<p>$f:Y\rightarrow X$对于$F$中的每一个$f$，对于任何$C\subseteq \{1,2,…,n\}$使得$|C|=w$，$C$是$Y$的$w$元子集合，并且至少存在一个$F$中的$f$使得$f|C$是一一对应的。如果$|F|=N$那么完美哈希族可以记作$PHF(N;n,m,w)$。</p>
-<p>求满足条件的函数数目的一个上界。</p>
+<p>$(n,m,w)$-完美哈希族是一个函数F集合，使得$|Y|=n$， $|X|=m$,<br>$f:Y\rightarrow X$对于$F$中的每一个$f$，对于任何$C\subseteq \{1,2,…,n\}$使得$|C|=w$，$C$是$Y$的$w$元子集合，并且至少存在一个$F$中的$f$使得$f|C$是一一对应的。如果$|F|=N$那么完美哈希族可以记作$PHF(N;n,m,w)$。<br>求满足条件的函数数目的一个上界。</p>
 </blockquote>
 <div align="center">
     <img src="/img/greedy/3.png"/>
 </div>
 
-<p>$|F|=N$，如上图，假设$w=3$，那么任选$Y$中的三列，有$\binom{n}{3}$种选择，要求其中存在一行使得三个函数值各不同，例如取$1，2，3$列，$f_{11}$，$f_{12}$，$f_{13}$互不相同就满足要求一一映射。</p>
-<p>$f:Y\rightarrow X$，$n$个$Y$对应到$m$个$X$，每一个$Y$有$m$种选择，那么有$m^n$个函数。从中挑出最少的函数(即N越小越好)使得对于任何的$C$可以满足一一对应要求。</p>
+<p>$|F|=N$，如上图，假设$w=3$，那么任选$Y$中的三列，有$\binom{n}{3}$种选择，要求其中存在一行使得三个函数值各不同，例如取$1，2，3$列，$f_{11}$，$f_{12}$，$f_{13}$互不相同就满足要求一一映射。<br>$f:Y\rightarrow X$，$n$个$Y$对应到$m$个$X$，每一个$Y$有$m$种选择，那么有$m^n$个函数。从中挑出最少的函数(即N越小越好)使得对于任何的$C$可以满足一一对应要求。</p>
 <ul>
-<li>套用ST定理：</li>
+<li>套用ST定理：<br>$N:\binom{n}{w}$，从$M:m^n$个函数中挑选出最少的函数满足要求，那么得到的矩阵就是$NxM$的$(0,1)$矩阵$A$，$A_{ij}=1$的含义就是当$|w|=i$，$f_j$是可以满足一一映射要求的。</li>
 </ul>
-<p>$N:\binom{n}{w}$，从$M:m^n$个函数中挑选出最少的函数满足要求，那么得到的矩阵就是$NxM$的$(0,1)$矩阵$A$，$A_{ij}=1$的含义就是当$|w|=i$，$f_j$是可以满足一一映射要求的。</p>
-<p>$v:\binom{m}{w}w!\cdot m^{n-w}$，表示从$m$个值中选取$w$的值排列放入选择的$w$个，剩余未赋值的$n-w$个，就任意赋值。</p>
-<p>$a:\binom{n}{w}$，每一个函数至多覆盖$a$个。</p>
+<p>$v:\binom{m}{w}w!\cdot m^{n-w}$，表示从$m$个值中选取$w$的值排列放入选择的$w$个，剩余未赋值的$n-w$个，就任意赋值。<br>$a:\binom{n}{w}$，每一个函数至多覆盖$a$个。</p>
 <p>套用S-T定理得</p>
 <script type="math/tex; mode=display">
 N\leq \frac{m}{w!\binom{m}{w}}(1+log\binom{n}{w})</script><ul>
-<li>使用概率方法:</li>
+<li>使用概率方法:<br>从$m^n$个函数中随机选择$N$个函数出来，构造一张随机的函数表，考虑坏概率，在函数表中没有一个函数可以使$w$存在一一映射关系，对于一个函数坏概率为存在一一对应关系的对立事件，取出$N$个函数，得<script type="math/tex; mode=display">
+(1-\frac{\binom{m}{w}w!m^(n-w)}{m^n})^N\binom{n}{w}</script>使其小于1，那么一定存在完美哈希族。(两边取对数求解)</li>
 </ul>
-<p>从$m^n$个函数中随机选择$N$个函数出来，构造一张随机的函数表，考虑坏概率，在函数表中没有一个函数可以使$w$存在一一映射关系，对于一个函数坏概率为存在一一对应关系的对立事件，取出$N$个函数，得</p>
-<script type="math/tex; mode=display">
-(1-\frac{\binom{m}{w}w!m^(n-w)}{m^n})^N\binom{n}{w}</script><p>使其小于1，那么一定存在完美哈希族。(两边取对数求解)</p>
 <h3 id="应用2：分割系统-Splitting-Systems"><a href="#应用2：分割系统-Splitting-Systems" class="headerlink" title="应用2：分割系统(Splitting Systems)"></a>应用2：分割系统(Splitting Systems)</h3><p><strong>在某个域中，$\alpha ^n=\beta$，$\alpha ,\beta$已知且为离散的，那么如何求解$n$？</strong></p>
 <p><strong>分割系统的提出就是为了解决离散对数问题。</strong></p>
 <blockquote>
-<p>假设$n,t$为偶数，$X$是点集合,$B$是超边集合。</p>
-<p>a) $|X|=n$,$B$是$X$的$\frac{n}{2}$子集的集合，称为区组</p>
-<p>b)对于每一个$Y\subseteq X$中存在区组$B$，使得$|B\cap Y|=\frac{t}{2}$。</p>
-<p>取最少$N$个$B$使得上面的条件满足。</p>
+<p>假设$n,t$为偶数，$X$是点集合,$B$是超边集合。<br>a) $|X|=n$,$B$是$X$的$\frac{n}{2}$子集的集合，称为区组<br>b)对于每一个$Y\subseteq X$中存在区组$B$，使得$|B\cap Y|=\frac{t}{2}$。<br>取最少$N$个$B$使得上面的条件满足。</p>
 </blockquote>
 <ul>
-<li>使用S-T定理</li>
+<li>使用S-T定理<br>$N:\binom{n}{t}$，对所有的t元子集合进行分割;<br>$M:\binom{n}{\frac{n}{2} }$，完成的方法总数;</li>
 </ul>
-<p>$N:\binom{n}{t}$，对所有的t元子集合进行分割;</p>
-<p>$M:\binom{n}{\frac{n}{2} }$，完成的方法总数;</p>
 <p>接下来确定$v$，那么对于某一行有多少$\frac{n}{2}$元子集合可以分割$t_i$，$t$个位置中一半放$1$，剩余一半放$0$，问题是一个$n$元集合，此时还剩$n-t$个位置没有放数，且还缺少$\frac{n-t}{2}$个1，那么得到子集合个数$\binom{t}{ \frac{t}{2} }\cdot \binom{n-t}{\frac{n-t}{2}}$；</p>
 <p>确定$a$，对于固定的$\frac{n}{2}$元子集合可以分割多少$t$，$\binom{\frac{n}{2}}{\frac{t}{2}}\binom{\frac{n}{2}}{\frac{t}{2}}$，套用S-T定理，</p>
 <script type="math/tex; mode=display">
@@ -3533,18 +3312,12 @@ N\leq \frac{\binom{n}{\frac{n}{2}}}{\binom{t}{\frac{t}{2}}\binom{n-t}{\frac{n-t}
     <img src="/img/greedy/2.png"/>
 </div>
 
-
-
 <ul>
-<li>使用概率方法：</li>
+<li>使用概率方法：<br>定义$A_i$，第$i$个$t$元子集合未被分割。对于一个$t$元集合没有分割的概率是分割时间的对立事件，为<script type="math/tex; mode=display">
+1-\frac{\binom{t}{\frac{t}{2}}\binom{n-t}{\frac{n-t}{2}}}{\binom{n}{\frac{n}{2}}}</script>共有$N$个$\frac{n}{2} $元子集合未被分割，为<script type="math/tex; mode=display">
+(1-\frac{\binom{t}{\frac{t}{2}}\binom{n-t}{\frac{n-t}{2}}}{\binom{n}{\frac{n}{2} }})^N=P(A_i)</script>那么至少有一个$t$元集合未被分割的概率为<script type="math/tex; mode=display">
+P(\cup A_i)\leq \sum P(A_i)=\binom{n}{t}P(A_i)<1</script>令其小于$1$，那么没有未被分割的情况概率大于$0$。</li>
 </ul>
-<p>定义$A_i$，第$i$个$t$元子集合未被分割。对于一个$t$元集合没有分割的概率是分割时间的对立事件，为</p>
-<script type="math/tex; mode=display">
-1-\frac{\binom{t}{\frac{t}{2}}\binom{n-t}{\frac{n-t}{2}}}{\binom{n}{\frac{n}{2}}}</script><p>共有$N$个$\frac{n}{2} $元子集合未被分割，为</p>
-<script type="math/tex; mode=display">
-(1-\frac{\binom{t}{\frac{t}{2}}\binom{n-t}{\frac{n-t}{2}}}{\binom{n}{\frac{n}{2} }})^N=P(A_i)</script><p>那么至少有一个$t$元集合未被分割的概率为</p>
-<script type="math/tex; mode=display">
-P(\cup A_i)\leq \sum P(A_i)=\binom{n}{t}P(A_i)<1</script><p>令其小于$1$，那么没有未被分割的情况概率大于$0$。</p>
 <p>参考：<a href="https://www.codenong.com/cs106200371/">图论学习笔记五贪心算法 | 码农家园 (codenong.com)</a></p>
 ]]></content>
       <tags>
