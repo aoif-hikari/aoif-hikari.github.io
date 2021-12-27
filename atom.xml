@@ -6,7 +6,7 @@
   <link href="https://aoif-hikari.github.io/atom.xml" rel="self"/>
   
   <link href="https://aoif-hikari.github.io/"/>
-  <updated>2021-12-27T09:32:27.711Z</updated>
+  <updated>2021-12-27T09:41:06.508Z</updated>
   <id>https://aoif-hikari.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://aoif-hikari.github.io/2021/12/27/Math/"/>
     <id>https://aoif-hikari.github.io/2021/12/27/Math/</id>
     <published>2021-12-27T09:26:38.000Z</published>
-    <updated>2021-12-27T09:32:27.711Z</updated>
+    <updated>2021-12-27T09:41:06.508Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -30,6 +30,8 @@
     
     
     
+    
+    <category term="leetcode" scheme="https://aoif-hikari.github.io/tags/leetcode/"/>
     
   </entry>
   
@@ -49,6 +51,25 @@
     
     
     <category term="leetcode" scheme="https://aoif-hikari.github.io/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Video Coding / Inter Prediction</title>
+    <link href="https://aoif-hikari.github.io/2021/12/27/Video%20Coding%20_%20Inter%20Prediction/"/>
+    <id>https://aoif-hikari.github.io/2021/12/27/Video%20Coding%20_%20Inter%20Prediction/</id>
+    <published>2021-12-26T16:00:00.000Z</published>
+    <updated>2021-12-27T09:41:55.593Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Inter Prediction&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    
+    <category term="video coding" scheme="https://aoif-hikari.github.io/tags/video-coding/"/>
     
   </entry>
   
@@ -364,25 +385,6 @@
     
     <summary type="html">&lt;blockquote&gt;
 &lt;p&gt;HTML，超文本标记式编程语言，是一种专门在浏览器编译与执行的编程语言。用于通知浏览器将接收的数据以指定方式在窗口展示；控制浏览器请求行为。CSS则用于定位浏览器中HTML标签并对定位的HTML标签中【样式属性】进行统一管理。&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    
-    <category term="java" scheme="https://aoif-hikari.github.io/tags/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java / JSP</title>
-    <link href="https://aoif-hikari.github.io/2021/08/06/jsp/"/>
-    <id>https://aoif-hikari.github.io/2021/08/06/jsp/</id>
-    <published>2021-08-05T16:00:00.000Z</published>
-    <updated>2021-12-10T04:36:02.586Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;JSP规范来自于JAVAEE规范中一种，制定了如何开发JSP文件&lt;strong&gt;代替响应对象将处理结果写入到响应体&lt;/strong&gt;的开发流程制，Http服务器应该如何调用管理JSP文件。放在&lt;code&gt;/web/*.jsp&lt;/code&gt;下&lt;/p&gt;
 &lt;/blockquote&gt;</summary>
     
     
