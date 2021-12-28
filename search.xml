@@ -2655,6 +2655,7 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 </ul>
 </li>
 </ul>
+<p><img src="https://pic.leetcode-cn.com/1600934720-bMXWmu-%E4%BA%8C%E5%8F%89%E6%A0%91%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86%EF%BC%88%E8%BF%AD%E4%BB%A3%E6%B3%95%EF%BC%89.gif" alt=""></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 迭代，非递归实现,本质使用栈模拟递归</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">preorder</span><span class="params">(TreeNode root)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root == <span class="keyword">null</span> ) <span class="keyword">return</span>;</span><br><span class="line">    <span class="comment">//初始化栈，并将根节点入栈；</span></span><br><span class="line">    Stack&lt;TreeNode&gt; stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">    stack.push(root);</span><br><span class="line">	<span class="comment">//当栈不为空时：</span></span><br><span class="line">    <span class="keyword">while</span>(!stack.isEmpty())&#123;</span><br><span class="line">        <span class="comment">//弹出栈顶元素 node，并将值添加到结果中；</span></span><br><span class="line">        TreeNode node = stack.pop();</span><br><span class="line">        System.out.print(node.val); </span><br><span class="line">        <span class="comment">//如果 node 的右子树非空，将右子树入栈；</span></span><br><span class="line">        <span class="keyword">if</span>(node.right != <span class="keyword">null</span>) stack.push(node.right);</span><br><span class="line">        <span class="comment">//如果 node 的左子树非空，将左子树入栈；</span></span><br><span class="line">        <span class="keyword">if</span>(node.left != <span class="keyword">null</span>) stack.push(node.left);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>模板迭代</p>
 <ul>
@@ -2690,8 +2691,7 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 <p>在一棵树中，一个结点到另一个结点的路径是唯一的，但在图中，结点之间可能有多条路径，其中哪条路最近？这一类问题称为最短路径问题。最短路径问题也是 BFS 的典型应用，而且其方法与层序遍历关系密切。</p>
 <p>在二叉树中，BFS 可以实现一层一层的遍历。在图中同样如此。从源点出发，BFS 首先遍历到第一层结点，到源点的距离为 1，然后遍历到第二层结点，到源点的距离为 2…… 可以看到，用 BFS 的话，距离源点更近的点会先被遍历到，这样就能找到到某个点的最短路径了。</p>
 <blockquote>
-<p>表达式树：分别对应前缀表达式/中缀表达式/后缀表达式</p>
-<p>树叶是操作数值，其他节点是操作符。</p>
+<p>表达式树：分别对应前缀表达式/中缀表达式/后缀表达式<br>树叶是操作数值，其他节点是操作符。</p>
 </blockquote>
 <p>后缀表达式转树：操作数压栈，操作符弹栈</p>
 <h2 id="对应例题"><a href="#对应例题" class="headerlink" title="对应例题"></a>对应例题</h2><h3 id="先序遍历"><a href="#先序遍历" class="headerlink" title="先序遍历"></a>先序遍历</h3><p>144 二叉树的先序遍历<br>589 N 叉树的前序遍历</p>
@@ -2734,8 +2734,7 @@ s.t.\sum_{i=1}^n\lambda_i = 1</script><script type="math/tex; mode=display">
 </blockquote>
 <p>101 对称二叉树/剑指 Offer 28（添加辅助函数，对于每个节点的左右孩子，判断其左的右和右的左，左的左和右的右是否相等，递归其左的右和右的左，左的左和右的右）<br>617 合并二叉树<br>965 单值二叉树<br>104 二叉树的最大深度/559 N 叉树的最大深度/111 二叉树的最小深度/110 平衡二叉树(一个二叉树每个节点的左右两个子树的高度差的绝对值不超过 1 )<br>257 二叉树的所有路径</p>
 <h2 id="二叉搜索树（BST）"><a href="#二叉搜索树（BST）" class="headerlink" title="二叉搜索树（BST）"></a>二叉搜索树（BST）</h2><blockquote>
-<p>基础操作：创建，判断 BST 的合法性、增、删、查。删较复杂<br>性质：中序遍历为升序/投射x轴后有序。</p>
-<p><img src="/img/tree/x.png"/></p>
+<p>基础操作：创建，判断 BST 的合法性、增、删、查。删较复杂<br>性质：中序遍历为升序/投射x轴后有序。<br><img src="/img/tree/x.png"/></p>
 </blockquote>
 <p><strong>创建</strong></p>
 <p>95 不同的二叉搜索树 II<br>108 将有序数组转换为二叉搜索树<br>109 有序链表转换二叉搜索树</p>
