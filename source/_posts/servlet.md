@@ -1,7 +1,7 @@
 ---
 tags: java
 title: Java / Servlet规范
-date: 2021-08-06
+date: 2021-07-19
 ---
 
 > Servlet规范，来自于JAVAEE规范中的一种。

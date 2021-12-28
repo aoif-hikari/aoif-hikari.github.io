@@ -1,7 +1,7 @@
 ---
 title: Java / JDBC
 tags: java
-date: 2021-08-06
+date: 2021-07-07
 ---
 
 > Java DataBase Connectivity, Java连接数据库，是SUN公司制定的一套接口, java.sql.*;
