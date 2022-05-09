@@ -12,7 +12,7 @@
     "version": "5.4.0"
   },
   "dependencies": {
-    "eslint": "^7.31.0",
+    "eslint": "^8.15.0",
     "hexo": "^5.4.0",
     "hexo-admin": "^2.3.0",
     "hexo-deployer-git": "^3.0.0",
