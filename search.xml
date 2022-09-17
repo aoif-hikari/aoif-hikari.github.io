@@ -432,16 +432,16 @@ J=D+\lambda R=d\left(x_{t}, \hat{x}_{t}\right)+\lambda\left(R_{m v d}+R_{r e s}\
 <blockquote>
 <p>比如，将10左移2位，由于10的二进制为：00001010，那么左移2位，右边用零填充的结果为：00101000。<br> 将一个数左移N位相当于将一个数乘以$2^N$，将一个数算数右移（&gt;&gt;）N位相当于将这个数除以$2^N$。 </p>
 </blockquote>
-<h2 id="异或"><a href="#异或" class="headerlink" title="异或"></a>异或</h2><p>性质：</p>
+<h2 id="异或-xor"><a href="#异或-xor" class="headerlink" title="异或 xor"></a>异或 xor</h2><p>性质：</p>
 <ul>
 <li><code>n^n = 0</code></li>
 <li><code>n^0 = n</code></li>
 <li>异或操作满足交换律和结合律</li>
 </ul>
 <blockquote>
-<p>136  唯一出现奇数次的数字 / 389 找不同 / 540. 有序数组中的单一元素<br>剑指56-1 唯二出现次数为奇数的数（分组异或）<br>剑指56-2 出现一次的数（除了一个数字以外，其余数字都出现 m 次 的通用问题：记录<strong>数组中所有数字</strong> 的 <strong>每一位的和</strong>，对m取余）<br>268 丢失的数字<br>剑指53 - II  0～n-1中缺失的数字<br>318 最大单词长度乘积</p>
+<p>136  唯一出现奇数次的数字 / 389 找不同 / 540. 有序数组中的单一元素(二分)<br>剑指56-1 唯二出现次数为奇数的数（分组异或）<br>剑指56-2 出现一次的数（除了一个数字以外，其余数字都出现 m 次 的通用问题：记录<strong>数组中所有数字</strong> 的 <strong>每一位的和</strong>，对m取余）<br>268/剑指53 - II 丢失的数字<br>318 最大单词长度乘积</p>
 </blockquote>
-<p>异或运算交换2个数： </p>
+<p>异或运算交换2个数（a,b相等时不适用）： </p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">10</span>; </span><br><span class="line"><span class="keyword">int</span> b=<span class="number">20</span>; </span><br><span class="line">a=a^b; </span><br><span class="line">b=a^b; </span><br><span class="line">a=a^b; </span><br></pre></td></tr></table></figure>
 <h2 id="二进制位"><a href="#二进制位" class="headerlink" title="二进制位"></a>二进制位</h2><ul>
 <li>a的二进制末位为1，那么a &amp; 1 =1。如果a的二进制末位为0，那么a &amp; 1=0。<ul>
@@ -3345,7 +3345,7 @@ P(\cup A_i)\leq \sum P(A_i)=\binom{n}{t}P(A_i)<1</script>令其小于$1$，那�
 <p>53/剑指42 连续子数组的最大和 (子串最大和)<br>674 最长递增子串<br>5  最长回文子串<br>最长公共子串</p>
 </blockquote>
 <h2 id="二维数组dp"><a href="#二维数组dp" class="headerlink" title="二维数组dp"></a>二维数组dp</h2><blockquote>
-<p>62  不同路径<br>63  不同路径 II<br>剑指47  礼物的最大价值(最大路径和) / 64  最小路径和<br>120  三角形最小路径和</p>
+<p>62  不同路径<br>63  不同路径 II<br>剑指47  礼物的最大价值(最大路径和) / 64  最小路径和<br>120  三角形最小路径和<br>920 播放列表的数量</p>
 </blockquote>
 <h2 id="dp背包"><a href="#dp背包" class="headerlink" title="dp背包"></a>dp背包</h2><ul>
 <li>给定一个背包容量 target，一个数组 nums(物品)，能否按一定方式选取 nums 中的元素得到target。背包容量 target 和物品 nums 的类型可能是数，也可能是字符串</li>
@@ -3358,7 +3358,14 @@ P(\cup A_i)\leq \sum P(A_i)=\binom{n}{t}P(A_i)<1</script>令其小于$1$，那�
 <figure class="highlight inform7"><table><tr><td class="code"><pre><span class="line">// boolean</span><br><span class="line">dp<span class="comment">[i]</span>=dp<span class="comment">[i]</span>||dp<span class="comment">[i-num]</span>;</span><br></pre></td></tr></table></figure>
 <p>3、组合：求所有满足……的排列组合</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">dp[i]+=dp[i-num];</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 二维dp背包，自底向上</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">knapsack_bottom_up</span><span class="params">(<span class="keyword">int</span>[] weights,<span class="keyword">int</span>[] values, <span class="keyword">int</span> capacity)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = weights.length;</span><br><span class="line">    <span class="comment">// dp[i][w]: 对于第i个物品，总重不超过x的最大价值</span></span><br><span class="line">    <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[n][capicity];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) dp[i][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; capacity; j++) dp[<span class="number">0</span>][j] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">1</span>; x &lt; n; x++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> y = <span class="number">1</span>; y &lt; capacity; y++)&#123;</span><br><span class="line">            <span class="keyword">int</span> w = weights[x];</span><br><span class="line">            <span class="keyword">int</span> v = values[x];</span><br><span class="line">            <span class="keyword">if</span>(y &lt; w) dp[x][y] = dp[x-<span class="number">1</span>][y]; <span class="comment">// 第i个物品的重量w超出限制y</span></span><br><span class="line">            <span class="keyword">else</span> dp[x][y] = Math.max(dp[x-<span class="number">1</span>][y], dp[x-<span class="number">1</span>][y-w]+v);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[n-<span class="number">1</span>][capacity-<span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 二维dp背包，自底向上</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">knapsack_bottom_up</span><span class="params">(<span class="keyword">int</span>[] weights,<span class="keyword">int</span>[] values, <span class="keyword">int</span> capacity)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = weights.length;</span><br><span class="line">    <span class="comment">// dp[i][w]: 对于第i个物品，总重不超过x的最大价值</span></span><br><span class="line">    <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[n][capicity];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) dp[i][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; capacity; j++) dp[<span class="number">0</span>][j] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">1</span>; x &lt; n; x++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> y = <span class="number">1</span>; y &lt; capacity; y++)&#123;</span><br><span class="line">            <span class="keyword">int</span> w = weights[x];</span><br><span class="line">            <span class="keyword">int</span> v = values[x];</span><br><span class="line">            <span class="keyword">if</span>(y &lt; w) dp[x][y] = dp[x-<span class="number">1</span>][y]; <span class="comment">// 第i个物品的重量w超出限制y</span></span><br><span class="line">            <span class="keyword">else</span> dp[x][y] = Math.max(dp[x-<span class="number">1</span>][y], dp[x-<span class="number">1</span>][y-w]+v);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[n-<span class="number">1</span>][capacity-<span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>698 划分为k个相等的子集 - 回溯+剪枝<br>473 火柴拼正方形（划分为4个相等的子集） - 回溯+剪枝<br>416 分割等和子集（划分为2个相等的子集） - dp背包</p>
+<h2 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h2><p>一维数组，要寻找任一个元素的右边或者左边第一个比自己大或者小的元素的位置</p>
+<p>739 每日温度</p>
+<h2 id="图"><a href="#图" class="headerlink" title="图"></a>图</h2><p>图的表示：邻接表 graph[i]: 第i个点的相邻节点</p>
+<p>785 判断二分图（dfs点染色）</p>
+<p>我们任选一个节点开始，将其染成红色，并从该节点开始对整个无向图进行遍历；<br>在遍历的过程中，如果我们通过节点 u 遍历到了节点 v（即 u 和 v 在图中有一条边直接相连），那么会有两种情况：<br>如果 v 未被染色，那么我们将其染成与 uu 不同的颜色，并对 v 直接相连的节点进行遍历；<br>如果 v 被染色，并且颜色与 uu 相同，那么说明给定的无向图不是二分图。我们可以直接退出遍历并返回 false 作为答案。<br>当遍历结束时，说明给定的无向图是二分图，返回 true 作为答案。</p>
+]]></content>
       <tags>
         <tag>leetcode</tag>
       </tags>
@@ -3370,30 +3377,45 @@ P(\cup A_i)\leq \sum P(A_i)=\binom{n}{t}P(A_i)<1</script>令其小于$1$，那�
 <p>…</p>
 </blockquote>
 <span id="more"></span>
-<h2 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h2><blockquote>
-<ul>
-<li>54/剑指29  螺旋矩阵<br>【矩阵为空时需特判，定义四个边界左,上,右,下,<br>顺时针打印的顺序：从左到右；从上到下；从右到左；从下到上<br>每个方向的打印需要做三件事：打印当前下标的值；边界收缩；判断打印是否结束】</li>
-<li>59  螺旋矩阵-II</li>
-<li>剑指04/ 240 二维数组中的查找/搜索二维矩阵 II（右上角，二叉搜索树）</li>
-<li>74 搜索二维矩阵<br>【右上角或左下角开始，二叉搜索树；二分，二维矩阵映射为一维】</li>
-</ul>
+<h2 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h2><ul>
+<li><p>54/剑指29  螺旋矩阵 / 59  螺旋矩阵-II</p>
+<blockquote>
+<p>【矩阵为空时需特判，定义四个边界左,上,右,下,<br>顺时针打印的顺序：从左到右；从上到下；从右到左；从下到上<br>每个方向的打印需要做三件事：打印当前下标的值；边界收缩；判断打印是否结束】</p>
 </blockquote>
+</li>
+<li><p>48 旋转图像</p>
+<blockquote>
+<p>【位置对应关系】对于矩阵中第 i 行的第 j 个元素，在旋转后，它出现在倒数第 i 列的第 j 个位置。因此对于矩阵中的元素 $matrix[row][col]$，在旋转后，它的新位置为 $matrix_new[col][length - row - 1]$<br>【翻转代替旋转】水平翻转: <code>swap(matrix[row][col], matrix[length-row-1][col])</code> 对角线翻转: <code>swap(matrix[row][col], matrix[col][row])</code></p>
+</blockquote>
+</li>
+<li><p>剑指04/ 240 二维数组中的查找/搜索二维矩阵 II（右上角，二叉搜索树）</p>
+</li>
+<li>74 搜索二维矩阵【右上角或左下角开始，二叉搜索树；二分，二维矩阵映射为一维】</li>
+</ul>
 <h2 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h2><ul>
 <li>204 统计质数</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isPrimes</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i * i &lt;= n; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(n % i == <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 判断质数</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isPrimes</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i * i &lt;= n; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(n % i == <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>367 有效的完全平方数 / 69 Sqrt(x) 【二分】</li>
 <li>365 水壶问题【找最大公约数】</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 辗转相除法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> remainder = x % y;</span><br><span class="line">    <span class="keyword">while</span> (remainder != <span class="number">0</span>) &#123;</span><br><span class="line">        x = y;</span><br><span class="line">        y = remainder;</span><br><span class="line">        remainder = x % y;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 两数最大公约数，gcd，greatest common divisor</span></span><br><span class="line"><span class="comment">// 辗转相除法</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (a % b == <span class="number">0</span>) <span class="keyword">return</span> b;</span><br><span class="line">    <span class="keyword">return</span> gcd(b, a % b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> remainder = x % y;</span><br><span class="line">    <span class="keyword">while</span> (remainder != <span class="number">0</span>) &#123;</span><br><span class="line">        x = y;</span><br><span class="line">        y = remainder;</span><br><span class="line">        remainder = x % y;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 两数最小公倍数，lcm，least common multiple</span></span><br><span class="line"><span class="comment">// 最小公倍数=两数乘积/最大公约数</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lcm</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a * b / gcd(a, b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 多个数的gcd。lcm：先求出前两个数的gcd/lcm(a)，再用(a)与下一个数求出它们的gcd/lcm(b)，不断循环直到计算完所有数。</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <ul>
 <li>650 <strong>只有两个键的键盘</strong>【数学 - 因数分解】</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minSteps</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i * i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="keyword">while</span> (n % i == <span class="number">0</span>) &#123;</span><br><span class="line">                ans += i;</span><br><span class="line">                n /= i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (n != <span class="number">1</span>) ans += n;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 质因数分解</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">decompose</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    List  ans = <span class="keyword">new</span> ArrayList();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i * i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="keyword">while</span> (n % i == <span class="number">0</span>) &#123;</span><br><span class="line">            ans.add(i);</span><br><span class="line">            n /= i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (n != <span class="number">1</span>) ans.add(n);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>263 丑数</li>
-<li>264/剑指49 丑数【因数只含2、3、5的数】</li>
+<li>264/剑指49 丑数2【因数只含2、3、5的数】</li>
+</ul>
+<ul>
+<li>991 坏了的计算器（只能 -1或 * 2）<blockquote>
+<p>贪心：当Y &gt; X 且 Y 为奇数时，我们可以得到当前最优序列中倒数第二个数为 Y+1，递归求解到 Y+1 的最小操作次数。<br>当Y &gt; X 且 Y为偶数时, 我们可以得到当前最优序列中倒数第二个数为Y/2，递归求解到Y/2的最小操作次数。<br>逆向思维：从 Y 到 X，当 Y 大于 X 时，如果Y是奇数，执行 +1，否则执行 /2。之后，需要执行 X - Y 次加法操作得到 X。</p>
+</blockquote>
+</li>
+</ul>
+<ul>
 <li>470 用 Rand7() 实现 Rand10()</li>
 </ul>
 <blockquote>
@@ -3744,5 +3766,46 @@ m v_{y}=\frac{m v_{1 y}-m v_{0 y}}{W} x+\frac{m v_{2 y}-m v_{0 y}}{H} y+m v_{0 y
       <tags>
         <tag>video coding</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>topk</title>
+    <url>/2022/01/13/topk/</url>
+    <content><![CDATA[<blockquote>
+<p>…</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="topK-一般解法"><a href="#topK-一般解法" class="headerlink" title="topK 一般解法"></a>topK 一般解法</h2><ul>
+<li>全局排序<ul>
+<li>O（nlogn）的时间复杂度</li>
+<li>数据量不大的时候简单可行</li>
+</ul>
+</li>
+<li>局部淘汰 / 局部排序<ul>
+<li>【类选择排序】对目标序列N个数遍历，取出其中最大的数最为Top1；再次遍历剩下的N-1个数，取出其中最大的数为Top2；….再对剩下的N-K+1个数遍历，取出其中最大的数为TopK。可以用冒泡k次实现</li>
+<li>O(n)的时间复杂度</li>
+<li>【partition】每一轮排序都会将序列一分为二，左子区间的数都小于pivot，右子区间的数都大于pivot，按情况对左区间或右区间递归</li>
+<li>O(n)的时间复杂度</li>
+<li>需要提前将N个数读入，空间开销较大；如果是动态数据，即可能会不停的增加新数据，那么就还需要每插入一个新数据就将其与前面取出的TopK做比较，排除K+1个数中最小的，最后剩下的才是TopK。</li>
+</ul>
+</li>
+<li>小根堆(优先队列)：只找到TopK，不排序TopK<ul>
+<li>先用前k个元素生成一个小顶堆，这个小顶堆用于存储当前最大的k个元素。    </li>
+<li>只需要将堆顶元素与下一个数比较：如果下一个数大于堆顶元素，则将当前的堆顶元素抛弃，并将该元素插入堆中。</li>
+<li>O(N * logk)的时间复杂度</li>
+<li>对于海量数据，我们不需要一次性将全部数据取出来，可以一次只取一部分</li>
+<li>对于动态数组，无论任何时候需要查询当前的前 K 大数据，我们都可以里立刻返回</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>小顶堆：每个结点的值都 &lt;= 其左右孩子结点的值的【完全二叉树】<br>优先队列：在优先队列中，元素被赋予优先级。当访问元素时，具有最高优先级的元素最先被访问（poll、delete…）。元素在队列尾追加。<br>堆 等效于 优先队列</p>
+</blockquote>
+<h2 id="海量数据"><a href="#海量数据" class="headerlink" title="海量数据"></a>海量数据</h2><h2 id="频率统计"><a href="#频率统计" class="headerlink" title="频率统计"></a>频率统计</h2><p>找出一个数据流中最频繁出现的k个数，比如热门搜索词汇等。<br>例：统计一篇英文文章中频次出现最高的10个单词</p>
+<ul>
+<li>数据量不大时可使用HashMap进行频率统计，求统计结果的topk</li>
+<li>Count-Min Sketch方法</li>
+<li>Trie树解决</li>
+</ul>
+]]></content>
   </entry>
 </search>
