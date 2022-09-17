@@ -55,7 +55,7 @@ ListNode cur = head;
 
 86 分隔链表
 328 奇偶链表
-**138/剑指 Offer 35. 复杂链表的复制**（hashmap）
+**138/剑指 Offer 35. 复杂链表的复制**（hashmap / 链接+拆分）
 
 - 其他
 
